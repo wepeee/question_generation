@@ -1,162 +1,176 @@
 # QUESTION_GENERATION/prompting.py
+# English prompting & English outputs (keeps your existing keys: struktur1..3, matematika/biologi/fisika/kimia)
+
 from __future__ import annotations
-from typing import Dict, List, Literal, Optional, TypedDict
+from typing import List, Literal, TypedDict, Optional
 
-PromptStructKey = Literal["struktur1","struktur2","struktur3"]
-TopicKey = Literal["matematika","biologi","fisika","kimia"]
+# Reuse the same keys you already pass around
+PromptStructKey = Literal["struktur1", "struktur2", "struktur3"]
+TopicKey = Literal["matematika", "biologi", "fisika", "kimia"]
 
+# Your LLM service expects {"role": "...", "content": "..."}
 class ChatMessage(TypedDict):
-    role: Literal["system","user","assistant"]
+    role: Literal["system", "user"]
     content: str
 
 def topic_label(t: TopicKey) -> str:
     return {
-        "matematika": "Matematika",
-        "biologi": "Biologi",
-        "fisika": "Fisika",
-        "kimia": "Kimia",
+        "matematika": "Mathematics",
+        "biologi": "Biology",
+        "fisika": "Physics",
+        "kimia": "Chemistry",
     }[t]
-
-BLOCKS: Dict[TopicKey, Dict[str, str]] = {
-    "matematika": {
-        "sp": """
-• Tulis 1 soal hitung tingkat menengah pada salah satu: aljabar (fungsi/invers/sistem), trigonometri (identitas/evaluasi), kalkulus dasar (limit/turunan/integral sederhana), atau statistika singkat.
-• Gunakan angka realistis; pembulatan 2 desimal bila perlu; hindari pembuktian formal.
-• Distraktor meniru kesalahan umum (tanda, identitas salah, aturan turunan/limit, salah pembulatan).
-""".strip(),
-        "cot": """
-• Lakukan penalaran multi-langkah secara internal (jangan ditampilkan).
-
-Contoh:
-Sample Question (referensi): Sebuah toko menjual Tipe A, B, C. Total biaya 10 A + 15 B + 8 C adalah Rp11.80 juta. Total 8 A + 12 B + 10 C adalah Rp10.64 juta. Total 6 A + 9 B + 12 C adalah Rp9.86 juta. Berapakah harga satu Tipe C?
-Sample Answer (internal): Susun SPL tiga variabel → eliminasi/substitusi → C ≈ 0,405 juta → pilih opsi yang cocok.
-
-• Buat soal baru setipe (mis. SPL, identitas trig lalu evaluasi sudut, turunan lalu substitusi nilai, statistik dari data kecil).
-• Distraktor mewakili kesalahan langkah (eliminasi keliru, identitas salah, aturan turunan salah, pembulatan salah).
-""".strip(),
-        "qc": """
-Quality Constraints:
-• Clarity & notation: notasi konsisten, stem spesifik, data cukup.
-• Difficulty target: menengah (≤3 langkah).
-• Distraktor effectiveness / discrimination: tiga pengecoh plausible mewakili kesalahan langkah/konsep berbeda.
-• Numerical hygiene: hasil masuk akal; pembulatan 2 desimal; satuan/notasi konsisten bila ada.
-""".strip(),
-    },
-    "biologi": {
-        "sp": """
-• Tulis 1 soal konsep/aplikasi ringkas pada: genetika dasar (termasuk Hardy-Weinberg), struktur/fungsi sel/jaringan, atau ekologi ringkas.
-• Istilah baku; jika ada hitungan (mis. frekuensi alel) gunakan angka kecil dan pembulatan 2 desimal.
-• Distraktor mencerminkan miskonsepsi umum (dominansi ≠ frekuensi, salah baca rasio/diagram, salah alur DNA→RNA→Protein).
-""".strip(),
-        "cot": """
-• Lakukan identifikasi konsep/rasio/relasi data mini secara internal; JANGAN tampilkan langkah.
-
-Contoh (analog Hardy-Weinberg):
-Sample Question (referensi): Dalam populasi besar, frekuensi alel p=0,6 dan q=0,4. Berapakah frekuensi heterozigot?
-Sample Answer (internal): 2pq = 2(0,6)(0,4) = 0,48 → pilih opsi yang sesuai.
-
-• Buat soal baru setipe (tabel kecil/rasio genotipe/konsep aliran energi).
-• Distraktor harus plausible dan memetakan miskonsepsi (dominansi ≠ frekuensi, salah tafsir grafik/tabel).
-""".strip(),
-        "qc": """
-Quality Constraints:
-• Clarity: istilah baku, tanpa ambiguitas proses/struktur; data cukup untuk satu jawaban paling benar.
-• Difficulty target: menengah (1–2 inferensi/rasio sederhana).
-• Distractor effectiveness / discrimination: tiga pengecoh plausible memetakan miskonsepsi nyata.
-• Consistency check: verifikasi internal hubungan genotipe–fenotipe/energi/aliran materi sebelum menetapkan kunci.
-""".strip(),
-    },
-    "fisika": {
-        "sp": """
-• Tulis 1 soal hitung menengah pada: kinematika (GLB/GLBB/proyektil), dinamika (Hukum Newton/bidang miring), energi–impuls, atau listrik dasar (V-I-R).
-• Gunakan satuan SI (gunakan g = 9,8 m s^-2 bila perlu), angka realistis, pembulatan 2 desimal.
-• Distraktor umum: komponen vektor/sinyal/tanda salah, konversi/satuan salah, gaya efektif salah.
-""".strip(),
-        "cot": """
-• Uraikan komponen vektor/persamaan relevan secara internal; JANGAN tampilkan langkah.
-
-Contoh gaya (diadaptasi dari paper, proyektil mendarat ke cekungan):
-Sample Question (referensi): Sebuah bola ditendang dengan kecepatan 25 m s^-1 pada sudut 45 derajat di atas horizontal dan mendarat ke cekungan sedalam 1,0 m. Hitung laju bola sesaat sebelum menyentuh cekungan.
-Sample Answer (internal): vx = v cos45; vy^2 = (v sin45)^2 + 2 a Δy dengan a = -9,8 dan Δy = -1,0; vy ≈ 18,22; v = sqrt(vx^2 + vy^2) ≈ 25,39 m s^-1.
-
-• Buat soal baru setipe (proyektil/bidang miring/energi-impuls/rangkaian).
-• Distraktor = sin/cos salah, tanda salah, atau satuan salah.
-""".strip(),
-        "qc": """
-Quality Constraints:
-• Clarity & SI: besaran dan satuan SI eksplisit; simbol konsisten.
-• Difficulty target: menengah (2–3 langkah).
-• Physical plausibility: cek orde besaran/kewajaran; konservasi energi/impuls bila relevan.
-• Distractor effectiveness / discrimination: tiga pengecoh plausible dari kesalahan khas (komponen sin–cos, tanda kerja/energi, salah satuan).
-""".strip(),
-    },
-    "kimia": {
-        "sp": """
-• Tulis 1 soal hitung menengah pada: stoikiometri (termasuk pereaksi pembatas), konsentrasi (molaritas/persen massa), asam–basa kuat (pH), atau kesetimbangan sederhana.
-• Gunakan massa atom umum (H=1, C=12, N=14, O=16, Na=23, Cl=35,5); pembulatan 2 desimal; satuan tepat.
-• Distraktor: koefisien salah, konversi mol-gram-volume salah, log/pH salah.
-""".strip(),
-        "cot": """
-• Lakukan perhitungan dan pengecekan koefisien secara internal; JANGAN tampilkan langkah.
-
-Contoh gaya (diadaptasi dari paper, elektrolisis Cr^3+):
-Sample Question (referensi): Arus 0,0353 A dialirkan selama 35 menit melalui larutan Cr^3+. Berapa massa Cr yang terendapkan? (Mr Cr = 52,0 g/mol; 3 elektron per atom; F = 96.500 C/mol)
-Sample Answer (internal): Q = I·t = 0,0353 × 2100 = 74,16 C; n(e) = Q/F = 0,000769 mol; n(Cr) = n(e)/3 = 0,000256 mol; m = 0,000256 × 52,0 = 0,0133 g.
-
-• Buat soal baru setipe (stoikiometri/pH/kesetimbangan ringan).
-• Distraktor = kesalahan umum (koefisien, konversi mol-gram-volume, log/pH, salah konsep pereaksi pembatas).
-""".strip(),
-        "qc": """
-Quality Constraints:
-• Clarity & units: reaksi/koefisien/satuan jelas; data cukup.
-• Difficulty target: menengah; angka realistis; pembulatan 2 desimal.
-• Distractor effectiveness / discrimination: tiga pengecoh plausible dari kesalahan umum (koefisien salah, konversi keliru, log/pH salah).
-• Numerical hygiene: konsistensi angka penting & satuan; hasil realistis.
-""".strip(),
-    },
-}
-
-OUTPUT_CONTRACT = """
-OUTPUT CONTRACT (STRICT, SINGLE ITEM):
-- Keluarkan HANYA JSON array berisi 1 objek:
-  [{"question":"...","options":["A. ...","B. ...","C. ...","D. ..."],"answer":"A","solution":"Ringkasan langkah/alasan 3–6 baris, plain text."}]
-- Field "solution" WAJIB ada, berisi ringkasan langkah/alasan (3–6 baris, plain text; tanpa LaTeX/markdown).
-- Tanpa teks lain di luar JSON, tanpa code fences.
-- Opsi wajib berawalan "A. "/"B. "/"C. "/"D. " dan "answer" = A/B/C/D.
-- NO LaTeX: jangan gunakan tanda $, backslash, atau perintah LaTeX; tulis plain text (sin, cos, pi, (a)/(b)).
-""".strip()
 
 def build_messages_single(
     struct_key: PromptStructKey,
     topic: TopicKey,
     avoid_terms: Optional[List[str]] = None,
 ) -> List[ChatMessage]:
+    """Builds English prompts with strict single-item JSON contract (English output)."""
+
     t = topic_label(topic)
 
-    parts: List[str] = [BLOCKS[topic]["sp"]]
-    if struct_key in ("struktur2","struktur3"):
-        parts.append(BLOCKS[topic]["cot"])
+    # ===== SP / CoT / QC blocks in English =====
+    blocks = {
+        "matematika": {
+            "sp": (
+                "SP (Standard Prompting):\n"
+                "• Write 1 medium-difficulty computational MCQ from ONE of: algebra (functions/inverse/systems), "
+                "trigonometry (identities/evaluation), basic calculus (limits/derivatives/simple integrals), or short statistics.\n"
+                "• Use realistic numbers; round to 2 decimals when needed; avoid formal proofs.\n"
+                "• Distractors must reflect typical mistakes (sign errors, wrong identities, derivative/limit rules, rounding)."
+            ),
+            "cot": (
+                "CoT (few-shot style; hidden reasoning 2–3 steps):\n"
+                "• Perform multi-step reasoning INTERNALLY; do NOT reveal the steps.\n\n"
+                "Style example (analogous): system of linear equations → plan elimination/substitution → compute → choose option.\n"
+                "• Create a NEW problem of the same family (SLE, trig identity then evaluate angle, derivative then plug-in value, small-data statistics).\n"
+                "• Distractors should map to step errors (bad elimination, wrong identity, wrong derivative rule, wrong rounding)."
+            ),
+            "qc": (
+                "Quality Constraints (paper-aligned):\n"
+                "• Clarity & notation: consistent symbols; specific stem; sufficient data.\n"
+                "• Difficulty target: medium (≤ 3 steps).\n"
+                "• Distractor effectiveness: three plausible distractors representing DIFFERENT misconceptions/step errors.\n"
+                "• Numerical hygiene: realistic result; 2-decimal rounding; consistent units/notation if any."
+            ),
+        },
+        "biologi": {
+            "sp": (
+                "SP (Standard Prompting):\n"
+                "• Write 1 concise concept/application MCQ from: basic genetics (incl. Hardy–Weinberg), "
+                "cell/tissue structure–function, or short ecology.\n"
+                "• Use standard terminology; if arithmetic appears (e.g., allele frequency), keep numbers small and round to 2 decimals.\n"
+                "• Distractors reflect common misconceptions (dominance ≠ frequency, misreading ratios/diagrams, confusion about DNA→RNA→Protein)."
+            ),
+            "cot": (
+                "CoT (few-shot analogue; hidden 1–2 steps):\n"
+                "• Identify concept/ratio/mini-table relations INTERNALLY; do NOT show steps.\n\n"
+                "Style example (Hardy–Weinberg): compute 2pq internally → choose option.\n"
+                "• Create a NEW item of the same family (small table/genotype ratio/energy flow).\n"
+                "• Distractors must be plausible and map to real misconceptions."
+            ),
+            "qc": (
+                "Quality Constraints (paper-aligned):\n"
+                "• Clarity: standard terms; no ambiguous processes/structures; enough data for a single best answer.\n"
+                "• Difficulty target: medium (1–2 simple inferences/ratios).\n"
+                "• Distractor effectiveness: three plausible misconceptions.\n"
+                "• Consistency check: verify genotype–phenotype/energy–matter relations before finalizing the key."
+            ),
+        },
+        "fisika": {
+            "sp": (
+                "SP (Standard Prompting):\n"
+                "• Write 1 medium-level quantitative MCQ from: kinematics (uniform/accelerated/projectile), dynamics (Newton/incline), "
+                "energy–impulse, or basic circuits (V–I–R).\n"
+                "• Use SI units (use g = 9.8 m s^-2 if relevant); realistic numbers; round to 2 decimals.\n"
+                "• Distractors: typical vector-component/sign mistakes, unit conversion errors, wrong effective forces."
+            ),
+            "cot": (
+                "CoT (few-shot; hidden 2–3 steps):\n"
+                "• Decompose quantities/equations INTERNALLY; do NOT show steps.\n\n"
+                "Style example (projectile): compute components; apply kinematic relation; recombine speed → choose option.\n"
+                "• Create a NEW item (projectile/incline/energy–impulse/circuit).\n"
+                "• Distractors = sin/cos swap, sign errors, wrong units."
+            ),
+            "qc": (
+                "Quality Constraints (paper-aligned):\n"
+                "• Clarity & SI: explicit quantities and SI units; consistent symbols.\n"
+                "• Difficulty target: medium (2–3 steps).\n"
+                "• Physical plausibility: order-of-magnitude check; conserve energy/impulse when relevant.\n"
+                "• Distractor effectiveness: three plausible typical mistakes (sin–cos component, work/energy sign, wrong unit)."
+            ),
+        },
+        "kimia": {
+            "sp": (
+                "SP (Standard Prompting):\n"
+                "• Write 1 medium-level quantitative MCQ from: stoichiometry (incl. limiting reagent), concentration (molarity/mass percent), "
+                "strong acid–base (pH), or simple equilibria.\n"
+                "• Use common atomic masses (H=1, C=12, N=14, O=16, Na=23, Cl=35.5); round to 2 decimals; correct units.\n"
+                "• Distractors: wrong coefficients, wrong mol–gram–volume conversions, log/pH errors."
+            ),
+            "cot": (
+                "CoT (few-shot; hidden multi-step):\n"
+                "• Perform calculations and coefficient checks INTERNALLY; do NOT show steps.\n\n"
+                "Style example (electrolysis): compute Q, moles of e−, stoichiometric relation, mass.\n"
+                "• Create a NEW item (stoichiometry/pH/light equilibrium).\n"
+                "• Distractors mirror common missteps (coefficients, conversions, log/pH)."
+            ),
+            "qc": (
+                "Quality Constraints (paper-aligned):\n"
+                "• Clarity & units: reaction/coefficients/units clear; sufficient data.\n"
+                "• Difficulty target: medium; realistic numbers; 2-decimal rounding.\n"
+                "• Distractor effectiveness: three plausible common errors (coefficients, conversion, log/pH).\n"
+                "• Numerical hygiene: significant figures & units consistent; realistic results."
+            ),
+        },
+    }
+
+    # ===== Strict single-item output contract (English, plain text) =====
+    output_contract = (
+        "STRICT OUTPUT CONTRACT (SINGLE ITEM):\n"
+        "- Return ONLY a JSON array containing EXACTLY 1 object:\n"
+        '  [{"question":"...","options":["A. ...","B. ...","C. ...","D. ..."],'
+        '"answer":"A","solution":"3–6 short lines, plain text; no LaTeX/markdown."}]\n'
+        '- The "solution" field is MANDATORY with 3–6 short lines (plain text; no LaTeX/markdown).\n'
+        "- No extra text outside JSON; no code fences.\n"
+        '- Options MUST be prefixed "A. "/"B. "/"C. "/"D. " and "answer" ∈ {A,B,C,D}.\n'
+        "- NO LaTeX: do not use $ or backslashes; write plain text (sin, cos, pi, (a)/(b))."
+    )
+
+    # ===== Assemble system content (English teacher role + selected blocks) =====
+    parts: List[str] = []
+    parts.append(blocks[topic]["sp"])
+    if struct_key in ("struktur2", "struktur3"):
+        parts.append(blocks[topic]["cot"])
     if struct_key == "struktur3":
-        parts.append(BLOCKS[topic]["qc"])
+        parts.append(blocks[topic]["qc"])
 
-    system_content = f"""
-Kamu adalah guru {t} SMA (kelas 12) dan berbahasa Indonesia.
-Tulis TEPAT 1 soal pilihan ganda kualitas baik dan SERTAKAN "solution" (3-6 baris, plain text).
-Pastikan ada jawaban yang benar.
-{ "\n\n".join(parts) }
+    system_content = (
+        f"You are a Grade 12 {t} teacher.\n"
+        "Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).\n"
+        + "\n\n".join(parts)
+        + "\n\n"
+        + output_contract
+    ).strip()
 
-{OUTPUT_CONTRACT}
-""".strip()
-
+    # Optional: avoid-terms block
     avoid_block = ""
     if avoid_terms:
-        avoid_block = (
-            "\n\nTambahan penting:\n"
-            f"- Hindari mengulang konteks/kata kunci/angka berikut: {', '.join(avoid_terms)}.\n"
-            "- Jangan tampilkan daftar ini pada output."
-        )
+        avoid_terms = [str(x) for x in avoid_terms if str(x).strip()]
+        if avoid_terms:
+            avoid_block = (
+                "\n\nAdditional constraint:\n"
+                f"- Avoid reusing the following words/numbers: {', '.join(avoid_terms)}.\n"
+                "- Do NOT print this list in the output."
+            )
+
+    user_content = (
+        f"Topic: {t}. Create 1 MCQ following the instructions and return a single-item JSON with the \"solution\" field."
+        + avoid_block
+    )
 
     return [
-        {"role":"system","content":system_content},
-        {"role":"user","content": f'Topik: {t}. Buat 1 soal sesuai instruksi dan kembalikan JSON single-item dengan field "solution".{avoid_block}'},
+        {"role": "system", "content": system_content},
+        {"role": "user", "content": user_content},
     ]

@@ -1,0 +1,295 @@
+topic,model,struktur,index,latency_model_ms,question,optionA,optionB,optionC,optionD,answer,solution_model,solution_verifier,verifier_model,latency_verifier_ms,clarity,context_accuracy,final_answer_accuracy,quality_of_working,judge_notes,prompt_generator
+matematika,qwen,struktur1,1,46275,"Sebuah fungsi f(x) = 3x^2 - 2x + 1. Tentukan nilai f'(2), yaitu turunan pertama dari f(x) pada x = 2.",A. 10,B. 12,C. 14,D. 16,A,Turunan pertama dari f(x) = 3x^2 - 2x + 1 adalah f'(x) = 6x - 2. Substitusikan x = 2 ke f'(x) untuk mendapatkan f'(2) = 6(2) - 2 = 12 - 2 = 10.,"Untuk menyelesaikan soal ini, pertama-tama kita harus mencari turunan pertama dari fungsi f(x) = 3x^2 - 2x + 1.
+Menggunakan aturan turunan pangkat, kita peroleh:
+f'(x) = d/dx(3x^2) - d/dx(2x) + d/dx(1)
+f'(x) = (2 * 3)x^(2-1) - (1 * 2)x^(1-1) + 0
+f'(x) = 6x - 2
+
+Selanjutnya, kita substitusikan nilai x = 2 ke dalam f'(x) untuk mendapatkan f'(2).
+f'(2) = 6(2) - 2
+f'(2) = 12 - 2
+f'(2) = 10.",gemini:gemini-2.5-pro,91013,5,5,Benar,5,"Clarity: Soal sangat jelas, menggunakan notasi matematika standar untuk fungsi dan turunan. Pertanyaan langsung pada intinya dan tidak ambigu.
+
+Context Accuracy: Soal ini secara akurat menguji konsep dasar turunan fungsi polinomial dalam kalkulus, yang merupakan topik yang sesuai.
+
+Quality of Working: Solusi generator menyajikan langkah-langkah yang benar dan efisien. Proses penurunan fungsi dan substitusi nilai x dilakukan dengan tepat tanpa kesalahan.
+
+Final Answer Accuracy: Jawaban akhir yang dihasilkan oleh generator, yaitu 10, adalah benar dan sesuai dengan perhitungan manual serta kunci jawaban.","SYSTEM: Kamu adalah guru Matematika SMA (kelas 12) dan berbahasa Indonesia.
+Tulis TEPAT 1 soal pilihan ganda kualitas baik dan SERTAKAN ""solution"" (3-6 baris, plain text).
+Pastikan ada jawaban yang benar.
+• Tulis 1 soal hitung tingkat menengah pada salah satu: aljabar (fungsi/invers/sistem), trigonometri (identitas/evaluasi), kalkulus dasar (limit/turunan/integral sederhana), atau statistika singkat.
+• Gunakan angka realistis; pembulatan 2 desimal bila perlu; hindari pembuktian formal.
+• Distraktor meniru kesalahan umum (tanda, identitas salah, aturan turunan/limit, salah pembulatan).
+
+OUTPUT CONTRACT (STRICT, SINGLE ITEM):
+- Keluarkan HANYA JSON array berisi 1 objek:
+  [{""question"":""..."",""options"":[""A. ..."",""B. ..."",""C. ..."",""D. ...""],""answer"":""A"",""solution"":""Ringkasan langkah/alasan 3–6 baris, plain text.""}]
+- Field ""solution"" WAJIB ada, berisi ringkasan langkah/alasan (3–6 baris, plain text; tanpa LaTeX/markdown).
+- Tanpa teks lain di luar JSON, tanpa code fences.
+- Opsi wajib berawalan ""A. ""/""B. ""/""C. ""/""D. "" dan ""answer"" = A/B/C/D.
+- NO LaTeX: jangan gunakan tanda $, backslash, atau perintah LaTeX; tulis plain text (sin, cos, pi, (a)/(b)).
+USER: Topik: Matematika. Buat 1 soal sesuai instruksi dan kembalikan JSON single-item dengan field ""solution""."
+matematika,qwen,struktur1,2,49740,"Sebuah partikel bergerak sepanjang garis lurus dengan persamaan posisi s(t) = 3t^2 - 4t + 5, di mana s dalam meter dan t dalam detik. Berapakah kecepatan partikel pada t = 3 detik?",A. 14 m/s,B. 16 m/s,C. 18 m/s,D. 20 m/s,A,"Untuk mencari kecepatan, kita perlu mencari turunan pertama dari persamaan posisi. s'(t) = 6t - 4. Kemudian substitusi t = 3 ke dalam s'(t) = 6(3) - 4 = 18 - 4 = 14. Jadi, kecepatan partikel pada t = 3 detik adalah 14 m/s.","Untuk menemukan kecepatan partikel, kita perlu mencari turunan pertama dari fungsi posisi s(t) terhadap waktu t. Fungsi kecepatan v(t) adalah turunan dari s(t).
+s(t) = 3t^2 - 4t + 5
+v(t) = s'(t) = d/dt (3t^2 - 4t + 5)
+v(t) = 6t - 4
+Selanjutnya, substitusikan t = 3 detik ke dalam fungsi kecepatan:
+v(3) = 6(3) - 4
+v(3) = 18 - 4
+v(3) = 14 m/s.",gemini:gemini-2.5-pro,246182,5,5,Benar,5,"Clarity: Soal sangat jelas dalam menyatakan persamaan posisi, satuan yang digunakan (meter dan detik), dan pertanyaan spesifik yang harus dijawab.
+Context Accuracy: Konteks soal sangat sesuai dengan aplikasi dasar kalkulus diferensial dalam fisika kinematika. Hubungan antara posisi dan kecepatan sebagai turunan pertama adalah konsep yang akurat.
+Quality of Working: Solusi yang diberikan menunjukkan langkah-langkah yang benar dan logis. Proses penurunan fungsi (diferensiasi) dan substitusi nilai t dilakukan dengan tepat tanpa kesalahan aritmetika.
+Final Answer Accuracy: Jawaban akhir yang dihasilkan oleh generator, yaitu 14 m/s, adalah benar dan sesuai dengan perhitungan mandiri serta kunci jawaban yang tersedia.","SYSTEM: Kamu adalah guru Matematika SMA (kelas 12) dan berbahasa Indonesia.
+Tulis TEPAT 1 soal pilihan ganda kualitas baik dan SERTAKAN ""solution"" (3-6 baris, plain text).
+Pastikan ada jawaban yang benar.
+• Tulis 1 soal hitung tingkat menengah pada salah satu: aljabar (fungsi/invers/sistem), trigonometri (identitas/evaluasi), kalkulus dasar (limit/turunan/integral sederhana), atau statistika singkat.
+• Gunakan angka realistis; pembulatan 2 desimal bila perlu; hindari pembuktian formal.
+• Distraktor meniru kesalahan umum (tanda, identitas salah, aturan turunan/limit, salah pembulatan).
+
+OUTPUT CONTRACT (STRICT, SINGLE ITEM):
+- Keluarkan HANYA JSON array berisi 1 objek:
+  [{""question"":""..."",""options"":[""A. ..."",""B. ..."",""C. ..."",""D. ...""],""answer"":""A"",""solution"":""Ringkasan langkah/alasan 3–6 baris, plain text.""}]
+- Field ""solution"" WAJIB ada, berisi ringkasan langkah/alasan (3–6 baris, plain text; tanpa LaTeX/markdown).
+- Tanpa teks lain di luar JSON, tanpa code fences.
+- Opsi wajib berawalan ""A. ""/""B. ""/""C. ""/""D. "" dan ""answer"" = A/B/C/D.
+- NO LaTeX: jangan gunakan tanda $, backslash, atau perintah LaTeX; tulis plain text (sin, cos, pi, (a)/(b)).
+USER: Topik: Matematika. Buat 1 soal sesuai instruksi dan kembalikan JSON single-item dengan field ""solution"".
+
+Tambahan penting:
+- Hindari mengulang konteks/kata kunci/angka berikut: turunan, fungsi, pertama, 1, 2, yaitu.
+- Jangan tampilkan daftar ini pada output."
+matematika,qwen,struktur1,3,54915,"Sebuah roda berputar dengan kecepatan sudut 4 radian per detik. Jika jari-jari roda adalah 0.75 meter, berapakah kecepatan linear (dalam m/s) pada titik yang berada di tepi roda?",A. 2.50,B. 3.00,C. 3.50,D. 4.00,B,"Kecepatan linear v dapat dihitung dengan rumus v = r * w, di mana r adalah jari-jari dan w adalah kecepatan sudut. Dalam kasus ini, r = 0.75 m dan w = 4 rad/s. Jadi, v = 0.75 * 4 = 3.00 m/s.","Untuk menghitung kecepatan linear (v) dari suatu titik pada benda yang berotasi, digunakan rumus v = ω × r, di mana ω adalah kecepatan sudut dan r adalah jari-jari.
+Diketahui:
+Kecepatan sudut (ω) = 4 rad/s
+Jari-jari (r) = 0.75 m
+
+Maka, kecepatan linear dihitung sebagai berikut:
+v = 4 rad/s × 0.75 m
+v = 3 m/s
+Jadi, kecepatan linear pada titik di tepi roda adalah 3.00 m/s.",gemini:gemini-2.5-pro,20611,5,5,Benar,5,"Clarity: Soal sangat jelas dan lugas. Semua informasi yang diperlukan (kecepatan sudut dan jari-jari) diberikan secara eksplisit dengan satuan yang benar.
+
+Context Accuracy: Konteks soal mengenai gerak melingkar beraturan sangat akurat. Hubungan antara kecepatan linear dan kecepatan sudut adalah konsep fundamental dalam fisika dan diterapkan dengan benar.
+
+Quality of Working: Solusi generator menyajikan langkah-langkah yang sempurna. Rumus yang digunakan benar, substitusi nilai akurat, dan perhitungan aritmetika tepat. Penjelasannya ringkas dan efektif.
+
+Final Answer Accuracy: Jawaban akhir yang dihasilkan oleh generator, yaitu 3.00 m/s, adalah benar dan sesuai dengan perhitungan manual serta kunci jawaban yang tersedia.","SYSTEM: Kamu adalah guru Matematika SMA (kelas 12) dan berbahasa Indonesia.
+Tulis TEPAT 1 soal pilihan ganda kualitas baik dan SERTAKAN ""solution"" (3-6 baris, plain text).
+Pastikan ada jawaban yang benar.
+• Tulis 1 soal hitung tingkat menengah pada salah satu: aljabar (fungsi/invers/sistem), trigonometri (identitas/evaluasi), kalkulus dasar (limit/turunan/integral sederhana), atau statistika singkat.
+• Gunakan angka realistis; pembulatan 2 desimal bila perlu; hindari pembuktian formal.
+• Distraktor meniru kesalahan umum (tanda, identitas salah, aturan turunan/limit, salah pembulatan).
+
+OUTPUT CONTRACT (STRICT, SINGLE ITEM):
+- Keluarkan HANYA JSON array berisi 1 objek:
+  [{""question"":""..."",""options"":[""A. ..."",""B. ..."",""C. ..."",""D. ...""],""answer"":""A"",""solution"":""Ringkasan langkah/alasan 3–6 baris, plain text.""}]
+- Field ""solution"" WAJIB ada, berisi ringkasan langkah/alasan (3–6 baris, plain text; tanpa LaTeX/markdown).
+- Tanpa teks lain di luar JSON, tanpa code fences.
+- Opsi wajib berawalan ""A. ""/""B. ""/""C. ""/""D. "" dan ""answer"" = A/B/C/D.
+- NO LaTeX: jangan gunakan tanda $, backslash, atau perintah LaTeX; tulis plain text (sin, cos, pi, (a)/(b)).
+USER: Topik: Matematika. Buat 1 soal sesuai instruksi dan kembalikan JSON single-item dengan field ""solution"".
+
+Tambahan penting:
+- Hindari mengulang konteks/kata kunci/angka berikut: turunan, fungsi, sepanjang, persamaan, lurus, pertama, partikel, 1, bergerak, 5, 3, 2, yaitu, posisi, garis.
+- Jangan tampilkan daftar ini pada output."
+matematika,qwen,struktur1,4,51399,"Sebuah balok kayu memiliki panjang 8 cm, lebar 6 cm, dan tinggi 10 cm. Jika balok tersebut dipotong menjadi 2 bagian yang sama besar dengan potongan sejajar dengan sisi lebar dan tinggi, berapakah volume masing-masing bagian setelah dipotong?",A. 240 cm^3,B. 280 cm^3,C. 320 cm^3,D. 360 cm^3,A,"Volume balok asli adalah panjang x lebar x tinggi = 8 x 6 x 10 = 480 cm^3. Setelah dipotong menjadi 2 bagian yang sama besar, volume masing-masing bagian adalah 480 / 2 = 240 cm^3.","Langkah pertama adalah menghitung volume total balok sebelum dipotong. Rumus volume balok adalah Panjang × Lebar × Tinggi.
+Volume = 8 cm × 6 cm × 10 cm = 480 cm³.
+Soal menyatakan bahwa balok tersebut dipotong menjadi 2 bagian yang sama besar. Artinya, volume total dibagi menjadi dua.
+Volume masing-masing bagian = Volume total / 2 = 480 cm³ / 2 = 240 cm³.",gemini:gemini-2.5-pro,57395,5,5,Benar,5,"Clarity: Soal sangat jelas dalam memberikan dimensi balok dan instruksi pemotongan. Informasi bahwa potongan sejajar dengan sisi lebar dan tinggi, meskipun tidak esensial untuk perhitungan volume, menambah kejelasan tentang orientasi potongan tanpa menimbulkan kebingungan.
+
+Context Accuracy: Konteks soal adalah geometri dasar yang akurat. Penggunaan konsep volume balok dan pembagiannya menjadi bagian yang sama besar sudah tepat dan tidak ada kontradiksi.
+
+Quality of Working: Solusi yang diberikan sangat efisien dan logis. Langkah-langkahnya benar, yaitu menghitung volume total terlebih dahulu, kemudian membaginya dua. Perhitungan aritmetikanya juga akurat.
+
+Final Answer Accuracy: Jawaban akhir dari solusi generator, yaitu 240 cm³, adalah benar dan sesuai dengan perhitungan mandiri serta kunci jawaban yang tersedia.","SYSTEM: Kamu adalah guru Matematika SMA (kelas 12) dan berbahasa Indonesia.
+Tulis TEPAT 1 soal pilihan ganda kualitas baik dan SERTAKAN ""solution"" (3-6 baris, plain text).
+Pastikan ada jawaban yang benar.
+• Tulis 1 soal hitung tingkat menengah pada salah satu: aljabar (fungsi/invers/sistem), trigonometri (identitas/evaluasi), kalkulus dasar (limit/turunan/integral sederhana), atau statistika singkat.
+• Gunakan angka realistis; pembulatan 2 desimal bila perlu; hindari pembuktian formal.
+• Distraktor meniru kesalahan umum (tanda, identitas salah, aturan turunan/limit, salah pembulatan).
+
+OUTPUT CONTRACT (STRICT, SINGLE ITEM):
+- Keluarkan HANYA JSON array berisi 1 objek:
+  [{""question"":""..."",""options"":[""A. ..."",""B. ..."",""C. ..."",""D. ...""],""answer"":""A"",""solution"":""Ringkasan langkah/alasan 3–6 baris, plain text.""}]
+- Field ""solution"" WAJIB ada, berisi ringkasan langkah/alasan (3–6 baris, plain text; tanpa LaTeX/markdown).
+- Tanpa teks lain di luar JSON, tanpa code fences.
+- Opsi wajib berawalan ""A. ""/""B. ""/""C. ""/""D. "" dan ""answer"" = A/B/C/D.
+- NO LaTeX: jangan gunakan tanda $, backslash, atau perintah LaTeX; tulis plain text (sin, cos, pi, (a)/(b)).
+USER: Topik: Matematika. Buat 1 soal sesuai instruksi dan kembalikan JSON single-item dengan field ""solution"".
+
+Tambahan penting:
+- Hindari mengulang konteks/kata kunci/angka berikut: jari-jari, pertama, 5, 4, lurus, garis, fungsi, per, detik, partikel, 2, persamaan, turunan, sepanjang, radian, kecepatan, 1, 3, roda, yaitu, posisi, bergerak, 0.75, berputar, sudut.
+- Jangan tampilkan daftar ini pada output."
+matematika,qwen,struktur1,5,52099,"Sebuah kapal berlayar dari pelabuhan A ke pelabuhan B dengan kecepatan 20 km/jam selama 3 jam, kemudian melanjutkan perjalanannya ke pelabuhan C dengan kecepatan 25 km/jam selama 2 jam. Berapakah jarak total yang ditempuh kapal tersebut dari pelabuhan A ke C?",A. 100 km,B. 110 km,C. 120 km,D. 130 km,B,"Kapal berlayar dari A ke B dengan kecepatan 20 km/jam selama 3 jam, jarak = 20 x 3 = 60 km. Kemudian dari B ke C dengan kecepatan 25 km/jam selama 2 jam, jarak = 25 x 2 = 50 km. Jarak total = 60 + 50 = 110 km.","Soal ini meminta jarak total perjalanan yang dibagi menjadi dua bagian.
+Bagian 1 (A ke B): Jarak = kecepatan × waktu = 20 km/jam × 3 jam = 60 km.
+Bagian 2 (B ke C): Jarak = kecepatan × waktu = 25 km/jam × 2 jam = 50 km.
+Jarak total adalah penjumlahan jarak kedua bagian: 60 km + 50 km = 110 km.",gemini:gemini-2.5-pro,199241,5,5,Benar,5,"Clarity: Pertanyaan sangat jelas, menyajikan semua data yang diperlukan (kecepatan dan waktu) secara eksplisit dan tidak ambigu.
+Context Accuracy: Konteks soal tentang perhitungan jarak berdasarkan kecepatan dan waktu sangat akurat dan sesuai dengan konsep dasar fisika/matematika. Nilai yang digunakan realistis.
+Quality of Working: Solusi generator menunjukkan langkah-langkah yang benar, menghitung jarak setiap segmen perjalanan secara terpisah lalu menjumlahkannya. Semua perhitungan aritmetika akurat.
+Final Answer Accuracy: Jawaban akhir yang dihasilkan oleh generator (110 km) adalah benar dan sesuai dengan kunci jawaban.","SYSTEM: Kamu adalah guru Matematika SMA (kelas 12) dan berbahasa Indonesia.
+Tulis TEPAT 1 soal pilihan ganda kualitas baik dan SERTAKAN ""solution"" (3-6 baris, plain text).
+Pastikan ada jawaban yang benar.
+• Tulis 1 soal hitung tingkat menengah pada salah satu: aljabar (fungsi/invers/sistem), trigonometri (identitas/evaluasi), kalkulus dasar (limit/turunan/integral sederhana), atau statistika singkat.
+• Gunakan angka realistis; pembulatan 2 desimal bila perlu; hindari pembuktian formal.
+• Distraktor meniru kesalahan umum (tanda, identitas salah, aturan turunan/limit, salah pembulatan).
+
+OUTPUT CONTRACT (STRICT, SINGLE ITEM):
+- Keluarkan HANYA JSON array berisi 1 objek:
+  [{""question"":""..."",""options"":[""A. ..."",""B. ..."",""C. ..."",""D. ...""],""answer"":""A"",""solution"":""Ringkasan langkah/alasan 3–6 baris, plain text.""}]
+- Field ""solution"" WAJIB ada, berisi ringkasan langkah/alasan (3–6 baris, plain text; tanpa LaTeX/markdown).
+- Tanpa teks lain di luar JSON, tanpa code fences.
+- Opsi wajib berawalan ""A. ""/""B. ""/""C. ""/""D. "" dan ""answer"" = A/B/C/D.
+- NO LaTeX: jangan gunakan tanda $, backslash, atau perintah LaTeX; tulis plain text (sin, cos, pi, (a)/(b)).
+USER: Topik: Matematika. Buat 1 soal sesuai instruksi dan kembalikan JSON single-item dengan field ""solution"".
+
+Tambahan penting:
+- Hindari mengulang konteks/kata kunci/angka berikut: jari-jari, kayu, 10, pertama, 5, 4, lurus, garis, tinggi, fungsi, per, 8, detik, partikel, 2, persamaan, memiliki, turunan, sepanjang, radian, kecepatan, 1, 3, panjang, balok, roda, yaitu, 6, posisi, lebar, bergerak, 0.75, berputar, sudut.
+- Jangan tampilkan daftar ini pada output."
+matematika,qwen,struktur1,6,48037,Sebuah fungsi f(x) = 3x^2 - 4x + 5. Tentukan nilai f(2).,A. 9,B. 10,C. 11,D. 12,C,"Substitusikan x = 2 ke dalam fungsi f(x) = 3x^2 - 4x + 5. Maka f(2) = 3(2)^2 - 4(2) + 5 = 3(4) - 8 + 5 = 12 - 8 + 5 = 9. Jadi, nilai f(2) adalah 11.","Untuk menemukan nilai f(2) dari fungsi f(x) = 3x^2 - 4x + 5, kita perlu mensubstitusikan nilai x = 2 ke dalam fungsi tersebut.
+
+f(2) = 3(2)^2 - 4(2) + 5
+f(2) = 3(4) - 8 + 5
+f(2) = 12 - 8 + 5
+f(2) = 4 + 5
+f(2) = 9
+
+Jadi, nilai f(2) adalah 9. Ini sesuai dengan opsi A.",gemini:gemini-2.5-pro,32784,5,5,Salah,1,"Clarity: Soal sangat jelas dan lugas. Notasi fungsi dan permintaan soal menggunakan standar matematika yang umum dipahami.
+
+Context Accuracy: Konsep soal mengenai evaluasi fungsi kuadrat adalah akurat secara matematis. Namun, kunci jawaban yang diberikan (C) salah, karena jawaban yang benar adalah 9 (A).
+
+Quality of Working: Solusi generator menunjukkan langkah-langkah perhitungan yang benar hingga mendapatkan hasil 9 (12 - 8 + 5 = 9). Namun, pada kalimat kesimpulan, solusi tersebut secara keliru menyatakan bahwa hasilnya adalah 11. Ini adalah kontradiksi internal yang fatal.
+
+Final Answer Accuracy: Jawaban akhir yang diberikan oleh generator adalah 11, sedangkan jawaban yang benar berdasarkan perhitungannya sendiri adalah 9. Oleh karena itu, jawaban akhirnya salah.","SYSTEM: Kamu adalah guru Matematika SMA (kelas 12) dan berbahasa Indonesia.
+Tulis TEPAT 1 soal pilihan ganda kualitas baik dan SERTAKAN ""solution"" (3-6 baris, plain text).
+Pastikan ada jawaban yang benar.
+• Tulis 1 soal hitung tingkat menengah pada salah satu: aljabar (fungsi/invers/sistem), trigonometri (identitas/evaluasi), kalkulus dasar (limit/turunan/integral sederhana), atau statistika singkat.
+• Gunakan angka realistis; pembulatan 2 desimal bila perlu; hindari pembuktian formal.
+• Distraktor meniru kesalahan umum (tanda, identitas salah, aturan turunan/limit, salah pembulatan).
+
+OUTPUT CONTRACT (STRICT, SINGLE ITEM):
+- Keluarkan HANYA JSON array berisi 1 objek:
+  [{""question"":""..."",""options"":[""A. ..."",""B. ..."",""C. ..."",""D. ...""],""answer"":""A"",""solution"":""Ringkasan langkah/alasan 3–6 baris, plain text.""}]
+- Field ""solution"" WAJIB ada, berisi ringkasan langkah/alasan (3–6 baris, plain text; tanpa LaTeX/markdown).
+- Tanpa teks lain di luar JSON, tanpa code fences.
+- Opsi wajib berawalan ""A. ""/""B. ""/""C. ""/""D. "" dan ""answer"" = A/B/C/D.
+- NO LaTeX: jangan gunakan tanda $, backslash, atau perintah LaTeX; tulis plain text (sin, cos, pi, (a)/(b)).
+USER: Topik: Matematika. Buat 1 soal sesuai instruksi dan kembalikan JSON single-item dengan field ""solution"".
+
+Tambahan penting:
+- Hindari mengulang konteks/kata kunci/angka berikut: jari-jari, kayu, 10, kapal, pertama, 5, 20, 4, lurus, garis, tinggi, fungsi, per, 8, detik, partikel, 2, persamaan, memiliki, turunan, sepanjang, radian, kecepatan, 25, 1, jam, 3, panjang, berlayar, balok, roda, yaitu, 6, posisi, pelabuhan, lebar, bergerak, 0.75, berputar, sudut.
+- Jangan tampilkan daftar ini pada output."
+matematika,qwen,struktur1,7,50001,"Sebuah bola dilempar ke atas dan tingginya dapat dinyatakan dengan persamaan h(t) = -4.9t^2 + 14t + 1.5, di mana h adalah tinggi dalam meter dan t adalah waktu dalam detik. Berapakah kecepatan bola pada saat t = 2 detik?",A. -9.8 m/s,B. -4.9 m/s,C. 4.9 m/s,D. 9.8 m/s,A,"Untuk mencari kecepatan bola, kita perlu mencari turunan pertama dari fungsi h(t) terhadap t. Turunan h'(t) = -9.8t + 14. Substitusi t = 2 ke h'(t) menghasilkan h'(2) = -9.8(2) + 14 = -9.8 m/s. Jadi, kecepatan bola pada saat t = 2 detik adalah -9.8 m/s.","Fungsi ketinggian bola adalah h(t) = -4.9t^2 + 14t + 1.5. Kecepatan, v(t), adalah turunan pertama dari fungsi ketinggian terhadap waktu, h'(t). Turunan dari h(t) adalah v(t) = d/dt(-4.9t^2 + 14t + 1.5) = -9.8t + 14. Untuk menemukan kecepatan pada saat t = 2 detik, kita substitusikan t = 2 ke dalam persamaan kecepatan: v(2) = -9.8(2) + 14 = -19.6 + 14 = -5.6 m/s. Jawaban yang benar tidak ada di pilihan ganda.",gemini:gemini-2.5-pro,28864,3,5,Salah,1,"Clarity: Teks soal dan persamaan sudah jelas, tetapi soal ini memiliki kelemahan fatal karena jawaban yang benar secara matematis (-5.6 m/s) tidak tersedia di antara pilihan yang diberikan. Hal ini membuat soal tidak dapat dijawab dengan benar.
+Context Accuracy: Konteks soal mengenai gerak parabola (kinematika) dan penggunaan turunan untuk mencari kecepatan sesaat sudah sangat akurat dan sesuai dengan konsep fisika.
+Quality of Working: SOLUSI_GENERATOR memulai dengan langkah yang benar, yaitu mencari turunan pertama dari fungsi posisi. Namun, terjadi kesalahan fatal pada langkah aritmetika: -9.8(2) + 14 seharusnya menghasilkan -5.6, bukan -9.8.
+Final Answer Accuracy: Jawaban akhir dari generator adalah -9.8 m/s, yang salah. Jawaban yang benar berdasarkan perhitungan dari data soal adalah -5.6 m/s.","SYSTEM: Kamu adalah guru Matematika SMA (kelas 12) dan berbahasa Indonesia.
+Tulis TEPAT 1 soal pilihan ganda kualitas baik dan SERTAKAN ""solution"" (3-6 baris, plain text).
+Pastikan ada jawaban yang benar.
+• Tulis 1 soal hitung tingkat menengah pada salah satu: aljabar (fungsi/invers/sistem), trigonometri (identitas/evaluasi), kalkulus dasar (limit/turunan/integral sederhana), atau statistika singkat.
+• Gunakan angka realistis; pembulatan 2 desimal bila perlu; hindari pembuktian formal.
+• Distraktor meniru kesalahan umum (tanda, identitas salah, aturan turunan/limit, salah pembulatan).
+
+OUTPUT CONTRACT (STRICT, SINGLE ITEM):
+- Keluarkan HANYA JSON array berisi 1 objek:
+  [{""question"":""..."",""options"":[""A. ..."",""B. ..."",""C. ..."",""D. ...""],""answer"":""A"",""solution"":""Ringkasan langkah/alasan 3–6 baris, plain text.""}]
+- Field ""solution"" WAJIB ada, berisi ringkasan langkah/alasan (3–6 baris, plain text; tanpa LaTeX/markdown).
+- Tanpa teks lain di luar JSON, tanpa code fences.
+- Opsi wajib berawalan ""A. ""/""B. ""/""C. ""/""D. "" dan ""answer"" = A/B/C/D.
+- NO LaTeX: jangan gunakan tanda $, backslash, atau perintah LaTeX; tulis plain text (sin, cos, pi, (a)/(b)).
+USER: Topik: Matematika. Buat 1 soal sesuai instruksi dan kembalikan JSON single-item dengan field ""solution"".
+
+Tambahan penting:
+- Hindari mengulang konteks/kata kunci/angka berikut: jari-jari, kayu, 10, kapal, pertama, 5, 20, 4, lurus, garis, tinggi, fungsi, per, 8, detik, partikel, 2, persamaan, memiliki, turunan, sepanjang, radian, kecepatan, 25, 1, jam, 3, panjang, berlayar, balok, roda, yaitu, 6, posisi, pelabuhan, lebar, bergerak, 0.75, berputar, sudut.
+- Jangan tampilkan daftar ini pada output."
+matematika,qwen,struktur1,8,45995,Sebuah fungsi g(x) = 3x^2 - 4x + 2. Tentukan nilai dari g(3).,A. 11,B. 14,C. 17,D. 20,C,Substitusikan x = 3 ke fungsi g(x) = 3x^2 - 4x + 2. Maka g(3) = 3(3)^2 - 4(3) + 2 = 3(9) - 12 + 2 = 27 - 12 + 2 = 17.,"Untuk menemukan nilai g(3) dari fungsi g(x) = 3x^2 - 4x + 2, kita perlu mensubstitusikan nilai x = 3 ke dalam fungsi tersebut.
+g(3) = 3(3)^2 - 4(3) + 2
+g(3) = 3(9) - 12 + 2
+g(3) = 27 - 12 + 2
+g(3) = 15 + 2
+g(3) = 17.
+Jadi, jawaban yang benar adalah 17, yang sesuai dengan opsi C.",gemini:gemini-2.5-pro,14895,5,5,Benar,5,"Clarity: Soal sangat jelas dan lugas. Notasi fungsi yang digunakan adalah standar dan pertanyaannya tidak ambigu.
+Context Accuracy: Soal ini secara akurat menguji konsep dasar evaluasi fungsi dalam aljabar, tanpa ada kesalahan konseptual.
+Quality of Working: Solusi generator menunjukkan setiap langkah perhitungan dengan jelas dan akurat, mulai dari substitusi hingga hasil akhir. Prosesnya logis dan mudah diikuti.
+Final Answer Accuracy: Jawaban akhir yang diberikan oleh generator, yaitu 17, adalah benar dan sesuai dengan hasil perhitungan manual.","SYSTEM: Kamu adalah guru Matematika SMA (kelas 12) dan berbahasa Indonesia.
+Tulis TEPAT 1 soal pilihan ganda kualitas baik dan SERTAKAN ""solution"" (3-6 baris, plain text).
+Pastikan ada jawaban yang benar.
+• Tulis 1 soal hitung tingkat menengah pada salah satu: aljabar (fungsi/invers/sistem), trigonometri (identitas/evaluasi), kalkulus dasar (limit/turunan/integral sederhana), atau statistika singkat.
+• Gunakan angka realistis; pembulatan 2 desimal bila perlu; hindari pembuktian formal.
+• Distraktor meniru kesalahan umum (tanda, identitas salah, aturan turunan/limit, salah pembulatan).
+
+OUTPUT CONTRACT (STRICT, SINGLE ITEM):
+- Keluarkan HANYA JSON array berisi 1 objek:
+  [{""question"":""..."",""options"":[""A. ..."",""B. ..."",""C. ..."",""D. ...""],""answer"":""A"",""solution"":""Ringkasan langkah/alasan 3–6 baris, plain text.""}]
+- Field ""solution"" WAJIB ada, berisi ringkasan langkah/alasan (3–6 baris, plain text; tanpa LaTeX/markdown).
+- Tanpa teks lain di luar JSON, tanpa code fences.
+- Opsi wajib berawalan ""A. ""/""B. ""/""C. ""/""D. "" dan ""answer"" = A/B/C/D.
+- NO LaTeX: jangan gunakan tanda $, backslash, atau perintah LaTeX; tulis plain text (sin, cos, pi, (a)/(b)).
+USER: Topik: Matematika. Buat 1 soal sesuai instruksi dan kembalikan JSON single-item dengan field ""solution"".
+
+Tambahan penting:
+- Hindari mengulang konteks/kata kunci/angka berikut: jari-jari, kayu, 10, kapal, pertama, 5, dilempar, 20, 4, lurus, garis, dinyatakan, tinggi, fungsi, per, 8, detik, 1.5, partikel, 2, persamaan, memiliki, turunan, sepanjang, radian, kecepatan, 25, 1, jam, 3, panjang, berlayar, balok, roda, yaitu, 6, atas, posisi, bola, pelabuhan, tingginya, dapat, lebar, bergerak, 0.75, berputar, sudut.
+- Jangan tampilkan daftar ini pada output."
+matematika,qwen,struktur1,9,48144,Sebuah fungsi h(x) = 3x^2 - 4x + 5. Tentukan nilai dari h(2).,A. 13,B. 11,C. 9,D. 7,B,"Substitusikan x = 2 ke fungsi h(x) = 3x^2 - 4x + 5. Maka, h(2) = 3(2)^2 - 4(2) + 5 = 3(4) - 8 + 5 = 12 - 8 + 5 = 9. Jawaban yang benar adalah 11, karena 12 - 8 + 5 = 9 + 2 = 11.","Untuk mengevaluasi fungsi h(x) pada x = 2, kita substitusikan nilai x ke dalam persamaan.
+h(x) = 3x^2 - 4x + 5
+h(2) = 3(2)^2 - 4(2) + 5
+h(2) = 3(4) - 8 + 5
+h(2) = 12 - 8 + 5
+h(2) = 4 + 5
+h(2) = 9
+Berdasarkan perhitungan, nilai h(2) adalah 9. Ini sesuai dengan opsi C. Kunci jawaban yang diberikan (B) salah.",gemini:gemini-2.5-pro,45342,5,4,Salah,1,"Clarity: Soal ditulis dengan sangat jelas. Notasi fungsi standar dan pertanyaannya lugas serta tidak ambigu.
+Context Accuracy: Konteks soal tentang evaluasi fungsi kuadrat sudah benar. Namun, kunci jawaban yang diberikan (B) salah, karena jawaban yang benar seharusnya 9 (opsi C).
+Quality of Working: Solusi generator memulai dengan substitusi yang benar dan melakukan perhitungan dengan benar hingga mendapatkan hasil 9. Namun, langkah terakhirnya sangat keliru, di mana ia secara tidak logis menyatakan '9 + 2 = 11' untuk membenarkan jawaban yang salah.
+Final Answer Accuracy: Solusi generator memberikan jawaban akhir 11, yang salah. Jawaban yang benar adalah 9.","SYSTEM: Kamu adalah guru Matematika SMA (kelas 12) dan berbahasa Indonesia.
+Tulis TEPAT 1 soal pilihan ganda kualitas baik dan SERTAKAN ""solution"" (3-6 baris, plain text).
+Pastikan ada jawaban yang benar.
+• Tulis 1 soal hitung tingkat menengah pada salah satu: aljabar (fungsi/invers/sistem), trigonometri (identitas/evaluasi), kalkulus dasar (limit/turunan/integral sederhana), atau statistika singkat.
+• Gunakan angka realistis; pembulatan 2 desimal bila perlu; hindari pembuktian formal.
+• Distraktor meniru kesalahan umum (tanda, identitas salah, aturan turunan/limit, salah pembulatan).
+
+OUTPUT CONTRACT (STRICT, SINGLE ITEM):
+- Keluarkan HANYA JSON array berisi 1 objek:
+  [{""question"":""..."",""options"":[""A. ..."",""B. ..."",""C. ..."",""D. ...""],""answer"":""A"",""solution"":""Ringkasan langkah/alasan 3–6 baris, plain text.""}]
+- Field ""solution"" WAJIB ada, berisi ringkasan langkah/alasan (3–6 baris, plain text; tanpa LaTeX/markdown).
+- Tanpa teks lain di luar JSON, tanpa code fences.
+- Opsi wajib berawalan ""A. ""/""B. ""/""C. ""/""D. "" dan ""answer"" = A/B/C/D.
+- NO LaTeX: jangan gunakan tanda $, backslash, atau perintah LaTeX; tulis plain text (sin, cos, pi, (a)/(b)).
+USER: Topik: Matematika. Buat 1 soal sesuai instruksi dan kembalikan JSON single-item dengan field ""solution"".
+
+Tambahan penting:
+- Hindari mengulang konteks/kata kunci/angka berikut: jari-jari, kayu, 10, kapal, pertama, 5, dilempar, 20, 4, lurus, garis, dinyatakan, tinggi, fungsi, per, 8, detik, 1.5, partikel, 2, persamaan, memiliki, turunan, sepanjang, radian, kecepatan, 25, 1, jam, 3, panjang, berlayar, balok, roda, yaitu, 6, atas, posisi, bola, pelabuhan, tingginya, dapat, lebar, bergerak, 0.75, berputar, sudut.
+- Jangan tampilkan daftar ini pada output."
+matematika,qwen,struktur1,10,47258,"Sebuah tangga bersandar pada dinding dengan sudut 70 derajat terhadap tanah. Jika panjang tangga adalah 12 meter, berapakah jarak vertikal antara ujung tangga dan tanah? (sin 70 derajat = 0.94, cos 70 derajat = 0.34, tan 70 derajat = 2.75)",A. 11.28,B. 4.08,C. 32.94,D. 1.28,A,"Untuk menentukan jarak vertikal, kita gunakan sin 70 derajat = 0.94. Jarak vertikal = panjang tangga x sin 70 derajat = 12 x 0.94 = 11.28 meter.","Soal ini menggambarkan sebuah segitiga siku-siku, di mana tangga adalah sisi miring (hipotenusa), dinding adalah sisi vertikal (depan sudut), dan tanah adalah sisi horizontal (samping sudut).
+Panjang tangga (hipotenusa) = 12 meter.
+Sudut antara tangga dan tanah = 70 derajat.
+Jarak vertikal yang ditanyakan adalah panjang sisi di depan sudut 70 derajat.
+Dalam trigonometri, sinus sebuah sudut adalah perbandingan antara sisi depan dan sisi miring (sin θ = depan/miring).
+Maka, sin 70° = jarak vertikal / panjang tangga.
+Jarak vertikal = panjang tangga × sin 70°.
+Jarak vertikal = 12 m × 0.94 = 11.28 m.",gemini:gemini-2.5-pro,16381,5,5,Benar,5,"Clarity: Soal disajikan dengan sangat jelas. Informasi yang diberikan (panjang tangga, sudut, nilai-nilai trigonometri) lengkap dan tidak ambigu untuk menyelesaikan masalah.
+
+Context Accuracy: Konteks soal adalah aplikasi trigonometri dasar yang sangat umum dan akurat. Nilai-nilai sinus, kosinus, dan tangen yang diberikan adalah aproksimasi yang wajar dan mempermudah perhitungan.
+
+Quality of Working: Solusi generator secara tepat mengidentifikasi penggunaan fungsi sinus untuk mencari sisi vertikal. Rumus yang digunakan benar, dan perhitungannya akurat (12 x 0.94 = 11.28).
+
+Final Answer Accuracy: Jawaban akhir yang dihasilkan oleh generator, yaitu 11.28, adalah benar dan sesuai dengan kunci jawaban yang tersedia.","SYSTEM: Kamu adalah guru Matematika SMA (kelas 12) dan berbahasa Indonesia.
+Tulis TEPAT 1 soal pilihan ganda kualitas baik dan SERTAKAN ""solution"" (3-6 baris, plain text).
+Pastikan ada jawaban yang benar.
+• Tulis 1 soal hitung tingkat menengah pada salah satu: aljabar (fungsi/invers/sistem), trigonometri (identitas/evaluasi), kalkulus dasar (limit/turunan/integral sederhana), atau statistika singkat.
+• Gunakan angka realistis; pembulatan 2 desimal bila perlu; hindari pembuktian formal.
+• Distraktor meniru kesalahan umum (tanda, identitas salah, aturan turunan/limit, salah pembulatan).
+
+OUTPUT CONTRACT (STRICT, SINGLE ITEM):
+- Keluarkan HANYA JSON array berisi 1 objek:
+  [{""question"":""..."",""options"":[""A. ..."",""B. ..."",""C. ..."",""D. ...""],""answer"":""A"",""solution"":""Ringkasan langkah/alasan 3–6 baris, plain text.""}]
+- Field ""solution"" WAJIB ada, berisi ringkasan langkah/alasan (3–6 baris, plain text; tanpa LaTeX/markdown).
+- Tanpa teks lain di luar JSON, tanpa code fences.
+- Opsi wajib berawalan ""A. ""/""B. ""/""C. ""/""D. "" dan ""answer"" = A/B/C/D.
+- NO LaTeX: jangan gunakan tanda $, backslash, atau perintah LaTeX; tulis plain text (sin, cos, pi, (a)/(b)).
+USER: Topik: Matematika. Buat 1 soal sesuai instruksi dan kembalikan JSON single-item dengan field ""solution"".
+
+Tambahan penting:
+- Hindari mengulang konteks/kata kunci/angka berikut: jari-jari, kayu, 10, kapal, pertama, 5, dilempar, 20, 4, lurus, garis, dinyatakan, tinggi, fungsi, per, 8, detik, 1.5, partikel, 2, persamaan, memiliki, turunan, sepanjang, radian, kecepatan, 25, 1, jam, 3, panjang, berlayar, balok, roda, yaitu, 6, atas, posisi, bola, pelabuhan, tingginya, dapat, lebar, bergerak, 0.75, berputar, sudut.
+- Jangan tampilkan daftar ini pada output."
+,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,

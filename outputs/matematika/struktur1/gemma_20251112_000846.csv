@@ -1,0 +1,273 @@
+topic,model,struktur,index,latency_model_ms,question,optionA,optionB,optionC,optionD,answer,solution_model,solution_verifier,verifier_model,latency_verifier_ms,clarity,context_accuracy,final_answer_accuracy,quality_of_working,judge_notes,prompt_generator
+matematika,gemma,struktur1,2,2771,Nilai dari lim (x->2) (x^2 - 4) / (x - 2) adalah ...,A. 4,B. 2,C. 0,D. Tidak ada,A,"Kita bisa langsung substitusikan x = 2 ke dalam fungsi. Hasilnya (2^2 - 4)/(2 - 2) = 0/0. Bentuk tak tentu ini bisa diselesaikan dengan pemfaktoran: (x^2 - 4) = (x-2)(x+2). Sehingga, limitnya menjadi lim (x->2) (x-2)(x+2)/(x-2) = lim (x->2) (x+2) = 2+2 = 4.","Soal ini meminta nilai dari lim (x->2) (x^2 - 4) / (x - 2).
+Langkah pertama adalah substitusi langsung x = 2, yang menghasilkan (2^2 - 4) / (2 - 2) = 0/0. Ini adalah bentuk tak tentu.
+Untuk menyelesaikannya, kita faktorkan pembilangnya: x^2 - 4 = (x - 2)(x + 2).
+Limitnya menjadi lim (x->2) [(x - 2)(x + 2)] / (x - 2).
+Karena x mendekati 2 tetapi tidak sama dengan 2, kita bisa membatalkan faktor (x - 2).
+Limitnya menjadi lim (x->2) (x + 2).
+Sekarang kita substitusikan x = 2 ke dalam ekspresi yang disederhanakan: 2 + 2 = 4.
+Hasilnya adalah 4.",gemini:gemini-2.5-pro,22453,5.0,5.0,Benar,5.0,"Clarity: Soal ditulis dengan notasi matematika yang standar dan jelas. Pertanyaan dan pilihan jawaban tidak ambigu sama sekali.
+Context Accuracy: Soal ini adalah contoh soal limit fungsi aljabar yang sangat fundamental dan akurat secara konseptual dalam kalkulus.
+Quality of Working: Solusi generator menyajikan metode yang benar dan efisien. Langkah-langkahnya logis, mulai dari substitusi, identifikasi bentuk tak tentu, pemfaktoran, penyederhanaan, hingga evaluasi akhir. Semua perhitungan benar.
+Final Answer Accuracy: Jawaban akhir yang dihasilkan oleh generator, yaitu 4, adalah benar.","SYSTEM: Kamu adalah guru Matematika SMA (kelas 12) dan berbahasa Indonesia.
+Tulis TEPAT 1 soal pilihan ganda kualitas baik dan SERTAKAN ""solution"" (3-6 baris, plain text).
+Pastikan ada jawaban yang benar.
+• Tulis 1 soal hitung tingkat menengah pada salah satu: aljabar (fungsi/invers/sistem), trigonometri (identitas/evaluasi), kalkulus dasar (limit/turunan/integral sederhana), atau statistika singkat.
+• Gunakan angka realistis; pembulatan 2 desimal bila perlu; hindari pembuktian formal.
+• Distraktor meniru kesalahan umum (tanda, identitas salah, aturan turunan/limit, salah pembulatan).
+
+OUTPUT CONTRACT (STRICT, SINGLE ITEM):
+- Keluarkan HANYA JSON array berisi 1 objek:
+  [{""question"":""..."",""options"":[""A. ..."",""B. ..."",""C. ..."",""D. ...""],""answer"":""A"",""solution"":""Ringkasan langkah/alasan 3–6 baris, plain text.""}]
+- Field ""solution"" WAJIB ada, berisi ringkasan langkah/alasan (3–6 baris, plain text; tanpa LaTeX/markdown).
+- Tanpa teks lain di luar JSON, tanpa code fences.
+- Opsi wajib berawalan ""A. ""/""B. ""/""C. ""/""D. "" dan ""answer"" = A/B/C/D.
+- NO LaTeX: jangan gunakan tanda $, backslash, atau perintah LaTeX; tulis plain text (sin, cos, pi, (a)/(b)).
+USER: Topik: Matematika. Buat 1 soal sesuai instruksi dan kembalikan JSON single-item dengan field ""solution""."
+matematika,gemma,struktur1,6,2152,Turunan dari fungsi f(x) = 3x<sup>3</sup> - 5x<sup>2</sup> + 7x adalah ...,A. 9x<sup>2</sup> - 10x + 7,B. 9x<sup>3</sup> - 10x<sup>2</sup> + 7x,C. 3x<sup>3</sup> - 5x<sup>2</sup> + 7,D. 6x<sup>2</sup> - 10x + 7,A,"Turunan x<sup>n</sup> adalah nx<sup>n-1</sup>. Maka, turunan f(x) adalah (3)(3)x<sup>3-1</sup> - (5)(2)x<sup>2-1</sup> + (7)(1)x<sup>1-1</sup> = 9x<sup>2</sup> - 10x + 7.","Untuk mencari turunan dari fungsi f(x) = 3x³ - 5x² + 7x, digunakan aturan pangkat d/dx(axⁿ) = n·a·xⁿ⁻¹ pada setiap suku.
+Turunan dari 3x³ adalah (3)(3)x³⁻¹ = 9x².
+Turunan dari -5x² adalah (2)(-5)x²⁻¹ = -10x.
+Turunan dari 7x adalah (1)(7)x¹⁻¹ = 7x⁰ = 7.
+Dengan menggabungkan semua suku, turunan fungsinya adalah f'(x) = 9x² - 10x + 7.",gemini:gemini-2.5-pro,24339,5.0,5.0,Benar,5.0,"Clarity: Soal ditulis dengan sangat jelas menggunakan notasi fungsi standar. Pertanyaan dan opsi pilihan ganda tidak ambigu.
+Context Accuracy: Soal ini secara akurat menguji konsep dasar turunan fungsi polinomial dalam kalkulus. Tidak ada kesalahan atau kontradiksi konseptual.
+Quality of Working: Solusi generator secara ringkas dan tepat menjelaskan aturan pangkat yang digunakan, menerapkannya dengan benar pada setiap suku, dan melakukan perhitungan tanpa kesalahan.
+Final Answer Accuracy: Jawaban akhir yang diberikan oleh solusi generator adalah benar dan sesuai dengan hasil perhitungan manual.","SYSTEM: Kamu adalah guru Matematika SMA (kelas 12) dan berbahasa Indonesia.
+Tulis TEPAT 1 soal pilihan ganda kualitas baik dan SERTAKAN ""solution"" (3-6 baris, plain text).
+Pastikan ada jawaban yang benar.
+• Tulis 1 soal hitung tingkat menengah pada salah satu: aljabar (fungsi/invers/sistem), trigonometri (identitas/evaluasi), kalkulus dasar (limit/turunan/integral sederhana), atau statistika singkat.
+• Gunakan angka realistis; pembulatan 2 desimal bila perlu; hindari pembuktian formal.
+• Distraktor meniru kesalahan umum (tanda, identitas salah, aturan turunan/limit, salah pembulatan).
+
+OUTPUT CONTRACT (STRICT, SINGLE ITEM):
+- Keluarkan HANYA JSON array berisi 1 objek:
+  [{""question"":""..."",""options"":[""A. ..."",""B. ..."",""C. ..."",""D. ...""],""answer"":""A"",""solution"":""Ringkasan langkah/alasan 3–6 baris, plain text.""}]
+- Field ""solution"" WAJIB ada, berisi ringkasan langkah/alasan (3–6 baris, plain text; tanpa LaTeX/markdown).
+- Tanpa teks lain di luar JSON, tanpa code fences.
+- Opsi wajib berawalan ""A. ""/""B. ""/""C. ""/""D. "" dan ""answer"" = A/B/C/D.
+- NO LaTeX: jangan gunakan tanda $, backslash, atau perintah LaTeX; tulis plain text (sin, cos, pi, (a)/(b)).
+USER: Topik: Matematika. Buat 1 soal sesuai instruksi dan kembalikan JSON single-item dengan field ""solution"".
+
+Tambahan penting:
+- Hindari mengulang konteks/kata kunci/angka berikut: lim, 2, 4.
+- Jangan tampilkan daftar ini pada output."
+matematika,gemma,struktur1,7,2003,Nilai dari cos(150°) adalah ...,A. -√3/2,B. √3/2,C. -1/2,D. 1/2,A,cos(150°) berada pada kuadran II dimana cosinus bernilai negatif. cos(150°) = cos(180° - 30°) = -cos(30°) = -√3/2,"Untuk menghitung nilai cos(150°), kita perlu mengidentifikasi kuadrannya. Sudut 150° berada di Kuadran II. Di Kuadran II, nilai cosinus adalah negatif.
+Kita bisa menggunakan rumus relasi sudut: cos(180° - α) = -cos(α).
+Maka, cos(150°) = cos(180° - 30°).
+Ini sama dengan -cos(30°).
+Nilai dari cos(30°) adalah √3/2.
+Jadi, nilai dari cos(150°) adalah -√3/2.",gemini:gemini-2.5-pro,86323,5.0,5.0,Benar,5.0,"Clarity: Soal sangat jelas, singkat, dan menggunakan notasi matematika yang standar. Opsi jawaban juga disajikan dengan jelas.
+Context Accuracy: Soal ini adalah pertanyaan dasar trigonometri yang akurat secara konsep. Tidak ada ambiguitas atau kesalahan kontekstual.
+Quality of Working: Solusi generator memberikan penjelasan yang ringkas namun lengkap. Langkah-langkahnya logis, dimulai dari identifikasi kuadran, penerapan rumus relasi sudut, hingga substitusi nilai yang benar.
+Final Answer Accuracy: Jawaban akhir yang diberikan oleh generator, yaitu -√3/2, adalah benar dan sesuai dengan perhitungan.","SYSTEM: Kamu adalah guru Matematika SMA (kelas 12) dan berbahasa Indonesia.
+Tulis TEPAT 1 soal pilihan ganda kualitas baik dan SERTAKAN ""solution"" (3-6 baris, plain text).
+Pastikan ada jawaban yang benar.
+• Tulis 1 soal hitung tingkat menengah pada salah satu: aljabar (fungsi/invers/sistem), trigonometri (identitas/evaluasi), kalkulus dasar (limit/turunan/integral sederhana), atau statistika singkat.
+• Gunakan angka realistis; pembulatan 2 desimal bila perlu; hindari pembuktian formal.
+• Distraktor meniru kesalahan umum (tanda, identitas salah, aturan turunan/limit, salah pembulatan).
+
+OUTPUT CONTRACT (STRICT, SINGLE ITEM):
+- Keluarkan HANYA JSON array berisi 1 objek:
+  [{""question"":""..."",""options"":[""A. ..."",""B. ..."",""C. ..."",""D. ...""],""answer"":""A"",""solution"":""Ringkasan langkah/alasan 3–6 baris, plain text.""}]
+- Field ""solution"" WAJIB ada, berisi ringkasan langkah/alasan (3–6 baris, plain text; tanpa LaTeX/markdown).
+- Tanpa teks lain di luar JSON, tanpa code fences.
+- Opsi wajib berawalan ""A. ""/""B. ""/""C. ""/""D. "" dan ""answer"" = A/B/C/D.
+- NO LaTeX: jangan gunakan tanda $, backslash, atau perintah LaTeX; tulis plain text (sin, cos, pi, (a)/(b)).
+USER: Topik: Matematika. Buat 1 soal sesuai instruksi dan kembalikan JSON single-item dengan field ""solution"".
+
+Tambahan penting:
+- Hindari mengulang konteks/kata kunci/angka berikut: 3, 2, lim, fungsi, 4, sup, turunan.
+- Jangan tampilkan daftar ini pada output."
+matematika,gemma,struktur1,8,2285,Nilai dari sin(60°) adalah ....,A. 0.87,B. 0.50,C. 0.71,D. 1.00,C,"Sin(60°) adalah nilai sin pada sudut 60 derajat. Nilai ini dapat diingat atau dicari dengan kalkulator. Sin(60°) = √3/2 = 0.866, dibulatkan menjadi 0.87.","Soal menanyakan nilai dari sin(60°).
+Ini adalah nilai trigonometri sudut istimewa.
+Nilai eksak dari sin(60°) adalah (√3)/2.
+Untuk mengubahnya ke desimal, kita gunakan aproksimasi √3 ≈ 1.732.
+Maka, sin(60°) ≈ 1.732 / 2 = 0.866.
+Jika dibulatkan ke dua angka desimal, hasilnya adalah 0.87.
+Dari opsi yang diberikan, jawaban yang paling mendekati adalah 0.87 (Opsi A).",gemini:gemini-2.5-pro,56859,5.0,2.0,Benar,5.0,"Clarity: Pertanyaan sangat jelas dan menggunakan notasi matematika standar. Opsi jawaban juga disajikan dengan jelas dalam bentuk desimal.
+
+Context Accuracy: Soal ini secara konsep benar, tetapi kunci jawaban yang diberikan (C) salah. Nilai sin(60°) adalah sekitar 0.87 (Opsi A), sedangkan 0.71 (Opsi C) adalah nilai untuk sin(45°). Kesalahan pada kunci jawaban membuat soal ini cacat.
+
+Quality of Working: Solusi generator secara akurat menyatakan bahwa sin(60°) = √3/2, menghitung nilai desimalnya dengan benar (0.866), dan membulatkannya dengan tepat menjadi 0.87. Langkah-langkahnya logis dan benar.
+
+Final Answer Accuracy: Jawaban akhir dari generator adalah 0.87, yang merupakan nilai yang benar untuk sin(60°) dan sesuai dengan Opsi A. Jawaban ini benar secara matematis, meskipun bertentangan dengan kunci jawaban yang salah dari soal.","SYSTEM: Kamu adalah guru Matematika SMA (kelas 12) dan berbahasa Indonesia.
+Tulis TEPAT 1 soal pilihan ganda kualitas baik dan SERTAKAN ""solution"" (3-6 baris, plain text).
+Pastikan ada jawaban yang benar.
+• Tulis 1 soal hitung tingkat menengah pada salah satu: aljabar (fungsi/invers/sistem), trigonometri (identitas/evaluasi), kalkulus dasar (limit/turunan/integral sederhana), atau statistika singkat.
+• Gunakan angka realistis; pembulatan 2 desimal bila perlu; hindari pembuktian formal.
+• Distraktor meniru kesalahan umum (tanda, identitas salah, aturan turunan/limit, salah pembulatan).
+
+OUTPUT CONTRACT (STRICT, SINGLE ITEM):
+- Keluarkan HANYA JSON array berisi 1 objek:
+  [{""question"":""..."",""options"":[""A. ..."",""B. ..."",""C. ..."",""D. ...""],""answer"":""A"",""solution"":""Ringkasan langkah/alasan 3–6 baris, plain text.""}]
+- Field ""solution"" WAJIB ada, berisi ringkasan langkah/alasan (3–6 baris, plain text; tanpa LaTeX/markdown).
+- Tanpa teks lain di luar JSON, tanpa code fences.
+- Opsi wajib berawalan ""A. ""/""B. ""/""C. ""/""D. "" dan ""answer"" = A/B/C/D.
+- NO LaTeX: jangan gunakan tanda $, backslash, atau perintah LaTeX; tulis plain text (sin, cos, pi, (a)/(b)).
+USER: Topik: Matematika. Buat 1 soal sesuai instruksi dan kembalikan JSON single-item dengan field ""solution"".
+
+Tambahan penting:
+- Hindari mengulang konteks/kata kunci/angka berikut: 3, 2, lim, fungsi, 4, 150, sup, cos, turunan.
+- Jangan tampilkan daftar ini pada output."
+matematika,gemma,struktur1,9,1926,"Diketahui log<sub>5</sub>(x) = 2, nilai x adalah ...",A. 7,B. 10,C. 25,D. 5,C,"log<sub>5</sub>(x) = 2 berarti 5<sup>2</sup> = x. Jadi, x = 25.","Definisi dasar logaritma menyatakan bahwa jika logₐ(b) = c, maka ini ekuivalen dengan aᶜ = b.
+Menerapkan definisi ini pada soal log₅(x) = 2, kita mendapatkan:
+Basis (a) adalah 5.
+Pangkat (c) adalah 2.
+Hasil (b) adalah x.
+Sehingga, bentuk eksponensialnya adalah 5² = x.
+Dengan menghitung 5², kita mendapatkan x = 25.",gemini:gemini-2.5-pro,26804,5.0,5.0,Benar,5.0,"Clarity: Soal sangat jelas, menggunakan notasi matematika standar dan bahasa yang lugas tanpa ambiguitas.
+Context Accuracy: Soal ini secara akurat menguji konsep fundamental dari logaritma, yaitu hubungannya dengan eksponensial. Tidak ada kesalahan matematis.
+Quality of Working: Solusi generator sangat baik. Langkahnya singkat, langsung ke inti masalah dengan menerapkan definisi logaritma secara benar, dan menghasilkan jawaban yang tepat.
+Final Answer Accuracy: Jawaban akhir yang dihasilkan oleh generator, yaitu 25, adalah benar.","SYSTEM: Kamu adalah guru Matematika SMA (kelas 12) dan berbahasa Indonesia.
+Tulis TEPAT 1 soal pilihan ganda kualitas baik dan SERTAKAN ""solution"" (3-6 baris, plain text).
+Pastikan ada jawaban yang benar.
+• Tulis 1 soal hitung tingkat menengah pada salah satu: aljabar (fungsi/invers/sistem), trigonometri (identitas/evaluasi), kalkulus dasar (limit/turunan/integral sederhana), atau statistika singkat.
+• Gunakan angka realistis; pembulatan 2 desimal bila perlu; hindari pembuktian formal.
+• Distraktor meniru kesalahan umum (tanda, identitas salah, aturan turunan/limit, salah pembulatan).
+
+OUTPUT CONTRACT (STRICT, SINGLE ITEM):
+- Keluarkan HANYA JSON array berisi 1 objek:
+  [{""question"":""..."",""options"":[""A. ..."",""B. ..."",""C. ..."",""D. ...""],""answer"":""A"",""solution"":""Ringkasan langkah/alasan 3–6 baris, plain text.""}]
+- Field ""solution"" WAJIB ada, berisi ringkasan langkah/alasan (3–6 baris, plain text; tanpa LaTeX/markdown).
+- Tanpa teks lain di luar JSON, tanpa code fences.
+- Opsi wajib berawalan ""A. ""/""B. ""/""C. ""/""D. "" dan ""answer"" = A/B/C/D.
+- NO LaTeX: jangan gunakan tanda $, backslash, atau perintah LaTeX; tulis plain text (sin, cos, pi, (a)/(b)).
+USER: Topik: Matematika. Buat 1 soal sesuai instruksi dan kembalikan JSON single-item dengan field ""solution"".
+
+Tambahan penting:
+- Hindari mengulang konteks/kata kunci/angka berikut: sin, 3, 2, lim, fungsi, 4, 150, sup, cos, turunan, 60.
+- Jangan tampilkan daftar ini pada output."
+matematika,gemma,struktur1,10,2666,Nilai dari ractan 75°tan 15° adalah ...,A. 1,B. -1,C. 2,D. -2,C,"Kita gunakan identitas trigonometri: tan(A) = tan(90° - A). Sehingga tan 75° = tan(90° - 15°) = tan 15°. Maka, tan 75°/tan 15° = tan 15°/tan 15° = 1.","Soal ini kemungkinan besar menanyakan nilai dari tan 75° * tan 15°.
+Dengan menggunakan identitas relasi sudut, tan(90° - α) = cot α.
+Maka, tan 75° dapat diubah menjadi tan(90° - 15°) = cot 15°.
+Sehingga, ekspresi matematika tersebut menjadi cot 15° * tan 15°.
+Karena cot α = 1/tan α, maka hasilnya adalah (1/tan 15°) * tan 15° = 1.
+Jawaban yang benar seharusnya adalah 1 (Opsi A), sedangkan kunci jawaban yang diberikan adalah C (nilai 2).",gemini:gemini-2.5-pro,50524,1.0,1.5,Salah,0.5,"Clarity: Stem soal mengandung typo 'ractan' yang membuat operasi matematika (perkalian, pembagian, atau fungsi lain) menjadi sangat tidak jelas dan ambigu.
+
+Context Accuracy: Kunci jawaban yang diberikan (C=2) secara matematis salah. Interpretasi paling logis dari soal, yaitu tan 75° * tan 15°, menghasilkan nilai 1. Terdapat kontradiksi antara soal dan kunci jawaban.
+
+Quality of Working: Solusi generator menggunakan identitas trigonometri yang salah fatal, yaitu `tan(A) = tan(90° - A)`. Identitas yang benar adalah `tan(A) = cot(90° - A)`. Kesalahan fundamental ini membuat seluruh penalarannya tidak valid.
+
+Final Answer Accuracy: Solusi generator menginterpretasikan soal sebagai pembagian (tan 75°/tan 15°) dan menyimpulkan hasilnya 1. Nilai yang benar untuk tan 75°/tan 15° bukanlah 1. Jadi, jawaban akhir generator salah berdasarkan alur kerjanya sendiri.","SYSTEM: Kamu adalah guru Matematika SMA (kelas 12) dan berbahasa Indonesia.
+Tulis TEPAT 1 soal pilihan ganda kualitas baik dan SERTAKAN ""solution"" (3-6 baris, plain text).
+Pastikan ada jawaban yang benar.
+• Tulis 1 soal hitung tingkat menengah pada salah satu: aljabar (fungsi/invers/sistem), trigonometri (identitas/evaluasi), kalkulus dasar (limit/turunan/integral sederhana), atau statistika singkat.
+• Gunakan angka realistis; pembulatan 2 desimal bila perlu; hindari pembuktian formal.
+• Distraktor meniru kesalahan umum (tanda, identitas salah, aturan turunan/limit, salah pembulatan).
+
+OUTPUT CONTRACT (STRICT, SINGLE ITEM):
+- Keluarkan HANYA JSON array berisi 1 objek:
+  [{""question"":""..."",""options"":[""A. ..."",""B. ..."",""C. ..."",""D. ...""],""answer"":""A"",""solution"":""Ringkasan langkah/alasan 3–6 baris, plain text.""}]
+- Field ""solution"" WAJIB ada, berisi ringkasan langkah/alasan (3–6 baris, plain text; tanpa LaTeX/markdown).
+- Tanpa teks lain di luar JSON, tanpa code fences.
+- Opsi wajib berawalan ""A. ""/""B. ""/""C. ""/""D. "" dan ""answer"" = A/B/C/D.
+- NO LaTeX: jangan gunakan tanda $, backslash, atau perintah LaTeX; tulis plain text (sin, cos, pi, (a)/(b)).
+USER: Topik: Matematika. Buat 1 soal sesuai instruksi dan kembalikan JSON single-item dengan field ""solution"".
+
+Tambahan penting:
+- Hindari mengulang konteks/kata kunci/angka berikut: sin, 3, 2, 5, lim, fungsi, 4, diketahui, 150, sup, cos, turunan, 60, sub, log.
+- Jangan tampilkan daftar ini pada output."
+matematika,gemma,struktur1,11,1759,Nilai dari ∫(2x + 1) dx adalah ...,A. x² + x + C,B. 2x² + x + C,C. x² + 2x + C,D. 4x + C,A,"Integral dari 2x adalah x², dan integral dari 1 adalah x. Jangan lupa tambahkan konstanta integrasi C.","Soal ini meminta untuk menyelesaikan integral tak tentu dari fungsi (2x + 1).
+Menggunakan sifat kelinearan integral, kita dapat memisahkan integral menjadi dua bagian:
+∫(2x + 1) dx = ∫2x dx + ∫1 dx.
+
+Menggunakan aturan pangkat untuk integral, ∫ax^n dx = (a/(n+1))x^(n+1):
+Untuk suku pertama, ∫2x dx = (2/(1+1))x^(1+1) = (2/2)x² = x².
+Untuk suku kedua, ∫1 dx = ∫x^0 dx = (1/(0+1))x^(0+1) = x.
+
+Menjumlahkan kedua hasil dan menambahkan konstanta integrasi C, kita mendapatkan:
+x² + x + C.
+Jawaban ini sesuai dengan opsi A.",gemini:gemini-2.5-pro,46185,5.0,5.0,Benar,5.0,"Clarity: Soal sangat jelas dan menggunakan notasi matematika yang standar untuk integral tak tentu. Pertanyaan dan pilihan jawaban tidak ambigu sama sekali.
+Context Accuracy: Soal ini adalah contoh fundamental dan akurat dari konsep dasar kalkulus integral. Konteksnya sangat sesuai untuk evaluasi pemahaman integral polinomial sederhana.
+Quality of Working: Solusi generator memberikan penjelasan yang ringkas, tepat, dan benar. Ia memecah masalah menjadi bagian-bagiannya (integral dari 2x dan integral dari 1) dan secara akurat menyatakan hasilnya, termasuk pengingat penting untuk menambahkan konstanta C.
+Final Answer Accuracy: Penjelasan pada solusi generator mengarah pada jawaban yang benar (x² + x + C), yang sesuai dengan kunci jawaban yang diberikan (A).","SYSTEM: Kamu adalah guru Matematika SMA (kelas 12) dan berbahasa Indonesia.
+Tulis TEPAT 1 soal pilihan ganda kualitas baik dan SERTAKAN ""solution"" (3-6 baris, plain text).
+Pastikan ada jawaban yang benar.
+• Tulis 1 soal hitung tingkat menengah pada salah satu: aljabar (fungsi/invers/sistem), trigonometri (identitas/evaluasi), kalkulus dasar (limit/turunan/integral sederhana), atau statistika singkat.
+• Gunakan angka realistis; pembulatan 2 desimal bila perlu; hindari pembuktian formal.
+• Distraktor meniru kesalahan umum (tanda, identitas salah, aturan turunan/limit, salah pembulatan).
+
+OUTPUT CONTRACT (STRICT, SINGLE ITEM):
+- Keluarkan HANYA JSON array berisi 1 objek:
+  [{""question"":""..."",""options"":[""A. ..."",""B. ..."",""C. ..."",""D. ...""],""answer"":""A"",""solution"":""Ringkasan langkah/alasan 3–6 baris, plain text.""}]
+- Field ""solution"" WAJIB ada, berisi ringkasan langkah/alasan (3–6 baris, plain text; tanpa LaTeX/markdown).
+- Tanpa teks lain di luar JSON, tanpa code fences.
+- Opsi wajib berawalan ""A. ""/""B. ""/""C. ""/""D. "" dan ""answer"" = A/B/C/D.
+- NO LaTeX: jangan gunakan tanda $, backslash, atau perintah LaTeX; tulis plain text (sin, cos, pi, (a)/(b)).
+USER: Topik: Matematika. Buat 1 soal sesuai instruksi dan kembalikan JSON single-item dengan field ""solution"".
+
+Tambahan penting:
+- Hindari mengulang konteks/kata kunci/angka berikut: diketahui, 15, sup, turunan, 60, 2, 5, tan, sub, log, sin, 3, fungsi, cos, ractan, 75, lim, 4, 150.
+- Jangan tampilkan daftar ini pada output."
+matematika,gemma,struktur1,12,2267,Nilai dari lim (x->2) (x^2 - 4) / (x - 2) adalah ...,A. 4,B. 2,C. 0,D. Tidak ada,A,"Kita bisa langsung substitusikan x = 2 ke dalam limit. Hasilnya (2^2 - 4) / (2 - 2) = 0/0. Bentuk ini tak tentu, jadi kita perlu manipulasi aljabar. Faktor frasa numerator: (x+2)(x-2). Limitnya menjadi lim (x->2) (x+2). Substitusikan x = 2, hasilnya 2+2 = 4.","Untuk menyelesaikan lim (x->2) (x^2 - 4) / (x - 2), pertama coba substitusi langsung x = 2. Ini menghasilkan (2^2 - 4) / (2 - 2) = 0/0, yang merupakan bentuk tak tentu. Oleh karena itu, kita perlu menyederhanakan ekspresi. Pembilang (x^2 - 4) adalah selisih dua kuadrat yang dapat difaktorkan menjadi (x - 2)(x + 2). Maka, limitnya menjadi lim (x->2) [(x - 2)(x + 2)] / (x - 2). Karena x mendekati 2 tetapi tidak sama dengan 2, kita bisa membatalkan faktor (x - 2). Ekspresi yang tersisa adalah lim (x->2) (x + 2). Sekarang, substitusikan x = 2 ke dalam ekspresi yang disederhanakan, hasilnya adalah 2 + 2 = 4.",gemini:gemini-2.5-pro,29359,5.0,5.0,Benar,5.0,"Clarity: Soal menggunakan notasi limit yang standar dan sangat jelas. Pertanyaan dan pilihan jawaban tidak ambigu.
+Context Accuracy: Soal ini adalah contoh klasik dan akurat untuk menguji pemahaman dasar tentang limit fungsi aljabar, khususnya penanganan bentuk tak tentu 0/0.
+Quality of Working: Solusi generator menunjukkan alur kerja yang logis dan benar. Dimulai dengan substitusi, identifikasi bentuk tak tentu, faktorisasi, penyederhanaan, dan substitusi akhir untuk mendapatkan jawaban.
+Final Answer Accuracy: Jawaban akhir yang diberikan oleh generator, yaitu 4, adalah benar.","SYSTEM: Kamu adalah guru Matematika SMA (kelas 12) dan berbahasa Indonesia.
+Tulis TEPAT 1 soal pilihan ganda kualitas baik dan SERTAKAN ""solution"" (3-6 baris, plain text).
+Pastikan ada jawaban yang benar.
+• Tulis 1 soal hitung tingkat menengah pada salah satu: aljabar (fungsi/invers/sistem), trigonometri (identitas/evaluasi), kalkulus dasar (limit/turunan/integral sederhana), atau statistika singkat.
+• Gunakan angka realistis; pembulatan 2 desimal bila perlu; hindari pembuktian formal.
+• Distraktor meniru kesalahan umum (tanda, identitas salah, aturan turunan/limit, salah pembulatan).
+
+OUTPUT CONTRACT (STRICT, SINGLE ITEM):
+- Keluarkan HANYA JSON array berisi 1 objek:
+  [{""question"":""..."",""options"":[""A. ..."",""B. ..."",""C. ..."",""D. ...""],""answer"":""A"",""solution"":""Ringkasan langkah/alasan 3–6 baris, plain text.""}]
+- Field ""solution"" WAJIB ada, berisi ringkasan langkah/alasan (3–6 baris, plain text; tanpa LaTeX/markdown).
+- Tanpa teks lain di luar JSON, tanpa code fences.
+- Opsi wajib berawalan ""A. ""/""B. ""/""C. ""/""D. "" dan ""answer"" = A/B/C/D.
+- NO LaTeX: jangan gunakan tanda $, backslash, atau perintah LaTeX; tulis plain text (sin, cos, pi, (a)/(b)).
+USER: Topik: Matematika. Buat 1 soal sesuai instruksi dan kembalikan JSON single-item dengan field ""solution"".
+
+Tambahan penting:
+- Hindari mengulang konteks/kata kunci/angka berikut: diketahui, 15, sup, turunan, 60, 2, 5, tan, sub, log, sin, 3, fungsi, cos, ractan, 1, 75, lim, 4, 150.
+- Jangan tampilkan daftar ini pada output."
+matematika,gemma,struktur1,14,3018,Sebuah perusahaan memproduksi x unit produk per minggu dengan biaya produksi sebesar (2x^2 + 10x + 50) ribu rupiah. Berapakah biaya produksi jika perusahaan memproduksi 8 unit produk per minggu?,A. 1700 ribu rupiah,B. 1600 ribu rupiah,C. 1500 ribu rupiah,D. 1400 ribu rupiah,A,Substitusikan x = 8 ke dalam persamaan biaya produksi: 2(8)^2 + 10(8) + 50 = 128 + 80 + 50 = 258 ribu rupiah.,"Soal ini meminta untuk menghitung biaya produksi untuk x = 8 unit.
+Fungsi biaya produksi adalah C(x) = 2x^2 + 10x + 50 dalam ribu rupiah.
+Substitusikan x = 8 ke dalam fungsi:
+C(8) = 2(8)^2 + 10(8) + 50
+C(8) = 2(64) + 80 + 50
+C(8) = 128 + 80 + 50
+C(8) = 258
+Jadi, biaya produksi adalah 258 ribu rupiah. Jawaban ini tidak ada di pilihan ganda yang disediakan.",gemini:gemini-2.5-pro,31334,5.0,1.0,Benar,5.0,"Clarity: Pertanyaan dan fungsi yang diberikan sangat jelas dan mudah dipahami. Tidak ada ambiguitas dalam instruksi.
+
+Context Accuracy: Konteks soal tentang biaya produksi adalah wajar. Namun, soal ini memiliki kelemahan fatal: jawaban yang benar (258 ribu rupiah) tidak tersedia di pilihan ganda. Selain itu, kunci jawaban yang diberikan (A. 1700) sama sekali tidak sesuai dengan hasil perhitungan, membuat soal ini tidak valid.
+
+Quality of Working: Solusi dari generator menunjukkan langkah-langkah yang benar dan akurat. Substitusi nilai x dan perhitungan aritmetikanya dilakukan dengan sempurna untuk mendapatkan hasil yang tepat berdasarkan rumus pada soal.
+
+Final Answer Accuracy: Jawaban akhir dari generator (258 ribu rupiah) adalah hasil perhitungan yang benar berdasarkan data pada soal. Meskipun jawaban ini tidak cocok dengan pilihan ganda atau kunci jawaban yang salah, generator telah menyelesaikan masalah matematisnya dengan benar.","SYSTEM: Kamu adalah guru Matematika SMA (kelas 12) dan berbahasa Indonesia.
+Tulis TEPAT 1 soal pilihan ganda kualitas baik dan SERTAKAN ""solution"" (3-6 baris, plain text).
+Pastikan ada jawaban yang benar.
+• Tulis 1 soal hitung tingkat menengah pada salah satu: aljabar (fungsi/invers/sistem), trigonometri (identitas/evaluasi), kalkulus dasar (limit/turunan/integral sederhana), atau statistika singkat.
+• Gunakan angka realistis; pembulatan 2 desimal bila perlu; hindari pembuktian formal.
+• Distraktor meniru kesalahan umum (tanda, identitas salah, aturan turunan/limit, salah pembulatan).
+
+OUTPUT CONTRACT (STRICT, SINGLE ITEM):
+- Keluarkan HANYA JSON array berisi 1 objek:
+  [{""question"":""..."",""options"":[""A. ..."",""B. ..."",""C. ..."",""D. ...""],""answer"":""A"",""solution"":""Ringkasan langkah/alasan 3–6 baris, plain text.""}]
+- Field ""solution"" WAJIB ada, berisi ringkasan langkah/alasan (3–6 baris, plain text; tanpa LaTeX/markdown).
+- Tanpa teks lain di luar JSON, tanpa code fences.
+- Opsi wajib berawalan ""A. ""/""B. ""/""C. ""/""D. "" dan ""answer"" = A/B/C/D.
+- NO LaTeX: jangan gunakan tanda $, backslash, atau perintah LaTeX; tulis plain text (sin, cos, pi, (a)/(b)).
+USER: Topik: Matematika. Buat 1 soal sesuai instruksi dan kembalikan JSON single-item dengan field ""solution"".
+
+Tambahan penting:
+- Hindari mengulang konteks/kata kunci/angka berikut: diketahui, 15, sup, turunan, 60, 2, 5, tan, sub, log, sin, 3, fungsi, cos, ractan, 1, 75, lim, 4, 150.
+- Jangan tampilkan daftar ini pada output."
+matematika,gemma,struktur1,16,2453,"Sebuah bola memiliki jari-jari yang bertambah 2 cm setiap detik. Berapa cm/detik laju volume bola setelah 10 detik? (π = 3,14)",A. 1256 cm³/detik,B. 2512 cm³/detik,C. 3140 cm³/detik,D. 5024 cm³/detik,B,"Volume bola = (4/3)πr³. Jari-jari setelah 10 detik = 2 * 10 = 20 cm. Volume setelah 10 detik = (4/3) * 3,14 * 20³. Jarak volume = (4/3) * 3,14 * 3 * 20² * 2 = 3216 cm³/detik.",,,,,,,,,"SYSTEM: Kamu adalah guru Matematika SMA (kelas 12) dan berbahasa Indonesia.
+Tulis TEPAT 1 soal pilihan ganda kualitas baik dan SERTAKAN ""solution"" (3-6 baris, plain text).
+Pastikan ada jawaban yang benar.
+• Tulis 1 soal hitung tingkat menengah pada salah satu: aljabar (fungsi/invers/sistem), trigonometri (identitas/evaluasi), kalkulus dasar (limit/turunan/integral sederhana), atau statistika singkat.
+• Gunakan angka realistis; pembulatan 2 desimal bila perlu; hindari pembuktian formal.
+• Distraktor meniru kesalahan umum (tanda, identitas salah, aturan turunan/limit, salah pembulatan).
+
+OUTPUT CONTRACT (STRICT, SINGLE ITEM):
+- Keluarkan HANYA JSON array berisi 1 objek:
+  [{""question"":""..."",""options"":[""A. ..."",""B. ..."",""C. ..."",""D. ...""],""answer"":""A"",""solution"":""Ringkasan langkah/alasan 3–6 baris, plain text.""}]
+- Field ""solution"" WAJIB ada, berisi ringkasan langkah/alasan (3–6 baris, plain text; tanpa LaTeX/markdown).
+- Tanpa teks lain di luar JSON, tanpa code fences.
+- Opsi wajib berawalan ""A. ""/""B. ""/""C. ""/""D. "" dan ""answer"" = A/B/C/D.
+- NO LaTeX: jangan gunakan tanda $, backslash, atau perintah LaTeX; tulis plain text (sin, cos, pi, (a)/(b)).
+USER: Topik: Matematika. Buat 1 soal sesuai instruksi dan kembalikan JSON single-item dengan field ""solution"".
+
+Tambahan penting:
+- Hindari mengulang konteks/kata kunci/angka berikut: diketahui, 15, sup, turunan, 60, 2, 5, 50, tan, memproduksi, sub, unit, produk, log, perusahaan, sin, 3, fungsi, cos, 8, ractan, 1, biaya, 75, lim, 4, 150, per, minggu.
+- Jangan tampilkan daftar ini pada output."

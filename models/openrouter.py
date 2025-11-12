@@ -12,6 +12,7 @@ class OpenRouterService(LlmModelService):
     Gunakan env:
       OPENROUTER_API_KEY
       OPENROUTER_MODEL_<ALIAS> (contoh: OPENROUTER_MODEL_QWEN, OPENROUTER_MODEL_GEMMA, OPENROUTER_MODEL_DEEPSEEK)
+      (opsional) OPENROUTER_REFERRER, OPENROUTER_APP_TITLE
     """
     def __init__(self, alias_env_suffix: str):
         self.alias = alias_env_suffix.upper()
@@ -23,10 +24,17 @@ class OpenRouterService(LlmModelService):
             raise RuntimeError("OPENROUTER_API_KEY belum di-set")
         self.name = f"openrouter:{self.alias}:{self.model}"
 
+        # header identitas (opsional tapi direkomendasikan; kalau kosong pakai default aman)
+        self._referer = os.getenv("OPENROUTER_REFERRER", "http://localhost")
+        self._app_title = os.getenv("OPENROUTER_APP_TITLE", "question_generation")
+
     def chat(self, messages: List[ChatMessage], *, temperature: float = 0.7) -> ChatOutput:
         headers = {
             "Authorization": f"Bearer {self.api_key}",
             "Content-Type": "application/json",
+            # ⬇⬇ Tambahan penting untuk menghindari 404 dari OpenRouter
+            "HTTP-Referer": self._referer,
+            "X-Title": self._app_title,
         }
         payload = {
             "model": self.model,
