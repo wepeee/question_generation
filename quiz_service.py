@@ -68,9 +68,9 @@ class QuizService:
                 messages[0] = {
                     **messages[0],
                     "content": messages[0]["content"] + """
-    STRICT FOR GEMINI:
-    - Output plain text JSON; jangan gunakan LaTeX ($ atau backslash).
-    - "solution" berupa langkah ringkas 3–6 baris, plain text."""
+STRICT FOR GEMINI:
+- Output plain-text JSON only; do not use LaTeX ($ or backslashes).
+- The "solution" must be 3–6 lines, plain text."""
                 }
             prompt_generator = "\n".join([f"{m['role'].upper()}: {m['content']}" for m in messages])
 

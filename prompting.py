@@ -1,38 +1,40 @@
-# QUESTION_GENERATION/prompting.py
-# English prompting & English outputs (keeps your existing keys: struktur1..3, matematika/biologi/fisika/kimia)
-
+# English-only prompting & outputs.
 from __future__ import annotations
-from typing import List, Literal, TypedDict, Optional
+from typing import List, TypedDict, Literal, Optional
 
-# Reuse the same keys you already pass around
 PromptStructKey = Literal["struktur1", "struktur2", "struktur3"]
-TopicKey = Literal["matematika", "biologi", "fisika", "kimia"]
+TopicKey = Literal["mathematics", "biology", "physics", "chemistry"]
 
-# Your LLM service expects {"role": "...", "content": "..."}
 class ChatMessage(TypedDict):
     role: Literal["system", "user"]
     content: str
 
-def topic_label(t: TopicKey) -> str:
+def _require_topic(t: str) -> TopicKey:
+    key = (t or "").strip().lower()
+    allowed: tuple[str, ...] = ("mathematics", "biology", "physics", "chemistry")
+    if key not in allowed:
+        raise ValueError(f"Unknown topic '{t}'. Use one of: {', '.join(allowed)}.")
+    return key  # type: ignore[return-value]
+
+def _topic_label(t: TopicKey) -> str:
     return {
-        "matematika": "Mathematics",
-        "biologi": "Biology",
-        "fisika": "Physics",
-        "kimia": "Chemistry",
+        "mathematics": "Mathematics",
+        "biology": "Biology",
+        "physics": "Physics",
+        "chemistry": "Chemistry",
     }[t]
 
 def build_messages_single(
     struct_key: PromptStructKey,
-    topic: TopicKey,
+    topic: str,
     avoid_terms: Optional[List[str]] = None,
 ) -> List[ChatMessage]:
-    """Builds English prompts with strict single-item JSON contract (English output)."""
+    """English prompts + strict single-item JSON (English output)."""
+    tkey = _require_topic(topic)
+    tlabel = _topic_label(tkey)
 
-    t = topic_label(topic)
-
-    # ===== SP / CoT / QC blocks in English =====
     blocks = {
-        "matematika": {
+        "mathematics": {
             "sp": (
                 "SP (Standard Prompting):\n"
                 "• Write 1 medium-difficulty computational MCQ from ONE of: algebra (functions/inverse/systems), "
@@ -41,27 +43,27 @@ def build_messages_single(
                 "• Distractors must reflect typical mistakes (sign errors, wrong identities, derivative/limit rules, rounding)."
             ),
             "cot": (
-                "CoT (few-shot style; hidden reasoning 2–3 steps):\n"
+                "CoT (few-shot style; hidden 2–3 steps):\n"
                 "• Perform multi-step reasoning INTERNALLY; do NOT reveal the steps.\n\n"
-                "Style example (analogous): system of linear equations → plan elimination/substitution → compute → choose option.\n"
-                "• Create a NEW problem of the same family (SLE, trig identity then evaluate angle, derivative then plug-in value, small-data statistics).\n"
-                "• Distractors should map to step errors (bad elimination, wrong identity, wrong derivative rule, wrong rounding)."
+                "Style example: plan elimination/substitution for a linear system → compute → choose option.\n"
+                "• Create a NEW problem of the same family (SLE, trig identity+evaluation, derivative+substitution, small-data stats).\n"
+                "• Distractors map to step errors (bad elimination, wrong identity, wrong derivative rule, wrong rounding)."
             ),
             "qc": (
-                "Quality Constraints (paper-aligned):\n"
+                "Quality Constraints:\n"
                 "• Clarity & notation: consistent symbols; specific stem; sufficient data.\n"
                 "• Difficulty target: medium (≤ 3 steps).\n"
-                "• Distractor effectiveness: three plausible distractors representing DIFFERENT misconceptions/step errors.\n"
+                "• Distractor effectiveness: three plausible distractors representing different misconceptions/step errors.\n"
                 "• Numerical hygiene: realistic result; 2-decimal rounding; consistent units/notation if any."
             ),
         },
-        "biologi": {
+        "biology": {
             "sp": (
                 "SP (Standard Prompting):\n"
                 "• Write 1 concise concept/application MCQ from: basic genetics (incl. Hardy–Weinberg), "
                 "cell/tissue structure–function, or short ecology.\n"
                 "• Use standard terminology; if arithmetic appears (e.g., allele frequency), keep numbers small and round to 2 decimals.\n"
-                "• Distractors reflect common misconceptions (dominance ≠ frequency, misreading ratios/diagrams, confusion about DNA→RNA→Protein)."
+                "• Distractors reflect common misconceptions (dominance ≠ frequency, misreading ratios/diagrams, DNA→RNA→Protein confusion)."
             ),
             "cot": (
                 "CoT (few-shot analogue; hidden 1–2 steps):\n"
@@ -71,14 +73,14 @@ def build_messages_single(
                 "• Distractors must be plausible and map to real misconceptions."
             ),
             "qc": (
-                "Quality Constraints (paper-aligned):\n"
+                "Quality Constraints:\n"
                 "• Clarity: standard terms; no ambiguous processes/structures; enough data for a single best answer.\n"
                 "• Difficulty target: medium (1–2 simple inferences/ratios).\n"
                 "• Distractor effectiveness: three plausible misconceptions.\n"
-                "• Consistency check: verify genotype–phenotype/energy–matter relations before finalizing the key."
+                "• Consistency check: verify genotype–phenotype or energy–matter relations before finalizing the key."
             ),
         },
-        "fisika": {
+        "physics": {
             "sp": (
                 "SP (Standard Prompting):\n"
                 "• Write 1 medium-level quantitative MCQ from: kinematics (uniform/accelerated/projectile), dynamics (Newton/incline), "
@@ -89,19 +91,19 @@ def build_messages_single(
             "cot": (
                 "CoT (few-shot; hidden 2–3 steps):\n"
                 "• Decompose quantities/equations INTERNALLY; do NOT show steps.\n\n"
-                "Style example (projectile): compute components; apply kinematic relation; recombine speed → choose option.\n"
+                "Style example (projectile): compute components; apply kinematic relations; recombine speed → choose option.\n"
                 "• Create a NEW item (projectile/incline/energy–impulse/circuit).\n"
                 "• Distractors = sin/cos swap, sign errors, wrong units."
             ),
             "qc": (
-                "Quality Constraints (paper-aligned):\n"
+                "Quality Constraints:\n"
                 "• Clarity & SI: explicit quantities and SI units; consistent symbols.\n"
                 "• Difficulty target: medium (2–3 steps).\n"
                 "• Physical plausibility: order-of-magnitude check; conserve energy/impulse when relevant.\n"
                 "• Distractor effectiveness: three plausible typical mistakes (sin–cos component, work/energy sign, wrong unit)."
             ),
         },
-        "kimia": {
+        "chemistry": {
             "sp": (
                 "SP (Standard Prompting):\n"
                 "• Write 1 medium-level quantitative MCQ from: stoichiometry (incl. limiting reagent), concentration (molarity/mass percent), "
@@ -117,7 +119,7 @@ def build_messages_single(
                 "• Distractors mirror common missteps (coefficients, conversions, log/pH)."
             ),
             "qc": (
-                "Quality Constraints (paper-aligned):\n"
+                "Quality Constraints:\n"
                 "• Clarity & units: reaction/coefficients/units clear; sufficient data.\n"
                 "• Difficulty target: medium; realistic numbers; 2-decimal rounding.\n"
                 "• Distractor effectiveness: three plausible common errors (coefficients, conversion, log/pH).\n"
@@ -126,7 +128,6 @@ def build_messages_single(
         },
     }
 
-    # ===== Strict single-item output contract (English, plain text) =====
     output_contract = (
         "STRICT OUTPUT CONTRACT (SINGLE ITEM):\n"
         "- Return ONLY a JSON array containing EXACTLY 1 object:\n"
@@ -138,26 +139,23 @@ def build_messages_single(
         "- NO LaTeX: do not use $ or backslashes; write plain text (sin, cos, pi, (a)/(b))."
     )
 
-    # ===== Assemble system content (English teacher role + selected blocks) =====
-    parts: List[str] = []
-    parts.append(blocks[topic]["sp"])
+    parts: List[str] = [blocks[tkey]["sp"]]
     if struct_key in ("struktur2", "struktur3"):
-        parts.append(blocks[topic]["cot"])
+        parts.append(blocks[tkey]["cot"])
     if struct_key == "struktur3":
-        parts.append(blocks[topic]["qc"])
+        parts.append(blocks[tkey]["qc"])
 
     system_content = (
-        f"You are a Grade 12 {t} teacher.\n"
+        f"You are a Grade 12 {tlabel} teacher.\n"
         "Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).\n"
         + "\n\n".join(parts)
         + "\n\n"
         + output_contract
     ).strip()
 
-    # Optional: avoid-terms block
     avoid_block = ""
     if avoid_terms:
-        avoid_terms = [str(x) for x in avoid_terms if str(x).strip()]
+        avoid_terms = [str(x).strip() for x in avoid_terms if str(x).strip()]
         if avoid_terms:
             avoid_block = (
                 "\n\nAdditional constraint:\n"
@@ -166,7 +164,7 @@ def build_messages_single(
             )
 
     user_content = (
-        f"Topic: {t}. Create 1 MCQ following the instructions and return a single-item JSON with the \"solution\" field."
+        f"Topic: {tlabel}. Create 1 MCQ following the instructions and return a single-item JSON with the \"solution\" field."
         + avoid_block
     )
 

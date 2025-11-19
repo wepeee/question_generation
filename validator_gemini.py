@@ -1,54 +1,42 @@
-# QUESTION_GENERATION/validator_gemini.py
-# Verifier: Gemini 2.5 Pro — delay otomatis khusus "pro" agar tidak kena limit.
-# - Skala skor: 0–5 (desimal boleh), FAA: "Benar"/"Salah"
-# - Role messages (user/model) dipertahankan
-# - Retry + backoff + parsing "Please retry in Xs"
-# - Delay per-model: default 30s untuk *-pro (atur via GEMINI_PRO_DELAY_SEC)
-
+# English-only verifier (Gemini 2.5 Pro). No Indonesian mapping.
 import os, time, json, re, random
 import google.generativeai as genai
 from utils.load_env import run_load_env
 
 run_load_env()
-
-print("validator_gemini (with per-model delay for pro)")
+print("validator_gemini (per-model delay for pro, EN-only)")
 
 SCHEMA = r"""
-KELUARAN WAJIB: satu objek JSON persis seperti ini (tanpa teks lain):
+REQUIRED OUTPUT: exactly one JSON object (no extra text):
 {
-  "solution_verifier": "solusi ringkas 3–8 baris hasil kerjamu sendiri, plain text; tanpa LaTeX/backslash/markdown",
+  "solution_verifier": "your own concise worked solution in 3–8 lines, plain text; no LaTeX/backslashes/markdown",
   "scores": {
     "clarity": 0.0,
     "context_accuracy": 0.0,
     "quality_of_working": 0.0,
-    "final_answer_accuracy": "Benar"  // atau "Salah"
+    "final_answer_accuracy": "Correct"  // or "Incorrect"
   },
-  "notes": "alasan singkat 3–6 baris untuk setiap skor (plain text)"
+  "notes": "3–6 brief lines justifying each score (plain text)"
 }
-Ketentuan:
-- Skor numerik berada pada rentang 0.0 sampai 5.0 (boleh desimal, mis. 1.35).
-- Final Answer Accuracy hanya salah satu dari: "Benar" atau "Salah".
+Constraints:
+- Numeric scores must be within 0.0 to 5.0 (decimals allowed).
+- Final Answer Accuracy must be exactly one of: "Correct" or "Incorrect".
 """
 
 SYSTEM_INSTRUCTION = (
-    "Anda adalah verifikator/evaluator kualitas soal pilihan ganda.\n"
-    "Ikuti prosedur ketat:\n"
-    "  1) Selesaikan soal SECARA MANDIRI terlebih dahulu (abaikan solusi generator sampai selesai).\n"
-    "  2) Setelah itu, evaluasi SOAL dan SOLUSI_GENERATOR secara independen pada 4 metrik.\n"
-    "  3) Keluarkan hanya satu objek JSON persis sesuai skema; jangan tambahkan teks lain.\n"
+    "You are a verifier/evaluator of multiple-choice question (MCQ) quality.\n"
+    "Strict procedure:\n"
+    "  1) First, solve the question INDEPENDENTLY (ignore the generator's solution until you finish).\n"
+    "  2) Then evaluate BOTH the QUESTION and the GENERATOR_SOLUTION on four metrics.\n"
+    "  3) Return exactly ONE JSON object that matches the schema; do not add any extra text.\n"
 )
 
-# ===== utils =====
 def _usage_to_dict(usage) -> dict | None:
     if usage is None:
         return None
     fields = (
-        "prompt_token_count",
-        "candidates_token_count",
-        "total_token_count",
-        "input_token_count",
-        "output_token_count",
-        "cached_input_token_count",
+        "prompt_token_count","candidates_token_count","total_token_count",
+        "input_token_count","output_token_count","cached_input_token_count",
     )
     out = {k: getattr(usage, k) for k in fields if hasattr(usage, k)}
     return out or {"repr": repr(usage)}
@@ -84,44 +72,39 @@ def _build_messages_with_roles(
 ):
     opts_block = ""
     if options:
-        opts_block = "Opsi:\n" + "\n".join(f"- {o}" for o in options) + "\n"
-    key_block = f"Kunci (A/B/C/D jika ada): {answer_key or '-'}\n"
-
+        opts_block = "Options:\n" + "\n".join(f"- {o}" for o in options) + "\n"
+    key_block = f"Key (A/B/C/D if provided): {answer_key or '-'}\n"
     user_1 = (
-        "Soal berikut untuk dievaluasi. Selesaikan dulu secara mandiri, "
-        "jangan gunakan solusi yang akan diberikan setelah ini.\n\n"
-        f"Soal:\n{question}\n\n{opts_block}{key_block}"
+        "The following MCQ is to be evaluated. Solve it independently FIRST; "
+        "do NOT use the generator's solution until afterwards.\n\n"
+        f"Question:\n{question}\n\n{opts_block}{key_block}"
     )
     model_msg = (
-        "SOLUSI_GENERATOR (INI BUKAN jawabanmu; gunakan HANYA setelah kamu selesai mengerjakan mandiri):\n"
+        "GENERATOR_SOLUTION (THIS IS NOT your answer; use ONLY after you finish your own solution):\n"
         f"{(model_solution or '').strip()}"
     )
     user_2 = (
-        "Tugasmu:\n"
-        "1) Selesaikan soalnya SECARA MANDIRI terlebih dahulu tanpa membaca SOLUSI_GENERATOR di atas.\n"
-        "2) Setelah punya jawaban sendiri, nilai SOAL & SOLUSI_GENERATOR pada metrik berikut:\n"
-        "   - Clarity (0–5, boleh desimal): kejelasan stem/notation/data.\n"
-        "   - Context Accuracy (0–5): kesesuaian konteks & konsep; tanpa kontradiksi.\n"
-        "   - Quality of Working (0–5): kualitas langkah/penalaran pada SOLUSI_GENERATOR (rumus, aritmetika, pembulatan, konsistensi).\n"
-        "   - Final Answer Accuracy: \"Benar\" atau \"Salah\" — jawaban akhir pada SOLUSI_GENERATOR terhadap soalnya.\n"
-        "3) Keluarkan HASIL dalam format JSON berikut, tanpa teks lain:\n\n"
+        "Your tasks:\n"
+        "1) Solve the item INDEPENDENTLY without reading the GENERATOR_SOLUTION above.\n"
+        "2) After you have your own answer, evaluate the QUESTION and the GENERATOR_SOLUTION using these metrics:\n"
+        "   - Clarity (0–5, decimals allowed): wording/notation/data sufficiency.\n"
+        "   - Context Accuracy (0–5): realism and conceptual correctness of context/values.\n"
+        "   - Quality of Working (0–5): soundness of reasoning/steps, formulas, arithmetic, units, rounding, consistency.\n"
+        '   - Final Answer Accuracy: "Correct" or "Incorrect" — judge the generator\'s final answer against the question.\n'
+        "3) Output EXACTLY one JSON object using the following schema (no extra text):\n\n"
         f"{SCHEMA}"
     )
-    messages = [
+    return [
         {"role": "user", "parts": [user_1]},
         {"role": "model", "parts": [model_msg]},
         {"role": "user", "parts": [user_2]},
     ]
-    return messages
 
-# ====== DELAY khusus model "pro" ======
 _LAST_CALL_TS: dict[str, float] = {}
 
 def _desired_gap_seconds(model_id: str) -> float:
-    # jika nama model mengandung "pro", pakai delay panjang (default 30s)
     if "pro" in model_id.lower():
         return float(os.getenv("GEMINI_PRO_DELAY_SEC", "30"))
-    # non-pro: fallback ke delay umum (default 1s)
     return float(os.getenv("GEMINI_DELAY_BETWEEN_CALLS", "1.0"))
 
 def _delay_for_model(model_id: str):
@@ -133,9 +116,8 @@ def _delay_for_model(model_id: str):
     _LAST_CALL_TS[model_id] = time.time()
 
 def _parse_retry_seconds(msg: str) -> float | None:
-    # coba ambil "Please retry in 25.66s" atau "retry_delay { seconds: 25 }"
     m = re.search(r"retry in\s+([0-9]+(?:\.[0-9]+)?)s", msg, re.I)
-    if m: 
+    if m:
         try: return float(m.group(1))
         except: pass
     m = re.search(r"retry_delay\s*\{\s*seconds:\s*([0-9]+)\s*\}", msg, re.I)
@@ -150,7 +132,7 @@ def _generate_with_retry(model, model_id: str, messages, temperature: float):
     timeout = float(os.getenv("GENAI_TIMEOUT", "90"))
     for attempt in range(max_retries):
         try:
-            _delay_for_model(model_id)  # <-- delay per model (pro dapat 30s default)
+            _delay_for_model(model_id)
             return model.generate_content(
                 messages,
                 generation_config={"temperature": float(temperature)},
@@ -158,20 +140,15 @@ def _generate_with_retry(model, model_id: str, messages, temperature: float):
             )
         except Exception as e:
             msg = str(e)
-            # hormati hint "retry in Xs" jika ada
             hinted = _parse_retry_seconds(msg)
             if hinted is not None:
-                time.sleep(hinted + random.uniform(0, 0.5))
-                continue
-            # rate/quota: exponential backoff
-            if "429" in msg or "Resource exhausted" in msg or "rate" in msg.lower() or "quota" in msg.lower():
+                time.sleep(hinted + random.uniform(0, 0.5)); continue
+            if "429" in msg or "resource exhausted" in msg.lower() or "rate" in msg.lower() or "quota" in msg.lower():
                 sleep_s = min(30.0, (backoff_base ** attempt) + random.uniform(0, 0.5))
-                time.sleep(sleep_s)
-                continue
+                time.sleep(sleep_s); continue
             raise
     raise RuntimeError("Gemini verifier rate limited after retries")
 
-# ====== entry point ======
 def verify_with_gemini(
     question: str,
     *,
@@ -220,7 +197,7 @@ def verify_with_gemini(
         return max(0.0, min(5.0, v))
 
     faa_raw = str(scores.get("final_answer_accuracy", "")).strip().lower()
-    faa = "Benar" if faa_raw.startswith("b") else ("Salah" if faa_raw.startswith("s") else "")
+    faa = "Correct" if faa_raw.startswith(("c","t")) else ("Incorrect" if faa_raw.startswith(("i","f")) else "")
 
     norm_scores = {
         "clarity": clamp05(scores.get("clarity", 0)),

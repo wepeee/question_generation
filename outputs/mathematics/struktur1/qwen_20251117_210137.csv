@@ -1,0 +1,16 @@
+topic,model,struktur,index,latency_model_ms,question,optionA,optionB,optionC,optionD,answer,solution_model,solution_verifier,verifier_model,latency_verifier_ms,clarity,context_accuracy,final_answer_accuracy,quality_of_working,judge_notes,prompt_generator
+mathematics,qwen,struktur1,1,5451,What is the value of the limit as x approaches 0 of (sin(2x)) / (3x)?,A. 0.67,B. 0.33,C. 2.00,D. 0.00,A,"To solve this, use the standard limit sin(x) / x = 1 as x approaches 0. Rewrite the limit as (2/3) * (sin(2x) / (2x)). As x approaches 0, (sin(2x) / (2x)) approaches 1. Therefore, the limit is (2/3) * 1 = 0.67.",,,,,,,,,"SYSTEM: You are a Grade 12 Mathematics teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 medium-difficulty computational MCQ from ONE of: algebra (functions/inverse/systems), trigonometry (identities/evaluation), basic calculus (limits/derivatives/simple integrals), or short statistics.
+• Use realistic numbers; round to 2 decimals when needed; avoid formal proofs.
+• Distractors must reflect typical mistakes (sign errors, wrong identities, derivative/limit rules, rounding).
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object:
+  [{""question"":""..."",""options"":[""A. ..."",""B. ..."",""C. ..."",""D. ...""],""answer"":""A"",""solution"":""3–6 short lines, plain text; no LaTeX/markdown.""}]
+- The ""solution"" field is MANDATORY with 3–6 short lines (plain text; no LaTeX/markdown).
+- No extra text outside JSON; no code fences.
+- Options MUST be prefixed ""A. ""/""B. ""/""C. ""/""D. "" and ""answer"" ∈ {A,B,C,D}.
+- NO LaTeX: do not use $ or backslashes; write plain text (sin, cos, pi, (a)/(b)).
+USER: Topic: Mathematics. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field."

@@ -1,0 +1,241 @@
+topic,model,struktur,index,latency_model_ms,question,optionA,optionB,optionC,optionD,answer,solution_model,solution_verifier,verifier_model,latency_verifier_ms,clarity,context_accuracy,final_answer_accuracy,quality_of_working,judge_notes,prompt_generator
+mathematics,qwen,struktur1,1,4616,What is the derivative of the function f(x) = 3x^2 - 4x + 5 at x = 2?,A. 8,B. 10,C. 12,D. 14,A,"First, find the derivative of f(x) = 3x^2 - 4x + 5. The derivative is f'(x) = 6x - 4. Substitute x = 2 into f'(x): f'(2) = 6(2) - 4 = 12 - 4 = 8.","The function is f(x) = 3x^2 - 4x + 5.
+First, find the derivative of the function, f'(x), using the power rule.
+The derivative of 3x^2 is 6x.
+The derivative of -4x is -4.
+The derivative of the constant 5 is 0.
+So, f'(x) = 6x - 4.
+Now, evaluate the derivative at x = 2:
+f'(2) = 6(2) - 4 = 12 - 4 = 8.",gemini:gemini-2.5-pro,14610,5.0,5.0,Correct,5.0,"Clarity: The question is perfectly clear, stating the function, the required operation (derivative), and the point of evaluation without ambiguity.
+Context Accuracy: This is a standard, pure mathematics problem. The concepts and notation are entirely correct.
+Quality of Working: The generator's solution correctly applies the power rule to find the derivative and then accurately substitutes the value of x. The steps are logical and the arithmetic is correct.
+Final Answer Accuracy: The generator's calculated answer of 8 is correct and matches the provided key.","SYSTEM: You are a Grade 12 Mathematics teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 medium-difficulty computational MCQ from ONE of: algebra (functions/inverse/systems), trigonometry (identities/evaluation), basic calculus (limits/derivatives/simple integrals), or short statistics.
+• Use realistic numbers; round to 2 decimals when needed; avoid formal proofs.
+• Distractors must reflect typical mistakes (sign errors, wrong identities, derivative/limit rules, rounding).
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object:
+  [{""question"":""..."",""options"":[""A. ..."",""B. ..."",""C. ..."",""D. ...""],""answer"":""A"",""solution"":""3–6 short lines, plain text; no LaTeX/markdown.""}]
+- The ""solution"" field is MANDATORY with 3–6 short lines (plain text; no LaTeX/markdown).
+- No extra text outside JSON; no code fences.
+- Options MUST be prefixed ""A. ""/""B. ""/""C. ""/""D. "" and ""answer"" ∈ {A,B,C,D}.
+- NO LaTeX: do not use $ or backslashes; write plain text (sin, cos, pi, (a)/(b)).
+USER: Topic: Mathematics. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field."
+mathematics,qwen,struktur1,2,3614,Calculate the limit as x approaches 0 of (sin(3x))/(x).,A. 3,B. 0,C. 1,D. -3,A,"The limit of (sin(3x))/(x) as x approaches 0 can be solved using the known limit (sin(kx))/(x) = k. Here, k = 3, so the limit is 3.","This is a standard limit problem that results in the indeterminate form 0/0 when x=0 is substituted. We can use L'Hôpital's Rule.
+Take the derivative of the numerator: d/dx(sin(3x)) = 3cos(3x).
+Take the derivative of the denominator: d/dx(x) = 1.
+The new limit is lim (x->0) of (3cos(3x))/1.
+Substituting x=0 gives (3cos(0))/1 = (3*1)/1 = 3.
+Alternatively, using the known limit lim (u->0) sin(u)/u = 1, we can rewrite the expression as 3 * (sin(3x))/(3x). As x->0, 3x->0, so the limit is 3 * 1 = 3.",gemini:gemini-2.5-pro,191920,5.0,5.0,Correct,5.0,"Clarity: The question is stated clearly using standard mathematical notation. It is unambiguous.
+Context Accuracy: This is a pure mathematics problem. The concepts and values are standard and correct within the context of calculus.
+Quality of Working: The generator's solution uses a well-known limit theorem (lim x->0 sin(kx)/x = k), which is a perfectly valid and efficient method for solving this problem. The reasoning is sound.
+Final Answer Accuracy: The generator's answer of 3 is correct, matching the result obtained via L'Hôpital's Rule or limit manipulation.","SYSTEM: You are a Grade 12 Mathematics teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 medium-difficulty computational MCQ from ONE of: algebra (functions/inverse/systems), trigonometry (identities/evaluation), basic calculus (limits/derivatives/simple integrals), or short statistics.
+• Use realistic numbers; round to 2 decimals when needed; avoid formal proofs.
+• Distractors must reflect typical mistakes (sign errors, wrong identities, derivative/limit rules, rounding).
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object:
+  [{""question"":""..."",""options"":[""A. ..."",""B. ..."",""C. ..."",""D. ...""],""answer"":""A"",""solution"":""3–6 short lines, plain text; no LaTeX/markdown.""}]
+- The ""solution"" field is MANDATORY with 3–6 short lines (plain text; no LaTeX/markdown).
+- No extra text outside JSON; no code fences.
+- Options MUST be prefixed ""A. ""/""B. ""/""C. ""/""D. "" and ""answer"" ∈ {A,B,C,D}.
+- NO LaTeX: do not use $ or backslashes; write plain text (sin, cos, pi, (a)/(b)).
+USER: Topic: Mathematics. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: derivative, function, what, 5, 2.
+- Do NOT print this list in the output."
+mathematics,qwen,struktur1,3,7009,Find the value of cos(60 degrees) + tan(45 degrees).,A. 1.50,B. 2.50,C. 1.00,D. 2.00,A,cos(60 degrees) = 0.50 and tan(45 degrees) = 1.00. Adding these values gives 0.50 + 1.00 = 1.50.,"The problem is to calculate the value of the expression cos(60°) + tan(45°).
+From standard trigonometric values, we know that:
+cos(60°) = 1/2 = 0.5
+tan(45°) = 1
+Therefore, the sum is:
+0.5 + 1 = 1.5
+This matches option A.",gemini:gemini-2.5-pro,52588,5.0,5.0,Correct,5.0,"Clarity: The question is perfectly clear, using standard mathematical notation and unambiguous language.
+Context Accuracy: The question is a standard exercise in basic trigonometry. The mathematical concepts and values are correct.
+Quality of Working: The generator's solution correctly identifies the individual trigonometric values and performs the addition correctly. The reasoning is sound and concise.
+Final Answer Accuracy: The generator's answer of 1.50 is correct and matches the provided key.","SYSTEM: You are a Grade 12 Mathematics teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 medium-difficulty computational MCQ from ONE of: algebra (functions/inverse/systems), trigonometry (identities/evaluation), basic calculus (limits/derivatives/simple integrals), or short statistics.
+• Use realistic numbers; round to 2 decimals when needed; avoid formal proofs.
+• Distractors must reflect typical mistakes (sign errors, wrong identities, derivative/limit rules, rounding).
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object:
+  [{""question"":""..."",""options"":[""A. ..."",""B. ..."",""C. ..."",""D. ...""],""answer"":""A"",""solution"":""3–6 short lines, plain text; no LaTeX/markdown.""}]
+- The ""solution"" field is MANDATORY with 3–6 short lines (plain text; no LaTeX/markdown).
+- No extra text outside JSON; no code fences.
+- Options MUST be prefixed ""A. ""/""B. ""/""C. ""/""D. "" and ""answer"" ∈ {A,B,C,D}.
+- NO LaTeX: do not use $ or backslashes; write plain text (sin, cos, pi, (a)/(b)).
+USER: Topic: Mathematics. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: 0, derivative, calculate, function, what, limit, 5, sin, approaches, 2.
+- Do NOT print this list in the output."
+mathematics,qwen,struktur1,4,5428,"A rectangle has a length that is twice its width. If the perimeter of the rectangle is 36 units, what is the area of the rectangle?",A. 72 square units,B. 36 square units,C. 108 square units,D. 18 square units,A,"Let the width be w. Then the length is 2w. The perimeter is 2(w + 2w) = 36, so 6w = 36 and w = 6. The length is 12. The area is w * 2w = 6 * 12 = 72 square units.","Let w be the width and l be the length of the rectangle.
+The problem states that the length is twice the width, so l = 2w.
+The formula for the perimeter of a rectangle is P = 2(l + w).
+Given that the perimeter is 36, we can set up the equation: 36 = 2(2w + w).
+Simplifying the equation: 36 = 2(3w), which becomes 36 = 6w.
+Solving for the width: w = 36 / 6 = 6 units.
+The length is l = 2w = 2 * 6 = 12 units.
+The area of the rectangle is A = l * w = 12 * 6 = 72 square units.",gemini:gemini-2.5-pro,172646,5.0,5.0,Correct,5.0,"Clarity: The question is perfectly clear, with unambiguous wording and all necessary information provided.
+Context Accuracy: The problem is a standard, abstract geometry question. The context is purely mathematical and correct.
+Quality of Working: The generator's solution is concise, logical, and arithmetically correct. It follows the proper steps to find the dimensions and then the area.
+Final Answer Accuracy: The generator's final answer of 72 square units is correct and matches the provided key.","SYSTEM: You are a Grade 12 Mathematics teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 medium-difficulty computational MCQ from ONE of: algebra (functions/inverse/systems), trigonometry (identities/evaluation), basic calculus (limits/derivatives/simple integrals), or short statistics.
+• Use realistic numbers; round to 2 decimals when needed; avoid formal proofs.
+• Distractors must reflect typical mistakes (sign errors, wrong identities, derivative/limit rules, rounding).
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object:
+  [{""question"":""..."",""options"":[""A. ..."",""B. ..."",""C. ..."",""D. ...""],""answer"":""A"",""solution"":""3–6 short lines, plain text; no LaTeX/markdown.""}]
+- The ""solution"" field is MANDATORY with 3–6 short lines (plain text; no LaTeX/markdown).
+- No extra text outside JSON; no code fences.
+- Options MUST be prefixed ""A. ""/""B. ""/""C. ""/""D. "" and ""answer"" ∈ {A,B,C,D}.
+- NO LaTeX: do not use $ or backslashes; write plain text (sin, cos, pi, (a)/(b)).
+USER: Topic: Mathematics. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: 0, derivative, calculate, function, find, what, value, cos, tan, degrees, 45, limit, 5, sin, 60, approaches, 2.
+- Do NOT print this list in the output."
+mathematics,qwen,struktur1,5,6854,A ball is thrown upwards with an initial velocity of 20 meters per second. The height h in meters of the ball after t seconds is given by the equation h = -4.9t^2 + 20t. What is the maximum height reached by the ball?,A. 20.41 meters,B. 10.20 meters,C. 40.82 meters,D. 5.10 meters,A,"The maximum height is reached at the vertex of the parabola. The time t at the vertex is given by t = -b / (2a) where a = -4.9 and b = 20. So, t = -20 / (2 * -4.9) = 2.04 seconds. Substitute t = 2.04 into the height equation: h = -4.9 * (2.04)^2 + 20 * 2.04 = 20.41 meters.","The height of the ball is described by the quadratic equation h = -4.9t^2 + 20t, which represents a downward-opening parabola.
+The maximum height is the y-coordinate of the vertex of this parabola.
+The time (t-coordinate) at which the vertex occurs is given by the formula t = -b / (2a).
+In this equation, a = -4.9 and b = 20.
+So, t = -20 / (2 * -4.9) = 20 / 9.8 ≈ 2.0408 seconds.
+Substituting this time back into the height equation:
+h = -4.9 * (2.0408)^2 + 20 * (2.0408) ≈ -20.408 + 40.816 ≈ 20.408 meters.
+This value rounds to 20.41 meters.",gemini:gemini-2.5-pro,29800,5.0,5.0,Correct,5.0,"Clarity: The question is perfectly clear. It provides the governing equation, defines the variables, and asks a specific, unambiguous question.
+Context Accuracy: The context is a standard physics problem of projectile motion. The equation correctly models motion under Earth's gravity (g ≈ 9.8 m/s^2), and the initial velocity is realistic.
+Quality of Working: The generator's reasoning is flawless. It correctly identifies the problem as finding the vertex of a parabola, uses the correct formula, and performs the calculations accurately. The rounding is appropriate.
+Final Answer Accuracy: The generator's final answer is correct and matches the result obtained through independent calculation.","SYSTEM: You are a Grade 12 Mathematics teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 medium-difficulty computational MCQ from ONE of: algebra (functions/inverse/systems), trigonometry (identities/evaluation), basic calculus (limits/derivatives/simple integrals), or short statistics.
+• Use realistic numbers; round to 2 decimals when needed; avoid formal proofs.
+• Distractors must reflect typical mistakes (sign errors, wrong identities, derivative/limit rules, rounding).
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object:
+  [{""question"":""..."",""options"":[""A. ..."",""B. ..."",""C. ..."",""D. ...""],""answer"":""A"",""solution"":""3–6 short lines, plain text; no LaTeX/markdown.""}]
+- The ""solution"" field is MANDATORY with 3–6 short lines (plain text; no LaTeX/markdown).
+- No extra text outside JSON; no code fences.
+- Options MUST be prefixed ""A. ""/""B. ""/""C. ""/""D. "" and ""answer"" ∈ {A,B,C,D}.
+- NO LaTeX: do not use $ or backslashes; write plain text (sin, cos, pi, (a)/(b)).
+USER: Topic: Mathematics. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: find, value, rectangle, approaches, 0, cos, has, 36, degrees, length, calculate, what, 2, limit, sin, width, perimeter, tan, function, that, twice, 45, 5, its, 60, derivative.
+- Do NOT print this list in the output."
+mathematics,qwen,struktur1,6,2366,A car travels 150 kilometers in 2.5 hours. What is the average speed of the car in kilometers per hour?,A. 60,B. 75,C. 90,D. 100,A,"To find the average speed, divide the total distance by the total time. Total distance = 150 kilometers, total time = 2.5 hours. Average speed = 150 / 2.5 = 60 kilometers per hour.","The formula for average speed is the total distance traveled divided by the total time taken.
+Given:
+Distance = 150 kilometers
+Time = 2.5 hours
+
+Average Speed = Distance / Time
+Average Speed = 150 km / 2.5 h
+Average Speed = 60 km/h.
+This corresponds to option A.",gemini:gemini-2.5-pro,209551,5.0,5.0,Correct,5.0,"Clarity: The question is perfectly clear. It provides all necessary values (distance, time) and asks for a specific quantity (average speed) in standard units.
+Context Accuracy: The values are realistic. A car traveling 150 km in 2.5 hours gives an average speed of 60 km/h, which is a very common and plausible speed for a car journey.
+Quality of Working: The generator's solution is concise and correct. It correctly applies the formula for average speed, substitutes the values, and performs the arithmetic accurately.
+Final Answer Accuracy: The generator's calculated answer of 60 km/h is correct and matches the provided key (A).","SYSTEM: You are a Grade 12 Mathematics teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 medium-difficulty computational MCQ from ONE of: algebra (functions/inverse/systems), trigonometry (identities/evaluation), basic calculus (limits/derivatives/simple integrals), or short statistics.
+• Use realistic numbers; round to 2 decimals when needed; avoid formal proofs.
+• Distractors must reflect typical mistakes (sign errors, wrong identities, derivative/limit rules, rounding).
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object:
+  [{""question"":""..."",""options"":[""A. ..."",""B. ..."",""C. ..."",""D. ...""],""answer"":""A"",""solution"":""3–6 short lines, plain text; no LaTeX/markdown.""}]
+- The ""solution"" field is MANDATORY with 3–6 short lines (plain text; no LaTeX/markdown).
+- No extra text outside JSON; no code fences.
+- Options MUST be prefixed ""A. ""/""B. ""/""C. ""/""D. "" and ""answer"" ∈ {A,B,C,D}.
+- NO LaTeX: do not use $ or backslashes; write plain text (sin, cos, pi, (a)/(b)).
+USER: Topic: Mathematics. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: find, value, 20, rectangle, approaches, 0, cos, has, 36, degrees, length, ball, 4, upwards, calculate, what, 2, limit, sin, width, perimeter, meters, velocity, with, tan, function, thrown, that, initial, twice, 45, 5, its, 60, derivative.
+- Do NOT print this list in the output."
+mathematics,qwen,struktur1,7,6606,"A particle moves along a straight line with its position given by s(t) = 3t^2 - 12t + 7, where s is in meters and t is in seconds. What is the acceleration of the particle at t = 3 seconds?",A. 6 m/s^2,B. 12 m/s^2,C. 18 m/s^2,D. 24 m/s^2,A,"The position function is s(t) = 3t^2 - 12t + 7. The velocity function v(t) is the first derivative of s(t), so v(t) = 6t - 12. The acceleration function a(t) is the second derivative of s(t), so a(t) = 6. The acceleration is constant and does not depend on t, so at t = 3 seconds, the acceleration is 6 m/s^2.","The position function is given by s(t) = 3t^2 - 12t + 7.
+The velocity function, v(t), is the first derivative of the position function with respect to time.
+v(t) = s'(t) = d/dt(3t^2 - 12t + 7) = 6t - 12.
+The acceleration function, a(t), is the first derivative of the velocity function (or the second derivative of the position function).
+a(t) = v'(t) = d/dt(6t - 12) = 6.
+The acceleration is constant and does not depend on time. Therefore, at t = 3 seconds, the acceleration is 6 m/s^2.",gemini:gemini-2.5-pro,105198,5.0,5.0,Correct,5.0,"Clarity: The question is perfectly clear. It provides the position function, defines the units, and asks a specific, unambiguous question.
+Context Accuracy: This is a standard, conceptually sound problem in introductory kinematics (calculus-based physics). The values are reasonable for a textbook example.
+Quality of Working: The generator's solution correctly identifies the relationship between position, velocity, and acceleration using derivatives. The calculations are accurate and the reasoning is flawless.
+Final Answer Accuracy: The generator's calculated acceleration of 6 m/s^2 is correct and matches the provided key (A).","SYSTEM: You are a Grade 12 Mathematics teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 medium-difficulty computational MCQ from ONE of: algebra (functions/inverse/systems), trigonometry (identities/evaluation), basic calculus (limits/derivatives/simple integrals), or short statistics.
+• Use realistic numbers; round to 2 decimals when needed; avoid formal proofs.
+• Distractors must reflect typical mistakes (sign errors, wrong identities, derivative/limit rules, rounding).
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object:
+  [{""question"":""..."",""options"":[""A. ..."",""B. ..."",""C. ..."",""D. ...""],""answer"":""A"",""solution"":""3–6 short lines, plain text; no LaTeX/markdown.""}]
+- The ""solution"" field is MANDATORY with 3–6 short lines (plain text; no LaTeX/markdown).
+- No extra text outside JSON; no code fences.
+- Options MUST be prefixed ""A. ""/""B. ""/""C. ""/""D. "" and ""answer"" ∈ {A,B,C,D}.
+- NO LaTeX: do not use $ or backslashes; write plain text (sin, cos, pi, (a)/(b)).
+USER: Topic: Mathematics. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: travels, hours, find, value, speed, 20, average, rectangle, approaches, 0, cos, has, 150, 36, degrees, length, ball, 4, kilometers, 2.5, upwards, car, calculate, what, 2, limit, sin, width, perimeter, meters, velocity, with, tan, function, thrown, that, initial, twice, 45, 5, its, 60, derivative.
+- Do NOT print this list in the output."
+mathematics,qwen,struktur1,8,6046,"A rectangular garden has a length of 12 meters and a width of 8 meters. If the length is increased by 50% and the width is decreased by 25%, what is the new area of the garden?",A. 96 square meters,B. 108 square meters,C. 120 square meters,D. 144 square meters,B,The original length is 12 meters and the width is 8 meters. The new length is 12 + 0.5 * 12 = 18 meters. The new width is 8 - 0.25 * 8 = 6 meters. The new area is 18 * 6 = 108 square meters.,"Original length = 12 m. Original width = 8 m.
+The length is increased by 50%, so the new length is 12 * (1 + 0.50) = 12 * 1.5 = 18 m.
+The width is decreased by 25%, so the new width is 8 * (1 - 0.25) = 8 * 0.75 = 6 m.
+The new area is the product of the new dimensions.
+New Area = 18 m * 6 m = 108 square meters.",gemini:gemini-2.5-pro,23872,5.0,5.0,Correct,5.0,"Clarity: The question is perfectly clear, providing all necessary information without ambiguity.
+Context Accuracy: The context of a rectangular garden with these dimensions is realistic and common for this type of problem.
+Quality of Working: The generator's solution is concise, logically sound, and arithmetically correct. It clearly shows how the new dimensions and area are calculated.
+Final Answer Accuracy: The generator's calculated answer of 108 square meters is correct and matches the provided key.","SYSTEM: You are a Grade 12 Mathematics teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 medium-difficulty computational MCQ from ONE of: algebra (functions/inverse/systems), trigonometry (identities/evaluation), basic calculus (limits/derivatives/simple integrals), or short statistics.
+• Use realistic numbers; round to 2 decimals when needed; avoid formal proofs.
+• Distractors must reflect typical mistakes (sign errors, wrong identities, derivative/limit rules, rounding).
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object:
+  [{""question"":""..."",""options"":[""A. ..."",""B. ..."",""C. ..."",""D. ...""],""answer"":""A"",""solution"":""3–6 short lines, plain text; no LaTeX/markdown.""}]
+- The ""solution"" field is MANDATORY with 3–6 short lines (plain text; no LaTeX/markdown).
+- No extra text outside JSON; no code fences.
+- Options MUST be prefixed ""A. ""/""B. ""/""C. ""/""D. "" and ""answer"" ∈ {A,B,C,D}.
+- NO LaTeX: do not use $ or backslashes; write plain text (sin, cos, pi, (a)/(b)).
+USER: Topic: Mathematics. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: travels, hours, find, value, speed, 20, average, rectangle, approaches, 0, cos, has, 150, 36, degrees, length, ball, 4, kilometers, 2.5, along, upwards, car, calculate, what, 2, straight, line, limit, sin, width, moves, particle, perimeter, meters, velocity, with, tan, function, thrown, that, initial, twice, 7, 3, 45, 5, its, 60, derivative.
+- Do NOT print this list in the output."
+mathematics,qwen,struktur1,9,7178,"A quadratic function f(x) = ax^2 + bx + c has a vertex at (3, -4) and passes through the point (1, 0). What is the value of a?",A. 1,B. -1,C. 2,D. -2,A,"The vertex form of a quadratic function is f(x) = a(x - h)^2 + k, where (h, k) is the vertex. Here, h = 3 and k = -4, so f(x) = a(x - 3)^2 - 4. Since the function passes through (1, 0), we substitute x = 1 and f(x) = 0 to get 0 = a(1 - 3)^2 - 4. This simplifies to 0 = 4a - 4, so 4a = 4 and a = 1.",,,,,,,,,"SYSTEM: You are a Grade 12 Mathematics teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 medium-difficulty computational MCQ from ONE of: algebra (functions/inverse/systems), trigonometry (identities/evaluation), basic calculus (limits/derivatives/simple integrals), or short statistics.
+• Use realistic numbers; round to 2 decimals when needed; avoid formal proofs.
+• Distractors must reflect typical mistakes (sign errors, wrong identities, derivative/limit rules, rounding).
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object:
+  [{""question"":""..."",""options"":[""A. ..."",""B. ..."",""C. ..."",""D. ...""],""answer"":""A"",""solution"":""3–6 short lines, plain text; no LaTeX/markdown.""}]
+- The ""solution"" field is MANDATORY with 3–6 short lines (plain text; no LaTeX/markdown).
+- No extra text outside JSON; no code fences.
+- Options MUST be prefixed ""A. ""/""B. ""/""C. ""/""D. "" and ""answer"" ∈ {A,B,C,D}.
+- NO LaTeX: do not use $ or backslashes; write plain text (sin, cos, pi, (a)/(b)).
+USER: Topic: Mathematics. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: travels, hours, 50, find, value, speed, 20, average, rectangular, rectangle, approaches, garden, 0, cos, has, 150, 36, degrees, length, ball, 4, 8, kilometers, 2.5, along, upwards, car, calculate, what, 2, straight, line, limit, sin, width, moves, particle, perimeter, meters, velocity, 25, with, tan, function, thrown, that, initial, twice, 7, 3, and, 45, 12, 5, its, 60, derivative.
+- Do NOT print this list in the output."

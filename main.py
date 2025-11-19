@@ -2,7 +2,7 @@ from utils.load_env import run_load_env
 run_load_env()
 
 import os, pathlib, datetime
-from typing import Dict
+from typing import Dict, Tuple
 
 from models.base import LlmModelService
 from models.gemini import GeminiService
@@ -10,6 +10,14 @@ from models.openrouter import OpenRouterService
 from models.groq import GroqService
 
 from quiz_service import QuizService
+
+_ALLOWED_TOPICS = ("mathematics", "biology", "physics", "chemistry")
+
+def _canon_topic(user_topic: str) -> Tuple[str, str]:
+    key = (user_topic or "").strip().lower()
+    if key not in _ALLOWED_TOPICS:
+        raise RuntimeError(f"Unknown topic '{user_topic}'. Use one of: {', '.join(_ALLOWED_TOPICS)}.")
+    return key, key
 
 def _build_models() -> Dict[str, LlmModelService]:
     models: Dict[str, LlmModelService] = {}
@@ -30,7 +38,7 @@ def _build_models() -> Dict[str, LlmModelService]:
 
 def main(
     struktur: str,
-    materi: str,
+    topic: str,
     model: str,
     *,
     count: int = 4,
@@ -38,19 +46,20 @@ def main(
 ):
     models = _build_models()
     if model not in models:
-        raise RuntimeError(f"Model '{model}' belum tersedia. Aktifkan env yang diperlukan.")
+        raise RuntimeError(f"Model '{model}' is not available. Check your environment variables.")
+
+    internal_topic, topic_dir = _canon_topic(topic)
 
     svc = QuizService(models)
 
     ts = datetime.datetime.now().strftime("%Y%m%d_%H%M%S")
-    out_path = pathlib.Path(outdir) / materi / struktur
+    out_path = pathlib.Path(outdir) / topic_dir / struktur
     out_path.mkdir(parents=True, exist_ok=True)
     csv_path = out_path / f"{model}_{ts}.csv"
 
-    # === INCREMENTAL MODE ===
-    # Tulis CSV per row; jika kena rate limit validator, proses berhenti otomatis
+    # Incremental mode: write each row; stop on verifier rate-limit (partial CSV preserved).
     svc.generate_items_incremental_to_csv(
-        topic=materi,
+        topic=internal_topic,
         model_key=model,
         struktur=struktur,
         count=count,
@@ -60,5 +69,5 @@ def main(
     print(f"[csv incremental] {csv_path.as_posix()}")
 
 if __name__ == "__main__":
-    # contoh eksekusi
-    main("struktur1", "matematika", "deepseek", count=15)
+    # example
+    main("struktur1", "mathematics", "qwen", count=100)
