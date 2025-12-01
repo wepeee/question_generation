@@ -130,14 +130,18 @@ def build_messages_single(
 
     output_contract = (
         "STRICT OUTPUT CONTRACT (SINGLE ITEM):\n"
-        "- Return ONLY a JSON array containing EXACTLY 1 object:\n"
-        '  [{"question":"...","options":["A. ...","B. ...","C. ...","D. ..."],'
-        '"answer":"A","solution":"3–6 short lines, plain text; no LaTeX/markdown."}]\n'
-        '- The "solution" field is MANDATORY with 3–6 short lines (plain text; no LaTeX/markdown).\n'
-        "- No extra text outside JSON; no code fences.\n"
-        '- Options MUST be prefixed "A. "/"B. "/"C. "/"D. " and "answer" ∈ {A,B,C,D}.\n'
-        "- NO LaTeX: do not use $ or backslashes; write plain text (sin, cos, pi, (a)/(b))."
+        "- Return ONLY a JSON array containing EXACTLY 1 object.\n"
+        '- Format:\n'
+        '  [{"question": "...", "options": ["...","...","...","..."], "answer": "A", "solution": "..."}]\n'
+        "- Fields:\n"
+        '  * \"question\": one string.\n'
+        '  * \"options\": array of 4 answer-choice strings.\n'
+        '  * \"answer\": one of \"A\",\"B\",\"C\",\"D\" (just the letter).\n'
+        '  * \"solution\": short plain-text explanation (a few lines is fine).\n'
+        "- No extra text before or after the JSON.\n"
+        "- Do NOT use markdown, code fences, or LaTeX ($ or backslashes)."
     )
+
 
     parts: List[str] = [blocks[tkey]["sp"]]
     if struct_key in ("struktur2", "struktur3"):

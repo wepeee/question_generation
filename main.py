@@ -21,20 +21,28 @@ def _canon_topic(user_topic: str) -> Tuple[str, str]:
 
 def _build_models() -> Dict[str, LlmModelService]:
     models: Dict[str, LlmModelService] = {}
+
+    # 1) Generator GEMINI (cloud)
     try:
-        models["gemini"] = GeminiService(model=os.getenv("GEMINI_MODEL","gemini-2.0-flash"))
+        models["gemini"] = GeminiService(model=os.getenv("GEMINI_MODEL", "gemini-2.0-flash"))
     except Exception as e:
-        print("[warn] Gemini disabled:", e)
-    for alias in ["QWEN", "DEEPSEEK", "GEMMA"]:
+        print("[warn] Gemini generator disabled:", e)
+
+    # 2) Empat generator lain via Ollama (QWEN, GEMMA, LLAMA, PHI)
+    for alias in ["QWEN", "GEMMA", "LLAMA", "PHI"]:
         try:
             models[alias.lower()] = OpenRouterService(alias)
         except Exception as e:
-            print(f"[warn] {alias} disabled:", e)
-    try:
-        models["groq"] = GroqService()
-    except Exception as e:
-        print("[info] Groq disabled:", e)
+            print(f"[warn] {alias} (Ollama) disabled:", e)
+
+    # 3) GroqService lama TIDAK dipakai lagi
+    # try:
+    #     models["groq"] = GroqService()
+    # except Exception as e:
+    #     print("[info] Groq disabled:", e)
+
     return models
+
 
 def main(
     struktur: str,
@@ -70,4 +78,4 @@ def main(
 
 if __name__ == "__main__":
     # example
-    main("struktur1", "mathematics", "qwen", count=100)
+    main("struktur3", "physics", "qwen", count=60)
