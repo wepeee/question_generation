@@ -20,24 +20,35 @@ Output utama: file CSV berisi log soal, skor rubrik, waktu eksekusi, dan metrik 
 
 ## 1. Struktur Proyek
 
-Struktur folder (disederhanakan):
+Struktur folder (disederhanakan, disesuaikan dengan repo ini):
 
     question_generation/
-    ├─ main.py                   # Entry point untuk menjalankan 1 eksperimen
-    ├─ quiz_service.py           # Orkestrasi generator + verifier + logging CSV
+    ├─ main.py               # Entry point untuk menjalankan 1 eksperimen
+    ├─ quiz_service.py       # Orkestrasi generator + verifier + logging CSV
+    ├─ json_utils.py         # Utility untuk encoding/decoding JSON aman
+    ├─ normalize.py          # (opsional) Normalisasi / pembersihan teks
     ├─ models/
-    │   └─ openrouter.py         # Wrapper OpenAI-compatible untuk Ollama (Qwen, Gemma, LLaMA, Phi)
-    ├─ validator_gemini.py       # Verifier via Maia Router (Gemini 2.5)
+    │   └─ openrouter.py     # Wrapper OpenAI-compatible untuk Ollama (Qwen, Gemma, LLaMA, Phi)
     ├─ utils/
-    │   └─ load_env.py           # Helper untuk load .env
+    │   └─ load_env.py       # Helper untuk load .env
     ├─ outputs/
-    │   ├─ struktur1/            # CSV hasil Struktur 1 (SP)
-    │   ├─ struktur2/            # CSV hasil Struktur 2 (SP+CoT)
-    │   └─ struktur3/            # CSV hasil Struktur 3 (SP+QC)
-    ├─ add_bertscore.py          # (opsional) Tambah kolom BERTScore ke CSV
-    ├─ summarize_results.py      # (opsional) Ringkas semua CSV → tabel agregat
-    ├─ merge.py                  # (opsional) Merge beberapa CSV
-    └─ README.md                 # Dokumen ini
+    │   ├─ biology/
+    │   │   ├─ struktur1/    # CSV Biologi – Struktur 1
+    │   │   ├─ struktur2/    # CSV Biologi – Struktur 2
+    │   │   └─ struktur3/    # CSV Biologi – Struktur 3
+    │   ├─ chemistry/
+    │   │   ├─ struktur1/
+    │   │   ├─ struktur2/
+    │   │   └─ struktur3/
+    │   ├─ mathematics/
+    │   │   ├─ struktur1/
+    │   │   ├─ struktur2/
+    │   │   └─ struktur3/
+    │   └─ physics/
+    │       ├─ struktur1/
+    │       ├─ struktur2/
+    │       └─ struktur3/
+    └─ README.md             # Dokumen ini
 
 Komentar di dalam source code menjelaskan fungsi tiap modul dan parameter penting.
 
@@ -56,9 +67,9 @@ Komentar di dalam source code menjelaskan fungsi tiap modul dan parameter pentin
 
 Minimal paket:
 
-    pip install openai requests python-dotenv pandas numpy bert-score
+    pip install openai requests python-dotenv pandas numpy
 
-Kalau ada requirements.txt:
+Kalau tersedia `requirements.txt`:
 
     pip install -r requirements.txt
 
@@ -86,9 +97,9 @@ Buat file `.env` di root project. Contoh:
     MAIA_MAX_RETRIES=6
     MAIA_BACKOFF_BASE=1.8
 
-Catatan penting:
+Catatan:
 - Tanpa Ollama dan API key Maia, eksperimen penuh tidak bisa dijalankan.
-- Jangan commit `.env` ke repo publik.
+- `.env` jangan di-commit ke repo publik.
 
 ---
 
@@ -131,12 +142,12 @@ Catatan penting:
     main(structure, subject, model_alias, count=...)
 
 Parameter:
-- structure: "struktur1", "struktur2", atau "struktur3"
-- subject: "mathematics", "physics", "biology", "chemistry"
-- model_alias: "qwen", "gemma", "llama", "phi"
-- count: jumlah soal yang digenerate (misalnya 50 atau 100)
+- `structure` : `"struktur1"`, `"struktur2"`, atau `"struktur3"`
+- `subject`   : `"mathematics"`, `"physics"`, `"biology"`, `"chemistry"`
+- `model_alias` : `"qwen"`, `"gemma"`, `"llama"`, `"phi"`
+- `count`     : jumlah soal yang digenerate (misalnya 50 atau 100)
 
-Contoh isi `main.py`:
+Contoh isi minimal `main.py`:
 
     from quiz_service import main
 
@@ -157,9 +168,14 @@ Langkah run:
 
 3. Output CSV akan muncul di:
 
-    outputs/{subject}/{strukturX}/MODEL_TIMESTAMP.csv
+    outputs/{subject}/{strukturX}/NAMA_MODEL_TIMESTAMP.csv
 
-Setiap baris CSV biasanya berisi:
+Contoh:
+
+- `outputs/mathematics/struktur1/qwen_20251204_120000.csv`
+- `outputs/biology/struktur3/phi_20251207_024133.csv`
+
+Setiap baris CSV berisi:
 - struktur prompt, subject, model
 - teks soal, opsi, jawaban benar
 - solusi generator
@@ -168,33 +184,17 @@ Setiap baris CSV biasanya berisi:
 
 ---
 
-## 6. Analisis dan Ringkasan Hasil
+## 6. Analisis Hasil (Singkat)
 
-### 6.1. Menambahkan BERTScore
+Analisis lanjutan (rata-rata per struktur × model × subject, BERTScore, grafik, dsb.) dikerjakan di notebook / project terpisah dan **tidak** menjadi bagian repo ini.
 
-    python add_bertscore.py
-
-Script ini:
-- Membaca semua CSV di `outputs/`
-- Menghitung BERTScore antara solusi generator dan solusi verifier
-- Menambah kolom `bertscore` ke CSV
-
-### 6.2. Merangkum ke Tabel Agregat
-
-    python summarize_results.py
-
-Output:
-- CSV ringkasan per struktur × model × subject:
-  - rata-rata Final Answer Accuracy
-  - rata-rata Clarity, Context Accuracy, Quality of Working
-  - rata-rata waktu eksekusi
-  - rata-rata BERTScore (kalau sudah dihitung)
-
-`merge.py` bisa dipakai untuk menggabungkan beberapa CSV mentah sebelum diringkas.
+Yang penting untuk pengetesan asdos:
+- Script di repo ini berhasil menghasilkan CSV mentah tanpa error.
+- Struktur folder `outputs/` konsisten dengan penjelasan di README.
 
 ---
 
-## 7. Contoh Penggunaan Singkat
+## 7. Contoh Penggunaan
 
 Contoh 1 – 20 soal Matematika, Struktur 1, model Qwen:
 
@@ -203,7 +203,7 @@ Contoh 1 – 20 soal Matematika, Struktur 1, model Qwen:
     if __name__ == "__main__":
         main("struktur1", "mathematics", "qwen", count=20)
 
-Lalu:
+Lalu jalankan:
 
     python main.py
 
@@ -212,7 +212,7 @@ Contoh 2 – 50 soal Fisika, Struktur 3, model Gemma:
     if __name__ == "__main__":
         main("struktur3", "physics", "gemma", count=50)
 
-Lalu:
+Lalu jalankan:
 
     python main.py
 
@@ -220,20 +220,18 @@ Lalu:
 
 ## 8. Catatan Penting / Limitasi
 
-- API Key & Kuota  
-  Verifier bergantung ke Maia Router (Gemini 2.5). Jika kuota habis / rate limit, script akan berhenti dan menulis partial row ke CSV. Ini harus dicatat di laporan.
+- **API Key & Kuota**  
+  Verifier bergantung ke Maia Router (Gemini 2.5). Jika kuota habis / rate limit, script akan berhenti dan menulis partial row ke CSV. Hal ini perlu dijelaskan di laporan jika terjadi saat eksperimen.
 
-- Waktu Eksekusi  
-  Model besar (gemma3:12b, llama3:8b) jauh lebih lambat. Uji dulu dengan count kecil (~5–10) sebelum full run.
+- **Waktu Eksekusi**  
+  Model besar (gemma3:12b, llama3:8b) jauh lebih lambat. Uji dulu dengan `count` kecil (~5–10) sebelum full run.
 
-- Reproducibility  
-  Teks prompt untuk S1, S2, S3 disimpan sebagai blok di kode. Kalau kamu mengubah isi prompt (misalnya definisi S3), pastikan versi kode yang ada di repo sama dengan yang dipakai di paper.
+- **Reproducibility**  
+  Teks prompt untuk S1, S2, S3 disimpan sebagai blok di kode. Jika prompt diubah, pastikan versi kode di repo sama dengan versi yang dipakai saat eksperimen.
 
-- Testing Project  
-  Penguji akan:
-  1) Cek README ini,
-  2) Set `.env` dan Ollama,
-  3) Jalanin `python main.py`.  
-  Kalau mereka kena error karena env/API tidak di-set, tanggung jawab kamu adalah menuliskan dependensi itu dengan jelas (sudah dilakukan di README ini).
+- **Pengetesan Project (sesuai instruksi kelas)**  
+  1) Code bisa dijalankan tanpa error setelah `.env`, Ollama, dan API key disiapkan.  
+  2) README ini menjelaskan deskripsi, instalasi, cara menjalankan, dan contoh penggunaan.  
+  3) Struktur folder rapi, komentar di kode menjelaskan fungsi modul dan parameter penting.
 
 ---
