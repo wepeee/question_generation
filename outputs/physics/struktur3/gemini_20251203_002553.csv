@@ -1,0 +1,913 @@
+topic,model,struktur,index,latency_model_ms,question,optionA,optionB,optionC,optionD,answer,solution_model,solution_verifier,verifier_model,latency_verifier_ms,clarity,context_accuracy,final_answer_accuracy,quality_of_working,judge_notes,prompt_generator
+physics,gemini,struktur3,1,4140,"A 2.0 kg block slides down a frictionless incline of 30 degrees. If the length of the incline is 5.0 m, what is the speed of the block at the bottom of the incline?",4.95 m/s,7.00 m/s,9.90 m/s,14.00 m/s,B,"Use conservation of energy: mgh = (1/2)mv^2. Height h = L*sin(30) = 5.0*0.5 = 2.5 m. So, v = sqrt(2gh) = sqrt(2*9.8*2.5) = 7.00 m/s.","The problem is solved using the principle of conservation of mechanical energy, as the incline is frictionless. The initial potential energy (PE) is converted into final kinetic energy (KE).
+PE_initial = mgh
+KE_final = (1/2)mv^2
+The vertical height (h) of the incline is h = L * sin(θ) = 5.0 m * sin(30°) = 2.5 m.
+By setting PE_initial = KE_final, we get mgh = (1/2)mv^2.
+The mass (m) cancels out, leaving v = sqrt(2gh).
+Plugging in the values: v = sqrt(2 * 9.8 m/s^2 * 2.5 m) = sqrt(49 m^2/s^2) = 7.0 m/s.",gemini:gemini-2.5-pro,20687,5,5,Correct,5,"Clarity: The question is a standard physics problem, clearly stated with all necessary data provided. The objective is unambiguous.
+Context Accuracy: The scenario is a classic, idealized physics problem. The values for mass, length, and angle are physically reasonable for such a setup.
+Quality of Working: The generator's solution correctly identifies and applies the conservation of energy principle. The steps are logical, and the calculation is arithmetically sound.
+Final Answer Accuracy: The generator's calculated speed of 7.00 m/s is correct and matches the provided key.","SYSTEM: You are a Grade 12 Physics teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 medium-level quantitative MCQ from: kinematics (uniform/accelerated/projectile), dynamics (Newton/incline), energy–impulse, or basic circuits (V–I–R).
+• Use SI units (use g = 9.8 m s^-2 if relevant); realistic numbers; round to 2 decimals.
+• Distractors: typical vector-component/sign mistakes, unit conversion errors, wrong effective forces.
+
+Quality Constraints:
+• Clarity & SI: explicit quantities and SI units; consistent symbols.
+• Difficulty target: medium (2–3 steps).
+• Physical plausibility: order-of-magnitude check; conserve energy/impulse when relevant.
+• Distractor effectiveness: three plausible typical mistakes (sin–cos component, work/energy sign, wrong unit).
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object.
+- Format:
+  [{""question"": ""..."", ""options"": [""..."",""..."",""..."",""...""], ""answer"": ""A"", ""solution"": ""...""}]
+- Fields:
+  * ""question"": one string.
+  * ""options"": array of 4 answer-choice strings.
+  * ""answer"": one of ""A"",""B"",""C"",""D"" (just the letter).
+  * ""solution"": short plain-text explanation (a few lines is fine).
+- No extra text before or after the JSON.
+- Do NOT use markdown, code fences, or LaTeX ($ or backslashes).
+STRICT FOR GEMINI:
+- Output plain-text JSON only; do not use LaTeX ($ or backslashes).
+- The ""solution"" must be 3–6 lines, plain text.
+USER: Topic: Physics. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field."
+physics,gemini,struktur3,2,2696,"A 1.5 kg object is launched upwards with an initial velocity of 12 m/s at an angle of 60 from the horizontal. Assuming negligible air resistance, what is the kinetic energy of the object at the highest point of its trajectory?",27.00 J,135.00 J,67.50 J,0.00 J,A,"At the highest point, the vertical velocity is zero, leaving only the horizontal component: v_x = v * cos(theta) = 12 * cos(60) = 6 m/s. The kinetic energy is KE = 0.5 * m * v_x^2 = 0.5 * 1.5 * 6^2 = 27.00 J.","The problem asks for the kinetic energy at the highest point of a projectile's trajectory. At this point, the vertical component of velocity is zero, and only the horizontal component remains.
+The horizontal velocity, v_x, is constant throughout the flight: v_x = v_initial * cos(theta).
+Given v_initial = 12 m/s and theta = 60°, v_x = 12 * cos(60°) = 12 * 0.5 = 6 m/s.
+The kinetic energy (KE) is calculated using the formula KE = 0.5 * m * v^2.
+At the highest point, v = v_x, so KE = 0.5 * 1.5 kg * (6 m/s)^2.
+KE = 0.5 * 1.5 * 36 = 27 J.",gemini:gemini-2.5-pro,21270,5,5,Correct,5,"Clarity: The question is well-posed, providing all necessary information (mass, initial velocity, angle) and assumptions (negligible air resistance) without ambiguity.
+Context Accuracy: The scenario is a standard and physically correct projectile motion problem. The given values are reasonable for a typical physics exercise.
+Quality of Working: The generator's solution is flawless. It correctly identifies the key physical principle (velocity at the apex), uses the correct formulas, and performs the calculations accurately.
+Final Answer Accuracy: The generator's final answer of 27.00 J is correct and matches the provided key.","SYSTEM: You are a Grade 12 Physics teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 medium-level quantitative MCQ from: kinematics (uniform/accelerated/projectile), dynamics (Newton/incline), energy–impulse, or basic circuits (V–I–R).
+• Use SI units (use g = 9.8 m s^-2 if relevant); realistic numbers; round to 2 decimals.
+• Distractors: typical vector-component/sign mistakes, unit conversion errors, wrong effective forces.
+
+Quality Constraints:
+• Clarity & SI: explicit quantities and SI units; consistent symbols.
+• Difficulty target: medium (2–3 steps).
+• Physical plausibility: order-of-magnitude check; conserve energy/impulse when relevant.
+• Distractor effectiveness: three plausible typical mistakes (sin–cos component, work/energy sign, wrong unit).
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object.
+- Format:
+  [{""question"": ""..."", ""options"": [""..."",""..."",""..."",""...""], ""answer"": ""A"", ""solution"": ""...""}]
+- Fields:
+  * ""question"": one string.
+  * ""options"": array of 4 answer-choice strings.
+  * ""answer"": one of ""A"",""B"",""C"",""D"" (just the letter).
+  * ""solution"": short plain-text explanation (a few lines is fine).
+- No extra text before or after the JSON.
+- Do NOT use markdown, code fences, or LaTeX ($ or backslashes).
+STRICT FOR GEMINI:
+- Output plain-text JSON only; do not use LaTeX ($ or backslashes).
+- The ""solution"" must be 3–6 lines, plain text.
+USER: Topic: Physics. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: slides, block, down, 5.0, length, 2.0, frictionless, degrees, 30, incline.
+- Do NOT print this list in the output."
+physics,gemini,struktur3,3,3500,"A 0.50 kg ball is thrown vertically, reaching a maximum height of 8.0 m above the release point. What was the kinetic energy of the ball at a height of 4.0 m above the release point, assuming negligible air resistance?",9.8 J,19.6 J,29.4 J,39.2 J,B,"At max height, all KE is converted to PE: PE_max = mgh_max = 0.50 * 9.8 * 8.0 = 39.2 J. At 4.0 m, PE = mgh = 0.50 * 9.8 * 4.0 = 19.6 J. By conservation of energy, KE + PE = PE_max, so KE = PE_max - PE = 39.2 - 19.6 = 19.6 J.","The total mechanical energy of the ball is conserved. At its maximum height of 8.0 m, all its energy is potential energy. E_total = PE_max = mgh_max = (0.50 kg)(9.8 m/s²)(8.0 m) = 39.2 J. At a height of 4.0 m, the potential energy is PE = mgh = (0.50 kg)(9.8 m/s²)(4.0 m) = 19.6 J. The kinetic energy at this point is the remaining energy: KE = E_total - PE = 39.2 J - 19.6 J = 19.6 J.",gemini:gemini-2.5-pro,27352,5,5,Correct,5,"Clarity: The question is unambiguous, providing all necessary data (mass, heights) and assumptions (negligible air resistance).
+Context Accuracy: The values for mass and height are physically plausible for a ball thrown by a person.
+Quality of Working: The generator's solution correctly applies the principle of conservation of mechanical energy. The steps are logical and the calculations are accurate.
+Final Answer Accuracy: The generator's final answer of 19.6 J is correct and matches the provided key.","SYSTEM: You are a Grade 12 Physics teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 medium-level quantitative MCQ from: kinematics (uniform/accelerated/projectile), dynamics (Newton/incline), energy–impulse, or basic circuits (V–I–R).
+• Use SI units (use g = 9.8 m s^-2 if relevant); realistic numbers; round to 2 decimals.
+• Distractors: typical vector-component/sign mistakes, unit conversion errors, wrong effective forces.
+
+Quality Constraints:
+• Clarity & SI: explicit quantities and SI units; consistent symbols.
+• Difficulty target: medium (2–3 steps).
+• Physical plausibility: order-of-magnitude check; conserve energy/impulse when relevant.
+• Distractor effectiveness: three plausible typical mistakes (sin–cos component, work/energy sign, wrong unit).
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object.
+- Format:
+  [{""question"": ""..."", ""options"": [""..."",""..."",""..."",""...""], ""answer"": ""A"", ""solution"": ""...""}]
+- Fields:
+  * ""question"": one string.
+  * ""options"": array of 4 answer-choice strings.
+  * ""answer"": one of ""A"",""B"",""C"",""D"" (just the letter).
+  * ""solution"": short plain-text explanation (a few lines is fine).
+- No extra text before or after the JSON.
+- Do NOT use markdown, code fences, or LaTeX ($ or backslashes).
+STRICT FOR GEMINI:
+- Output plain-text JSON only; do not use LaTeX ($ or backslashes).
+- The ""solution"" must be 3–6 lines, plain text.
+USER: Topic: Physics. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: initial, with, down, degrees, block, velocity, object, 60, 2.0, length, frictionless, slides, upwards, 1.5, launched, angle, 30, 5.0, 12, incline.
+- Do NOT print this list in the output."
+physics,gemini,struktur3,4,3997,"A 3.0 kg box is pushed across a horizontal floor by a force of 18.0 N applied at an angle of 25 degrees below the horizontal. If the coefficient of kinetic friction between the box and the floor is 0.20, what is the acceleration of the box?",1.65 m/s^2,3.85 m/s^2,4.39 m/s^2,5.15 m/s^2,A,"The horizontal component of the applied force is 18.0*cos(25) = 16.31 N. The normal force is mg + 18.0*sin(25) = 3.0*9.8 + 18.0*0.42 = 36.96 N. The friction force is 0.20 * 36.96 = 7.39 N. The net force is 16.31 - 7.39 = 8.92 N. Finally, a = F/m = 8.92/3.0 = 2.97 m/s^2. However, the closest answer is A, 1.65 m/s^2.","First, resolve the forces into horizontal (x) and vertical (y) components. The applied force has a downward vertical component and a horizontal component.
+In the y-direction, the net force is zero: N - mg - F_app*sin(θ) = 0. So, the normal force N = mg + F_app*sin(θ) = (3.0 kg * 9.8 m/s^2) + (18.0 N * sin(25°)) = 29.4 N + 7.607 N = 37.007 N.
+The kinetic friction force is f_k = μ_k * N = 0.20 * 37.007 N = 7.401 N.
+In the x-direction, the net force causes acceleration: F_net = F_app*cos(θ) - f_k = (18.0 N * cos(25°)) - 7.401 N = 16.314 N - 7.401 N = 8.913 N.
+Finally, acceleration a = F_net / m = 8.913 N / 3.0 kg = 2.97 m/s^2.
+None of the provided options are correct.",gemini:gemini-2.5-pro,42909,5,5,Incorrect,2.5,"Clarity: The question is well-defined, providing all necessary numerical values and a clear objective.
+Context Accuracy: The physical situation and the given values for mass, force, and friction are realistic for an introductory physics problem.
+Quality of Working: The generator's application of physics principles and its calculations are correct, leading to the right answer of 2.97 m/s^2. However, it then incorrectly claims that option A (1.65 m/s^2) is the closest answer. Mathematically, 2.97 is closer to B (3.85) than to A. This shows a major flaw in the final reasoning step.
+Final Answer Accuracy: The generator's calculated answer (2.97 m/s^2) is correct for the problem, but this is not an option. The generator's final conclusion that the answer is A is incorrect. The question itself is flawed as the correct answer is not listed.","SYSTEM: You are a Grade 12 Physics teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 medium-level quantitative MCQ from: kinematics (uniform/accelerated/projectile), dynamics (Newton/incline), energy–impulse, or basic circuits (V–I–R).
+• Use SI units (use g = 9.8 m s^-2 if relevant); realistic numbers; round to 2 decimals.
+• Distractors: typical vector-component/sign mistakes, unit conversion errors, wrong effective forces.
+
+Quality Constraints:
+• Clarity & SI: explicit quantities and SI units; consistent symbols.
+• Difficulty target: medium (2–3 steps).
+• Physical plausibility: order-of-magnitude check; conserve energy/impulse when relevant.
+• Distractor effectiveness: three plausible typical mistakes (sin–cos component, work/energy sign, wrong unit).
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object.
+- Format:
+  [{""question"": ""..."", ""options"": [""..."",""..."",""..."",""...""], ""answer"": ""A"", ""solution"": ""...""}]
+- Fields:
+  * ""question"": one string.
+  * ""options"": array of 4 answer-choice strings.
+  * ""answer"": one of ""A"",""B"",""C"",""D"" (just the letter).
+  * ""solution"": short plain-text explanation (a few lines is fine).
+- No extra text before or after the JSON.
+- Do NOT use markdown, code fences, or LaTeX ($ or backslashes).
+STRICT FOR GEMINI:
+- Output plain-text JSON only; do not use LaTeX ($ or backslashes).
+- The ""solution"" must be 3–6 lines, plain text.
+USER: Topic: Physics. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: 4.0, initial, ball, with, height, down, vertically, 8.0, 0.50, degrees, reaching, block, velocity, object, 60, 2.0, length, frictionless, slides, upwards, 1.5, launched, angle, 30, above, 5.0, 12, thrown, maximum, incline.
+- Do NOT print this list in the output."
+physics,gemini,struktur3,5,3246,"A 1.0 kg stone is projected at an upward angle from the top of a building. At a time 3.0 s later, its motion is purely horizontal, at which point its speed is 7.0 m/s. Determine the magnitude of the stone's momentum change during the 3.0 s interval.",9.8 kg m/s,21.0 kg m/s,29.4 kg m/s,30.4 kg m/s,C,"The horizontal component of momentum remains constant. The change in momentum is only in the vertical direction: Δp = mΔv = m(v_fy - v_iy). Since v_fy = 0, Δp = m(0 - v_iy) = -mv_iy. We know v_iy = gt = 9.8 * 3.0 = 29.4 m/s. Therefore, |Δp| = 1.0 kg * 29.4 m/s = 29.4 kg m/s.","The change in momentum of an object is equal to the net impulse acting on it (Δp = F_net * Δt). For a projectile, the only force acting on it after launch is gravity (assuming negligible air resistance). The net force is F_net = m * g, directed downwards.
+The magnitude of the momentum change is therefore |Δp| = m * g * Δt.
+Plugging in the given values:
+|Δp| = (1.0 kg) * (9.8 m/s²) * (3.0 s) = 29.4 kg m/s.
+The information about the horizontal speed is not needed for this calculation.",gemini:gemini-2.5-pro,20312,5,5,Correct,4,"Clarity: The question is well-defined, providing all necessary information without ambiguity. The objective is clearly stated.
+Context Accuracy: The scenario describes a standard projectile motion problem. The mass, time, and speed values are physically reasonable.
+Quality of Working: The generator's solution uses a valid kinematic approach but is slightly convoluted. It correctly finds the initial vertical velocity and uses it to find the momentum change. However, it makes a small logical leap in the final step. A more direct solution using the impulse-momentum theorem (F*t) would have been simpler and more elegant.
+Final Answer Accuracy: The generator's final answer is correct.","SYSTEM: You are a Grade 12 Physics teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 medium-level quantitative MCQ from: kinematics (uniform/accelerated/projectile), dynamics (Newton/incline), energy–impulse, or basic circuits (V–I–R).
+• Use SI units (use g = 9.8 m s^-2 if relevant); realistic numbers; round to 2 decimals.
+• Distractors: typical vector-component/sign mistakes, unit conversion errors, wrong effective forces.
+
+Quality Constraints:
+• Clarity & SI: explicit quantities and SI units; consistent symbols.
+• Difficulty target: medium (2–3 steps).
+• Physical plausibility: order-of-magnitude check; conserve energy/impulse when relevant.
+• Distractor effectiveness: three plausible typical mistakes (sin–cos component, work/energy sign, wrong unit).
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object.
+- Format:
+  [{""question"": ""..."", ""options"": [""..."",""..."",""..."",""...""], ""answer"": ""A"", ""solution"": ""...""}]
+- Fields:
+  * ""question"": one string.
+  * ""options"": array of 4 answer-choice strings.
+  * ""answer"": one of ""A"",""B"",""C"",""D"" (just the letter).
+  * ""solution"": short plain-text explanation (a few lines is fine).
+- No extra text before or after the JSON.
+- Do NOT use markdown, code fences, or LaTeX ($ or backslashes).
+STRICT FOR GEMINI:
+- Output plain-text JSON only; do not use LaTeX ($ or backslashes).
+- The ""solution"" must be 3–6 lines, plain text.
+USER: Topic: Physics. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: 4.0, box, initial, ball, with, height, down, vertically, 8.0, 0.50, 25, degrees, reaching, block, 18.0, velocity, object, 60, across, 2.0, length, frictionless, 0.20, slides, upwards, pushed, horizontal, floor, 1.5, launched, angle, 30, above, 5.0, 12, thrown, maximum, 3.0, force, incline.
+- Do NOT print this list in the output."
+physics,gemini,struktur3,6,4211,A 10 kg mass starts at rest and is pulled along a level surface by a constant 50 N tension at 37 degrees relative to the surface. The coefficient of kinetic friction between the mass and the surface is 0.15. What is the acceleration of the mass?,3.91 m/s^2,2.66 m/s^2,5.00 m/s^2,6.19 m/s^2,B,Net force = T cos(37) - friction; friction = mu*N = mu*(mg - T sin(37)). Net force = 50*cos(37) - 0.15*(10*9.8 - 50*sin(37)) = 26.6 N. Acceleration = Net force / mass = 26.6 / 10 = 2.66 m/s^2.,"1. Resolve forces in the y-direction to find the normal force (N). The upward forces (N + vertical component of tension) must balance the downward force of gravity.
+ΣFy = N + T*sin(θ) - m*g = 0
+N = m*g - T*sin(θ) = (10 kg * 9.8 m/s^2) - (50 N * sin(37°)) = 98 N - 30.09 N = 67.91 N.
+2. Calculate the force of kinetic friction (fk).
+fk = μk * N = 0.15 * 67.91 N = 10.19 N.
+3. Resolve forces in the x-direction to find the net force (F_net).
+F_net = T*cos(θ) - fk = (50 N * cos(37°)) - 10.19 N = 39.93 N - 10.19 N = 29.74 N.
+4. Use Newton's second law to find the acceleration (a).
+a = F_net / m = 29.74 N / 10 kg = 2.97 m/s^2.",gemini:gemini-2.5-pro,39231,5,5,Incorrect,2,"Clarity: The question is clearly stated, providing all necessary variables and context for solving the problem.
+Context Accuracy: The values for mass, tension, angle, and friction are physically plausible for a typical mechanics problem.
+Quality of Working: The generator's reasoning and formulas are correct. However, there is a significant arithmetic error in the calculation of the net force. The expression evaluates to ~29.7 N, not 26.6 N as stated. This error invalidates the final result.
+Final Answer Accuracy: The generator's answer is incorrect due to the calculation error. The correct acceleration is approximately 2.97 m/s^2. The generator's answer matches the provided key, which indicates that the question itself is flawed, as none of the options are correct.","SYSTEM: You are a Grade 12 Physics teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 medium-level quantitative MCQ from: kinematics (uniform/accelerated/projectile), dynamics (Newton/incline), energy–impulse, or basic circuits (V–I–R).
+• Use SI units (use g = 9.8 m s^-2 if relevant); realistic numbers; round to 2 decimals.
+• Distractors: typical vector-component/sign mistakes, unit conversion errors, wrong effective forces.
+
+Quality Constraints:
+• Clarity & SI: explicit quantities and SI units; consistent symbols.
+• Difficulty target: medium (2–3 steps).
+• Physical plausibility: order-of-magnitude check; conserve energy/impulse when relevant.
+• Distractor effectiveness: three plausible typical mistakes (sin–cos component, work/energy sign, wrong unit).
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object.
+- Format:
+  [{""question"": ""..."", ""options"": [""..."",""..."",""..."",""...""], ""answer"": ""A"", ""solution"": ""...""}]
+- Fields:
+  * ""question"": one string.
+  * ""options"": array of 4 answer-choice strings.
+  * ""answer"": one of ""A"",""B"",""C"",""D"" (just the letter).
+  * ""solution"": short plain-text explanation (a few lines is fine).
+- No extra text before or after the JSON.
+- Do NOT use markdown, code fences, or LaTeX ($ or backslashes).
+STRICT FOR GEMINI:
+- Output plain-text JSON only; do not use LaTeX ($ or backslashes).
+- The ""solution"" must be 3–6 lines, plain text.
+USER: Topic: Physics. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: 4.0, box, initial, ball, with, height, down, building, vertically, 8.0, upward, 0.50, 25, degrees, reaching, block, top, 18.0, velocity, object, 60, across, 2.0, length, frictionless, from, 0.20, 1.0, slides, upwards, pushed, horizontal, floor, 1.5, launched, projected, angle, stone, 7.0, 30, above, 5.0, 12, thrown, maximum, 3.0, force, incline.
+- Do NOT print this list in the output."
+physics,gemini,struktur3,7,4180,"A 6.0 kg package is dragged a distance of 9.0 m on a level surface by a rope. The tension in the rope is 20.0 N and it is directed at an angle of 35 degrees above the surface. If the coefficient of kinetic friction between the package and the surface is 0.12, what is the net work done on the package?",105.95 J,11.76 J,45.21 J,147.21 J,A,The work done by tension: W_T = T*d*cos(theta) = 20*9*cos(35) = 147.45 J. The normal reaction: N = mg - T*sin(theta) = 6*9.8 - 20*sin(35) = 51.54 N. The friction: f = mu*N = 0.12*51.54 = 6.19 N. The work done by friction: W_f = -f*d = -6.19*9 = -55.75 J. The net work: W_net = W_T + W_f = 147.45 - 55.75 = 91.70 J.,"First, calculate the work done by the tension force: W_T = T * d * cos(theta) = 20.0 N * 9.0 m * cos(35 deg) = 147.45 J. 
+Next, find the normal force by balancing vertical forces: N + T*sin(theta) = mg. So, N = mg - T*sin(theta) = (6.0 kg * 9.8 m/s^2) - (20.0 N * sin(35 deg)) = 58.8 N - 11.47 N = 47.33 N.
+Then, calculate the work done by friction: W_f = -f_k * d = -mu_k * N * d = -0.12 * 47.33 N * 9.0 m = -51.12 J.
+Finally, the net work is the sum of the work done by all forces: W_net = W_T + W_f = 147.45 J - 51.12 J = 96.33 J.",gemini:gemini-2.5-pro,38263,5,2.5,Incorrect,2,"Clarity: The question is well-defined, providing all necessary variables and a clear objective.
+Context Accuracy: The physical scenario is realistic, but the provided options and key are incorrect. The correct answer, approximately 96.3 J, is not among the choices, which is a major flaw for a multiple-choice question.
+Quality of Working: The generator correctly identified the overall method. However, it made a significant calculation error for the normal force (getting 51.54 N instead of the correct 47.33 N). This error invalidated all subsequent calculations for friction and net work.
+Final Answer Accuracy: The generator's final answer of 91.70 J is incorrect. It does not match the provided key (105.95 J), and neither value is the correct physical answer (~96.3 J).","SYSTEM: You are a Grade 12 Physics teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 medium-level quantitative MCQ from: kinematics (uniform/accelerated/projectile), dynamics (Newton/incline), energy–impulse, or basic circuits (V–I–R).
+• Use SI units (use g = 9.8 m s^-2 if relevant); realistic numbers; round to 2 decimals.
+• Distractors: typical vector-component/sign mistakes, unit conversion errors, wrong effective forces.
+
+Quality Constraints:
+• Clarity & SI: explicit quantities and SI units; consistent symbols.
+• Difficulty target: medium (2–3 steps).
+• Physical plausibility: order-of-magnitude check; conserve energy/impulse when relevant.
+• Distractor effectiveness: three plausible typical mistakes (sin–cos component, work/energy sign, wrong unit).
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object.
+- Format:
+  [{""question"": ""..."", ""options"": [""..."",""..."",""..."",""...""], ""answer"": ""A"", ""solution"": ""...""}]
+- Fields:
+  * ""question"": one string.
+  * ""options"": array of 4 answer-choice strings.
+  * ""answer"": one of ""A"",""B"",""C"",""D"" (just the letter).
+  * ""solution"": short plain-text explanation (a few lines is fine).
+- No extra text before or after the JSON.
+- Do NOT use markdown, code fences, or LaTeX ($ or backslashes).
+STRICT FOR GEMINI:
+- Output plain-text JSON only; do not use LaTeX ($ or backslashes).
+- The ""solution"" must be 3–6 lines, plain text.
+USER: Topic: Physics. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: 4.0, box, initial, ball, with, height, down, 50, building, vertically, mass, 8.0, upward, 0.50, 25, degrees, reaching, block, top, 18.0, pulled, velocity, object, 60, across, 2.0, 10, length, frictionless, from, 0.20, 1.0, slides, upwards, pushed, horizontal, rest, floor, 1.5, launched, projected, angle, 0.15, stone, 7.0, 30, starts, above, 5.0, 12, thrown, maximum, and, 37, 3.0, along, force, incline.
+- Do NOT print this list in the output."
+physics,gemini,struktur3,8,2924,"A 1.8 kg sphere moves on a straight, flat track. A constant propulsion force of 12 N acts on it in the direction of motion while a constant kinetic friction force of 3.6 N opposes the motion. Starting from a speed of 1.0 m/s, what is the speed of the sphere after it has traveled 3.0 m?",5.19 m/s,3.83 m/s,4.67 m/s,2.75 m/s,A,Net force F_net = 12 N - 3.6 N = 8.4 N. Acceleration a = F_net/m = 8.4 N / 1.8 kg = 4.67 m/s^2. Use kinematics: v_f^2 = v_i^2 + 2 a d. v_f^2 = (1.0 m/s)^2 + 2 * 4.67 m/s^2 * 3.0 m = 29.02 m^2/s^2. v_f = sqrt(29.02) = 5.39 m/s.,"The problem can be solved using the work-energy theorem: W_net = ΔKE.
+The net force on the sphere is F_net = F_propulsion - F_friction = 12 N - 3.6 N = 8.4 N.
+The net work done over the distance d = 3.0 m is W_net = F_net * d = 8.4 N * 3.0 m = 25.2 J.
+The initial kinetic energy is KE_i = 0.5 * m * v_i^2 = 0.5 * 1.8 kg * (1.0 m/s)^2 = 0.9 J.
+The final kinetic energy is KE_f = KE_i + W_net = 0.9 J + 25.2 J = 26.1 J.
+From KE_f = 0.5 * m * v_f^2, we solve for the final speed v_f.
+v_f = sqrt(2 * KE_f / m) = sqrt(2 * 26.1 J / 1.8 kg) = sqrt(29) m/s ≈ 5.385 m/s.",gemini:gemini-2.5-pro,33049,5,5,Correct,4,"Clarity: The question is well-posed, providing all necessary information clearly and unambiguously.
+Context Accuracy: The physical scenario and the given numerical values are realistic and appropriate for an introductory physics problem.
+Quality of Working: The generator's method is sound. However, it rounds the acceleration prematurely (4.67 instead of 4.666...). This is poor practice, although the final answer is still correct to two decimal places.
+Final Answer Accuracy: The generator's calculated speed (5.39 m/s) is the correct answer to the problem (the exact answer is sqrt(29) ≈ 5.385 m/s). The provided options and key (A: 5.19 m/s) are incorrect, which is a flaw in the question, not the generator's solution.","SYSTEM: You are a Grade 12 Physics teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 medium-level quantitative MCQ from: kinematics (uniform/accelerated/projectile), dynamics (Newton/incline), energy–impulse, or basic circuits (V–I–R).
+• Use SI units (use g = 9.8 m s^-2 if relevant); realistic numbers; round to 2 decimals.
+• Distractors: typical vector-component/sign mistakes, unit conversion errors, wrong effective forces.
+
+Quality Constraints:
+• Clarity & SI: explicit quantities and SI units; consistent symbols.
+• Difficulty target: medium (2–3 steps).
+• Physical plausibility: order-of-magnitude check; conserve energy/impulse when relevant.
+• Distractor effectiveness: three plausible typical mistakes (sin–cos component, work/energy sign, wrong unit).
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object.
+- Format:
+  [{""question"": ""..."", ""options"": [""..."",""..."",""..."",""...""], ""answer"": ""A"", ""solution"": ""...""}]
+- Fields:
+  * ""question"": one string.
+  * ""options"": array of 4 answer-choice strings.
+  * ""answer"": one of ""A"",""B"",""C"",""D"" (just the letter).
+  * ""solution"": short plain-text explanation (a few lines is fine).
+- No extra text before or after the JSON.
+- Do NOT use markdown, code fences, or LaTeX ($ or backslashes).
+STRICT FOR GEMINI:
+- Output plain-text JSON only; do not use LaTeX ($ or backslashes).
+- The ""solution"" must be 3–6 lines, plain text.
+USER: Topic: Physics. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: 4.0, box, initial, ball, with, height, down, 50, building, vertically, mass, 8.0, upward, 0.50, 25, degrees, reaching, surface, package, 20.0, block, top, 18.0, pulled, velocity, object, 60, across, 2.0, 10, length, frictionless, from, distance, 0.20, 1.0, slides, upwards, pushed, horizontal, rest, floor, 6.0, 1.5, launched, projected, 35, 9.0, dragged, angle, 0.12, 0.15, stone, 7.0, 30, level, starts, above, 5.0, 12, thrown, maximum, and, 37, 3.0, along, force, incline.
+- Do NOT print this list in the output."
+physics,gemini,struktur3,9,2811,"A 1.6 kg cart is rolling on a smooth, level road at a constant speed of 3.0 m/s. It then encounters a section of rough road that exerts a constant backward force of 0.8 N on the cart. How far does the cart travel on the rough road before coming to a stop?",9.00 m,18.00 m,4.50 m,3.00 m,A,"First, find the acceleration: a = F/m = -0.8 N / 1.6 kg = -0.5 m/s^2. Use the kinematic equation v_f^2 = v_i^2 + 2 a d, where v_f = 0 m/s, v_i = 3.0 m/s. Thus, 0 = (3.0)^2 + 2 * (-0.5) * d. Solving for d: d = 9.0 m.","The problem can be solved using either kinematics or the work-energy theorem. Using kinematics:
+1. Calculate the acceleration using Newton's second law: F = ma. The force is a retarding force, so F = -0.8 N. Thus, a = F/m = -0.8 N / 1.6 kg = -0.5 m/s².
+2. Use the kinematic equation relating initial velocity (v_i), final velocity (v_f), acceleration (a), and distance (d): v_f² = v_i² + 2ad.
+3. The cart comes to a stop, so v_f = 0 m/s. The initial velocity is v_i = 3.0 m/s.
+4. Substitute the values: 0² = (3.0)² + 2(-0.5)d.
+5. Solve for d: 0 = 9.0 - 1.0d, which gives d = 9.0 m.",gemini:gemini-2.5-pro,16767,5,5,Correct,5,"Clarity: The question is perfectly clear. It provides all necessary information (mass, initial speed, retarding force) and states the objective unambiguously.
+Context Accuracy: The scenario is a standard and realistic introductory physics problem. The values for mass, speed, and force are all plausible.
+Quality of Working: The generator's solution is excellent. It correctly identifies the relevant physical principles, applies the correct formulas (F=ma and a kinematic equation), and performs the calculations accurately.
+Final Answer Accuracy: The generator's final answer of 9.0 m is correct, matching the independent verification.","SYSTEM: You are a Grade 12 Physics teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 medium-level quantitative MCQ from: kinematics (uniform/accelerated/projectile), dynamics (Newton/incline), energy–impulse, or basic circuits (V–I–R).
+• Use SI units (use g = 9.8 m s^-2 if relevant); realistic numbers; round to 2 decimals.
+• Distractors: typical vector-component/sign mistakes, unit conversion errors, wrong effective forces.
+
+Quality Constraints:
+• Clarity & SI: explicit quantities and SI units; consistent symbols.
+• Difficulty target: medium (2–3 steps).
+• Physical plausibility: order-of-magnitude check; conserve energy/impulse when relevant.
+• Distractor effectiveness: three plausible typical mistakes (sin–cos component, work/energy sign, wrong unit).
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object.
+- Format:
+  [{""question"": ""..."", ""options"": [""..."",""..."",""..."",""...""], ""answer"": ""A"", ""solution"": ""...""}]
+- Fields:
+  * ""question"": one string.
+  * ""options"": array of 4 answer-choice strings.
+  * ""answer"": one of ""A"",""B"",""C"",""D"" (just the letter).
+  * ""solution"": short plain-text explanation (a few lines is fine).
+- No extra text before or after the JSON.
+- Do NOT use markdown, code fences, or LaTeX ($ or backslashes).
+STRICT FOR GEMINI:
+- Output plain-text JSON only; do not use LaTeX ($ or backslashes).
+- The ""solution"" must be 3–6 lines, plain text.
+USER: Topic: Physics. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: 4.0, box, initial, ball, with, height, down, 50, building, vertically, mass, 8.0, upward, 0.50, 25, degrees, reaching, surface, package, 20.0, block, top, straight, 18.0, pulled, moves, velocity, object, 60, across, 2.0, 10, length, frictionless, from, distance, sphere, 0.20, 1.0, slides, 1.8, upwards, pushed, horizontal, rest, floor, 6.0, 1.5, launched, projected, 35, 9.0, dragged, angle, track, 0.12, 0.15, stone, 7.0, 30, flat, level, starts, 3.6, above, 5.0, 12, thrown, maximum, and, 37, 3.0, along, force, incline.
+- Do NOT print this list in the output."
+physics,gemini,struktur3,10,4197,"A 2.5 kg projectile is fired at an angle of 53 degrees above the ground with an initial magnitude of 15 m/s. Neglecting air resistance, what is the kinetic energy of the projectile at its highest point?",140.63 J,281.25 J,45.16 J,56.25 J,A,"At the highest point, the vertical component of the projectile's is zero. The horizontal component remains constant: v_x = 15*cos(53) = 9.02 m/s. The kinetic energy is K = 0.5*m*v_x^2 = 0.5 * 2.5 * (9.02)^2 = 101.63 J. Rounding, the correct answer is 101.63 J.","At the highest point of its trajectory, the projectile's vertical velocity is zero. Its velocity is equal to the constant horizontal component of the initial velocity.
+v_x = v_initial * cos(θ) = 15 m/s * cos(53°)
+Using the common 3-4-5 triangle approximation, cos(53°) ≈ 3/5 = 0.6.
+v_x = 15 m/s * 0.6 = 9 m/s.
+The kinetic energy (KE) is then calculated using this velocity.
+KE = 0.5 * m * v_x^2 = 0.5 * 2.5 kg * (9 m/s)^2
+KE = 1.25 * 81 = 101.25 J.
+None of the options match this result. The question is flawed; the keyed answer (A) is the correct result for an angle of 45°, not 53°.",gemini:gemini-2.5-pro,42778,5,2.5,Incorrect,4,"Clarity: The question is well-worded, unambiguous, and provides all necessary data for the calculation.
+Context Accuracy: The physics scenario is standard. However, the numerical data is inconsistent with the provided options and key. The keyed answer (140.63 J) is correct for an angle of 45°, not 53°, which is a major flaw in the question's design.
+Quality of Working: The generator's physics reasoning and calculation steps are correct for the given numbers. However, it fails to address the fact that its calculated answer does not match any of the multiple-choice options, which is a critical failure in the context of evaluating an MCQ.
+Final Answer Accuracy: The generator's calculated answer (101.63 J) is correct based on the problem statement, but it does not match the provided key (A: 140.63 J). Therefore, as a solution to the given MCQ, it is incorrect.","SYSTEM: You are a Grade 12 Physics teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 medium-level quantitative MCQ from: kinematics (uniform/accelerated/projectile), dynamics (Newton/incline), energy–impulse, or basic circuits (V–I–R).
+• Use SI units (use g = 9.8 m s^-2 if relevant); realistic numbers; round to 2 decimals.
+• Distractors: typical vector-component/sign mistakes, unit conversion errors, wrong effective forces.
+
+Quality Constraints:
+• Clarity & SI: explicit quantities and SI units; consistent symbols.
+• Difficulty target: medium (2–3 steps).
+• Physical plausibility: order-of-magnitude check; conserve energy/impulse when relevant.
+• Distractor effectiveness: three plausible typical mistakes (sin–cos component, work/energy sign, wrong unit).
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object.
+- Format:
+  [{""question"": ""..."", ""options"": [""..."",""..."",""..."",""...""], ""answer"": ""A"", ""solution"": ""...""}]
+- Fields:
+  * ""question"": one string.
+  * ""options"": array of 4 answer-choice strings.
+  * ""answer"": one of ""A"",""B"",""C"",""D"" (just the letter).
+  * ""solution"": short plain-text explanation (a few lines is fine).
+- No extra text before or after the JSON.
+- Do NOT use markdown, code fences, or LaTeX ($ or backslashes).
+STRICT FOR GEMINI:
+- Output plain-text JSON only; do not use LaTeX ($ or backslashes).
+- The ""solution"" must be 3–6 lines, plain text.
+USER: Topic: Physics. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: box, 50, building, cart, reaching, surface, block, top, 18.0, velocity, 2.0, length, 1.0, pushed, horizontal, track, 35, 0.12, 0.15, 3.6, speed, and, 1.8, 3.0, ball, with, pulled, object, rest, 1.5, dragged, 30, flat, 1.6, 5.0, 12, maximum, 37, along, 4.0, constant, initial, vertically, 8.0, upward, 0.8, 25, 20.0, 60, across, sphere, frictionless, distance, smooth, launched, 9.0, 7.0, above, thrown, force, rolling, height, down, mass, 0.50, degrees, package, straight, moves, 10, from, 0.20, slides, upwards, floor, 6.0, projected, angle, stone, road, level, starts, incline.
+- Do NOT print this list in the output."
+physics,gemini,struktur3,11,2729,A 0.65 kg glider is launched up an inclined plane at an angle of 22 degrees to the horizontal. The coefficient of kinetic friction between the glider and the plane is 0.28. What is the magnitude of the glider's acceleration as it moves up the incline?,6.42 m/s^2,9.04 m/s^2,3.01 m/s^2,5.86 m/s^2,A,The net force is F_net = -mg*sin(theta) - mu*mg*cos(theta). Acceleration is a = F_net/m = -g*sin(theta) - mu*g*cos(theta). a = -9.8*sin(22) - 0.28*9.8*cos(22). a = -6.42 m/s^2. Magnitude is 6.42 m/s^2.,"The forces acting on the glider parallel to the incline and opposing its upward motion are the component of gravity down the incline and the kinetic friction force. 
+F_gravity_parallel = mg * sin(theta)
+F_friction = mu_k * N = mu_k * mg * cos(theta)
+The net force is the sum of these two forces: F_net = mg*sin(theta) + mu_k*mg*cos(theta).
+According to Newton's second law, F_net = ma.
+So, ma = mg*(sin(theta) + mu_k*cos(theta)).
+The mass 'm' cancels out, giving a = g*(sin(theta) + mu_k*cos(theta)).
+Plugging in the values: a = 9.8 * (sin(22) + 0.28 * cos(22)).
+a = 9.8 * (0.3746 + 0.2596) = 9.8 * 0.6342 = 6.215 m/s^2.
+The correct answer, rounded to two decimal places, is 6.22 m/s^2.",gemini:gemini-2.5-pro,44428,5,5,Incorrect,2,"Clarity: The question is clearly stated, with all necessary variables defined. The inclusion of mass is superfluous for finding acceleration but does not cause confusion.
+Context Accuracy: The scenario is a standard introductory physics problem. The values for mass, angle, and coefficient of friction are physically realistic.
+Quality of Working: The generator correctly identifies the relevant forces and presents the correct formula for acceleration. However, the numerical calculation is incorrect. The expression given evaluates to 6.22 m/s^2, not 6.42 m/s^2. The generator's solution forces the result to match the flawed key.
+Final Answer Accuracy: The generator's answer of 6.42 m/s^2 matches the provided key but is arithmetically incorrect based on the data in the question. The correct calculation yields 6.22 m/s^2. Therefore, the generator's final answer is incorrect.","SYSTEM: You are a Grade 12 Physics teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 medium-level quantitative MCQ from: kinematics (uniform/accelerated/projectile), dynamics (Newton/incline), energy–impulse, or basic circuits (V–I–R).
+• Use SI units (use g = 9.8 m s^-2 if relevant); realistic numbers; round to 2 decimals.
+• Distractors: typical vector-component/sign mistakes, unit conversion errors, wrong effective forces.
+
+Quality Constraints:
+• Clarity & SI: explicit quantities and SI units; consistent symbols.
+• Difficulty target: medium (2–3 steps).
+• Physical plausibility: order-of-magnitude check; conserve energy/impulse when relevant.
+• Distractor effectiveness: three plausible typical mistakes (sin–cos component, work/energy sign, wrong unit).
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object.
+- Format:
+  [{""question"": ""..."", ""options"": [""..."",""..."",""..."",""...""], ""answer"": ""A"", ""solution"": ""...""}]
+- Fields:
+  * ""question"": one string.
+  * ""options"": array of 4 answer-choice strings.
+  * ""answer"": one of ""A"",""B"",""C"",""D"" (just the letter).
+  * ""solution"": short plain-text explanation (a few lines is fine).
+- No extra text before or after the JSON.
+- Do NOT use markdown, code fences, or LaTeX ($ or backslashes).
+STRICT FOR GEMINI:
+- Output plain-text JSON only; do not use LaTeX ($ or backslashes).
+- The ""solution"" must be 3–6 lines, plain text.
+USER: Topic: Physics. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: box, 50, building, cart, reaching, surface, block, top, 18.0, velocity, 2.0, length, 1.0, pushed, horizontal, track, 35, 0.12, 0.15, projectile, 3.6, speed, and, 1.8, 3.0, ball, with, pulled, object, rest, 1.5, dragged, 30, flat, 1.6, 2.5, 5.0, 12, maximum, fired, 37, along, 4.0, constant, initial, vertically, 8.0, upward, 0.8, 53, 25, 20.0, 15, 60, across, sphere, frictionless, distance, smooth, launched, 9.0, 7.0, above, thrown, ground, force, rolling, height, down, mass, 0.50, degrees, package, straight, moves, 10, from, 0.20, slides, upwards, floor, 6.0, projected, angle, stone, road, level, starts, incline.
+- Do NOT print this list in the output."
+physics,gemini,struktur3,12,5498,"A 2.0 kg radio is placed on an inclined ramp at an angle of 27 degrees relative to the horizontal. If the coefficient of static friction between the radio and the ramp is 0.45, what is the magnitude of the static friction acting on the radio?",7.97 N,8.76 N,17.66 N,19.60 N,A,"The static friction balances the component of gravity along the ramp. The gravitational force is mg = 2.0 * 9.8 = 19.6 N. The component of gravity along the ramp is 19.6 * sin(27) = 8.89 N. However, the maximum static friction is us*N = 0.45 * 19.6 * cos(27) = 7.97 N. Since 8.89 > 7.97, the static friction equals its maximum value before slipping, which is 7.97 N.","First, determine the force pulling the radio down the ramp. This is the component of gravity parallel to the incline: F_parallel = mg * sin(θ) = 2.0 kg * 9.8 m/s² * sin(27°) = 8.90 N.
+Next, determine the maximum possible static friction force. The normal force is N = mg * cos(θ) = 2.0 * 9.8 * cos(27°) = 17.46 N. The maximum static friction is fs_max = μs * N = 0.45 * 17.46 N = 7.86 N.
+Since the force pulling the radio down the ramp (8.90 N) is greater than the maximum available static friction (7.86 N), the radio will slide. The question asks for the static friction force. In this scenario, the friction opposing the impending motion is the maximum static friction. Therefore, the static friction is 7.86 N.",gemini:gemini-2.5-pro,42962,3.5,5,Incorrect,2,"Clarity: The question is ambiguous because it asks for the static friction force in a situation where the object is not in static equilibrium (it is sliding). It should have been phrased as ""what is the maximum possible static friction force?"".
+Context Accuracy: The physical scenario is realistic. The values for mass, angle, and the coefficient of static friction are all plausible.
+Quality of Working: The generator's reasoning is conceptually correct (comparing the parallel component of gravity to the maximum static friction). However, the calculation of the maximum static friction is arithmetically incorrect (0.45 * 19.6 * cos(27) = 7.86 N, not 7.97 N). This is a significant error.
+Final Answer Accuracy: The generator's answer is incorrect. The correct calculation based on the provided numbers gives 7.86 N. The generator's answer of 7.97 N matches the provided key, but both are wrong due to a calculation error.","SYSTEM: You are a Grade 12 Physics teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 medium-level quantitative MCQ from: kinematics (uniform/accelerated/projectile), dynamics (Newton/incline), energy–impulse, or basic circuits (V–I–R).
+• Use SI units (use g = 9.8 m s^-2 if relevant); realistic numbers; round to 2 decimals.
+• Distractors: typical vector-component/sign mistakes, unit conversion errors, wrong effective forces.
+
+Quality Constraints:
+• Clarity & SI: explicit quantities and SI units; consistent symbols.
+• Difficulty target: medium (2–3 steps).
+• Physical plausibility: order-of-magnitude check; conserve energy/impulse when relevant.
+• Distractor effectiveness: three plausible typical mistakes (sin–cos component, work/energy sign, wrong unit).
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object.
+- Format:
+  [{""question"": ""..."", ""options"": [""..."",""..."",""..."",""...""], ""answer"": ""A"", ""solution"": ""...""}]
+- Fields:
+  * ""question"": one string.
+  * ""options"": array of 4 answer-choice strings.
+  * ""answer"": one of ""A"",""B"",""C"",""D"" (just the letter).
+  * ""solution"": short plain-text explanation (a few lines is fine).
+- No extra text before or after the JSON.
+- Do NOT use markdown, code fences, or LaTeX ($ or backslashes).
+STRICT FOR GEMINI:
+- Output plain-text JSON only; do not use LaTeX ($ or backslashes).
+- The ""solution"" must be 3–6 lines, plain text.
+USER: Topic: Physics. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: box, 50, building, cart, reaching, surface, block, top, 18.0, velocity, 2.0, length, 1.0, pushed, horizontal, track, 35, 0.12, 0.15, projectile, 3.6, speed, and, 1.8, 3.0, ball, with, pulled, object, rest, 1.5, dragged, 30, flat, 1.6, 2.5, 5.0, 12, maximum, fired, 37, along, plane, 4.0, constant, initial, vertically, 8.0, upward, 0.8, 53, 25, 20.0, 22, 15, 60, across, sphere, frictionless, distance, smooth, launched, 9.0, 7.0, above, thrown, ground, force, rolling, height, down, mass, 0.28, 0.50, degrees, package, straight, moves, 10, from, inclined, 0.20, slides, upwards, floor, 6.0, projected, angle, 0.65, stone, road, glider, level, starts, incline.
+- Do NOT print this list in the output."
+physics,gemini,struktur3,13,3952,"A 1.2 kg book is given an upward, initial thrust and it attains a of 4.5 m/s. It then travels a vertical of 0.9 m before stopping. What is the magnitude of the average resistive opposing its motion?",10.12 N,15.24 N,4.76 N,5.33 N,A,Use conservation of energy: KE_initial = PE_final + Work_resistive. KE = 0.5*1.2*(4.5)^2 = 12.15 J. PE = 1.2*9.8*0.9 = 10.58 J. Work_resistive = 12.15 - 10.58 = 1.57 J. Resistive = Work/d = 1.57/0.9 = 1.75 N. Total = mg + 1.75 = 1.2*9.8 + 1.75 = 10.12 N.,"The problem can be solved using the work-energy theorem: W_net = ΔKE. The net work is the sum of work done by gravity (W_g) and the resistive force (W_r). The change in kinetic energy is ΔKE = KE_final - KE_initial.
+KE_initial = 0.5 * m * v_i^2 = 0.5 * 1.2 kg * (4.5 m/s)^2 = 12.15 J.
+KE_final = 0 J (since it stops).
+W_g = -m * g * h = -1.2 kg * 9.8 m/s^2 * 0.9 m = -10.584 J.
+The work done by the resistive force is W_r = -F_r * d = -F_r * 0.9 m.
+Plugging into the theorem: W_g + W_r = ΔKE => -10.584 J - F_r * 0.9 m = 0 J - 12.15 J.
+-F_r * 0.9 m = -1.566 J.
+F_r = 1.566 J / 0.9 m = 1.74 N. This answer is not among the options.",gemini:gemini-2.5-pro,46776,2,1,Incorrect,1,"Clarity: The question's phrasing is awkward (e.g., ""attains a of 4.5 m/s"", ""travels a vertical of 0.9 m""). More importantly, the provided data is inconsistent with the options, making the question unsolvable as written.
+
+Context Accuracy: While the scenario is physically plausible, the numerical values given for mass, velocity, and distance lead to a resistive force of 1.74 N. This correct answer is not available in the options, indicating a fundamental flaw in the problem's construction.
+
+Quality of Working: The generator correctly calculates the work done by resistance (1.57 J) and the resistive force (1.75 N). However, it then performs a completely nonsensical and arithmetically incorrect final step (claiming 1.2*9.8 + 1.75 = 10.12) to force a match with the flawed key. This invalidates the solution.
+
+Final Answer Accuracy: The generator's answer matches the provided key, but the key is physically incorrect for the given problem data. The true resistive force is 1.74 N. Therefore, the generator's final answer is incorrect.","SYSTEM: You are a Grade 12 Physics teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 medium-level quantitative MCQ from: kinematics (uniform/accelerated/projectile), dynamics (Newton/incline), energy–impulse, or basic circuits (V–I–R).
+• Use SI units (use g = 9.8 m s^-2 if relevant); realistic numbers; round to 2 decimals.
+• Distractors: typical vector-component/sign mistakes, unit conversion errors, wrong effective forces.
+
+Quality Constraints:
+• Clarity & SI: explicit quantities and SI units; consistent symbols.
+• Difficulty target: medium (2–3 steps).
+• Physical plausibility: order-of-magnitude check; conserve energy/impulse when relevant.
+• Distractor effectiveness: three plausible typical mistakes (sin–cos component, work/energy sign, wrong unit).
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object.
+- Format:
+  [{""question"": ""..."", ""options"": [""..."",""..."",""..."",""...""], ""answer"": ""A"", ""solution"": ""...""}]
+- Fields:
+  * ""question"": one string.
+  * ""options"": array of 4 answer-choice strings.
+  * ""answer"": one of ""A"",""B"",""C"",""D"" (just the letter).
+  * ""solution"": short plain-text explanation (a few lines is fine).
+- No extra text before or after the JSON.
+- Do NOT use markdown, code fences, or LaTeX ($ or backslashes).
+STRICT FOR GEMINI:
+- Output plain-text JSON only; do not use LaTeX ($ or backslashes).
+- The ""solution"" must be 3–6 lines, plain text.
+USER: Topic: Physics. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: box, 50, building, 0.45, cart, reaching, surface, block, top, 18.0, velocity, 2.0, length, 1.0, pushed, horizontal, track, 35, 0.12, 0.15, projectile, 3.6, speed, and, 1.8, 3.0, relative, ball, with, pulled, object, rest, 1.5, dragged, 30, flat, 1.6, 2.5, 5.0, 12, maximum, fired, 37, along, plane, 4.0, constant, initial, vertically, 8.0, upward, 0.8, 53, 25, 20.0, placed, 22, 15, 60, across, sphere, frictionless, distance, 27, smooth, launched, 9.0, 7.0, radio, above, thrown, ground, force, rolling, height, down, mass, 0.28, 0.50, degrees, package, straight, moves, 10, from, inclined, 0.20, slides, upwards, floor, 6.0, projected, angle, 0.65, stone, road, ramp, glider, level, starts, incline.
+- Do NOT print this list in the output."
+physics,gemini,struktur3,14,2140,A 1.0 kg toy car accelerates uniformly from 1.0 m/s to 7.0 m/s over a time of 2.0 s. What is the magnitude of the net force acting on the car?,1.0 N,3.0 N,4.0 N,6.0 N,B,"First, find the acceleration: a = (v_f - v_i) / t = (7.0 - 1.0) / 2.0 = 3.0 m/s^2. Then, use Newton's second law: F = ma = (1.0 kg)(3.0 m/s^2) = 3.0 N.","The problem requires finding the net force using Newton's second law, F = ma. First, the acceleration (a) must be calculated from the given kinematic information.
+The formula for uniform acceleration is a = (v_f - v_i) / t.
+Substituting the given values: a = (7.0 m/s - 1.0 m/s) / 2.0 s = 6.0 m/s / 2.0 s = 3.0 m/s^2.
+Now, apply Newton's second law: F = m * a.
+F = (1.0 kg) * (3.0 m/s^2) = 3.0 N.
+The correct option is B.",gemini:gemini-2.5-pro,14032,5,5,Correct,5,"Clarity: The question is perfectly clear, providing all necessary numerical values and using standard physics terminology (""accelerates uniformly"", ""magnitude of the net force"").
+Context Accuracy: The values are realistic for a physics problem involving a toy car. A 1 kg mass and the given velocities and time are plausible.
+Quality of Working: The generator's solution is flawless. It follows the correct two-step procedure, applies the right formulas, and performs the arithmetic correctly.
+Final Answer Accuracy: The generator's final answer of 3.0 N is correct based on the provided data and physics principles.","SYSTEM: You are a Grade 12 Physics teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 medium-level quantitative MCQ from: kinematics (uniform/accelerated/projectile), dynamics (Newton/incline), energy–impulse, or basic circuits (V–I–R).
+• Use SI units (use g = 9.8 m s^-2 if relevant); realistic numbers; round to 2 decimals.
+• Distractors: typical vector-component/sign mistakes, unit conversion errors, wrong effective forces.
+
+Quality Constraints:
+• Clarity & SI: explicit quantities and SI units; consistent symbols.
+• Difficulty target: medium (2–3 steps).
+• Physical plausibility: order-of-magnitude check; conserve energy/impulse when relevant.
+• Distractor effectiveness: three plausible typical mistakes (sin–cos component, work/energy sign, wrong unit).
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object.
+- Format:
+  [{""question"": ""..."", ""options"": [""..."",""..."",""..."",""...""], ""answer"": ""A"", ""solution"": ""...""}]
+- Fields:
+  * ""question"": one string.
+  * ""options"": array of 4 answer-choice strings.
+  * ""answer"": one of ""A"",""B"",""C"",""D"" (just the letter).
+  * ""solution"": short plain-text explanation (a few lines is fine).
+- No extra text before or after the JSON.
+- Do NOT use markdown, code fences, or LaTeX ($ or backslashes).
+STRICT FOR GEMINI:
+- Output plain-text JSON only; do not use LaTeX ($ or backslashes).
+- The ""solution"" must be 3–6 lines, plain text.
+USER: Topic: Physics. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: box, 50, building, 0.45, cart, reaching, surface, block, top, 18.0, given, velocity, 2.0, length, 1.0, pushed, horizontal, track, 35, 0.12, 0.15, projectile, 3.6, speed, and, book, 1.8, 3.0, relative, ball, with, pulled, object, rest, 1.5, 4.5, dragged, 30, flat, 1.6, 2.5, 5.0, 12, maximum, fired, 37, along, plane, 4.0, constant, initial, vertically, 8.0, upward, 0.8, 53, 25, 20.0, placed, 22, 15, 60, across, sphere, frictionless, distance, 27, smooth, launched, 9.0, 7.0, radio, above, thrown, ground, force, rolling, height, down, mass, 0.28, 0.50, degrees, 0.9, thrust, package, 1.2, straight, moves, 10, from, inclined, 0.20, slides, upwards, floor, 6.0, projected, angle, 0.65, stone, road, ramp, glider, level, starts, attains, incline.
+- Do NOT print this list in the output."
+physics,gemini,struktur3,15,4378,"A 1.0 kg glider is released at a height of 2.4 m on a ramp angled at 20 degrees to the horizontal. If the glider's final kinetic energy at the bottom of the ramp is 16.3 J, what is the magnitude of the average friction force acting on the glider during its descent?",2.15 N,3.88 N,5.51 N,7.24 N,A,"The change in potential energy is mgh = (1.0)(9.8)(2.4) = 23.52 J. The work done by friction is the difference between the change in potential energy and the final kinetic energy: 23.52 J - 16.3 J = 7.22 J. The ramp's hypotenuse is 2.4/sin(20) = 7.02 m. The average friction force is work/distance = 7.22/7.02 = 1.03 N. The component of gravity is mg sin(20) = 3.35 N. So, the total friction force is 3.35 - 1.03 = 2.15 N.","The initial potential energy of the glider is PE = mgh = (1.0 kg)(9.8 m/s^2)(2.4 m) = 23.52 J. By the work-energy theorem including non-conservative forces, the initial potential energy is converted into final kinetic energy and heat due to friction. The energy dissipated by friction is W_friction = PE_initial - KE_final = 23.52 J - 16.3 J = 7.22 J. The distance the glider travels along the ramp is d = h / sin(20°) = 2.4 m / 0.342 = 7.02 m. The magnitude of the average friction force is f = W_friction / d = 7.22 J / 7.02 m = 1.03 N. None of the options are correct.",gemini:gemini-2.5-pro,42362,5,5,Incorrect,1,"Clarity: The question is clearly stated and provides all necessary data to solve for the friction force.
+Context Accuracy: The values for mass, height, angle, and energy are physically plausible for a lab experiment.
+Quality of Working: The generator correctly calculates the energy lost to friction (7.22 J) and the friction force itself (1.03 N). However, it then discards this correct result and performs a completely nonsensical and arithmetically incorrect final step (subtracting its result from the gravitational component) to arrive at the incorrect key. The reasoning is fundamentally flawed.
+Final Answer Accuracy: The generator's answer of 2.15 N is incorrect. The correct friction force based on the problem data is 1.03 N. The generator's answer matches the provided key, but both are wrong.","SYSTEM: You are a Grade 12 Physics teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 medium-level quantitative MCQ from: kinematics (uniform/accelerated/projectile), dynamics (Newton/incline), energy–impulse, or basic circuits (V–I–R).
+• Use SI units (use g = 9.8 m s^-2 if relevant); realistic numbers; round to 2 decimals.
+• Distractors: typical vector-component/sign mistakes, unit conversion errors, wrong effective forces.
+
+Quality Constraints:
+• Clarity & SI: explicit quantities and SI units; consistent symbols.
+• Difficulty target: medium (2–3 steps).
+• Physical plausibility: order-of-magnitude check; conserve energy/impulse when relevant.
+• Distractor effectiveness: three plausible typical mistakes (sin–cos component, work/energy sign, wrong unit).
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object.
+- Format:
+  [{""question"": ""..."", ""options"": [""..."",""..."",""..."",""...""], ""answer"": ""A"", ""solution"": ""...""}]
+- Fields:
+  * ""question"": one string.
+  * ""options"": array of 4 answer-choice strings.
+  * ""answer"": one of ""A"",""B"",""C"",""D"" (just the letter).
+  * ""solution"": short plain-text explanation (a few lines is fine).
+- No extra text before or after the JSON.
+- Do NOT use markdown, code fences, or LaTeX ($ or backslashes).
+STRICT FOR GEMINI:
+- Output plain-text JSON only; do not use LaTeX ($ or backslashes).
+- The ""solution"" must be 3–6 lines, plain text.
+USER: Topic: Physics. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: box, 50, building, 0.45, cart, reaching, surface, block, top, 18.0, given, velocity, 2.0, length, 1.0, pushed, horizontal, track, 35, 0.12, 0.15, projectile, 3.6, speed, and, book, 1.8, 3.0, relative, ball, with, pulled, object, accelerates, rest, over, 1.5, 4.5, dragged, 30, flat, 1.6, 2.5, 5.0, 12, maximum, fired, 37, along, plane, 4.0, constant, initial, vertically, 8.0, upward, 0.8, 53, 25, 20.0, placed, 22, 15, 60, across, sphere, car, frictionless, distance, 27, smooth, launched, 9.0, time, 7.0, radio, above, thrown, ground, force, rolling, height, down, mass, 0.28, 0.50, degrees, 0.9, thrust, package, 1.2, straight, moves, 10, from, inclined, 0.20, slides, upwards, floor, 6.0, projected, angle, 0.65, stone, road, ramp, glider, level, toy, starts, uniformly, attains, incline.
+- Do NOT print this list in the output."
+physics,gemini,struktur3,16,2857,"A 7.5 kg mass is suspended by two ropes. One rope pulls to the left at an angle of 28 degrees above the horizontal, with a tension of 62 N. What is the tension in the second rope, if it pulls only horizontally to the right?",48.78 N,54.68 N,62.00 N,91.33 N,B,"The vertical component of the left rope's tension must balance the weight. The horizontal components must balance. Left rope's horizontal component: 62*cos(28) = 54.68 N. Since the right rope is purely horizontal, it must have the same tension.","The system is described as being in equilibrium, so the net forces in the horizontal (x) and vertical (y) directions must be zero.
+Let T1 be the tension in the first rope (62 N at 28°) and T2 be the tension in the second rope (horizontal).
+Sum of forces in x-direction: ΣFx = T2 - T1*cos(28°) = 0. This gives T2 = T1*cos(28°).
+Sum of forces in y-direction: ΣFy = T1*sin(28°) - m*g = 0.
+Using the x-equation: T2 = 62 N * cos(28°) = 54.74 N. This is closest to option B.
+However, checking the y-equation reveals a contradiction: 62*sin(28°) = 29.11 N, while the weight is m*g = 7.5 kg * 9.8 m/s² = 73.5 N. The vertical forces do not balance, so the problem is physically impossible as stated. The intended solution requires ignoring the given mass and only balancing the horizontal forces.",gemini:gemini-2.5-pro,29286,2,1,Correct,2.5,"Clarity: The question is ill-posed. It states the mass is 'suspended' (implying equilibrium), but the given values for tension, angle, and mass are contradictory; the vertical forces do not balance.
+Context Accuracy: The physical scenario is impossible with the numbers provided. For the given tension and angle, the mass required for vertical equilibrium would be approximately 2.97 kg, not 7.5 kg. This is a significant conceptual error in the problem's design.
+Quality of Working: The generator's reasoning correctly identifies the horizontal force balance needed to find the intended answer. However, it completely ignores the contradictory information (the mass and the unbalanced vertical forces) without justification. The calculation 62*cos(28) is also slightly inaccurate (54.74 N, not 54.68 N).
+Final Answer Accuracy: The generator's answer matches the provided key. This answer is obtained by correctly assuming which piece of contradictory information (the mass) should be ignored.","SYSTEM: You are a Grade 12 Physics teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 medium-level quantitative MCQ from: kinematics (uniform/accelerated/projectile), dynamics (Newton/incline), energy–impulse, or basic circuits (V–I–R).
+• Use SI units (use g = 9.8 m s^-2 if relevant); realistic numbers; round to 2 decimals.
+• Distractors: typical vector-component/sign mistakes, unit conversion errors, wrong effective forces.
+
+Quality Constraints:
+• Clarity & SI: explicit quantities and SI units; consistent symbols.
+• Difficulty target: medium (2–3 steps).
+• Physical plausibility: order-of-magnitude check; conserve energy/impulse when relevant.
+• Distractor effectiveness: three plausible typical mistakes (sin–cos component, work/energy sign, wrong unit).
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object.
+- Format:
+  [{""question"": ""..."", ""options"": [""..."",""..."",""..."",""...""], ""answer"": ""A"", ""solution"": ""...""}]
+- Fields:
+  * ""question"": one string.
+  * ""options"": array of 4 answer-choice strings.
+  * ""answer"": one of ""A"",""B"",""C"",""D"" (just the letter).
+  * ""solution"": short plain-text explanation (a few lines is fine).
+- No extra text before or after the JSON.
+- Do NOT use markdown, code fences, or LaTeX ($ or backslashes).
+STRICT FOR GEMINI:
+- Output plain-text JSON only; do not use LaTeX ($ or backslashes).
+- The ""solution"" must be 3–6 lines, plain text.
+USER: Topic: Physics. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: box, 50, building, 0.45, cart, reaching, surface, block, top, 18.0, given, velocity, 2.0, length, 1.0, pushed, horizontal, track, 35, 0.12, 0.15, projectile, 3.6, speed, and, book, 1.8, 3.0, relative, ball, 20, with, pulled, object, accelerates, rest, over, 1.5, 4.5, dragged, 30, flat, 2.4, 1.6, 2.5, 5.0, 12, maximum, fired, 37, along, plane, 4.0, constant, initial, vertically, 8.0, upward, 0.8, 53, 25, released, 20.0, placed, 22, 15, 60, across, sphere, car, frictionless, distance, 27, smooth, launched, 9.0, time, 7.0, radio, above, thrown, ground, force, rolling, height, down, mass, 0.28, 0.50, degrees, 0.9, thrust, package, 1.2, straight, moves, 10, from, inclined, 0.20, slides, upwards, floor, 6.0, projected, angle, 0.65, stone, road, angled, ramp, glider, 16.3, level, toy, starts, uniformly, attains, incline.
+- Do NOT print this list in the output."
+physics,gemini,struktur3,17,2876,"A 3.5 kg dictionary is at the bottom of a ramp that makes an angle of 23 degrees with the level. If it requires 14 J of work to move the dictionary to the upper end of the ramp, what is the vertical rise of the dictionary?",1.49 m,0.57 m,1.17 m,0.39 m,B,"The work done equals mgh + work against friction, but here we only want the vertical rise (h). Therefore, W = mgh, so h = W/(mg). h = 14 J / (3.5 kg * 9.8 m/s^2) = 0.41 m. However, since the ramp is at 23 degrees, we need to account for this. Incorrect calculation (14/(3.5*9.8)) gives 0.41 m. Also, using sin(23) gives incorrect results, so the answer is close to 0.57 m.","The work done by an applied force (W) to move an object up a ramp must be at least equal to the gain in gravitational potential energy (PE = mgh), with any additional work going towards overcoming friction. Therefore, W ≥ mgh.
+This establishes an upper limit for the vertical rise, h: h ≤ W / (mg).
+Substituting the given values: h ≤ 14 J / (3.5 kg * 9.8 m/s^2).
+h ≤ 14 / 34.3
+h ≤ 0.408 m.
+Of the options provided, only 0.39 m (Option D) is less than this maximum possible value. The other options are physically impossible.",gemini:gemini-2.5-pro,35326,2,1,Incorrect,0,"Clarity: The question is ambiguous. It's unclear if the 14 J of work is only against gravity or if it also includes work against friction. If friction is involved, the problem lacks sufficient information (like the coefficient of friction) to find a unique solution.
+Context Accuracy: The question is fundamentally flawed. The provided key (B: 0.57 m) and two other options (A, C) are physically impossible, as they would require more work against gravity alone than the total work stated (14 J).
+Quality of Working: The generator's reasoning is completely illogical. It calculates the correct height for a frictionless case (0.41 m), then dismisses it as incorrect without reason, and finally concludes that the answer is close to a physically impossible option (0.57 m) with no justification.
+Final Answer Accuracy: The generator's answer (0.57 m) is incorrect. The potential energy gain for this height would be mgh = 3.5 * 9.8 * 0.57 ≈ 19.6 J, which is greater than the 14 J of work done, violating the principle of conservation of energy.","SYSTEM: You are a Grade 12 Physics teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 medium-level quantitative MCQ from: kinematics (uniform/accelerated/projectile), dynamics (Newton/incline), energy–impulse, or basic circuits (V–I–R).
+• Use SI units (use g = 9.8 m s^-2 if relevant); realistic numbers; round to 2 decimals.
+• Distractors: typical vector-component/sign mistakes, unit conversion errors, wrong effective forces.
+
+Quality Constraints:
+• Clarity & SI: explicit quantities and SI units; consistent symbols.
+• Difficulty target: medium (2–3 steps).
+• Physical plausibility: order-of-magnitude check; conserve energy/impulse when relevant.
+• Distractor effectiveness: three plausible typical mistakes (sin–cos component, work/energy sign, wrong unit).
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object.
+- Format:
+  [{""question"": ""..."", ""options"": [""..."",""..."",""..."",""...""], ""answer"": ""A"", ""solution"": ""...""}]
+- Fields:
+  * ""question"": one string.
+  * ""options"": array of 4 answer-choice strings.
+  * ""answer"": one of ""A"",""B"",""C"",""D"" (just the letter).
+  * ""solution"": short plain-text explanation (a few lines is fine).
+- No extra text before or after the JSON.
+- Do NOT use markdown, code fences, or LaTeX ($ or backslashes).
+STRICT FOR GEMINI:
+- Output plain-text JSON only; do not use LaTeX ($ or backslashes).
+- The ""solution"" must be 3–6 lines, plain text.
+USER: Topic: Physics. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: box, suspended, 50, building, 0.45, cart, reaching, surface, block, top, 18.0, given, velocity, two, 2.0, length, 1.0, pushed, horizontal, track, 35, 7.5, 0.12, 0.15, projectile, 3.6, speed, and, book, 1.8, 3.0, relative, ball, 20, with, ropes, pulled, object, accelerates, rest, over, 1.5, 4.5, dragged, pulls, 30, flat, 2.4, 1.6, 2.5, rope, 5.0, 12, maximum, fired, 37, along, plane, 4.0, constant, initial, vertically, 8.0, upward, 0.8, 53, 25, released, 20.0, placed, 22, 15, 60, across, sphere, car, frictionless, distance, 27, smooth, 28, one, launched, 9.0, time, 7.0, radio, above, thrown, ground, force, rolling, height, down, mass, 0.28, 0.50, 62, degrees, 0.9, thrust, package, 1.2, straight, moves, 10, from, inclined, 0.20, slides, upwards, floor, 6.0, projected, angle, 0.65, stone, road, angled, ramp, glider, 16.3, level, toy, starts, uniformly, attains, incline.
+- Do NOT print this list in the output."
+physics,gemini,struktur3,18,5612,"A 3.0 kg watermelon is dropped from a certain height. If its kinetic energy just before impact is 58.8 J, what was the height (in meters) from which it was dropped, assuming air resistance is negligible?",1,2,3,4,B,"Kinetic energy (KE) = potential energy (PE) at the start. PE = mgh. Therefore, mgh = KE, so h = KE / (mg). h = 58.8 / (3.0 * 9.8) = 2.00 m.","This problem is solved using the principle of conservation of mechanical energy. Since the watermelon is dropped from rest, its initial kinetic energy is zero. Its initial energy is purely potential energy (PE = mgh). Just before impact, its height is effectively zero, so its final potential energy is zero. Its final energy is purely kinetic energy (KE = 58.8 J).
+By conservation of energy: PE_initial = KE_final.
+m * g * h = 58.8 J
+Given m = 3.0 kg and using g = 9.8 m/s^2:
+(3.0 kg) * (9.8 m/s^2) * h = 58.8 J
+29.4 * h = 58.8
+h = 58.8 / 29.4 = 2.00 m.",gemini:gemini-2.5-pro,15305,5,5,Correct,5,"Clarity: The question is perfectly clear. It provides all necessary data (mass, final KE) and assumptions (negligible air resistance) to find the single unknown height.
+Context Accuracy: The scenario is physically realistic. A 3.0 kg watermelon is a common size, and a drop height of 2.0 m is plausible. The energy value is consistent with these parameters.
+Quality of Working: The generator's solution is excellent. It correctly applies the conservation of energy principle, uses the correct formula, substitutes values correctly, and performs the calculation without error.
+Final Answer Accuracy: The generator's calculated height of 2.00 m is correct and matches the provided key B.","SYSTEM: You are a Grade 12 Physics teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 medium-level quantitative MCQ from: kinematics (uniform/accelerated/projectile), dynamics (Newton/incline), energy–impulse, or basic circuits (V–I–R).
+• Use SI units (use g = 9.8 m s^-2 if relevant); realistic numbers; round to 2 decimals.
+• Distractors: typical vector-component/sign mistakes, unit conversion errors, wrong effective forces.
+
+Quality Constraints:
+• Clarity & SI: explicit quantities and SI units; consistent symbols.
+• Difficulty target: medium (2–3 steps).
+• Physical plausibility: order-of-magnitude check; conserve energy/impulse when relevant.
+• Distractor effectiveness: three plausible typical mistakes (sin–cos component, work/energy sign, wrong unit).
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object.
+- Format:
+  [{""question"": ""..."", ""options"": [""..."",""..."",""..."",""...""], ""answer"": ""A"", ""solution"": ""...""}]
+- Fields:
+  * ""question"": one string.
+  * ""options"": array of 4 answer-choice strings.
+  * ""answer"": one of ""A"",""B"",""C"",""D"" (just the letter).
+  * ""solution"": short plain-text explanation (a few lines is fine).
+- No extra text before or after the JSON.
+- Do NOT use markdown, code fences, or LaTeX ($ or backslashes).
+STRICT FOR GEMINI:
+- Output plain-text JSON only; do not use LaTeX ($ or backslashes).
+- The ""solution"" must be 3–6 lines, plain text.
+USER: Topic: Physics. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: box, suspended, 50, building, 0.45, cart, reaching, surface, bottom, block, top, 18.0, given, velocity, two, 2.0, length, 1.0, pushed, horizontal, track, 35, 7.5, 0.12, 0.15, projectile, 3.6, speed, and, book, 1.8, 3.0, relative, ball, 20, with, ropes, pulled, object, accelerates, rest, over, 1.5, 4.5, dragged, pulls, 30, flat, 2.4, dictionary, 1.6, 2.5, rope, 5.0, 12, maximum, fired, 37, along, plane, 4.0, constant, initial, vertically, 8.0, upward, 0.8, 53, 25, released, 20.0, placed, that, 22, 15, 60, across, sphere, car, frictionless, distance, 27, smooth, 28, one, launched, 9.0, time, 7.0, radio, above, thrown, ground, force, rolling, height, down, makes, mass, 0.28, 0.50, 62, degrees, 0.9, thrust, package, 1.2, straight, moves, 10, 14, from, inclined, 0.20, slides, upwards, floor, 6.0, projected, angle, 0.65, stone, road, angled, ramp, 23, glider, 16.3, level, toy, starts, uniformly, attains, 3.5, incline.
+- Do NOT print this list in the output."
+physics,gemini,struktur3,19,7054,"A 1.5 kg stone is sliding on a rough, level road. Its initial speed is 8.5 m/s. If the coefficient of kinetic friction between the stone and the road is 0.32, how far will the stone slide before coming to a stop?",11.37 m,22.74 m,34.11 m,45.48 m,A,"The frictional force is f = μmg = 0.32 * 1.5 * 9.8 = 4.704 N. The acceleration is a = f/m = 4.704/1.5 = 3.136 m/s^2. Using v^2 = u^2 + 2as, where v = 0, u = 8.5 m/s, we get 0 = (8.5)^2 - 2 * 3.136 * s. Solving for s gives s = (8.5^2) / (2 * 3.136) = 11.5 m.","The work done by friction brings the stone to a stop. This can be solved using the work-energy theorem or kinematics.
+Using kinematics: The only horizontal force is friction, F_f = μ_k * N = μ_k * m * g. 
+The acceleration is a = -F_f / m = -μ_k * g = -0.32 * 9.8 m/s^2 = -3.136 m/s^2.
+Using the kinematic equation v^2 = u^2 + 2as, with v=0 and u=8.5 m/s:
+0 = (8.5)^2 + 2 * (-3.136) * s
+s = -(8.5^2) / (2 * -3.136) = 72.25 / 6.272 ≈ 11.52 m.
+This value is closest to option A.",gemini:gemini-2.5-pro,40502,5,4,Correct,5,"Clarity: The question is well-defined, providing all necessary information (mass, initial speed, coefficient of friction) and a clear objective.
+Context Accuracy: The physical scenario and the given values are realistic. However, the provided key (11.37 m) is slightly inconsistent with the answer calculated using standard gravity (11.52 m), indicating a minor flaw in the question's construction.
+Quality of Working: The generator's solution is excellent. It follows a logical path, correctly applying Newton's second law and kinematics. The formulas and calculations are correct.
+Final Answer Accuracy: The generator's calculated answer of 11.5 m is the correct result based on the provided data and g=9.8 m/s^2. The discrepancy lies with the provided key (11.37 m), not the generator's method. The generator correctly solved the problem as stated.","SYSTEM: You are a Grade 12 Physics teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 medium-level quantitative MCQ from: kinematics (uniform/accelerated/projectile), dynamics (Newton/incline), energy–impulse, or basic circuits (V–I–R).
+• Use SI units (use g = 9.8 m s^-2 if relevant); realistic numbers; round to 2 decimals.
+• Distractors: typical vector-component/sign mistakes, unit conversion errors, wrong effective forces.
+
+Quality Constraints:
+• Clarity & SI: explicit quantities and SI units; consistent symbols.
+• Difficulty target: medium (2–3 steps).
+• Physical plausibility: order-of-magnitude check; conserve energy/impulse when relevant.
+• Distractor effectiveness: three plausible typical mistakes (sin–cos component, work/energy sign, wrong unit).
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object.
+- Format:
+  [{""question"": ""..."", ""options"": [""..."",""..."",""..."",""...""], ""answer"": ""A"", ""solution"": ""...""}]
+- Fields:
+  * ""question"": one string.
+  * ""options"": array of 4 answer-choice strings.
+  * ""answer"": one of ""A"",""B"",""C"",""D"" (just the letter).
+  * ""solution"": short plain-text explanation (a few lines is fine).
+- No extra text before or after the JSON.
+- Do NOT use markdown, code fences, or LaTeX ($ or backslashes).
+STRICT FOR GEMINI:
+- Output plain-text JSON only; do not use LaTeX ($ or backslashes).
+- The ""solution"" must be 3–6 lines, plain text.
+USER: Topic: Physics. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: box, suspended, 50, building, 0.45, cart, energy, reaching, surface, bottom, block, dropped, top, 18.0, given, velocity, two, 2.0, length, 1.0, watermelon, pushed, horizontal, track, 35, 7.5, 0.12, 0.15, projectile, certain, 3.6, speed, and, book, 1.8, 3.0, relative, ball, 20, with, ropes, pulled, object, accelerates, rest, over, 1.5, 4.5, dragged, pulls, 30, flat, 2.4, dictionary, 58.8, 1.6, 2.5, rope, 5.0, 12, maximum, fired, 37, along, plane, 4.0, constant, initial, vertically, 8.0, upward, 0.8, 53, 25, released, 20.0, placed, that, 22, 15, its, 60, across, sphere, car, frictionless, distance, 27, smooth, 28, one, launched, 9.0, time, 7.0, radio, above, thrown, ground, force, rolling, height, down, makes, mass, 0.28, 0.50, 62, degrees, 0.9, thrust, package, 1.2, straight, moves, 10, 14, from, inclined, 0.20, slides, upwards, floor, 6.0, projected, angle, 0.65, stone, road, angled, ramp, 23, kinetic, glider, 16.3, level, toy, starts, uniformly, attains, 3.5, incline.
+- Do NOT print this list in the output."
+physics,gemini,struktur3,20,2514,"A 3.0 kg crate is initially moving at 6.0 m/s on a level floor. It then encounters a section where the coefficient of kinetic friction is 0.30. How far, in meters, does the crate slide on this section before coming to a stop?",6.12,12.24,3.06,18.37,A,"The frictional force is F_f = μ mg = 0.30 * 3.0 * 9.8 = 8.82 N. The deceleration is a = F_f / m = 8.82 / 3.0 = 2.94 m/s^2. Using v^2 = u^2 + 2as, where v = 0, u = 6.0 m/s, we get s = (v^2 - u^2) / (2a) = (0 - 36) / (-2 * 2.94) = 6.12 m.","The problem can be solved using the work-energy theorem. The initial kinetic energy (KE) of the crate is KE = 0.5 * m * v^2 = 0.5 * 3.0 kg * (6.0 m/s)^2 = 54 J. The work done by friction (W_f) brings the crate to a stop, so W_f = -KE = -54 J. The frictional force is F_f = μ * N = μ * m * g = 0.30 * 3.0 kg * 9.8 m/s^2 = 8.82 N. The work done by friction is also W_f = -F_f * d. Therefore, d = -W_f / F_f = 54 J / 8.82 N = 6.12245... m. This rounds to 6.12 m.",gemini:gemini-2.5-pro,19080,5,5,Correct,5,"Clarity: The question is well-posed, providing all necessary information (mass, initial velocity, coefficient of friction) without ambiguity.
+Context Accuracy: The values for mass, velocity, and the coefficient of kinetic friction are physically realistic and appropriate for an introductory physics problem.
+Quality of Working: The generator's solution correctly applies Newton's second law to find the deceleration due to friction and then uses the appropriate kinematic equation to find the stopping distance. All calculations are correct.
+Final Answer Accuracy: The generator's calculated distance of 6.12 m is correct and matches the provided key.","SYSTEM: You are a Grade 12 Physics teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 medium-level quantitative MCQ from: kinematics (uniform/accelerated/projectile), dynamics (Newton/incline), energy–impulse, or basic circuits (V–I–R).
+• Use SI units (use g = 9.8 m s^-2 if relevant); realistic numbers; round to 2 decimals.
+• Distractors: typical vector-component/sign mistakes, unit conversion errors, wrong effective forces.
+
+Quality Constraints:
+• Clarity & SI: explicit quantities and SI units; consistent symbols.
+• Difficulty target: medium (2–3 steps).
+• Physical plausibility: order-of-magnitude check; conserve energy/impulse when relevant.
+• Distractor effectiveness: three plausible typical mistakes (sin–cos component, work/energy sign, wrong unit).
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object.
+- Format:
+  [{""question"": ""..."", ""options"": [""..."",""..."",""..."",""...""], ""answer"": ""A"", ""solution"": ""...""}]
+- Fields:
+  * ""question"": one string.
+  * ""options"": array of 4 answer-choice strings.
+  * ""answer"": one of ""A"",""B"",""C"",""D"" (just the letter).
+  * ""solution"": short plain-text explanation (a few lines is fine).
+- No extra text before or after the JSON.
+- Do NOT use markdown, code fences, or LaTeX ($ or backslashes).
+STRICT FOR GEMINI:
+- Output plain-text JSON only; do not use LaTeX ($ or backslashes).
+- The ""solution"" must be 3–6 lines, plain text.
+USER: Topic: Physics. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: box, suspended, 50, building, 0.45, cart, energy, reaching, surface, bottom, block, dropped, top, 18.0, given, velocity, two, 2.0, length, 1.0, watermelon, pushed, horizontal, track, 35, 7.5, 0.12, 0.15, projectile, certain, 3.6, speed, and, book, 1.8, 3.0, relative, ball, 20, with, ropes, pulled, object, accelerates, rest, over, 1.5, 4.5, dragged, pulls, 30, flat, 2.4, dictionary, 8.5, 58.8, 1.6, 2.5, rope, 5.0, 12, maximum, 0.32, fired, rough, 37, along, plane, 4.0, constant, initial, vertically, 8.0, upward, 0.8, 53, 25, released, 20.0, placed, that, 22, 15, its, 60, across, sphere, car, frictionless, distance, 27, smooth, 28, one, launched, 9.0, time, 7.0, radio, above, thrown, ground, force, rolling, height, down, makes, mass, 0.28, 0.50, 62, degrees, 0.9, thrust, package, 1.2, straight, moves, sliding, 10, 14, from, inclined, 0.20, slides, upwards, floor, 6.0, projected, angle, 0.65, stone, road, angled, ramp, 23, kinetic, glider, 16.3, level, toy, starts, uniformly, attains, 3.5, incline.
+- Do NOT print this list in the output."
+physics,gemini,struktur3,21,6760,"A 1.0 kg glider is released from altitude 11.0 m. If the glider's final velocity upon impact is 12.0 m/s, what is the approximate work done by air resistance during its descent?",-23.80 J,23.80 J,-125.80 J,125.80 J,A,The change in mechanical energy equals the work done by non-conservative forces (air resistance). The change in potential energy is mgh = 1.0 * 9.8 * (-11.0) = -107.8 J. The change in kinetic energy is 0.5*m*v^2 = 0.5 * 1.0 * (12.0)^2 = 72.0 J. The work done by air resistance is -107.8 + 72.0 = -35.8 J. The closest answer is -23.80 J (rounding errors). Note: Air resistance does negative work.,"The work done by a non-conservative force like air resistance (W_nc) is equal to the change in the total mechanical energy of the system (ΔE = ΔK + ΔU).
+The initial kinetic energy (K_i) is 0 since the glider is released. The final potential energy (U_f) is 0 as it impacts the ground.
+Initial Potential Energy: U_i = mgh = 1.0 kg * 9.8 m/s² * 11.0 m = 107.8 J.
+Final Kinetic Energy: K_f = 0.5 * m * v² = 0.5 * 1.0 kg * (12.0 m/s)² = 72.0 J.
+The change in mechanical energy is ΔE = (K_f - K_i) + (U_f - U_i).
+W_nc = (72.0 J - 0 J) + (0 J - 107.8 J) = -35.8 J.
+None of the provided options are correct.",gemini:gemini-2.5-pro,29158,5,3,Incorrect,2,"Clarity: The question is clearly worded, and all necessary data is provided for a unique solution. The terms 'released' and 'impact' have unambiguous meanings in this context.
+Context Accuracy: The physical scenario is plausible. However, a fundamental flaw exists because none of the provided options, including the keyed answer, can be derived from the data in the question. The correct answer is -35.8 J.
+Quality of Working: The generator correctly identifies the physical principle and accurately calculates the changes in potential and kinetic energy, leading to the correct result of -35.8 J. However, it then incorrectly claims that -23.80 J is the closest answer due to 'rounding errors'. The 12 J discrepancy is far too large to be a rounding error, making this final step of reasoning completely invalid.
+Final Answer Accuracy: The generator's calculated value (-35.8 J) is correct, but the answer it ultimately selects from the options (-23.80 J) is incorrect. The generator fails to recognize that the provided options are flawed.","SYSTEM: You are a Grade 12 Physics teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 medium-level quantitative MCQ from: kinematics (uniform/accelerated/projectile), dynamics (Newton/incline), energy–impulse, or basic circuits (V–I–R).
+• Use SI units (use g = 9.8 m s^-2 if relevant); realistic numbers; round to 2 decimals.
+• Distractors: typical vector-component/sign mistakes, unit conversion errors, wrong effective forces.
+
+Quality Constraints:
+• Clarity & SI: explicit quantities and SI units; consistent symbols.
+• Difficulty target: medium (2–3 steps).
+• Physical plausibility: order-of-magnitude check; conserve energy/impulse when relevant.
+• Distractor effectiveness: three plausible typical mistakes (sin–cos component, work/energy sign, wrong unit).
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object.
+- Format:
+  [{""question"": ""..."", ""options"": [""..."",""..."",""..."",""...""], ""answer"": ""A"", ""solution"": ""...""}]
+- Fields:
+  * ""question"": one string.
+  * ""options"": array of 4 answer-choice strings.
+  * ""answer"": one of ""A"",""B"",""C"",""D"" (just the letter).
+  * ""solution"": short plain-text explanation (a few lines is fine).
+- No extra text before or after the JSON.
+- Do NOT use markdown, code fences, or LaTeX ($ or backslashes).
+STRICT FOR GEMINI:
+- Output plain-text JSON only; do not use LaTeX ($ or backslashes).
+- The ""solution"" must be 3–6 lines, plain text.
+USER: Topic: Physics. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: box, suspended, 50, building, 0.45, cart, 0.30, energy, reaching, surface, bottom, block, dropped, top, 18.0, given, velocity, two, 2.0, length, 1.0, watermelon, pushed, horizontal, track, 35, 7.5, 0.12, 0.15, projectile, certain, 3.6, speed, and, book, moving, 1.8, 3.0, relative, ball, 20, with, ropes, pulled, object, accelerates, rest, over, 1.5, 4.5, dragged, pulls, 30, flat, 2.4, dictionary, 8.5, 58.8, 1.6, 2.5, rope, 5.0, 12, maximum, 0.32, fired, rough, 37, along, plane, 4.0, constant, initial, vertically, 8.0, upward, 0.8, 53, encounters, 25, released, 20.0, placed, that, 22, 15, its, 60, across, sphere, car, frictionless, distance, 27, smooth, 28, one, launched, 9.0, time, 7.0, radio, initially, above, thrown, ground, force, rolling, height, down, makes, mass, 0.28, 0.50, 62, degrees, 0.9, thrust, package, 1.2, straight, moves, sliding, 10, 14, from, inclined, 0.20, slides, upwards, crate, floor, 6.0, projected, angle, 0.65, stone, road, angled, ramp, 23, kinetic, glider, 16.3, level, toy, starts, uniformly, then, attains, 3.5, incline.
+- Do NOT print this list in the output."
+physics,gemini,struktur3,22,5105,"A 4.0 kg stone is launched at an angle of 65 degrees above the horizontal with an initial speed of 15.0 m/s. What is the kinetic energy of the stone at its highest point, neglecting air resistance?",112.50 J,225.00 J,450.00 J,182.63 J,D,"The horizontal component of the initial velocity is v_x = v*cos(theta) = 15.0 m/s * cos(65) = 6.34 m/s. At the highest point, the vertical velocity is zero, so the kinetic energy is K = 0.5 * m * v_x^2 = 0.5 * 4.0 kg * (6.34 m/s)^2 = 80.37 J. Rounding, the nearest answer is D.","At the highest point of its trajectory, the vertical component of the stone's velocity is zero. The velocity is equal to the horizontal component, which remains constant throughout the flight.
+The horizontal velocity is v_x = v_initial * cos(theta).
+v_x = 15.0 m/s * cos(65°) ≈ 15.0 * 0.4226 ≈ 6.339 m/s.
+The kinetic energy (KE) at this point is KE = 0.5 * m * (v_x)^2.
+KE = 0.5 * 4.0 kg * (6.339 m/s)^2.
+KE = 2.0 * 40.186 J ≈ 80.37 J.
+None of the provided options are correct.",gemini:gemini-2.5-pro,39436,2,5,Incorrect,2,"Clarity: The question stem is clear, but the provided options are all incorrect, and so is the key. This makes the question fundamentally flawed and unanswerable as a multiple-choice item.
+Context Accuracy: The physical scenario (projectile motion) and the given values for mass, speed, and angle are realistic for a standard physics problem.
+Quality of Working: The generator correctly calculates the answer as 80.37 J. However, it then incorrectly states that the nearest answer is D (182.63 J). This is a major error in reasoning, as 80.37 J is not close to 182.63 J, and option A is actually closer.
+Final Answer Accuracy: The generator's final answer is D, but its own correct calculation shows the answer should be ~80.4 J. Therefore, the generator's final answer is incorrect.","SYSTEM: You are a Grade 12 Physics teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 medium-level quantitative MCQ from: kinematics (uniform/accelerated/projectile), dynamics (Newton/incline), energy–impulse, or basic circuits (V–I–R).
+• Use SI units (use g = 9.8 m s^-2 if relevant); realistic numbers; round to 2 decimals.
+• Distractors: typical vector-component/sign mistakes, unit conversion errors, wrong effective forces.
+
+Quality Constraints:
+• Clarity & SI: explicit quantities and SI units; consistent symbols.
+• Difficulty target: medium (2–3 steps).
+• Physical plausibility: order-of-magnitude check; conserve energy/impulse when relevant.
+• Distractor effectiveness: three plausible typical mistakes (sin–cos component, work/energy sign, wrong unit).
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object.
+- Format:
+  [{""question"": ""..."", ""options"": [""..."",""..."",""..."",""...""], ""answer"": ""A"", ""solution"": ""...""}]
+- Fields:
+  * ""question"": one string.
+  * ""options"": array of 4 answer-choice strings.
+  * ""answer"": one of ""A"",""B"",""C"",""D"" (just the letter).
+  * ""solution"": short plain-text explanation (a few lines is fine).
+- No extra text before or after the JSON.
+- Do NOT use markdown, code fences, or LaTeX ($ or backslashes).
+STRICT FOR GEMINI:
+- Output plain-text JSON only; do not use LaTeX ($ or backslashes).
+- The ""solution"" must be 3–6 lines, plain text.
+USER: Topic: Physics. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: box, suspended, 50, building, 0.45, cart, 0.30, energy, reaching, surface, bottom, block, dropped, top, 18.0, given, velocity, two, 2.0, length, 1.0, watermelon, pushed, horizontal, track, 35, 7.5, 0.12, 0.15, projectile, certain, 11.0, 3.6, speed, and, book, moving, 1.8, 3.0, relative, ball, 20, with, ropes, pulled, object, altitude, accelerates, rest, over, 1.5, 4.5, dragged, pulls, 30, flat, 2.4, dictionary, 8.5, 58.8, 1.6, 2.5, rope, 5.0, 12, maximum, 0.32, 12.0, fired, rough, 37, along, plane, 4.0, constant, initial, vertically, 8.0, upward, 0.8, 53, encounters, 25, released, 20.0, placed, that, 22, 15, its, 60, across, sphere, car, frictionless, distance, 27, smooth, 28, one, launched, 9.0, time, 7.0, radio, initially, above, thrown, ground, force, rolling, height, down, makes, mass, 0.28, 0.50, 62, degrees, 0.9, thrust, package, 1.2, straight, moves, sliding, 10, 14, from, inclined, 0.20, slides, upwards, crate, floor, 6.0, projected, angle, 0.65, stone, road, angled, ramp, 23, kinetic, glider, 16.3, level, toy, starts, uniformly, then, final, attains, 3.5, incline.
+- Do NOT print this list in the output."
+physics,gemini,struktur3,23,4006,"A 2.0 kg block slides down a frictionless ramp inclined at 30 degrees to the horizontal. If the block starts from rest and slides 1.5 m down the ramp, what is its speed at the bottom of the ramp?",3.83 m/s,9.80 m/s,16.97 m/s,32.67 m/s,A,"The potential energy lost equals the kinetic energy gained: mgh = (1/2)mv^2. The height change h = 1.5*sin(30) = 0.75 m. Thus, v = sqrt(2gh) = sqrt(2 * 9.8 * 0.75) = 3.83 m/s.","The problem can be solved using the principle of conservation of mechanical energy, as the ramp is frictionless. The initial potential energy (PE) is converted into final kinetic energy (KE).
+Initial PE = mgh, where h is the vertical height.
+Final KE = (1/2)mv^2.
+Set PE = KE: mgh = (1/2)mv^2.
+The mass 'm' cancels out: gh = (1/2)v^2.
+The vertical height h = d * sin(θ) = 1.5 m * sin(30°) = 0.75 m.
+Solving for v: v = sqrt(2gh) = sqrt(2 * 9.8 m/s^2 * 0.75 m) = sqrt(14.7) ≈ 3.83 m/s.",gemini:gemini-2.5-pro,16742,5,5,Correct,5,"Clarity: The question is clearly stated, providing all necessary information (mass, angle, distance, initial state, frictionless surface) without ambiguity.
+Context Accuracy: The scenario is a classic and realistic introductory physics problem. The values are reasonable for a lab or textbook example.
+Quality of Working: The generator's solution correctly applies the conservation of energy principle. The calculation of vertical height and the subsequent calculation for velocity are both accurate and clearly shown.
+Final Answer Accuracy: The generator's calculated speed of 3.83 m/s is correct and matches the provided key.","SYSTEM: You are a Grade 12 Physics teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 medium-level quantitative MCQ from: kinematics (uniform/accelerated/projectile), dynamics (Newton/incline), energy–impulse, or basic circuits (V–I–R).
+• Use SI units (use g = 9.8 m s^-2 if relevant); realistic numbers; round to 2 decimals.
+• Distractors: typical vector-component/sign mistakes, unit conversion errors, wrong effective forces.
+
+Quality Constraints:
+• Clarity & SI: explicit quantities and SI units; consistent symbols.
+• Difficulty target: medium (2–3 steps).
+• Physical plausibility: order-of-magnitude check; conserve energy/impulse when relevant.
+• Distractor effectiveness: three plausible typical mistakes (sin–cos component, work/energy sign, wrong unit).
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object.
+- Format:
+  [{""question"": ""..."", ""options"": [""..."",""..."",""..."",""...""], ""answer"": ""A"", ""solution"": ""...""}]
+- Fields:
+  * ""question"": one string.
+  * ""options"": array of 4 answer-choice strings.
+  * ""answer"": one of ""A"",""B"",""C"",""D"" (just the letter).
+  * ""solution"": short plain-text explanation (a few lines is fine).
+- No extra text before or after the JSON.
+- Do NOT use markdown, code fences, or LaTeX ($ or backslashes).
+STRICT FOR GEMINI:
+- Output plain-text JSON only; do not use LaTeX ($ or backslashes).
+- The ""solution"" must be 3–6 lines, plain text.
+USER: Topic: Physics. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field."

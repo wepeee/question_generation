@@ -59,9 +59,15 @@ class OpenRouterService(LlmModelService):
             "model": self.model,
             "messages": messages,
             "temperature": float(temperature),
-            "stream": False,
+            "keep_alive": "1h",  # biar model nggak unload tiap request
+            "options": {
+                # JANGAN terlalu besar; ini angka masuk akal buat prompt kamu
+                "num_ctx": 2048,      # konteks maksimum (prompt + output)
+                "num_predict": 512,   # batasi panjang jawaban
+                "num_thread": 8       # sesuaikan sama jumlah core CPU kamu
+            },
         }
-
+        
         t0 = time.time()
         resp = requests.post(OLLAMA_OPENAI_URL, headers=headers, json=payload, timeout=600)
         resp.raise_for_status()

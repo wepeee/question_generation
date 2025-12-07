@@ -144,8 +144,9 @@ def build_messages_single(
 
 
     parts: List[str] = [blocks[tkey]["sp"]]
-    if struct_key in ("struktur2", "struktur3"):
+    if struct_key == "struktur2":
         parts.append(blocks[tkey]["cot"])
+
     if struct_key == "struktur3":
         parts.append(blocks[tkey]["qc"])
 

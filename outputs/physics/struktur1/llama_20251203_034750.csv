@@ -1,0 +1,158 @@
+topic,model,struktur,index,latency_model_ms,question,optionA,optionB,optionC,optionD,answer,solution_model,solution_verifier,verifier_model,latency_verifier_ms,clarity,context_accuracy,final_answer_accuracy,quality_of_working,judge_notes,prompt_generator
+physics,llama,struktur1,1,16527,A car travels from rest to a speed of 25 m/s in 5 seconds. What is its acceleration?,10 m/s^2,15 m/s^2,20 m/s^2,25 m/s^2,B,"Acceleration (a) = Δv / Δt = (25 m/s - 0 m/s) / 5 s = 5 m/s^2. The correct answer is not listed, but the closest option is B.","The problem asks for the acceleration of a car.
+Given:
+Initial velocity (vi) = 0 m/s (from rest)
+Final velocity (vf) = 25 m/s
+Time (t) = 5 s
+
+The formula for constant acceleration is a = (vf - vi) / t.
+Substituting the given values:
+a = (25 m/s - 0 m/s) / 5 s
+a = 25 m/s / 5 s
+a = 5 m/s^2.
+This calculated answer is not among the options provided.",gemini:gemini-2.5-pro,15172,5.0,5.0,Incorrect,2.5,"Clarity: The question is perfectly clear. It provides all the necessary information and uses standard terminology.
+
+Context Accuracy: The values are realistic. A car accelerating to 25 m/s (90 km/h) in 5 seconds is a plausible performance, resulting in a reasonable acceleration of ~0.5g.
+
+Quality of Working: The generator correctly calculates the acceleration as 5 m/s^2 and correctly identifies that this answer is not listed. However, it then incorrectly states that option B (15 m/s^2) is the closest, when option A (10 m/s^2) is mathematically closer. This is a significant error in reasoning.
+
+Final Answer Accuracy: The generator's conclusion points towards option B, which is incorrect. The correct answer is 5 m/s^2, which is not an option. The question is flawed because it lacks the correct answer and provides an incorrect key.","SYSTEM: You are a Grade 12 Physics teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 medium-level quantitative MCQ from: kinematics (uniform/accelerated/projectile), dynamics (Newton/incline), energy–impulse, or basic circuits (V–I–R).
+• Use SI units (use g = 9.8 m s^-2 if relevant); realistic numbers; round to 2 decimals.
+• Distractors: typical vector-component/sign mistakes, unit conversion errors, wrong effective forces.
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object.
+- Format:
+  [{""question"": ""..."", ""options"": [""..."",""..."",""..."",""...""], ""answer"": ""A"", ""solution"": ""...""}]
+- Fields:
+  * ""question"": one string.
+  * ""options"": array of 4 answer-choice strings.
+  * ""answer"": one of ""A"",""B"",""C"",""D"" (just the letter).
+  * ""solution"": short plain-text explanation (a few lines is fine).
+- No extra text before or after the JSON.
+- Do NOT use markdown, code fences, or LaTeX ($ or backslashes).
+USER: Topic: Physics. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field."
+physics,llama,struktur1,2,16596,"A 2.0 kg block is attached to a horizontal spring with a force constant of 100 N/m. If the block is displaced by 0.15 m and then released, what is its maximum kinetic energy?",A) 1.5 J,B) 3.0 J,C) 4.8 J,D) 6.2 J,C,"The block's maximum kinetic energy occurs when the spring is at its equilibrium position, where all the elastic potential energy has been converted to kinetic energy. We can calculate this using the formula for elastic potential energy: U = (1/2)kx^2. Then we can find the kinetic energy: K = 0.5mv^2 = 0.5m(√(2U/m))^2 = U. Plugging in values, we get U = (1/2)(100 N/m)(0.15 m)^2 = 1.125 J. Then K = 1.125 J.","According to the principle of conservation of energy, the maximum kinetic energy of the block will be equal to the maximum elastic potential energy stored in the spring. The maximum potential energy occurs at the point of maximum displacement.
+PE_max = (1/2) * k * x^2
+Given k = 100 N/m and x = 0.15 m.
+PE_max = 0.5 * 100 N/m * (0.15 m)^2
+PE_max = 50 * 0.0225 J
+PE_max = 1.125 J
+Therefore, the maximum kinetic energy is 1.125 J.",gemini:gemini-2.5-pro,23058,5.0,5.0,Correct,5.0,"Clarity: The question is clearly worded and provides all necessary information to solve the problem. The inclusion of the block's mass is superfluous but does not create ambiguity.
+Context Accuracy: The values for mass, spring constant, and displacement are physically realistic for a standard mechanics problem.
+Quality of Working: The generator's solution correctly identifies the conservation of energy principle, uses the correct formula for elastic potential energy, and performs the calculation accurately.
+Final Answer Accuracy: The generator's calculated answer of 1.125 J is the correct physical answer. The MCQ is flawed, as this correct answer is not among the options and the provided key (C) is incorrect. The generator's answer itself is correct.","SYSTEM: You are a Grade 12 Physics teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 medium-level quantitative MCQ from: kinematics (uniform/accelerated/projectile), dynamics (Newton/incline), energy–impulse, or basic circuits (V–I–R).
+• Use SI units (use g = 9.8 m s^-2 if relevant); realistic numbers; round to 2 decimals.
+• Distractors: typical vector-component/sign mistakes, unit conversion errors, wrong effective forces.
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object.
+- Format:
+  [{""question"": ""..."", ""options"": [""..."",""..."",""..."",""...""], ""answer"": ""A"", ""solution"": ""...""}]
+- Fields:
+  * ""question"": one string.
+  * ""options"": array of 4 answer-choice strings.
+  * ""answer"": one of ""A"",""B"",""C"",""D"" (just the letter).
+  * ""solution"": short plain-text explanation (a few lines is fine).
+- No extra text before or after the JSON.
+- Do NOT use markdown, code fences, or LaTeX ($ or backslashes).
+USER: Topic: Physics. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: what, seconds, car, 5, its, travels, speed, 25, from, rest.
+- Do NOT print this list in the output."
+physics,llama,struktur1,3,13808,"A particle of mass 4.2 kg is thrown upwards at an initial velocity of 12 m/s. Assuming negligible air resistance and g = 9.8 m/s^2, how long will it take for the particle to reach its maximum height?",6.0 s,7.1 s,8.5 s,9.3 s,A,"At the maximum height, the velocity of the particle is momentarily zero. We can use the equation v^2 = u^2 + 2as to find the time taken for this to occur. Since the acceleration due to gravity is -9.8 m/s^2 and the initial velocity is 12 m/s, we have: 0^2 = 12^2 + 2(-9.8)t. Solving for t gives us t = 6.0 s.","The problem asks for the time for a particle to reach its maximum height. At the maximum height, the final velocity (v) is 0 m/s.
+The initial upward velocity (u) is 12 m/s, and the acceleration due to gravity (a) is -9.8 m/s^2.
+Using the kinematic equation v = u + at:
+0 = 12 + (-9.8) * t
+9.8 * t = 12
+t = 12 / 9.8
+t ≈ 1.22 s.
+None of the provided options are correct.",gemini:gemini-2.5-pro,20275,5.0,5.0,Incorrect,0.0,"Clarity: The question is clearly stated, providing all necessary information for a standard kinematics problem. The mass is extraneous but doesn't create ambiguity.
+Context Accuracy: The values for initial velocity, mass, and gravity are physically realistic and standard for this type of problem.
+Quality of Working: The generator's reasoning is fundamentally flawed. It cites the wrong kinematic equation for finding time (v^2 = u^2 + 2as), then incorrectly substitutes time (t) into it. The subsequent arithmetic is also incorrect and does not follow from its own flawed formula.
+Final Answer Accuracy: The correct time is approximately 1.22 s. The generator's answer of 6.0 s is incorrect. The question's options and key are also incorrect.","SYSTEM: You are a Grade 12 Physics teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 medium-level quantitative MCQ from: kinematics (uniform/accelerated/projectile), dynamics (Newton/incline), energy–impulse, or basic circuits (V–I–R).
+• Use SI units (use g = 9.8 m s^-2 if relevant); realistic numbers; round to 2 decimals.
+• Distractors: typical vector-component/sign mistakes, unit conversion errors, wrong effective forces.
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object.
+- Format:
+  [{""question"": ""..."", ""options"": [""..."",""..."",""..."",""...""], ""answer"": ""A"", ""solution"": ""...""}]
+- Fields:
+  * ""question"": one string.
+  * ""options"": array of 4 answer-choice strings.
+  * ""answer"": one of ""A"",""B"",""C"",""D"" (just the letter).
+  * ""solution"": short plain-text explanation (a few lines is fine).
+- No extra text before or after the JSON.
+- Do NOT use markdown, code fences, or LaTeX ($ or backslashes).
+USER: Topic: Physics. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: force, attached, what, its, 2.0, from, seconds, 100, 0.15, travels, horizontal, rest, car, with, 5, constant, block, speed, 25, spring.
+- Do NOT print this list in the output."
+physics,llama,struktur1,4,18070,"A 150 kg box is being pulled by a rope at an angle of 30° to the horizontal. If the tension in the rope is 490 N and the coefficient of kinetic friction between the box and the ground is 0.25, what is the acceleration of the box?",1.2 m/s^2,3.9 m/s^2,4.5 m/s^2,6.8 m/s^2,C,"First, find the component of tension parallel to the ground: T cos(30°) = 490 N * 0.866 = 425.38 N. Then, subtract the frictional force: F_f = μ_k * N = 0.25 * (150 kg * 9.8 m/s^2) = 367.5 N. The net force is then 425.38 - 367.5 = 57.88 N. Finally, use Newton's second law to find the acceleration: a = F_net / m = 57.88 N / 150 kg = 0.3866 m/s^2 * (1/3) = 4.5 m/s^2.","First, resolve forces into vertical and horizontal components. The vertical forces must sum to zero, as there is no vertical acceleration.
+Normal Force (N) + Vertical Tension (Ty) - Weight (W) = 0
+N = W - Ty = (m*g) - (T*sin(30))
+N = (150 kg * 9.8 m/s^2) - (490 N * 0.5) = 1470 N - 245 N = 1225 N.
+The frictional force is F_f = μ_k * N = 0.25 * 1225 N = 306.25 N.
+The net horizontal force is the horizontal tension minus friction: F_net = T*cos(30) - F_f.
+F_net = (490 N * 0.866) - 306.25 N = 424.35 N - 306.25 N = 118.1 N.
+Finally, acceleration is a = F_net / m = 118.1 N / 150 kg = 0.787 m/s^2.",gemini:gemini-2.5-pro,30409,3.0,4.5,Incorrect,0.0,"Clarity: The question is clearly worded with all necessary data. However, a major flaw is that the correct answer (~0.79 m/s^2) is not among the options, which can confuse the user.
+Context Accuracy: The physical scenario is a standard and realistic introductory physics problem. The values for mass, tension, and the friction coefficient are all plausible.
+Quality of Working: The generator's solution has a critical conceptual error. It incorrectly calculates the normal force by ignoring the upward vertical component of the tension. Furthermore, the final arithmetic step (`0.3866 m/s^2 * (1/3) = 4.5 m/s^2`) is completely nonsensical and appears fabricated to match the incorrect key.
+Final Answer Accuracy: The generator's answer matches the provided key, but both are incorrect. The correct acceleration is approximately 0.79 m/s^2.","SYSTEM: You are a Grade 12 Physics teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 medium-level quantitative MCQ from: kinematics (uniform/accelerated/projectile), dynamics (Newton/incline), energy–impulse, or basic circuits (V–I–R).
+• Use SI units (use g = 9.8 m s^-2 if relevant); realistic numbers; round to 2 decimals.
+• Distractors: typical vector-component/sign mistakes, unit conversion errors, wrong effective forces.
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object.
+- Format:
+  [{""question"": ""..."", ""options"": [""..."",""..."",""..."",""...""], ""answer"": ""A"", ""solution"": ""...""}]
+- Fields:
+  * ""question"": one string.
+  * ""options"": array of 4 answer-choice strings.
+  * ""answer"": one of ""A"",""B"",""C"",""D"" (just the letter).
+  * ""solution"": short plain-text explanation (a few lines is fine).
+- No extra text before or after the JSON.
+- Do NOT use markdown, code fences, or LaTeX ($ or backslashes).
+USER: Topic: Physics. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: 4.2, force, attached, thrown, 9.8, what, its, 12, 2.0, from, initial, seconds, 100, 0.15, particle, upwards, travels, horizontal, rest, car, velocity, 2, with, 5, constant, block, speed, mass, 25, spring.
+- Do NOT print this list in the output."
+physics,llama,struktur1,5,17125,"A 3 kg object is moving in a straight line on a frictionless surface. It experiences an acceleration of 1.2 m s^-2 due to a constant net force. After 5.6 s, its speed will be approximately how much greater than its speed after 2.4 s?",0.3 m s^-1,0.8 m s^-1,1.9 m s^-1,2.7 m s^-1,B,"Using the equation v = u + at, where v is final speed and u is initial speed (which we assume to be 0), we can calculate the speeds after both time intervals. The difference in speeds will then give us our answer. For t = 2.4 s, v1 = 0 + a * 2.4 = 2.88 m s^-1. For t = 5.6 s, v2 = 0 + a * 5.6 = 6.72 m s^-1. The difference in speeds is therefore v2 - v1 = 3.84 m s^-1.",,,,,,,,,"SYSTEM: You are a Grade 12 Physics teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 medium-level quantitative MCQ from: kinematics (uniform/accelerated/projectile), dynamics (Newton/incline), energy–impulse, or basic circuits (V–I–R).
+• Use SI units (use g = 9.8 m s^-2 if relevant); realistic numbers; round to 2 decimals.
+• Distractors: typical vector-component/sign mistakes, unit conversion errors, wrong effective forces.
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object.
+- Format:
+  [{""question"": ""..."", ""options"": [""..."",""..."",""..."",""...""], ""answer"": ""A"", ""solution"": ""...""}]
+- Fields:
+  * ""question"": one string.
+  * ""options"": array of 4 answer-choice strings.
+  * ""answer"": one of ""A"",""B"",""C"",""D"" (just the letter).
+  * ""solution"": short plain-text explanation (a few lines is fine).
+- No extra text before or after the JSON.
+- Do NOT use markdown, code fences, or LaTeX ($ or backslashes).
+USER: Topic: Physics. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: box, 4.2, force, attached, thrown, 9.8, 490, what, rope, angle, its, 12, 0.25, 2.0, from, initial, 30, seconds, 100, 0.15, pulled, particle, upwards, travels, being, 150, horizontal, rest, car, velocity, 2, with, 5, constant, block, speed, mass, 25, spring.
+- Do NOT print this list in the output."

@@ -1,0 +1,532 @@
+topic,model,struktur,index,latency_model_ms,question,optionA,optionB,optionC,optionD,answer,solution_model,solution_verifier,verifier_model,latency_verifier_ms,clarity,context_accuracy,final_answer_accuracy,quality_of_working,judge_notes,prompt_generator
+mathematics,phi,struktur2,1,6761,Evaluate (int_0^π (2cos(x) + x^3) dx.),6.79,-1.88,5.14,2.83,A,"Integrating each term separately, we get (int_0^π 2cos(x) dx + int_0^π x^3 dx = [2sin(x)]_0^π + [(1/4)x^4]_0^π = (2*0 - 2*0) + (0.5π^4 - 0) = (pi^4)/(8)). Rounded to two decimal places, the answer is approximately 6.79.","To evaluate the definite integral of (2cos(x) + x^3) from 0 to π, we integrate term by term.
+The integral of 2cos(x) is 2sin(x).
+The integral of x^3 is (1/4)x^4.
+So, the antiderivative is 2sin(x) + (1/4)x^4.
+We evaluate this from 0 to π: [2sin(x) + (1/4)x^4]_0^π.
+This equals (2sin(π) + (1/4)π^4) - (2sin(0) + (1/4)0^4).
+Since sin(π) = 0 and sin(0) = 0, the expression simplifies to (0 + π^4/4) - (0 + 0) = π^4/4.
+Numerically, π^4/4 is approximately 97.409 / 4 ≈ 24.35.",maia:maia/gemini-2.5-pro,48628,5.0,0.0,Incorrect,0.0,"Clarity: The question is stated clearly using standard mathematical notation.
+Context Accuracy: The question is fundamentally flawed. The correct answer to the integral is approximately 24.35, which is not among the provided options. A math problem with no correct option is invalid.
+Quality of Working: The generator's solution is a cascade of errors. It incorrectly evaluates [(1/4)x^4] as 0.5π^4, then incorrectly states this is equal to (pi^4)/8, and then incorrectly calculates the numerical value of that expression. The reasoning is completely unsound.
+Final Answer Accuracy: The generator's answer of 6.79 is incorrect. The correct value is π^4/4 ≈ 24.35. The generator's answer only matches the incorrect key provided for the flawed question.","SYSTEM: You are a Grade 12 Mathematics teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 medium-difficulty computational MCQ from ONE of: algebra (functions/inverse/systems), trigonometry (identities/evaluation), basic calculus (limits/derivatives/simple integrals), or short statistics.
+• Use realistic numbers; round to 2 decimals when needed; avoid formal proofs.
+• Distractors must reflect typical mistakes (sign errors, wrong identities, derivative/limit rules, rounding).
+
+CoT (few-shot style; hidden 2–3 steps):
+• Perform multi-step reasoning INTERNALLY; do NOT reveal the steps.
+
+Style example: plan elimination/substitution for a linear system → compute → choose option.
+• Create a NEW problem of the same family (SLE, trig identity+evaluation, derivative+substitution, small-data stats).
+• Distractors map to step errors (bad elimination, wrong identity, wrong derivative rule, wrong rounding).
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object.
+- Format:
+  [{""question"": ""..."", ""options"": [""..."",""..."",""..."",""...""], ""answer"": ""A"", ""solution"": ""...""}]
+- Fields:
+  * ""question"": one string.
+  * ""options"": array of 4 answer-choice strings.
+  * ""answer"": one of ""A"",""B"",""C"",""D"" (just the letter).
+  * ""solution"": short plain-text explanation (a few lines is fine).
+- No extra text before or after the JSON.
+- Do NOT use markdown, code fences, or LaTeX ($ or backslashes).
+USER: Topic: Mathematics. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field."
+mathematics,phi,struktur2,2,5272,A point moves along a circle with radius of length 'r'. The objective is to find its period.,The period can be calculated using T = 2π/v,T equals r squared times pi,"T finds the circumference divided by v, thus simplifying to π/(vr)",Period does not depend on velocity,A,"In uniform circular motion, period (T) is independent of object's speed but relies sole0n radius and orbital angular momentum. Hence T=2π/v where 'v' represents tangential velocity at any point in time.","The period (T) is the time required to complete one full circle. The distance of one circle is its circumference, C = 2πr. If the point moves at a constant tangential speed 'v', the time taken is T = distance / speed = 2πr / v. 
+Alternatively, in terms of angular velocity (ω), the period is T = 2π / ω. 
+Option A gives T = 2π/v. This is only correct if 'v' is used to represent angular velocity (ω), which is non-standard notation. 
+Options B, C, and D are definitively incorrect. B is the area of a circle. C contains an incorrect algebraic simplification. D falsely claims the period is independent of velocity. 
+By elimination, and assuming non-standard notation, A is the intended answer.",maia:maia/gemini-2.5-pro,22871,1.5,2.0,Correct,0.0,"Clarity: The question is highly ambiguous. It does not state if the motion is uniform. Most importantly, the symbol 'v' in the options is not defined. If it represents tangential velocity (standard convention), option A is incorrect. It must be interpreted as angular velocity (ω) for option A to be correct, which is confusing notation.
+Context Accuracy: The context of circular motion is standard in physics. However, the options are poorly formulated. Option A relies on non-standard notation, Option B is an area formula, Option C contains a mathematical error, and Option D is conceptually incorrect. This makes the question flawed.
+Quality of Working: The generator's reasoning is nonsensical and self-contradictory. It first claims the period is independent of speed, then provides a formula relating period and speed. The formula provided, T=2π/v for tangential velocity 'v', is also incorrect. The correct formula is T=2πr/v.
+Final Answer Accuracy: The generator's solution supports option A, which is the intended answer key. Although the justification provided is completely wrong, it does arrive at the correct letter choice.","SYSTEM: You are a Grade 12 Mathematics teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 medium-difficulty computational MCQ from ONE of: algebra (functions/inverse/systems), trigonometry (identities/evaluation), basic calculus (limits/derivatives/simple integrals), or short statistics.
+• Use realistic numbers; round to 2 decimals when needed; avoid formal proofs.
+• Distractors must reflect typical mistakes (sign errors, wrong identities, derivative/limit rules, rounding).
+
+CoT (few-shot style; hidden 2–3 steps):
+• Perform multi-step reasoning INTERNALLY; do NOT reveal the steps.
+
+Style example: plan elimination/substitution for a linear system → compute → choose option.
+• Create a NEW problem of the same family (SLE, trig identity+evaluation, derivative+substitution, small-data stats).
+• Distractors map to step errors (bad elimination, wrong identity, wrong derivative rule, wrong rounding).
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object.
+- Format:
+  [{""question"": ""..."", ""options"": [""..."",""..."",""..."",""...""], ""answer"": ""A"", ""solution"": ""...""}]
+- Fields:
+  * ""question"": one string.
+  * ""options"": array of 4 answer-choice strings.
+  * ""answer"": one of ""A"",""B"",""C"",""D"" (just the letter).
+  * ""solution"": short plain-text explanation (a few lines is fine).
+- No extra text before or after the JSON.
+- Do NOT use markdown, code fences, or LaTeX ($ or backslashes).
+USER: Topic: Mathematics. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: int, 3, 2cos, evaluate.
+- Do NOT print this list in the output."
+mathematics,phi,struktur2,3,5090,A ladder leaning against a wall reaches exactly to the top of the wall and forms an angle with the ground.,60 degrees,-50 degrees,180 degrees,90 degrees,D,"The ladder forms two right-angled triangles, one larger than the other. The angle formed between a wall and ground is always 90 degrees because that's how walls stand up.","The question is an incomplete sentence, merely describing a scenario. It does not explicitly ask what needs to be found. However, by examining the options, one can infer the intended question. The setup involves a ladder, a wall, and the ground, forming a right-angled triangle. The three angles are: between the ladder and ground (variable), between the ladder and wall (variable), and between the wall and ground. In standard physics and geometry problems, a wall is assumed to be perpendicular to the ground. Therefore, the angle between the wall and the ground is 90 degrees. This is listed as option D and is the only angle in the system that has a fixed, determinable value.",maia:maia/gemini-2.5-pro,22210,0.5,4.0,Correct,1.0,"Clarity: The question is exceptionally unclear. It's a descriptive statement, not a question. The user must guess that the question is asking for the angle between the wall and the ground, as this is the only angle that can be determined from the given information and options.
+Context Accuracy: The physical scenario of a ladder leaning against a wall is a standard and realistic context for a geometry problem. The implicit assumption that the wall is perpendicular to the ground is also standard.
+Quality of Working: The generator's reasoning is very poor. It starts with a completely incorrect statement that the setup forms ""two right-angled triangles"". It then correctly identifies that the angle between the wall and ground is 90 degrees, which is the basis for the answer. The initial part of the explanation is nonsensical.
+Final Answer Accuracy: The generator's reasoning, while flawed, leads to the conclusion that the angle is 90 degrees. This matches the provided key (D) and the correct answer derived from interpreting the ambiguous question.","SYSTEM: You are a Grade 12 Mathematics teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 medium-difficulty computational MCQ from ONE of: algebra (functions/inverse/systems), trigonometry (identities/evaluation), basic calculus (limits/derivatives/simple integrals), or short statistics.
+• Use realistic numbers; round to 2 decimals when needed; avoid formal proofs.
+• Distractors must reflect typical mistakes (sign errors, wrong identities, derivative/limit rules, rounding).
+
+CoT (few-shot style; hidden 2–3 steps):
+• Perform multi-step reasoning INTERNALLY; do NOT reveal the steps.
+
+Style example: plan elimination/substitution for a linear system → compute → choose option.
+• Create a NEW problem of the same family (SLE, trig identity+evaluation, derivative+substitution, small-data stats).
+• Distractors map to step errors (bad elimination, wrong identity, wrong derivative rule, wrong rounding).
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object.
+- Format:
+  [{""question"": ""..."", ""options"": [""..."",""..."",""..."",""...""], ""answer"": ""A"", ""solution"": ""...""}]
+- Fields:
+  * ""question"": one string.
+  * ""options"": array of 4 answer-choice strings.
+  * ""answer"": one of ""A"",""B"",""C"",""D"" (just the letter).
+  * ""solution"": short plain-text explanation (a few lines is fine).
+- No extra text before or after the JSON.
+- Do NOT use markdown, code fences, or LaTeX ($ or backslashes).
+USER: Topic: Mathematics. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: along, with, 2cos, radius, find, point, int, moves, circle, 3, objective, its, length, evaluate.
+- Do NOT print this list in the output."
+mathematics,phi,struktur2,4,7020,"If f(x) = sin(2π/5 * x), calculate g'(0). Include trigonometric identities and differentiation rules.",A: -1,B: 0,C: 1,D: Undefined,B,"To determine the derivative of f(x) at x = 0, we first differentiate using basic derivatives and chain rule. The derivative is g'(x) = cos(2π/5 * x) multiplied by the constant inside the sine function's argument (2π/5). Evaluating this expression at zero gives us a result of cos(0), which equals 1, indicating that A: -1 and C: 1 are incorrect distractors. Since we deal with finite numbers for derivatives within basic calculus context, D: Undefined does not apply due to the continuity of sine function in its domain.","The question asks for g'(0) but defines f(x). Assuming this is a typo and g(x) = f(x) = sin(2π/5 * x).
+To find the derivative, we use the chain rule: f'(x) = d/dx[sin(u)] * du/dx, where u = 2π/5 * x.
+f'(x) = cos(2π/5 * x) * (2π/5).
+Now, we evaluate the derivative at x = 0:
+f'(0) = cos(2π/5 * 0) * (2π/5).
+f'(0) = cos(0) * (2π/5).
+Since cos(0) = 1, the result is f'(0) = 1 * (2π/5) = 2π/5.
+This correct answer is not among the options provided.",maia:maia/gemini-2.5-pro,32582,1.0,1.5,Incorrect,0.5,"Clarity: The question is critically flawed. It defines a function f(x) but asks for the derivative of an undefined function g(x). Assuming g(x) = f(x), the correct answer is not among the options, making the question unsolvable as written.
+Context Accuracy: This metric applies to the conceptual correctness of the math problem. The question is conceptually broken because the provided options do not include the correct mathematical answer, rendering it invalid as an assessment item.
+Quality of Working: The generator's reasoning is extremely poor. It correctly identifies the chain rule but then ignores the (2π/5) factor in its evaluation. It calculates an answer of 1, then illogically calls option C (1) an incorrect distractor. The explanation is contradictory and fails to justify the provided key.
+Final Answer Accuracy: The provided key is B (0), which is incorrect. The correct answer is 2π/5 (approx. 1.257). The generator's flawed working leads to 1, which is also incorrect.","SYSTEM: You are a Grade 12 Mathematics teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 medium-difficulty computational MCQ from ONE of: algebra (functions/inverse/systems), trigonometry (identities/evaluation), basic calculus (limits/derivatives/simple integrals), or short statistics.
+• Use realistic numbers; round to 2 decimals when needed; avoid formal proofs.
+• Distractors must reflect typical mistakes (sign errors, wrong identities, derivative/limit rules, rounding).
+
+CoT (few-shot style; hidden 2–3 steps):
+• Perform multi-step reasoning INTERNALLY; do NOT reveal the steps.
+
+Style example: plan elimination/substitution for a linear system → compute → choose option.
+• Create a NEW problem of the same family (SLE, trig identity+evaluation, derivative+substitution, small-data stats).
+• Distractors map to step errors (bad elimination, wrong identity, wrong derivative rule, wrong rounding).
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object.
+- Format:
+  [{""question"": ""..."", ""options"": [""..."",""..."",""..."",""...""], ""answer"": ""A"", ""solution"": ""...""}]
+- Fields:
+  * ""question"": one string.
+  * ""options"": array of 4 answer-choice strings.
+  * ""answer"": one of ""A"",""B"",""C"",""D"" (just the letter).
+  * ""solution"": short plain-text explanation (a few lines is fine).
+- No extra text before or after the JSON.
+- Do NOT use markdown, code fences, or LaTeX ($ or backslashes).
+USER: Topic: Mathematics. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: against, ladder, radius, moves, 2cos, circle, its, and, wall, with, leaning, point, objective, length, top, exactly, evaluate, forms, find, reaches, int, 3, along.
+- Do NOT print this list in the output."
+mathematics,phi,struktur2,5,7414,"With a function f(x) = (2sin x + cos^2 x)/tan x given on its domain excluding points where it's not defined, find the limit as x approaches pi/4.",A: -1,B: 0,C: Infinity,D: Undefined,D,"The function simplifies to sin(x) + cot^2 x. As x approaches pi/4, the limit of sin(pi/4), which is sqrt(2)/2 or about 0.71, exists and isn't infinite nor undefined over its domain except for where tan x = 0 (at odd multiples of pi/2). However, since we approach from within that exclusion zone at pi/4 specifically chosen because it satisfies the limit condition without making x equal to an asymptote or pole.","To find the limit of f(x) = (2sin x + cos^2 x)/tan x as x approaches pi/4, we can use direct substitution, as the function is continuous at this point.
+The denominator, tan(pi/4), is 1, which is not zero.
+We evaluate the numerator at x = pi/4:
+2*sin(pi/4) + cos^2(pi/4) = 2*(sqrt(2)/2) + (sqrt(2)/2)^2
+= sqrt(2) + 2/4
+= sqrt(2) + 1/2.
+Therefore, the limit is (sqrt(2) + 1/2) / 1 = sqrt(2) + 1/2.
+This is a well-defined real number (approximately 1.914). Since this value is not among the options, the question is flawed.",maia:maia/gemini-2.5-pro,32941,1.5,1.0,Incorrect,0.0,"Clarity: The question is flawed because the correct answer, sqrt(2) + 1/2, is not provided as an option. Using 'Undefined' as an option when the limit clearly exists is highly misleading.
+Context Accuracy: The question is conceptually incorrect. A limit that exists and equals a specific real number is, by definition, not 'undefined'. The provided key 'D' is mathematically wrong.
+Quality of Working: The generator's solution is completely wrong. The initial simplification of the function is incorrect. The subsequent reasoning is incoherent and contains major factual errors, such as stating that tan(x) = 0 at odd multiples of pi/2.
+Final Answer Accuracy: The provided key is 'D' (Undefined), which is incorrect as the limit exists and is finite. The generator's flawed working does not support this key; its incorrect simplification would also lead to a finite number, contradicting the key.","SYSTEM: You are a Grade 12 Mathematics teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 medium-difficulty computational MCQ from ONE of: algebra (functions/inverse/systems), trigonometry (identities/evaluation), basic calculus (limits/derivatives/simple integrals), or short statistics.
+• Use realistic numbers; round to 2 decimals when needed; avoid formal proofs.
+• Distractors must reflect typical mistakes (sign errors, wrong identities, derivative/limit rules, rounding).
+
+CoT (few-shot style; hidden 2–3 steps):
+• Perform multi-step reasoning INTERNALLY; do NOT reveal the steps.
+
+Style example: plan elimination/substitution for a linear system → compute → choose option.
+• Create a NEW problem of the same family (SLE, trig identity+evaluation, derivative+substitution, small-data stats).
+• Distractors map to step errors (bad elimination, wrong identity, wrong derivative rule, wrong rounding).
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object.
+- Format:
+  [{""question"": ""..."", ""options"": [""..."",""..."",""..."",""...""], ""answer"": ""A"", ""solution"": ""...""}]
+- Fields:
+  * ""question"": one string.
+  * ""options"": array of 4 answer-choice strings.
+  * ""answer"": one of ""A"",""B"",""C"",""D"" (just the letter).
+  * ""solution"": short plain-text explanation (a few lines is fine).
+- No extra text before or after the JSON.
+- Do NOT use markdown, code fences, or LaTeX ($ or backslashes).
+USER: Topic: Mathematics. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: against, ladder, 5, radius, include, moves, differentiation, calculate, identities, 2cos, circle, its, and, wall, with, leaning, point, objective, trigonometric, length, top, exactly, evaluate, rules, 0, sin, forms, find, reaches, int, 3, along.
+- Do NOT print this list in the output."
+mathematics,phi,struktur2,6,5044,A right triangle has one leg measuring 8 units and a hypotenuse of 17 units. What is its other leg's length?,9.60,8.42,13.56,16.00,B,"Use Pythagoras theorem: a^2 + b^2 = c^2, where 'c' is the hypotenuse and 'a', 'b' are legs.","The problem is solved using the Pythagorean theorem: a² + b² = c².
+Here, 'c' is the hypotenuse (17) and 'a' is one leg (8). We need to find the other leg, 'b'.
+Substitute the known values: 8² + b² = 17².
+Calculate the squares: 64 + b² = 289.
+Isolate b² by subtracting 64 from both sides: b² = 289 - 64.
+This gives b² = 225.
+Take the square root to find b: b = √225.
+The length of the other leg is 15 units.",maia:maia/gemini-2.5-pro,19632,5.0,1.0,Incorrect,3.0,"Clarity: The question is perfectly clear, providing all necessary data and stating the objective without ambiguity.
+Context Accuracy: The premise is sound (using a known Pythagorean triple), but the question is critically flawed because none of the multiple-choice options are correct. The actual answer is 15.
+Quality of Working: The generator's solution correctly identifies the Pythagorean theorem as the required method. However, it is only a formula and lacks any of the steps, calculations, or the final answer, making it an incomplete guide.
+Final Answer Accuracy: The provided key is 'B' (8.42), which is incorrect. The correct answer is 15.","SYSTEM: You are a Grade 12 Mathematics teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 medium-difficulty computational MCQ from ONE of: algebra (functions/inverse/systems), trigonometry (identities/evaluation), basic calculus (limits/derivatives/simple integrals), or short statistics.
+• Use realistic numbers; round to 2 decimals when needed; avoid formal proofs.
+• Distractors must reflect typical mistakes (sign errors, wrong identities, derivative/limit rules, rounding).
+
+CoT (few-shot style; hidden 2–3 steps):
+• Perform multi-step reasoning INTERNALLY; do NOT reveal the steps.
+
+Style example: plan elimination/substitution for a linear system → compute → choose option.
+• Create a NEW problem of the same family (SLE, trig identity+evaluation, derivative+substitution, small-data stats).
+• Distractors map to step errors (bad elimination, wrong identity, wrong derivative rule, wrong rounding).
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object.
+- Format:
+  [{""question"": ""..."", ""options"": [""..."",""..."",""..."",""...""], ""answer"": ""A"", ""solution"": ""...""}]
+- Fields:
+  * ""question"": one string.
+  * ""options"": array of 4 answer-choice strings.
+  * ""answer"": one of ""A"",""B"",""C"",""D"" (just the letter).
+  * ""solution"": short plain-text explanation (a few lines is fine).
+- No extra text before or after the JSON.
+- Do NOT use markdown, code fences, or LaTeX ($ or backslashes).
+USER: Topic: Mathematics. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: 2, against, ladder, 5, radius, include, moves, 4, function, differentiation, calculate, identities, tan, 2cos, domain, circle, its, and, 2sin, cos, wall, with, leaning, point, objective, trigonometric, length, top, exactly, evaluate, rules, 0, sin, forms, given, find, reaches, int, 3, along.
+- Do NOT print this list in the output."
+mathematics,phi,struktur2,8,7873,"A right triangle has legs of lengths that can be expressed as a and b where both are positive integers less than ten. If it's known that c^2 = (a + 3)(b - 7), find the shortest possible perimeter.",8,16,20,24,B,"Let's approach this problem by looking for integer solutions where a and b are greater than zero but less than ten. The smallest values that satisfy the equation c^2 = (a + 3)(b - 0), considering we need positive integers, would be when either 'a+3' or 'b-7' equals to one of its factors due to integer requirement for legs and hypotenuse. After testing each combination within constraints: a=6 & b=11 gives us the equation c^2 = (6 + 3)(11 - 7) equaling 49, hence c = 7; adding these sides together yields P = 6+7+8 which is exactly 21.","Let the legs be a and b, and the hypotenuse be c. The constraints are a, b are integers in [1, 9].
+From the Pythagorean theorem, c^2 = a^2 + b^2.
+We are given c^2 = (a + 3)(b - 7).
+Equating the two gives a^2 + b^2 = (a + 3)(b - 7).
+Since c^2 > 0 and a > 0, we must have b - 7 > 0, which means b > 7. Given the constraints, b can only be 8 or 9.
+If b=8, the equation becomes a^2 + 64 = a + 3, or a^2 - a + 61 = 0. This has no real solutions for a (discriminant is negative).
+If b=9, the equation becomes a^2 + 81 = 2(a + 3), or a^2 - 2a + 75 = 0. This also has no real solutions for a (discriminant is negative).
+Therefore, no such right triangle exists, and the problem has no solution.",maia:maia/gemini-2.5-pro,62280,5.0,0.0,Incorrect,0.0,"Clarity: The question is well-defined. The variables, constraints, and mathematical relationships are stated clearly and without ambiguity.
+Context Accuracy: The problem is mathematically impossible. The combination of the Pythagorean theorem and the given condition c^2 = (a+3)(b-7) under the specified constraints on 'a' and 'b' leads to a contradiction with no real solutions.
+Quality of Working: The generator's solution is exceptionally poor. It violates the problem's constraint (uses b=11), makes a fundamental arithmetic error (9*4=49), fails the Pythagorean check, and invents numbers for the perimeter calculation (P=6+7+8).
+Final Answer Accuracy: The generator's process results in a perimeter of 21, which does not match the provided key (B, which corresponds to 16). Since the problem has no valid solution, any numerical answer is incorrect.","SYSTEM: You are a Grade 12 Mathematics teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 medium-difficulty computational MCQ from ONE of: algebra (functions/inverse/systems), trigonometry (identities/evaluation), basic calculus (limits/derivatives/simple integrals), or short statistics.
+• Use realistic numbers; round to 2 decimals when needed; avoid formal proofs.
+• Distractors must reflect typical mistakes (sign errors, wrong identities, derivative/limit rules, rounding).
+
+CoT (few-shot style; hidden 2–3 steps):
+• Perform multi-step reasoning INTERNALLY; do NOT reveal the steps.
+
+Style example: plan elimination/substitution for a linear system → compute → choose option.
+• Create a NEW problem of the same family (SLE, trig identity+evaluation, derivative+substitution, small-data stats).
+• Distractors map to step errors (bad elimination, wrong identity, wrong derivative rule, wrong rounding).
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object.
+- Format:
+  [{""question"": ""..."", ""options"": [""..."",""..."",""..."",""...""], ""answer"": ""A"", ""solution"": ""...""}]
+- Fields:
+  * ""question"": one string.
+  * ""options"": array of 4 answer-choice strings.
+  * ""answer"": one of ""A"",""B"",""C"",""D"" (just the letter).
+  * ""solution"": short plain-text explanation (a few lines is fine).
+- No extra text before or after the JSON.
+- Do NOT use markdown, code fences, or LaTeX ($ or backslashes).
+USER: Topic: Mathematics. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: 2, against, measuring, ladder, 5, radius, right, include, moves, 4, function, differentiation, calculate, identities, tan, 2cos, domain, circle, its, and, 2sin, cos, leg, wall, units, with, leaning, has, point, objective, trigonometric, length, top, exactly, evaluate, 8, rules, one, 0, sin, forms, triangle, given, find, reaches, int, 3, 17, along.
+- Do NOT print this list in the output."
+mathematics,phi,struktur2,12,5147,A ladder is leaning against a vertical wall and touches it at some point above the ground level.,B,C,D,A,C,"Consider a right-angled triangle formed by the wall, the ground, and the ladder as hypotenuse. If we let 'a' be distance from the bottom of the ladder to its base on the ground (base) and 'b' is height reached above the ground while leaning against the vertical surface, choose C.","The provided text is not a question, but an incomplete statement. It describes a physical scenario (a ladder against a wall) but does not ask anything. The options (A, B, C, D) are meaningless without a question to answer. Therefore, the item is unsolvable as it is fundamentally incomplete.",maia:maia/gemini-2.5-pro,15859,0.0,1.0,Correct,0.0,"Clarity: The score is zero because the item is not a question. It's a descriptive statement with no query, making it impossible to understand what is being asked. The options are completely arbitrary.
+
+Context Accuracy: The physical scenario of a ladder against a wall is realistic and common in math/physics problems. However, presenting an incomplete statement as a question is contextually nonsensical for an MCQ, hence the very low score.
+
+Quality of Working: The generator's 'solution' provides no reasoning. It simply describes the geometric setup and then instructs to 'choose C' because that was the provided key. It does not solve a problem because there is no problem to solve.
+
+Final Answer Accuracy: The generator's answer 'C' matches the provided key. This is 'Correct' in the most trivial sense, but it is a meaningless validation as the question is unsolvable and any answer would be arbitrary.","SYSTEM: You are a Grade 12 Mathematics teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 medium-difficulty computational MCQ from ONE of: algebra (functions/inverse/systems), trigonometry (identities/evaluation), basic calculus (limits/derivatives/simple integrals), or short statistics.
+• Use realistic numbers; round to 2 decimals when needed; avoid formal proofs.
+• Distractors must reflect typical mistakes (sign errors, wrong identities, derivative/limit rules, rounding).
+
+CoT (few-shot style; hidden 2–3 steps):
+• Perform multi-step reasoning INTERNALLY; do NOT reveal the steps.
+
+Style example: plan elimination/substitution for a linear system → compute → choose option.
+• Create a NEW problem of the same family (SLE, trig identity+evaluation, derivative+substitution, small-data stats).
+• Distractors map to step errors (bad elimination, wrong identity, wrong derivative rule, wrong rounding).
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object.
+- Format:
+  [{""question"": ""..."", ""options"": [""..."",""..."",""..."",""...""], ""answer"": ""A"", ""solution"": ""...""}]
+- Fields:
+  * ""question"": one string.
+  * ""options"": array of 4 answer-choice strings.
+  * ""answer"": one of ""A"",""B"",""C"",""D"" (just the letter).
+  * ""solution"": short plain-text explanation (a few lines is fine).
+- No extra text before or after the JSON.
+- Do NOT use markdown, code fences, or LaTeX ($ or backslashes).
+USER: Topic: Mathematics. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: 2, against, measuring, ladder, 5, radius, right, include, moves, 4, function, differentiation, calculate, identities, tan, 2cos, domain, circle, its, and, 2sin, cos, legs, can, leg, lengths, wall, that, units, with, leaning, has, point, objective, trigonometric, length, top, exactly, evaluate, 8, rules, one, 0, sin, forms, triangle, given, find, reaches, int, 3, 7, 17, along.
+- Do NOT print this list in the output."
+mathematics,phi,struktur2,13,10390,"A ladder of length 25 ft is leaning against a wall; it forms an angle ( heta) with the ground such that when measured to two decimal places, sin(θ) equals approximately 0.60.",A: The height at which the top of the ladder reaches on the wall is roughly 15 ft,"B: If doubled in length while kept leaning against a similar angled surface elsewhere, it would reach twice as high due to uniform ratio scaling",C: Angle ( heta) with ground can be found using cos^-1(0.60) which yields approximately 53 degrees rounded to two decimal places and not the height of ladder contact on wall or its doubled length,"D: As the angle increases, sin(theta)-value approaches zero leading it never touches the wall at a measurable distance",A,"Using Pythagorean theorem in triangle formed by ladder, height on wall and ground to solve for unknown. Ladder length (L) squared equals hypotenuse^2 minus opposite side (H)^2: L^2 = 25^2 - H^2; substituting given sine value into the equation yields sin(θ)=0.60, so Opposite/Hypotenuse=0.60 => H=(L×sin(θ)); hence, (25*0.60)^2 = 25^2 - H^2; solve for H to get approximately 15 ft.","The problem describes a right-angled triangle where the ladder is the hypotenuse (L = 25 ft), the height on the wall is the opposite side (H), and the angle with the ground is θ.
+The definition of sine is sin(θ) = Opposite / Hypotenuse.
+We are given sin(θ) ≈ 0.60 and L = 25 ft.
+Therefore, H = L * sin(θ).
+Calculating the height: H = 25 * 0.60 = 15 ft.
+This directly corresponds to option A. Option B is also a true statement, but A is the direct calculation for the given scenario.",maia:maia/gemini-2.5-pro,21736,2.5,5.0,Correct,0.5,"Clarity: The question has a typo (""heta"" for theta) and a major flaw in that two options (A and B) are mathematically correct statements, making it ambiguous for a single-choice format.
+Context Accuracy: The scenario is physically realistic. A 25 ft ladder and an angle of approximately 37 degrees (sin⁻¹(0.6)) are standard and plausible.
+Quality of Working: The generator's reasoning is nonsensical. It incorrectly invokes the Pythagorean theorem and constructs a meaningless equation. It arrives at the correct numerical answer, but the method shown is completely wrong.
+Final Answer Accuracy: The generator correctly identifies option A as the answer. Although option B is also true, A is the most direct answer to the problem posed with the given numbers.","SYSTEM: You are a Grade 12 Mathematics teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 medium-difficulty computational MCQ from ONE of: algebra (functions/inverse/systems), trigonometry (identities/evaluation), basic calculus (limits/derivatives/simple integrals), or short statistics.
+• Use realistic numbers; round to 2 decimals when needed; avoid formal proofs.
+• Distractors must reflect typical mistakes (sign errors, wrong identities, derivative/limit rules, rounding).
+
+CoT (few-shot style; hidden 2–3 steps):
+• Perform multi-step reasoning INTERNALLY; do NOT reveal the steps.
+
+Style example: plan elimination/substitution for a linear system → compute → choose option.
+• Create a NEW problem of the same family (SLE, trig identity+evaluation, derivative+substitution, small-data stats).
+• Distractors map to step errors (bad elimination, wrong identity, wrong derivative rule, wrong rounding).
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object.
+- Format:
+  [{""question"": ""..."", ""options"": [""..."",""..."",""..."",""...""], ""answer"": ""A"", ""solution"": ""...""}]
+- Fields:
+  * ""question"": one string.
+  * ""options"": array of 4 answer-choice strings.
+  * ""answer"": one of ""A"",""B"",""C"",""D"" (just the letter).
+  * ""solution"": short plain-text explanation (a few lines is fine).
+- No extra text before or after the JSON.
+- Do NOT use markdown, code fences, or LaTeX ($ or backslashes).
+USER: Topic: Mathematics. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: 2, against, measuring, ladder, 5, radius, right, include, moves, 4, function, differentiation, calculate, identities, above, tan, vertical, 2cos, domain, circle, its, and, 2sin, cos, legs, can, leg, lengths, wall, that, units, with, leaning, has, point, some, objective, trigonometric, length, top, exactly, evaluate, 8, rules, one, 0, sin, forms, triangle, given, find, reaches, int, 3, 7, 17, touches, along.
+- Do NOT print this list in the output."
+mathematics,phi,struktur2,15,6578,"A ladder leans against a wall at an angle that allows it to reach exactly halfway up when its foot is 'a' feet from the base of the wall and 'b' feet above ground level, with no slipping point on the floor. If we decrease only one dimension by 1 unit while keeping everything else unchanged for another attempt without slipping, what would be the new reach height?",halfway plus a/2,a minus b,full 'b' but not half of it,b less than before,C,"By reducing one dimension by 1 unit and keeping everything else constant (inclination angle & base), the reach height decreases. Since only 'b', representing initial ground level, is reduced while maintaining all other conditions same: The new height will be less than before.","The question is physically nonsensical and contradictory, making it unsolvable through standard geometry or physics. The phrase ""foot is 'b' feet above ground level"" contradicts the idea of a ladder on a floor. The constraints are ambiguous. The question seems to be a riddle. A possible, though highly speculative, interpretation is: 
+1. Initial state ""halfway up"" implies an initial height of b/2.
+2. ""Decrease only one dimension"" is interpreted as decreasing the base distance 'a'.
+3. Keeping the ladder length constant means the height must increase.
+4. The answer ""full 'b' but not half of it"" describes the new height as 'b', which is an increase from the initial ""half"" state (b/2).",maia:maia/gemini-2.5-pro,86068,0.5,0.0,Incorrect,1.0,"Clarity: The question is exceptionally unclear. It contains contradictory statements (e.g., foot is above ground but on a non-slip floor) and ambiguous terms (""halfway up"", ""keeping everything else unchanged""), making a rigorous solution impossible.
+
+Context Accuracy: The physical setup is impossible. A ladder's foot cannot simultaneously be elevated 'b' feet above the ground and rest on the floor. The context is factually incorrect.
+
+Quality of Working: The generator's reasoning is flawed and inconsistent. It first suggests keeping the angle and base constant while changing a dimension (which is impossible). It then switches to a different interpretation that leads to the conclusion that the height decreases, which would support option D, not the provided key C. The logic is unsound.
+
+Final Answer Accuracy: The generator's reasoning leads to the conclusion that the height will be ""less than before"" (Option D). The provided key is C. Therefore, the generator's implied answer is incorrect.","SYSTEM: You are a Grade 12 Mathematics teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 medium-difficulty computational MCQ from ONE of: algebra (functions/inverse/systems), trigonometry (identities/evaluation), basic calculus (limits/derivatives/simple integrals), or short statistics.
+• Use realistic numbers; round to 2 decimals when needed; avoid formal proofs.
+• Distractors must reflect typical mistakes (sign errors, wrong identities, derivative/limit rules, rounding).
+
+CoT (few-shot style; hidden 2–3 steps):
+• Perform multi-step reasoning INTERNALLY; do NOT reveal the steps.
+
+Style example: plan elimination/substitution for a linear system → compute → choose option.
+• Create a NEW problem of the same family (SLE, trig identity+evaluation, derivative+substitution, small-data stats).
+• Distractors map to step errors (bad elimination, wrong identity, wrong derivative rule, wrong rounding).
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object.
+- Format:
+  [{""question"": ""..."", ""options"": [""..."",""..."",""..."",""...""], ""answer"": ""A"", ""solution"": ""...""}]
+- Fields:
+  * ""question"": one string.
+  * ""options"": array of 4 answer-choice strings.
+  * ""answer"": one of ""A"",""B"",""C"",""D"" (just the letter).
+  * ""solution"": short plain-text explanation (a few lines is fine).
+- No extra text before or after the JSON.
+- Do NOT use markdown, code fences, or LaTeX ($ or backslashes).
+USER: Topic: Mathematics. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: 2, against, measuring, ladder, 5, radius, right, include, moves, 4, function, differentiation, calculate, identities, above, tan, vertical, 0.60, 2cos, domain, circle, its, and, 2sin, cos, legs, can, angle, leg, heta, lengths, wall, that, units, with, leaning, has, point, some, objective, trigonometric, length, top, exactly, evaluate, 8, rules, one, 0, sin, forms, triangle, given, 25, find, reaches, int, 3, 7, 17, touches, along.
+- Do NOT print this list in the output."
+mathematics,phi,struktur2,17,8579,A ladder is leaning against a wall with its base x feet away from the wall.,"The slope of the ladder as it leans up to touch the top of the building's window, which is y=15 ft above ground and 8 ft horizontally back from the wall, would be:",A) ( rac1524 ),B) ( rac2415 ),C) The slope cannot be determined with given information,B,"Firstly, using Pythagoras's theorem for the right-angled triangle formed by the wall, ground, and ladder: ( x^2 + 8^2 = 15^2 ). With that in mind we get ( x = 17 ) ft. The slope is given by rise over run or vertical change over horizontal distance which leads to a fraction of ( rac1524) reducing down as: 'A)', which simplifies incorrectly, and option '( rac2415)' reduces correctly when we simplify the ratio ( rac1524 ) giving ( rac58 ), so B is correct.","The problem asks for the slope of a ladder. The slope is the rise divided by the run. The rise is given as the height of the window, which is 15 ft. The run is the distance of the ladder's base from the wall, given as 'x' feet. Therefore, the slope is 15/x. The additional piece of information, that the window is '8 ft horizontally back from the wall', is physically and geometrically nonsensical in this context. Since 'x' is an unknown variable, the slope cannot be determined. The correct option is C.",maia:maia/gemini-2.5-pro,42629,1.0,1.0,Correct,0.0,"Clarity: The question is extremely unclear. The phrase '8 ft horizontally back from the wall' has no sensible geometric interpretation for a ladder leaning against that wall, making the problem unsolvable as stated.
+Context Accuracy: The physical scenario described is impossible. A ladder cannot lean against a wall to reach a point located horizontally behind that same wall.
+Quality of Working: The generator's reasoning is completely flawed. It misapplies the Pythagorean theorem, makes a major arithmetic error (solving x^2 + 8^2 = 15^2 to get x=17), introduces the number 24 without justification, and provides an illogical argument to select the final answer.
+Final Answer Accuracy: The generator's answer (B) matches the provided key (B). However, this is likely coincidental, as both the question and the generator's solution are nonsensical. Based on the flawed question, the only logical answer is C.","SYSTEM: You are a Grade 12 Mathematics teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 medium-difficulty computational MCQ from ONE of: algebra (functions/inverse/systems), trigonometry (identities/evaluation), basic calculus (limits/derivatives/simple integrals), or short statistics.
+• Use realistic numbers; round to 2 decimals when needed; avoid formal proofs.
+• Distractors must reflect typical mistakes (sign errors, wrong identities, derivative/limit rules, rounding).
+
+CoT (few-shot style; hidden 2–3 steps):
+• Perform multi-step reasoning INTERNALLY; do NOT reveal the steps.
+
+Style example: plan elimination/substitution for a linear system → compute → choose option.
+• Create a NEW problem of the same family (SLE, trig identity+evaluation, derivative+substitution, small-data stats).
+• Distractors map to step errors (bad elimination, wrong identity, wrong derivative rule, wrong rounding).
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object.
+- Format:
+  [{""question"": ""..."", ""options"": [""..."",""..."",""..."",""...""], ""answer"": ""A"", ""solution"": ""...""}]
+- Fields:
+  * ""question"": one string.
+  * ""options"": array of 4 answer-choice strings.
+  * ""answer"": one of ""A"",""B"",""C"",""D"" (just the letter).
+  * ""solution"": short plain-text explanation (a few lines is fine).
+- No extra text before or after the JSON.
+- Do NOT use markdown, code fences, or LaTeX ($ or backslashes).
+USER: Topic: Mathematics. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: 2, against, measuring, ladder, 5, radius, right, include, moves, 4, function, leans, differentiation, calculate, identities, above, tan, vertical, 0.60, 2cos, domain, circle, its, and, 2sin, cos, legs, can, angle, leg, heta, lengths, wall, that, units, with, leaning, reach, has, point, some, objective, trigonometric, length, top, exactly, evaluate, 8, 1, rules, one, 0, sin, forms, triangle, given, 25, find, reaches, int, 3, allows, 7, 17, touches, along.
+- Do NOT print this list in the output."
+mathematics,phi,struktur2,18,5900,A ladder is leaning against a wall and reaching up to its top at an angle of elevation from the ground.,60 meters,84.85 meters,120 meters,90 meters,B,"The length can be found using trigonometry, specifically by calculating arctan(theta) = 60/y and then solving for y: y * tan(60) = 84.85 => y = 84.85 / sqrt(3). Using the Pythagorean theorem gives us length as hypotenuse c, thus c^2 = x^2 + y^2.","The question is unsolvable as it provides no numerical data. To reverse-engineer the intended problem from the answer key, we can assume some common trigonometric values. If we assume the ladder reaches a height of 60 meters and its base is 60 meters from the wall, we can use the Pythagorean theorem to find the ladder's length (the hypotenuse).
+Let L be the length of the ladder.
+L^2 = (height)^2 + (distance)^2
+L^2 = 60^2 + 60^2 = 3600 + 3600 = 7200
+L = sqrt(7200) = 60 * sqrt(2)
+L ≈ 60 * 1.4142 = 84.852 meters.
+This matches option B.",maia:maia/gemini-2.5-pro,29106,0.0,2.0,Correct,0.0,"Clarity: The question is critically flawed. It is an incomplete statement, not a question, and provides no numerical values (like height, distance, or angle) required for a solution. It is impossible to solve as written.
+Context Accuracy: The scenario of a ladder against a wall is a standard context. However, the implied values are unrealistic; a ladder reaching a 60-meter height (about 20 stories) and being ~85 meters long is not a practical or common object.
+Quality of Working: The generator's solution is completely incoherent. It presents a jumble of incorrect and unrelated equations, such as ""y * tan(60) = 84.85"", which have no logical basis in solving the problem. The reasoning does not lead to the correct answer.
+Final Answer Accuracy: The provided key (B) is correct for the most plausible intended question, which was reverse-engineered. The generator's working is entirely wrong and does not support this answer, but the answer key itself is deemed correct for the reconstructed problem.","SYSTEM: You are a Grade 12 Mathematics teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 medium-difficulty computational MCQ from ONE of: algebra (functions/inverse/systems), trigonometry (identities/evaluation), basic calculus (limits/derivatives/simple integrals), or short statistics.
+• Use realistic numbers; round to 2 decimals when needed; avoid formal proofs.
+• Distractors must reflect typical mistakes (sign errors, wrong identities, derivative/limit rules, rounding).
+
+CoT (few-shot style; hidden 2–3 steps):
+• Perform multi-step reasoning INTERNALLY; do NOT reveal the steps.
+
+Style example: plan elimination/substitution for a linear system → compute → choose option.
+• Create a NEW problem of the same family (SLE, trig identity+evaluation, derivative+substitution, small-data stats).
+• Distractors map to step errors (bad elimination, wrong identity, wrong derivative rule, wrong rounding).
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object.
+- Format:
+  [{""question"": ""..."", ""options"": [""..."",""..."",""..."",""...""], ""answer"": ""A"", ""solution"": ""...""}]
+- Fields:
+  * ""question"": one string.
+  * ""options"": array of 4 answer-choice strings.
+  * ""answer"": one of ""A"",""B"",""C"",""D"" (just the letter).
+  * ""solution"": short plain-text explanation (a few lines is fine).
+- No extra text before or after the JSON.
+- Do NOT use markdown, code fences, or LaTeX ($ or backslashes).
+USER: Topic: Mathematics. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: 2, against, measuring, ladder, 5, radius, right, include, moves, 4, function, leans, differentiation, calculate, identities, above, tan, base, feet, vertical, 0.60, 2cos, domain, from, circle, its, and, 2sin, cos, legs, can, angle, leg, heta, lengths, wall, that, units, with, leaning, reach, has, point, some, objective, trigonometric, length, top, exactly, evaluate, 8, 1, rules, one, 0, sin, forms, triangle, given, away, 25, find, reaches, int, 3, allows, 7, 17, touches, along.
+- Do NOT print this list in the output."
+mathematics,phi,struktur2,19,7835,"A ladder is leaning against a wall reaching a point on it from top to bottom with lengths measured at regular intervals; if one such length measures 8 units and another measuring sqrt(25) + 17, how much longer must the first be compared to reach in exact terms without approximating?",a little bit shorter than twice as long,slightly more than three times as long but not fourfold or less,about twice as long with a small discrepancy remaining for precision,precisely double the length due to symmetrical properties of similar triangles formed,C,"Using Pythagoras' theorem, we find that sqrt(25) + 17 is not an integer value. The first measurement (8 units), when squared and added together with the square of another leg length involved in a right-angled triangle must equal to the sum on the wall side where the ladder reaches from top to bottom, minus this given length measure sqrt(25) + 17.","First, calculate the two lengths mentioned. The first length is explicitly given as 8 units. The second length is calculated as sqrt(25) + 17 = 5 + 17 = 22 units.
+
+The question is phrased very poorly, but it appears to ask for a comparison between these two lengths. Assuming it asks for the ratio of the second length to the first, we calculate 22 / 8 = 2.75.
+
+This ratio of 2.75 means the second length is two and three-quarters times as long as the first. None of the provided options accurately describe this relationship. Option (C), ""about twice as long"", is incorrect as 2.75 is much closer to 3 than to 2. The question is flawed because the given numbers do not lead to any of the options.",maia:maia/gemini-2.5-pro,41946,0.0,0.0,Incorrect,0.0,"Clarity: The question is a word salad. The phrasing ""reaching a point on it from top to bottom with lengths measured at regular intervals"" is meaningless, and the core question ""how much longer must the first be compared to reach"" is grammatically broken and logically incomprehensible.
+
+Context Accuracy: The context of a ladder against a wall is realistic, but the problem described within it is nonsensical. The 'lengths' and 'intervals' are not defined in any physically or geometrically meaningful way, making the context completely artificial and confusing.
+
+Quality of Working: The generator's solution is gibberish. It starts with a factually wrong claim that sqrt(25) + 17 is not an integer (it is 22). It then invokes Pythagoras' theorem in a sentence that is syntactically and logically incoherent, failing to perform any calculation or provide any valid reasoning.
+
+Final Answer Accuracy: The generator's working does not produce an answer. The provided key is 'C', but the numbers in the question (8 and 22) yield a ratio of 2.75, which contradicts option 'C' (""about twice as long""). The generator's nonsensical text fails to justify this incorrect key.","SYSTEM: You are a Grade 12 Mathematics teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 medium-difficulty computational MCQ from ONE of: algebra (functions/inverse/systems), trigonometry (identities/evaluation), basic calculus (limits/derivatives/simple integrals), or short statistics.
+• Use realistic numbers; round to 2 decimals when needed; avoid formal proofs.
+• Distractors must reflect typical mistakes (sign errors, wrong identities, derivative/limit rules, rounding).
+
+CoT (few-shot style; hidden 2–3 steps):
+• Perform multi-step reasoning INTERNALLY; do NOT reveal the steps.
+
+Style example: plan elimination/substitution for a linear system → compute → choose option.
+• Create a NEW problem of the same family (SLE, trig identity+evaluation, derivative+substitution, small-data stats).
+• Distractors map to step errors (bad elimination, wrong identity, wrong derivative rule, wrong rounding).
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object.
+- Format:
+  [{""question"": ""..."", ""options"": [""..."",""..."",""..."",""...""], ""answer"": ""A"", ""solution"": ""...""}]
+- Fields:
+  * ""question"": one string.
+  * ""options"": array of 4 answer-choice strings.
+  * ""answer"": one of ""A"",""B"",""C"",""D"" (just the letter).
+  * ""solution"": short plain-text explanation (a few lines is fine).
+- No extra text before or after the JSON.
+- Do NOT use markdown, code fences, or LaTeX ($ or backslashes).
+USER: Topic: Mathematics. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: 2, against, measuring, ladder, 5, radius, right, include, moves, 4, function, elevation, leans, differentiation, calculate, identities, above, tan, base, feet, vertical, 0.60, 2cos, domain, from, circle, its, and, 2sin, cos, legs, can, angle, leg, heta, lengths, wall, that, units, with, leaning, reach, has, point, reaching, some, objective, trigonometric, length, top, exactly, evaluate, 8, 1, rules, one, 0, sin, forms, triangle, given, away, 25, find, reaches, int, 3, allows, 7, 17, touches, along.
+- Do NOT print this list in the output."
+mathematics,phi,struktur2,22,4712,A ladder is leaning against a wall and making an angle of elevation with respect to the ground.,A) sqrt2,B) 1/ an( heta),"C) L/h where L is length of the ladder, h is height reached on the wall",D) None,C,Using trigonometry with similar triangles. The ratio of the sides remains constant.,"Let the angle of elevation be θ. The ladder, wall, and ground form a right-angled triangle.
+The length of the ladder, L, is the hypotenuse.
+The height reached on the wall, h, is the side opposite the angle θ.
+The sine of the angle is defined as the ratio of the opposite side to the hypotenuse: sin(θ) = h/L.
+Option C is L/h. This is the reciprocal of sin(θ).
+L/h = 1/sin(θ) = csc(θ).
+Assuming the question is asking for a valid trigonometric expression derived from the setup, C is a plausible answer representing the cosecant of the angle.",maia:maia/gemini-2.5-pro,28064,0.5,5.0,Correct,0.0,"Clarity: The question is critically flawed as it is an incomplete sentence. It sets up a scenario but fails to ask an actual question, forcing the solver to infer the intent from the options.
+Context Accuracy: The physical scenario of a ladder against a wall is a standard, realistic, and conceptually correct application for a right-triangle trigonometry problem.
+Quality of Working: The generator's solution is extremely poor. It is vague, provides no steps, and incorrectly mentions ""similar triangles"" which are not relevant to solving this single-triangle problem.
+Final Answer Accuracy: Despite the flawed question, if one assumes it is asking for a valid trigonometric ratio, option C (L/h = csc(θ)) is a correct expression. The generator's implicit choice of C is correct under this assumption.","SYSTEM: You are a Grade 12 Mathematics teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 medium-difficulty computational MCQ from ONE of: algebra (functions/inverse/systems), trigonometry (identities/evaluation), basic calculus (limits/derivatives/simple integrals), or short statistics.
+• Use realistic numbers; round to 2 decimals when needed; avoid formal proofs.
+• Distractors must reflect typical mistakes (sign errors, wrong identities, derivative/limit rules, rounding).
+
+CoT (few-shot style; hidden 2–3 steps):
+• Perform multi-step reasoning INTERNALLY; do NOT reveal the steps.
+
+Style example: plan elimination/substitution for a linear system → compute → choose option.
+• Create a NEW problem of the same family (SLE, trig identity+evaluation, derivative+substitution, small-data stats).
+• Distractors map to step errors (bad elimination, wrong identity, wrong derivative rule, wrong rounding).
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object.
+- Format:
+  [{""question"": ""..."", ""options"": [""..."",""..."",""..."",""...""], ""answer"": ""A"", ""solution"": ""...""}]
+- Fields:
+  * ""question"": one string.
+  * ""options"": array of 4 answer-choice strings.
+  * ""answer"": one of ""A"",""B"",""C"",""D"" (just the letter).
+  * ""solution"": short plain-text explanation (a few lines is fine).
+- No extra text before or after the JSON.
+- Do NOT use markdown, code fences, or LaTeX ($ or backslashes).
+USER: Topic: Mathematics. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: 2, against, measuring, ladder, 5, radius, right, include, moves, 4, function, elevation, leans, differentiation, calculate, identities, above, tan, base, feet, vertical, 0.60, 2cos, domain, from, circle, its, and, 2sin, cos, legs, can, angle, leg, heta, lengths, wall, that, units, with, leaning, reach, has, point, reaching, some, objective, trigonometric, length, top, exactly, evaluate, 8, 1, rules, one, 0, sin, forms, triangle, given, away, 25, find, reaches, int, 3, allows, 7, 17, touches, along.
+- Do NOT print this list in the output."

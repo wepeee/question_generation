@@ -1,0 +1,39 @@
+topic,model,struktur,index,latency_model_ms,question,optionA,optionB,optionC,optionD,answer,solution_model,solution_verifier,verifier_model,latency_verifier_ms,clarity,context_accuracy,final_answer_accuracy,quality_of_working,judge_notes,prompt_generator
+physics,gemini,struktur3,1,4186,A 2.0 kg block is pushed up a rough incline (30 degrees to the horizontal) by a horizontal force of 20 N. The coefficient of kinetic friction between the block and the incline is 0.25. What is the magnitude of the block's acceleration up the incline?,0.51 m/s^2,1.23 m/s^2,2.77 m/s^2,3.49 m/s^2,A,Forces up the incline: F_applied*cos(30) - mg*sin(30) - friction. Friction = mu*NormalForce = mu*(mg*cos(30) + F_applied*sin(30)). Net force = ma. a = (20*cos(30) - 2*9.8*sin(30) - 0.25*(2*9.8*cos(30) + 20*sin(30)))/2 = 0.51 m/s^2.,"1. Define a coordinate system with the x-axis parallel to the incline (positive up) and the y-axis perpendicular to it.
+2. Resolve forces. The horizontal force F_h has a component F_h*cos(30) up the incline and F_h*sin(30) into the incline. Gravity has a component mg*sin(30) down the incline and mg*cos(30) into the incline.
+3. Sum forces in the y-direction to find the normal force (N): ΣFy = N - mg*cos(30) - F_h*sin(30) = 0. Thus, N = (2.0*9.8*cos(30)) + (20*sin(30)) = 16.97 + 10.0 = 26.97 N.
+4. Calculate the kinetic friction force (f_k), which opposes motion and acts down the incline: f_k = μ_k * N = 0.25 * 26.97 N = 6.74 N.
+5. Apply Newton's second law in the x-direction: ΣFx = F_h*cos(30) - mg*sin(30) - f_k = ma.
+6. Substitute values: (20*cos(30)) - (2.0*9.8*sin(30)) - 6.74 = 2.0 * a.
+7. 17.32 - 9.8 - 6.74 = 0.78 N = 2.0 * a.
+8. Solve for acceleration: a = 0.78 / 2.0 = 0.39 m/s^2.",gemini:gemini-2.5-pro,53202,3.0,5.0,Incorrect,3.0,"Clarity: The question stem is clearly written with all necessary data. However, the overall item is flawed because the correct answer (~0.39 m/s^2) is not available in the options, making the question unsolvable for a test-taker.
+Context Accuracy: The physical scenario is a standard and realistic problem in introductory mechanics. All given values (mass, force, angle, friction coefficient) are physically plausible.
+Quality of Working: The generator's reasoning is excellent. It correctly identifies all forces, resolves them into components, and sets up the correct equation based on Newton's second law. However, it makes a significant arithmetic error when evaluating its own correct formula.
+Final Answer Accuracy: The generator's final answer of 0.51 m/s^2 is incorrect. The correct calculation from the physics principles yields an acceleration of approximately 0.39 m/s^2.","SYSTEM: You are a Grade 12 Physics teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 medium-level quantitative MCQ from: kinematics (uniform/accelerated/projectile), dynamics (Newton/incline), energy–impulse, or basic circuits (V–I–R).
+• Use SI units (use g = 9.8 m s^-2 if relevant); realistic numbers; round to 2 decimals.
+• Distractors: typical vector-component/sign mistakes, unit conversion errors, wrong effective forces.
+
+Quality Constraints:
+• Clarity & SI: explicit quantities and SI units; consistent symbols.
+• Difficulty target: medium (2–3 steps).
+• Physical plausibility: order-of-magnitude check; conserve energy/impulse when relevant.
+• Distractor effectiveness: three plausible typical mistakes (sin–cos component, work/energy sign, wrong unit).
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object.
+- Format:
+  [{""question"": ""..."", ""options"": [""..."",""..."",""..."",""...""], ""answer"": ""A"", ""solution"": ""...""}]
+- Fields:
+  * ""question"": one string.
+  * ""options"": array of 4 answer-choice strings.
+  * ""answer"": one of ""A"",""B"",""C"",""D"" (just the letter).
+  * ""solution"": short plain-text explanation (a few lines is fine).
+- No extra text before or after the JSON.
+- Do NOT use markdown, code fences, or LaTeX ($ or backslashes).
+STRICT FOR GEMINI:
+- Output plain-text JSON only; do not use LaTeX ($ or backslashes).
+- The ""solution"" must be 3–6 lines, plain text.
+USER: Topic: Physics. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field."

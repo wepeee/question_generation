@@ -1,0 +1,38 @@
+topic,model,struktur,index,latency_model_ms,question,optionA,optionB,optionC,optionD,answer,solution_model,solution_verifier,verifier_model,latency_verifier_ms,clarity,context_accuracy,final_answer_accuracy,quality_of_working,judge_notes,prompt_generator
+physics,gemini,struktur3,1,4006,"A 2.0 kg block slides down a frictionless ramp inclined at 30 degrees to the horizontal. If the block starts from rest and slides 1.5 m down the ramp, what is its speed at the bottom of the ramp?",3.83 m/s,9.80 m/s,16.97 m/s,32.67 m/s,A,"The potential energy lost equals the kinetic energy gained: mgh = (1/2)mv^2. The height change h = 1.5*sin(30) = 0.75 m. Thus, v = sqrt(2gh) = sqrt(2 * 9.8 * 0.75) = 3.83 m/s.","The problem can be solved using the principle of conservation of mechanical energy, as the ramp is frictionless. The initial potential energy (PE) is converted into final kinetic energy (KE).
+Initial PE = mgh, where h is the vertical height.
+Final KE = (1/2)mv^2.
+Set PE = KE: mgh = (1/2)mv^2.
+The mass 'm' cancels out: gh = (1/2)v^2.
+The vertical height h = d * sin(θ) = 1.5 m * sin(30°) = 0.75 m.
+Solving for v: v = sqrt(2gh) = sqrt(2 * 9.8 m/s^2 * 0.75 m) = sqrt(14.7) ≈ 3.83 m/s.",gemini:gemini-2.5-pro,16742,5.0,5.0,Correct,5.0,"Clarity: The question is clearly stated, providing all necessary information (mass, angle, distance, initial state, frictionless surface) without ambiguity.
+Context Accuracy: The scenario is a classic and realistic introductory physics problem. The values are reasonable for a lab or textbook example.
+Quality of Working: The generator's solution correctly applies the conservation of energy principle. The calculation of vertical height and the subsequent calculation for velocity are both accurate and clearly shown.
+Final Answer Accuracy: The generator's calculated speed of 3.83 m/s is correct and matches the provided key.","SYSTEM: You are a Grade 12 Physics teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 medium-level quantitative MCQ from: kinematics (uniform/accelerated/projectile), dynamics (Newton/incline), energy–impulse, or basic circuits (V–I–R).
+• Use SI units (use g = 9.8 m s^-2 if relevant); realistic numbers; round to 2 decimals.
+• Distractors: typical vector-component/sign mistakes, unit conversion errors, wrong effective forces.
+
+Quality Constraints:
+• Clarity & SI: explicit quantities and SI units; consistent symbols.
+• Difficulty target: medium (2–3 steps).
+• Physical plausibility: order-of-magnitude check; conserve energy/impulse when relevant.
+• Distractor effectiveness: three plausible typical mistakes (sin–cos component, work/energy sign, wrong unit).
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object.
+- Format:
+  [{""question"": ""..."", ""options"": [""..."",""..."",""..."",""...""], ""answer"": ""A"", ""solution"": ""...""}]
+- Fields:
+  * ""question"": one string.
+  * ""options"": array of 4 answer-choice strings.
+  * ""answer"": one of ""A"",""B"",""C"",""D"" (just the letter).
+  * ""solution"": short plain-text explanation (a few lines is fine).
+- No extra text before or after the JSON.
+- Do NOT use markdown, code fences, or LaTeX ($ or backslashes).
+STRICT FOR GEMINI:
+- Output plain-text JSON only; do not use LaTeX ($ or backslashes).
+- The ""solution"" must be 3–6 lines, plain text.
+USER: Topic: Physics. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field."

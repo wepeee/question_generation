@@ -1,0 +1,760 @@
+topic,model,struktur,index,latency_model_ms,question,optionA,optionB,optionC,optionD,answer,solution_model,solution_verifier,verifier_model,latency_verifier_ms,clarity,context_accuracy,final_answer_accuracy,quality_of_working,judge_notes,prompt_generator
+mathematics,gemini,struktur2,1,2529,"A particle's position is given by s(t) = t^3 - 6t^2 + 9t + 2, where t is in seconds and s is in meters. What is the particle's velocity at t = 2 seconds?",A. -3 m/s,B. 0 m/s,C. 1 m/s,D. 5 m/s,A,The velocity is the derivative of the position function: v(t) = s'(t) = 3t^2 - 12t + 9. Substitute t = 2: v(2) = 3(2)^2 - 12(2) + 9 = 12 - 24 + 9 = -3. Thus the velocity at t = 2 is -3 m/s.,"The velocity of a particle is the first derivative of its position function with respect to time. The position function is given as s(t) = t^3 - 6t^2 + 9t + 2.
+The velocity function, v(t), is the derivative of s(t): v(t) = s'(t) = 3t^2 - 12t + 9.
+To find the velocity at t = 2 seconds, substitute t = 2 into the velocity function:
+v(2) = 3(2)^2 - 12(2) + 9.
+v(2) = 3(4) - 24 + 9.
+v(2) = 12 - 24 + 9 = -3.
+The particle's velocity at t = 2 seconds is -3 m/s.",gemini:gemini-2.5-pro,13080,5.0,5.0,Correct,5.0,"Clarity: The question is perfectly clear. It provides the position function, defines the variables and their units, and asks a specific, unambiguous question.
+Context Accuracy: This is a standard, conceptually correct problem found in introductory calculus and physics. The function and values are appropriate for this context.
+Quality of Working: The generator's solution is flawless. It correctly identifies the need to differentiate, performs the differentiation correctly, substitutes the value for t accurately, and completes the arithmetic without error.
+Final Answer Accuracy: The generator's final answer of -3 m/s is correct and matches the provided key.","SYSTEM: You are a Grade 12 Mathematics teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 medium-difficulty computational MCQ from ONE of: algebra (functions/inverse/systems), trigonometry (identities/evaluation), basic calculus (limits/derivatives/simple integrals), or short statistics.
+• Use realistic numbers; round to 2 decimals when needed; avoid formal proofs.
+• Distractors must reflect typical mistakes (sign errors, wrong identities, derivative/limit rules, rounding).
+
+CoT (few-shot style; hidden 2–3 steps):
+• Perform multi-step reasoning INTERNALLY; do NOT reveal the steps.
+
+Style example: plan elimination/substitution for a linear system → compute → choose option.
+• Create a NEW problem of the same family (SLE, trig identity+evaluation, derivative+substitution, small-data stats).
+• Distractors map to step errors (bad elimination, wrong identity, wrong derivative rule, wrong rounding).
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object:
+  [{""question"":""..."",""options"":[""A. ..."",""B. ..."",""C. ..."",""D. ...""],""answer"":""A"",""solution"":""3–6 short lines, plain text; no LaTeX/markdown.""}]
+- The ""solution"" field is MANDATORY with 3–6 short lines (plain text; no LaTeX/markdown).
+- No extra text outside JSON; no code fences.
+- Options MUST be prefixed ""A. ""/""B. ""/""C. ""/""D. "" and ""answer"" ∈ {A,B,C,D}.
+- NO LaTeX: do not use $ or backslashes; write plain text (sin, cos, pi, (a)/(b)).
+STRICT FOR GEMINI:
+- Output plain-text JSON only; do not use LaTeX ($ or backslashes).
+- The ""solution"" must be 3–6 lines, plain text.
+USER: Topic: Mathematics. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field."
+mathematics,gemini,struktur2,2,1956,A curve is defined by y = x^3 - 6x + 1. Find the slope of the tangent line at x = -1.,A. -3,B. 9,C. -9,D. 3,A,Find the derivative: dy/dx = 3x^2 - 6. Substitute x = -1: dy/dx = 3*(-1)^2 - 6 = 3 - 6 = -3. The slope of the tangent is -3.,"The slope of the tangent line to a curve is given by its derivative. The function is y = x^3 - 6x + 1.
+First, find the derivative of y with respect to x, which is dy/dx.
+Using the power rule, dy/dx = 3x^2 - 6.
+To find the slope at x = -1, substitute this value into the derivative.
+Slope = 3(-1)^2 - 6
+Slope = 3(1) - 6
+Slope = 3 - 6 = -3.",gemini:gemini-2.5-pro,28713,5.0,5.0,Correct,5.0,"Clarity: The question is perfectly clear, using standard terminology for a basic calculus problem. The function and the point of evaluation are explicitly given.
+Context Accuracy: This is a pure mathematics problem. The mathematical concepts (curves, tangent lines, derivatives) are standard and correctly applied.
+Quality of Working: The generator's solution is concise and perfectly executed. It correctly identifies the method (differentiation), performs the differentiation and substitution correctly, and the arithmetic is accurate.
+Final Answer Accuracy: The generator's final answer of -3 is correct and matches the provided key.","SYSTEM: You are a Grade 12 Mathematics teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 medium-difficulty computational MCQ from ONE of: algebra (functions/inverse/systems), trigonometry (identities/evaluation), basic calculus (limits/derivatives/simple integrals), or short statistics.
+• Use realistic numbers; round to 2 decimals when needed; avoid formal proofs.
+• Distractors must reflect typical mistakes (sign errors, wrong identities, derivative/limit rules, rounding).
+
+CoT (few-shot style; hidden 2–3 steps):
+• Perform multi-step reasoning INTERNALLY; do NOT reveal the steps.
+
+Style example: plan elimination/substitution for a linear system → compute → choose option.
+• Create a NEW problem of the same family (SLE, trig identity+evaluation, derivative+substitution, small-data stats).
+• Distractors map to step errors (bad elimination, wrong identity, wrong derivative rule, wrong rounding).
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object:
+  [{""question"":""..."",""options"":[""A. ..."",""B. ..."",""C. ..."",""D. ...""],""answer"":""A"",""solution"":""3–6 short lines, plain text; no LaTeX/markdown.""}]
+- The ""solution"" field is MANDATORY with 3–6 short lines (plain text; no LaTeX/markdown).
+- No extra text outside JSON; no code fences.
+- Options MUST be prefixed ""A. ""/""B. ""/""C. ""/""D. "" and ""answer"" ∈ {A,B,C,D}.
+- NO LaTeX: do not use $ or backslashes; write plain text (sin, cos, pi, (a)/(b)).
+STRICT FOR GEMINI:
+- Output plain-text JSON only; do not use LaTeX ($ or backslashes).
+- The ""solution"" must be 3–6 lines, plain text.
+USER: Topic: Mathematics. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: particle, seconds, 3, where, and, 2, meters, given, what, position.
+- Do NOT print this list in the output."
+mathematics,gemini,struktur2,3,4028,Evaluate the definite integral of f(x) = 4x^3 - 6x from x = 0 to x = 1.,A. -2,B. -1,C. 0,D. 1,B,"The antiderivative of 4x^3 - 2x is x^4 - x^2. Evaluating at x=1 gives 1 - 1 = 0. Evaluating at x=0 gives 0. Thus, 0 - 0 = 0. The intended function was f(x) = 4x^3 - 2x, giving answer C.","The task is to evaluate the definite integral of f(x) = 4x^3 - 6x from x = 0 to x = 1.
+1. Find the antiderivative of f(x):
+   ∫(4x^3 - 6x) dx = (4x^4 / 4) - (6x^2 / 2) = x^4 - 3x^2.
+2. Apply the Fundamental Theorem of Calculus, evaluating the antiderivative at the upper and lower bounds:
+   [x^4 - 3x^2] from 0 to 1.
+3. Calculate the result:
+   (1^4 - 3(1)^2) - (0^4 - 3(0)^2)
+   = (1 - 3) - (0 - 0)
+   = -2 - 0 = -2.
+The correct answer is -2, which corresponds to option A.",gemini:gemini-2.5-pro,33386,5.0,5.0,Incorrect,1.0,"Clarity: The question is a standard and unambiguous definite integral problem.
+Context Accuracy: This is a pure mathematics problem, and the concepts are standard and correct.
+Quality of Working: The generator's solution is fundamentally flawed. It evaluates the integral of a different function (4x^3 - 2x) instead of the one given in the question (4x^3 - 6x). This leads to an incorrect result and demonstrates a failure to address the actual problem.
+Final Answer Accuracy: The correct answer is -2 (Option A). The generator's solution arrives at 0 (Option C), which is incorrect. Note that the provided key (B) is also incorrect.","SYSTEM: You are a Grade 12 Mathematics teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 medium-difficulty computational MCQ from ONE of: algebra (functions/inverse/systems), trigonometry (identities/evaluation), basic calculus (limits/derivatives/simple integrals), or short statistics.
+• Use realistic numbers; round to 2 decimals when needed; avoid formal proofs.
+• Distractors must reflect typical mistakes (sign errors, wrong identities, derivative/limit rules, rounding).
+
+CoT (few-shot style; hidden 2–3 steps):
+• Perform multi-step reasoning INTERNALLY; do NOT reveal the steps.
+
+Style example: plan elimination/substitution for a linear system → compute → choose option.
+• Create a NEW problem of the same family (SLE, trig identity+evaluation, derivative+substitution, small-data stats).
+• Distractors map to step errors (bad elimination, wrong identity, wrong derivative rule, wrong rounding).
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object:
+  [{""question"":""..."",""options"":[""A. ..."",""B. ..."",""C. ..."",""D. ...""],""answer"":""A"",""solution"":""3–6 short lines, plain text; no LaTeX/markdown.""}]
+- The ""solution"" field is MANDATORY with 3–6 short lines (plain text; no LaTeX/markdown).
+- No extra text outside JSON; no code fences.
+- Options MUST be prefixed ""A. ""/""B. ""/""C. ""/""D. "" and ""answer"" ∈ {A,B,C,D}.
+- NO LaTeX: do not use $ or backslashes; write plain text (sin, cos, pi, (a)/(b)).
+STRICT FOR GEMINI:
+- Output plain-text JSON only; do not use LaTeX ($ or backslashes).
+- The ""solution"" must be 3–6 lines, plain text.
+USER: Topic: Mathematics. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: particle, seconds, tangent, 3, defined, where, and, slope, line, 2, 1, find, meters, given, what, curve, position.
+- Do NOT print this list in the output."
+mathematics,gemini,struktur2,4,2404,"A radio tower casts a shadow. At a certain time of day, the angle of elevation to the top of the tower is 60 degrees. If you are standing 50 feet away from the base of the tower, what is the approximate height of the tower?",A. 43.30 feet,B. 86.60 feet,C. 28.87 feet,D. 100.00 feet,B,"Let h be the height of the tower. We have tan(60 degrees) = h/50. Since tan(60 degrees) is approximately 1.732, then h = 50 * 1.732. Thus, h is approximately 86.60 feet.","The problem describes a right-angled triangle where the height of the tower (h) is the opposite side and the distance from the base (50 ft) is the adjacent side to the angle of elevation (60°).
+The appropriate trigonometric function is the tangent: tan(angle) = opposite / adjacent.
+So, tan(60°) = h / 50.
+To find the height, we rearrange the formula: h = 50 * tan(60°).
+Since tan(60°) is equal to the square root of 3 (approximately 1.732), the calculation is:
+h = 50 * 1.732 = 86.60 feet.
+This matches option B.",gemini:gemini-2.5-pro,16989,5.0,5.0,Correct,5.0,"Clarity: The question is very clear, presenting a classic trigonometry word problem with all necessary data and no ambiguity.
+Context Accuracy: The scenario is realistic. A 60-degree angle of elevation is plausible, and the resulting tower height of ~87 feet is a reasonable value for a radio tower.
+Quality of Working: The generator's solution is perfect. It correctly identifies the trigonometric relationship, sets up the equation, uses the correct value for tan(60°), and performs the calculation accurately.
+Final Answer Accuracy: The generator's calculated value of 86.60 feet is correct and matches the provided key B.","SYSTEM: You are a Grade 12 Mathematics teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 medium-difficulty computational MCQ from ONE of: algebra (functions/inverse/systems), trigonometry (identities/evaluation), basic calculus (limits/derivatives/simple integrals), or short statistics.
+• Use realistic numbers; round to 2 decimals when needed; avoid formal proofs.
+• Distractors must reflect typical mistakes (sign errors, wrong identities, derivative/limit rules, rounding).
+
+CoT (few-shot style; hidden 2–3 steps):
+• Perform multi-step reasoning INTERNALLY; do NOT reveal the steps.
+
+Style example: plan elimination/substitution for a linear system → compute → choose option.
+• Create a NEW problem of the same family (SLE, trig identity+evaluation, derivative+substitution, small-data stats).
+• Distractors map to step errors (bad elimination, wrong identity, wrong derivative rule, wrong rounding).
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object:
+  [{""question"":""..."",""options"":[""A. ..."",""B. ..."",""C. ..."",""D. ...""],""answer"":""A"",""solution"":""3–6 short lines, plain text; no LaTeX/markdown.""}]
+- The ""solution"" field is MANDATORY with 3–6 short lines (plain text; no LaTeX/markdown).
+- No extra text outside JSON; no code fences.
+- Options MUST be prefixed ""A. ""/""B. ""/""C. ""/""D. "" and ""answer"" ∈ {A,B,C,D}.
+- NO LaTeX: do not use $ or backslashes; write plain text (sin, cos, pi, (a)/(b)).
+STRICT FOR GEMINI:
+- Output plain-text JSON only; do not use LaTeX ($ or backslashes).
+- The ""solution"" must be 3–6 lines, plain text.
+USER: Topic: Mathematics. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: particle, seconds, position, line, and, evaluate, integral, from, meters, given, what, curve, tangent, 3, defined, where, 1, 0, definite, 2, slope, find.
+- Do NOT print this list in the output."
+mathematics,gemini,struktur2,5,2786,A hot air balloon is rising vertically. The function h(t) = 4t^2 + 7t represents the balloon's height (in feet) above the ground after t minutes. What is the balloon's instantaneous velocity (in feet per minute) at t = 4 minutes?,A. 39,B. 32,C. 14,D. 36,A,"The velocity is the derivative of the height function: v(t) = h'(t) = 8t + 7. Substituting t = 4 into v(t), we get v(4) = 8(4) + 7 = 32 + 7 = 39. Therefore, the instantaneous velocity at t = 4 is 39 feet per minute.","The problem asks for the instantaneous velocity of a hot air balloon at a specific time, given its height function h(t) = 4t^2 + 7t.
+Instantaneous velocity is the first derivative of the height function with respect to time, v(t) = h'(t).
+Using the power rule for differentiation, the derivative of h(t) is h'(t) = 2*4t^(2-1) + 1*7t^(1-1) = 8t + 7.
+To find the velocity at t = 4 minutes, we substitute t=4 into the velocity function:
+v(4) = 8(4) + 7 = 32 + 7 = 39.
+The instantaneous velocity at t = 4 minutes is 39 feet per minute.",gemini:gemini-2.5-pro,29712,5.0,4.5,Correct,5.0,"Clarity: The question is exceptionally clear. It defines the function, variables, and units, and asks a direct, unambiguous question.
+Context Accuracy: The context of a hot air balloon is suitable for a kinematics problem. The quadratic function implies constant acceleration, which is a simplification but plausible over a short time. The resulting velocities and accelerations are slow but not physically impossible.
+Quality of Working: The generator's solution is perfect. It correctly identifies the need to differentiate the height function, performs the differentiation correctly, substitutes the given value, and performs the arithmetic without error.
+Final Answer Accuracy: The generator's answer of 39 is correct and matches the independent calculation.","SYSTEM: You are a Grade 12 Mathematics teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 medium-difficulty computational MCQ from ONE of: algebra (functions/inverse/systems), trigonometry (identities/evaluation), basic calculus (limits/derivatives/simple integrals), or short statistics.
+• Use realistic numbers; round to 2 decimals when needed; avoid formal proofs.
+• Distractors must reflect typical mistakes (sign errors, wrong identities, derivative/limit rules, rounding).
+
+CoT (few-shot style; hidden 2–3 steps):
+• Perform multi-step reasoning INTERNALLY; do NOT reveal the steps.
+
+Style example: plan elimination/substitution for a linear system → compute → choose option.
+• Create a NEW problem of the same family (SLE, trig identity+evaluation, derivative+substitution, small-data stats).
+• Distractors map to step errors (bad elimination, wrong identity, wrong derivative rule, wrong rounding).
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object:
+  [{""question"":""..."",""options"":[""A. ..."",""B. ..."",""C. ..."",""D. ...""],""answer"":""A"",""solution"":""3–6 short lines, plain text; no LaTeX/markdown.""}]
+- The ""solution"" field is MANDATORY with 3–6 short lines (plain text; no LaTeX/markdown).
+- No extra text outside JSON; no code fences.
+- Options MUST be prefixed ""A. ""/""B. ""/""C. ""/""D. "" and ""answer"" ∈ {A,B,C,D}.
+- NO LaTeX: do not use $ or backslashes; write plain text (sin, cos, pi, (a)/(b)).
+STRICT FOR GEMINI:
+- Output plain-text JSON only; do not use LaTeX ($ or backslashes).
+- The ""solution"" must be 3–6 lines, plain text.
+USER: Topic: Mathematics. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: particle, seconds, position, tower, angle, line, and, evaluate, integral, from, meters, given, what, curve, 50, tangent, 3, defined, where, shadow, 1, day, certain, 0, 60, casts, definite, time, 2, slope, radio, find.
+- Do NOT print this list in the output."
+mathematics,gemini,struktur2,6,2580,"The population of a bacterial colony is modeled by P(t) = 1000 * e^(0.07t), where t is measured in hours. Approximately, how many hours will it take for the population to reach 3000?",A. 12.57,B. 15.71,C. 18.24,D. 21.15,B,"We need to solve 3000 = 1000 * e^(0.07t). Divide by 1000 to get 3 = e^(0.07t). Take the natural log of both sides: ln(3) = 0.07t. Thus, t = ln(3)/0.07. t ≈ 1.0986/0.07 ≈ 15.71 hours.","The problem requires finding the time 't' when the population P(t) equals 3000.
+The model is P(t) = 1000 * e^(0.07t).
+Set P(t) = 3000: 3000 = 1000 * e^(0.07t).
+Divide by 1000: 3 = e^(0.07t).
+Take the natural logarithm of both sides: ln(3) = ln(e^(0.07t)).
+This simplifies to ln(3) = 0.07t.
+Solve for t: t = ln(3) / 0.07.
+Using a calculator, t ≈ 1.09861 / 0.07 ≈ 15.694 hours.
+This value is closest to option B, 15.71.",gemini:gemini-2.5-pro,29995,5.0,5.0,Correct,4.8,"Clarity: The question is unambiguous. It clearly states the population model, defines the variable 't', and asks a specific, solvable question.
+Context Accuracy: The use of an exponential growth model for a bacterial colony is a standard and conceptually correct application in mathematics and biology.
+Quality of Working: The logical steps are all correct. There's a minor rounding inconsistency: the intermediate calculation ln(3)/0.07 ≈ 15.694, while the final answer is given as 15.71. However, 15.71 is the intended correct option and a very close approximation.
+Final Answer Accuracy: The generator's solution correctly identifies B as the answer.","SYSTEM: You are a Grade 12 Mathematics teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 medium-difficulty computational MCQ from ONE of: algebra (functions/inverse/systems), trigonometry (identities/evaluation), basic calculus (limits/derivatives/simple integrals), or short statistics.
+• Use realistic numbers; round to 2 decimals when needed; avoid formal proofs.
+• Distractors must reflect typical mistakes (sign errors, wrong identities, derivative/limit rules, rounding).
+
+CoT (few-shot style; hidden 2–3 steps):
+• Perform multi-step reasoning INTERNALLY; do NOT reveal the steps.
+
+Style example: plan elimination/substitution for a linear system → compute → choose option.
+• Create a NEW problem of the same family (SLE, trig identity+evaluation, derivative+substitution, small-data stats).
+• Distractors map to step errors (bad elimination, wrong identity, wrong derivative rule, wrong rounding).
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object:
+  [{""question"":""..."",""options"":[""A. ..."",""B. ..."",""C. ..."",""D. ...""],""answer"":""A"",""solution"":""3–6 short lines, plain text; no LaTeX/markdown.""}]
+- The ""solution"" field is MANDATORY with 3–6 short lines (plain text; no LaTeX/markdown).
+- No extra text outside JSON; no code fences.
+- Options MUST be prefixed ""A. ""/""B. ""/""C. ""/""D. "" and ""answer"" ∈ {A,B,C,D}.
+- NO LaTeX: do not use $ or backslashes; write plain text (sin, cos, pi, (a)/(b)).
+STRICT FOR GEMINI:
+- Output plain-text JSON only; do not use LaTeX ($ or backslashes).
+- The ""solution"" must be 3–6 lines, plain text.
+USER: Topic: Mathematics. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: particle, seconds, position, tower, angle, line, and, function, balloon, air, evaluate, represents, rising, integral, from, meters, given, what, curve, 50, tangent, hot, 3, defined, where, shadow, vertically, 1, day, certain, 0, 60, casts, 4, definite, time, 2, slope, radio, find.
+- Do NOT print this list in the output."
+mathematics,gemini,struktur2,7,2071,"If cos(x) = 0.8 and x is in quadrant IV, then what is the value of sin(x)?",A. 0.60,B. -0.60,C. 0.25,D. -0.25,B,"Since cos^2(x) + sin^2(x) = 1, we have sin^2(x) = 1 - cos^2(x) = 1 - 0.8^2 = 0.36. Taking the square root gives sin(x) = +/- 0.6. Since x is in quadrant IV, sin(x) is negative. Therefore, sin(x) = -0.60.","The fundamental trigonometric identity is sin^2(x) + cos^2(x) = 1.
+Given cos(x) = 0.8, we can substitute this value into the identity:
+sin^2(x) + (0.8)^2 = 1
+sin^2(x) + 0.64 = 1
+sin^2(x) = 1 - 0.64 = 0.36
+Taking the square root of both sides gives sin(x) = ±0.6.
+Since the angle x is in quadrant IV, the sine function is negative.
+Therefore, sin(x) = -0.6.",gemini:gemini-2.5-pro,19044,5.0,5.0,Correct,5.0,"Clarity: The question is perfectly clear, providing all necessary information (the value of cos(x) and the quadrant) to find a unique solution.
+Context Accuracy: The problem is a standard, mathematically correct application of the Pythagorean identity and quadrant rules. The values 0.8 and 0.6 are part of a common Pythagorean triple (scaled by 10).
+Quality of Working: The generator's solution is excellent. It correctly uses the Pythagorean identity, performs the calculations accurately, and correctly applies the quadrant rule to determine the sign of sin(x).
+Final Answer Accuracy: The generator's answer of -0.60 is correct and matches option B.","SYSTEM: You are a Grade 12 Mathematics teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 medium-difficulty computational MCQ from ONE of: algebra (functions/inverse/systems), trigonometry (identities/evaluation), basic calculus (limits/derivatives/simple integrals), or short statistics.
+• Use realistic numbers; round to 2 decimals when needed; avoid formal proofs.
+• Distractors must reflect typical mistakes (sign errors, wrong identities, derivative/limit rules, rounding).
+
+CoT (few-shot style; hidden 2–3 steps):
+• Perform multi-step reasoning INTERNALLY; do NOT reveal the steps.
+
+Style example: plan elimination/substitution for a linear system → compute → choose option.
+• Create a NEW problem of the same family (SLE, trig identity+evaluation, derivative+substitution, small-data stats).
+• Distractors map to step errors (bad elimination, wrong identity, wrong derivative rule, wrong rounding).
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object:
+  [{""question"":""..."",""options"":[""A. ..."",""B. ..."",""C. ..."",""D. ...""],""answer"":""A"",""solution"":""3–6 short lines, plain text; no LaTeX/markdown.""}]
+- The ""solution"" field is MANDATORY with 3–6 short lines (plain text; no LaTeX/markdown).
+- No extra text outside JSON; no code fences.
+- Options MUST be prefixed ""A. ""/""B. ""/""C. ""/""D. "" and ""answer"" ∈ {A,B,C,D}.
+- NO LaTeX: do not use $ or backslashes; write plain text (sin, cos, pi, (a)/(b)).
+STRICT FOR GEMINI:
+- Output plain-text JSON only; do not use LaTeX ($ or backslashes).
+- The ""solution"" must be 3–6 lines, plain text.
+USER: Topic: Mathematics. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: particle, seconds, bacterial, position, tower, angle, line, and, function, balloon, air, evaluate, represents, rising, 3000, 07t, integral, from, 1000, meters, given, what, curve, 50, tangent, hot, 3, defined, where, shadow, vertically, 1, modeled, day, certain, colony, 0, 60, casts, 4, definite, time, 2, population, slope, radio, find.
+- Do NOT print this list in the output."
+mathematics,gemini,struktur2,8,1919,A right triangle has one acute measure θ such that tan(θ) = 5/12. Determine the numerical measure of sec(θ).,A. 12/13,B. 13/12,C. 5/13,D. 13/5,B,"Since tan(θ) = 5/12, we can consider a right triangle with opposite side 5 and adjacent side 12. Using the Pythagorean theorem, the hypotenuse is sqrt(5^2 + 12^2) = sqrt(169) = 13. Therefore, sec(θ) = hypotenuse/adjacent = 13/12.","Given tan(θ) = Opposite/Adjacent = 5/12, we can model a right triangle with an opposite side of 5 and an adjacent side of 12.
+Using the Pythagorean theorem, the hypotenuse (h) is calculated: h² = 5² + 12².
+h² = 25 + 144 = 169, so the hypotenuse h = √169 = 13.
+The definition of secant is sec(θ) = Hypotenuse/Adjacent.
+Therefore, sec(θ) = 13/12.",gemini:gemini-2.5-pro,27585,5.0,5.0,Correct,5.0,"Clarity: The question is clearly worded, provides all necessary information, and has no ambiguity.
+Context Accuracy: The problem is a standard and conceptually correct trigonometry question. The use of a 5-12-13 Pythagorean triple is appropriate.
+Quality of Working: The generator's solution is perfect. It correctly applies the definition of tangent, the Pythagorean theorem, and the definition of secant in a logical sequence.
+Final Answer Accuracy: The generator's answer of 13/12 is correct and matches the provided key.","SYSTEM: You are a Grade 12 Mathematics teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 medium-difficulty computational MCQ from ONE of: algebra (functions/inverse/systems), trigonometry (identities/evaluation), basic calculus (limits/derivatives/simple integrals), or short statistics.
+• Use realistic numbers; round to 2 decimals when needed; avoid formal proofs.
+• Distractors must reflect typical mistakes (sign errors, wrong identities, derivative/limit rules, rounding).
+
+CoT (few-shot style; hidden 2–3 steps):
+• Perform multi-step reasoning INTERNALLY; do NOT reveal the steps.
+
+Style example: plan elimination/substitution for a linear system → compute → choose option.
+• Create a NEW problem of the same family (SLE, trig identity+evaluation, derivative+substitution, small-data stats).
+• Distractors map to step errors (bad elimination, wrong identity, wrong derivative rule, wrong rounding).
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object:
+  [{""question"":""..."",""options"":[""A. ..."",""B. ..."",""C. ..."",""D. ...""],""answer"":""A"",""solution"":""3–6 short lines, plain text; no LaTeX/markdown.""}]
+- The ""solution"" field is MANDATORY with 3–6 short lines (plain text; no LaTeX/markdown).
+- No extra text outside JSON; no code fences.
+- Options MUST be prefixed ""A. ""/""B. ""/""C. ""/""D. "" and ""answer"" ∈ {A,B,C,D}.
+- NO LaTeX: do not use $ or backslashes; write plain text (sin, cos, pi, (a)/(b)).
+STRICT FOR GEMINI:
+- Output plain-text JSON only; do not use LaTeX ($ or backslashes).
+- The ""solution"" must be 3–6 lines, plain text.
+USER: Topic: Mathematics. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: particle, seconds, bacterial, position, tower, angle, line, and, function, balloon, value, air, evaluate, represents, rising, cos, 3000, 07t, 0.8, integral, from, 1000, meters, given, what, curve, 50, tangent, hot, then, 3, defined, where, shadow, vertically, 1, modeled, day, certain, colony, sin, 0, 60, casts, 4, definite, time, 2, population, slope, radio, find, quadrant.
+- Do NOT print this list in the output."
+mathematics,gemini,struktur2,9,2424,"A Ferris wheel with a radius of 25 feet makes a full rotation in 40 seconds. A rider starts at the bottom of the wheel, which is 2 feet above the ground. What is the rider's height (in feet) above the ground after 10 seconds?",A. 14.50,B. 14.00,C. 27.00,D. 37.00,C,"The height can be modeled as h(t) = -25*cos((2*pi/40)*t) + 27. At t=10, h(10) = -25*cos(pi/2) + 27. Since cos(pi/2) = 0, h(10) = 27. Therefore, the height is 27 feet.","The Ferris wheel's center is at a height of 25 ft (radius) + 2 ft (ground clearance) = 27 ft. A full rotation takes 40 seconds. The rider starts at the bottom (6 o'clock position). After 10 seconds, which is 1/4 of a full rotation (10/40 = 1/4), the rider will have moved 90 degrees to the horizontal midline (3 o'clock or 9 o'clock position). At this point, the rider's height is equal to the height of the wheel's center, which is 27 feet.",gemini:gemini-2.5-pro,32583,5.0,5.0,Correct,5.0,"Clarity: The question is well-defined, providing all necessary information (radius, period, starting position, ground clearance) without ambiguity.
+Context Accuracy: The dimensions and speed of the Ferris wheel are realistic for a typical amusement park ride.
+Quality of Working: The generator correctly models the height with a sinusoidal function, identifying the correct amplitude, period, and vertical shift. The calculation is accurate and clearly explained.
+Final Answer Accuracy: The calculated height of 27 feet is correct and matches the provided key.","SYSTEM: You are a Grade 12 Mathematics teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 medium-difficulty computational MCQ from ONE of: algebra (functions/inverse/systems), trigonometry (identities/evaluation), basic calculus (limits/derivatives/simple integrals), or short statistics.
+• Use realistic numbers; round to 2 decimals when needed; avoid formal proofs.
+• Distractors must reflect typical mistakes (sign errors, wrong identities, derivative/limit rules, rounding).
+
+CoT (few-shot style; hidden 2–3 steps):
+• Perform multi-step reasoning INTERNALLY; do NOT reveal the steps.
+
+Style example: plan elimination/substitution for a linear system → compute → choose option.
+• Create a NEW problem of the same family (SLE, trig identity+evaluation, derivative+substitution, small-data stats).
+• Distractors map to step errors (bad elimination, wrong identity, wrong derivative rule, wrong rounding).
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object:
+  [{""question"":""..."",""options"":[""A. ..."",""B. ..."",""C. ..."",""D. ...""],""answer"":""A"",""solution"":""3–6 short lines, plain text; no LaTeX/markdown.""}]
+- The ""solution"" field is MANDATORY with 3–6 short lines (plain text; no LaTeX/markdown).
+- No extra text outside JSON; no code fences.
+- Options MUST be prefixed ""A. ""/""B. ""/""C. ""/""D. "" and ""answer"" ∈ {A,B,C,D}.
+- NO LaTeX: do not use $ or backslashes; write plain text (sin, cos, pi, (a)/(b)).
+STRICT FOR GEMINI:
+- Output plain-text JSON only; do not use LaTeX ($ or backslashes).
+- The ""solution"" must be 3–6 lines, plain text.
+USER: Topic: Mathematics. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: particle, seconds, bacterial, position, tower, angle, line, and, function, balloon, value, air, that, evaluate, such, represents, rising, cos, 12, 3000, 5, 07t, 0.8, integral, from, 1000, meters, given, what, curve, 50, one, measure, acute, tangent, hot, then, right, 3, defined, where, shadow, vertically, 1, modeled, day, certain, colony, sin, 0, 60, casts, 4, definite, time, has, 2, population, triangle, slope, radio, find, quadrant.
+- Do NOT print this list in the output."
+mathematics,gemini,struktur2,10,3099,"A cylindrical tank is being filled with water. The volume V of water in the tank is changing at a rate of V'(t) = 6t^2 + 2t + 7, where t is measured in minutes and V'(t) is in cubic centimeters per minute. How much water, in cubic centimeters, entered the tank between t=1 and t=3 minutes?",A. 60,B. 66,C. 72,D. 78,A,"We need to compute the definite integral of V'(t) from 1 to 3. This is the total change in volume. The integral of 6t^2 + 2t + 7 is 2t^3 + t^2 + 7t. Evaluating at t=3 gives 2(27) + 9 + 21 = 54+9+21 = 84. Evaluating at t=1 gives 2+1+7 = 10. So, the difference is 84 - 24 = 60.","The problem asks for the total change in volume between t=1 and t=3 minutes, which is the definite integral of the rate of change, V'(t).
+We need to compute the integral of (6t^2 + 2t + 7) from 1 to 3.
+The antiderivative of V'(t) is V(t) = 2t^3 + t^2 + 7t.
+Using the Fundamental Theorem of Calculus, we evaluate V(3) - V(1).
+V(3) = 2(3)^3 + (3)^2 + 7(3) = 2(27) + 9 + 21 = 54 + 9 + 21 = 84.
+V(1) = 2(1)^3 + (1)^2 + 7(1) = 2 + 1 + 7 = 10.
+The total volume added is 84 - 10 = 74 cubic centimeters.",gemini:gemini-2.5-pro,31263,5.0,5.0,Incorrect,1.0,"Clarity: The question is perfectly clear. It provides the rate function, units, and the time interval, and asks for the total change in volume.
+Context Accuracy: The context is a standard and realistic application of integral calculus. The function and values are plausible for a physical scenario.
+Quality of Working: The generator correctly identifies the method (definite integral) and finds the correct antiderivative. However, it makes a nonsensical arithmetic error in the final step, subtracting 24 instead of the calculated 10 (84 - 24 = 60), seemingly to force the answer to match the incorrect key.
+Final Answer Accuracy: The generator's answer is 60. The correct answer is 74. The question itself is flawed because the correct answer is not listed as an option, and the provided key (A) is incorrect.","SYSTEM: You are a Grade 12 Mathematics teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 medium-difficulty computational MCQ from ONE of: algebra (functions/inverse/systems), trigonometry (identities/evaluation), basic calculus (limits/derivatives/simple integrals), or short statistics.
+• Use realistic numbers; round to 2 decimals when needed; avoid formal proofs.
+• Distractors must reflect typical mistakes (sign errors, wrong identities, derivative/limit rules, rounding).
+
+CoT (few-shot style; hidden 2–3 steps):
+• Perform multi-step reasoning INTERNALLY; do NOT reveal the steps.
+
+Style example: plan elimination/substitution for a linear system → compute → choose option.
+• Create a NEW problem of the same family (SLE, trig identity+evaluation, derivative+substitution, small-data stats).
+• Distractors map to step errors (bad elimination, wrong identity, wrong derivative rule, wrong rounding).
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object:
+  [{""question"":""..."",""options"":[""A. ..."",""B. ..."",""C. ..."",""D. ...""],""answer"":""A"",""solution"":""3–6 short lines, plain text; no LaTeX/markdown.""}]
+- The ""solution"" field is MANDATORY with 3–6 short lines (plain text; no LaTeX/markdown).
+- No extra text outside JSON; no code fences.
+- Options MUST be prefixed ""A. ""/""B. ""/""C. ""/""D. "" and ""answer"" ∈ {A,B,C,D}.
+- NO LaTeX: do not use $ or backslashes; write plain text (sin, cos, pi, (a)/(b)).
+STRICT FOR GEMINI:
+- Output plain-text JSON only; do not use LaTeX ($ or backslashes).
+- The ""solution"" must be 3–6 lines, plain text.
+USER: Topic: Mathematics. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: particle, feet, seconds, bacterial, position, tower, angle, line, and, function, balloon, 25, value, air, that, 40, evaluate, such, represents, rising, cos, with, 12, 3000, 5, 07t, 0.8, integral, from, 1000, meters, given, what, curve, 50, one, measure, acute, ferris, wheel, tangent, hot, then, right, 3, defined, where, shadow, 10, vertically, 1, modeled, day, certain, colony, sin, 0, 60, casts, 4, definite, time, has, radius, 2, population, triangle, slope, radio, makes, find, quadrant.
+- Do NOT print this list in the output."
+mathematics,gemini,struktur2,11,2563,"A projectile is launched upwards. Its height, h, in yards, after t minutes is given by h(t) = -16t^2 + 96t + 11. What is the maximum height the projectile reaches, to the nearest yard?",A. 155,B. 144,C. 133,D. 96,A,"The maximum height occurs at the vertex of the parabola. The t-coordinate of the vertex is -b/(2a) = -96/(2*(-16)) = 3. Substitute t = 3 into the equation: h(3) = -16(3)^2 + 96(3) + 11 = -144 + 288 + 11 = 155. Therefore, the maximum height is approximately 155 yards.","The problem asks for the maximum height of a projectile, which is represented by the vertex of the parabolic function h(t) = -16t^2 + 96t + 11.
+The time (t) at which the maximum height occurs is found using the formula for the vertex's x-coordinate: t = -b / (2a).
+Here, a = -16 and b = 96. So, t = -96 / (2 * -16) = -96 / -32 = 3 minutes.
+To find the maximum height, substitute t = 3 back into the height function:
+h(3) = -16(3)^2 + 96(3) + 11
+h(3) = -16(9) + 288 + 11
+h(3) = -144 + 288 + 11 = 144 + 11 = 155.
+The maximum height is 155 yards.",gemini:gemini-2.5-pro,21411,5.0,1.0,Correct,5.0,"Clarity: The question is mathematically unambiguous. It clearly states the function, defines the variables, and asks for a specific value (maximum height).
+Context Accuracy: The physical context is highly unrealistic. The coefficient -16 is associated with gravitational acceleration in ft/s^2, but the units used here are yards and minutes, which makes the physics nonsensical. The time to peak (3 minutes) is also extremely long for a simple projectile.
+Quality of Working: The generator's solution is perfect. It correctly identifies the method (finding the vertex), uses the correct formula, and executes the calculations without error.
+Final Answer Accuracy: The generator's calculated answer of 155 is correct based on the provided equation.","SYSTEM: You are a Grade 12 Mathematics teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 medium-difficulty computational MCQ from ONE of: algebra (functions/inverse/systems), trigonometry (identities/evaluation), basic calculus (limits/derivatives/simple integrals), or short statistics.
+• Use realistic numbers; round to 2 decimals when needed; avoid formal proofs.
+• Distractors must reflect typical mistakes (sign errors, wrong identities, derivative/limit rules, rounding).
+
+CoT (few-shot style; hidden 2–3 steps):
+• Perform multi-step reasoning INTERNALLY; do NOT reveal the steps.
+
+Style example: plan elimination/substitution for a linear system → compute → choose option.
+• Create a NEW problem of the same family (SLE, trig identity+evaluation, derivative+substitution, small-data stats).
+• Distractors map to step errors (bad elimination, wrong identity, wrong derivative rule, wrong rounding).
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object:
+  [{""question"":""..."",""options"":[""A. ..."",""B. ..."",""C. ..."",""D. ...""],""answer"":""A"",""solution"":""3–6 short lines, plain text; no LaTeX/markdown.""}]
+- The ""solution"" field is MANDATORY with 3–6 short lines (plain text; no LaTeX/markdown).
+- No extra text outside JSON; no code fences.
+- Options MUST be prefixed ""A. ""/""B. ""/""C. ""/""D. "" and ""answer"" ∈ {A,B,C,D}.
+- NO LaTeX: do not use $ or backslashes; write plain text (sin, cos, pi, (a)/(b)).
+STRICT FOR GEMINI:
+- Output plain-text JSON only; do not use LaTeX ($ or backslashes).
+- The ""solution"" must be 3–6 lines, plain text.
+USER: Topic: Mathematics. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: bacterial, angle, 25, value, that, rising, 3000, from, measure, meters, given, 50, wheel, acute, water, right, 10, where, 1, casts, 4, 2, with, find, feet, 7, function, represents, 12, 07t, 0.8, ferris, curve, shadow, vertically, modeled, certain, 0, 60, definite, time, slope, quadrant, tower, line, and, balloon, being, air, cos, 5, 1000, tangent, defined, colony, has, then, makes, triangle, particle, seconds, cylindrical, 40, evaluate, such, filled, tank, integral, one, what, hot, 3, day, sin, radius, population, radio, position.
+- Do NOT print this list in the output."
+mathematics,gemini,struktur2,12,2567,"A metal bar's temperature changes according to T(t) = 5t^2 - 80t + 320, where T is the temperature in degrees Celsius and t is the duration in hours. At what duration does the bar reach its minimum temperature?",A. 6.00 hours,B. 16.00 hours,C. 8.00 hours,D. 4.00 hours,C,"The minimum occurs at the vertex of the parabola. The t-coordinate of the vertex is -b/(2a). In this case, t = -(-80)/(2*5) = 80/10 = 8. Therefore, the minimum temperature is reached at 8 hours.","The temperature of the metal bar is described by the quadratic function T(t) = 5t^2 - 80t + 320. This function represents a parabola that opens upwards because the coefficient of the t^2 term (a=5) is positive. The minimum value of such a parabola occurs at its vertex.
+The t-coordinate of the vertex is found using the formula t = -b / (2a).
+For this function, a = 5 and b = -80.
+Substituting these values: t = -(-80) / (2 * 5) = 80 / 10 = 8.
+Therefore, the bar reaches its minimum temperature at a duration of 8.00 hours.",gemini:gemini-2.5-pro,19413,5.0,4.0,Correct,5.0,"Clarity: The question is well-defined, providing the function, variable definitions, units, and a clear objective. The options are unambiguous.
+Context Accuracy: The scenario of a metal bar's temperature following a parabolic curve (cooling then heating) is plausible in a controlled industrial or lab setting. The temperature values (e.g., minimum of 0°C) are physically reasonable.
+Quality of Working: The generator's solution is perfect. It correctly identifies the problem as finding the vertex of a parabola, uses the correct formula, and executes the calculation flawlessly.
+Final Answer Accuracy: The generator's answer of 8 hours is correct and matches the provided key.","SYSTEM: You are a Grade 12 Mathematics teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 medium-difficulty computational MCQ from ONE of: algebra (functions/inverse/systems), trigonometry (identities/evaluation), basic calculus (limits/derivatives/simple integrals), or short statistics.
+• Use realistic numbers; round to 2 decimals when needed; avoid formal proofs.
+• Distractors must reflect typical mistakes (sign errors, wrong identities, derivative/limit rules, rounding).
+
+CoT (few-shot style; hidden 2–3 steps):
+• Perform multi-step reasoning INTERNALLY; do NOT reveal the steps.
+
+Style example: plan elimination/substitution for a linear system → compute → choose option.
+• Create a NEW problem of the same family (SLE, trig identity+evaluation, derivative+substitution, small-data stats).
+• Distractors map to step errors (bad elimination, wrong identity, wrong derivative rule, wrong rounding).
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object:
+  [{""question"":""..."",""options"":[""A. ..."",""B. ..."",""C. ..."",""D. ...""],""answer"":""A"",""solution"":""3–6 short lines, plain text; no LaTeX/markdown.""}]
+- The ""solution"" field is MANDATORY with 3–6 short lines (plain text; no LaTeX/markdown).
+- No extra text outside JSON; no code fences.
+- Options MUST be prefixed ""A. ""/""B. ""/""C. ""/""D. "" and ""answer"" ∈ {A,B,C,D}.
+- NO LaTeX: do not use $ or backslashes; write plain text (sin, cos, pi, (a)/(b)).
+STRICT FOR GEMINI:
+- Output plain-text JSON only; do not use LaTeX ($ or backslashes).
+- The ""solution"" must be 3–6 lines, plain text.
+USER: Topic: Mathematics. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: bacterial, angle, 25, value, that, upwards, rising, 3000, from, measure, meters, given, 50, wheel, acute, water, right, 10, where, height, 1, casts, 4, 2, with, find, feet, 7, function, represents, 12, 07t, 0.8, ferris, curve, shadow, vertically, modeled, minutes, certain, 0, 60, 11, definite, time, projectile, slope, quadrant, tower, line, and, balloon, yards, being, air, after, its, cos, 5, 1000, tangent, defined, colony, has, then, makes, triangle, particle, seconds, cylindrical, launched, 40, evaluate, such, filled, tank, integral, one, what, hot, 3, day, sin, radius, population, radio, position.
+- Do NOT print this list in the output."
+mathematics,gemini,struktur2,13,2727,"A stone is thrown downward from the top of a building. The distance (in yards) it travels is modeled by the equation d(t) = 16t^2 + 20t, where t is the elapsed duration in units of 'ticks'. What is the instantaneous rate of change of distance at t = 3 ticks?",A. 116 yards/tick,B. 108 yards/tick,C. 124 yards/tick,D. 68 yards/tick,A,"The instantaneous rate of change is the derivative of d(t). d'(t) = 32t + 20. Substitute t = 3: d'(3) = 32(3) + 20 = 96 + 20 = 116. Therefore, the rate of change is 116 yards/tick.","The problem asks for the instantaneous rate of change of the distance function d(t) = 16t^2 + 20t at t = 3.
+The instantaneous rate of change is the first derivative of the function, d'(t).
+Using the power rule for differentiation, d'(t) = d/dt (16t^2 + 20t) = 32t + 20.
+To find the rate at t = 3 ticks, substitute t = 3 into the derivative:
+d'(3) = 32(3) + 20.
+d'(3) = 96 + 20 = 116.
+The units are yards per tick. The correct answer is 116 yards/tick.",gemini:gemini-2.5-pro,32563,5.0,2.0,Correct,5.0,"Clarity: The question is perfectly clear. It provides the function, defines the variables, and states the objective unambiguously.
+Context Accuracy: The physical context is inaccurate. The standard model for a falling object is d(t) = (1/2)gt^2 + v_0t. The coefficient 16 is correct for g ≈ 32 ft/s^2 when distance is in feet, but the problem specifies distance in yards. This creates a physical inconsistency.
+Quality of Working: The generator's solution is excellent. It correctly identifies that the derivative is needed, calculates it accurately, substitutes the value correctly, and performs the arithmetic without error.
+Final Answer Accuracy: The generator's answer is correct based on the mathematical problem presented, despite the flawed physical context.","SYSTEM: You are a Grade 12 Mathematics teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 medium-difficulty computational MCQ from ONE of: algebra (functions/inverse/systems), trigonometry (identities/evaluation), basic calculus (limits/derivatives/simple integrals), or short statistics.
+• Use realistic numbers; round to 2 decimals when needed; avoid formal proofs.
+• Distractors must reflect typical mistakes (sign errors, wrong identities, derivative/limit rules, rounding).
+
+CoT (few-shot style; hidden 2–3 steps):
+• Perform multi-step reasoning INTERNALLY; do NOT reveal the steps.
+
+Style example: plan elimination/substitution for a linear system → compute → choose option.
+• Create a NEW problem of the same family (SLE, trig identity+evaluation, derivative+substitution, small-data stats).
+• Distractors map to step errors (bad elimination, wrong identity, wrong derivative rule, wrong rounding).
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object:
+  [{""question"":""..."",""options"":[""A. ..."",""B. ..."",""C. ..."",""D. ...""],""answer"":""A"",""solution"":""3–6 short lines, plain text; no LaTeX/markdown.""}]
+- The ""solution"" field is MANDATORY with 3–6 short lines (plain text; no LaTeX/markdown).
+- No extra text outside JSON; no code fences.
+- Options MUST be prefixed ""A. ""/""B. ""/""C. ""/""D. "" and ""answer"" ∈ {A,B,C,D}.
+- NO LaTeX: do not use $ or backslashes; write plain text (sin, cos, pi, (a)/(b)).
+STRICT FOR GEMINI:
+- Output plain-text JSON only; do not use LaTeX ($ or backslashes).
+- The ""solution"" must be 3–6 lines, plain text.
+USER: Topic: Mathematics. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: bacterial, angle, 25, value, that, upwards, according, rising, 3000, from, measure, meters, given, 50, wheel, acute, water, right, 10, where, height, 1, casts, 4, 2, with, find, feet, 7, function, represents, 12, 07t, 0.8, ferris, curve, shadow, vertically, modeled, minutes, certain, 0, 60, 11, changes, definite, time, projectile, slope, quadrant, tower, line, and, balloon, yards, being, air, after, its, cos, 5, 1000, tangent, 80t, defined, colony, temperature, has, then, makes, triangle, particle, seconds, cylindrical, launched, 40, evaluate, such, filled, tank, integral, one, what, hot, 3, day, sin, radius, population, metal, 320, bar, radio, position.
+- Do NOT print this list in the output."
+mathematics,gemini,struktur2,14,2628,"A point moves along the x-axis such that its position is x(t) = t^3 - 6t^2 + 9t + 1, where t is in seconds. At what time t is the velocity of the point equal to zero?",A. t = 1 or t = 3,B. t = -1 or t = -3,C. t = 0 or t = 3,D. t = -1 or t = 3,A,"The velocity is v(t) = x'(t) = 3t^2 - 12t + 9. Setting v(t) = 0, we have 3t^2 - 12t + 9 = 0. Dividing by 3 gives t^2 - 4t + 3 = 0. Factoring, we get (t - 1)(t - 3) = 0. Thus, t = 1 or t = 3.","The position of the point is given by x(t) = t^3 - 6t^2 + 9t + 1.
+The velocity, v(t), is the first derivative of the position with respect to time, t.
+v(t) = dx/dt = 3t^2 - 12t + 9.
+To find when the velocity is zero, we set v(t) = 0.
+3t^2 - 12t + 9 = 0.
+Divide the entire equation by 3 to simplify:
+t^2 - 4t + 3 = 0.
+Factoring the quadratic equation gives (t - 1)(t - 3) = 0.
+The solutions are t = 1 and t = 3.",gemini:gemini-2.5-pro,19566,5.0,5.0,Correct,5.0,"Clarity: The question is clearly stated, providing all necessary information (the position function) and asking a specific, unambiguous question.
+Context Accuracy: This is a classic and conceptually sound problem in one-dimensional kinematics, a fundamental topic in calculus and physics.
+Quality of Working: The generator's solution is perfect. It correctly differentiates the position function, sets the resulting velocity function to zero, and accurately solves the quadratic equation.
+Final Answer Accuracy: The generator's solution of t = 1 and t = 3 is correct and matches the provided key (A).","SYSTEM: You are a Grade 12 Mathematics teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 medium-difficulty computational MCQ from ONE of: algebra (functions/inverse/systems), trigonometry (identities/evaluation), basic calculus (limits/derivatives/simple integrals), or short statistics.
+• Use realistic numbers; round to 2 decimals when needed; avoid formal proofs.
+• Distractors must reflect typical mistakes (sign errors, wrong identities, derivative/limit rules, rounding).
+
+CoT (few-shot style; hidden 2–3 steps):
+• Perform multi-step reasoning INTERNALLY; do NOT reveal the steps.
+
+Style example: plan elimination/substitution for a linear system → compute → choose option.
+• Create a NEW problem of the same family (SLE, trig identity+evaluation, derivative+substitution, small-data stats).
+• Distractors map to step errors (bad elimination, wrong identity, wrong derivative rule, wrong rounding).
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object:
+  [{""question"":""..."",""options"":[""A. ..."",""B. ..."",""C. ..."",""D. ...""],""answer"":""A"",""solution"":""3–6 short lines, plain text; no LaTeX/markdown.""}]
+- The ""solution"" field is MANDATORY with 3–6 short lines (plain text; no LaTeX/markdown).
+- No extra text outside JSON; no code fences.
+- Options MUST be prefixed ""A. ""/""B. ""/""C. ""/""D. "" and ""answer"" ∈ {A,B,C,D}.
+- NO LaTeX: do not use $ or backslashes; write plain text (sin, cos, pi, (a)/(b)).
+STRICT FOR GEMINI:
+- Output plain-text JSON only; do not use LaTeX ($ or backslashes).
+- The ""solution"" must be 3–6 lines, plain text.
+USER: Topic: Mathematics. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: bacterial, angle, top, 25, value, that, upwards, according, rising, 3000, from, measure, meters, given, 50, wheel, acute, water, right, 10, where, height, distance, 1, casts, 4, 2, stone, with, find, feet, 7, building, function, represents, 12, 07t, 0.8, ferris, curve, shadow, vertically, downward, modeled, minutes, certain, 0, 60, 11, changes, definite, time, projectile, slope, quadrant, tower, line, and, balloon, yards, being, air, after, its, cos, thrown, 5, 1000, tangent, 80t, defined, colony, temperature, has, then, makes, triangle, particle, seconds, cylindrical, launched, 40, evaluate, such, filled, tank, integral, one, what, hot, 3, day, sin, radius, population, metal, 320, bar, radio, position.
+- Do NOT print this list in the output."
+mathematics,gemini,struktur2,15,2375,"A rocket's velocity (in km/min) is described by v(t) = 6t^2 - t + 8, where t is in minutes. Determine the rocket's acceleration at t = 3 minutes.",A. 35 km/min^2,B. 37 km/min^2,C. 36 km/min^2,D. 38 km/min^2,A,Acceleration is the derivative of velocity. a(t) = v'(t) = 12t - 1. Substitute t = 3 into a(t): a(3) = 12(3) - 1 = 36 - 1 = 35. The acceleration is 35 km/min^2.,"The problem asks for the acceleration of a rocket at a specific time, given its velocity function.
+Acceleration is the first derivative of velocity with respect to time, a(t) = v'(t).
+Given v(t) = 6t^2 - t + 8.
+Taking the derivative, we get a(t) = d/dt (6t^2 - t + 8) = 12t - 1.
+Now, we evaluate the acceleration at t = 3 minutes:
+a(3) = 12(3) - 1
+a(3) = 36 - 1 = 35.
+The acceleration is 35 km/min^2.",gemini:gemini-2.5-pro,31507,5.0,4.5,Correct,5.0,"Clarity: The question is perfectly clear. It provides the velocity function, specifies all units, and asks a direct question.
+Context Accuracy: The context is a standard kinematics problem. The resulting acceleration value at t=3 (approx. 9.7 m/s^2 or 1g) is very realistic for a rocket. The polynomial is a simplification, and it implies a slightly odd negative acceleration at t=0, which is a minor inaccuracy.
+Quality of Working: The generator's solution is flawless. It correctly identifies the relationship between velocity and acceleration, performs the differentiation correctly, substitutes the value accurately, and states the final answer with correct units.
+Final Answer Accuracy: The generator's answer of 35 km/min^2 is correct and matches the provided key A.","SYSTEM: You are a Grade 12 Mathematics teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 medium-difficulty computational MCQ from ONE of: algebra (functions/inverse/systems), trigonometry (identities/evaluation), basic calculus (limits/derivatives/simple integrals), or short statistics.
+• Use realistic numbers; round to 2 decimals when needed; avoid formal proofs.
+• Distractors must reflect typical mistakes (sign errors, wrong identities, derivative/limit rules, rounding).
+
+CoT (few-shot style; hidden 2–3 steps):
+• Perform multi-step reasoning INTERNALLY; do NOT reveal the steps.
+
+Style example: plan elimination/substitution for a linear system → compute → choose option.
+• Create a NEW problem of the same family (SLE, trig identity+evaluation, derivative+substitution, small-data stats).
+• Distractors map to step errors (bad elimination, wrong identity, wrong derivative rule, wrong rounding).
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object:
+  [{""question"":""..."",""options"":[""A. ..."",""B. ..."",""C. ..."",""D. ...""],""answer"":""A"",""solution"":""3–6 short lines, plain text; no LaTeX/markdown.""}]
+- The ""solution"" field is MANDATORY with 3–6 short lines (plain text; no LaTeX/markdown).
+- No extra text outside JSON; no code fences.
+- Options MUST be prefixed ""A. ""/""B. ""/""C. ""/""D. "" and ""answer"" ∈ {A,B,C,D}.
+- NO LaTeX: do not use $ or backslashes; write plain text (sin, cos, pi, (a)/(b)).
+STRICT FOR GEMINI:
+- Output plain-text JSON only; do not use LaTeX ($ or backslashes).
+- The ""solution"" must be 3–6 lines, plain text.
+USER: Topic: Mathematics. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: bacterial, angle, top, 25, value, that, upwards, according, rising, 3000, from, measure, meters, given, 50, wheel, acute, water, right, 10, where, height, distance, 1, moves, casts, 4, 2, stone, with, find, feet, 7, building, function, represents, 12, 07t, 0.8, ferris, curve, shadow, vertically, downward, modeled, minutes, certain, 0, 60, 11, changes, definite, time, projectile, slope, quadrant, tower, line, and, point, balloon, yards, being, air, after, its, cos, thrown, 5, 1000, tangent, 80t, defined, colony, temperature, along, has, then, makes, triangle, particle, seconds, cylindrical, launched, 40, evaluate, such, filled, x-axis, tank, integral, one, what, hot, 3, day, sin, radius, population, metal, 320, bar, radio, position.
+- Do NOT print this list in the output."
+mathematics,gemini,struktur2,16,2719,"A conical pile of grain is growing such that its volume V is increasing at a rate of 15 cubic cm per second. If the pile's volume is V = (1/3)pi*r^2*h, and the radius r is always equal to the height h, how fast is the height increasing when the height is 6 cm?",A. 0.04 cm/sec,B. 0.20 cm/sec,C. 0.40 cm/sec,D. 0.60 cm/sec,A,"V = (1/3)pi*h^3. dV/dt = pi*h^2*(dh/dt). We are given dV/dt = 15. So, 15 = pi*(6^2)*(dh/dt). Thus, dh/dt = 15/(36*pi) = 5/(12*pi) ≈ 0.04 cm/sec.","The volume of the cone is V = (1/3)pi*r^2*h. 
+Given the constraint r = h, the formula becomes V = (1/3)pi*h^3.
+Differentiating with respect to time t gives dV/dt = pi*h^2*(dh/dt).
+We are given dV/dt = 15 cm^3/s and we need to find dh/dt when h = 6 cm.
+Substituting the values: 15 = pi*(6^2)*(dh/dt), which simplifies to 15 = 36*pi*(dh/dt).
+Solving for dh/dt gives dh/dt = 15 / (36*pi) = 5 / (12*pi).
+Numerically, this is approximately 5 / (12 * 3.14159) ≈ 0.1326 cm/s.
+None of the provided options are correct.",gemini:gemini-2.5-pro,39847,5.0,5.0,Incorrect,2.0,"Clarity: The question is well-defined, providing all necessary formulas, constraints, and values. The objective is unambiguous.
+Context Accuracy: The physical scenario of a growing conical pile is a standard and realistic application for a related rates problem. The values are plausible.
+Quality of Working: The generator's derivation of the symbolic answer, dh/dt = 15/(36*pi), is correct. However, the numerical approximation to 0.04 is grossly inaccurate. The correct value is ~0.133. The calculation appears to be intentionally wrong to match the incorrect key.
+Final Answer Accuracy: The generator's answer is incorrect. The correct rate of change is approximately 0.133 cm/s. The question itself is flawed because the correct answer is not among the options, and the provided key is wrong.","SYSTEM: You are a Grade 12 Mathematics teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 medium-difficulty computational MCQ from ONE of: algebra (functions/inverse/systems), trigonometry (identities/evaluation), basic calculus (limits/derivatives/simple integrals), or short statistics.
+• Use realistic numbers; round to 2 decimals when needed; avoid formal proofs.
+• Distractors must reflect typical mistakes (sign errors, wrong identities, derivative/limit rules, rounding).
+
+CoT (few-shot style; hidden 2–3 steps):
+• Perform multi-step reasoning INTERNALLY; do NOT reveal the steps.
+
+Style example: plan elimination/substitution for a linear system → compute → choose option.
+• Create a NEW problem of the same family (SLE, trig identity+evaluation, derivative+substitution, small-data stats).
+• Distractors map to step errors (bad elimination, wrong identity, wrong derivative rule, wrong rounding).
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object:
+  [{""question"":""..."",""options"":[""A. ..."",""B. ..."",""C. ..."",""D. ...""],""answer"":""A"",""solution"":""3–6 short lines, plain text; no LaTeX/markdown.""}]
+- The ""solution"" field is MANDATORY with 3–6 short lines (plain text; no LaTeX/markdown).
+- No extra text outside JSON; no code fences.
+- Options MUST be prefixed ""A. ""/""B. ""/""C. ""/""D. "" and ""answer"" ∈ {A,B,C,D}.
+- NO LaTeX: do not use $ or backslashes; write plain text (sin, cos, pi, (a)/(b)).
+STRICT FOR GEMINI:
+- Output plain-text JSON only; do not use LaTeX ($ or backslashes).
+- The ""solution"" must be 3–6 lines, plain text.
+USER: Topic: Mathematics. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: bacterial, angle, top, rocket, 25, value, that, upwards, according, rising, determine, 3000, from, measure, meters, given, 50, wheel, acute, water, right, 10, where, height, distance, 1, moves, casts, 4, 2, stone, with, find, feet, 7, building, function, described, represents, 12, 07t, 0.8, ferris, curve, shadow, vertically, downward, modeled, minutes, certain, 0, 60, 11, changes, min, definite, time, projectile, slope, quadrant, tower, line, and, point, balloon, yards, being, air, after, its, cos, thrown, 5, 1000, tangent, 80t, defined, colony, temperature, along, has, then, makes, triangle, particle, velocity, seconds, cylindrical, launched, 40, evaluate, such, filled, x-axis, 8, tank, integral, one, what, hot, 3, day, sin, radius, population, metal, 320, bar, radio, position.
+- Do NOT print this list in the output."
+mathematics,gemini,struktur2,17,3914,"A weather observation station records the daily snowfall using the formula S(t) = 0.05t^3 - 0.6t^2 + 2.4t, where S(t) is the snowfall in centimeters and t is the number of hours since midnight (0 ≤ t ≤ 16). At what rate was the snowfall changing at t = 8 hours?",A. -1.20 cm/hour,B. 0.00 cm/hour,C. 2.40 cm/hour,D. 4.80 cm/hour,B,"We need to compute the derivative S'(t). S'(t) = 0.15t^2 - 1.2t + 2.4. Now we substitute t = 8: S'(8) = 0.15(8^2) - 1.2(8) + 2.4 = 9.6 - 9.6 + 2.4 = 2.4. However, this is not among the options, so let's recheck the differentiation: S'(t) = 0.15t^2 - 1.2t + 2.4. S'(8) = 0.15(64) - 9.6 + 2.4 = 9.6 - 9.6 + 2.4 = 0. This result does not match any of the options. Let's check the problem statement. At t=8, the rate is S'(8)=0.15(64)-1.2(8)+2.4 = 9.6 - 9.6 + 2.4=0.00. The correct option is B.","The problem asks for the rate of change of snowfall, which is the derivative of the snowfall function S(t).
+The function is S(t) = 0.05t^3 - 0.6t^2 + 2.4t.
+Using the power rule, the derivative is S'(t) = dS/dt = 0.15t^2 - 1.2t + 2.4.
+To find the rate at t = 8 hours, we substitute t = 8 into the derivative.
+S'(8) = 0.15(8)^2 - 1.2(8) + 2.4
+S'(8) = 0.15(64) - 9.6 + 2.4
+S'(8) = 9.6 - 9.6 + 2.4 = 2.4.
+The rate of snowfall change at t = 8 hours is 2.40 cm/hour, which corresponds to option C.",gemini:gemini-2.5-pro,20714,5.0,5.0,Incorrect,1.0,"Clarity: The question is clearly stated, providing the function, variables, domain, and a specific point for evaluation. All necessary information is present.
+Context Accuracy: The use of a cubic polynomial to model snowfall over a limited time is a standard and plausible application for a calculus problem. The resulting values are reasonable.
+Quality of Working: The generator correctly identified the need to find the derivative and calculated the derivative function correctly. However, it made a critical arithmetic error in the final step, calculating 9.6 - 9.6 + 2.4 as 0 instead of 2.4. The reasoning is also flawed, as it incorrectly claims 2.4 is not an option before making the error.
+Final Answer Accuracy: The generator's answer is B (0.00 cm/hour), which is incorrect. The correct answer is 2.40 cm/hour (Option C). The generator's answer matches the provided key, but both are incorrect.","SYSTEM: You are a Grade 12 Mathematics teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 medium-difficulty computational MCQ from ONE of: algebra (functions/inverse/systems), trigonometry (identities/evaluation), basic calculus (limits/derivatives/simple integrals), or short statistics.
+• Use realistic numbers; round to 2 decimals when needed; avoid formal proofs.
+• Distractors must reflect typical mistakes (sign errors, wrong identities, derivative/limit rules, rounding).
+
+CoT (few-shot style; hidden 2–3 steps):
+• Perform multi-step reasoning INTERNALLY; do NOT reveal the steps.
+
+Style example: plan elimination/substitution for a linear system → compute → choose option.
+• Create a NEW problem of the same family (SLE, trig identity+evaluation, derivative+substitution, small-data stats).
+• Distractors map to step errors (bad elimination, wrong identity, wrong derivative rule, wrong rounding).
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object:
+  [{""question"":""..."",""options"":[""A. ..."",""B. ..."",""C. ..."",""D. ...""],""answer"":""A"",""solution"":""3–6 short lines, plain text; no LaTeX/markdown.""}]
+- The ""solution"" field is MANDATORY with 3–6 short lines (plain text; no LaTeX/markdown).
+- No extra text outside JSON; no code fences.
+- Options MUST be prefixed ""A. ""/""B. ""/""C. ""/""D. "" and ""answer"" ∈ {A,B,C,D}.
+- NO LaTeX: do not use $ or backslashes; write plain text (sin, cos, pi, (a)/(b)).
+STRICT FOR GEMINI:
+- Output plain-text JSON only; do not use LaTeX ($ or backslashes).
+- The ""solution"" must be 3–6 lines, plain text.
+USER: Topic: Mathematics. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: bacterial, pile, angle, top, rocket, 25, value, that, upwards, according, rising, determine, 3000, conical, from, measure, meters, given, 50, wheel, acute, water, right, 10, where, height, distance, 1, moves, casts, 4, 2, stone, 15, with, find, feet, 7, building, function, described, represents, 12, 07t, 0.8, ferris, curve, shadow, vertically, downward, modeled, minutes, certain, 0, 60, 11, changes, min, 6, definite, time, projectile, slope, quadrant, tower, line, and, point, balloon, yards, being, air, after, its, cos, thrown, 5, 1000, tangent, 80t, defined, growing, colony, temperature, along, has, then, makes, triangle, particle, velocity, seconds, cylindrical, launched, 40, evaluate, such, filled, x-axis, 8, tank, integral, one, what, hot, 3, grain, day, sin, radius, population, metal, 320, bar, radio, position.
+- Do NOT print this list in the output."
+mathematics,gemini,struktur2,18,2630,"A delivery truck's fuel consumption is modeled by C(d) = 0.05d^2 - 3.5d + 75, where C(d) is the fuel consumption in liters, and d is the distance traveled in kilometers. What distance minimizes the fuel consumption?",A. 70.00 km,B. 35.00 km,C. 75.00 km,D. 3.50 km,B,"To minimize C(d), find the vertex of the parabola. The x-coordinate (d in this case) of the vertex is -b/(2a). Here, a = 0.05 and b = -3.5. Thus, d = -(-3.5) / (2 * 0.05) = 3.5 / 0.1 = 35. Therefore, the distance that minimizes fuel consumption is 35 km.","The fuel consumption is modeled by the quadratic function C(d) = 0.05d^2 - 3.5d + 75.
+This function represents a parabola that opens upwards, as the coefficient of the d^2 term (a = 0.05) is positive.
+The minimum value of an upward-opening parabola occurs at its vertex.
+The d-coordinate of the vertex is found using the formula d = -b / (2a).
+Substituting the coefficients a = 0.05 and b = -3.5:
+d = -(-3.5) / (2 * 0.05)
+d = 3.5 / 0.1
+d = 35.
+The distance that minimizes fuel consumption is 35 km.",gemini:gemini-2.5-pro,20117,5.0,1.0,Correct,5.0,"Clarity: The question is very clear. It provides the mathematical model, defines the variables, and states the objective unambiguously.
+Context Accuracy: The physical model is highly unrealistic. A function where total fuel consumption decreases as distance increases (from 0 to 35 km) is nonsensical. Fuel consumption should generally increase with distance.
+Quality of Working: The generator's solution is flawless. It correctly identifies the problem as finding the minimum of a parabola, uses the correct vertex formula, and executes the calculation perfectly.
+Final Answer Accuracy: The generator's answer is correct according to the mathematical model provided in the question.","SYSTEM: You are a Grade 12 Mathematics teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 medium-difficulty computational MCQ from ONE of: algebra (functions/inverse/systems), trigonometry (identities/evaluation), basic calculus (limits/derivatives/simple integrals), or short statistics.
+• Use realistic numbers; round to 2 decimals when needed; avoid formal proofs.
+• Distractors must reflect typical mistakes (sign errors, wrong identities, derivative/limit rules, rounding).
+
+CoT (few-shot style; hidden 2–3 steps):
+• Perform multi-step reasoning INTERNALLY; do NOT reveal the steps.
+
+Style example: plan elimination/substitution for a linear system → compute → choose option.
+• Create a NEW problem of the same family (SLE, trig identity+evaluation, derivative+substitution, small-data stats).
+• Distractors map to step errors (bad elimination, wrong identity, wrong derivative rule, wrong rounding).
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object:
+  [{""question"":""..."",""options"":[""A. ..."",""B. ..."",""C. ..."",""D. ...""],""answer"":""A"",""solution"":""3–6 short lines, plain text; no LaTeX/markdown.""}]
+- The ""solution"" field is MANDATORY with 3–6 short lines (plain text; no LaTeX/markdown).
+- No extra text outside JSON; no code fences.
+- Options MUST be prefixed ""A. ""/""B. ""/""C. ""/""D. "" and ""answer"" ∈ {A,B,C,D}.
+- NO LaTeX: do not use $ or backslashes; write plain text (sin, cos, pi, (a)/(b)).
+STRICT FOR GEMINI:
+- Output plain-text JSON only; do not use LaTeX ($ or backslashes).
+- The ""solution"" must be 3–6 lines, plain text.
+USER: Topic: Mathematics. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: bacterial, pile, angle, top, rocket, daily, 25, value, that, upwards, according, rising, determine, 3000, conical, from, measure, meters, given, 50, wheel, acute, water, right, 10, where, height, distance, weather, 1, moves, casts, 4, 2, stone, 15, with, find, feet, 7, building, function, described, represents, 12, 07t, 0.8, ferris, curve, shadow, vertically, downward, modeled, minutes, certain, 0, 60, 11, changes, min, 6, definite, time, projectile, slope, 16, quadrant, tower, line, and, point, balloon, yards, being, air, after, its, cos, thrown, 5, 1000, tangent, 80t, station, defined, growing, colony, temperature, along, has, then, makes, triangle, particle, velocity, seconds, cylindrical, records, launched, 40, evaluate, such, filled, x-axis, 8, tank, integral, one, what, hot, 3, grain, day, sin, observation, radius, population, metal, 320, bar, radio, position.
+- Do NOT print this list in the output."
+mathematics,gemini,struktur2,19,2372,"A delivery service models its cost as C(x) = 0.03x^2 - 2.4x + 58, where x is the number of packages delivered. What number of packages delivered minimizes the cost?",A. 80,B. 40,C. 24,D. 58,B,"To minimize C(x), we need to find the vertex. The x-coordinate of the vertex is -b/(2a). In this case, x = -(-2.4) / (2*0.03) = 2.4 / 0.06 = 40. Therefore, 40 packages minimizes the cost.","The cost function C(x) = 0.03x^2 - 2.4x + 58 is a quadratic function. Since the coefficient of the x^2 term (a = 0.03) is positive, the graph is a parabola opening upwards, and its minimum value occurs at the vertex.
+The x-coordinate of the vertex gives the number of packages that minimizes the cost.
+The formula for the x-coordinate of the vertex is x = -b / (2a).
+Substituting a = 0.03 and b = -2.4:
+x = -(-2.4) / (2 * 0.03)
+x = 2.4 / 0.06
+x = 40.
+Thus, 40 packages delivered minimizes the cost.",gemini:gemini-2.5-pro,26947,5.0,5.0,Correct,5.0,"Clarity: The question is perfectly clear. It provides a mathematical model and asks a specific, unambiguous question about it.
+Context Accuracy: The use of a quadratic function to model costs is a standard and plausible application in economics and business, representing economies of scale up to a minimum point.
+Quality of Working: The generator's solution is flawless. It correctly identifies the method (finding the vertex), uses the correct formula, and executes the calculation without error.
+Final Answer Accuracy: The generator's answer of 40 is correct, matching the independent calculation and the provided key.","SYSTEM: You are a Grade 12 Mathematics teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 medium-difficulty computational MCQ from ONE of: algebra (functions/inverse/systems), trigonometry (identities/evaluation), basic calculus (limits/derivatives/simple integrals), or short statistics.
+• Use realistic numbers; round to 2 decimals when needed; avoid formal proofs.
+• Distractors must reflect typical mistakes (sign errors, wrong identities, derivative/limit rules, rounding).
+
+CoT (few-shot style; hidden 2–3 steps):
+• Perform multi-step reasoning INTERNALLY; do NOT reveal the steps.
+
+Style example: plan elimination/substitution for a linear system → compute → choose option.
+• Create a NEW problem of the same family (SLE, trig identity+evaluation, derivative+substitution, small-data stats).
+• Distractors map to step errors (bad elimination, wrong identity, wrong derivative rule, wrong rounding).
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object:
+  [{""question"":""..."",""options"":[""A. ..."",""B. ..."",""C. ..."",""D. ...""],""answer"":""A"",""solution"":""3–6 short lines, plain text; no LaTeX/markdown.""}]
+- The ""solution"" field is MANDATORY with 3–6 short lines (plain text; no LaTeX/markdown).
+- No extra text outside JSON; no code fences.
+- Options MUST be prefixed ""A. ""/""B. ""/""C. ""/""D. "" and ""answer"" ∈ {A,B,C,D}.
+- NO LaTeX: do not use $ or backslashes; write plain text (sin, cos, pi, (a)/(b)).
+STRICT FOR GEMINI:
+- Output plain-text JSON only; do not use LaTeX ($ or backslashes).
+- The ""solution"" must be 3–6 lines, plain text.
+USER: Topic: Mathematics. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: bacterial, pile, angle, consumption, top, rocket, daily, 25, value, that, upwards, according, rising, determine, 3000, conical, from, measure, meters, given, 50, wheel, acute, water, right, 10, where, height, distance, weather, 1, moves, casts, 4, 2, stone, 15, with, find, feet, 7, building, function, described, represents, 12, 07t, 0.8, ferris, curve, shadow, vertically, downward, modeled, minutes, certain, 0, 60, 11, changes, min, 6, definite, time, projectile, 75, slope, 16, quadrant, tower, line, and, point, balloon, yards, being, air, after, its, cos, thrown, 5, 1000, 05d, delivery, tangent, 80t, station, defined, truck, growing, colony, temperature, along, has, then, makes, triangle, particle, velocity, seconds, cylindrical, records, launched, 40, evaluate, such, filled, x-axis, 8, tank, integral, one, what, hot, 3, grain, fuel, day, sin, observation, radius, population, metal, 320, bar, radio, position.
+- Do NOT print this list in the output."
+mathematics,gemini,struktur2,20,2375,"The temperature of a chemical reaction, in degrees Celsius, is modeled by T(t) = 5t^2 - 80t + 320, where t is in hours, for t between 0 and 8. What is the instantaneous rate of change of the temperature at t = 3 hours?",A. -50 degrees Celsius/hour,B. -20 degrees Celsius/hour,C. 10 degrees Celsius/hour,D. 30 degrees Celsius/hour,A,"First, find the derivative: T'(t) = 10t - 80. Then, substitute t = 3: T'(3) = 10(3) - 80. Simplify: T'(3) = 30 - 80 = -50. The instantaneous rate of change is -50 degrees Celsius/hour.","The problem asks for the instantaneous rate of change of temperature, which is the first derivative of the temperature function T(t).
+The function is T(t) = 5t^2 - 80t + 320.
+Using the power rule for differentiation, the derivative is T'(t) = d/dt (5t^2 - 80t + 320) = 10t - 80.
+To find the rate of change at t = 3 hours, we evaluate T'(3).
+T'(3) = 10(3) - 80 = 30 - 80 = -50.
+The instantaneous rate of change at t = 3 hours is -50 degrees Celsius/hour.",gemini:gemini-2.5-pro,29295,5.0,4.5,Correct,5.0,"Clarity: The question is perfectly clear. It provides the function, defines all variables and units, and states the objective unambiguously.
+Context Accuracy: The context of a chemical reaction is suitable for a calculus problem. The initial temperature of 320°C is high but plausible in an industrial setting. The model is a reasonable simplification.
+Quality of Working: The generator's solution is flawless. It correctly identifies the need for the derivative, calculates it accurately, and evaluates it at the correct point. The steps are concise and logical.
+Final Answer Accuracy: The generator's final answer of -50 degrees Celsius/hour is correct and matches the independent calculation.","SYSTEM: You are a Grade 12 Mathematics teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 medium-difficulty computational MCQ from ONE of: algebra (functions/inverse/systems), trigonometry (identities/evaluation), basic calculus (limits/derivatives/simple integrals), or short statistics.
+• Use realistic numbers; round to 2 decimals when needed; avoid formal proofs.
+• Distractors must reflect typical mistakes (sign errors, wrong identities, derivative/limit rules, rounding).
+
+CoT (few-shot style; hidden 2–3 steps):
+• Perform multi-step reasoning INTERNALLY; do NOT reveal the steps.
+
+Style example: plan elimination/substitution for a linear system → compute → choose option.
+• Create a NEW problem of the same family (SLE, trig identity+evaluation, derivative+substitution, small-data stats).
+• Distractors map to step errors (bad elimination, wrong identity, wrong derivative rule, wrong rounding).
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object:
+  [{""question"":""..."",""options"":[""A. ..."",""B. ..."",""C. ..."",""D. ...""],""answer"":""A"",""solution"":""3–6 short lines, plain text; no LaTeX/markdown.""}]
+- The ""solution"" field is MANDATORY with 3–6 short lines (plain text; no LaTeX/markdown).
+- No extra text outside JSON; no code fences.
+- Options MUST be prefixed ""A. ""/""B. ""/""C. ""/""D. "" and ""answer"" ∈ {A,B,C,D}.
+- NO LaTeX: do not use $ or backslashes; write plain text (sin, cos, pi, (a)/(b)).
+STRICT FOR GEMINI:
+- Output plain-text JSON only; do not use LaTeX ($ or backslashes).
+- The ""solution"" must be 3–6 lines, plain text.
+USER: Topic: Mathematics. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: bacterial, pile, angle, consumption, top, rocket, daily, 25, value, that, upwards, according, 03x, rising, determine, 3000, conical, from, measure, meters, given, 50, wheel, acute, water, right, 10, where, height, distance, weather, 1, moves, casts, 4, 2, stone, 15, with, find, feet, 7, building, service, function, described, cost, represents, 12, 07t, 0.8, ferris, curve, shadow, vertically, downward, modeled, minutes, certain, 0, 60, 11, changes, min, 6, definite, time, projectile, 75, models, slope, 16, quadrant, tower, line, and, point, balloon, yards, being, air, after, its, cos, thrown, 5, 1000, 05d, delivery, tangent, 80t, station, defined, truck, growing, colony, temperature, along, has, then, makes, triangle, particle, velocity, seconds, cylindrical, records, launched, 40, evaluate, such, filled, x-axis, 8, tank, integral, one, what, hot, 3, 58, grain, fuel, day, sin, observation, radius, population, metal, 320, bar, radio, position.
+- Do NOT print this list in the output."

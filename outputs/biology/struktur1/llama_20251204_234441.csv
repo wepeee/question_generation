@@ -1,0 +1,854 @@
+topic,model,struktur,index,latency_model_ms,question,optionA,optionB,optionC,optionD,answer,solution_model,solution_verifier,verifier_model,latency_verifier_ms,clarity,context_accuracy,final_answer_accuracy,quality_of_working,judge_notes,prompt_generator
+biology,llama,struktur1,1,20824,A population of fruit flies has a frequency of 0.6 for the recessive allele (r) and 0.4 for the dominant allele (R). What is the expected genotype frequency in this population?,All flies are Rr,Most flies are RR,"Half the flies are rr, half are Rr",All flies are rr,D,"The Hardy-Weinberg equilibrium states that p^2 + 2pq + q^2 = 1. In this case, p (frequency of R) is 0.4 and q (frequency of r) is √(1-p) = √0.6 = 0.483. The genotype frequency would be: RR = p^2 = 0.4^2 = 0.16, Rr = 2pq = 2 * 0.4 * 0.483 = 0.384, rr = q^2 = 0.483^2 = 0.234. Therefore, all flies are not rr.","This problem requires the use of the Hardy-Weinberg equilibrium principle. The allele frequencies are given as p (for dominant allele R) = 0.4 and q (for recessive allele r) = 0.6. The sum p + q = 0.4 + 0.6 = 1.0, which is correct.
+The expected genotype frequencies are calculated as follows:
+- Frequency of RR = p^2 = (0.4)^2 = 0.16
+- Frequency of Rr = 2pq = 2 * 0.4 * 0.6 = 0.48
+- Frequency of rr = q^2 = (0.6)^2 = 0.36
+The expected frequencies are 16% RR, 48% Rr, and 36% rr. None of the provided multiple-choice options match these correct calculations, indicating the question is flawed.",gemini:gemini-2.5-pro,28887,2.0,5.0,Incorrect,0.5,"Clarity: The question stem is clear, but all of the provided options are incorrect, making the question fundamentally flawed and unsolvable.
+Context Accuracy: The biological context (fruit flies, population genetics) and the given allele frequencies are realistic and standard for this type of problem.
+Quality of Working: The generator's reasoning is critically flawed. It uses a nonsensical formula `q = √(1-p)` to calculate the frequency of the recessive allele, even though this value was explicitly provided in the question. This demonstrates a severe misunderstanding of the Hardy-Weinberg principle.
+Final Answer Accuracy: The generator does not answer the question, which asks for the expected genotype frequency. Instead, it makes a statement refuting one of the incorrect options, and its reasoning for doing so is based on incorrect calculations.","SYSTEM: You are a Grade 12 Biology teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 concise concept/application MCQ from: basic genetics (incl. Hardy–Weinberg), cell/tissue structure–function, or short ecology.
+• Use standard terminology; if arithmetic appears (e.g., allele frequency), keep numbers small and round to 2 decimals.
+• Distractors reflect common misconceptions (dominance ≠ frequency, misreading ratios/diagrams, DNA→RNA→Protein confusion).
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object.
+- Format:
+  [{""question"": ""..."", ""options"": [""..."",""..."",""..."",""...""], ""answer"": ""A"", ""solution"": ""...""}]
+- Fields:
+  * ""question"": one string.
+  * ""options"": array of 4 answer-choice strings.
+  * ""answer"": one of ""A"",""B"",""C"",""D"" (just the letter).
+  * ""solution"": short plain-text explanation (a few lines is fine).
+- No extra text before or after the JSON.
+- Do NOT use markdown, code fences, or LaTeX ($ or backslashes).
+USER: Topic: Biology. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field."
+biology,llama,struktur1,2,11935,"In a certain species of plants, the gene controlling seed shape is expressed as two distinct phenotypes: round seeds and elongated seeds. If a plant with round seeds is crossed with one having elongated seeds, what would be the expected proportion of offspring with elongated seeds?",25%,50%,75%,100%,D,"Since both parents have the opposite phenotype, they must each carry a dominant and recessive allele for seed shape. The cross is between two heterozygotes, so the expected genotype of offspring would be 3:1 (dominant:recessive). Since elongated seeds are recessive, the expected proportion of offspring with elongated seeds is 25%.","The question is fundamentally ambiguous and cannot be solved with the information given. It fails to state which allele (round or elongated) is dominant, and it does not specify the genotypes of the parents (homozygous or heterozygous).
+
+Let R be the dominant allele and r be the recessive allele.
+Scenario 1: Round is dominant. The cross is between a round plant (RR or Rr) and an elongated plant (rr).
+  - If RR x rr, offspring are 100% Rr (round). 0% are elongated.
+  - If Rr x rr, offspring are 50% Rr (round) and 50% rr (elongated).
+Scenario 2: Elongated is dominant. The cross is between a round plant (rr) and an elongated plant (RR or Rr).
+  - If rr x RR, offspring are 100% Rr (elongated).
+  - If rr x Rr, offspring are 50% Rr (elongated) and 50% rr (round).
+
+Possible outcomes for elongated offspring are 0%, 50%, or 100%. Without more information, a single answer cannot be determined.",gemini:gemini-2.5-pro,24428,1.0,4.5,Incorrect,0.0,"Clarity: The question is critically flawed. It omits essential information required for a solution, namely the dominance relationship between the alleles and the genotypes of the parent plants.
+
+Context Accuracy: The biological context (Mendelian genetics, seed shape phenotypes) is standard and accurate for this type of problem.
+
+Quality of Working: The generator's reasoning is completely incorrect. It wrongly assumes the parents must be heterozygous, which contradicts the fact that they have different phenotypes. It then incorrectly applies the 3:1 ratio from a heterozygote self-cross, a scenario not described in the question.
+
+Final Answer Accuracy: The generator's answer is 25%, which does not match the provided key of 100%. The generator's reasoning is based on a misunderstanding of the question and fundamental genetic principles.","SYSTEM: You are a Grade 12 Biology teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 concise concept/application MCQ from: basic genetics (incl. Hardy–Weinberg), cell/tissue structure–function, or short ecology.
+• Use standard terminology; if arithmetic appears (e.g., allele frequency), keep numbers small and round to 2 decimals.
+• Distractors reflect common misconceptions (dominance ≠ frequency, misreading ratios/diagrams, DNA→RNA→Protein confusion).
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object.
+- Format:
+  [{""question"": ""..."", ""options"": [""..."",""..."",""..."",""...""], ""answer"": ""A"", ""solution"": ""...""}]
+- Fields:
+  * ""question"": one string.
+  * ""options"": array of 4 answer-choice strings.
+  * ""answer"": one of ""A"",""B"",""C"",""D"" (just the letter).
+  * ""solution"": short plain-text explanation (a few lines is fine).
+- No extra text before or after the JSON.
+- Do NOT use markdown, code fences, or LaTeX ($ or backslashes).
+USER: Topic: Biology. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: has, population, for, recessive, flies, allele, fruit, 0.4, frequency, 0.6.
+- Do NOT print this list in the output."
+biology,llama,struktur1,3,11930,"In a diploid organism, what is the expected ratio of heterozygous to homozygous individuals at a single autosomal locus if the Hardy-Weinberg equilibrium assumptions are met?",1:2,1:3,3:1,1:1,A,"In a diploid organism, the Hardy-Weinberg equilibrium predicts that 3/4 of individuals will be heterozygous and 1/4 will be homozygous at a single autosomal locus. This is because there are three possible genotypes (homozygous dominant, heterozygous, and homozygous recessive) and one of them (homozygous recessive) has no effect on the phenotype.","Under Hardy-Weinberg equilibrium, let the allele frequencies be p and q. The frequencies of genotypes are p^2 (homozygous dominant), 2pq (heterozygous), and q^2 (homozygous recessive). The total frequency of homozygous individuals is p^2 + q^2. The frequency of heterozygous individuals is 2pq. The ratio of heterozygous to homozygous individuals is therefore 2pq : (p^2 + q^2). This ratio is not constant and depends on the values of p and q.
+
+However, the question is likely asking for the ratio of the number of heterozygous genotype *classes* to the number of homozygous genotype *classes*. There is one heterozygous genotype (Aa) and two homozygous genotypes (AA and aa). Therefore, this ratio is 1:2.",gemini:gemini-2.5-pro,27892,1.0,2.5,Incorrect,0.0,"Clarity: The question is highly ambiguous. It asks for a ratio of 'individuals', which implies frequencies. This ratio (2pq : p^2+q^2) is dependent on allele frequencies, which are not provided. The question can only be answered by reinterpreting it to mean the ratio of genotype 'classes' (1 heterozygous vs. 2 homozygous).
+
+Context Accuracy: The context of Hardy-Weinberg equilibrium is a valid biological principle. However, the question's premise that there is a single, constant ratio of heterozygous to homozygous individuals is incorrect, making the application of the concept flawed.
+
+Quality of Working: The generator's solution is completely wrong. It incorrectly states that HWE predicts a 3/4 heterozygous to 1/4 homozygous proportion. This is false for any allele frequencies. The reasoning provided is nonsensical and conflates HWE with Mendelian phenotypic ratios.
+
+Final Answer Accuracy: The generator's reasoning is fundamentally flawed and does not lead to the correct answer. The proportions it cites (3/4 and 1/4) are incorrect and the justification is biologically incoherent.","SYSTEM: You are a Grade 12 Biology teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 concise concept/application MCQ from: basic genetics (incl. Hardy–Weinberg), cell/tissue structure–function, or short ecology.
+• Use standard terminology; if arithmetic appears (e.g., allele frequency), keep numbers small and round to 2 decimals.
+• Distractors reflect common misconceptions (dominance ≠ frequency, misreading ratios/diagrams, DNA→RNA→Protein confusion).
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object.
+- Format:
+  [{""question"": ""..."", ""options"": [""..."",""..."",""..."",""...""], ""answer"": ""A"", ""solution"": ""...""}]
+- Fields:
+  * ""question"": one string.
+  * ""options"": array of 4 answer-choice strings.
+  * ""answer"": one of ""A"",""B"",""C"",""D"" (just the letter).
+  * ""solution"": short plain-text explanation (a few lines is fine).
+- No extra text before or after the JSON.
+- Do NOT use markdown, code fences, or LaTeX ($ or backslashes).
+USER: Topic: Biology. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: gene, population, flies, fruit, certain, species, 0.4, expressed, distinct, frequency, 0.6, plants, has, recessive, allele, controlling, for, two, seed, shape.
+- Do NOT print this list in the output."
+biology,llama,struktur1,4,9568,"In a particular genetic trait, a dominant allele 'B' masks the effect of a recessive allele 'b'. If an individual has the genotype Bb and displays the dominant phenotype, what is the probability that their offspring will display the same dominant phenotype?",A) 0.5,B) 1.0,C) 0.75,D) 0.25,A,"Since the individual has the genotype Bb and displays the dominant phenotype, we know that they are heterozygous for this trait. The probability of their offspring displaying the same dominant phenotype is therefore 50%, or 0.5.","The question is ambiguous as it does not specify the genotype of the other parent. The probability of the offspring having a dominant phenotype depends on the mate's genotype.
+1. If the mate is BB (homozygous dominant), the probability is 1.0 (all offspring are BB or Bb).
+2. If the mate is Bb (heterozygous), the probability is 0.75 (offspring are 1 BB, 2 Bb, 1 bb).
+3. If the mate is bb (homozygous recessive), the probability is 0.5 (offspring are 2 Bb, 2 bb).
+Since option A (0.5) is the key, we must assume the question implies a test cross with a homozygous recessive (bb) individual.",gemini:gemini-2.5-pro,19915,1.0,5.0,Correct,0.5,"Clarity: The question is critically flawed because it omits the genotype of the second parent. This makes the problem unsolvable without making a significant, unstated assumption (e.g., a test cross).
+Context Accuracy: The underlying genetic principles (dominance, recessiveness, genotype, phenotype) are described correctly and are standard concepts in biology.
+Quality of Working: The generator's reasoning is a complete non-sequitur. It jumps from the parent being heterozygous to the offspring's phenotype probability without considering the second parent or a Punnett square. It seems to confuse the probability of passing on an allele with the probability of the resulting phenotype.
+Final Answer Accuracy: The generator's answer matches the provided key. However, this is only correct under the specific and unstated assumption that the cross is with a homozygous recessive individual.","SYSTEM: You are a Grade 12 Biology teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 concise concept/application MCQ from: basic genetics (incl. Hardy–Weinberg), cell/tissue structure–function, or short ecology.
+• Use standard terminology; if arithmetic appears (e.g., allele frequency), keep numbers small and round to 2 decimals.
+• Distractors reflect common misconceptions (dominance ≠ frequency, misreading ratios/diagrams, DNA→RNA→Protein confusion).
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object.
+- Format:
+  [{""question"": ""..."", ""options"": [""..."",""..."",""..."",""...""], ""answer"": ""A"", ""solution"": ""...""}]
+- Fields:
+  * ""question"": one string.
+  * ""options"": array of 4 answer-choice strings.
+  * ""answer"": one of ""A"",""B"",""C"",""D"" (just the letter).
+  * ""solution"": short plain-text explanation (a few lines is fine).
+- No extra text before or after the JSON.
+- Do NOT use markdown, code fences, or LaTeX ($ or backslashes).
+USER: Topic: Biology. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: gene, population, flies, ratio, fruit, certain, species, 0.4, expressed, distinct, frequency, expected, 0.6, plants, organism, has, recessive, single, allele, homozygous, controlling, diploid, autosomal, individuals, heterozygous, for, what, two, seed, shape.
+- Do NOT print this list in the output."
+biology,llama,struktur1,5,9962,"In a certain biological process, a molecule is converted from a double-stranded structure to a single-stranded form through an enzyme-mediated reaction. Which of the following best describes this conversion?",The molecule undergoes denaturation,The molecule becomes supercoiled,The molecule is transcribed into RNA,The molecule is translated into protein,A,"This process, called denaturation, occurs when an enzyme breaks the hydrogen bonds between the two strands of DNA, resulting in a single-stranded structure. This allows for further processing or manipulation of the DNA.","The question describes an enzyme-mediated conversion of a double-stranded molecule to a single-stranded form. This process involves breaking the hydrogen bonds that hold the two strands together. The correct biological term for this separation of strands is denaturation. Option A is the best fit. Option B, supercoiling, refers to the twisting of the double helix. Option C, transcription, is a larger process that *involves* denaturation but is not the name for the conversion itself. Option D, translation, is the synthesis of protein from mRNA and is irrelevant.",gemini:gemini-2.5-pro,14507,5.0,5.0,Correct,5.0,"Clarity: The question is clearly worded, describing a specific molecular event without ambiguity. The options are distinct and relevant biological terms.
+Context Accuracy: The described process is a fundamental and accurately portrayed concept in molecular biology, central to DNA replication and transcription.
+Quality of Working: The generator's explanation is excellent. It correctly identifies the process as denaturation, explains the mechanism (breaking hydrogen bonds), and provides the correct context.
+Final Answer Accuracy: The generator's choice of option A is correct, and the provided reasoning is sound.","SYSTEM: You are a Grade 12 Biology teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 concise concept/application MCQ from: basic genetics (incl. Hardy–Weinberg), cell/tissue structure–function, or short ecology.
+• Use standard terminology; if arithmetic appears (e.g., allele frequency), keep numbers small and round to 2 decimals.
+• Distractors reflect common misconceptions (dominance ≠ frequency, misreading ratios/diagrams, DNA→RNA→Protein confusion).
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object.
+- Format:
+  [{""question"": ""..."", ""options"": [""..."",""..."",""..."",""...""], ""answer"": ""A"", ""solution"": ""...""}]
+- Fields:
+  * ""question"": one string.
+  * ""options"": array of 4 answer-choice strings.
+  * ""answer"": one of ""A"",""B"",""C"",""D"" (just the letter).
+  * ""solution"": short plain-text explanation (a few lines is fine).
+- No extra text before or after the JSON.
+- Do NOT use markdown, code fences, or LaTeX ($ or backslashes).
+USER: Topic: Biology. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: gene, population, flies, ratio, fruit, certain, species, 0.4, expressed, effect, distinct, frequency, expected, genetic, 0.6, plants, organism, has, particular, recessive, single, allele, homozygous, masks, controlling, diploid, autosomal, individuals, heterozygous, individual, dominant, for, what, two, trait, seed, shape.
+- Do NOT print this list in the output."
+biology,llama,struktur1,6,9564,"In a certain type of cell division, chromosomes condense and separate to form daughter cells with half the number of chromosomes as the parent cell. What is this type of cell division?",Mitosis,Meiosis,Binary Fission,Endomitosis,A,"This type of cell division is called mitosis, where the number of chromosomes in each daughter cell is reduced by half. This process occurs in somatic cells to produce two daughter cells that are genetically identical to the parent cell.","The question describes a type of cell division that results in daughter cells with half the number of chromosomes as the parent cell. This process is the definition of meiosis, which is a reductional division. Mitosis produces daughter cells with the same number of chromosomes as the parent cell. Binary fission is asexual reproduction in prokaryotes. Endomitosis involves chromosome replication without cell division, leading to polyploidy. Therefore, the correct answer is Meiosis.",gemini:gemini-2.5-pro,20126,5.0,2.0,Incorrect,0.0,"Clarity: The question is perfectly clear and describes a key biological process without ambiguity.
+Context Accuracy: The question itself is biologically accurate, but the provided key (A) is incorrect for the question asked. This creates a fundamental flaw in the problem's setup.
+Quality of Working: The generator's explanation is completely incorrect and self-contradictory. It claims the process is mitosis but then incorrectly defines mitosis as a process where the chromosome number is halved. This is the definition of meiosis.
+Final Answer Accuracy: The generator's answer is Mitosis, which is incorrect. The process described in the question is Meiosis.","SYSTEM: You are a Grade 12 Biology teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 concise concept/application MCQ from: basic genetics (incl. Hardy–Weinberg), cell/tissue structure–function, or short ecology.
+• Use standard terminology; if arithmetic appears (e.g., allele frequency), keep numbers small and round to 2 decimals.
+• Distractors reflect common misconceptions (dominance ≠ frequency, misreading ratios/diagrams, DNA→RNA→Protein confusion).
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object.
+- Format:
+  [{""question"": ""..."", ""options"": [""..."",""..."",""..."",""...""], ""answer"": ""A"", ""solution"": ""...""}]
+- Fields:
+  * ""question"": one string.
+  * ""options"": array of 4 answer-choice strings.
+  * ""answer"": one of ""A"",""B"",""C"",""D"" (just the letter).
+  * ""solution"": short plain-text explanation (a few lines is fine).
+- No extra text before or after the JSON.
+- Do NOT use markdown, code fences, or LaTeX ($ or backslashes).
+USER: Topic: Biology. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: gene, population, double-stranded, flies, ratio, fruit, certain, species, 0.4, single-stranded, expressed, effect, structure, distinct, frequency, expected, genetic, 0.6, plants, organism, has, particular, recessive, single, allele, homozygous, masks, controlling, diploid, autosomal, biological, individuals, converted, molecule, heterozygous, individual, from, process, dominant, for, what, form, two, trait, seed, shape.
+- Do NOT print this list in the output."
+biology,llama,struktur1,7,10731,"In a hypothetical scenario where a mutation occurs in a DNA sequence that codes for a vital enzyme, which of the following is most likely to happen?",The mutation will be quickly lost from the gene pool.,The mutation will become fixed in the population.,The mutation will have no impact on the organism's survival.,The mutation will lead to the development of antibiotic resistance.,A,"When a mutation occurs in a DNA sequence that codes for a vital enzyme, it is likely to be detrimental to the organism's survival. As a result, natural selection would act against the mutant, and it would be quickly lost from the gene pool.","A mutation in a gene coding for a vital enzyme is highly likely to be deleterious, meaning it will impair or destroy the enzyme's function. Since the enzyme is vital for survival or reproduction, the organism carrying the mutation will have reduced fitness. Natural selection will therefore act against this mutation, preventing it from spreading. Consequently, the most probable outcome is that the mutation will be eliminated from the gene pool.",gemini:gemini-2.5-pro,19383,5.0,5.0,Correct,5.0,"Clarity: The question is clearly worded using standard biological terminology. The options are distinct and easy to understand.
+Context Accuracy: The scenario is a classic and accurate representation of a fundamental concept in evolutionary genetics—the fate of deleterious mutations.
+Quality of Working: The generator's explanation is concise and logically sound. It correctly links the mutation's effect on a vital enzyme to reduced fitness and negative selection, leading to its removal from the gene pool.
+Final Answer Accuracy: The generator's reasoning correctly supports option A, which is the most likely outcome described in the question.","SYSTEM: You are a Grade 12 Biology teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 concise concept/application MCQ from: basic genetics (incl. Hardy–Weinberg), cell/tissue structure–function, or short ecology.
+• Use standard terminology; if arithmetic appears (e.g., allele frequency), keep numbers small and round to 2 decimals.
+• Distractors reflect common misconceptions (dominance ≠ frequency, misreading ratios/diagrams, DNA→RNA→Protein confusion).
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object.
+- Format:
+  [{""question"": ""..."", ""options"": [""..."",""..."",""..."",""...""], ""answer"": ""A"", ""solution"": ""...""}]
+- Fields:
+  * ""question"": one string.
+  * ""options"": array of 4 answer-choice strings.
+  * ""answer"": one of ""A"",""B"",""C"",""D"" (just the letter).
+  * ""solution"": short plain-text explanation (a few lines is fine).
+- No extra text before or after the JSON.
+- Do NOT use markdown, code fences, or LaTeX ($ or backslashes).
+USER: Topic: Biology. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: gene, separate, population, double-stranded, flies, ratio, fruit, certain, species, 0.4, single-stranded, expressed, effect, structure, distinct, frequency, expected, genetic, 0.6, plants, organism, has, particular, type, recessive, single, allele, homozygous, masks, controlling, diploid, autosomal, biological, individuals, converted, molecule, heterozygous, cell, individual, daughter, and, from, division, process, dominant, condense, for, chromosomes, what, form, two, trait, seed, shape.
+- Do NOT print this list in the output."
+biology,llama,struktur1,8,11482,"In a certain biological system, a recessive allele is associated with a characteristic that is not always present. Which of the following statements about this characteristic is true?",The characteristic will be present in all individuals who are homozygous for the recessive allele.,The characteristic will be absent in all individuals who are heterozygous for the recessive allele.,All individuals with the characteristic must have two copies of the recessive allele.,The characteristic is not influenced by the presence or absence of the recessive allele.,C,"Since the characteristic is associated with a recessive allele, it will be present only in individuals who are homozygous for this allele (i.e., have two copies).","The question describes a characteristic associated with a recessive allele, which means it only manifests in individuals with a homozygous recessive genotype (e.g., 'aa'). The phrase 'not always present' introduces the concept of incomplete penetrance, meaning not everyone with the 'aa' genotype will show the trait.
+
+- A is false: Due to incomplete penetrance, not all homozygous recessive individuals will have the characteristic.
+- B is true: Heterozygotes ('Aa') will express the dominant trait, so the recessive characteristic will be absent. This is the definition of recessivity.
+- C is true: For a recessive trait to be expressed, the individual must be homozygous recessive. Therefore, anyone who *does* have the characteristic must have the 'aa' genotype.
+- D is false: The premise states the characteristic is associated with the allele.
+
+Both B and C are correct statements. However, C is a statement about all individuals who *have* the characteristic, which is the subject of the question. It is the most direct and fundamental consequence of the trait being recessive. Therefore, C is the best answer.",gemini:gemini-2.5-pro,36722,3.0,5.0,Correct,4.0,"Clarity: The question is flawed because both options B and C are technically correct statements based on the definition of a recessive allele. This ambiguity makes it difficult to select a single best answer without making assumptions about the test-setter's intent.
+
+Context Accuracy: The concepts of recessive alleles, homozygosity, heterozygosity, and incomplete penetrance ('not always present') are biologically accurate and relevant.
+
+Quality of Working: The generator's reasoning is correct and directly supports the keyed answer (C). However, it is very brief and does not address why the other options are incorrect or acknowledge the ambiguity caused by option B also being a true statement.
+
+Final Answer Accuracy: The generator's reasoning supports option C, which is the provided key and arguably the intended answer despite the question's flaws.","SYSTEM: You are a Grade 12 Biology teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 concise concept/application MCQ from: basic genetics (incl. Hardy–Weinberg), cell/tissue structure–function, or short ecology.
+• Use standard terminology; if arithmetic appears (e.g., allele frequency), keep numbers small and round to 2 decimals.
+• Distractors reflect common misconceptions (dominance ≠ frequency, misreading ratios/diagrams, DNA→RNA→Protein confusion).
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object.
+- Format:
+  [{""question"": ""..."", ""options"": [""..."",""..."",""..."",""...""], ""answer"": ""A"", ""solution"": ""...""}]
+- Fields:
+  * ""question"": one string.
+  * ""options"": array of 4 answer-choice strings.
+  * ""answer"": one of ""A"",""B"",""C"",""D"" (just the letter).
+  * ""solution"": short plain-text explanation (a few lines is fine).
+- No extra text before or after the JSON.
+- Do NOT use markdown, code fences, or LaTeX ($ or backslashes).
+USER: Topic: Biology. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: gene, separate, population, double-stranded, flies, ratio, fruit, certain, species, 0.4, single-stranded, expressed, effect, structure, occurs, distinct, hypothetical, frequency, expected, genetic, that, 0.6, plants, organism, has, particular, type, recessive, single, allele, homozygous, masks, controlling, diploid, autosomal, biological, codes, sequence, individuals, converted, molecule, heterozygous, cell, where, individual, daughter, mutation, scenario, and, from, division, process, dominant, condense, for, chromosomes, dna, what, form, two, trait, seed, shape.
+- Do NOT print this list in the output."
+biology,llama,struktur1,9,13290,"In a certain organism, a recessive allele is present at a low level. Which of the following statements about this situation is TRUE?",The recessive allele has a significant impact on the phenotype.,The recessive allele is likely to be inherited by offspring.,The recessive allele will eventually become dominant.,The recessive allele will disappear over time.,D,"The recessive allele will not have a significant impact on the phenotype because it's present at a low level. It's also unlikely to be inherited by offspring because it's recessive, and both copies of the gene are required for an individual to express the trait. The recessive allele is not likely to become dominant because it's already present at a low level, and Hardy-Weinberg equilibrium predicts that the frequency of the recessive allele will remain constant over time.","The question asks for the most likely true statement about a rare (low level) recessive allele.
+- A is false: A rare allele, especially a recessive one, will be expressed in very few individuals (only homozygous recessives), so its impact on the population's phenotype is not significant.
+- B is false: Because the allele is rare, most individuals in the population do not carry it. Therefore, it is unlikely that a randomly selected offspring will inherit it.
+- C is false: Dominance is an intrinsic property of an allele's expression in a heterozygote; it does not change based on allele frequency.
+- D is the most plausible option. Rare alleles are highly susceptible to being lost from a population due to random chance (genetic drift), especially in smaller populations. While not guaranteed to disappear, this is a more likely fate than the scenarios in A, B, or C.",gemini:gemini-2.5-pro,33116,3.5,5.0,Correct,1.0,"Clarity: The question's wording is slightly imprecise. ""Low level"" is informal for low frequency. More importantly, ""will disappear"" implies certainty, whereas the loss of an allele through genetic drift is a stochastic (random) process. ""Is likely to disappear"" would be more accurate.
+
+Context Accuracy: The scenario described is a fundamental concept in population genetics and is entirely accurate and realistic.
+
+Quality of Working: The generator's reasoning is very poor. It correctly identifies the incorrect options but provides flawed justifications. For instance, it confuses the concepts of rarity and recessiveness when discussing inheritance probability, and it incorrectly states that an allele's frequency prevents it from becoming dominant. It provides no reasoning for why the correct answer (D) is correct.
+
+Final Answer Accuracy: The provided key (D) is the best choice among the given options. Options A, B, and C are fundamentally incorrect based on genetic principles. While D is too strongly worded, it describes the most plausible fate for a rare allele compared to the other distractors.","SYSTEM: You are a Grade 12 Biology teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 concise concept/application MCQ from: basic genetics (incl. Hardy–Weinberg), cell/tissue structure–function, or short ecology.
+• Use standard terminology; if arithmetic appears (e.g., allele frequency), keep numbers small and round to 2 decimals.
+• Distractors reflect common misconceptions (dominance ≠ frequency, misreading ratios/diagrams, DNA→RNA→Protein confusion).
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object.
+- Format:
+  [{""question"": ""..."", ""options"": [""..."",""..."",""..."",""...""], ""answer"": ""A"", ""solution"": ""...""}]
+- Fields:
+  * ""question"": one string.
+  * ""options"": array of 4 answer-choice strings.
+  * ""answer"": one of ""A"",""B"",""C"",""D"" (just the letter).
+  * ""solution"": short plain-text explanation (a few lines is fine).
+- No extra text before or after the JSON.
+- Do NOT use markdown, code fences, or LaTeX ($ or backslashes).
+USER: Topic: Biology. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: gene, separate, population, double-stranded, flies, ratio, fruit, certain, species, 0.4, single-stranded, expressed, effect, structure, occurs, distinct, hypothetical, system, frequency, expected, associated, genetic, that, 0.6, plants, organism, has, particular, type, recessive, single, allele, homozygous, masks, with, controlling, diploid, autosomal, biological, codes, sequence, individuals, converted, molecule, heterozygous, cell, where, individual, daughter, mutation, scenario, not, and, from, division, characteristic, process, dominant, condense, for, chromosomes, dna, what, form, two, trait, seed, shape.
+- Do NOT print this list in the output."
+biology,llama,struktur1,10,10348,"In a certain biological context, a protein is synthesized through translation of messenger RNA (mRNA). Which of the following statements about mRNA is MOST CORRECT?",The sequence of nucleotides in mRNA determines the amino acid sequence of the resulting protein.,The primary function of mRNA is to store genetic information.,Messenger RNA is a direct copy of the DNA molecule.,All of the above are correct.,A,"mRNA carries the instructions for protein synthesis from DNA. The sequence of nucleotides in mRNA determines the amino acid sequence of the resulting protein, making statement A the most correct.","The question asks for the most correct statement about messenger RNA (mRNA). 
+- Statement A is correct: The genetic code, read as three-nucleotide codons on the mRNA, dictates the sequence of amino acids assembled into a protein.
+- Statement B is incorrect: DNA is the primary molecule for long-term genetic information storage; mRNA is a transient copy.
+- Statement C is incorrect: mRNA is a transcript of a single gene's template strand, not the entire DNA molecule. It also undergoes processing (in eukaryotes) and uses Uracil instead of Thymine.
+- Statement D is incorrect because B and C are incorrect.
+Therefore, statement A is the most correct description of mRNA's role in protein synthesis.",gemini:gemini-2.5-pro,13504,5.0,5.0,Correct,5.0,"Clarity: The question is clearly worded, and the options are distinct and unambiguous. The use of ""MOST CORRECT"" is appropriate for the nuances of the subject.
+Context Accuracy: The question is based on a fundamental and accurate concept in molecular biology—the central dogma and the role of mRNA in translation.
+Quality of Working: The generator's explanation is concise, accurate, and directly addresses why the correct option is correct by stating the function of mRNA's nucleotide sequence.
+Final Answer Accuracy: The generator correctly identifies option A as the answer, which aligns with established biological principles.","SYSTEM: You are a Grade 12 Biology teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 concise concept/application MCQ from: basic genetics (incl. Hardy–Weinberg), cell/tissue structure–function, or short ecology.
+• Use standard terminology; if arithmetic appears (e.g., allele frequency), keep numbers small and round to 2 decimals.
+• Distractors reflect common misconceptions (dominance ≠ frequency, misreading ratios/diagrams, DNA→RNA→Protein confusion).
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object.
+- Format:
+  [{""question"": ""..."", ""options"": [""..."",""..."",""..."",""...""], ""answer"": ""A"", ""solution"": ""...""}]
+- Fields:
+  * ""question"": one string.
+  * ""options"": array of 4 answer-choice strings.
+  * ""answer"": one of ""A"",""B"",""C"",""D"" (just the letter).
+  * ""solution"": short plain-text explanation (a few lines is fine).
+- No extra text before or after the JSON.
+- Do NOT use markdown, code fences, or LaTeX ($ or backslashes).
+USER: Topic: Biology. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: gene, separate, population, double-stranded, present, flies, ratio, fruit, certain, species, 0.4, single-stranded, expressed, effect, structure, occurs, distinct, hypothetical, system, frequency, expected, associated, genetic, that, 0.6, plants, organism, level, has, particular, type, recessive, single, allele, which, homozygous, masks, with, controlling, diploid, autosomal, biological, codes, sequence, individuals, converted, molecule, low, heterozygous, cell, where, individual, daughter, statements, mutation, scenario, not, following, and, from, division, characteristic, process, dominant, condense, for, chromosomes, dna, what, form, two, trait, seed, shape.
+- Do NOT print this list in the output."
+biology,llama,struktur1,11,7418,"In a certain tissue, a protein is produced when a specific combination of two regulatory elements is present.",The production of this protein is always on.,The presence of one regulatory element alone can trigger protein production.,The presence of both regulatory elements is necessary for protein production.,Protein production is never triggered in this tissue.,C,"The correct answer is C. In the presence of both regulatory elements, the combination triggers the production of the specific protein. The absence of either element would prevent protein production.","The question describes a scenario where protein production is conditional on the presence of a 'specific combination of two regulatory elements'. This implies a logical AND gate; both Element A AND Element B must be present for the outcome (protein production) to occur. Option A is incorrect because production is conditional, not constant. Option B is incorrect because it describes a logical OR gate (A or B). Option D is incorrect because the premise states production does happen. Option C correctly states that both elements are necessary, which aligns with the AND logic.",gemini:gemini-2.5-pro,20511,5.0,5.0,Correct,5.0,"Clarity: The question is very clear and uses simple, unambiguous language. The phrase 'combination of two' effectively communicates the requirement for both elements.
+Context Accuracy: The concept of combinatorial control, where multiple transcription factors binding to regulatory elements are required for gene expression, is a fundamental and accurate principle in molecular biology.
+Quality of Working: The generator's explanation is concise and logically sound. It correctly interprets the premise as a requirement for both elements to be present simultaneously.
+Final Answer Accuracy: The generator's answer (C) is correct, as it is the only option that accurately reflects the condition described in the question.","SYSTEM: You are a Grade 12 Biology teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 concise concept/application MCQ from: basic genetics (incl. Hardy–Weinberg), cell/tissue structure–function, or short ecology.
+• Use standard terminology; if arithmetic appears (e.g., allele frequency), keep numbers small and round to 2 decimals.
+• Distractors reflect common misconceptions (dominance ≠ frequency, misreading ratios/diagrams, DNA→RNA→Protein confusion).
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object.
+- Format:
+  [{""question"": ""..."", ""options"": [""..."",""..."",""..."",""...""], ""answer"": ""A"", ""solution"": ""...""}]
+- Fields:
+  * ""question"": one string.
+  * ""options"": array of 4 answer-choice strings.
+  * ""answer"": one of ""A"",""B"",""C"",""D"" (just the letter).
+  * ""solution"": short plain-text explanation (a few lines is fine).
+- No extra text before or after the JSON.
+- Do NOT use markdown, code fences, or LaTeX ($ or backslashes).
+USER: Topic: Biology. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: gene, separate, ratio, plants, has, particular, homozygous, controlling, biological, converted, heterozygous, statements, daughter, from, characteristic, dominant, for, form, two, seed, context, shape, through, rna, species, occurs, frequency, associated, type, single, sequence, molecule, where, following, and, dna, what, trait, population, single-stranded, effect, distinct, 0.6, organism, recessive, allele, mrna, autosomal, low, messenger, cell, individual, mutation, scenario, process, protein, condense, translation, double-stranded, present, flies, fruit, certain, 0.4, expressed, structure, hypothetical, system, expected, genetic, that, level, which, masks, with, diploid, codes, individuals, not, division, synthesized, chromosomes.
+- Do NOT print this list in the output."
+biology,llama,struktur1,12,9522,"In a certain organism, a recessive allele is present at a frequency of 0.3. What can be inferred about the genotype of an individual that expresses the trait?",The individual has two copies of the recessive allele.,The individual has one copy of the recessive allele and one copy of the dominant allele.,The individual does not express the trait because they have no copies of the recessive allele.,The individual's genotype is unknown without more information.,A,"Since the frequency of the recessive allele is 0.3, it means that 30% of the individuals in the population are homozygous recessive (rr). Since the individual expresses the trait, they must be rr, which means they have two copies of the recessive allele.","The question asks for the genotype of an individual expressing a trait caused by a recessive allele. By definition, a recessive trait is only expressed phenotypically if the individual is homozygous for that allele. This means their genotype must consist of two copies of the recessive allele. The provided allele frequency of 0.3 is extra information (a distractor) and is not needed to determine the genotype of an individual with a known phenotype for a simple Mendelian trait.",gemini:gemini-2.5-pro,25495,5.0,5.0,Correct,1.0,"Clarity: The question is well-phrased and unambiguous. The inclusion of the allele frequency is a fair distractor in a genetics context.
+Context Accuracy: The concepts of recessive alleles, genotypes, phenotypes, and allele frequency are standard and accurately used in this biological context.
+Quality of Working: The generator's reasoning is critically flawed. It incorrectly states that an allele frequency of 0.3 means 30% of the population is homozygous recessive. This confuses allele frequency (q) with genotype frequency (q^2). The correct genotype frequency would be (0.3)^2 = 0.09, or 9%.
+Final Answer Accuracy: Despite the flawed reasoning, the generator's final conclusion that the individual must have two copies of the recessive allele is correct.","SYSTEM: You are a Grade 12 Biology teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 concise concept/application MCQ from: basic genetics (incl. Hardy–Weinberg), cell/tissue structure–function, or short ecology.
+• Use standard terminology; if arithmetic appears (e.g., allele frequency), keep numbers small and round to 2 decimals.
+• Distractors reflect common misconceptions (dominance ≠ frequency, misreading ratios/diagrams, DNA→RNA→Protein confusion).
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object.
+- Format:
+  [{""question"": ""..."", ""options"": [""..."",""..."",""..."",""...""], ""answer"": ""A"", ""solution"": ""...""}]
+- Fields:
+  * ""question"": one string.
+  * ""options"": array of 4 answer-choice strings.
+  * ""answer"": one of ""A"",""B"",""C"",""D"" (just the letter).
+  * ""solution"": short plain-text explanation (a few lines is fine).
+- No extra text before or after the JSON.
+- Do NOT use markdown, code fences, or LaTeX ($ or backslashes).
+USER: Topic: Biology. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: gene, separate, ratio, plants, has, particular, homozygous, controlling, biological, converted, heterozygous, statements, elements, daughter, from, characteristic, dominant, for, form, two, seed, context, shape, through, rna, species, occurs, frequency, associated, type, single, sequence, molecule, where, following, and, dna, what, trait, specific, population, regulatory, single-stranded, effect, distinct, 0.6, organism, recessive, allele, mrna, autosomal, low, messenger, cell, individual, mutation, scenario, process, protein, condense, translation, double-stranded, present, flies, fruit, certain, 0.4, expressed, structure, hypothetical, system, expected, genetic, that, level, which, masks, with, diploid, codes, individuals, when, not, division, synthesized, chromosomes, combination, produced, tissue.
+- Do NOT print this list in the output."
+biology,llama,struktur1,13,7432,"In a diploid organism, what is the expected number of copies of a given autosomal factor if the Hardy-Weinberg equilibrium is maintained?",0.3,0.4,1.0,2.0,C,"In a diploid organism, each individual has two copies of every autosomal factor. At Hardy-Weinberg equilibrium, the frequency of the autosomal factor remains constant from one generation to the next. Therefore, the expected number of copies is 2.","A diploid organism, by definition, has two sets of chromosomes. For any gene located on an autosome (a non-sex chromosome), an individual will have two copies of that gene, one on each homologous chromosome. The term 'factor' is an older term for a gene. The Hardy-Weinberg equilibrium principle concerns the stability of allele and genotype frequencies in a population over generations; it does not change the ploidy or the number of gene copies within an individual. Therefore, the number of copies is a constant 2 for any such individual, and the expected value of a constant is the constant itself.",gemini:gemini-2.5-pro,39594,2.0,5.0,Incorrect,5.0,"Clarity: The question is poorly phrased. ""Expected number"" is confusing when the value is a constant (2). The inclusion of ""Hardy-Weinberg equilibrium"" is a distractor that adds no value and could mislead students into a more complex, incorrect calculation.
+Context Accuracy: The underlying biological concepts (diploid organism, autosomal factor, HWE) are standard and correctly invoked in the premise.
+Quality of Working: The generator's reasoning is sound. It correctly identifies that a diploid organism has two copies of an autosomal gene and that HWE is irrelevant to this fact. However, its conclusion of '2' corresponds to option D, not the provided key C.
+Final Answer Accuracy: The generator's reasoning leads to the answer 2.0 (Option D), which is the correct biological answer. However, the provided key is C (1.0). The generator's solution does not match the provided key, making it 'Incorrect' in the context of solving for the given key, despite the key itself being wrong.","SYSTEM: You are a Grade 12 Biology teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 concise concept/application MCQ from: basic genetics (incl. Hardy–Weinberg), cell/tissue structure–function, or short ecology.
+• Use standard terminology; if arithmetic appears (e.g., allele frequency), keep numbers small and round to 2 decimals.
+• Distractors reflect common misconceptions (dominance ≠ frequency, misreading ratios/diagrams, DNA→RNA→Protein confusion).
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object.
+- Format:
+  [{""question"": ""..."", ""options"": [""..."",""..."",""..."",""...""], ""answer"": ""A"", ""solution"": ""...""}]
+- Fields:
+  * ""question"": one string.
+  * ""options"": array of 4 answer-choice strings.
+  * ""answer"": one of ""A"",""B"",""C"",""D"" (just the letter).
+  * ""solution"": short plain-text explanation (a few lines is fine).
+- No extra text before or after the JSON.
+- Do NOT use markdown, code fences, or LaTeX ($ or backslashes).
+USER: Topic: Biology. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: gene, separate, ratio, plants, has, particular, homozygous, controlling, biological, converted, heterozygous, statements, elements, daughter, from, characteristic, dominant, for, form, two, seed, context, shape, through, rna, species, occurs, frequency, associated, type, single, sequence, molecule, where, following, and, dna, what, trait, specific, population, regulatory, single-stranded, effect, distinct, 0.6, organism, recessive, allele, mrna, autosomal, low, messenger, cell, individual, mutation, scenario, process, protein, condense, translation, can, double-stranded, present, flies, fruit, certain, 0.4, expressed, structure, hypothetical, system, expected, genetic, that, level, 0.3, which, masks, with, diploid, codes, individuals, when, not, division, synthesized, chromosomes, combination, produced, tissue, inferred.
+- Do NOT print this list in the output."
+biology,llama,struktur1,14,9292,"In a diploid organism, what is the expected outcome of meiosis if both parents have a genotype of 'Tt' for a particular trait?",A) All offspring will be TT,B) Half of the offspring will be Tt and half will be tt,C) All offspring will be tt,"D) The offspring will be a mix of TT, Tt, and tt",B,"Meiosis in this diploid organism will result in a 1:1 ratio of Tt to tt offspring. Since both parents are heterozygous for the trait (Tt), they can only pass on one of their two alleles to each offspring, resulting in a mix of Tt and tt genotypes.","This question describes a classic Mendelian monohybrid cross between two heterozygous parents (Tt x Tt). Each parent can produce gametes containing either a 'T' allele or a 't' allele. A Punnett square can be used to determine the genotypes of the offspring.
+
+      T    t
+    +----+
+  T | TT | Tt |
+    +----+
+  t | Tt | tt |
+    +----+
+
+The resulting genotypic ratio is 1 TT : 2 Tt : 1 tt. Therefore, the offspring will be a mix of all three genotypes: TT, Tt, and tt.",gemini:gemini-2.5-pro,15982,4.0,5.0,Incorrect,0.0,"Clarity: The question is slightly imprecise. It asks for the 'outcome of meiosis', but meiosis produces gametes, not offspring. The question is actually asking about the outcome of fertilization following meiosis (a genetic cross).
+
+Context Accuracy: The context is a standard, conceptually correct Mendelian genetics problem involving a monohybrid cross.
+
+Quality of Working: The generator's reasoning is fundamentally flawed. It describes the outcome of a Tt x tt cross (a 1:1 ratio of Tt:tt), not the Tt x Tt cross specified in the question. The logic does not support the correct answer.
+
+Final Answer Accuracy: The generator's solution supports option B, which is incorrect. The correct outcome is a 1:2:1 ratio of TT:Tt:tt, which is best described by option D.","SYSTEM: You are a Grade 12 Biology teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 concise concept/application MCQ from: basic genetics (incl. Hardy–Weinberg), cell/tissue structure–function, or short ecology.
+• Use standard terminology; if arithmetic appears (e.g., allele frequency), keep numbers small and round to 2 decimals.
+• Distractors reflect common misconceptions (dominance ≠ frequency, misreading ratios/diagrams, DNA→RNA→Protein confusion).
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object.
+- Format:
+  [{""question"": ""..."", ""options"": [""..."",""..."",""..."",""...""], ""answer"": ""A"", ""solution"": ""...""}]
+- Fields:
+  * ""question"": one string.
+  * ""options"": array of 4 answer-choice strings.
+  * ""answer"": one of ""A"",""B"",""C"",""D"" (just the letter).
+  * ""solution"": short plain-text explanation (a few lines is fine).
+- No extra text before or after the JSON.
+- Do NOT use markdown, code fences, or LaTeX ($ or backslashes).
+USER: Topic: Biology. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: gene, separate, ratio, plants, has, particular, number, homozygous, controlling, biological, converted, heterozygous, statements, elements, daughter, from, characteristic, dominant, for, form, two, hardy-weinberg, seed, context, shape, through, rna, species, occurs, frequency, associated, given, type, single, sequence, molecule, where, following, and, dna, what, trait, specific, population, regulatory, single-stranded, effect, distinct, 0.6, organism, recessive, allele, mrna, autosomal, low, messenger, cell, individual, mutation, scenario, process, protein, condense, translation, copies, can, double-stranded, present, flies, fruit, certain, 0.4, expressed, structure, hypothetical, system, expected, genetic, that, level, 0.3, which, masks, with, diploid, codes, individuals, when, not, division, factor, synthesized, chromosomes, combination, produced, tissue, inferred.
+- Do NOT print this list in the output."
+biology,llama,struktur1,15,8017,"In a cell membrane, phospholipids have their hydrophilic heads facing outwards and their hydrophobic tails facing towards what?",the cytoplasm,the nucleus,the mitochondria,the Golgi apparatus,A,"Phospholipids are amphipathic molecules with both hydrophilic (polar) and hydrophobic (non-polar) regions. In a cell membrane, the hydrophilic heads of phospholipids face outwards towards the surrounding medium, while their hydrophobic tails face towards the cytoplasm.","A cell membrane consists of a phospholipid bilayer. The hydrophilic (water-loving) heads of the outer layer face the extracellular fluid, and the heads of the inner layer face the cytoplasm. The hydrophobic (water-fearing) tails of both layers face inward, towards each other. This creates a non-polar core, shielded from the aqueous environments on both sides. Therefore, the tails do not directly face the cytoplasm. The question is poorly phrased, but given the options, 'the cytoplasm' is the only one that refers to the internal environment of the cell, which the tails are oriented towards, relative to the outside.",gemini:gemini-2.5-pro,31913,2.0,2.5,Correct,1.0,"Clarity: The question is poorly worded. The hydrophobic tails don't 'face' the cytoplasm; they face each other, forming the membrane's core. This phrasing is confusing and technically inaccurate.
+Context Accuracy: The question misrepresents the fine structure of the cell membrane. The inner layer of hydrophilic heads, not the hydrophobic tails, directly faces the cytoplasm.
+Quality of Working: The generator's explanation is factually incorrect. It repeats the flawed premise of the question by stating that the tails face the cytoplasm, which is a fundamental misunderstanding of the phospholipid bilayer structure.
+Final Answer Accuracy: The generator's answer 'A' aligns with the provided key. Despite the flawed premise of the question and the incorrect reasoning, this is the most likely intended answer in a simplified biological context.","SYSTEM: You are a Grade 12 Biology teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 concise concept/application MCQ from: basic genetics (incl. Hardy–Weinberg), cell/tissue structure–function, or short ecology.
+• Use standard terminology; if arithmetic appears (e.g., allele frequency), keep numbers small and round to 2 decimals.
+• Distractors reflect common misconceptions (dominance ≠ frequency, misreading ratios/diagrams, DNA→RNA→Protein confusion).
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object.
+- Format:
+  [{""question"": ""..."", ""options"": [""..."",""..."",""..."",""...""], ""answer"": ""A"", ""solution"": ""...""}]
+- Fields:
+  * ""question"": one string.
+  * ""options"": array of 4 answer-choice strings.
+  * ""answer"": one of ""A"",""B"",""C"",""D"" (just the letter).
+  * ""solution"": short plain-text explanation (a few lines is fine).
+- No extra text before or after the JSON.
+- Do NOT use markdown, code fences, or LaTeX ($ or backslashes).
+USER: Topic: Biology. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: gene, separate, ratio, plants, has, particular, number, both, homozygous, controlling, biological, converted, heterozygous, statements, elements, daughter, from, characteristic, dominant, for, form, two, hardy-weinberg, seed, context, shape, through, parents, rna, species, occurs, frequency, associated, given, type, single, have, genotype, sequence, molecule, where, following, and, dna, what, trait, specific, population, regulatory, outcome, single-stranded, effect, distinct, 0.6, organism, recessive, allele, mrna, autosomal, low, messenger, cell, individual, mutation, scenario, process, protein, condense, translation, copies, can, double-stranded, present, flies, fruit, certain, 0.4, expressed, structure, hypothetical, system, meiosis, expected, genetic, that, level, 0.3, which, masks, with, diploid, codes, individuals, when, not, division, factor, synthesized, chromosomes, combination, produced, tissue, inferred.
+- Do NOT print this list in the output."
+biology,llama,struktur1,16,6765,"In a cell, what is the primary function of the cytoskeleton?",To synthesize proteins,To provide structural support and mechanical strength,To facilitate cellular respiration,To regulate gene expression,B,"The cytoskeleton provides structural support and mechanical strength to the cell, allowing it to maintain its shape and withstand external forces. It also plays a role in cell division, migration, and signaling.","The question asks for the primary function of the cytoskeleton. The cytoskeleton is a network of protein filaments (microtubules, microfilaments, intermediate filaments) that provides a structural framework for the cell. Its main roles are maintaining cell shape, providing mechanical strength, and anchoring organelles. Option B accurately describes this. The other options are incorrect: protein synthesis is done by ribosomes (A), cellular respiration by mitochondria (C), and gene expression is regulated in the nucleus (D). Therefore, option B is the correct answer.",gemini:gemini-2.5-pro,12731,5.0,5.0,Correct,5.0,"Clarity: The question is clear, direct, and uses standard biological terminology. The options are distinct and unambiguous.
+Context Accuracy: The question is factually correct. The functions described in the options are all real cellular processes, making the distractors plausible but incorrect.
+Quality of Working: The generator's explanation is excellent. It correctly states the primary function and elaborates with other key roles, providing a thorough and accurate justification for the answer.
+Final Answer Accuracy: The generator's key (B) is correct, and the supporting explanation is accurate.","SYSTEM: You are a Grade 12 Biology teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 concise concept/application MCQ from: basic genetics (incl. Hardy–Weinberg), cell/tissue structure–function, or short ecology.
+• Use standard terminology; if arithmetic appears (e.g., allele frequency), keep numbers small and round to 2 decimals.
+• Distractors reflect common misconceptions (dominance ≠ frequency, misreading ratios/diagrams, DNA→RNA→Protein confusion).
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object.
+- Format:
+  [{""question"": ""..."", ""options"": [""..."",""..."",""..."",""...""], ""answer"": ""A"", ""solution"": ""...""}]
+- Fields:
+  * ""question"": one string.
+  * ""options"": array of 4 answer-choice strings.
+  * ""answer"": one of ""A"",""B"",""C"",""D"" (just the letter).
+  * ""solution"": short plain-text explanation (a few lines is fine).
+- No extra text before or after the JSON.
+- Do NOT use markdown, code fences, or LaTeX ($ or backslashes).
+USER: Topic: Biology. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: gene, separate, ratio, plants, has, particular, number, both, homozygous, controlling, biological, converted, heterozygous, statements, elements, daughter, membrane, from, characteristic, dominant, for, form, two, phospholipids, hardy-weinberg, seed, context, shape, through, parents, rna, species, occurs, frequency, associated, given, type, single, have, genotype, sequence, molecule, where, following, and, dna, what, trait, their, specific, population, hydrophilic, regulatory, outcome, single-stranded, effect, facing, distinct, 0.6, organism, recessive, allele, mrna, autosomal, low, messenger, cell, individual, mutation, scenario, process, protein, condense, heads, translation, copies, outwards, can, double-stranded, present, flies, fruit, certain, 0.4, expressed, structure, hypothetical, system, meiosis, expected, genetic, that, level, 0.3, which, masks, with, diploid, codes, individuals, when, not, division, factor, synthesized, chromosomes, combination, produced, tissue, inferred.
+- Do NOT print this list in the output."
+biology,llama,struktur1,17,7834,"In a cell, what is the main function of microtubules?",To provide mechanical support,To synthesize proteins,To transport organelles,To control cell division,C,"Microtubules are one of the three main components of the cytoskeleton, along with microfilaments and intermediate filaments. They play a crucial role in organizing the cytoplasm and providing mechanical support to the cell. Microtubules also help transport organelles and vesicles within the cell.","Microtubules have several major functions within a cell. They provide mechanical support and shape (Option A), act as tracks for intracellular transport of organelles by motor proteins (Option C), and form the mitotic spindle essential for chromosome separation during cell division (Option D). Protein synthesis (Option B) is performed by ribosomes. The question asks for the *main* function, which is ambiguous as all three (A, C, D) are critical. However, intracellular transport is a continuous and defining dynamic activity in most cells during interphase, making it a strong candidate for the 'main' function in a general context. Therefore, C is the most likely intended answer.",gemini:gemini-2.5-pro,30032,2.5,5.0,Incorrect,1.0,"Clarity: The question is ambiguous because it asks for the 'main' function, but microtubules have multiple, equally vital functions. Options A, C, and D are all correct descriptions of major microtubule roles, making the choice subjective.
+Context Accuracy: The biological context and the functions listed in the options are all accurate and relevant to cell biology.
+Quality of Working: The generator's solution is a partial description of microtubule functions, not a solution to the MCQ. It fails to select an answer or justify why one option is better than the others. It also omits the critical function of cell division (Option D).
+Final Answer Accuracy: The generator did not provide a final answer choice (A, B, C, or D). It only gave a descriptive text. The provided key was C, but the generator's text does not select C, thus it fails to answer the question.","SYSTEM: You are a Grade 12 Biology teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 concise concept/application MCQ from: basic genetics (incl. Hardy–Weinberg), cell/tissue structure–function, or short ecology.
+• Use standard terminology; if arithmetic appears (e.g., allele frequency), keep numbers small and round to 2 decimals.
+• Distractors reflect common misconceptions (dominance ≠ frequency, misreading ratios/diagrams, DNA→RNA→Protein confusion).
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object.
+- Format:
+  [{""question"": ""..."", ""options"": [""..."",""..."",""..."",""...""], ""answer"": ""A"", ""solution"": ""...""}]
+- Fields:
+  * ""question"": one string.
+  * ""options"": array of 4 answer-choice strings.
+  * ""answer"": one of ""A"",""B"",""C"",""D"" (just the letter).
+  * ""solution"": short plain-text explanation (a few lines is fine).
+- No extra text before or after the JSON.
+- Do NOT use markdown, code fences, or LaTeX ($ or backslashes).
+USER: Topic: Biology. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: gene, separate, cytoskeleton, ratio, plants, has, particular, number, both, homozygous, controlling, biological, converted, heterozygous, statements, elements, daughter, membrane, from, characteristic, dominant, for, primary, form, two, phospholipids, hardy-weinberg, seed, context, shape, through, parents, rna, species, occurs, frequency, associated, given, type, single, have, genotype, sequence, molecule, where, following, and, dna, what, trait, their, specific, population, hydrophilic, regulatory, outcome, single-stranded, effect, facing, distinct, 0.6, organism, recessive, allele, mrna, autosomal, low, messenger, cell, individual, mutation, scenario, process, protein, condense, function, heads, translation, copies, outwards, can, double-stranded, present, flies, fruit, certain, 0.4, expressed, structure, hypothetical, system, meiosis, expected, genetic, that, level, 0.3, which, masks, with, diploid, codes, individuals, when, not, division, factor, synthesized, chromosomes, combination, produced, tissue, inferred.
+- Do NOT print this list in the output."
+biology,llama,struktur1,18,6561,"In a eukaryotic cell, what is the primary function of the nuclear envelope?",To provide structural support,To regulate protein synthesis,To facilitate DNA replication,To maintain cellular organization,A,"The nuclear envelope plays a crucial role in maintaining the integrity and organization of the nucleus. It regulates what enters and leaves the nucleus, controlling access to genetic material.","The primary function of the nuclear envelope is to create a distinct compartment for the cell's genetic material, separating the nucleoplasm from the cytoplasm. This compartmentalization is a key aspect of maintaining cellular organization (Option D) and allows for the crucial separation of transcription (inside the nucleus) and translation (in the cytoplasm). The envelope, along with the associated nuclear lamina, also provides structural support (Option A) and its pores regulate molecular transport. Between the choices, compartmentalization (D) is arguably a more fundamental or primary role than structural support (A). Therefore, option D is the best answer.",gemini:gemini-2.5-pro,35700,3.5,5.0,Incorrect,4.5,"Clarity: The question is clearly phrased, but the term ""primary function"" is ambiguous. Both options A (structural support) and D (maintaining organization) represent major, fundamental functions, making the question poorly designed with a debatable correct answer.
+Context Accuracy: The question is based on accurate and fundamental concepts in eukaryotic cell biology. The options describe real functions or processes related to the nucleus.
+Quality of Working: The generator's explanation is a correct and concise summary of the nuclear envelope's roles. It accurately describes maintaining integrity, organization, and regulating transport. However, it doesn't provide a strong justification for why A would be the *primary* function over others.
+Final Answer Accuracy: The provided key is A. The most fundamental function of the nuclear envelope is compartmentalization, which is best described by option D (""To maintain cellular organization""). While structural support (A) is a critical function, it is generally considered secondary to the role of separating nuclear and cytoplasmic processes. Therefore, the key is incorrect.","SYSTEM: You are a Grade 12 Biology teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 concise concept/application MCQ from: basic genetics (incl. Hardy–Weinberg), cell/tissue structure–function, or short ecology.
+• Use standard terminology; if arithmetic appears (e.g., allele frequency), keep numbers small and round to 2 decimals.
+• Distractors reflect common misconceptions (dominance ≠ frequency, misreading ratios/diagrams, DNA→RNA→Protein confusion).
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object.
+- Format:
+  [{""question"": ""..."", ""options"": [""..."",""..."",""..."",""...""], ""answer"": ""A"", ""solution"": ""...""}]
+- Fields:
+  * ""question"": one string.
+  * ""options"": array of 4 answer-choice strings.
+  * ""answer"": one of ""A"",""B"",""C"",""D"" (just the letter).
+  * ""solution"": short plain-text explanation (a few lines is fine).
+- No extra text before or after the JSON.
+- Do NOT use markdown, code fences, or LaTeX ($ or backslashes).
+USER: Topic: Biology. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: gene, separate, cytoskeleton, ratio, microtubules, plants, has, particular, main, number, both, homozygous, controlling, biological, converted, heterozygous, statements, elements, daughter, membrane, from, characteristic, dominant, for, primary, form, two, phospholipids, hardy-weinberg, seed, context, shape, through, parents, rna, species, occurs, frequency, associated, given, type, single, have, genotype, sequence, molecule, where, following, and, dna, what, trait, their, specific, population, hydrophilic, regulatory, outcome, single-stranded, effect, facing, distinct, 0.6, organism, recessive, allele, mrna, autosomal, low, messenger, cell, individual, mutation, scenario, process, protein, condense, function, heads, translation, copies, outwards, can, double-stranded, present, flies, fruit, certain, 0.4, expressed, structure, hypothetical, system, meiosis, expected, genetic, that, level, 0.3, which, masks, with, diploid, codes, individuals, when, not, division, factor, synthesized, chromosomes, combination, produced, tissue, inferred.
+- Do NOT print this list in the output."
+biology,llama,struktur1,19,7240,"In a cell, what is the primary function of the intermediate filaments?",To provide structural support and mechanical strength,To facilitate protein synthesis and translation,To regulate gene expression and transcription,To generate energy for cellular processes,A,"Intermediate filaments are a type of cytoskeletal element that provides structural support and mechanical strength to the cell. They help maintain cell shape, withstand mechanical stress, and play a crucial role in maintaining tissue integrity.","The question asks for the primary function of intermediate filaments. These are one of the three main components of the cytoskeleton in animal cells. Their main role is to provide tensile strength and mechanical support, helping the cell resist physical stress. Option A correctly identifies this function. Option B describes the role of ribosomes. Option C relates to transcription factors and nuclear regulation. Option D is the function of mitochondria. Therefore, A is the correct answer.",gemini:gemini-2.5-pro,12117,5.0,5.0,Correct,5.0,"Clarity: The question is clear, concise, and well-posed. The options are distinct and represent major, non-overlapping cellular functions.
+Context Accuracy: The question and all options are biologically accurate concepts. The premise is a fundamental topic in cell biology.
+Quality of Working: The generator's explanation is excellent. It correctly identifies intermediate filaments as cytoskeletal elements and accurately describes their role in providing structural support and mechanical strength.
+Final Answer Accuracy: The generator's key (A) is correct.","SYSTEM: You are a Grade 12 Biology teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 concise concept/application MCQ from: basic genetics (incl. Hardy–Weinberg), cell/tissue structure–function, or short ecology.
+• Use standard terminology; if arithmetic appears (e.g., allele frequency), keep numbers small and round to 2 decimals.
+• Distractors reflect common misconceptions (dominance ≠ frequency, misreading ratios/diagrams, DNA→RNA→Protein confusion).
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object.
+- Format:
+  [{""question"": ""..."", ""options"": [""..."",""..."",""..."",""...""], ""answer"": ""A"", ""solution"": ""...""}]
+- Fields:
+  * ""question"": one string.
+  * ""options"": array of 4 answer-choice strings.
+  * ""answer"": one of ""A"",""B"",""C"",""D"" (just the letter).
+  * ""solution"": short plain-text explanation (a few lines is fine).
+- No extra text before or after the JSON.
+- Do NOT use markdown, code fences, or LaTeX ($ or backslashes).
+USER: Topic: Biology. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: gene, separate, cytoskeleton, ratio, microtubules, plants, has, particular, main, number, both, homozygous, controlling, biological, converted, heterozygous, statements, elements, daughter, membrane, from, characteristic, dominant, eukaryotic, for, primary, form, two, phospholipids, hardy-weinberg, seed, context, shape, through, parents, rna, species, occurs, frequency, associated, given, type, single, have, nuclear, genotype, sequence, molecule, where, following, and, dna, what, trait, their, specific, population, hydrophilic, regulatory, outcome, single-stranded, effect, facing, distinct, 0.6, organism, recessive, allele, mrna, autosomal, low, messenger, cell, individual, mutation, scenario, process, protein, envelope, condense, function, heads, translation, copies, outwards, can, double-stranded, present, flies, fruit, certain, 0.4, expressed, structure, hypothetical, system, meiosis, expected, genetic, that, level, 0.3, which, masks, with, diploid, codes, individuals, when, not, division, factor, synthesized, chromosomes, combination, produced, tissue, inferred.
+- Do NOT print this list in the output."
+biology,llama,struktur1,20,7235,"In a eukaryotic cell, what is the primary function of the centriole?",To synthesize proteins,To regulate cellular metabolism,To organize microtubules and facilitate cell division,To store genetic information,C,"Centrioles are small, cylindrical structures found near the nucleus in eukaryotic cells. Their primary function is to organize microtubules and play a crucial role in the separation of chromosomes during mitosis and meiosis.","The question asks for the primary function of the centriole. I will evaluate each option. Protein synthesis is done by ribosomes. Cellular metabolism is regulated by many components, but not primarily centrioles. Storing genetic information is the function of the nucleus. Centrioles are the core of the centrosome, which acts as the microtubule-organizing center, forming the spindle fibers essential for chromosome separation during cell division. Therefore, option C is the correct answer.",gemini:gemini-2.5-pro,23376,5.0,5.0,Correct,5.0,"Clarity: The question is clear, specific, and uses standard biological terminology. The options are distinct and unambiguous.
+Context Accuracy: The question and options are factually accurate within the context of eukaryotic cell biology.
+Quality of Working: The generator's explanation is concise and correctly identifies the role of centrioles in organizing microtubules for cell division, which directly supports the correct answer.
+Final Answer Accuracy: The generator's reasoning correctly identifies the function of the centriole, aligning with the provided key (C).","SYSTEM: You are a Grade 12 Biology teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 concise concept/application MCQ from: basic genetics (incl. Hardy–Weinberg), cell/tissue structure–function, or short ecology.
+• Use standard terminology; if arithmetic appears (e.g., allele frequency), keep numbers small and round to 2 decimals.
+• Distractors reflect common misconceptions (dominance ≠ frequency, misreading ratios/diagrams, DNA→RNA→Protein confusion).
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object.
+- Format:
+  [{""question"": ""..."", ""options"": [""..."",""..."",""..."",""...""], ""answer"": ""A"", ""solution"": ""...""}]
+- Fields:
+  * ""question"": one string.
+  * ""options"": array of 4 answer-choice strings.
+  * ""answer"": one of ""A"",""B"",""C"",""D"" (just the letter).
+  * ""solution"": short plain-text explanation (a few lines is fine).
+- No extra text before or after the JSON.
+- Do NOT use markdown, code fences, or LaTeX ($ or backslashes).
+USER: Topic: Biology. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: gene, separate, cytoskeleton, ratio, microtubules, plants, has, particular, main, number, both, homozygous, controlling, biological, converted, heterozygous, statements, elements, daughter, membrane, from, characteristic, dominant, eukaryotic, for, primary, form, two, phospholipids, hardy-weinberg, seed, context, shape, through, parents, rna, species, occurs, frequency, associated, given, intermediate, type, single, have, nuclear, genotype, sequence, molecule, where, following, and, dna, what, trait, their, specific, population, hydrophilic, regulatory, outcome, single-stranded, effect, facing, distinct, 0.6, organism, recessive, allele, mrna, filaments, autosomal, low, messenger, cell, individual, mutation, scenario, process, protein, envelope, condense, function, heads, translation, copies, outwards, can, double-stranded, present, flies, fruit, certain, 0.4, expressed, structure, hypothetical, system, meiosis, expected, genetic, that, level, 0.3, which, masks, with, diploid, codes, individuals, when, not, division, factor, synthesized, chromosomes, combination, produced, tissue, inferred.
+- Do NOT print this list in the output."
+biology,llama,struktur1,21,6855,"In a eukaryotic cell, what is the main function of the centriole?",To synthesize proteins,To regulate cell division,To provide structural support,To facilitate cellular transport,C,"The centriole plays a crucial role in the formation of cilia and flagella, providing structural support to these organelles. It is not involved in protein synthesis, regulating cell division, or facilitating cellular transport.","The main function of the centriole, as part of the centrosome in animal cells, is to organize microtubules. This is most critical during cell division (mitosis), where centrioles organize the mitotic spindle that separates chromosomes. Therefore, their primary function relates to cell division. While they also form the basal bodies of cilia and flagella, which is a structural role, their function in cell division is more central and universal for dividing animal cells. Option B, 'To regulate cell division', is the best description of this primary role among the choices.",gemini:gemini-2.5-pro,36568,4.0,2.0,Incorrect,0.0,"Clarity: The question and options are worded clearly. However, the question is somewhat ambiguous because centrioles have roles related to both cell division (B) and structural support (C), making it difficult to select the single 'main' function.
+Context Accuracy: The question is about a real organelle, but the provided key (C) is highly debatable. The most widely taught primary function of centrioles is their role in organizing the mitotic spindle, which is central to cell division (B). The generator's focus on a secondary function is misleading.
+Quality of Working: The generator's reasoning is fundamentally flawed. It incorrectly claims that the centriole is 'not involved in... regulating cell division'. This is a major error in basic cell biology, as organizing the mitotic spindle is a key function.
+Final Answer Accuracy: The generator's choice of C is incorrect. The role of centrioles in cell division (B) is considered more primary and fundamental than their structural role in cilia/flagella. The generator's justification is based on a false premise.","SYSTEM: You are a Grade 12 Biology teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 concise concept/application MCQ from: basic genetics (incl. Hardy–Weinberg), cell/tissue structure–function, or short ecology.
+• Use standard terminology; if arithmetic appears (e.g., allele frequency), keep numbers small and round to 2 decimals.
+• Distractors reflect common misconceptions (dominance ≠ frequency, misreading ratios/diagrams, DNA→RNA→Protein confusion).
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object.
+- Format:
+  [{""question"": ""..."", ""options"": [""..."",""..."",""..."",""...""], ""answer"": ""A"", ""solution"": ""...""}]
+- Fields:
+  * ""question"": one string.
+  * ""options"": array of 4 answer-choice strings.
+  * ""answer"": one of ""A"",""B"",""C"",""D"" (just the letter).
+  * ""solution"": short plain-text explanation (a few lines is fine).
+- No extra text before or after the JSON.
+- Do NOT use markdown, code fences, or LaTeX ($ or backslashes).
+USER: Topic: Biology. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: gene, separate, cytoskeleton, ratio, microtubules, plants, has, particular, main, number, both, homozygous, controlling, biological, converted, heterozygous, statements, elements, daughter, membrane, from, characteristic, dominant, eukaryotic, for, primary, form, two, phospholipids, hardy-weinberg, seed, context, shape, through, parents, rna, species, occurs, frequency, associated, given, intermediate, type, single, have, nuclear, genotype, sequence, molecule, where, following, and, dna, what, trait, their, specific, population, hydrophilic, regulatory, outcome, single-stranded, effect, facing, centriole, distinct, 0.6, organism, recessive, allele, mrna, filaments, autosomal, low, messenger, cell, individual, mutation, scenario, process, protein, envelope, condense, function, heads, translation, copies, outwards, can, double-stranded, present, flies, fruit, certain, 0.4, expressed, structure, hypothetical, system, meiosis, expected, genetic, that, level, 0.3, which, masks, with, diploid, codes, individuals, when, not, division, factor, synthesized, chromosomes, combination, produced, tissue, inferred.
+- Do NOT print this list in the output."
+biology,llama,struktur1,22,6760,"In a certain type of cell, the centriole is surrounded by a structure composed of microfilaments and...",a dense bundle of fibers,a protein-rich matrix,a network of actin filaments,a layer of lipids,C,"The correct answer is 'a network of actin filaments'. The centriole is surrounded by a structure called the pericentriolar material, which is composed of microfilaments and other proteins.","The question asks to identify a component of the structure surrounding a centriole, given that it's also composed of microfilaments. The structure surrounding the centrioles is the pericentriolar material (PCM), which forms the centrosome. The PCM is a dense, amorphous matrix of proteins, primarily responsible for nucleating microtubules. It is not primarily composed of microfilaments (actin filaments). Therefore, the premise of the question is biologically inaccurate. Furthermore, since microfilaments ARE a network of actin filaments, option C is redundant with the premise, making the question logically incoherent (e.g., 'composed of A and A'). Option B, 'a protein-rich matrix', is the most accurate description of the PCM, but it contradicts the flawed premise. The question is fundamentally unanswerable and flawed.",gemini:gemini-2.5-pro,26224,1.0,1.0,Correct,0.5,"Clarity: The question is extremely unclear because 'microfilaments' and 'a network of actin filaments' (option C) refer to the same thing. This makes the question's structure ('composed of X and Y') nonsensical if Y is just another name for X.
+Context Accuracy: The premise is factually incorrect. The pericentriolar material (PCM) that surrounds the centriole is a protein-rich matrix, not a structure primarily 'composed of microfilaments'.
+Quality of Working: The generator's explanation is also factually incorrect. It claims the pericentriolar material is 'composed of microfilaments and other proteins', which perpetuates the flawed premise of the question rather than providing a correct biological explanation.
+Final Answer Accuracy: The generator's answer matches the provided key. However, both the question and the intended answer are based on a flawed and nonsensical premise.","SYSTEM: You are a Grade 12 Biology teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 concise concept/application MCQ from: basic genetics (incl. Hardy–Weinberg), cell/tissue structure–function, or short ecology.
+• Use standard terminology; if arithmetic appears (e.g., allele frequency), keep numbers small and round to 2 decimals.
+• Distractors reflect common misconceptions (dominance ≠ frequency, misreading ratios/diagrams, DNA→RNA→Protein confusion).
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object.
+- Format:
+  [{""question"": ""..."", ""options"": [""..."",""..."",""..."",""...""], ""answer"": ""A"", ""solution"": ""...""}]
+- Fields:
+  * ""question"": one string.
+  * ""options"": array of 4 answer-choice strings.
+  * ""answer"": one of ""A"",""B"",""C"",""D"" (just the letter).
+  * ""solution"": short plain-text explanation (a few lines is fine).
+- No extra text before or after the JSON.
+- Do NOT use markdown, code fences, or LaTeX ($ or backslashes).
+USER: Topic: Biology. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: gene, separate, cytoskeleton, ratio, microtubules, plants, has, particular, main, number, both, homozygous, controlling, biological, converted, heterozygous, statements, elements, daughter, membrane, from, characteristic, dominant, eukaryotic, for, primary, form, two, phospholipids, hardy-weinberg, seed, context, shape, through, parents, rna, species, occurs, frequency, associated, given, intermediate, type, single, have, nuclear, genotype, sequence, molecule, where, following, and, dna, what, trait, their, specific, population, hydrophilic, regulatory, outcome, single-stranded, effect, facing, centriole, distinct, 0.6, organism, recessive, allele, mrna, filaments, autosomal, low, messenger, cell, individual, mutation, scenario, process, protein, envelope, condense, function, heads, translation, copies, outwards, can, double-stranded, present, flies, fruit, certain, 0.4, expressed, structure, hypothetical, system, meiosis, expected, genetic, that, level, 0.3, which, masks, with, diploid, codes, individuals, when, not, division, factor, synthesized, chromosomes, combination, produced, tissue, inferred.
+- Do NOT print this list in the output."
+biology,llama,struktur1,23,7181,"In a given cell type, a protein is synthesized only when a specific set of instructions is received from the nucleus. Which organelle is responsible for receiving and interpreting these instructions?",Mitochondria,Endoplasmic reticulum,Lysosome,Golgi apparatus,B,"The endoplasmic reticulum receives and interprets the instructions from the nucleus, which are then used to synthesize proteins. This process is called protein synthesis.","The process described is protein synthesis. Instructions from the nucleus are transcribed from DNA into messenger RNA (mRNA). The mRNA molecule then exits the nucleus and travels to the cytoplasm. There, it binds to a ribosome, which reads the mRNA sequence and synthesizes a protein. Many ribosomes are attached to the surface of the rough endoplasmic reticulum (RER). Therefore, of the organelles listed, the endoplasmic reticulum is the site where these nuclear instructions are received and used to synthesize many of the cell's proteins.",gemini:gemini-2.5-pro,17776,4.0,5.0,Correct,3.5,"Clarity: The question is slightly imprecise. Ribosomes are the structures that 'interpret' the instructions (mRNA), not the ER organelle as a whole. However, since many ribosomes are bound to the ER, it is the best choice among the given options.
+Context Accuracy: The question is based on a fundamental and accurate concept in cell biology—the pathway of information from the nucleus to protein synthesis machinery in the cytoplasm.
+Quality of Working: The generator's explanation is correct but overly simplistic. It mirrors the imprecision of the question by stating the ER 'interprets' the instructions, without mentioning the critical role of the ribosomes located on the ER.
+Final Answer Accuracy: The generator's choice of B, the endoplasmic reticulum, is the correct answer in the context of a typical biology MCQ.","SYSTEM: You are a Grade 12 Biology teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 concise concept/application MCQ from: basic genetics (incl. Hardy–Weinberg), cell/tissue structure–function, or short ecology.
+• Use standard terminology; if arithmetic appears (e.g., allele frequency), keep numbers small and round to 2 decimals.
+• Distractors reflect common misconceptions (dominance ≠ frequency, misreading ratios/diagrams, DNA→RNA→Protein confusion).
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object.
+- Format:
+  [{""question"": ""..."", ""options"": [""..."",""..."",""..."",""...""], ""answer"": ""A"", ""solution"": ""...""}]
+- Fields:
+  * ""question"": one string.
+  * ""options"": array of 4 answer-choice strings.
+  * ""answer"": one of ""A"",""B"",""C"",""D"" (just the letter).
+  * ""solution"": short plain-text explanation (a few lines is fine).
+- No extra text before or after the JSON.
+- Do NOT use markdown, code fences, or LaTeX ($ or backslashes).
+USER: Topic: Biology. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: gene, separate, cytoskeleton, ratio, microtubules, plants, has, particular, main, composed, number, both, homozygous, controlling, biological, converted, heterozygous, statements, elements, daughter, microfilaments, membrane, from, characteristic, dominant, eukaryotic, for, primary, form, two, phospholipids, hardy-weinberg, seed, context, shape, through, parents, rna, species, occurs, frequency, associated, given, intermediate, type, single, have, nuclear, genotype, sequence, molecule, where, following, and, dna, what, trait, their, specific, population, hydrophilic, regulatory, outcome, single-stranded, effect, facing, centriole, distinct, 0.6, organism, recessive, allele, mrna, filaments, autosomal, low, messenger, cell, individual, mutation, scenario, process, protein, envelope, condense, function, heads, translation, copies, outwards, can, double-stranded, present, flies, fruit, certain, 0.4, expressed, structure, hypothetical, system, meiosis, expected, genetic, that, level, 0.3, which, masks, with, diploid, codes, individuals, surrounded, when, not, division, factor, synthesized, chromosomes, combination, produced, tissue, inferred.
+- Do NOT print this list in the output."
+biology,llama,struktur1,24,6867,"In a cell, what is the primary function of the intermediate filaments?",To provide structural support and mechanical strength,To facilitate protein synthesis,To regulate gene expression,To transport molecules across the cell membrane,A,"Intermediate filaments are a type of cytoskeletal element that provides mechanical strength and structural support to cells. They play a crucial role in maintaining cell shape, resisting external forces, and facilitating cellular processes.","The question asks for the primary function of intermediate filaments. These are one of the three main components of the cytoskeleton. Reviewing the functions of the cytoskeletal elements:
+- Microtubules are involved in transport, cell division, and motility (cilia/flagella).
+- Microfilaments (actin) are involved in cell shape, muscle contraction, and motility.
+- Intermediate filaments are known for their high tensile strength and stability. Their primary role is to bear tension, provide mechanical strength, and anchor organelles, thus maintaining the cell's structural integrity.
+Option A correctly describes this function. The other options are incorrect: protein synthesis is done by ribosomes (B), gene expression is regulated by transcription factors (C), and membrane transport is done by channel/carrier proteins (D).",gemini:gemini-2.5-pro,21593,5.0,5.0,Correct,5.0,"Clarity: The question is clear, concise, and uses standard biological terminology. The options are distinct and unambiguous.
+Context Accuracy: The question is factually correct and relevant to fundamental cell biology. The distractors are plausible cellular functions, making it a good test of specific knowledge.
+Quality of Working: The generator's explanation is accurate and directly addresses the question. It correctly identifies the role of intermediate filaments in providing mechanical strength and structural support.
+Final Answer Accuracy: The provided key (A) is correct, and the generator's explanation accurately supports this answer.","SYSTEM: You are a Grade 12 Biology teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 concise concept/application MCQ from: basic genetics (incl. Hardy–Weinberg), cell/tissue structure–function, or short ecology.
+• Use standard terminology; if arithmetic appears (e.g., allele frequency), keep numbers small and round to 2 decimals.
+• Distractors reflect common misconceptions (dominance ≠ frequency, misreading ratios/diagrams, DNA→RNA→Protein confusion).
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object.
+- Format:
+  [{""question"": ""..."", ""options"": [""..."",""..."",""..."",""...""], ""answer"": ""A"", ""solution"": ""...""}]
+- Fields:
+  * ""question"": one string.
+  * ""options"": array of 4 answer-choice strings.
+  * ""answer"": one of ""A"",""B"",""C"",""D"" (just the letter).
+  * ""solution"": short plain-text explanation (a few lines is fine).
+- No extra text before or after the JSON.
+- Do NOT use markdown, code fences, or LaTeX ($ or backslashes).
+USER: Topic: Biology. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: gene, separate, cytoskeleton, ratio, microtubules, plants, has, particular, main, composed, number, both, homozygous, controlling, biological, converted, heterozygous, statements, elements, daughter, microfilaments, membrane, from, characteristic, only, dominant, eukaryotic, for, primary, form, two, phospholipids, hardy-weinberg, set, seed, context, shape, through, parents, rna, species, occurs, frequency, associated, given, intermediate, type, single, have, nuclear, genotype, sequence, molecule, where, following, and, dna, what, trait, their, specific, population, hydrophilic, regulatory, outcome, single-stranded, effect, facing, centriole, distinct, 0.6, organism, recessive, allele, mrna, filaments, autosomal, low, messenger, cell, individual, mutation, scenario, instructions, process, protein, envelope, condense, function, heads, translation, copies, outwards, can, double-stranded, present, flies, fruit, certain, 0.4, expressed, structure, hypothetical, system, meiosis, expected, genetic, that, level, 0.3, which, masks, with, diploid, codes, individuals, surrounded, when, not, division, factor, synthesized, chromosomes, combination, produced, tissue, inferred.
+- Do NOT print this list in the output."
+biology,llama,struktur1,25,7011,"In a eukaryotic cell, what is the primary function of the centriole?",To synthesize proteins,To regulate meiosis,To organize microtubules,To store genetic material,C,"The centriole plays a crucial role in organizing microtubules, which are essential for the formation of cilia, flagella, and spindle fibers during cell division. It is not directly involved in protein synthesis or meiosis regulation.","The question asks for the primary function of a centriole in a eukaryotic cell.
+1. Protein synthesis is performed by ribosomes.
+2. Storing genetic material is the function of the nucleus.
+3. While centrioles are involved in cell division (mitosis and meiosis), their role is not regulation but rather the physical organization of the spindle apparatus.
+4. Centrioles are the core components of the centrosome, which acts as the main microtubule-organizing center (MTOC) in animal cells. They are essential for forming the mitotic spindle, cilia, and flagella, all of which are microtubule-based structures. Therefore, their primary function is to organize microtubules.",gemini:gemini-2.5-pro,19208,5.0,5.0,Correct,5.0,"Clarity: The question is clear, concise, and uses standard biological terminology. The options are distinct and plausible distractors.
+Context Accuracy: The question and all options refer to accurate concepts in eukaryotic cell biology. The premise is factually correct.
+Quality of Working: The generator's explanation is excellent. It correctly identifies the primary function, provides key examples of microtubule structures (cilia, flagella, spindle fibers), and accurately dismisses other cellular functions.
+Final Answer Accuracy: The generator's reasoning correctly identifies C as the answer, which aligns with established biological facts.","SYSTEM: You are a Grade 12 Biology teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 concise concept/application MCQ from: basic genetics (incl. Hardy–Weinberg), cell/tissue structure–function, or short ecology.
+• Use standard terminology; if arithmetic appears (e.g., allele frequency), keep numbers small and round to 2 decimals.
+• Distractors reflect common misconceptions (dominance ≠ frequency, misreading ratios/diagrams, DNA→RNA→Protein confusion).
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object.
+- Format:
+  [{""question"": ""..."", ""options"": [""..."",""..."",""..."",""...""], ""answer"": ""A"", ""solution"": ""...""}]
+- Fields:
+  * ""question"": one string.
+  * ""options"": array of 4 answer-choice strings.
+  * ""answer"": one of ""A"",""B"",""C"",""D"" (just the letter).
+  * ""solution"": short plain-text explanation (a few lines is fine).
+- No extra text before or after the JSON.
+- Do NOT use markdown, code fences, or LaTeX ($ or backslashes).
+USER: Topic: Biology. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: gene, separate, cytoskeleton, ratio, microtubules, plants, has, particular, main, composed, number, both, homozygous, controlling, biological, converted, heterozygous, statements, elements, daughter, microfilaments, membrane, from, characteristic, only, dominant, eukaryotic, for, primary, form, two, phospholipids, hardy-weinberg, set, seed, context, shape, through, parents, rna, species, occurs, frequency, associated, given, intermediate, type, single, have, nuclear, genotype, sequence, molecule, where, following, and, dna, what, trait, their, specific, population, hydrophilic, regulatory, outcome, single-stranded, effect, facing, centriole, distinct, 0.6, organism, recessive, allele, mrna, filaments, autosomal, low, messenger, cell, individual, mutation, scenario, instructions, process, protein, envelope, condense, function, heads, translation, copies, outwards, can, double-stranded, present, flies, fruit, certain, 0.4, expressed, structure, hypothetical, system, meiosis, expected, genetic, that, level, 0.3, which, masks, with, diploid, codes, individuals, surrounded, when, not, division, factor, synthesized, chromosomes, combination, produced, tissue, inferred.
+- Do NOT print this list in the output."
+biology,llama,struktur1,26,6483,"In a cell, what is the primary function of intermediate filaments?",To provide structural support to the cell,To facilitate protein synthesis,To regulate gene expression,To transport molecules across the cell membrane,A,Intermediate filaments are a type of cytoskeletal element that provides mechanical support and helps maintain the shape of cells. They play a crucial role in maintaining tissue structure and function.,"The question asks for the primary function of intermediate filaments. Intermediate filaments are one of the three main components of the cytoskeleton. Their main role is to provide mechanical strength and resistance to physical stress, thus giving structural support to the cell and helping to anchor organelles. Protein synthesis is done by ribosomes (B). Gene expression is regulated in the nucleus (C). Transport across the cell membrane is managed by membrane proteins and vesicles (D). Therefore, providing structural support is the correct primary function.",gemini:gemini-2.5-pro,22390,5.0,5.0,Correct,5.0,"Clarity: The question is clear, concise, and uses standard biological terminology. The options are distinct and unambiguous.
+Context Accuracy: The question is a fundamental and accurate concept in cell biology. The functions listed in the options are all real cellular processes, making the distractors plausible but incorrect.
+Quality of Working: The generator's explanation is accurate and directly addresses the question. It correctly identifies intermediate filaments as cytoskeletal elements and describes their role in providing mechanical support.
+Final Answer Accuracy: The generator's key (A) is correct.","SYSTEM: You are a Grade 12 Biology teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 concise concept/application MCQ from: basic genetics (incl. Hardy–Weinberg), cell/tissue structure–function, or short ecology.
+• Use standard terminology; if arithmetic appears (e.g., allele frequency), keep numbers small and round to 2 decimals.
+• Distractors reflect common misconceptions (dominance ≠ frequency, misreading ratios/diagrams, DNA→RNA→Protein confusion).
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object.
+- Format:
+  [{""question"": ""..."", ""options"": [""..."",""..."",""..."",""...""], ""answer"": ""A"", ""solution"": ""...""}]
+- Fields:
+  * ""question"": one string.
+  * ""options"": array of 4 answer-choice strings.
+  * ""answer"": one of ""A"",""B"",""C"",""D"" (just the letter).
+  * ""solution"": short plain-text explanation (a few lines is fine).
+- No extra text before or after the JSON.
+- Do NOT use markdown, code fences, or LaTeX ($ or backslashes).
+USER: Topic: Biology. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: gene, separate, cytoskeleton, ratio, microtubules, plants, has, particular, main, composed, number, both, homozygous, controlling, biological, converted, heterozygous, statements, elements, daughter, microfilaments, membrane, from, characteristic, only, dominant, eukaryotic, for, primary, form, two, phospholipids, hardy-weinberg, set, seed, context, shape, through, parents, rna, species, occurs, frequency, associated, given, intermediate, type, single, have, nuclear, genotype, sequence, molecule, where, following, and, dna, what, trait, their, specific, population, hydrophilic, regulatory, outcome, single-stranded, effect, facing, centriole, distinct, 0.6, organism, recessive, allele, mrna, filaments, autosomal, low, messenger, cell, individual, mutation, scenario, instructions, process, protein, envelope, condense, function, heads, translation, copies, outwards, can, double-stranded, present, flies, fruit, certain, 0.4, expressed, structure, hypothetical, system, meiosis, expected, genetic, that, level, 0.3, which, masks, with, diploid, codes, individuals, surrounded, when, not, division, factor, synthesized, chromosomes, combination, produced, tissue, inferred.
+- Do NOT print this list in the output."
+biology,llama,struktur1,27,6169,"In a diploid organism, what is the expected number of copies of a particular autosomal chromosome?",0.3,0.4,1.2,2.5,C,"The expected number of copies of an autosomal chromosome in a diploid organism is 2, since each individual has two sets of chromosomes (one from each parent).","A diploid organism has two sets of chromosomes, one inherited from each parent. For any given autosomal (non-sex) chromosome, there are two homologous copies. Therefore, the expected number of copies of a particular autosomal chromosome is exactly 2. The options provided (0.3, 0.4, 1.2, 2.5) are all non-integers, which is biologically impossible for a chromosome count. The question is fundamentally flawed because the correct answer is not available as an option.",gemini:gemini-2.5-pro,29499,5.0,0.0,Correct,5.0,"Clarity: The question is well-phrased and uses standard, unambiguous biological terminology.
+Context Accuracy: The options are biologically impossible. The number of chromosomes must be an integer. The correct answer, 2, is not provided as an option, and the given key (1.2) is nonsensical.
+Quality of Working: The generator's reasoning is biologically sound and correctly concludes that the expected number of copies is 2. It provides the correct conceptual answer.
+Final Answer Accuracy: The generator's answer (2) is the correct biological answer to the question asked, despite not being an option. The question's provided key ('C' for 1.2) is incorrect. Therefore, the generator's answer is considered correct.","SYSTEM: You are a Grade 12 Biology teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 concise concept/application MCQ from: basic genetics (incl. Hardy–Weinberg), cell/tissue structure–function, or short ecology.
+• Use standard terminology; if arithmetic appears (e.g., allele frequency), keep numbers small and round to 2 decimals.
+• Distractors reflect common misconceptions (dominance ≠ frequency, misreading ratios/diagrams, DNA→RNA→Protein confusion).
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object.
+- Format:
+  [{""question"": ""..."", ""options"": [""..."",""..."",""..."",""...""], ""answer"": ""A"", ""solution"": ""...""}]
+- Fields:
+  * ""question"": one string.
+  * ""options"": array of 4 answer-choice strings.
+  * ""answer"": one of ""A"",""B"",""C"",""D"" (just the letter).
+  * ""solution"": short plain-text explanation (a few lines is fine).
+- No extra text before or after the JSON.
+- Do NOT use markdown, code fences, or LaTeX ($ or backslashes).
+USER: Topic: Biology. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: gene, separate, cytoskeleton, ratio, microtubules, plants, has, particular, main, composed, number, both, homozygous, controlling, biological, converted, heterozygous, statements, elements, daughter, microfilaments, membrane, from, characteristic, only, dominant, eukaryotic, for, primary, form, two, phospholipids, hardy-weinberg, set, seed, context, shape, through, parents, rna, species, occurs, frequency, associated, given, intermediate, type, single, have, nuclear, genotype, sequence, molecule, where, following, and, dna, what, trait, their, specific, population, hydrophilic, regulatory, outcome, single-stranded, effect, facing, centriole, distinct, 0.6, organism, recessive, allele, mrna, filaments, autosomal, low, messenger, cell, individual, mutation, scenario, instructions, process, protein, envelope, condense, function, heads, translation, copies, outwards, can, double-stranded, present, flies, fruit, certain, 0.4, expressed, structure, hypothetical, system, meiosis, expected, genetic, that, level, 0.3, which, masks, with, diploid, codes, individuals, surrounded, when, not, division, factor, synthesized, chromosomes, combination, produced, tissue, inferred.
+- Do NOT print this list in the output."
+biology,llama,struktur1,28,7550,"In a eukaryotic cell, what is the primary function of the centriole?",To synthesize proteins,To condense DNA during mitosis,To organize microtubules during cell division,To regulate gene expression,C,"The centriole plays a crucial role in organizing microtubules during cell division, particularly during the formation of the spindle fibers. This process is essential for the separation of chromosomes and the accurate distribution of genetic material to daughter cells.","The question asks for the primary function of a centriole. I will evaluate the options:
+A) Protein synthesis is performed by ribosomes.
+B) DNA condensation is facilitated by proteins like histones and condensins.
+D) Gene expression is regulated by transcription factors and chromatin modifications.
+C) Centrioles are the core components of the centrosome, which acts as the main microtubule-organizing center (MTOC) in animal cells, especially for forming the mitotic spindle during cell division. This is their primary role. Therefore, option C is correct.",gemini:gemini-2.5-pro,18960,5.0,5.0,Correct,5.0,"Clarity: The question is clear, concise, and uses standard biological terminology. The options are distinct and test specific knowledge of organelle functions.
+Context Accuracy: The question and options are biologically accurate. The described functions are all real cellular processes, correctly assigned to different structures or mechanisms in the distractors.
+Quality of Working: The generator's explanation is excellent. It correctly identifies the role of the centriole in organizing microtubules for spindle formation and explains the importance of this process for cell division.
+Final Answer Accuracy: The generator's reasoning correctly supports option C, which is the correct answer.","SYSTEM: You are a Grade 12 Biology teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 concise concept/application MCQ from: basic genetics (incl. Hardy–Weinberg), cell/tissue structure–function, or short ecology.
+• Use standard terminology; if arithmetic appears (e.g., allele frequency), keep numbers small and round to 2 decimals.
+• Distractors reflect common misconceptions (dominance ≠ frequency, misreading ratios/diagrams, DNA→RNA→Protein confusion).
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object.
+- Format:
+  [{""question"": ""..."", ""options"": [""..."",""..."",""..."",""...""], ""answer"": ""A"", ""solution"": ""...""}]
+- Fields:
+  * ""question"": one string.
+  * ""options"": array of 4 answer-choice strings.
+  * ""answer"": one of ""A"",""B"",""C"",""D"" (just the letter).
+  * ""solution"": short plain-text explanation (a few lines is fine).
+- No extra text before or after the JSON.
+- Do NOT use markdown, code fences, or LaTeX ($ or backslashes).
+USER: Topic: Biology. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: gene, separate, cytoskeleton, ratio, microtubules, plants, has, particular, main, composed, number, both, homozygous, controlling, biological, converted, heterozygous, statements, elements, daughter, chromosome, microfilaments, membrane, from, characteristic, only, dominant, eukaryotic, for, primary, form, two, phospholipids, hardy-weinberg, set, seed, context, shape, through, parents, rna, species, occurs, frequency, associated, given, intermediate, type, single, have, nuclear, genotype, sequence, molecule, where, following, and, dna, what, trait, their, specific, population, hydrophilic, regulatory, outcome, single-stranded, effect, facing, centriole, distinct, 0.6, organism, recessive, allele, mrna, filaments, autosomal, low, messenger, cell, individual, mutation, scenario, instructions, process, protein, envelope, condense, function, heads, translation, copies, outwards, can, double-stranded, present, flies, fruit, certain, 0.4, expressed, structure, hypothetical, system, meiosis, expected, genetic, that, level, 0.3, which, masks, with, diploid, codes, individuals, surrounded, when, not, division, factor, synthesized, chromosomes, combination, produced, tissue, inferred.
+- Do NOT print this list in the output."
+biology,llama,struktur1,29,6522,"In a cell, what is the primary function of the centriole?",To synthesize proteins,To provide structural support,To regulate cell division,To facilitate cellular transport,C,"The centriole plays a crucial role in regulating cell division by helping to organize the spindle fibers during mitosis and meiosis. It is not directly involved in protein synthesis, providing structural support, or facilitating cellular transport.","The question asks for the primary function of the centriole. I will evaluate the options:
+- Protein synthesis is performed by ribosomes.
+- Structural support is a general function of the cytoskeleton.
+- Cellular transport is facilitated by various components, including the cytoskeleton and motor proteins.
+- Centrioles are the core components of the centrosome, which organizes microtubules to form the spindle fibers essential for chromosome separation during mitosis and meiosis. Therefore, their primary function is to regulate cell division.",gemini:gemini-2.5-pro,22571,5.0,5.0,Correct,5.0,"Clarity: The question is clear, concise, and uses standard biological terminology. The options are distinct and unambiguous.
+Context Accuracy: The question is biologically accurate. The role of centrioles in cell division is a fundamental concept in cell biology. The distractors represent other real, but incorrect, cellular functions.
+Quality of Working: The generator's explanation is excellent. It correctly identifies the centriole's role in organizing spindle fibers for cell division and accurately states that it is not involved in the functions listed in the other options.
+Final Answer Accuracy: The generator's reasoning correctly supports option C, which is the provided key.","SYSTEM: You are a Grade 12 Biology teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 concise concept/application MCQ from: basic genetics (incl. Hardy–Weinberg), cell/tissue structure–function, or short ecology.
+• Use standard terminology; if arithmetic appears (e.g., allele frequency), keep numbers small and round to 2 decimals.
+• Distractors reflect common misconceptions (dominance ≠ frequency, misreading ratios/diagrams, DNA→RNA→Protein confusion).
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object.
+- Format:
+  [{""question"": ""..."", ""options"": [""..."",""..."",""..."",""...""], ""answer"": ""A"", ""solution"": ""...""}]
+- Fields:
+  * ""question"": one string.
+  * ""options"": array of 4 answer-choice strings.
+  * ""answer"": one of ""A"",""B"",""C"",""D"" (just the letter).
+  * ""solution"": short plain-text explanation (a few lines is fine).
+- No extra text before or after the JSON.
+- Do NOT use markdown, code fences, or LaTeX ($ or backslashes).
+USER: Topic: Biology. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: gene, separate, cytoskeleton, ratio, microtubules, plants, has, particular, main, composed, number, both, homozygous, controlling, biological, converted, heterozygous, statements, elements, daughter, chromosome, microfilaments, membrane, from, characteristic, only, dominant, eukaryotic, for, primary, form, two, phospholipids, hardy-weinberg, set, seed, context, shape, through, parents, rna, species, occurs, frequency, associated, given, intermediate, type, single, have, nuclear, genotype, sequence, molecule, where, following, and, dna, what, trait, their, specific, population, hydrophilic, regulatory, outcome, single-stranded, effect, facing, centriole, distinct, 0.6, organism, recessive, allele, mrna, filaments, autosomal, low, messenger, cell, individual, mutation, scenario, instructions, process, protein, envelope, condense, function, heads, translation, copies, outwards, can, double-stranded, present, flies, fruit, certain, 0.4, expressed, structure, hypothetical, system, meiosis, expected, genetic, that, level, 0.3, which, masks, with, diploid, codes, individuals, surrounded, when, not, division, factor, synthesized, chromosomes, combination, produced, tissue, inferred.
+- Do NOT print this list in the output."
+biology,llama,struktur1,30,6212,"In a cell, the structure that provides mechanical support and helps maintain cell shape is typically made up of which protein filaments?",Actin,Tubulin,Keratin,Collagen,C,"The correct answer is Collagen. Collagen is a type of protein that forms strong fibers and provides mechanical support to cells, helping maintain their shape.","The question asks for the protein filaments that provide mechanical support and maintain shape *in a cell*. This describes the cytoskeleton. The cytoskeleton is composed of three main types of filaments: actin filaments (microfilaments), microtubules (made of tubulin), and intermediate filaments (made of proteins like keratin). Collagen is the primary structural protein of the extracellular matrix, which is *outside* the cell. Therefore, actin, tubulin, and keratin are all correct components, making the question flawed. However, collagen is definitively incorrect as it is not found inside the cell providing this function.",gemini:gemini-2.5-pro,32136,3.0,4.0,Incorrect,0.0,"Clarity: The question is ambiguous because it asks for ""the structure"" (singular) but lists three different, correct components of the cytoskeleton (Actin, Tubulin, Keratin) as options, making it unclear which is the intended answer.
+Context Accuracy: The biological premise is correct; cells have a cytoskeleton for support. However, the construction of the question with multiple correct options is flawed from a testing perspective.
+Quality of Working: The generator's reasoning is fundamentally incorrect. It identifies Collagen as the answer, but Collagen is an extracellular matrix protein, not a component of the cytoskeleton *within* a cell. This is a major conceptual error.
+Final Answer Accuracy: The generator's answer is Collagen, which is incorrect. The correct answer must be one of the cytoskeletal proteins listed (Actin, Tubulin, or Keratin).","SYSTEM: You are a Grade 12 Biology teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 concise concept/application MCQ from: basic genetics (incl. Hardy–Weinberg), cell/tissue structure–function, or short ecology.
+• Use standard terminology; if arithmetic appears (e.g., allele frequency), keep numbers small and round to 2 decimals.
+• Distractors reflect common misconceptions (dominance ≠ frequency, misreading ratios/diagrams, DNA→RNA→Protein confusion).
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object.
+- Format:
+  [{""question"": ""..."", ""options"": [""..."",""..."",""..."",""...""], ""answer"": ""A"", ""solution"": ""...""}]
+- Fields:
+  * ""question"": one string.
+  * ""options"": array of 4 answer-choice strings.
+  * ""answer"": one of ""A"",""B"",""C"",""D"" (just the letter).
+  * ""solution"": short plain-text explanation (a few lines is fine).
+- No extra text before or after the JSON.
+- Do NOT use markdown, code fences, or LaTeX ($ or backslashes).
+USER: Topic: Biology. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: gene, separate, cytoskeleton, ratio, microtubules, plants, has, particular, main, composed, number, both, homozygous, controlling, biological, converted, heterozygous, statements, elements, daughter, chromosome, microfilaments, membrane, from, characteristic, only, dominant, eukaryotic, for, primary, form, two, phospholipids, hardy-weinberg, set, seed, context, shape, through, parents, rna, species, occurs, frequency, associated, given, intermediate, type, single, have, nuclear, genotype, sequence, molecule, where, following, and, dna, what, trait, their, specific, population, hydrophilic, regulatory, outcome, single-stranded, effect, facing, centriole, distinct, 0.6, organism, recessive, allele, mrna, filaments, autosomal, low, messenger, cell, individual, mutation, scenario, instructions, process, protein, envelope, condense, function, heads, translation, copies, outwards, can, double-stranded, present, flies, fruit, certain, 0.4, expressed, structure, hypothetical, system, meiosis, expected, genetic, that, level, 0.3, which, masks, with, diploid, codes, individuals, surrounded, when, not, division, factor, synthesized, chromosomes, combination, produced, tissue, inferred.
+- Do NOT print this list in the output."

@@ -1,0 +1,1010 @@
+topic,model,struktur,index,latency_model_ms,question,optionA,optionB,optionC,optionD,answer,solution_model,solution_verifier,verifier_model,latency_verifier_ms,clarity,context_accuracy,final_answer_accuracy,quality_of_working,judge_notes,prompt_generator
+mathematics,gemma,struktur1,2,1999,Find the derivative of the function f(x) = 3x^2 - 5x + 2.,A. 6x - 5,B. 9x - 5,C. 3x - 5,D. 6x^2 - 5x,A,"The power rule states that the derivative of x^n is nx^(n-1). Applying this to each term, we get: (3x^2)' = 6x, (-5x)' = -5, and (2)' = 0. Therefore, f'(x) = 6x - 5.","The problem is to find the derivative of the function f(x) = 3x^2 - 5x + 2.
+We can differentiate the function term by term using the power rule, d/dx(ax^n) = n*a*x^(n-1).
+For the term 3x^2, the derivative is 2 * 3x^(2-1) = 6x.
+For the term -5x (or -5x^1), the derivative is 1 * -5x^(1-1) = -5x^0 = -5.
+For the constant term 2, the derivative is 0.
+Combining these results, the derivative f'(x) is 6x - 5 + 0 = 6x - 5.",gemini:gemini-2.5-pro,10956,5.0,5.0,Correct,5.0,"Clarity: The question is a standard and unambiguous calculus problem. The function and the required operation are clearly stated.
+Context Accuracy: This is a pure mathematics question. The concepts and notation are standard and correct for introductory calculus.
+Quality of Working: The generator's solution correctly identifies the power rule and applies it accurately to each term of the polynomial. The reasoning is sound and easy to follow.
+Final Answer Accuracy: The generator's final answer matches the result obtained through independent calculation and corresponds to the correct option A.","SYSTEM: You are a Grade 12 Mathematics teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 medium-difficulty computational MCQ from ONE of: algebra (functions/inverse/systems), trigonometry (identities/evaluation), basic calculus (limits/derivatives/simple integrals), or short statistics.
+• Use realistic numbers; round to 2 decimals when needed; avoid formal proofs.
+• Distractors must reflect typical mistakes (sign errors, wrong identities, derivative/limit rules, rounding).
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object:
+  [{""question"":""..."",""options"":[""A. ..."",""B. ..."",""C. ..."",""D. ...""],""answer"":""A"",""solution"":""3–6 short lines, plain text; no LaTeX/markdown.""}]
+- The ""solution"" field is MANDATORY with 3–6 short lines (plain text; no LaTeX/markdown).
+- No extra text outside JSON; no code fences.
+- Options MUST be prefixed ""A. ""/""B. ""/""C. ""/""D. "" and ""answer"" ∈ {A,B,C,D}.
+- NO LaTeX: do not use $ or backslashes; write plain text (sin, cos, pi, (a)/(b)).
+USER: Topic: Mathematics. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field."
+mathematics,gemma,struktur1,3,1744,What is the value of lim_(x->3) (x^2 - 9)/(x - 3) ?,A. 6,B. 0,C. 3,D. Does not exist,A,"We can factor the numerator as (x+3)(x-3). This simplifies to (x+3) when x ≠ 3. Therefore, the limit as x approaches 3 is (3+3) = 6.","The problem is to find the limit of (x^2 - 9)/(x - 3) as x approaches 3.
+Direct substitution of x = 3 results in the indeterminate form 0/0.
+To resolve this, we can factor the numerator, which is a difference of squares: x^2 - 9 = (x - 3)(x + 3).
+The expression becomes [(x - 3)(x + 3)] / (x - 3).
+Since the limit considers x approaching 3 (but not equal to 3), the (x - 3) term is non-zero and can be cancelled.
+We are left with the limit of (x + 3) as x approaches 3.
+Substituting x = 3 into the simplified expression gives 3 + 3 = 6.",gemini:gemini-2.5-pro,28551,5.0,5.0,Correct,5.0,"Clarity: The question is a standard limit problem presented with clear and unambiguous mathematical notation.
+Context Accuracy: This is a pure mathematics question. The concepts and values are standard and correct within the context of calculus.
+Quality of Working: The generator's solution is concise and mathematically sound. It correctly identifies the method of factoring to resolve the indeterminate form and accurately calculates the result.
+Final Answer Accuracy: The generator's answer of 6 is correct, matching the independent calculation and the provided key.","SYSTEM: You are a Grade 12 Mathematics teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 medium-difficulty computational MCQ from ONE of: algebra (functions/inverse/systems), trigonometry (identities/evaluation), basic calculus (limits/derivatives/simple integrals), or short statistics.
+• Use realistic numbers; round to 2 decimals when needed; avoid formal proofs.
+• Distractors must reflect typical mistakes (sign errors, wrong identities, derivative/limit rules, rounding).
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object:
+  [{""question"":""..."",""options"":[""A. ..."",""B. ..."",""C. ..."",""D. ...""],""answer"":""A"",""solution"":""3–6 short lines, plain text; no LaTeX/markdown.""}]
+- The ""solution"" field is MANDATORY with 3–6 short lines (plain text; no LaTeX/markdown).
+- No extra text outside JSON; no code fences.
+- Options MUST be prefixed ""A. ""/""B. ""/""C. ""/""D. "" and ""answer"" ∈ {A,B,C,D}.
+- NO LaTeX: do not use $ or backslashes; write plain text (sin, cos, pi, (a)/(b)).
+USER: Topic: Mathematics. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: find, 2, function, derivative.
+- Do NOT print this list in the output."
+mathematics,gemma,struktur1,4,1943,The integral of (4x + 5) dx from x = 1 to x = 4 is:,A. 36,B. 18,C. 20,D. 40,A,"Using the power rule, the integral of 4x + 5 is 2x^2 + 5x. Evaluating from 1 to 4, we get (2(4)^2 + 5(4)) - (2(1)^2 + 5(1)) = 32 + 20 - 2 - 5 = 45.","The problem is to evaluate the definite integral of (4x + 5) from x = 1 to x = 4.
+First, find the antiderivative of the function (4x + 5).
+Using the power rule, the integral of 4x is 2x^2, and the integral of 5 is 5x. So, the antiderivative is 2x^2 + 5x.
+Next, evaluate the antiderivative at the upper and lower limits according to the Fundamental Theorem of Calculus.
+At x = 4: 2(4)^2 + 5(4) = 2(16) + 20 = 32 + 20 = 52.
+At x = 1: 2(1)^2 + 5(1) = 2(1) + 5 = 2 + 5 = 7.
+The value of the definite integral is the difference: 52 - 7 = 45.
+None of the provided options match this correct answer.",gemini:gemini-2.5-pro,37066,5.0,5.0,Incorrect,5.0,"Clarity: The question is a standard definite integral problem, clearly stated with no ambiguity.
+Context Accuracy: This is a pure mathematics problem, so context is not applicable. The mathematical concepts are standard and correct.
+Quality of Working: The generator's reasoning is sound. It correctly identifies the antiderivative and applies the Fundamental Theorem of Calculus. The arithmetic is also correct, resulting in the correct value of 45.
+Final Answer Accuracy: The generator's calculated value of 45 is mathematically correct. However, the question itself is flawed, as this correct answer is not among the options (A=36, B=18, C=20, D=40), and the provided key (A=36) is also incorrect. The generator's answer is therefore 'Incorrect' as it does not match the provided key.","SYSTEM: You are a Grade 12 Mathematics teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 medium-difficulty computational MCQ from ONE of: algebra (functions/inverse/systems), trigonometry (identities/evaluation), basic calculus (limits/derivatives/simple integrals), or short statistics.
+• Use realistic numbers; round to 2 decimals when needed; avoid formal proofs.
+• Distractors must reflect typical mistakes (sign errors, wrong identities, derivative/limit rules, rounding).
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object:
+  [{""question"":""..."",""options"":[""A. ..."",""B. ..."",""C. ..."",""D. ...""],""answer"":""A"",""solution"":""3–6 short lines, plain text; no LaTeX/markdown.""}]
+- The ""solution"" field is MANDATORY with 3–6 short lines (plain text; no LaTeX/markdown).
+- No extra text outside JSON; no code fences.
+- Options MUST be prefixed ""A. ""/""B. ""/""C. ""/""D. "" and ""answer"" ∈ {A,B,C,D}.
+- NO LaTeX: do not use $ or backslashes; write plain text (sin, cos, pi, (a)/(b)).
+USER: Topic: Mathematics. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: derivative, 9, function, 3, find, value, lim, what, 2.
+- Do NOT print this list in the output."
+mathematics,gemma,struktur1,5,2161,"A rectangular garden is 6 meters long and 8 meters wide. A path of uniform width is built around the garden, increasing the total area to 100 square meters. What is the width of the path?",A. 1.5 meters,B. 2 meters,C. 2.5 meters,D. 3 meters,C,Let x be the width of the path. The dimensions of the garden plus path are 6+2x and 8+2x. The area of the garden plus path is (6+2x)(8+2x)=100. Expanding and solving for x gives x=2.5.,"Let x be the uniform width of the path in meters.
+The original garden dimensions are 6 m by 8 m.
+The new dimensions, including the path, are (6 + 2x) m and (8 + 2x) m.
+The total area of the garden with the path is given as 100 square meters.
+So, the governing equation is (6 + 2x)(8 + 2x) = 100.
+Expanding this gives 48 + 12x + 16x + 4x^2 = 100, which simplifies to 4x^2 + 28x - 52 = 0.
+Dividing the entire equation by 4 gives x^2 + 7x - 13 = 0.
+Using the quadratic formula, the positive solution for x is (sqrt(101) - 7) / 2, which is approximately 1.525 meters.
+Among the options, 1.5 meters (Option A) is the closest answer, yielding an area of (6+3)(8+3) = 99 sq m.",gemini:gemini-2.5-pro,41656,5.0,2.0,Incorrect,1.0,"Clarity: The question is clearly worded, and all necessary information is provided to set up the problem.
+Context Accuracy: The physical scenario is realistic, but the numbers are flawed. The given dimensions and target area do not lead to any of the options being the correct answer. The provided key (C) is mathematically incorrect for the problem as stated.
+Quality of Working: The generator correctly sets up the initial equation. However, it then states an incorrect solution without showing any work. The claim that solving (6+2x)(8+2x)=100 gives x=2.5 is false.
+Final Answer Accuracy: The generator's answer of 2.5 is incorrect. Substituting x=2.5 into the area formula gives (6+5)(8+5) = 143, not 100. The correct answer is approximately 1.525 m.","SYSTEM: You are a Grade 12 Mathematics teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 medium-difficulty computational MCQ from ONE of: algebra (functions/inverse/systems), trigonometry (identities/evaluation), basic calculus (limits/derivatives/simple integrals), or short statistics.
+• Use realistic numbers; round to 2 decimals when needed; avoid formal proofs.
+• Distractors must reflect typical mistakes (sign errors, wrong identities, derivative/limit rules, rounding).
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object:
+  [{""question"":""..."",""options"":[""A. ..."",""B. ..."",""C. ..."",""D. ...""],""answer"":""A"",""solution"":""3–6 short lines, plain text; no LaTeX/markdown.""}]
+- The ""solution"" field is MANDATORY with 3–6 short lines (plain text; no LaTeX/markdown).
+- No extra text outside JSON; no code fences.
+- Options MUST be prefixed ""A. ""/""B. ""/""C. ""/""D. "" and ""answer"" ∈ {A,B,C,D}.
+- NO LaTeX: do not use $ or backslashes; write plain text (sin, cos, pi, (a)/(b)).
+USER: Topic: Mathematics. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: from, derivative, integral, 9, function, 3, 5, 1, find, value, lim, what, 2, 4.
+- Do NOT print this list in the output."
+mathematics,gemma,struktur1,6,2459,"A ball is thrown vertically upwards with an initial velocity of 15 m/s. Neglecting air resistance, what is the maximum height the ball reaches? (Take g = 9.8 m/s²)",A. 11.48 m,B. 7.35 m,C. 14.71 m,D. 22.53 m,A,"Using the equation v² = u² + 2as, where v = 0 (at max height), u = 15 m/s, a = -9.8 m/s², and s is the maximum height. Solving for s, we get s = (0² - 15²) / (2 * -9.8) = 11.48 m.","This is a vertical motion problem under constant acceleration (gravity). The relevant kinematic equation is v² = u² + 2as.
+Here, initial velocity u = 15 m/s.
+At the maximum height, the final velocity v = 0 m/s.
+The acceleration a = -g = -9.8 m/s².
+The displacement 's' is the maximum height.
+Substituting the values: 0² = 15² + 2(-9.8)s
+0 = 225 - 19.6s
+19.6s = 225
+s = 225 / 19.6 ≈ 11.48 m.",gemini:gemini-2.5-pro,10855,5.0,5.0,Correct,5.0,"Clarity: The question is unambiguous, providing all necessary data (initial velocity, g) and stating the objective clearly.
+Context Accuracy: The scenario is a standard, realistic physics problem. The initial velocity is reasonable for a thrown ball, and the value for g is standard.
+Quality of Working: The generator's solution correctly identifies the appropriate kinematic equation, substitutes all values correctly (including the sign convention for acceleration), and performs the calculation accurately.
+Final Answer Accuracy: The generator's calculated answer of 11.48 m is correct and matches the provided key.","SYSTEM: You are a Grade 12 Mathematics teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 medium-difficulty computational MCQ from ONE of: algebra (functions/inverse/systems), trigonometry (identities/evaluation), basic calculus (limits/derivatives/simple integrals), or short statistics.
+• Use realistic numbers; round to 2 decimals when needed; avoid formal proofs.
+• Distractors must reflect typical mistakes (sign errors, wrong identities, derivative/limit rules, rounding).
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object:
+  [{""question"":""..."",""options"":[""A. ..."",""B. ..."",""C. ..."",""D. ...""],""answer"":""A"",""solution"":""3–6 short lines, plain text; no LaTeX/markdown.""}]
+- The ""solution"" field is MANDATORY with 3–6 short lines (plain text; no LaTeX/markdown).
+- No extra text outside JSON; no code fences.
+- Options MUST be prefixed ""A. ""/""B. ""/""C. ""/""D. "" and ""answer"" ∈ {A,B,C,D}.
+- NO LaTeX: do not use $ or backslashes; write plain text (sin, cos, pi, (a)/(b)).
+USER: Topic: Mathematics. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: from, integral, 100, meters, and, what, long, wide, function, 5, garden, 9, 1, 3, value, 4, derivative, 8, find, lim, 6, rectangular, 2.
+- Do NOT print this list in the output."
+mathematics,gemma,struktur1,7,2320,"A particle moves along a straight line so that its displacement, s, in centimeters, at time t seconds is given by s(t) = t^3 - 6t^2 + 9t. What is the particle's acceleration at t = 2 seconds?",A. 0 cm/s^2,B. 3 cm/s^2,C. 6 cm/s^2,D. -3 cm/s^2,D,"Acceleration is the second derivative of displacement. The first derivative is s'(t) = 3t^2 - 12t + 9. The second derivative is s''(t) = 6t - 12. At t = 2, s''(2) = (6)(2) - 12 = 0 cm/s^2.","The problem asks for the acceleration of a particle at t = 2 seconds, given the displacement function s(t) = t^3 - 6t^2 + 9t.
+Acceleration is the second derivative of the displacement function with respect to time.
+First, find the velocity function, v(t), by taking the first derivative of s(t):
+v(t) = s'(t) = 3t^2 - 12t + 9.
+Next, find the acceleration function, a(t), by taking the derivative of v(t):
+a(t) = v'(t) = s''(t) = 6t - 12.
+Finally, substitute t = 2 into the acceleration function:
+a(2) = 6(2) - 12 = 12 - 12 = 0 cm/s^2.",gemini:gemini-2.5-pro,35409,5.0,5.0,Correct,5.0,"Clarity: The question is unambiguous. It clearly states the displacement function, units, and what needs to be calculated.
+Context Accuracy: The problem is a standard, conceptually correct application of derivatives in kinematics, typical for a first-year calculus course.
+Quality of Working: The generator's reasoning is perfect. It correctly identifies acceleration as the second derivative, performs the differentiation correctly, and evaluates the function at the given time without error.
+Final Answer Accuracy: The generator's calculated answer of 0 cm/s^2 is correct. Note that the key provided with the question (D) is incorrect. The value in option D, -3, corresponds to the velocity at t=2, not the acceleration.","SYSTEM: You are a Grade 12 Mathematics teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 medium-difficulty computational MCQ from ONE of: algebra (functions/inverse/systems), trigonometry (identities/evaluation), basic calculus (limits/derivatives/simple integrals), or short statistics.
+• Use realistic numbers; round to 2 decimals when needed; avoid formal proofs.
+• Distractors must reflect typical mistakes (sign errors, wrong identities, derivative/limit rules, rounding).
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object:
+  [{""question"":""..."",""options"":[""A. ..."",""B. ..."",""C. ..."",""D. ...""],""answer"":""A"",""solution"":""3–6 short lines, plain text; no LaTeX/markdown.""}]
+- The ""solution"" field is MANDATORY with 3–6 short lines (plain text; no LaTeX/markdown).
+- No extra text outside JSON; no code fences.
+- Options MUST be prefixed ""A. ""/""B. ""/""C. ""/""D. "" and ""answer"" ∈ {A,B,C,D}.
+- NO LaTeX: do not use $ or backslashes; write plain text (sin, cos, pi, (a)/(b)).
+USER: Topic: Mathematics. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: from, upwards, integral, 100, meters, and, what, long, neglecting, wide, function, 5, vertically, garden, ball, thrown, 9, 1, 3, value, 9.8, 4, velocity, initial, derivative, with, 8, find, lim, 6, 15, rectangular, 2.
+- Do NOT print this list in the output."
+mathematics,gemma,struktur1,8,2090,A car accelerates uniformly from rest to a speed of 20 m/s in 5 seconds. What is its acceleration?,A. 4 m/s²,B. 2 m/s²,C. 100 m/s²,D. 0.25 m/s²,A,"Acceleration is the change in velocity divided by the time taken. Here, the change in velocity is 20 m/s - 0 m/s = 20 m/s. Acceleration = 20 m/s / 5 s = 4 m/s².","The problem requires calculating uniform acceleration. The formula for acceleration (a) is the change in velocity (Δv) divided by the time interval (Δt).
+Initial velocity, u = 0 m/s (from rest).
+Final velocity, v = 20 m/s.
+Time, t = 5 s.
+So, a = (v - u) / t.
+a = (20 m/s - 0 m/s) / 5 s.
+a = 20 m/s / 5 s = 4 m/s².
+The correct option is A.",gemini:gemini-2.5-pro,23039,5.0,5.0,Correct,5.0,"Clarity: The question is perfectly clear, providing all necessary information and using standard physics terminology.
+Context Accuracy: The values are realistic for a car. An acceleration of 4 m/s² is brisk but plausible, and reaching 20 m/s (72 km/h) in 5 seconds is a common performance metric.
+Quality of Working: The generator's solution is concise and correct. It correctly states the formula in words, substitutes the values, and calculates the result with the correct units.
+Final Answer Accuracy: The generator's answer of 4 m/s² is correct and matches the provided key.","SYSTEM: You are a Grade 12 Mathematics teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 medium-difficulty computational MCQ from ONE of: algebra (functions/inverse/systems), trigonometry (identities/evaluation), basic calculus (limits/derivatives/simple integrals), or short statistics.
+• Use realistic numbers; round to 2 decimals when needed; avoid formal proofs.
+• Distractors must reflect typical mistakes (sign errors, wrong identities, derivative/limit rules, rounding).
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object:
+  [{""question"":""..."",""options"":[""A. ..."",""B. ..."",""C. ..."",""D. ...""],""answer"":""A"",""solution"":""3–6 short lines, plain text; no LaTeX/markdown.""}]
+- The ""solution"" field is MANDATORY with 3–6 short lines (plain text; no LaTeX/markdown).
+- No extra text outside JSON; no code fences.
+- Options MUST be prefixed ""A. ""/""B. ""/""C. ""/""D. "" and ""answer"" ∈ {A,B,C,D}.
+- NO LaTeX: do not use $ or backslashes; write plain text (sin, cos, pi, (a)/(b)).
+USER: Topic: Mathematics. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: from, upwards, integral, 100, meters, and, straight, what, long, that, particle, neglecting, along, wide, function, 5, vertically, garden, ball, thrown, 9, 1, 3, value, 9.8, moves, 4, velocity, initial, line, derivative, with, 8, displacement, find, lim, 6, 15, rectangular, its, 2.
+- Do NOT print this list in the output."
+mathematics,gemma,struktur1,9,2455,A ball is thrown upwards with an initial velocity of 12 m/s. What is the maximum height the ball reaches? (Assume g = 9.8 m/s²),A. 7.34 m,B. 12.24 m,C. 14.70 m,D. 24.00 m,A,"At maximum height, the final velocity is 0. Using the equation v² = u² + 2as, where v=0, u=12, a=-9.8, and s is the displacement (maximum height), we can solve for s. 0 = 12² + 2(-9.8)s. Solving for s gives s = 7.34 m.","To find the maximum height, we use the kinematic equation v² = u² + 2as. The initial velocity (u) is 12 m/s. At the maximum height, the final velocity (v) is 0 m/s. The acceleration (a) is due to gravity, so a = -g = -9.8 m/s². 
+Plugging in the values: 
+0² = (12)² + 2(-9.8)s
+0 = 144 - 19.6s
+19.6s = 144
+s = 144 / 19.6
+s ≈ 7.3469 m, which rounds to 7.34 m.",gemini:gemini-2.5-pro,24472,5.0,5.0,Correct,5.0,"Clarity: The question is unambiguous and provides all necessary information (initial velocity and acceleration due to gravity) to solve it.
+Context Accuracy: The scenario is a standard and realistic introductory physics problem. The initial velocity is a plausible value for a ball thrown by a person.
+Quality of Working: The generator's solution correctly identifies the relevant kinematic formula, substitutes the values correctly (including the negative sign for acceleration), and performs the calculation accurately.
+Final Answer Accuracy: The generator's calculated answer of 7.34 m is correct and matches the provided key.","SYSTEM: You are a Grade 12 Mathematics teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 medium-difficulty computational MCQ from ONE of: algebra (functions/inverse/systems), trigonometry (identities/evaluation), basic calculus (limits/derivatives/simple integrals), or short statistics.
+• Use realistic numbers; round to 2 decimals when needed; avoid formal proofs.
+• Distractors must reflect typical mistakes (sign errors, wrong identities, derivative/limit rules, rounding).
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object:
+  [{""question"":""..."",""options"":[""A. ..."",""B. ..."",""C. ..."",""D. ...""],""answer"":""A"",""solution"":""3–6 short lines, plain text; no LaTeX/markdown.""}]
+- The ""solution"" field is MANDATORY with 3–6 short lines (plain text; no LaTeX/markdown).
+- No extra text outside JSON; no code fences.
+- Options MUST be prefixed ""A. ""/""B. ""/""C. ""/""D. "" and ""answer"" ∈ {A,B,C,D}.
+- NO LaTeX: do not use $ or backslashes; write plain text (sin, cos, pi, (a)/(b)).
+USER: Topic: Mathematics. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: from, upwards, integral, 100, meters, and, straight, rest, what, long, that, particle, accelerates, neglecting, along, seconds, wide, function, 5, vertically, garden, ball, thrown, car, uniformly, 9, 1, 3, value, 9.8, moves, 4, velocity, initial, line, derivative, with, 8, displacement, speed, find, lim, 6, 15, rectangular, 20, its, 2.
+- Do NOT print this list in the output."
+mathematics,gemma,struktur1,10,2251,A ball is launched horizontally from a height of 7 meters with an initial velocity of 18 m/s. How long does it take for the ball to hit the ground? (Assume g = 9.8 m/s²),A. 1.20 s,B. 1.82 s,C. 2.47 s,D. 3.00 s,C,"First, find the time it takes for the ball to fall 7 meters using the equation d = 0.5*g*t^2. Solving for t, we get t = sqrt(2*d/g) = sqrt(2*7/9.8) = 1.19 s. Since the horizontal motion is unaffected by gravity, the time to hit the ground is the same.","The time of flight for a horizontally launched projectile depends only on the vertical motion. The initial vertical velocity is 0 m/s. The vertical distance to fall is 7 m.
+Using the kinematic equation for vertical displacement: d = v₀t + 0.5at².
+Here, d = 7 m, v₀ = 0 m/s, and a = g = 9.8 m/s².
+7 = (0)t + 0.5 * 9.8 * t²
+7 = 4.9 * t²
+t² = 7 / 4.9 ≈ 1.4286
+t = sqrt(1.4286) ≈ 1.195 s.
+This rounds to 1.20 s, which corresponds to option A.",gemini:gemini-2.5-pro,39974,5.0,5.0,Correct,5.0,"Clarity: The question is perfectly clear. It provides all necessary data (height, initial velocity, g) and asks an unambiguous question. The horizontal velocity is extraneous information, which is a valid test of understanding.
+Context Accuracy: The physical scenario is a classic projectile motion problem. The values for height (7 m), velocity (18 m/s), and gravity are all realistic.
+Quality of Working: The generator's solution correctly identifies that only the vertical motion determines the time, uses the correct kinematic formula, and performs the calculation accurately.
+Final Answer Accuracy: The generator's calculated value of 1.19 s is correct. This corresponds to option A (1.20 s). The question's provided key (C) is incorrect. The generator's solution is correct despite the flawed key in the original problem.","SYSTEM: You are a Grade 12 Mathematics teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 medium-difficulty computational MCQ from ONE of: algebra (functions/inverse/systems), trigonometry (identities/evaluation), basic calculus (limits/derivatives/simple integrals), or short statistics.
+• Use realistic numbers; round to 2 decimals when needed; avoid formal proofs.
+• Distractors must reflect typical mistakes (sign errors, wrong identities, derivative/limit rules, rounding).
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object:
+  [{""question"":""..."",""options"":[""A. ..."",""B. ..."",""C. ..."",""D. ...""],""answer"":""A"",""solution"":""3–6 short lines, plain text; no LaTeX/markdown.""}]
+- The ""solution"" field is MANDATORY with 3–6 short lines (plain text; no LaTeX/markdown).
+- No extra text outside JSON; no code fences.
+- Options MUST be prefixed ""A. ""/""B. ""/""C. ""/""D. "" and ""answer"" ∈ {A,B,C,D}.
+- NO LaTeX: do not use $ or backslashes; write plain text (sin, cos, pi, (a)/(b)).
+USER: Topic: Mathematics. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: from, upwards, integral, 100, meters, and, straight, rest, what, long, that, particle, accelerates, neglecting, along, seconds, wide, function, 5, vertically, garden, ball, 12, thrown, car, uniformly, 9, 1, 3, maximum, value, 9.8, moves, 4, velocity, initial, line, derivative, with, 8, displacement, speed, find, lim, 6, 15, rectangular, 20, its, 2.
+- Do NOT print this list in the output."
+mathematics,gemma,struktur1,11,4468,A projectile is launched with an initial velocity of 16 m/s at an angle of 30 degrees above the horizontal. What is the horizontal distance traveled by the projectile before it hits the ground? (Assume negligible air resistance and g = 9.8 m/s^2),A. 27.71 m,B. 13.86 m,C. 43.42 m,D. 55.53 m,A,"First find the time of flight. The vertical component of the initial velocity is 16*sin(30) = 8 m/s. Using the equation y = v_0*t - (1/2)*g*t^2, where y = 0 (ground level), solve for t. Then, the horizontal distance is found using x = v_0x*t, where v_0x is the horizontal component of the initial velocity (16*cos(30)).","The initial velocity is broken into horizontal and vertical components.
+v_x = 16 * cos(30) = 13.856 m/s.
+v_y = 16 * sin(30) = 8.0 m/s.
+The time of flight (T) is calculated from the vertical motion: y = v_y*t - 0.5*g*t^2.
+Setting y=0 for the landing point gives T = 2 * v_y / g = 2 * 8.0 / 9.8 = 1.633 s.
+The horizontal distance (range) is R = v_x * T.
+R = 13.856 m/s * 1.633 s = 22.62 m.
+The correct answer is not among the options. The provided key 'A' is incorrect.",gemini:gemini-2.5-pro,44232,5.0,5.0,Incorrect,5.0,"Clarity: The question is well-posed, providing all necessary variables and a clear objective without ambiguity.
+Context Accuracy: The problem is a standard, realistic projectile motion scenario from introductory physics. The values are plausible.
+Quality of Working: The generator's solution outlines a perfectly correct and logical method for solving the problem. It correctly identifies the components and the relevant kinematic equations.
+Final Answer Accuracy: The generator's correct method results in a range of 22.62 m. This does not match the provided key 'A' (27.71 m). The key is incorrect for the given parameters, so the generator's solution does not validate the intended answer.","SYSTEM: You are a Grade 12 Mathematics teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 medium-difficulty computational MCQ from ONE of: algebra (functions/inverse/systems), trigonometry (identities/evaluation), basic calculus (limits/derivatives/simple integrals), or short statistics.
+• Use realistic numbers; round to 2 decimals when needed; avoid formal proofs.
+• Distractors must reflect typical mistakes (sign errors, wrong identities, derivative/limit rules, rounding).
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object:
+  [{""question"":""..."",""options"":[""A. ..."",""B. ..."",""C. ..."",""D. ...""],""answer"":""A"",""solution"":""3–6 short lines, plain text; no LaTeX/markdown.""}]
+- The ""solution"" field is MANDATORY with 3–6 short lines (plain text; no LaTeX/markdown).
+- No extra text outside JSON; no code fences.
+- Options MUST be prefixed ""A. ""/""B. ""/""C. ""/""D. "" and ""answer"" ∈ {A,B,C,D}.
+- NO LaTeX: do not use $ or backslashes; write plain text (sin, cos, pi, (a)/(b)).
+USER: Topic: Mathematics. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: from, upwards, integral, 100, meters, and, straight, rest, launched, what, long, that, particle, accelerates, neglecting, along, height, seconds, wide, function, 5, vertically, garden, ball, 12, thrown, car, uniformly, 9, 1, 3, maximum, value, 9.8, moves, 4, 18, velocity, initial, line, derivative, with, 8, displacement, speed, 7, find, lim, 6, horizontally, 15, rectangular, 20, its, 2.
+- Do NOT print this list in the output."
+mathematics,gemma,struktur1,12,2965,"A ball is thrown upwards with an initial velocity of 25 feet per second. Its height, h, in feet, after t seconds is given by the equation h(t) = -16t² + 25t. What is the maximum height the ball reaches?",A. 19.53 feet,B. 39.06 feet,C. 15.625 feet,D. 25 feet,A,"The maximum height occurs at the vertex of the parabola. The t-coordinate of the vertex is -b/2a, where a = -16 and b = 25. This gives t = 25/(2*16) = 0.78 seconds. Plugging this value back into the height equation gives h(0.78) = -16(0.78)² + 25(0.78) = 19.53 feet.","The maximum height of the ball corresponds to the vertex of the parabola described by h(t) = -16t² + 25t.
+The time to reach the vertex is given by t = -b / (2a).
+Here, a = -16 and b = 25, so t = -25 / (2 * -16) = 25/32 seconds.
+To find the maximum height, substitute this value of t back into the equation:
+h(25/32) = -16 * (25/32)² + 25 * (25/32)
+h_max = -16 * (625/1024) + 625/32 = -625/64 + 1250/64 = 625/64.
+The maximum height is 625/64 = 9.765625 feet.
+None of the provided options are correct.",gemini:gemini-2.5-pro,38604,5.0,5.0,Incorrect,1.0,"Clarity: The question is clearly stated, providing all necessary information and a standard formula.
+Context Accuracy: The physics context of projectile motion is accurate, and the values used (gravity constant, initial velocity) are realistic for the imperial system.
+Quality of Working: The generator identifies the correct method (finding the vertex) but makes a major arithmetic error. The calculation `-16(0.78)² + 25(0.78)` does not equal 19.53; it equals approximately 9.77. The generator's answer of 19.53 seems to come from calculating only the `25t` term.
+Final Answer Accuracy: The generator's answer is incorrect. The true maximum height is approximately 9.77 feet. The generator's answer matches the provided key (A), but the key and all options are incorrect, making the question itself flawed.","SYSTEM: You are a Grade 12 Mathematics teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 medium-difficulty computational MCQ from ONE of: algebra (functions/inverse/systems), trigonometry (identities/evaluation), basic calculus (limits/derivatives/simple integrals), or short statistics.
+• Use realistic numbers; round to 2 decimals when needed; avoid formal proofs.
+• Distractors must reflect typical mistakes (sign errors, wrong identities, derivative/limit rules, rounding).
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object:
+  [{""question"":""..."",""options"":[""A. ..."",""B. ..."",""C. ..."",""D. ...""],""answer"":""A"",""solution"":""3–6 short lines, plain text; no LaTeX/markdown.""}]
+- The ""solution"" field is MANDATORY with 3–6 short lines (plain text; no LaTeX/markdown).
+- No extra text outside JSON; no code fences.
+- Options MUST be prefixed ""A. ""/""B. ""/""C. ""/""D. "" and ""answer"" ∈ {A,B,C,D}.
+- NO LaTeX: do not use $ or backslashes; write plain text (sin, cos, pi, (a)/(b)).
+USER: Topic: Mathematics. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: from, upwards, integral, 100, meters, and, straight, rest, launched, what, long, that, 30, particle, accelerates, neglecting, along, height, seconds, wide, function, 5, projectile, vertically, angle, garden, ball, 12, thrown, car, uniformly, 16, 9, 1, 3, maximum, value, 9.8, moves, 4, 18, velocity, initial, line, derivative, with, 8, displacement, speed, 7, find, lim, 6, horizontally, 15, rectangular, 20, its, 2.
+- Do NOT print this list in the output."
+mathematics,gemma,struktur1,13,2868,"A ball is thrown upwards with an initial velocity of 22 feet per second. Its height, h, in feet, after t seconds is given by the equation h(t) = -16t^2 + 22t. What is the maximum height the ball reaches?",A. 7.56 feet,B. 15.12 feet,C. 24.20 feet,D. 30.25 feet,B,"The maximum height occurs at the vertex of the parabola. The t-coordinate of the vertex is -b/2a, where a = -16 and b = 22. This gives us t = 22/(2*(-16)) = 1.375 seconds. Plugging this value back into the height equation gives us h(1.375) = 15.12 feet.","The height of the ball is described by the quadratic equation h(t) = -16t^2 + 22t, which represents a downward-opening parabola. The maximum height is the y-coordinate of the vertex.
+The time to reach the vertex is given by the formula t = -b / (2a).
+For this equation, a = -16 and b = 22.
+So, t = -22 / (2 * -16) = -22 / -32 = 0.6875 seconds.
+To find the maximum height, substitute this time back into the equation:
+h(0.6875) = -16 * (0.6875)^2 + 22 * (0.6875)
+h(0.6875) = -16 * (0.47265625) + 15.125
+h(0.6875) = -7.5625 + 15.125 = 7.5625 feet.
+This rounds to 7.56 feet, which is option A.",gemini:gemini-2.5-pro,28980,5.0,4.5,Incorrect,0.0,"Clarity: The question is perfectly clear. It provides the necessary equation, defines the variables, and states the objective unambiguously.
+Context Accuracy: The physical model h(t) = -16t^2 + v0*t is standard and correct for projectile motion in feet per second. The values are realistic.
+Quality of Working: The generator's solution is completely flawed. It uses an incorrect formula for the time to the vertex (effectively -b/a instead of -b/2a), makes an arithmetic error in that calculation, and then makes a further arithmetic error when calculating the height. The entire process is invalid.
+Final Answer Accuracy: The correct maximum height is 7.5625 feet (Option A). The generator's answer of 15.12 feet (Option B) is incorrect. The provided key is also incorrect.","SYSTEM: You are a Grade 12 Mathematics teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 medium-difficulty computational MCQ from ONE of: algebra (functions/inverse/systems), trigonometry (identities/evaluation), basic calculus (limits/derivatives/simple integrals), or short statistics.
+• Use realistic numbers; round to 2 decimals when needed; avoid formal proofs.
+• Distractors must reflect typical mistakes (sign errors, wrong identities, derivative/limit rules, rounding).
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object:
+  [{""question"":""..."",""options"":[""A. ..."",""B. ..."",""C. ..."",""D. ...""],""answer"":""A"",""solution"":""3–6 short lines, plain text; no LaTeX/markdown.""}]
+- The ""solution"" field is MANDATORY with 3–6 short lines (plain text; no LaTeX/markdown).
+- No extra text outside JSON; no code fences.
+- Options MUST be prefixed ""A. ""/""B. ""/""C. ""/""D. "" and ""answer"" ∈ {A,B,C,D}.
+- NO LaTeX: do not use $ or backslashes; write plain text (sin, cos, pi, (a)/(b)).
+USER: Topic: Mathematics. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: from, upwards, integral, 100, meters, and, straight, rest, launched, what, long, that, 30, particle, accelerates, neglecting, along, height, seconds, wide, function, 5, projectile, vertically, angle, garden, ball, 12, thrown, car, uniformly, 16, 9, 1, 3, maximum, value, per, 25, 9.8, moves, 4, 18, feet, velocity, second, initial, line, derivative, with, 8, displacement, speed, 7, find, lim, 6, horizontally, 15, rectangular, 20, its, 2.
+- Do NOT print this list in the output."
+mathematics,gemma,struktur1,14,2966,"A ball is thrown upwards with an initial velocity of 20 feet per second. Its height, h, in feet after t seconds is given by the equation h(t) = -16t² + 20t. What is the maximum height reached by the ball?",A. 12.5 feet,B. 25 feet,C. 15 feet,D. 20 feet,A,The maximum height occurs at the vertex of the parabola. The t-coordinate of the vertex is -b/(2a) where a=-16 and b=20. This gives t=20/(2*16)=0.625 seconds. Plugging this value of t back into the height equation gives h(0.625) = -16(0.625)² + 20(0.625) = 12.5 feet.,"The height of the ball is described by a quadratic equation, h(t) = -16t² + 20t, which represents a downward-opening parabola. The maximum height occurs at the vertex.
+The time to reach the vertex is given by the formula t = -b / (2a).
+For this equation, a = -16 and b = 20.
+So, t = -20 / (2 * -16) = -20 / -32 = 0.625 seconds.
+To find the maximum height, substitute this time back into the height equation:
+h(0.625) = -16 * (0.625)² + 20 * (0.625)
+h(0.625) = -16 * (0.390625) + 12.5
+h(0.625) = -6.25 + 12.5 = 6.25 feet.",gemini:gemini-2.5-pro,35775,5.0,5.0,Incorrect,2.0,"Clarity: The question is well-defined, providing a clear equation and a specific goal. All necessary information is present.
+Context Accuracy: The physics context is accurate. The equation h(t) = -16t² + v₀t is standard for projectile motion in feet (using g ≈ 32 ft/s²), and the initial velocity is reasonable.
+Quality of Working: The generator correctly identified the method (finding the vertex) and correctly calculated the time to reach maximum height (t=0.625s). However, it made a critical arithmetic error in the final step, calculating the height as 12.5 ft instead of the correct 6.25 ft.
+Final Answer Accuracy: The generator's answer of 12.5 feet is incorrect; the correct answer is 6.25 feet. It should be noted that the question itself is flawed, as the correct answer is not among the options provided. The generator's incorrect answer matches the question's incorrect key.","SYSTEM: You are a Grade 12 Mathematics teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 medium-difficulty computational MCQ from ONE of: algebra (functions/inverse/systems), trigonometry (identities/evaluation), basic calculus (limits/derivatives/simple integrals), or short statistics.
+• Use realistic numbers; round to 2 decimals when needed; avoid formal proofs.
+• Distractors must reflect typical mistakes (sign errors, wrong identities, derivative/limit rules, rounding).
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object:
+  [{""question"":""..."",""options"":[""A. ..."",""B. ..."",""C. ..."",""D. ...""],""answer"":""A"",""solution"":""3–6 short lines, plain text; no LaTeX/markdown.""}]
+- The ""solution"" field is MANDATORY with 3–6 short lines (plain text; no LaTeX/markdown).
+- No extra text outside JSON; no code fences.
+- Options MUST be prefixed ""A. ""/""B. ""/""C. ""/""D. "" and ""answer"" ∈ {A,B,C,D}.
+- NO LaTeX: do not use $ or backslashes; write plain text (sin, cos, pi, (a)/(b)).
+USER: Topic: Mathematics. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: from, upwards, integral, 100, meters, and, straight, rest, launched, what, long, that, 30, particle, accelerates, neglecting, along, height, seconds, wide, function, 5, projectile, vertically, angle, garden, ball, 12, thrown, car, uniformly, 16, 9, 1, 3, maximum, value, per, 25, 9.8, moves, 4, 18, feet, velocity, second, initial, line, derivative, with, 8, displacement, speed, 22, 7, find, lim, 6, horizontally, 15, rectangular, 20, its, 2.
+- Do NOT print this list in the output."
+mathematics,gemma,struktur1,15,3204,A ball is thrown upwards with an initial velocity of 14 m/s. How long does it take to reach its highest point? (Assume g = 9.8 m/s²),A. 1.43 s,B. 2.86 s,C. 7.00 s,D. 13.72 s,A,"At the highest point, the final velocity is 0 m/s. Using the equation v = u + at, where v = 0, u = 14 m/s, and a = -9.8 m/s², we can solve for t. 0 = 14 - 9.8t, so t = 1.43 s.","The problem asks for the time to reach the peak of a vertical trajectory. At the highest point, the vertical velocity of the ball is momentarily zero.
+Given:
+Initial velocity (u) = 14 m/s
+Final velocity (v) = 0 m/s
+Acceleration (a) = -g = -9.8 m/s² (negative because it opposes the initial upward motion)
+Using the kinematic equation v = u + at:
+0 = 14 + (-9.8) * t
+9.8t = 14
+t = 14 / 9.8 ≈ 1.42857 s
+Rounding to two decimal places gives t = 1.43 s.",gemini:gemini-2.5-pro,11017,5.0,5.0,Correct,5.0,"Clarity: The question is unambiguous, providing all necessary data (initial velocity, g) and a clear objective.
+Context Accuracy: This is a standard and physically realistic kinematics problem. The initial velocity is reasonable for a thrown ball.
+Quality of Working: The generator's solution correctly identifies that final velocity is zero at the apex, uses the appropriate kinematic equation, and performs the calculation accurately.
+Final Answer Accuracy: The generator's result of 1.43 s is correct and matches option A.","SYSTEM: You are a Grade 12 Mathematics teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 medium-difficulty computational MCQ from ONE of: algebra (functions/inverse/systems), trigonometry (identities/evaluation), basic calculus (limits/derivatives/simple integrals), or short statistics.
+• Use realistic numbers; round to 2 decimals when needed; avoid formal proofs.
+• Distractors must reflect typical mistakes (sign errors, wrong identities, derivative/limit rules, rounding).
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object:
+  [{""question"":""..."",""options"":[""A. ..."",""B. ..."",""C. ..."",""D. ...""],""answer"":""A"",""solution"":""3–6 short lines, plain text; no LaTeX/markdown.""}]
+- The ""solution"" field is MANDATORY with 3–6 short lines (plain text; no LaTeX/markdown).
+- No extra text outside JSON; no code fences.
+- Options MUST be prefixed ""A. ""/""B. ""/""C. ""/""D. "" and ""answer"" ∈ {A,B,C,D}.
+- NO LaTeX: do not use $ or backslashes; write plain text (sin, cos, pi, (a)/(b)).
+USER: Topic: Mathematics. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: from, upwards, integral, 100, meters, and, straight, rest, launched, what, long, that, 30, particle, accelerates, neglecting, along, height, seconds, wide, function, 5, projectile, vertically, angle, garden, ball, 12, thrown, car, uniformly, 16, 9, 1, 3, maximum, value, per, 25, 9.8, moves, 4, 18, feet, velocity, second, initial, line, derivative, with, 8, displacement, speed, 22, 7, find, lim, 6, horizontally, 15, rectangular, 20, its, 2.
+- Do NOT print this list in the output."
+mathematics,gemma,struktur1,16,2802,"A ball is thrown upwards with an initial velocity of 18 feet per second. Its height, h, in feet, after t seconds is given by the equation h(t) = -16t² + 18t. What is the maximum height the ball reaches?",A. 18 feet,B. 20.25 feet,C. 22.5 feet,D. 32.4 feet,B,"The maximum height occurs at the vertex of the parabola. The t-coordinate of the vertex is -b/2a, where a = -16 and b = 18. This gives t = 18/(2*(-16)) = 0.5625 seconds. Plugging this value of t back into the height equation gives h(0.5625) = 20.25 feet.","The maximum height of the projectile is the vertex of the parabolic function h(t) = -16t² + 18t.
+The time to reach the maximum height is given by the vertex formula t = -b / (2a).
+With a = -16 and b = 18, the time is t = -18 / (2 * -16) = 18 / 32 = 0.5625 seconds.
+To find the maximum height, substitute this time back into the height equation:
+h(0.5625) = -16 * (0.5625)² + 18 * (0.5625)
+h(0.5625) = -16 * (0.31640625) + 10.125
+h(0.5625) = -5.0625 + 10.125 = 5.0625 feet.
+Since 5.0625 feet is not an option, the question or its options are flawed. The generator's answer of 20.25 feet is incorrect.",gemini:gemini-2.5-pro,48570,5.0,2.5,Incorrect,1.0,"Clarity: The question is clearly stated, providing the necessary formula and a well-defined goal.
+Context Accuracy: The physics equation h(t) = -16t² + v₀t is conceptually correct for feet and seconds. However, the provided options and key are incorrect for the given initial velocity, as the true maximum height is 5.0625 feet. This is a significant flaw.
+Quality of Working: The generator identifies the correct method (finding the vertex). However, the calculation of the height is arithmetically wrong. Plugging t=0.5625 into the equation yields 5.0625, not 20.25. The generator seems to have worked backward from the incorrect key rather than solving the problem.
+Final Answer Accuracy: The generator's answer of 20.25 feet is incorrect. The correct answer to the question as written is 5.0625 feet. The generator's answer matches the flawed key but does not correctly solve the problem.","SYSTEM: You are a Grade 12 Mathematics teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 medium-difficulty computational MCQ from ONE of: algebra (functions/inverse/systems), trigonometry (identities/evaluation), basic calculus (limits/derivatives/simple integrals), or short statistics.
+• Use realistic numbers; round to 2 decimals when needed; avoid formal proofs.
+• Distractors must reflect typical mistakes (sign errors, wrong identities, derivative/limit rules, rounding).
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object:
+  [{""question"":""..."",""options"":[""A. ..."",""B. ..."",""C. ..."",""D. ...""],""answer"":""A"",""solution"":""3–6 short lines, plain text; no LaTeX/markdown.""}]
+- The ""solution"" field is MANDATORY with 3–6 short lines (plain text; no LaTeX/markdown).
+- No extra text outside JSON; no code fences.
+- Options MUST be prefixed ""A. ""/""B. ""/""C. ""/""D. "" and ""answer"" ∈ {A,B,C,D}.
+- NO LaTeX: do not use $ or backslashes; write plain text (sin, cos, pi, (a)/(b)).
+USER: Topic: Mathematics. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: from, upwards, integral, 100, meters, and, straight, rest, launched, what, long, that, 30, particle, accelerates, neglecting, along, height, seconds, wide, function, 5, projectile, vertically, angle, how, garden, 14, ball, 12, thrown, car, uniformly, 16, 9, 1, 3, maximum, value, per, 25, 9.8, moves, 4, 18, feet, velocity, second, initial, line, derivative, with, 8, displacement, speed, 22, 7, find, lim, 6, horizontally, 15, rectangular, 20, its, 2.
+- Do NOT print this list in the output."
+mathematics,gemma,struktur1,17,2659,"A ball is thrown upwards with an initial velocity of 18 feet per second. Its height, h, in feet after t seconds is given by the equation h(t) = -16t^2 + 18t. What is the maximum height the ball reaches?",A. 2.03 feet,B. 18 feet,C. 2.5 feet,D. 16 feet,A,"The maximum height occurs at the vertex of the parabola. The t-coordinate of the vertex is -b/2a, where a = -16 and b = 18. This gives us t = 18/(2*(-16)) = 0.5625 seconds. Plugging this value back into the height equation gives us h(0.5625) = -16(0.5625)^2 + 18(0.5625) = 2.03 feet.","The maximum height of the ball corresponds to the vertex of the parabolic function h(t) = -16t^2 + 18t.
+The time to reach the maximum height is given by the vertex formula t = -b / (2a).
+Here, a = -16 and b = 18, so t = -18 / (2 * -16) = -18 / -32 = 0.5625 seconds.
+To find the maximum height, substitute this time back into the height equation:
+h(0.5625) = -16 * (0.5625)^2 + 18 * (0.5625)
+h(0.5625) = -16 * (0.31640625) + 10.125
+h(0.5625) = -5.0625 + 10.125 = 5.0625 feet.
+None of the provided options are correct.",gemini:gemini-2.5-pro,20208,5.0,5.0,Incorrect,2.0,"Clarity: The question is clearly worded, providing the necessary equation and defining all variables and units.
+Context Accuracy: The equation h(t) = -16t^2 + v0*t is a standard and accurate model for projectile motion in feet per second.
+Quality of Working: The generator correctly identifies the method (finding the vertex) and calculates the time to reach the vertex correctly. However, there is a major arithmetic error in the final step when calculating the height, leading to an incorrect result.
+Final Answer Accuracy: The generator's final answer is incorrect due to the calculation error. The correct maximum height is 5.0625 feet, which is not among the options, indicating a flaw in the question's options/key.","SYSTEM: You are a Grade 12 Mathematics teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 medium-difficulty computational MCQ from ONE of: algebra (functions/inverse/systems), trigonometry (identities/evaluation), basic calculus (limits/derivatives/simple integrals), or short statistics.
+• Use realistic numbers; round to 2 decimals when needed; avoid formal proofs.
+• Distractors must reflect typical mistakes (sign errors, wrong identities, derivative/limit rules, rounding).
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object:
+  [{""question"":""..."",""options"":[""A. ..."",""B. ..."",""C. ..."",""D. ...""],""answer"":""A"",""solution"":""3–6 short lines, plain text; no LaTeX/markdown.""}]
+- The ""solution"" field is MANDATORY with 3–6 short lines (plain text; no LaTeX/markdown).
+- No extra text outside JSON; no code fences.
+- Options MUST be prefixed ""A. ""/""B. ""/""C. ""/""D. "" and ""answer"" ∈ {A,B,C,D}.
+- NO LaTeX: do not use $ or backslashes; write plain text (sin, cos, pi, (a)/(b)).
+USER: Topic: Mathematics. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: from, upwards, integral, 100, meters, and, straight, rest, launched, what, long, that, 30, particle, accelerates, neglecting, along, height, seconds, wide, function, 5, projectile, vertically, angle, how, garden, 14, ball, 12, thrown, car, uniformly, 16, 9, 1, 3, maximum, value, per, 25, 9.8, moves, 4, 18, feet, velocity, second, initial, line, derivative, with, 8, displacement, speed, 22, 7, find, lim, 6, horizontally, 15, rectangular, 20, its, 2.
+- Do NOT print this list in the output."
+mathematics,gemma,struktur1,18,3160,"A ball is thrown upwards with an initial velocity of 18 m/s. What is its velocity after 2 seconds, given that the acceleration due to gravity is -9.8 m/s²?",A. 14.4 m/s,B. 27.6 m/s,C. 12.4 m/s,D. -4.4 m/s,A,"Using the equation v = u + at, where v is final velocity, u is initial velocity, a is acceleration, and t is time. v = 18 + (-9.8)(2) = 18 - 19.6 = -1.6 m/s. Since the velocity is negative, it indicates the ball is moving downwards. The magnitude of the velocity is 1.6 m/s.","The problem is solved using the first equation of motion: v = u + at.
+Given:
+Initial velocity (u) = 18 m/s
+Acceleration (a) = -9.8 m/s²
+Time (t) = 2 s
+
+Substitute the values into the equation:
+v = 18 + (-9.8 * 2)
+v = 18 - 19.6
+v = -1.6 m/s
+
+The correct velocity after 2 seconds is -1.6 m/s. None of the provided options are correct.",gemini:gemini-2.5-pro,28132,2.0,5.0,Correct,5.0,"Clarity: The question stem is clearly worded, but the MCQ is fundamentally flawed because none of the options, including the provided key 'A', are correct. The correct answer is -1.6 m/s, which is not listed. This makes the question unsolvable.
+Context Accuracy: The physical scenario of a ball thrown upwards and the values for initial velocity and gravity are standard and realistic for an introductory physics problem.
+Quality of Working: The generator's solution is perfect. It uses the correct formula, substitutes the values correctly, and performs the arithmetic accurately to arrive at the correct physical answer.
+Final Answer Accuracy: The generator's calculated answer of -1.6 m/s is the correct solution to the physics problem posed. The error lies in the question's options and key, not in the generator's solution process.","SYSTEM: You are a Grade 12 Mathematics teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 medium-difficulty computational MCQ from ONE of: algebra (functions/inverse/systems), trigonometry (identities/evaluation), basic calculus (limits/derivatives/simple integrals), or short statistics.
+• Use realistic numbers; round to 2 decimals when needed; avoid formal proofs.
+• Distractors must reflect typical mistakes (sign errors, wrong identities, derivative/limit rules, rounding).
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object:
+  [{""question"":""..."",""options"":[""A. ..."",""B. ..."",""C. ..."",""D. ...""],""answer"":""A"",""solution"":""3–6 short lines, plain text; no LaTeX/markdown.""}]
+- The ""solution"" field is MANDATORY with 3–6 short lines (plain text; no LaTeX/markdown).
+- No extra text outside JSON; no code fences.
+- Options MUST be prefixed ""A. ""/""B. ""/""C. ""/""D. "" and ""answer"" ∈ {A,B,C,D}.
+- NO LaTeX: do not use $ or backslashes; write plain text (sin, cos, pi, (a)/(b)).
+USER: Topic: Mathematics. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: from, upwards, integral, 100, meters, and, straight, rest, launched, what, long, that, 30, particle, accelerates, neglecting, along, height, seconds, wide, function, 5, projectile, vertically, angle, how, garden, 14, ball, 12, thrown, car, uniformly, 16, 9, 1, 3, maximum, value, per, 25, 9.8, moves, 4, 18, feet, velocity, second, initial, line, derivative, with, 8, displacement, speed, 22, 7, find, lim, 6, horizontally, 15, rectangular, 20, its, 2.
+- Do NOT print this list in the output."
+mathematics,gemma,struktur1,19,3375,A ball is thrown upwards with an initial velocity of 18 feet per second. Its height (in feet) after t seconds is given by the function h(t) = -16t² + 18t. What is the maximum height the ball reaches?,A. 10.13 feet,B. 18.00 feet,C. 2.03 feet,D. 0.00 feet,A,"The maximum height occurs at the vertex of the parabola. The t-coordinate of the vertex is -b/2a, where a=-16 and b=18. This gives t=0.5625 seconds. Plugging this value back into the height function gives h(0.5625) = 10.13 feet.","The height of the ball is described by the quadratic function h(t) = -16t² + 18t, which represents a downward-opening parabola.
+The maximum height is the h-coordinate of the vertex.
+The t-coordinate of the vertex is given by t = -b / (2a).
+For this function, a = -16 and b = 18.
+t = -18 / (2 * -16) = 18 / 32 = 0.5625 seconds.
+To find the maximum height, substitute this time back into the function:
+h(0.5625) = -16 * (0.5625)² + 18 * (0.5625)
+h(0.5625) = -16 * (0.31640625) + 10.125
+h(0.5625) = -5.0625 + 10.125 = 5.0625 feet.
+The correct answer is 5.0625 feet, which is not among the options.",gemini:gemini-2.5-pro,34607,5.0,5.0,Incorrect,2.0,"Clarity: The question is clearly stated, providing the necessary function and asking for a specific quantity (maximum height).
+Context Accuracy: The physics context is accurate. The function h(t) = -16t² + v₀t is the standard model for projectile motion in feet and seconds.
+Quality of Working: The generator correctly identifies the method (finding the vertex) and correctly calculates the time to reach the maximum height. However, it makes a critical error when calculating the height itself, arriving at an incorrect value.
+Final Answer Accuracy: The generator's final answer is incorrect. The correct maximum height is 5.0625 feet, not 10.13 feet. The generator's answer matches the flawed key provided with the question, but it is not the correct solution.","SYSTEM: You are a Grade 12 Mathematics teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 medium-difficulty computational MCQ from ONE of: algebra (functions/inverse/systems), trigonometry (identities/evaluation), basic calculus (limits/derivatives/simple integrals), or short statistics.
+• Use realistic numbers; round to 2 decimals when needed; avoid formal proofs.
+• Distractors must reflect typical mistakes (sign errors, wrong identities, derivative/limit rules, rounding).
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object:
+  [{""question"":""..."",""options"":[""A. ..."",""B. ..."",""C. ..."",""D. ...""],""answer"":""A"",""solution"":""3–6 short lines, plain text; no LaTeX/markdown.""}]
+- The ""solution"" field is MANDATORY with 3–6 short lines (plain text; no LaTeX/markdown).
+- No extra text outside JSON; no code fences.
+- Options MUST be prefixed ""A. ""/""B. ""/""C. ""/""D. "" and ""answer"" ∈ {A,B,C,D}.
+- NO LaTeX: do not use $ or backslashes; write plain text (sin, cos, pi, (a)/(b)).
+USER: Topic: Mathematics. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: from, upwards, integral, 100, meters, and, straight, rest, launched, what, long, that, 30, particle, accelerates, neglecting, along, height, seconds, wide, function, 5, projectile, vertically, angle, how, garden, 14, ball, 12, thrown, car, uniformly, 16, 9, 1, 3, maximum, value, per, 25, 9.8, moves, 4, 18, feet, velocity, second, initial, line, derivative, with, 8, displacement, speed, 22, 7, find, lim, 6, horizontally, 15, rectangular, 20, its, 2.
+- Do NOT print this list in the output."
+mathematics,gemma,struktur1,20,2769,"A ball is thrown with an initial velocity of 12 feet per second. If the height of the ball after t seconds is given by h(t) = -16t^2 + 12t, what is the maximum height reached by the ball?",A. 0.94 feet,B. 1.50 feet,C. 2.25 feet,D. 3.38 feet,C,"The maximum height occurs at the vertex of the parabola. The t-coordinate of the vertex is -b/2a, where a = -16 and b = 12. This gives t = 0.75 seconds. Substituting this value into h(t) gives the maximum height: h(0.75) = -16(0.75)^2 + 12(0.75) = 2.25 feet.","The height of the ball is described by the quadratic function h(t) = -16t^2 + 12t. This represents a downward-opening parabola.
+The maximum height is the y-coordinate of the vertex.
+The time to reach the vertex is given by the formula t = -b / (2a).
+For this equation, a = -16 and b = 12.
+So, t = -12 / (2 * -16) = 12 / 32 = 3/8 = 0.375 seconds.
+To find the maximum height, substitute this time back into the height function:
+h(0.375) = -16(0.375)^2 + 12(0.375) = -16(0.140625) + 4.5 = -2.25 + 4.5 = 2.25 feet.",gemini:gemini-2.5-pro,24171,5.0,5.0,Correct,1.0,"Clarity: The question is perfectly clear, providing the necessary function and asking a direct question about its maximum value.
+Context Accuracy: The physics model h(t) = -16t^2 + v0*t is standard and correct for projectile motion in feet and seconds. The values are realistic.
+Quality of Working: The generator's working is severely flawed. It incorrectly calculates the time to the vertex as t=0.75s (the correct time is 0.375s). It then incorrectly evaluates h(0.75) as 2.25 (the correct value is 0). The final answer is correct, but the steps shown to reach it are entirely wrong.
+Final Answer Accuracy: Despite the completely incorrect working, the final numerical answer provided by the generator is correct.","SYSTEM: You are a Grade 12 Mathematics teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 medium-difficulty computational MCQ from ONE of: algebra (functions/inverse/systems), trigonometry (identities/evaluation), basic calculus (limits/derivatives/simple integrals), or short statistics.
+• Use realistic numbers; round to 2 decimals when needed; avoid formal proofs.
+• Distractors must reflect typical mistakes (sign errors, wrong identities, derivative/limit rules, rounding).
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object:
+  [{""question"":""..."",""options"":[""A. ..."",""B. ..."",""C. ..."",""D. ...""],""answer"":""A"",""solution"":""3–6 short lines, plain text; no LaTeX/markdown.""}]
+- The ""solution"" field is MANDATORY with 3–6 short lines (plain text; no LaTeX/markdown).
+- No extra text outside JSON; no code fences.
+- Options MUST be prefixed ""A. ""/""B. ""/""C. ""/""D. "" and ""answer"" ∈ {A,B,C,D}.
+- NO LaTeX: do not use $ or backslashes; write plain text (sin, cos, pi, (a)/(b)).
+USER: Topic: Mathematics. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: from, upwards, integral, 100, meters, and, straight, rest, launched, what, long, that, 30, particle, accelerates, neglecting, along, height, seconds, wide, function, 5, projectile, vertically, angle, how, garden, 14, ball, 12, thrown, car, uniformly, 16, 9, 1, 3, maximum, value, per, 25, 9.8, moves, 4, 18, feet, velocity, second, initial, line, derivative, with, 8, displacement, speed, 22, 7, find, lim, 6, horizontally, 15, rectangular, 20, its, 2.
+- Do NOT print this list in the output."
+mathematics,gemma,struktur1,21,2860,A ball is thrown upwards with an initial velocity of 18 feet per second. Its height (in feet) after t seconds is given by the function h(t) = -16t^2 + 18t. What is the maximum height reached by the ball?,A. 10.13 feet,B. 18 feet,C. 20.25 feet,D. 27 feet,C,The maximum height occurs at the vertex of the parabola. The t-coordinate of the vertex is -b/(2a) where a=-16 and b=18. This gives us t=18/(2*16)=1.125 seconds. Plugging this back into h(t) gives us h(1.125) = -16(1.125)^2 + 18(1.125) = 20.25 feet.,"The height of the ball is described by the quadratic function h(t) = -16t^2 + 18t. This represents a downward-opening parabola.
+The maximum height is the y-coordinate of the vertex.
+The t-coordinate of the vertex is found using the formula t = -b / (2a).
+For this function, a = -16 and b = 18.
+t = -18 / (2 * -16) = 18 / 32 = 0.5625 seconds.
+To find the maximum height, substitute this time back into the function:
+h(0.5625) = -16(0.5625)^2 + 18(0.5625) = -16(0.31640625) + 10.125
+h(0.5625) = -5.0625 + 10.125 = 5.0625 feet.
+The correct answer is not among the options.",gemini:gemini-2.5-pro,51465,4.0,3.0,Incorrect,0.0,"Clarity: The question is clearly worded, but it is flawed because the correct answer (5.0625 ft) is not available in the options, making the question unsolvable.
+Context Accuracy: The physics model is appropriate, but the numerical values in the problem statement are inconsistent. The options and key correspond to an initial velocity of 36 ft/s, not the stated 18 ft/s.
+Quality of Working: The generator's solution is completely wrong. It makes two major arithmetic errors: first in calculating the time to the vertex (1.125s instead of 0.5625s), and second in evaluating the height at that incorrect time (getting 20.25 ft when the actual height is 0 ft).
+Final Answer Accuracy: The generator's answer of 20.25 feet is incorrect for the function given in the question. The correct maximum height is 5.0625 feet. The generator's answer matches the flawed key, but it is not the correct solution to the problem as stated.","SYSTEM: You are a Grade 12 Mathematics teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 medium-difficulty computational MCQ from ONE of: algebra (functions/inverse/systems), trigonometry (identities/evaluation), basic calculus (limits/derivatives/simple integrals), or short statistics.
+• Use realistic numbers; round to 2 decimals when needed; avoid formal proofs.
+• Distractors must reflect typical mistakes (sign errors, wrong identities, derivative/limit rules, rounding).
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object:
+  [{""question"":""..."",""options"":[""A. ..."",""B. ..."",""C. ..."",""D. ...""],""answer"":""A"",""solution"":""3–6 short lines, plain text; no LaTeX/markdown.""}]
+- The ""solution"" field is MANDATORY with 3–6 short lines (plain text; no LaTeX/markdown).
+- No extra text outside JSON; no code fences.
+- Options MUST be prefixed ""A. ""/""B. ""/""C. ""/""D. "" and ""answer"" ∈ {A,B,C,D}.
+- NO LaTeX: do not use $ or backslashes; write plain text (sin, cos, pi, (a)/(b)).
+USER: Topic: Mathematics. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: from, upwards, integral, 100, meters, and, straight, rest, launched, what, long, that, 30, particle, accelerates, neglecting, along, height, seconds, wide, function, 5, projectile, vertically, angle, how, garden, 14, ball, 12, thrown, car, uniformly, 16, 9, 1, 3, maximum, value, per, 25, 9.8, moves, 4, 18, feet, velocity, second, initial, line, derivative, with, 8, displacement, speed, 22, 7, find, lim, 6, horizontally, 15, rectangular, 20, its, 2.
+- Do NOT print this list in the output."
+mathematics,gemma,struktur1,22,2911,"A ball is thrown upwards with an initial velocity of 28 feet per second. Its height, h, in feet, after t seconds is given by the equation h(t) = -16t² + 28t. What is the maximum height reached by the ball?",A. 28 feet,B. 39.2 feet,C. 49 feet,D. 56 feet,B,"The maximum height occurs at the vertex of the parabola. The t-coordinate of the vertex is -b/2a, where a = -16 and b = 28. This gives t = 28/(2*(-16)) = 0.875 seconds. Plugging this value of t back into the height equation gives h(0.875) = 39.2 feet.","The problem asks for the maximum height, which is the vertex of the parabolic function h(t) = -16t² + 28t.
+The time to reach the maximum height is given by the vertex formula t = -b/(2a).
+Here, a = -16 and b = 28.
+t = -28 / (2 * -16) = -28 / -32 = 0.875 seconds.
+To find the maximum height, substitute this time back into the height equation:
+h(0.875) = -16(0.875)² + 28(0.875)
+h(0.875) = -16(0.765625) + 24.5
+h(0.875) = -12.25 + 24.5 = 12.25 feet.
+The correct answer is 12.25 feet, which is not among the options.",gemini:gemini-2.5-pro,33785,5.0,5.0,Incorrect,1.5,"Clarity: The question is well-worded, and the provided equation contains all the necessary information to solve the problem.
+Context Accuracy: The physics model for projectile motion in feet and seconds is accurate (using -16t² for half of gravity's acceleration), and the initial velocity is a realistic value.
+Quality of Working: The generator correctly identifies the method (finding the vertex) but makes a significant arithmetic error. Plugging t=0.875 into the equation yields 12.25, not 39.2. The reasoning is sound, but the calculation is wrong.
+Final Answer Accuracy: The generator's answer is incorrect. The true maximum height is 12.25 feet. The question itself is flawed because the correct answer is not listed as an option, and the provided key is also incorrect.","SYSTEM: You are a Grade 12 Mathematics teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 medium-difficulty computational MCQ from ONE of: algebra (functions/inverse/systems), trigonometry (identities/evaluation), basic calculus (limits/derivatives/simple integrals), or short statistics.
+• Use realistic numbers; round to 2 decimals when needed; avoid formal proofs.
+• Distractors must reflect typical mistakes (sign errors, wrong identities, derivative/limit rules, rounding).
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object:
+  [{""question"":""..."",""options"":[""A. ..."",""B. ..."",""C. ..."",""D. ...""],""answer"":""A"",""solution"":""3–6 short lines, plain text; no LaTeX/markdown.""}]
+- The ""solution"" field is MANDATORY with 3–6 short lines (plain text; no LaTeX/markdown).
+- No extra text outside JSON; no code fences.
+- Options MUST be prefixed ""A. ""/""B. ""/""C. ""/""D. "" and ""answer"" ∈ {A,B,C,D}.
+- NO LaTeX: do not use $ or backslashes; write plain text (sin, cos, pi, (a)/(b)).
+USER: Topic: Mathematics. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: from, upwards, integral, 100, meters, and, straight, rest, launched, what, long, that, 30, particle, accelerates, neglecting, along, height, seconds, wide, function, 5, projectile, vertically, angle, how, garden, 14, ball, 12, thrown, car, uniformly, 16, 9, 1, 3, maximum, value, per, 25, 9.8, moves, 4, 18, feet, velocity, second, initial, line, derivative, with, 8, displacement, speed, 22, 7, find, lim, 6, horizontally, 15, rectangular, 20, its, 2.
+- Do NOT print this list in the output."
+mathematics,gemma,struktur1,23,2764,"A ball is thrown upwards with an initial velocity of 18 m/s. What is its velocity after 2 seconds, assuming air resistance is negligible?",A. 14 m/s,B. 2 m/s,C. -14 m/s,D. -2 m/s,C,"The acceleration due to gravity is -9.8 m/s^2. The velocity after 2 seconds is found using v = u + at, where u is the initial velocity, a is the acceleration, and t is time. So, v = 18 + (-9.8)(2) = 18 - 19.6 = -1.6 m/s.","This is a constant acceleration problem. The relevant kinematic equation is v = u + at, where v is the final velocity, u is the initial velocity, a is the acceleration, and t is time.
+Given:
+u = +18 m/s (taking upwards as the positive direction)
+t = 2 s
+a = g (acceleration due to gravity) ≈ -10 m/s² (downwards)
+
+Substituting the values:
+v = 18 + (-10)(2)
+v = 18 - 20
+v = -2 m/s
+
+This corresponds to option D. The provided key (C) is incorrect.",gemini:gemini-2.5-pro,24774,4.5,5.0,Incorrect,5.0,"Clarity: The question is clearly stated, but it omits the value to be used for acceleration due to gravity (g). Using the common approximation g=10 m/s^2 leads to option D. Using g=9.8 m/s^2 leads to -1.6 m/s, which is not an option.
+Context Accuracy: The physical scenario (a thrown ball) and the given values (initial velocity, time) are realistic and standard for an introductory physics problem.
+Quality of Working: The generator's solution correctly identifies the formula and variables. It uses the more precise value of g = -9.8 m/s^2, and the arithmetic is performed correctly. The reasoning is sound.
+Final Answer Accuracy: The generator's calculated answer is -1.6 m/s. This does not match the provided key, which is C (-14 m/s). The provided key is incorrect; the most plausible intended answer is D (-2 m/s).","SYSTEM: You are a Grade 12 Mathematics teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 medium-difficulty computational MCQ from ONE of: algebra (functions/inverse/systems), trigonometry (identities/evaluation), basic calculus (limits/derivatives/simple integrals), or short statistics.
+• Use realistic numbers; round to 2 decimals when needed; avoid formal proofs.
+• Distractors must reflect typical mistakes (sign errors, wrong identities, derivative/limit rules, rounding).
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object:
+  [{""question"":""..."",""options"":[""A. ..."",""B. ..."",""C. ..."",""D. ...""],""answer"":""A"",""solution"":""3–6 short lines, plain text; no LaTeX/markdown.""}]
+- The ""solution"" field is MANDATORY with 3–6 short lines (plain text; no LaTeX/markdown).
+- No extra text outside JSON; no code fences.
+- Options MUST be prefixed ""A. ""/""B. ""/""C. ""/""D. "" and ""answer"" ∈ {A,B,C,D}.
+- NO LaTeX: do not use $ or backslashes; write plain text (sin, cos, pi, (a)/(b)).
+USER: Topic: Mathematics. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: from, upwards, integral, 100, meters, and, straight, rest, launched, what, long, that, 30, particle, accelerates, neglecting, along, height, seconds, wide, function, 5, projectile, vertically, angle, how, garden, 14, ball, 12, thrown, car, uniformly, 16, 9, 1, 3, maximum, value, per, 25, 9.8, moves, 4, 18, feet, velocity, second, initial, line, derivative, with, 8, displacement, speed, 22, 7, find, 28, lim, 6, horizontally, 15, rectangular, 20, its, 2.
+- Do NOT print this list in the output."
+mathematics,gemma,struktur1,24,3967,"A ball is thrown upwards with an initial velocity of 24 feet per second. Its height, h, in feet, after t seconds is given by h(t) = -16t^2 + 24t. What is the maximum height the ball reaches?",A. 9 feet,B. 18 feet,C. 24 feet,D. 36 feet,B,The maximum height occurs at the vertex of the parabola. The t-coordinate of the vertex is -b/(2a) where a = -16 and b = 24. This gives t = 24/(2*16) = 0.75 seconds. Plugging this value of t back into the height function gives h(0.75) = -16(0.75)^2 + 24(0.75) = 9 feet.,"The height of the ball is described by a downward-opening parabola h(t) = -16t^2 + 24t. The maximum height occurs at the vertex of this parabola.
+The time to reach the maximum height is given by the t-coordinate of the vertex, t = -b / (2a).
+Here, a = -16 and b = 24.
+So, t = -24 / (2 * -16) = -24 / -32 = 0.75 seconds.
+To find the maximum height, substitute this time back into the height function:
+h(0.75) = -16(0.75)^2 + 24(0.75) = -16(0.5625) + 18 = -9 + 18 = 9 feet.
+The maximum height the ball reaches is 9 feet.",gemini:gemini-2.5-pro,21943,5.0,5.0,Correct,4.5,"Clarity: The question is perfectly clear. It provides the necessary function, defines all variables and units, and asks a specific, unambiguous question.
+Context Accuracy: The physical model is correct for projectile motion under gravity in imperial units (the -16 coefficient represents half the acceleration due to gravity, -32 ft/s^2). The initial velocity is reasonable.
+Quality of Working: The generator's method of finding the vertex is correct. The calculation is accurate. A minor deduction is made for a notational error in the vertex formula, writing t = 24/(2*16) instead of the correct t = -24/(2*(-16)), though it yielded the correct result.
+Final Answer Accuracy: The generator's final answer of 9 feet is correct. Note that the provided key (B) is incorrect; the correct option is A.","SYSTEM: You are a Grade 12 Mathematics teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 medium-difficulty computational MCQ from ONE of: algebra (functions/inverse/systems), trigonometry (identities/evaluation), basic calculus (limits/derivatives/simple integrals), or short statistics.
+• Use realistic numbers; round to 2 decimals when needed; avoid formal proofs.
+• Distractors must reflect typical mistakes (sign errors, wrong identities, derivative/limit rules, rounding).
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object:
+  [{""question"":""..."",""options"":[""A. ..."",""B. ..."",""C. ..."",""D. ...""],""answer"":""A"",""solution"":""3–6 short lines, plain text; no LaTeX/markdown.""}]
+- The ""solution"" field is MANDATORY with 3–6 short lines (plain text; no LaTeX/markdown).
+- No extra text outside JSON; no code fences.
+- Options MUST be prefixed ""A. ""/""B. ""/""C. ""/""D. "" and ""answer"" ∈ {A,B,C,D}.
+- NO LaTeX: do not use $ or backslashes; write plain text (sin, cos, pi, (a)/(b)).
+USER: Topic: Mathematics. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: from, upwards, integral, 100, meters, and, straight, rest, launched, what, long, that, 30, particle, accelerates, neglecting, along, height, seconds, wide, function, 5, projectile, vertically, angle, how, garden, 14, ball, 12, thrown, car, uniformly, 16, 9, 1, 3, maximum, value, per, 25, 9.8, moves, 4, 18, feet, velocity, second, initial, line, derivative, with, 8, displacement, speed, 22, 7, find, 28, lim, 6, horizontally, 15, rectangular, 20, its, 2.
+- Do NOT print this list in the output."
+mathematics,gemma,struktur1,25,2735,A ball is thrown upwards with an initial velocity of 18 m/s. What is the maximum height the ball reaches? (Assume g = 9.8 m/s²),A. 16.47 m,B. 18.37 m,C. 14.29 m,D. 20.51 m,C,"Using the equation v² = u² + 2as, where v = 0 (at maximum height), u = 18 m/s, and a = -9.8 m/s², we can solve for s (height). This gives us s = (0² - 18²) / (2 * -9.8) = 16.47 m.","To find the maximum height, we use the kinematic equation: v² = u² + 2as.
+Here, the initial velocity u = 18 m/s.
+At the maximum height, the final velocity v = 0 m/s.
+The acceleration is due to gravity, so a = -g = -9.8 m/s².
+The displacement 's' is the maximum height we need to find.
+Rearranging the formula for s: s = (v² - u²) / (2a).
+Plugging in the values: s = (0² - 18²) / (2 * -9.8) = -324 / -19.6.
+Calculating the result: s ≈ 16.53 m.",gemini:gemini-2.5-pro,27262,5.0,5.0,Incorrect,2.5,"Clarity: The question is perfectly clear, providing all necessary variables (initial velocity, g) and a well-defined goal.
+Context Accuracy: The problem is a standard and realistic application of kinematics in physics.
+Quality of Working: The generator correctly identified the appropriate formula and substituted the variables correctly. However, it made a significant arithmetic error in the final division step; 324 / 19.6 is approximately 16.53, not 16.47.
+Final Answer Accuracy: The generator's final answer of 16.47 m is incorrect due to the calculation error. The correct answer is ~16.53 m. It's also worth noting that the provided key (C) is incorrect, and none of the options precisely match the correct calculated value.","SYSTEM: You are a Grade 12 Mathematics teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 medium-difficulty computational MCQ from ONE of: algebra (functions/inverse/systems), trigonometry (identities/evaluation), basic calculus (limits/derivatives/simple integrals), or short statistics.
+• Use realistic numbers; round to 2 decimals when needed; avoid formal proofs.
+• Distractors must reflect typical mistakes (sign errors, wrong identities, derivative/limit rules, rounding).
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object:
+  [{""question"":""..."",""options"":[""A. ..."",""B. ..."",""C. ..."",""D. ...""],""answer"":""A"",""solution"":""3–6 short lines, plain text; no LaTeX/markdown.""}]
+- The ""solution"" field is MANDATORY with 3–6 short lines (plain text; no LaTeX/markdown).
+- No extra text outside JSON; no code fences.
+- Options MUST be prefixed ""A. ""/""B. ""/""C. ""/""D. "" and ""answer"" ∈ {A,B,C,D}.
+- NO LaTeX: do not use $ or backslashes; write plain text (sin, cos, pi, (a)/(b)).
+USER: Topic: Mathematics. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: from, upwards, integral, 100, meters, and, straight, rest, launched, what, long, that, 30, particle, accelerates, neglecting, along, height, seconds, wide, function, 5, projectile, 24, vertically, angle, how, garden, 14, ball, 12, thrown, car, uniformly, 16, 9, 1, 3, maximum, value, per, 25, 9.8, moves, 4, 18, feet, velocity, second, initial, line, derivative, with, 8, displacement, speed, 22, 7, find, 28, lim, 6, horizontally, 15, rectangular, 20, its, 2.
+- Do NOT print this list in the output."
+mathematics,gemma,struktur1,26,2457,"A ball is thrown upwards with an initial velocity of 18 m/s. Ignoring air resistance, what is the maximum height the ball reaches? (Use g = 9.8 m/s²)",A. 16.47 m,B. 18.37 m,C. 32.94 m,D. 27.27 m,A,"The maximum height is reached when the velocity is 0. Using v² = u² + 2as, where v=0, u=18, a=-9.8, we get 0 = 18² + 2(-9.8)s. Solving for s gives s = 16.47 m.","To find the maximum height, we can use the kinematic equation v² = u² + 2as. At the maximum height, the final velocity (v) is 0 m/s. The initial velocity (u) is 18 m/s, and the acceleration (a) is the acceleration due to gravity, which is -9.8 m/s² (negative because it opposes the upward motion).
+
+Substituting the values:
+0² = (18)² + 2(-9.8)s
+0 = 324 - 19.6s
+19.6s = 324
+s = 324 / 19.6
+s ≈ 16.53 m
+
+This value is closest to option A, 16.47 m. The discrepancy is likely due to a slight rounding error in the creation of the question's options.",gemini:gemini-2.5-pro,28875,5.0,5.0,Correct,3.5,"Clarity: The question is perfectly clear. It provides all necessary data (initial velocity, g) and assumptions (no air resistance) to solve the problem.
+Context Accuracy: The context is a standard, realistic physics problem. The initial velocity of 18 m/s is a plausible speed for a thrown object.
+Quality of Working: The generator correctly identifies the physical principle, the appropriate formula, and correctly substitutes the values. However, the final calculation is arithmetically incorrect. The calculation 18² / (2 * 9.8) yields 16.53 m, not 16.47 m. The generator states the incorrect result which matches the key, rather than the correct result of its own calculation.
+Final Answer Accuracy: The generator's answer matches the provided key (A). It should be noted that the key itself is slightly inaccurate based on the provided numbers.","SYSTEM: You are a Grade 12 Mathematics teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 medium-difficulty computational MCQ from ONE of: algebra (functions/inverse/systems), trigonometry (identities/evaluation), basic calculus (limits/derivatives/simple integrals), or short statistics.
+• Use realistic numbers; round to 2 decimals when needed; avoid formal proofs.
+• Distractors must reflect typical mistakes (sign errors, wrong identities, derivative/limit rules, rounding).
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object:
+  [{""question"":""..."",""options"":[""A. ..."",""B. ..."",""C. ..."",""D. ...""],""answer"":""A"",""solution"":""3–6 short lines, plain text; no LaTeX/markdown.""}]
+- The ""solution"" field is MANDATORY with 3–6 short lines (plain text; no LaTeX/markdown).
+- No extra text outside JSON; no code fences.
+- Options MUST be prefixed ""A. ""/""B. ""/""C. ""/""D. "" and ""answer"" ∈ {A,B,C,D}.
+- NO LaTeX: do not use $ or backslashes; write plain text (sin, cos, pi, (a)/(b)).
+USER: Topic: Mathematics. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: from, upwards, integral, 100, meters, and, straight, rest, launched, what, long, that, 30, particle, accelerates, neglecting, along, height, seconds, wide, function, 5, projectile, 24, vertically, angle, how, garden, 14, ball, 12, thrown, car, uniformly, 16, 9, 1, 3, maximum, value, per, 25, 9.8, moves, 4, 18, feet, velocity, second, initial, line, derivative, with, 8, displacement, speed, 22, 7, find, 28, lim, 6, horizontally, 15, rectangular, 20, its, 2.
+- Do NOT print this list in the output."
+mathematics,gemma,struktur1,27,2854,A ball is thrown upwards with an initial velocity of 17 m/s. What is the maximum height the ball reaches? (Use g = 9.8 m/s<sup>2</sup>),A. 14.69 m,B. 15.93 m,C. 17.00 m,D. 18.23 m,B,"The maximum height is reached when the final velocity is 0. Using v<sup>2</sup> = u<sup>2</sup> + 2as, where v=0, u=17, a=-9.8, and s is the maximum height, we get 0 = 17<sup>2</sup> + 2(-9.8)s. Solving for s gives s = 15.93 m.","To find the maximum height, we can use the kinematic equation: v^2 = u^2 + 2as.
+Here, the initial velocity u = 17 m/s.
+At the maximum height, the final velocity v = 0 m/s.
+The acceleration is due to gravity, so a = -g = -9.8 m/s^2.
+The displacement 's' is the maximum height we want to find.
+Substituting the values: 0^2 = 17^2 + 2(-9.8)s.
+0 = 289 - 19.6s.
+19.6s = 289.
+s = 289 / 19.6 ≈ 14.74 m.
+This value is closest to option A.",gemini:gemini-2.5-pro,28168,5.0,5.0,Incorrect,2.0,"Clarity: The question is well-posed, providing all necessary information (initial velocity, g) and clearly stating the objective.
+Context Accuracy: The scenario is a standard and realistic introductory kinematics problem. The values are physically reasonable.
+Quality of Working: The generator's reasoning is sound, identifying the correct physical principles and formula (v^2 = u^2 + 2as). However, it makes a critical arithmetic error in the final step. The calculation 289 / 19.6 results in approximately 14.74, not 15.93.
+Final Answer Accuracy: The generator's answer is incorrect. The correct calculation based on the provided data yields ~14.74 m, which corresponds to option A. The generator's answer of 15.93 m (Option B) is the result of a calculation error.","SYSTEM: You are a Grade 12 Mathematics teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 medium-difficulty computational MCQ from ONE of: algebra (functions/inverse/systems), trigonometry (identities/evaluation), basic calculus (limits/derivatives/simple integrals), or short statistics.
+• Use realistic numbers; round to 2 decimals when needed; avoid formal proofs.
+• Distractors must reflect typical mistakes (sign errors, wrong identities, derivative/limit rules, rounding).
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object:
+  [{""question"":""..."",""options"":[""A. ..."",""B. ..."",""C. ..."",""D. ...""],""answer"":""A"",""solution"":""3–6 short lines, plain text; no LaTeX/markdown.""}]
+- The ""solution"" field is MANDATORY with 3–6 short lines (plain text; no LaTeX/markdown).
+- No extra text outside JSON; no code fences.
+- Options MUST be prefixed ""A. ""/""B. ""/""C. ""/""D. "" and ""answer"" ∈ {A,B,C,D}.
+- NO LaTeX: do not use $ or backslashes; write plain text (sin, cos, pi, (a)/(b)).
+USER: Topic: Mathematics. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: from, upwards, integral, 100, meters, ignoring, and, straight, air, rest, launched, what, long, that, 30, particle, accelerates, neglecting, along, height, seconds, wide, function, 5, projectile, 24, vertically, angle, how, garden, 14, ball, 12, thrown, car, uniformly, 16, 9, 1, 3, maximum, value, per, 25, 9.8, moves, 4, 18, feet, velocity, second, initial, line, derivative, with, 8, displacement, speed, 22, 7, find, 28, lim, 6, horizontally, 15, rectangular, 20, its, 2.
+- Do NOT print this list in the output."
+mathematics,gemma,struktur1,28,2450,A ball is thrown upwards with an initial velocity of 13 m/s. What is its velocity after 2 seconds?,A. 9 m/s,B. -9 m/s,C. 13 m/s,D. 26 m/s,B,"The acceleration due to gravity is -9.8 m/s^2. Velocity is calculated as initial velocity plus acceleration times time. So, 13 m/s + (-9.8 m/s^2)(2 s) = 9 m/s","This is a kinematics problem. We use the equation v = u + at, where v is the final velocity, u is the initial velocity, a is the acceleration, and t is the time.
+Let's define the upward direction as positive.
+Initial velocity, u = +13 m/s.
+Acceleration due to gravity, a = -g ≈ -9.8 m/s².
+Time, t = 2 s.
+Substituting the values: v = 13 m/s + (-9.8 m/s²)(2 s).
+v = 13 - 19.6 = -6.6 m/s.
+The negative sign indicates the ball is moving downwards. None of the options are correct. The closest option is B (-9 m/s), which would require g = 11 m/s², a poor approximation.",gemini:gemini-2.5-pro,24369,4.0,2.0,Incorrect,1.0,"Clarity: The question is clearly stated but does not specify the value to use for the acceleration due to gravity (g). Using standard values like 9.8 or 10 m/s^2 does not lead to any of the given options.
+Context Accuracy: The physical scenario is standard, but the numerical data is flawed. The provided options are inconsistent with the initial velocity and time under Earth's gravity, making the question physically inaccurate.
+Quality of Working: The generator correctly identified the relevant formula and variables. However, it made a major arithmetic error, calculating 13 - 19.6 as 9, when the correct answer is -6.6. This fundamentally invalidates the solution.
+Final Answer Accuracy: The generator's calculated answer is 9 m/s (Option A). The provided key is B (-9 m/s). The generator's answer does not match the key and is also physically incorrect.","SYSTEM: You are a Grade 12 Mathematics teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 medium-difficulty computational MCQ from ONE of: algebra (functions/inverse/systems), trigonometry (identities/evaluation), basic calculus (limits/derivatives/simple integrals), or short statistics.
+• Use realistic numbers; round to 2 decimals when needed; avoid formal proofs.
+• Distractors must reflect typical mistakes (sign errors, wrong identities, derivative/limit rules, rounding).
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object:
+  [{""question"":""..."",""options"":[""A. ..."",""B. ..."",""C. ..."",""D. ...""],""answer"":""A"",""solution"":""3–6 short lines, plain text; no LaTeX/markdown.""}]
+- The ""solution"" field is MANDATORY with 3–6 short lines (plain text; no LaTeX/markdown).
+- No extra text outside JSON; no code fences.
+- Options MUST be prefixed ""A. ""/""B. ""/""C. ""/""D. "" and ""answer"" ∈ {A,B,C,D}.
+- NO LaTeX: do not use $ or backslashes; write plain text (sin, cos, pi, (a)/(b)).
+USER: Topic: Mathematics. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: from, upwards, integral, 100, meters, ignoring, and, straight, air, rest, launched, what, long, that, 30, particle, accelerates, neglecting, along, height, seconds, wide, function, 5, projectile, 24, vertically, 17, angle, how, garden, 14, ball, 12, thrown, car, uniformly, 16, 9, 1, 3, maximum, value, per, 25, 9.8, moves, 4, 18, feet, velocity, second, initial, line, derivative, with, 8, displacement, speed, 22, 7, find, 28, lim, 6, horizontally, 15, rectangular, 20, its, 2.
+- Do NOT print this list in the output."
+mathematics,gemma,struktur1,29,2564,"A ball is thrown upwards with an initial velocity of 19.6 m/s. What is its velocity after 2 seconds, assuming gravity is -9.8 m/s<sup>2</sup>?",A. 9.8 m/s,B. 0 m/s,C. -9.8 m/s,D. 19.6 m/s,C,"The velocity is the initial velocity plus the acceleration times time. So, the velocity after 2 seconds is 19.6 m/s + (-9.8 m/s<sup>2</sup>)(2 s) = 0 m/s","The problem can be solved using the first equation of motion: v = u + at.
+Here, the initial velocity (u) is 19.6 m/s.
+The acceleration due to gravity (a) is -9.8 m/s².
+The time (t) is 2 s.
+Substituting the values:
+v = 19.6 m/s + (-9.8 m/s² * 2 s)
+v = 19.6 m/s - 19.6 m/s
+v = 0 m/s.
+This corresponds to option B.",gemini:gemini-2.5-pro,22727,5.0,5.0,Correct,5.0,"Clarity: The question is unambiguous and provides all necessary information (initial velocity, time, acceleration) to find the solution.
+Context Accuracy: The values used for initial velocity and gravity are standard and realistic for an introductory physics problem.
+Quality of Working: The generator's solution correctly identifies the appropriate kinematic equation, substitutes the values correctly, and performs the calculation without error.
+Final Answer Accuracy: The generator's calculated answer of 0 m/s is the correct solution to the question. However, the provided key for the question (C) is incorrect; the correct option is B. The generator's answer is correct.","SYSTEM: You are a Grade 12 Mathematics teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 medium-difficulty computational MCQ from ONE of: algebra (functions/inverse/systems), trigonometry (identities/evaluation), basic calculus (limits/derivatives/simple integrals), or short statistics.
+• Use realistic numbers; round to 2 decimals when needed; avoid formal proofs.
+• Distractors must reflect typical mistakes (sign errors, wrong identities, derivative/limit rules, rounding).
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object:
+  [{""question"":""..."",""options"":[""A. ..."",""B. ..."",""C. ..."",""D. ...""],""answer"":""A"",""solution"":""3–6 short lines, plain text; no LaTeX/markdown.""}]
+- The ""solution"" field is MANDATORY with 3–6 short lines (plain text; no LaTeX/markdown).
+- No extra text outside JSON; no code fences.
+- Options MUST be prefixed ""A. ""/""B. ""/""C. ""/""D. "" and ""answer"" ∈ {A,B,C,D}.
+- NO LaTeX: do not use $ or backslashes; write plain text (sin, cos, pi, (a)/(b)).
+USER: Topic: Mathematics. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: from, upwards, integral, 100, meters, ignoring, and, straight, air, rest, launched, what, long, that, 30, particle, accelerates, neglecting, along, height, seconds, wide, function, 5, projectile, 24, vertically, 17, 13, angle, how, garden, 14, ball, 12, thrown, car, uniformly, 16, 9, 1, 3, maximum, value, per, 25, 9.8, moves, 4, 18, feet, velocity, second, initial, line, derivative, with, 8, displacement, speed, 22, 7, find, 28, lim, 6, horizontally, 15, rectangular, 20, its, 2.
+- Do NOT print this list in the output."
+mathematics,gemma,struktur1,30,2562,"A ball is thrown upwards with an initial velocity of 11 m/s. What is its velocity after 2 seconds, assuming a constant acceleration of -9.8 m/s² due to gravity?",A. 0 m/s,B. -8.6 m/s,C. 11 m/s,D. 20.6 m/s,B,"Use the equation v = u + at, where v is final velocity, u is initial velocity, a is acceleration, and t is time. v = 11 + (-9.8)(2) = 11 - 19.6 = -8.6 m/s","This is a standard kinematics problem. The formula for final velocity (v) is v = u + at, where u is the initial velocity, a is the acceleration, and t is time.
+Given:
+u = 11 m/s
+a = -9.8 m/s²
+t = 2 s
+
+Substitute the values into the equation:
+v = 11 + (-9.8 * 2)
+v = 11 - 19.6
+v = -8.6 m/s
+The negative sign indicates the ball is now moving downwards.",gemini:gemini-2.5-pro,22116,5.0,5.0,Correct,5.0,"Clarity: The question is perfectly clear, providing all necessary variables and stating the objective unambiguously.
+Context Accuracy: The values for initial velocity and gravitational acceleration are physically realistic and standard for this type of problem.
+Quality of Working: The generator's solution correctly identifies the relevant kinematic equation, substitutes the given values accurately, and performs the arithmetic correctly.
+Final Answer Accuracy: The calculated final velocity of -8.6 m/s is correct and matches the provided key.","SYSTEM: You are a Grade 12 Mathematics teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 medium-difficulty computational MCQ from ONE of: algebra (functions/inverse/systems), trigonometry (identities/evaluation), basic calculus (limits/derivatives/simple integrals), or short statistics.
+• Use realistic numbers; round to 2 decimals when needed; avoid formal proofs.
+• Distractors must reflect typical mistakes (sign errors, wrong identities, derivative/limit rules, rounding).
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object:
+  [{""question"":""..."",""options"":[""A. ..."",""B. ..."",""C. ..."",""D. ...""],""answer"":""A"",""solution"":""3–6 short lines, plain text; no LaTeX/markdown.""}]
+- The ""solution"" field is MANDATORY with 3–6 short lines (plain text; no LaTeX/markdown).
+- No extra text outside JSON; no code fences.
+- Options MUST be prefixed ""A. ""/""B. ""/""C. ""/""D. "" and ""answer"" ∈ {A,B,C,D}.
+- NO LaTeX: do not use $ or backslashes; write plain text (sin, cos, pi, (a)/(b)).
+USER: Topic: Mathematics. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: from, upwards, integral, 100, meters, ignoring, and, straight, air, rest, launched, what, long, that, 30, particle, accelerates, neglecting, along, height, seconds, wide, function, 5, projectile, 24, vertically, 17, 13, angle, how, garden, 14, ball, 12, thrown, car, uniformly, 16, 9, 1, 3, maximum, value, per, 25, 9.8, moves, 4, 18, feet, velocity, second, initial, line, derivative, with, 8, displacement, speed, 22, 7, 19.6, find, 28, lim, 6, horizontally, 15, rectangular, 20, its, 2.
+- Do NOT print this list in the output."
+mathematics,gemma,struktur1,31,2353,A ball is thrown upwards with an initial velocity of 18 m/s. What is the maximum height the ball reaches? (Assume g = 9.8 m/s²),A. 16.48 m,B. 18.37 m,C. 32.94 m,D. 19.60 m,A,"Using the equation v² = u² + 2as, where v=0 (at maximum height), u=18 m/s, and a=-9.8 m/s², we can solve for s (displacement). This gives s = 16.48 m.","To find the maximum height, we use the kinematic equation: v² = u² + 2as.
+Here, the initial velocity u = 18 m/s.
+At the maximum height, the final velocity v = 0 m/s.
+The acceleration due to gravity is a = -g = -9.8 m/s².
+The displacement 's' is the maximum height we need to find.
+Substituting the values: 0² = 18² + 2(-9.8)s
+0 = 324 - 19.6s
+19.6s = 324
+s = 324 / 19.6 ≈ 16.53 m.
+The closest option is A, 16.48 m.",gemini:gemini-2.5-pro,38322,5.0,5.0,Correct,2.5,"Clarity: The question is unambiguous and provides all necessary data (initial velocity and g).
+Context Accuracy: The scenario is a standard and realistic introductory physics problem.
+Quality of Working: The generator correctly identifies the formula and variables. However, the result of the calculation is incorrect (18² / 19.6 ≈ 16.53, not 16.48). The solution presents the value from the key without a valid calculation, indicating it did not verify the arithmetic.
+Final Answer Accuracy: The generator's answer matches the provided key (A). It should be noted that the key itself is slightly inaccurate based on the numbers given in the problem.","SYSTEM: You are a Grade 12 Mathematics teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 medium-difficulty computational MCQ from ONE of: algebra (functions/inverse/systems), trigonometry (identities/evaluation), basic calculus (limits/derivatives/simple integrals), or short statistics.
+• Use realistic numbers; round to 2 decimals when needed; avoid formal proofs.
+• Distractors must reflect typical mistakes (sign errors, wrong identities, derivative/limit rules, rounding).
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object:
+  [{""question"":""..."",""options"":[""A. ..."",""B. ..."",""C. ..."",""D. ...""],""answer"":""A"",""solution"":""3–6 short lines, plain text; no LaTeX/markdown.""}]
+- The ""solution"" field is MANDATORY with 3–6 short lines (plain text; no LaTeX/markdown).
+- No extra text outside JSON; no code fences.
+- Options MUST be prefixed ""A. ""/""B. ""/""C. ""/""D. "" and ""answer"" ∈ {A,B,C,D}.
+- NO LaTeX: do not use $ or backslashes; write plain text (sin, cos, pi, (a)/(b)).
+USER: Topic: Mathematics. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: from, upwards, integral, 100, meters, ignoring, and, straight, air, rest, launched, what, long, that, 30, particle, accelerates, neglecting, along, height, seconds, wide, function, 5, 11, projectile, 24, vertically, 17, 13, angle, how, garden, 14, ball, 12, thrown, car, uniformly, 16, 9, 1, 3, maximum, value, per, 25, 9.8, moves, 4, 18, feet, velocity, second, initial, line, derivative, with, 8, displacement, speed, 22, 7, 19.6, find, 28, lim, 6, horizontally, 15, rectangular, 20, its, 2.
+- Do NOT print this list in the output."
+mathematics,gemma,struktur1,32,3196,A ball is thrown upwards with an initial velocity of 18 m/s. What is the maximum height the ball reaches? (Assume g = 9.8 m/s²),A. 16.47 m,B. 18.37 m,C. 32.94 m,D. 15.34 m,A,"Using the equation v² = u² + 2as, where v=0 at maximum height, u=18 m/s, and a=-9.8 m/s². Solving for s (displacement) gives s = 16.47 m.","To find the maximum height, we can use the kinematic equation: v² = u² + 2as.
+Here, the initial velocity u = 18 m/s.
+At the maximum height, the final velocity v = 0 m/s.
+The acceleration due to gravity is a = -g = -9.8 m/s².
+The displacement 's' is the maximum height we need to find.
+Substituting the values: 0² = 18² + 2(-9.8)s
+0 = 324 - 19.6s
+19.6s = 324
+s = 324 / 19.6 ≈ 16.53 m.
+The closest option is A, but it is not the exact calculated value.",gemini:gemini-2.5-pro,25541,5.0,5.0,Incorrect,3.5,"Clarity: The question is perfectly clear. It provides all necessary variables and states the objective unambiguously.
+Context Accuracy: The scenario is a standard and realistic introductory physics problem. The initial velocity and acceleration values are appropriate.
+Quality of Working: The generator correctly identifies the relevant formula and variables. However, the final calculation is incorrect. 18² / (2 * 9.8) = 324 / 19.6 = 16.53 m, not 16.47 m. This is a notable arithmetic error.
+Final Answer Accuracy: The generator's answer matches the provided key (A), but both are arithmetically incorrect based on the data given in the question. The correct answer should be 16.53 m.","SYSTEM: You are a Grade 12 Mathematics teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 medium-difficulty computational MCQ from ONE of: algebra (functions/inverse/systems), trigonometry (identities/evaluation), basic calculus (limits/derivatives/simple integrals), or short statistics.
+• Use realistic numbers; round to 2 decimals when needed; avoid formal proofs.
+• Distractors must reflect typical mistakes (sign errors, wrong identities, derivative/limit rules, rounding).
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object:
+  [{""question"":""..."",""options"":[""A. ..."",""B. ..."",""C. ..."",""D. ...""],""answer"":""A"",""solution"":""3–6 short lines, plain text; no LaTeX/markdown.""}]
+- The ""solution"" field is MANDATORY with 3–6 short lines (plain text; no LaTeX/markdown).
+- No extra text outside JSON; no code fences.
+- Options MUST be prefixed ""A. ""/""B. ""/""C. ""/""D. "" and ""answer"" ∈ {A,B,C,D}.
+- NO LaTeX: do not use $ or backslashes; write plain text (sin, cos, pi, (a)/(b)).
+USER: Topic: Mathematics. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: from, upwards, integral, 100, meters, ignoring, and, straight, air, rest, launched, what, long, that, 30, particle, accelerates, neglecting, along, height, seconds, wide, function, 5, 11, projectile, 24, vertically, 17, 13, angle, how, garden, 14, ball, 12, thrown, car, uniformly, 16, 9, 1, 3, maximum, value, per, 25, 9.8, moves, 4, 18, feet, velocity, second, initial, line, derivative, with, 8, displacement, speed, 22, 7, 19.6, find, 28, lim, 6, horizontally, 15, rectangular, 20, its, 2.
+- Do NOT print this list in the output."
+mathematics,gemma,struktur1,33,2192,"A ball is thrown upwards with an initial velocity of 18 m/s. What is the ball's velocity after 2 seconds, assuming negligible air resistance and a constant acceleration due to gravity of -9.8 m/s²?",A. 14.4 m/s,B. -14.4 m/s,C. 27.6 m/s,D. -27.6 m/s,B,"The velocity is the initial velocity plus the acceleration times time. So, the velocity after 2 seconds is 18 m/s + (-9.8 m/s²)(2 s) = 14.4 m/s","This is a one-dimensional kinematics problem. The final velocity (v) can be found using the equation v = u + at, where u is the initial velocity, a is the acceleration, and t is the time.
+Given:
+Initial velocity (u) = +18 m/s (taking upwards as the positive direction)
+Acceleration (a) = -9.8 m/s² (gravity acts downwards)
+Time (t) = 2 s
+
+Calculation:
+v = 18 m/s + (-9.8 m/s²) * (2 s)
+v = 18 m/s - 19.6 m/s
+v = -1.6 m/s
+The final velocity is -1.6 m/s, meaning the ball is moving downwards at 1.6 m/s.",gemini:gemini-2.5-pro,32054,5.0,5.0,Incorrect,1.0,"Clarity: The question is very clearly worded, providing all necessary data and using standard conventions. The flaw lies in the provided options, not the question's clarity.
+Context Accuracy: The scenario of a thrown ball and the values for initial velocity and gravity are physically realistic and standard for this type of problem.
+Quality of Working: The generator correctly identified the appropriate kinematic equation and substituted the values. However, it made a major arithmetic error, calculating 18 - 19.6 as 14.4 instead of -1.6.
+Final Answer Accuracy: The generator's answer of 14.4 m/s is incorrect. The correct answer is -1.6 m/s. It's also worth noting that the correct answer is not among the options, and the generator's answer does not match the provided key (B).","SYSTEM: You are a Grade 12 Mathematics teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 medium-difficulty computational MCQ from ONE of: algebra (functions/inverse/systems), trigonometry (identities/evaluation), basic calculus (limits/derivatives/simple integrals), or short statistics.
+• Use realistic numbers; round to 2 decimals when needed; avoid formal proofs.
+• Distractors must reflect typical mistakes (sign errors, wrong identities, derivative/limit rules, rounding).
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object:
+  [{""question"":""..."",""options"":[""A. ..."",""B. ..."",""C. ..."",""D. ...""],""answer"":""A"",""solution"":""3–6 short lines, plain text; no LaTeX/markdown.""}]
+- The ""solution"" field is MANDATORY with 3–6 short lines (plain text; no LaTeX/markdown).
+- No extra text outside JSON; no code fences.
+- Options MUST be prefixed ""A. ""/""B. ""/""C. ""/""D. "" and ""answer"" ∈ {A,B,C,D}.
+- NO LaTeX: do not use $ or backslashes; write plain text (sin, cos, pi, (a)/(b)).
+USER: Topic: Mathematics. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: from, upwards, integral, 100, meters, ignoring, and, straight, air, rest, launched, what, long, that, 30, particle, accelerates, neglecting, along, height, seconds, wide, function, 5, 11, projectile, 24, vertically, 17, 13, angle, how, garden, 14, ball, 12, thrown, car, uniformly, 16, 9, 1, 3, maximum, value, per, 25, 9.8, moves, 4, 18, feet, velocity, second, initial, line, derivative, with, 8, displacement, speed, 22, 7, 19.6, find, 28, lim, 6, horizontally, 15, rectangular, 20, its, 2.
+- Do NOT print this list in the output."
+mathematics,gemma,struktur1,34,2600,"A ball is thrown upwards with an initial velocity of 12 m/s. What is its velocity after 2 seconds, given that the acceleration due to gravity is -9.8 m/s²?",A. 0 m/s,B. 12 m/s,C. -9.8 m/s,D. -19.6 m/s,B,Velocity = initial velocity + (acceleration * time). Velocity = 12 m/s + (-9.8 m/s² * 2 s) = 12 m/s - 19.6 m/s = -7.6 m/s,"The problem asks for the final velocity (v) given initial velocity (u), acceleration (a), and time (t).
+The relevant kinematic equation is v = u + at.
+Given values are u = 12 m/s, a = -9.8 m/s², and t = 2 s.
+Substituting the values into the equation:
+v = 12 m/s + (-9.8 m/s² * 2 s)
+v = 12 m/s - 19.6 m/s
+v = -7.6 m/s",gemini:gemini-2.5-pro,21609,5.0,5.0,Correct,5.0,"Clarity: The question is perfectly clear, providing all necessary variables and stating the objective unambiguously.
+Context Accuracy: The values for initial velocity and gravitational acceleration are realistic for a standard physics problem.
+Quality of Working: The generator's solution correctly applies the appropriate kinematic formula (v = u + at) and performs the calculation accurately.
+Final Answer Accuracy: The generator's calculated answer of -7.6 m/s is the correct physical result. The MCQ itself is flawed, as none of the options match this correct answer and the provided key (B) is incorrect. The generator's solution is correct despite the flawed question.","SYSTEM: You are a Grade 12 Mathematics teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 medium-difficulty computational MCQ from ONE of: algebra (functions/inverse/systems), trigonometry (identities/evaluation), basic calculus (limits/derivatives/simple integrals), or short statistics.
+• Use realistic numbers; round to 2 decimals when needed; avoid formal proofs.
+• Distractors must reflect typical mistakes (sign errors, wrong identities, derivative/limit rules, rounding).
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object:
+  [{""question"":""..."",""options"":[""A. ..."",""B. ..."",""C. ..."",""D. ...""],""answer"":""A"",""solution"":""3–6 short lines, plain text; no LaTeX/markdown.""}]
+- The ""solution"" field is MANDATORY with 3–6 short lines (plain text; no LaTeX/markdown).
+- No extra text outside JSON; no code fences.
+- Options MUST be prefixed ""A. ""/""B. ""/""C. ""/""D. "" and ""answer"" ∈ {A,B,C,D}.
+- NO LaTeX: do not use $ or backslashes; write plain text (sin, cos, pi, (a)/(b)).
+USER: Topic: Mathematics. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: from, upwards, integral, 100, meters, ignoring, and, straight, air, rest, launched, what, long, that, 30, particle, accelerates, neglecting, along, height, seconds, wide, function, 5, 11, projectile, 24, vertically, 17, 13, angle, how, garden, 14, ball, 12, thrown, car, uniformly, 16, 9, 1, 3, maximum, value, per, 25, 9.8, moves, 4, 18, feet, velocity, second, initial, line, derivative, with, 8, displacement, speed, 22, 7, 19.6, find, 28, lim, 6, horizontally, 15, rectangular, 20, its, 2.
+- Do NOT print this list in the output."
+mathematics,gemma,struktur1,35,2329,"A ball is thrown upwards with an initial velocity of 18 m/s. What is its velocity after 2 seconds, assuming constant acceleration due to gravity of -9.8 m/s²?",A. 14.4 m/s,B. 2.4 m/s,C. -14.4 m/s,D. -2.4 m/s,C,Velocity = initial velocity + (acceleration * time). Velocity = 18 m/s + (-9.8 m/s² * 2 s) = 18 m/s - 19.6 m/s = -1.6 m/s,"The problem is solved using the first kinematic equation: v = u + at, where v is the final velocity, u is the initial velocity, a is the acceleration, and t is the time.
+Given values are:
+Initial velocity (u) = 18 m/s
+Acceleration (a) = -9.8 m/s²
+Time (t) = 2 s
+
+Substituting the values into the equation:
+v = 18 m/s + (-9.8 m/s² * 2 s)
+v = 18 m/s - 19.6 m/s
+v = -1.6 m/s",gemini:gemini-2.5-pro,27669,5.0,5.0,Correct,5.0,"Clarity: The question is perfectly clear, providing all necessary information (initial velocity, time, acceleration) and stating the objective unambiguously.
+Context Accuracy: The scenario is a standard and realistic introductory physics problem. The values for initial velocity and gravitational acceleration are appropriate.
+Quality of Working: The generator's solution correctly identifies the appropriate kinematic formula, substitutes the values correctly, and performs the arithmetic accurately. The reasoning is sound.
+Final Answer Accuracy: The generator's calculated answer of -1.6 m/s is the correct solution to the problem as stated. It should be noted that the question's provided options and key are incorrect, as none of them match the correct answer.","SYSTEM: You are a Grade 12 Mathematics teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 medium-difficulty computational MCQ from ONE of: algebra (functions/inverse/systems), trigonometry (identities/evaluation), basic calculus (limits/derivatives/simple integrals), or short statistics.
+• Use realistic numbers; round to 2 decimals when needed; avoid formal proofs.
+• Distractors must reflect typical mistakes (sign errors, wrong identities, derivative/limit rules, rounding).
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object:
+  [{""question"":""..."",""options"":[""A. ..."",""B. ..."",""C. ..."",""D. ...""],""answer"":""A"",""solution"":""3–6 short lines, plain text; no LaTeX/markdown.""}]
+- The ""solution"" field is MANDATORY with 3–6 short lines (plain text; no LaTeX/markdown).
+- No extra text outside JSON; no code fences.
+- Options MUST be prefixed ""A. ""/""B. ""/""C. ""/""D. "" and ""answer"" ∈ {A,B,C,D}.
+- NO LaTeX: do not use $ or backslashes; write plain text (sin, cos, pi, (a)/(b)).
+USER: Topic: Mathematics. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: from, upwards, integral, 100, meters, ignoring, and, straight, air, rest, launched, what, long, that, 30, particle, accelerates, neglecting, along, height, seconds, wide, function, 5, 11, projectile, 24, vertically, 17, 13, angle, how, garden, 14, ball, 12, thrown, car, uniformly, 16, 9, 1, 3, maximum, value, per, 25, 9.8, moves, 4, 18, feet, velocity, second, initial, line, derivative, with, 8, displacement, speed, 22, 7, 19.6, find, 28, lim, 6, horizontally, 15, rectangular, 20, its, 2.
+- Do NOT print this list in the output."

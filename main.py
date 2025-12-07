@@ -1,5 +1,7 @@
 from utils.load_env import run_load_env
+import os
 run_load_env()
+# print("[DEBUG] GEMINI_API_KEY prefix:", (os.getenv("GEMINI_API_KEY") or "")[:16])
 
 import os, pathlib, datetime
 from typing import Dict, Tuple
@@ -21,25 +23,17 @@ def _canon_topic(user_topic: str) -> Tuple[str, str]:
 
 def _build_models() -> Dict[str, LlmModelService]:
     models: Dict[str, LlmModelService] = {}
-
-    # 1) Generator GEMINI (cloud)
     try:
         models["gemini"] = GeminiService(model=os.getenv("GEMINI_MODEL", "gemini-2.0-flash"))
     except Exception as e:
-        print("[warn] Gemini generator disabled:", e)
+        print("[warn] Gemini disabled:", e)
 
-    # 2) Empat generator lain via Ollama (QWEN, GEMMA, LLAMA, PHI)
+    # local models via Ollama
     for alias in ["QWEN", "GEMMA", "LLAMA", "PHI"]:
         try:
             models[alias.lower()] = OpenRouterService(alias)
         except Exception as e:
-            print(f"[warn] {alias} (Ollama) disabled:", e)
-
-    # 3) GroqService lama TIDAK dipakai lagi
-    # try:
-    #     models["groq"] = GroqService()
-    # except Exception as e:
-    #     print("[info] Groq disabled:", e)
+            print(f"[warn] {alias} disabled:", e)
 
     return models
 
@@ -78,4 +72,4 @@ def main(
 
 if __name__ == "__main__":
     # example
-    main("struktur3", "physics", "qwen", count=60)
+    main("struktur3", "mathematics", "phi", count=50)

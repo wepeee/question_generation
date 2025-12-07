@@ -1,0 +1,1220 @@
+topic,model,struktur,index,latency_model_ms,question,optionA,optionB,optionC,optionD,answer,solution_model,solution_verifier,verifier_model,latency_verifier_ms,clarity,context_accuracy,final_answer_accuracy,quality_of_working,judge_notes,prompt_generator
+mathematics,gemma,struktur1,1,1981,What is the derivative of f(x) = 3x² - 4x + 2?,A. 6x - 4,B. 9x - 4,C. 3x - 4,D. 6x² - 4x,A,The power rule states that the derivative of x^n is nx^(n-1. Applying this to each term: (3*2)x^(2-1) - (4*1)x^(1-1) + 0 = 6x - 4.,"The problem asks for the derivative of the function f(x) = 3x² - 4x + 2.
+To solve this, we apply the power rule for differentiation, d/dx(ax^n) = n*a*x^(n-1), to each term.
+For the term 3x², the derivative is (2 * 3)x^(2-1) = 6x.
+For the term -4x (or -4x¹), the derivative is (1 * -4)x^(1-1) = -4x⁰ = -4.
+For the constant term 2, the derivative is 0.
+Combining these results, the derivative f'(x) is 6x - 4 + 0 = 6x - 4.",gemini:gemini-2.5-pro,11145,5,5,Correct,5,"Clarity: The question is a standard and unambiguous calculus problem. The function and options are clearly presented.
+Context Accuracy: This is a pure mathematics question. The mathematical concepts (polynomial function, derivative) are used correctly.
+Quality of Working: The generator's solution correctly states the power rule and applies it accurately to each term of the polynomial. The reasoning is sound and the steps are clear.
+Final Answer Accuracy: The generator's result of 6x - 4 is correct and matches option A.","SYSTEM: You are a Grade 12 Mathematics teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 medium-difficulty computational MCQ from ONE of: algebra (functions/inverse/systems), trigonometry (identities/evaluation), basic calculus (limits/derivatives/simple integrals), or short statistics.
+• Use realistic numbers; round to 2 decimals when needed; avoid formal proofs.
+• Distractors must reflect typical mistakes (sign errors, wrong identities, derivative/limit rules, rounding).
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object:
+  [{""question"":""..."",""options"":[""A. ..."",""B. ..."",""C. ..."",""D. ...""],""answer"":""A"",""solution"":""3–6 short lines, plain text; no LaTeX/markdown.""}]
+- The ""solution"" field is MANDATORY with 3–6 short lines (plain text; no LaTeX/markdown).
+- No extra text outside JSON; no code fences.
+- Options MUST be prefixed ""A. ""/""B. ""/""C. ""/""D. "" and ""answer"" ∈ {A,B,C,D}.
+- NO LaTeX: do not use $ or backslashes; write plain text (sin, cos, pi, (a)/(b)).
+USER: Topic: Mathematics. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field."
+mathematics,gemma,struktur1,2,2278,Find the limit as x approaches 4 of (x^2 - 16)/(x - 4),A. 8,B. 0,C. 4,D. Does not exist,A,"We can factor the numerator as (x-4)(x+4). This simplifies to (x-4)(x+4)/(x-4). As x approaches 4, the (x-4) terms cancel, leaving us with 4+4=8.","The problem is to find the limit of (x^2 - 16)/(x - 4) as x approaches 4.
+Direct substitution of x = 4 results in the indeterminate form 0/0.
+To resolve this, we factor the numerator, which is a difference of squares: x^2 - 16 = (x - 4)(x + 4).
+The expression becomes [(x - 4)(x + 4)] / (x - 4).
+Since x is approaching 4 but not equal to 4, the (x - 4) term is non-zero and can be cancelled.
+We are left with the limit of (x + 4) as x approaches 4.
+Substituting x = 4 into the simplified expression gives 4 + 4 = 8.",gemini:gemini-2.5-pro,28655,5,5,Correct,5,"Clarity: The question is a standard and clearly stated limit problem from introductory calculus. The notation is unambiguous.
+Context Accuracy: This is a pure mathematics problem. The concepts and values are correct and standard.
+Quality of Working: The generator's solution is perfect. It correctly identifies the method of factoring to resolve the indeterminate form, shows the cancellation, and correctly evaluates the limit.
+Final Answer Accuracy: The generator's answer of 8 is correct, matching the independent solution.","SYSTEM: You are a Grade 12 Mathematics teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 medium-difficulty computational MCQ from ONE of: algebra (functions/inverse/systems), trigonometry (identities/evaluation), basic calculus (limits/derivatives/simple integrals), or short statistics.
+• Use realistic numbers; round to 2 decimals when needed; avoid formal proofs.
+• Distractors must reflect typical mistakes (sign errors, wrong identities, derivative/limit rules, rounding).
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object:
+  [{""question"":""..."",""options"":[""A. ..."",""B. ..."",""C. ..."",""D. ...""],""answer"":""A"",""solution"":""3–6 short lines, plain text; no LaTeX/markdown.""}]
+- The ""solution"" field is MANDATORY with 3–6 short lines (plain text; no LaTeX/markdown).
+- No extra text outside JSON; no code fences.
+- Options MUST be prefixed ""A. ""/""B. ""/""C. ""/""D. "" and ""answer"" ∈ {A,B,C,D}.
+- NO LaTeX: do not use $ or backslashes; write plain text (sin, cos, pi, (a)/(b)).
+USER: Topic: Mathematics. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: what, 2, derivative.
+- Do NOT print this list in the output."
+mathematics,gemma,struktur1,3,2758,"The function f(x) = 3x<sup>2</sup> - 5x + 2 is defined on the interval [1, 3]. What is the average rate of change of f(x) over this interval?",A. 10.00,B. 11.00,C. 12.00,D. 13.00,B,Average rate of change = (f(3) - f(1))/(3-1) = (27 - 0)/2 = 13.50,"The average rate of change of a function f(x) over an interval [a, b] is given by the formula (f(b) - f(a)) / (b - a).
+Here, a = 1 and b = 3 for the function f(x) = 3x^2 - 5x + 2.
+First, evaluate the function at the endpoints:
+f(1) = 3(1)^2 - 5(1) + 2 = 3 - 5 + 2 = 0.
+f(3) = 3(3)^2 - 5(3) + 2 = 3(9) - 15 + 2 = 27 - 15 + 2 = 14.
+Now, apply the formula:
+Average rate of change = (f(3) - f(1)) / (3 - 1) = (14 - 0) / 2 = 14 / 2 = 7.",gemini:gemini-2.5-pro,34824,2.5,5,Incorrect,1,"Clarity: The question's wording is clear, but it is fundamentally flawed because the correct answer (7) is not among the options. The provided key (B, 11.00) is also incorrect, which would confuse any student.
+Context Accuracy: The problem is a standard, abstract mathematical question. The function and interval are well-defined and conceptually correct.
+Quality of Working: The generator correctly stated the formula for the average rate of change. However, it made a significant error when evaluating f(3), calculating it as 27 instead of the correct value of 14. This error invalidates the entire subsequent calculation.
+Final Answer Accuracy: The generator's calculated answer is 13.50, while the correct answer is 7. The generator's answer is incorrect.","SYSTEM: You are a Grade 12 Mathematics teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 medium-difficulty computational MCQ from ONE of: algebra (functions/inverse/systems), trigonometry (identities/evaluation), basic calculus (limits/derivatives/simple integrals), or short statistics.
+• Use realistic numbers; round to 2 decimals when needed; avoid formal proofs.
+• Distractors must reflect typical mistakes (sign errors, wrong identities, derivative/limit rules, rounding).
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object:
+  [{""question"":""..."",""options"":[""A. ..."",""B. ..."",""C. ..."",""D. ...""],""answer"":""A"",""solution"":""3–6 short lines, plain text; no LaTeX/markdown.""}]
+- The ""solution"" field is MANDATORY with 3–6 short lines (plain text; no LaTeX/markdown).
+- No extra text outside JSON; no code fences.
+- Options MUST be prefixed ""A. ""/""B. ""/""C. ""/""D. "" and ""answer"" ∈ {A,B,C,D}.
+- NO LaTeX: do not use $ or backslashes; write plain text (sin, cos, pi, (a)/(b)).
+USER: Topic: Mathematics. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: 4, 16, what, find, derivative, 2, limit, approaches.
+- Do NOT print this list in the output."
+mathematics,gemma,struktur1,4,2449,A car accelerates from rest at a constant rate of 5 meters per second squared. How far does the car travel in 7 seconds?,A. 122.5 meters,B. 245 meters,C. 35 meters,D. 25 meters,A,"Using the equation d = 0.5 * a * t^2, where d is distance, a is acceleration, and t is time. d = 0.5 * 5 * 7^2 = 122.5 meters.","This is a constant acceleration problem. The appropriate kinematic equation is d = u*t + (1/2)*a*t^2, where d is distance, u is initial velocity, t is time, and a is acceleration.
+The car starts from rest, so u = 0 m/s.
+Given values are a = 5 m/s^2 and t = 7 s.
+Substituting these into the equation:
+d = (0 * 7) + 0.5 * 5 * (7^2)
+d = 0 + 0.5 * 5 * 49
+d = 2.5 * 49
+d = 122.5 meters.",gemini:gemini-2.5-pro,21191,5,5,Correct,5,"Clarity: The question is unambiguous and provides all necessary information and units for a standard kinematics problem.
+Context Accuracy: The acceleration of 5 m/s^2 (~0.51 g) is high but physically plausible for a performance car, making the context realistic.
+Quality of Working: The generator correctly identified the simplified kinematic equation for an object starting from rest, substituted the values correctly, and performed the arithmetic without error.
+Final Answer Accuracy: The generator's answer of 122.5 meters is correct and matches the provided key.","SYSTEM: You are a Grade 12 Mathematics teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 medium-difficulty computational MCQ from ONE of: algebra (functions/inverse/systems), trigonometry (identities/evaluation), basic calculus (limits/derivatives/simple integrals), or short statistics.
+• Use realistic numbers; round to 2 decimals when needed; avoid formal proofs.
+• Distractors must reflect typical mistakes (sign errors, wrong identities, derivative/limit rules, rounding).
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object:
+  [{""question"":""..."",""options"":[""A. ..."",""B. ..."",""C. ..."",""D. ...""],""answer"":""A"",""solution"":""3–6 short lines, plain text; no LaTeX/markdown.""}]
+- The ""solution"" field is MANDATORY with 3–6 short lines (plain text; no LaTeX/markdown).
+- No extra text outside JSON; no code fences.
+- Options MUST be prefixed ""A. ""/""B. ""/""C. ""/""D. "" and ""answer"" ∈ {A,B,C,D}.
+- NO LaTeX: do not use $ or backslashes; write plain text (sin, cos, pi, (a)/(b)).
+USER: Topic: Mathematics. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: 4, interval, sup, defined, average, 16, what, 1, find, function, derivative, 2, limit, 3, approaches.
+- Do NOT print this list in the output."
+mathematics,gemma,struktur1,5,2971,"A particle moves along a straight line with its position given by s(t) = t^3 - 6t^2 + 9t + 2, where s is measured in centimeters and t in seconds. What is the particle's velocity at t = 2 seconds?",A. 3 cm/s,B. -3 cm/s,C. 9 cm/s,D. -9 cm/s,B,"Velocity is the derivative of position. The derivative of s(t) is s'(t) = 3t^2 - 12t + 9. Substituting t = 2, we get s'(2) = 3(2)^2 - 12(2) + 9 = 12 - 24 + 9 = -3 cm/s.","The velocity of the particle, v(t), is the first derivative of its position function, s(t).
+The position function is s(t) = t^3 - 6t^2 + 9t + 2.
+Taking the derivative with respect to time t, we get the velocity function:
+v(t) = s'(t) = 3t^2 - 12t + 9.
+To find the velocity at t = 2 seconds, we substitute t = 2 into the velocity function:
+v(2) = 3(2)^2 - 12(2) + 9.
+v(2) = 3(4) - 24 + 9 = 12 - 24 + 9 = -3.
+The velocity at t = 2 seconds is -3 cm/s.",gemini:gemini-2.5-pro,27230,5,5,Correct,5,"Clarity: The question is unambiguous. It clearly states the position function, defines the units, and asks for a specific quantity (velocity) at a specific time.
+Context Accuracy: The context is a standard kinematics problem in introductory calculus or physics. The function and values are realistic for a textbook example.
+Quality of Working: The generator's solution is perfect. It correctly identifies the relationship between position and velocity, performs the differentiation correctly, and evaluates the resulting function accurately.
+Final Answer Accuracy: The generator's answer of -3 cm/s is correct and matches the provided key B.","SYSTEM: You are a Grade 12 Mathematics teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 medium-difficulty computational MCQ from ONE of: algebra (functions/inverse/systems), trigonometry (identities/evaluation), basic calculus (limits/derivatives/simple integrals), or short statistics.
+• Use realistic numbers; round to 2 decimals when needed; avoid formal proofs.
+• Distractors must reflect typical mistakes (sign errors, wrong identities, derivative/limit rules, rounding).
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object:
+  [{""question"":""..."",""options"":[""A. ..."",""B. ..."",""C. ..."",""D. ...""],""answer"":""A"",""solution"":""3–6 short lines, plain text; no LaTeX/markdown.""}]
+- The ""solution"" field is MANDATORY with 3–6 short lines (plain text; no LaTeX/markdown).
+- No extra text outside JSON; no code fences.
+- Options MUST be prefixed ""A. ""/""B. ""/""C. ""/""D. "" and ""answer"" ∈ {A,B,C,D}.
+- NO LaTeX: do not use $ or backslashes; write plain text (sin, cos, pi, (a)/(b)).
+USER: Topic: Mathematics. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: 16, find, rest, 4, interval, accelerates, sup, what, function, 2, approaches, per, from, meters, 7, 3, rate, 5, defined, average, car, 1, derivative, limit, constant.
+- Do NOT print this list in the output."
+mathematics,gemma,struktur1,6,2662,"A ball is thrown vertically upwards with an initial velocity of 10 meters per second. Ignoring air resistance, what is the maximum height the ball reaches? (Use g = 9.8 m/s^2)",A. 5.10 meters,B. 10.20 meters,C. 20.40 meters,D. 100.00 meters,A,"At maximum height, velocity is 0. Using v^2 = u^2 + 2as, where v=0, u=10, a=-9.8, we get 0 = 100 - 2*9.8*s. Solving for s gives s = 5.10 meters.","This is a vertical motion problem under constant acceleration (gravity). The relevant kinematic equation is v^2 = u^2 + 2as.
+Here, initial velocity u = 10 m/s.
+At the maximum height, the final velocity v = 0 m/s.
+The acceleration a = -g = -9.8 m/s^2 (negative because it opposes the initial upward motion).
+The displacement s is the maximum height we want to find.
+Substituting the values: 0^2 = (10)^2 + 2(-9.8)s.
+0 = 100 - 19.6s.
+19.6s = 100.
+s = 100 / 19.6 ≈ 5.102 meters.
+Rounding to two decimal places gives 5.10 meters.",gemini:gemini-2.5-pro,25556,5,5,Correct,5,"Clarity: The question is perfectly clear, providing all necessary information (initial velocity, g) and stating the key assumption (ignoring air resistance).
+Context Accuracy: The scenario is a classic, realistic physics problem. The initial velocity is reasonable for a thrown ball, and the value for g is standard.
+Quality of Working: The generator's solution is flawless. It correctly identifies the final velocity at maximum height, uses the appropriate kinematic formula, and performs the calculation accurately.
+Final Answer Accuracy: The generator's answer of 5.10 meters is correct and matches the provided key.","SYSTEM: You are a Grade 12 Mathematics teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 medium-difficulty computational MCQ from ONE of: algebra (functions/inverse/systems), trigonometry (identities/evaluation), basic calculus (limits/derivatives/simple integrals), or short statistics.
+• Use realistic numbers; round to 2 decimals when needed; avoid formal proofs.
+• Distractors must reflect typical mistakes (sign errors, wrong identities, derivative/limit rules, rounding).
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object:
+  [{""question"":""..."",""options"":[""A. ..."",""B. ..."",""C. ..."",""D. ...""],""answer"":""A"",""solution"":""3–6 short lines, plain text; no LaTeX/markdown.""}]
+- The ""solution"" field is MANDATORY with 3–6 short lines (plain text; no LaTeX/markdown).
+- No extra text outside JSON; no code fences.
+- Options MUST be prefixed ""A. ""/""B. ""/""C. ""/""D. "" and ""answer"" ∈ {A,B,C,D}.
+- NO LaTeX: do not use $ or backslashes; write plain text (sin, cos, pi, (a)/(b)).
+USER: Topic: Mathematics. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: straight, 16, find, rest, its, 4, interval, accelerates, sup, with, what, function, 2, approaches, position, particle, per, from, meters, 7, 3, rate, line, 5, moves, defined, average, car, along, 1, derivative, limit, constant.
+- Do NOT print this list in the output."
+mathematics,gemma,struktur1,7,3011,"A ball is launched upwards with a speed of 12 m/s. Ignoring air resistance, what is the maximum height the ball reaches? (Use g = 9.8 m/s^2)",A. 7.34 m,B. 12.24 m,C. 14.74 m,D. 24.00 m,A,"The maximum height is reached when the ball's velocity is 0. Using the equation v^2 = u^2 + 2as, where v=0, u=12, and a=-9.8, we get 0 = 144 - 19.6h. Solving for h, we find h = 7.34 m.","This is a vertical projectile motion problem. At the maximum height, the final velocity (v) of the ball is 0 m/s. The initial velocity (u) is 12 m/s, and the acceleration (a) is due to gravity, so a = -g = -9.8 m/s^2.
+Using the kinematic equation v^2 = u^2 + 2as, we can solve for the displacement (s), which is the maximum height.
+0^2 = (12)^2 + 2(-9.8)s
+0 = 144 - 19.6s
+19.6s = 144
+s = 144 / 19.6
+s ≈ 7.3469 m, which rounds to 7.35 m. Option A (7.34 m) is the closest answer.",gemini:gemini-2.5-pro,30311,5,5,Correct,5,"Clarity: The question is perfectly clear. It provides all necessary data (initial speed, g) and states the objective and assumptions (ignore air resistance).
+Context Accuracy: The scenario is a standard and physically realistic introductory kinematics problem. The initial speed is reasonable for a thrown ball.
+Quality of Working: The generator's solution is excellent. It correctly identifies the relevant physics principle (v=0 at max height), uses the correct formula, and performs the calculation accurately.
+Final Answer Accuracy: The generator's calculated answer matches the provided key and is the correct solution to the problem.","SYSTEM: You are a Grade 12 Mathematics teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 medium-difficulty computational MCQ from ONE of: algebra (functions/inverse/systems), trigonometry (identities/evaluation), basic calculus (limits/derivatives/simple integrals), or short statistics.
+• Use realistic numbers; round to 2 decimals when needed; avoid formal proofs.
+• Distractors must reflect typical mistakes (sign errors, wrong identities, derivative/limit rules, rounding).
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object:
+  [{""question"":""..."",""options"":[""A. ..."",""B. ..."",""C. ..."",""D. ...""],""answer"":""A"",""solution"":""3–6 short lines, plain text; no LaTeX/markdown.""}]
+- The ""solution"" field is MANDATORY with 3–6 short lines (plain text; no LaTeX/markdown).
+- No extra text outside JSON; no code fences.
+- Options MUST be prefixed ""A. ""/""B. ""/""C. ""/""D. "" and ""answer"" ∈ {A,B,C,D}.
+- NO LaTeX: do not use $ or backslashes; write plain text (sin, cos, pi, (a)/(b)).
+USER: Topic: Mathematics. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: straight, velocity, 16, find, rest, its, 4, 10, interval, accelerates, sup, thrown, with, initial, what, vertically, function, 2, approaches, position, particle, per, from, meters, upwards, 7, 3, rate, 9.8, line, 5, moves, ball, defined, average, car, along, 1, derivative, limit, constant.
+- Do NOT print this list in the output."
+mathematics,gemma,struktur1,8,3070,A ball is thrown upwards with a velocity of 8 m/s. How long does it take to reach its highest point? (Assume acceleration due to gravity is -9.8 m/s²),A. 0.82 s,B. 1.63 s,C. 8.16 s,D. 16.32 s,B,"At the highest point, the final velocity is 0 m/s. We can use the equation v = u + at, where v is final velocity, u is initial velocity, a is acceleration, and t is time. Plugging in the values, 0 = 8 + (-9.8)t. Solving for t, we get t = 0.82 seconds.","The problem asks for the time it takes for a ball thrown upwards to reach its highest point. At the highest point of its trajectory, the ball's vertical velocity is momentarily zero.
+Given:
+Initial velocity (u) = 8 m/s
+Final velocity (v) = 0 m/s
+Acceleration (a) = -9.8 m/s²
+
+Using the first kinematic equation: v = u + at
+0 = 8 + (-9.8) * t
+-8 = -9.8 * t
+t = 8 / 9.8
+t ≈ 0.8163 s
+Rounding to two decimal places, the time is 0.82 s, which corresponds to option A.",gemini:gemini-2.5-pro,27646,5,5,Correct,5,"Clarity: The question is clear, concise, and provides all necessary information for solving.
+Context Accuracy: The values for initial velocity and gravity are physically realistic for a simple projectile motion problem on Earth.
+Quality of Working: The generator's reasoning is flawless. It correctly identifies that final velocity is zero at the peak, uses the correct kinematic equation, and calculates the answer accurately.
+Final Answer Accuracy: The generator's calculated answer of 0.82 s is correct. The provided key (B) is incorrect; it represents the total time of flight (up and down), not the time to the highest point.","SYSTEM: You are a Grade 12 Mathematics teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 medium-difficulty computational MCQ from ONE of: algebra (functions/inverse/systems), trigonometry (identities/evaluation), basic calculus (limits/derivatives/simple integrals), or short statistics.
+• Use realistic numbers; round to 2 decimals when needed; avoid formal proofs.
+• Distractors must reflect typical mistakes (sign errors, wrong identities, derivative/limit rules, rounding).
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object:
+  [{""question"":""..."",""options"":[""A. ..."",""B. ..."",""C. ..."",""D. ...""],""answer"":""A"",""solution"":""3–6 short lines, plain text; no LaTeX/markdown.""}]
+- The ""solution"" field is MANDATORY with 3–6 short lines (plain text; no LaTeX/markdown).
+- No extra text outside JSON; no code fences.
+- Options MUST be prefixed ""A. ""/""B. ""/""C. ""/""D. "" and ""answer"" ∈ {A,B,C,D}.
+- NO LaTeX: do not use $ or backslashes; write plain text (sin, cos, pi, (a)/(b)).
+USER: Topic: Mathematics. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: launched, straight, velocity, 16, 12, find, rest, its, 4, 10, interval, accelerates, sup, thrown, with, initial, what, vertically, function, 2, approaches, position, particle, ignoring, per, from, meters, upwards, 7, 3, rate, 9.8, line, 5, moves, ball, defined, average, car, along, 1, air, speed, derivative, limit, constant.
+- Do NOT print this list in the output."
+mathematics,gemma,struktur1,9,2825,"A ball is dropped from a height of 20 meters. Its height, h, in meters, after t seconds is given by the equation h(t) = 20 - 4.9t². What is the ball's velocity at the moment it hits the ground?",A. -14.0 m/s,B. 14.0 m/s,C. -20.0 m/s,D. 20.0 m/s,A,"First, find the time it takes to hit the ground by setting h(t) = 0 and solving for t. Then, find the derivative of the height function, h'(t) = -9.8t. Substitute the time found in the first step into h'(t) to get the velocity.","The ball hits the ground when its height h(t) is 0.
+Set h(t) = 0:  20 - 4.9t² = 0.
+Solve for t: 4.9t² = 20  =>  t² = 20 / 4.9  =>  t = sqrt(20 / 4.9) ≈ 2.02 seconds.
+The velocity function v(t) is the derivative of the height function h(t).
+v(t) = h'(t) = d/dt (20 - 4.9t²) = -9.8t.
+Substitute the time t into the velocity function:
+v = -9.8 * sqrt(20 / 4.9) = -sqrt(9.8² * 20 / 4.9) = -sqrt(19.6 * 20) = -sqrt(392).
+The velocity is approximately -19.8 m/s. The closest option is C, not A.",gemini:gemini-2.5-pro,44194,5,5,Incorrect,5,"Clarity: The question is well-posed, providing a clear function and a specific goal. All necessary information is present.
+Context Accuracy: The physics model h(t) = h₀ - 0.5gt² is standard for freefall. The values for initial height (20m) and gravity (g=9.8 m/s²) are realistic.
+Quality of Working: The generator's described method is perfectly sound. It correctly outlines the calculus-based procedure: find the time of impact by setting h=0, differentiate h(t) to find v(t), and then evaluate v(t) at the time of impact.
+Final Answer Accuracy: The provided key (A) is incorrect. My calculation shows the final velocity is approximately -19.8 m/s, which corresponds to option C. The key A (-14.0 m/s) would be correct if the initial height was 10 meters, indicating a likely typo in the question's numerical value.","SYSTEM: You are a Grade 12 Mathematics teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 medium-difficulty computational MCQ from ONE of: algebra (functions/inverse/systems), trigonometry (identities/evaluation), basic calculus (limits/derivatives/simple integrals), or short statistics.
+• Use realistic numbers; round to 2 decimals when needed; avoid formal proofs.
+• Distractors must reflect typical mistakes (sign errors, wrong identities, derivative/limit rules, rounding).
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object:
+  [{""question"":""..."",""options"":[""A. ..."",""B. ..."",""C. ..."",""D. ...""],""answer"":""A"",""solution"":""3–6 short lines, plain text; no LaTeX/markdown.""}]
+- The ""solution"" field is MANDATORY with 3–6 short lines (plain text; no LaTeX/markdown).
+- No extra text outside JSON; no code fences.
+- Options MUST be prefixed ""A. ""/""B. ""/""C. ""/""D. "" and ""answer"" ∈ {A,B,C,D}.
+- NO LaTeX: do not use $ or backslashes; write plain text (sin, cos, pi, (a)/(b)).
+USER: Topic: Mathematics. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: launched, how, straight, velocity, does, 16, 12, find, rest, its, 4, 10, interval, accelerates, sup, thrown, with, initial, what, vertically, function, 2, approaches, position, particle, ignoring, per, from, meters, 8, upwards, 7, 3, rate, long, 9.8, line, 5, moves, ball, defined, average, car, along, 1, air, speed, derivative, limit, constant.
+- Do NOT print this list in the output."
+mathematics,gemma,struktur1,10,3051,"A ball is rolling down a ramp. Its position, in centimeters, after t seconds is given by the function s(t) = 2t^2 + 3t. What is the ball's average velocity between t = 1 second and t = 3 seconds?",A. 10 cm/s,B. 12 cm/s,C. 14 cm/s,D. 16 cm/s,C,"Average velocity is the change in position divided by the change in time. The position at t=3 is s(3) = 2(3)^2 + 3(3) = 27 cm. The position at t=1 is s(1) = 2(1)^2 + 3(1) = 5 cm. The change in position is 27-5 = 22 cm. The change in time is 3-1 = 2 seconds. Therefore, the average velocity is 22 cm / 2 s = 11 cm/s.","The average velocity is the total displacement divided by the total time elapsed.
+First, find the position at t = 1 and t = 3.
+s(1) = 2(1)^2 + 3(1) = 2 + 3 = 5 cm.
+s(3) = 2(3)^2 + 3(3) = 2(9) + 9 = 18 + 9 = 27 cm.
+Next, calculate the change in position (displacement).
+Δs = s(3) - s(1) = 27 cm - 5 cm = 22 cm.
+The change in time is Δt = 3 s - 1 s = 2 s.
+Average velocity = Δs / Δt = 22 cm / 2 s = 11 cm/s.",gemini:gemini-2.5-pro,26006,5,5,Correct,5,"Clarity: The question is perfectly clear. It provides the position function, the time interval, and asks for a specific quantity (average velocity).
+
+Context Accuracy: The scenario of a ball rolling down a ramp is accurately modeled by a quadratic position function, which implies constant acceleration. The values are physically plausible.
+
+Quality of Working: The generator's solution correctly applies the formula for average velocity. All calculations for position, displacement, and the final velocity are performed correctly. The reasoning is sound.
+
+Final Answer Accuracy: The generator's calculated answer of 11 cm/s is the correct solution to the problem. It should be noted that this correct answer is not present in the MCQ options, and the provided key (C, 14 cm/s) is incorrect. The generator's answer is correct despite the flawed question design.","SYSTEM: You are a Grade 12 Mathematics teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 medium-difficulty computational MCQ from ONE of: algebra (functions/inverse/systems), trigonometry (identities/evaluation), basic calculus (limits/derivatives/simple integrals), or short statistics.
+• Use realistic numbers; round to 2 decimals when needed; avoid formal proofs.
+• Distractors must reflect typical mistakes (sign errors, wrong identities, derivative/limit rules, rounding).
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object:
+  [{""question"":""..."",""options"":[""A. ..."",""B. ..."",""C. ..."",""D. ...""],""answer"":""A"",""solution"":""3–6 short lines, plain text; no LaTeX/markdown.""}]
+- The ""solution"" field is MANDATORY with 3–6 short lines (plain text; no LaTeX/markdown).
+- No extra text outside JSON; no code fences.
+- Options MUST be prefixed ""A. ""/""B. ""/""C. ""/""D. "" and ""answer"" ∈ {A,B,C,D}.
+- NO LaTeX: do not use $ or backslashes; write plain text (sin, cos, pi, (a)/(b)).
+USER: Topic: Mathematics. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: launched, how, straight, velocity, height, does, 16, 12, find, rest, its, 4, 10, interval, accelerates, dropped, sup, thrown, with, initial, what, vertically, function, 2, approaches, 20, position, particle, ignoring, per, from, meters, 8, upwards, 7, 3, rate, long, 9.8, line, 5, moves, ball, defined, average, car, along, 1, air, speed, derivative, limit, constant.
+- Do NOT print this list in the output."
+mathematics,gemma,struktur1,11,3176,"A ball is thrown upwards with an initial velocity of 6 m/s. Neglecting air resistance, what is the ball's velocity after 1.5 seconds? (Use g = 9.8 m/s²)",A. 3.3 m/s,B. -3.3 m/s,C. 6 m/s,D. 9.8 m/s,B,"The velocity of the ball is affected by gravity, which causes a downward acceleration. The equation for velocity is v = u + at, where u is initial velocity, a is acceleration, and t is time. So, v = 6 - (9.8)(1.5) = -3.3 m/s","This is a one-dimensional kinematics problem with constant acceleration.
+1. Define the upward direction as positive.
+2. Initial velocity, u = +6 m/s.
+3. Acceleration due to gravity, a = -g = -9.8 m/s².
+4. Time, t = 1.5 s.
+5. Use the kinematic equation: v = u + at.
+6. Substitute the values: v = 6 + (-9.8)(1.5) = 6 - 14.7.
+7. Calculate the final velocity: v = -8.7 m/s.
+The negative sign indicates the ball is moving downwards.",gemini:gemini-2.5-pro,21619,3,5,Incorrect,2,"Clarity: The question's text is clear, but it is fundamentally flawed because none of the provided multiple-choice options are correct. The calculated answer is -8.7 m/s, which is not listed.
+Context Accuracy: The physical scenario is a standard and realistic introductory physics problem. The values for initial velocity and gravity are appropriate.
+Quality of Working: The generator selected the correct physical formula (v = u + at) and correctly identified the values to substitute. However, the arithmetic is incorrect: 6 - (9.8 * 1.5) equals -8.7, not -3.3.
+Final Answer Accuracy: The generator's answer is incorrect. The correct answer based on the problem statement is -8.7 m/s. The generator's answer matches the provided key, but the key itself is wrong.","SYSTEM: You are a Grade 12 Mathematics teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 medium-difficulty computational MCQ from ONE of: algebra (functions/inverse/systems), trigonometry (identities/evaluation), basic calculus (limits/derivatives/simple integrals), or short statistics.
+• Use realistic numbers; round to 2 decimals when needed; avoid formal proofs.
+• Distractors must reflect typical mistakes (sign errors, wrong identities, derivative/limit rules, rounding).
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object:
+  [{""question"":""..."",""options"":[""A. ..."",""B. ..."",""C. ..."",""D. ...""],""answer"":""A"",""solution"":""3–6 short lines, plain text; no LaTeX/markdown.""}]
+- The ""solution"" field is MANDATORY with 3–6 short lines (plain text; no LaTeX/markdown).
+- No extra text outside JSON; no code fences.
+- Options MUST be prefixed ""A. ""/""B. ""/""C. ""/""D. "" and ""answer"" ∈ {A,B,C,D}.
+- NO LaTeX: do not use $ or backslashes; write plain text (sin, cos, pi, (a)/(b)).
+USER: Topic: Mathematics. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: launched, ramp, how, straight, velocity, height, does, 16, 12, rolling, find, rest, its, 4, 10, interval, accelerates, dropped, sup, thrown, centimeters, with, initial, what, vertically, function, 2, approaches, 20, down, position, particle, ignoring, per, from, meters, 8, upwards, 7, 3, rate, long, 9.8, line, 5, moves, ball, defined, average, car, along, 1, air, speed, derivative, limit, constant.
+- Do NOT print this list in the output."
+mathematics,gemma,struktur1,12,3019,"A car travels along a highway. Its position, s(t), in kilometers, after t hours is given by s(t) = t^3 - 6t^2 + 9t. What is the car's instantaneous velocity at time t = 2 hours?",A. 3 km/hr,B. 0 km/hr,C. 6 km/hr,D. -3 km/hr,D,The velocity is the derivative of the position function. s'(t) = 3t^2 - 12t + 9. s'(2) = 3(2)^2 - 12(2) + 9 = 12 - 24 + 9 = -3 km/hr.,"The instantaneous velocity is the first derivative of the position function, s(t).
+The position function is given as s(t) = t^3 - 6t^2 + 9t.
+The velocity function, v(t), is the derivative of s(t) with respect to t:
+v(t) = s'(t) = 3t^2 - 12t + 9.
+To find the velocity at t = 2 hours, we substitute t=2 into the velocity function:
+v(2) = 3(2)^2 - 12(2) + 9
+v(2) = 3(4) - 24 + 9
+v(2) = 12 - 24 + 9 = -3.
+The instantaneous velocity at t = 2 hours is -3 km/hr.",gemini:gemini-2.5-pro,22647,5,5,Correct,5,"Clarity: The question is perfectly clear. It provides the position function, units, and the specific time for which the velocity is required.
+Context Accuracy: The context is a standard and appropriate application of derivatives in kinematics. The values are reasonable for a textbook problem; a negative velocity simply indicates direction of travel.
+Quality of Working: The generator's solution is flawless. It correctly identifies the method (differentiation), executes the calculus and arithmetic without error, and includes the correct units.
+Final Answer Accuracy: The generator's final answer of -3 km/hr is correct and matches the provided key.","SYSTEM: You are a Grade 12 Mathematics teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 medium-difficulty computational MCQ from ONE of: algebra (functions/inverse/systems), trigonometry (identities/evaluation), basic calculus (limits/derivatives/simple integrals), or short statistics.
+• Use realistic numbers; round to 2 decimals when needed; avoid formal proofs.
+• Distractors must reflect typical mistakes (sign errors, wrong identities, derivative/limit rules, rounding).
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object:
+  [{""question"":""..."",""options"":[""A. ..."",""B. ..."",""C. ..."",""D. ...""],""answer"":""A"",""solution"":""3–6 short lines, plain text; no LaTeX/markdown.""}]
+- The ""solution"" field is MANDATORY with 3–6 short lines (plain text; no LaTeX/markdown).
+- No extra text outside JSON; no code fences.
+- Options MUST be prefixed ""A. ""/""B. ""/""C. ""/""D. "" and ""answer"" ∈ {A,B,C,D}.
+- NO LaTeX: do not use $ or backslashes; write plain text (sin, cos, pi, (a)/(b)).
+USER: Topic: Mathematics. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: launched, ramp, how, straight, velocity, height, does, neglecting, 16, 12, rolling, find, rest, its, 4, 10, interval, accelerates, dropped, sup, thrown, centimeters, with, initial, what, vertically, function, 2, approaches, 20, down, position, particle, ignoring, per, from, meters, 8, upwards, 7, 3, rate, long, 9.8, line, 5, moves, ball, defined, average, 1.5, car, along, 1, air, speed, derivative, 6, limit, constant.
+- Do NOT print this list in the output."
+mathematics,gemma,struktur1,13,2372,"A ball is thrown upwards with an initial velocity of 10 m/s. What is its velocity after 2 seconds, assuming g = 9.8 m/s²?",A. 0 m/s,B. 5.2 m/s,C. 19.6 m/s,D. -19.6 m/s,B,"Velocity is calculated as initial velocity plus acceleration times time. So, the velocity after 2 seconds is 10 m/s + (-9.8 m/s²) * 2 s = 5.2 m/s.","The problem is solved using the first kinematic equation: v = u + at.
+Let the upward direction be positive.
+Initial velocity, u = +10 m/s.
+Acceleration due to gravity, a = -9.8 m/s².
+Time, t = 2 s.
+Substituting the values:
+v = 10 m/s + (-9.8 m/s² * 2 s)
+v = 10 m/s - 19.6 m/s
+v = -9.6 m/s
+The velocity after 2 seconds is 9.6 m/s downwards.",gemini:gemini-2.5-pro,28157,5,5,Incorrect,2,"Clarity: The question is clearly stated, providing all necessary variables (initial velocity, time, and g) without ambiguity.
+Context Accuracy: The values for initial velocity and gravitational acceleration are standard and physically realistic for a basic kinematics problem.
+Quality of Working: The generator correctly identified the relevant formula and substituted the values. However, it made a major arithmetic error, calculating 10 - 19.6 as 5.2 instead of -9.6.
+Final Answer Accuracy: The generator's answer is incorrect due to the arithmetic error. Furthermore, the correct answer (-9.6 m/s) is not available in the options, indicating the question itself is flawed.","SYSTEM: You are a Grade 12 Mathematics teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 medium-difficulty computational MCQ from ONE of: algebra (functions/inverse/systems), trigonometry (identities/evaluation), basic calculus (limits/derivatives/simple integrals), or short statistics.
+• Use realistic numbers; round to 2 decimals when needed; avoid formal proofs.
+• Distractors must reflect typical mistakes (sign errors, wrong identities, derivative/limit rules, rounding).
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object:
+  [{""question"":""..."",""options"":[""A. ..."",""B. ..."",""C. ..."",""D. ...""],""answer"":""A"",""solution"":""3–6 short lines, plain text; no LaTeX/markdown.""}]
+- The ""solution"" field is MANDATORY with 3–6 short lines (plain text; no LaTeX/markdown).
+- No extra text outside JSON; no code fences.
+- Options MUST be prefixed ""A. ""/""B. ""/""C. ""/""D. "" and ""answer"" ∈ {A,B,C,D}.
+- NO LaTeX: do not use $ or backslashes; write plain text (sin, cos, pi, (a)/(b)).
+USER: Topic: Mathematics. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: launched, ramp, how, straight, velocity, height, does, neglecting, 16, 12, rolling, find, rest, its, 4, 10, interval, accelerates, dropped, sup, kilometers, thrown, after, centimeters, with, initial, what, vertically, travels, function, 2, approaches, 20, down, position, particle, ignoring, per, from, meters, 8, upwards, highway, 7, 3, rate, long, 9.8, line, 5, moves, ball, defined, average, 1.5, car, along, 1, air, speed, derivative, 6, limit, constant.
+- Do NOT print this list in the output."
+mathematics,gemma,struktur1,14,2825,"A ball is thrown upwards with an initial velocity of 10 m/s. What is its velocity after 2 seconds, assuming a constant acceleration due to gravity of -9.8 m/s²?",A. 0 m/s,B. -9.6 m/s,C. 19.6 m/s,D. 10 m/s,B,"The velocity is the initial velocity plus the acceleration times time. So, the velocity after 2 seconds is 10 m/s + (-9.8 m/s²)(2 s) = 0.4 m/s.","This is a standard kinematics problem. The final velocity (v) can be found using the equation v = u + at, where u is the initial velocity, a is the acceleration, and t is the time.
+Given:
+u = 10 m/s
+a = -9.8 m/s²
+t = 2 s
+Calculation:
+v = 10 m/s + (-9.8 m/s² * 2 s)
+v = 10 m/s - 19.6 m/s
+v = -9.6 m/s
+The final velocity is -9.6 m/s, which corresponds to option B.",gemini:gemini-2.5-pro,21436,5,5,Incorrect,1,"Clarity: The question is perfectly clear. It provides all necessary values and states the objective unambiguously.
+Context Accuracy: The scenario is a classic, realistic physics problem. The initial velocity and acceleration due to gravity are standard values.
+Quality of Working: The generator correctly identified the appropriate formula (v = u + at) and substituted the values correctly. However, it made a major arithmetic error in the final step (10 - 19.6 = -9.6, not 0.4).
+Final Answer Accuracy: The generator's calculated answer of 0.4 m/s is incorrect. The correct answer is -9.6 m/s.","SYSTEM: You are a Grade 12 Mathematics teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 medium-difficulty computational MCQ from ONE of: algebra (functions/inverse/systems), trigonometry (identities/evaluation), basic calculus (limits/derivatives/simple integrals), or short statistics.
+• Use realistic numbers; round to 2 decimals when needed; avoid formal proofs.
+• Distractors must reflect typical mistakes (sign errors, wrong identities, derivative/limit rules, rounding).
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object:
+  [{""question"":""..."",""options"":[""A. ..."",""B. ..."",""C. ..."",""D. ...""],""answer"":""A"",""solution"":""3–6 short lines, plain text; no LaTeX/markdown.""}]
+- The ""solution"" field is MANDATORY with 3–6 short lines (plain text; no LaTeX/markdown).
+- No extra text outside JSON; no code fences.
+- Options MUST be prefixed ""A. ""/""B. ""/""C. ""/""D. "" and ""answer"" ∈ {A,B,C,D}.
+- NO LaTeX: do not use $ or backslashes; write plain text (sin, cos, pi, (a)/(b)).
+USER: Topic: Mathematics. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: launched, ramp, how, straight, velocity, height, does, neglecting, 16, 12, rolling, find, rest, its, 4, 10, interval, accelerates, dropped, sup, kilometers, thrown, after, centimeters, with, initial, what, vertically, travels, function, 2, approaches, 20, down, position, particle, ignoring, per, from, meters, 8, upwards, highway, 7, 3, rate, long, 9.8, line, 5, moves, ball, defined, average, 1.5, car, along, 1, air, speed, derivative, 6, limit, constant.
+- Do NOT print this list in the output."
+mathematics,gemma,struktur1,15,2881,A ball is thrown upwards with an initial velocity of 10 m/s. What is the ball's velocity after 2 seconds (assuming no air resistance and g = 9.8 m/s^2)?,A. 6.2 m/s,B. -6.2 m/s,C. 19.6 m/s,D. -19.6 m/s,B,"The velocity is the derivative of the position function. The position function is -4.9t^2 + 10t. The derivative is -9.8t + 10. At t=2, the velocity is -9.8(2) + 10 = -6.2 m/s.","This is a constant acceleration problem. The final velocity (v) can be found using the kinematic equation: v = u + at.
+Here, the initial velocity u = +10 m/s (taking upwards as positive).
+The acceleration a = -g = -9.8 m/s^2 (gravity acts downwards).
+The time t = 2 s.
+Substituting the values: v = 10 + (-9.8 * 2).
+v = 10 - 19.6.
+v = -9.6 m/s.
+The correct answer is -9.6 m/s, which is not among the options.",gemini:gemini-2.5-pro,38504,4,5,Incorrect,2,"Clarity: The question is clearly worded, but it is flawed because the correct answer (-9.6 m/s) is not provided as an option. The options are based on an arithmetic error.
+Context Accuracy: The scenario is a standard and realistic introductory physics problem. The values for initial velocity and gravity are appropriate.
+Quality of Working: The generator correctly identified the appropriate physical model and set up the calculation. However, it made a significant arithmetic error (10 - 19.6 = -9.6, not -6.2), which invalidates the result.
+Final Answer Accuracy: The generator's answer is -6.2 m/s. The correct answer, based on the numbers in the question, is -9.6 m/s. The generator's answer is incorrect, although it matches the flawed key.","SYSTEM: You are a Grade 12 Mathematics teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 medium-difficulty computational MCQ from ONE of: algebra (functions/inverse/systems), trigonometry (identities/evaluation), basic calculus (limits/derivatives/simple integrals), or short statistics.
+• Use realistic numbers; round to 2 decimals when needed; avoid formal proofs.
+• Distractors must reflect typical mistakes (sign errors, wrong identities, derivative/limit rules, rounding).
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object:
+  [{""question"":""..."",""options"":[""A. ..."",""B. ..."",""C. ..."",""D. ...""],""answer"":""A"",""solution"":""3–6 short lines, plain text; no LaTeX/markdown.""}]
+- The ""solution"" field is MANDATORY with 3–6 short lines (plain text; no LaTeX/markdown).
+- No extra text outside JSON; no code fences.
+- Options MUST be prefixed ""A. ""/""B. ""/""C. ""/""D. "" and ""answer"" ∈ {A,B,C,D}.
+- NO LaTeX: do not use $ or backslashes; write plain text (sin, cos, pi, (a)/(b)).
+USER: Topic: Mathematics. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: launched, ramp, how, straight, velocity, height, does, neglecting, 16, 12, rolling, find, rest, its, 4, 10, interval, accelerates, dropped, sup, kilometers, thrown, after, centimeters, with, initial, what, vertically, travels, function, 2, approaches, 20, down, position, particle, ignoring, per, from, meters, 8, upwards, highway, 7, 3, rate, long, 9.8, line, 5, moves, ball, defined, average, 1.5, car, along, 1, air, speed, derivative, 6, limit, constant.
+- Do NOT print this list in the output."
+mathematics,gemma,struktur1,16,2440,"A ball is thrown upwards with an initial velocity of 10 m/s. What is the ball's velocity after 2 seconds, assuming a constant acceleration due to gravity of -9.8 m/s²?",A. 0 m/s,B. 1.2 m/s,C. -9.6 m/s,D. -19.6 m/s,C,"Use the equation v = u + at, where v is final velocity, u is initial velocity, a is acceleration, and t is time. v = 10 + (-9.8)(2) = 10 - 19.6 = -9.6 m/s","This is a one-dimensional kinematics problem under constant acceleration.
+The appropriate formula is v = u + at, where v is the final velocity, u is the initial velocity, a is the acceleration, and t is time.
+Given values are u = 10 m/s, a = -9.8 m/s², and t = 2 s.
+Substituting these into the equation:
+v = 10 m/s + (-9.8 m/s² * 2 s)
+v = 10 m/s - 19.6 m/s
+v = -9.6 m/s.
+The negative sign indicates the velocity is in the downward direction.",gemini:gemini-2.5-pro,18227,5,5,Correct,5,"Clarity: The question is perfectly clear. It provides all necessary variables (initial velocity, time, acceleration) and has no ambiguity.
+Context Accuracy: The values are realistic for a basic physics problem involving projectile motion on Earth. The acceleration due to gravity is stated correctly.
+Quality of Working: The generator's solution correctly identifies the relevant kinematic equation, substitutes the values properly, and performs the arithmetic correctly.
+Final Answer Accuracy: The generator's final answer of -9.6 m/s is correct and matches the provided key.","SYSTEM: You are a Grade 12 Mathematics teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 medium-difficulty computational MCQ from ONE of: algebra (functions/inverse/systems), trigonometry (identities/evaluation), basic calculus (limits/derivatives/simple integrals), or short statistics.
+• Use realistic numbers; round to 2 decimals when needed; avoid formal proofs.
+• Distractors must reflect typical mistakes (sign errors, wrong identities, derivative/limit rules, rounding).
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object:
+  [{""question"":""..."",""options"":[""A. ..."",""B. ..."",""C. ..."",""D. ...""],""answer"":""A"",""solution"":""3–6 short lines, plain text; no LaTeX/markdown.""}]
+- The ""solution"" field is MANDATORY with 3–6 short lines (plain text; no LaTeX/markdown).
+- No extra text outside JSON; no code fences.
+- Options MUST be prefixed ""A. ""/""B. ""/""C. ""/""D. "" and ""answer"" ∈ {A,B,C,D}.
+- NO LaTeX: do not use $ or backslashes; write plain text (sin, cos, pi, (a)/(b)).
+USER: Topic: Mathematics. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: launched, ramp, how, straight, velocity, height, does, neglecting, 16, 12, rolling, find, rest, its, 4, 10, interval, accelerates, dropped, sup, kilometers, thrown, after, centimeters, with, initial, what, vertically, travels, function, 2, approaches, 20, down, position, particle, ignoring, per, from, meters, 8, upwards, highway, 7, 3, rate, long, 9.8, line, 5, moves, ball, defined, average, 1.5, car, along, 1, air, speed, derivative, 6, limit, constant.
+- Do NOT print this list in the output."
+mathematics,gemma,struktur1,17,2206,"A ball is thrown upwards with an initial velocity of 10 m/s. What is its velocity after 2 seconds, assuming the acceleration due to gravity is -9.8 m/s²?",A. 10.00 m/s,B. 19.60 m/s,C. -19.60 m/s,D. 0.00 m/s,C,"The acceleration due to gravity is constant and acts downwards. Therefore, the velocity after 2 seconds is the initial velocity plus the product of acceleration and time: 10 m/s + (-9.8 m/s²) * 2 s = -9.6 m/s.","The problem is solved using the first kinematic equation: v = u + at.
+Given:
+Initial velocity (u) = +10 m/s (upwards is positive)
+Acceleration (a) = -9.8 m/s² (gravity acts downwards)
+Time (t) = 2 s
+
+Calculation:
+v = 10 m/s + (-9.8 m/s² * 2 s)
+v = 10 m/s - 19.6 m/s
+v = -9.6 m/s
+
+The correct velocity is -9.6 m/s. None of the provided options (A, B, C, D) are correct. The provided key (C) is also incorrect.",gemini:gemini-2.5-pro,33217,5,2,Correct,5,"Clarity: The question is clearly worded and provides all necessary data to solve the problem.
+Context Accuracy: While the physical scenario and values are realistic, the provided options and key are fundamentally incorrect. The correct answer (-9.6 m/s) is not available, making the question unsolvable as an MCQ. This is a major conceptual error in the question's design.
+Quality of Working: The generator's reasoning is perfect. It uses the correct formula, substitutes values correctly, and performs the arithmetic accurately to arrive at the correct physical answer.
+Final Answer Accuracy: The generator's calculated answer of -9.6 m/s is the correct solution to the physics problem posed. The generator is correct, while the question's options and key are incorrect.","SYSTEM: You are a Grade 12 Mathematics teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 medium-difficulty computational MCQ from ONE of: algebra (functions/inverse/systems), trigonometry (identities/evaluation), basic calculus (limits/derivatives/simple integrals), or short statistics.
+• Use realistic numbers; round to 2 decimals when needed; avoid formal proofs.
+• Distractors must reflect typical mistakes (sign errors, wrong identities, derivative/limit rules, rounding).
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object:
+  [{""question"":""..."",""options"":[""A. ..."",""B. ..."",""C. ..."",""D. ...""],""answer"":""A"",""solution"":""3–6 short lines, plain text; no LaTeX/markdown.""}]
+- The ""solution"" field is MANDATORY with 3–6 short lines (plain text; no LaTeX/markdown).
+- No extra text outside JSON; no code fences.
+- Options MUST be prefixed ""A. ""/""B. ""/""C. ""/""D. "" and ""answer"" ∈ {A,B,C,D}.
+- NO LaTeX: do not use $ or backslashes; write plain text (sin, cos, pi, (a)/(b)).
+USER: Topic: Mathematics. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: launched, ramp, how, straight, velocity, height, does, neglecting, 16, 12, rolling, find, rest, its, 4, 10, interval, accelerates, dropped, sup, kilometers, thrown, after, centimeters, with, initial, what, vertically, travels, function, 2, approaches, 20, down, position, particle, ignoring, per, from, meters, 8, upwards, highway, 7, 3, rate, long, 9.8, line, 5, moves, ball, defined, average, 1.5, car, along, 1, air, speed, derivative, 6, limit, constant.
+- Do NOT print this list in the output."
+mathematics,gemma,struktur1,18,2600,"A ball is thrown upwards with an initial velocity of 30 m/s. What is its velocity after 2 seconds, assuming a constant acceleration due to gravity of -9.8 m/s²?",A. 10.4 m/s,B. 19.6 m/s,C. 40.4 m/s,D. 0 m/s,A,"Use the equation v = u + at, where v is final velocity, u is initial velocity, a is acceleration, and t is time. So, v = 30 + (-9.8)(2) = 30 - 19.6 = 10.4 m/s","This is a one-dimensional kinematics problem. The relevant equation of motion is v = u + at, where v is the final velocity, u is the initial velocity, a is the acceleration, and t is the time.
+Given:
+u = 30 m/s
+a = -9.8 m/s²
+t = 2 s
+
+Substitute the values into the equation:
+v = 30 + (-9.8) * 2
+v = 30 - 19.6
+v = 10.4 m/s
+This corresponds to option A.",gemini:gemini-2.5-pro,19822,5,5,Correct,5,"Clarity: The question is perfectly clear, providing all necessary variables and stating the required quantity unambiguously.
+Context Accuracy: The values are realistic for a physics problem. An initial velocity of 30 m/s is fast but plausible, and -9.8 m/s² is the standard value for gravitational acceleration.
+Quality of Working: The generator's solution correctly identifies the appropriate kinematic equation, substitutes the values correctly, and performs the arithmetic accurately.
+Final Answer Accuracy: The generator's final answer of 10.4 m/s is correct and matches the result from the independent verification.","SYSTEM: You are a Grade 12 Mathematics teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 medium-difficulty computational MCQ from ONE of: algebra (functions/inverse/systems), trigonometry (identities/evaluation), basic calculus (limits/derivatives/simple integrals), or short statistics.
+• Use realistic numbers; round to 2 decimals when needed; avoid formal proofs.
+• Distractors must reflect typical mistakes (sign errors, wrong identities, derivative/limit rules, rounding).
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object:
+  [{""question"":""..."",""options"":[""A. ..."",""B. ..."",""C. ..."",""D. ...""],""answer"":""A"",""solution"":""3–6 short lines, plain text; no LaTeX/markdown.""}]
+- The ""solution"" field is MANDATORY with 3–6 short lines (plain text; no LaTeX/markdown).
+- No extra text outside JSON; no code fences.
+- Options MUST be prefixed ""A. ""/""B. ""/""C. ""/""D. "" and ""answer"" ∈ {A,B,C,D}.
+- NO LaTeX: do not use $ or backslashes; write plain text (sin, cos, pi, (a)/(b)).
+USER: Topic: Mathematics. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: launched, ramp, how, straight, velocity, height, does, neglecting, 16, 12, rolling, find, rest, its, 4, 10, interval, accelerates, dropped, sup, kilometers, thrown, after, centimeters, with, initial, what, vertically, travels, function, 2, approaches, 20, down, position, particle, ignoring, per, from, meters, 8, upwards, highway, 7, 3, rate, long, 9.8, line, 5, moves, ball, defined, average, 1.5, car, along, 1, air, speed, derivative, 6, limit, constant.
+- Do NOT print this list in the output."
+mathematics,gemma,struktur1,19,2456,A ball is kicked with an initial velocity of 25 m/s at an angle of 30 degrees above the horizontal. What is the horizontal component of its initial velocity?,A. 21.65 m/s,B. 12.5 m/s,C. 25 m/s,D. 10.83 m/s,A,The horizontal component of the velocity is found using the cosine function: cos(30) * 25 m/s = 0.87 * 25 m/s = 21.65 m/s,"The problem asks for the horizontal component (vx) of an initial velocity vector.
+The initial velocity magnitude (v) is 25 m/s, and the angle (θ) is 30 degrees above the horizontal.
+The formula for the horizontal component is vx = v * cos(θ).
+Substituting the given values:
+vx = 25 m/s * cos(30°)
+Using the value cos(30°) ≈ 0.8660,
+vx ≈ 25 * 0.8660 = 21.65 m/s.
+This matches option A.",gemini:gemini-2.5-pro,34610,5,5,Correct,4,"Clarity: The question is perfectly clear. It provides all necessary information and asks for a specific quantity without ambiguity.
+Context Accuracy: The scenario is a standard introductory physics problem. The initial velocity of 25 m/s is high for a kicked ball but physically plausible.
+Quality of Working: The method is correct, but the intermediate step shows a minor error. The generator uses cos(30) ≈ 0.87, but 0.87 * 25 = 21.75, not 21.65. The correct value is cos(30) ≈ 0.866. The final answer is correct, but the working shown to get there is inconsistent.
+Final Answer Accuracy: The generator's final answer is correct.","SYSTEM: You are a Grade 12 Mathematics teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 medium-difficulty computational MCQ from ONE of: algebra (functions/inverse/systems), trigonometry (identities/evaluation), basic calculus (limits/derivatives/simple integrals), or short statistics.
+• Use realistic numbers; round to 2 decimals when needed; avoid formal proofs.
+• Distractors must reflect typical mistakes (sign errors, wrong identities, derivative/limit rules, rounding).
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object:
+  [{""question"":""..."",""options"":[""A. ..."",""B. ..."",""C. ..."",""D. ...""],""answer"":""A"",""solution"":""3–6 short lines, plain text; no LaTeX/markdown.""}]
+- The ""solution"" field is MANDATORY with 3–6 short lines (plain text; no LaTeX/markdown).
+- No extra text outside JSON; no code fences.
+- Options MUST be prefixed ""A. ""/""B. ""/""C. ""/""D. "" and ""answer"" ∈ {A,B,C,D}.
+- NO LaTeX: do not use $ or backslashes; write plain text (sin, cos, pi, (a)/(b)).
+USER: Topic: Mathematics. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: launched, ramp, how, straight, velocity, height, does, neglecting, 16, 12, rolling, find, rest, its, 4, 10, interval, accelerates, dropped, sup, kilometers, thrown, after, centimeters, with, initial, what, vertically, travels, function, 2, approaches, 20, down, position, particle, ignoring, per, from, meters, 8, upwards, highway, 7, 3, rate, long, 9.8, line, 5, moves, ball, defined, average, 1.5, car, along, 1, air, speed, 30, derivative, 6, limit, constant.
+- Do NOT print this list in the output."
+mathematics,gemma,struktur1,20,2765,"A ball is thrown upwards with an initial speed of 22 m/s. What is its speed after 1.5 seconds, assuming only gravity acts on it (g = 9.8 m/s²)?",A. 15.3 m/s,B. 27.3 m/s,C. -15.3 m/s,D. -27.3 m/s,A,The speed is the derivative of the position function. The position function is -4.9t² + 22t. The derivative is -9.8t + 22. Plugging in t=1.5 gives -9.8(1.5) + 22 = 15.3 m/s.,"This is a one-dimensional kinematics problem. The final velocity (v) can be found using the equation v = u + at, where u is the initial velocity, a is the acceleration, and t is time.
+Given:
+Initial speed (upwards), u = +22 m/s
+Acceleration (downwards), a = -g = -9.8 m/s²
+Time, t = 1.5 s
+
+Calculation:
+v = 22 m/s + (-9.8 m/s²) * 1.5 s
+v = 22 m/s - 14.7 m/s
+v = 7.3 m/s
+
+The speed is the magnitude of the velocity, which is 7.3 m/s. This is not among the options.",gemini:gemini-2.5-pro,34704,3,5,Incorrect,1,"Clarity: The question is clearly stated, but it is flawed because the correct answer (7.3 m/s) is not available in the options. Additionally, asking for 'speed' while providing negative options (which represent velocity) is a minor inconsistency.
+Context Accuracy: The physical scenario of a thrown ball is a standard and realistic context for a kinematics problem. The initial speed and the value for g are physically reasonable.
+Quality of Working: The generator correctly identified the appropriate physical principle and formula (v = v₀ + at). However, it made a significant arithmetic error, calculating 22 - 9.8*1.5 as 15.3 instead of the correct 7.3. This is a major flaw in the execution.
+Final Answer Accuracy: The generator's answer is 15.3 m/s. The correct answer, based on the values given in the question, is 7.3 m/s. Therefore, the generator's answer is incorrect.","SYSTEM: You are a Grade 12 Mathematics teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 medium-difficulty computational MCQ from ONE of: algebra (functions/inverse/systems), trigonometry (identities/evaluation), basic calculus (limits/derivatives/simple integrals), or short statistics.
+• Use realistic numbers; round to 2 decimals when needed; avoid formal proofs.
+• Distractors must reflect typical mistakes (sign errors, wrong identities, derivative/limit rules, rounding).
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object:
+  [{""question"":""..."",""options"":[""A. ..."",""B. ..."",""C. ..."",""D. ...""],""answer"":""A"",""solution"":""3–6 short lines, plain text; no LaTeX/markdown.""}]
+- The ""solution"" field is MANDATORY with 3–6 short lines (plain text; no LaTeX/markdown).
+- No extra text outside JSON; no code fences.
+- Options MUST be prefixed ""A. ""/""B. ""/""C. ""/""D. "" and ""answer"" ∈ {A,B,C,D}.
+- NO LaTeX: do not use $ or backslashes; write plain text (sin, cos, pi, (a)/(b)).
+USER: Topic: Mathematics. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: launched, ramp, how, straight, angle, 25, velocity, height, does, neglecting, 16, 12, rolling, find, rest, its, 4, 10, interval, accelerates, dropped, sup, kilometers, thrown, after, centimeters, with, initial, what, vertically, travels, function, 2, approaches, 20, down, position, particle, ignoring, per, above, from, meters, 8, upwards, highway, 7, 3, rate, long, kicked, 9.8, line, 5, moves, ball, defined, average, 1.5, car, along, 1, air, speed, 30, degrees, derivative, 6, limit, constant.
+- Do NOT print this list in the output."
+mathematics,gemma,struktur1,21,2863,"A ball is thrown upwards with a speed of 18 m/s. What is the ball's speed after 1.2 seconds, assuming gravity is -9.8 m/s²?",A. 5.6 m/s,B. 13.2 m/s,C. -13.2 m/s,D. -5.6 m/s,B,The ball's speed is the initial speed plus the acceleration due to gravity times time: 18 + (-9.8)(1.2) = 5.6 m/s,"The problem is solved using the first kinematic equation: v = u + at.
+Here, the initial upward velocity (u) is +18 m/s.
+The acceleration due to gravity (a) is -9.8 m/s².
+The time (t) is 1.2 s.
+Substituting the values:
+v = 18 m/s + (-9.8 m/s² * 1.2 s)
+v = 18 m/s - 11.76 m/s
+v = 6.24 m/s
+The question asks for speed, which is the magnitude of velocity. Since the velocity is positive, the speed is 6.24 m/s. None of the options are correct.",gemini:gemini-2.5-pro,25691,5,5,Incorrect,1,"Clarity: The question is perfectly clear, providing all necessary information and using standard physics terminology.
+Context Accuracy: The scenario is a standard and realistic introductory physics problem. The values for initial speed and gravity are appropriate.
+Quality of Working: The generator correctly identified the appropriate kinematic formula but made a significant arithmetic error. The calculation 18 + (-9.8)(1.2) equals 6.24, not 5.6.
+Final Answer Accuracy: The generator's answer (5.6 m/s, option A) is incorrect because it does not match the provided key (B, 13.2 m/s). It's also worth noting that both the generator's answer and the key are incorrect, as the true calculated speed is 6.24 m/s.","SYSTEM: You are a Grade 12 Mathematics teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 medium-difficulty computational MCQ from ONE of: algebra (functions/inverse/systems), trigonometry (identities/evaluation), basic calculus (limits/derivatives/simple integrals), or short statistics.
+• Use realistic numbers; round to 2 decimals when needed; avoid formal proofs.
+• Distractors must reflect typical mistakes (sign errors, wrong identities, derivative/limit rules, rounding).
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object:
+  [{""question"":""..."",""options"":[""A. ..."",""B. ..."",""C. ..."",""D. ...""],""answer"":""A"",""solution"":""3–6 short lines, plain text; no LaTeX/markdown.""}]
+- The ""solution"" field is MANDATORY with 3–6 short lines (plain text; no LaTeX/markdown).
+- No extra text outside JSON; no code fences.
+- Options MUST be prefixed ""A. ""/""B. ""/""C. ""/""D. "" and ""answer"" ∈ {A,B,C,D}.
+- NO LaTeX: do not use $ or backslashes; write plain text (sin, cos, pi, (a)/(b)).
+USER: Topic: Mathematics. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: launched, ramp, how, straight, angle, 25, velocity, height, does, neglecting, 16, 12, rolling, find, rest, its, 4, 10, interval, accelerates, dropped, sup, kilometers, thrown, after, centimeters, with, initial, what, vertically, travels, function, 22, 2, approaches, 20, down, position, particle, ignoring, per, above, from, meters, 8, upwards, highway, 7, 3, rate, long, kicked, 9.8, line, 5, moves, ball, defined, average, 1.5, car, along, 1, air, speed, 30, degrees, derivative, 6, limit, constant.
+- Do NOT print this list in the output."
+mathematics,gemma,struktur1,22,3031,"A ball is thrown upwards with an initial velocity of 10 m/s. What is its velocity after 2 seconds, assuming g = 9.8 m/s²?",A. 5.4 m/s,B. -8.4 m/s,C. 19.6 m/s,D. 2.0 m/s,B,"The equation for velocity is v = u + at. Here, u = 10 m/s, a = -9.8 m/s² (negative since it's acting downwards), and t = 2 s. Plugging in, we get v = 10 - (9.8)(2) = -8.4 m/s.","This is a one-dimensional kinematics problem. The final velocity (v) can be found using the equation v = u + at, where u is the initial velocity, a is the acceleration, and t is the time.
+Let's define the upward direction as positive.
+Initial velocity, u = +10 m/s.
+Acceleration due to gravity, a = -g = -9.8 m/s².
+Time, t = 2 s.
+Substituting the values: v = 10 m/s + (-9.8 m/s²)(2 s).
+v = 10 - 19.6 m/s.
+v = -9.6 m/s.
+The negative sign indicates the velocity is in the downward direction.",gemini:gemini-2.5-pro,21942,5,5,Incorrect,2,"Clarity: The question is perfectly clear, providing all necessary information and asking a specific, unambiguous question.
+Context Accuracy: The physical scenario is a standard kinematics problem, and the given values for initial velocity and gravity are realistic.
+Quality of Working: The generator correctly identified the appropriate formula (v = u + at) and correctly assigned signs to the variables (positive initial velocity, negative acceleration). However, there is a critical arithmetic error in the final step: 10 - (9.8 * 2) equals -9.6, not -8.4.
+Final Answer Accuracy: The generator's answer of -8.4 m/s is incorrect due to the arithmetic error. The correct answer is -9.6 m/s, which is not among the options. The generator's answer matches the provided key, indicating the key and options are also flawed.","SYSTEM: You are a Grade 12 Mathematics teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 medium-difficulty computational MCQ from ONE of: algebra (functions/inverse/systems), trigonometry (identities/evaluation), basic calculus (limits/derivatives/simple integrals), or short statistics.
+• Use realistic numbers; round to 2 decimals when needed; avoid formal proofs.
+• Distractors must reflect typical mistakes (sign errors, wrong identities, derivative/limit rules, rounding).
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object:
+  [{""question"":""..."",""options"":[""A. ..."",""B. ..."",""C. ..."",""D. ...""],""answer"":""A"",""solution"":""3–6 short lines, plain text; no LaTeX/markdown.""}]
+- The ""solution"" field is MANDATORY with 3–6 short lines (plain text; no LaTeX/markdown).
+- No extra text outside JSON; no code fences.
+- Options MUST be prefixed ""A. ""/""B. ""/""C. ""/""D. "" and ""answer"" ∈ {A,B,C,D}.
+- NO LaTeX: do not use $ or backslashes; write plain text (sin, cos, pi, (a)/(b)).
+USER: Topic: Mathematics. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: launched, ramp, how, straight, angle, 25, velocity, height, does, neglecting, 16, 12, rolling, find, 18, rest, its, 4, 10, interval, accelerates, dropped, sup, kilometers, thrown, after, centimeters, with, initial, what, vertically, travels, function, 22, 2, approaches, 20, down, position, particle, ignoring, per, above, from, 1.2, meters, 8, upwards, highway, 7, 3, rate, long, kicked, 9.8, line, 5, moves, ball, defined, average, 1.5, car, along, 1, air, speed, 30, degrees, derivative, 6, limit, constant.
+- Do NOT print this list in the output."
+mathematics,gemma,struktur1,23,2789,"A ball is thrown horizontally from a cliff with an initial speed of 10 m/s. If the cliff is 30 meters high, how long does it take for the ball to reach the ground? (Assume g = 9.8 m/s²)",A. 2.47 s,B. 3.19 s,C. 5.53 s,D. 1.53 s,B,"We can ignore the horizontal motion and focus on the vertical motion. Using the equation d = v₀t + (1/2)gt², where d = 30 m, v₀ = 0 m/s, and g = 9.8 m/s², we get 30 = (1/2)(9.8)t². Solving for t, we find t ≈ 2.47 seconds.","The problem can be solved by analyzing the vertical motion of the ball independently of its horizontal motion. The initial vertical velocity is 0 m/s since the ball is thrown horizontally. The vertical distance to fall is 30 m.
+Using the kinematic equation for displacement: d = v₀t + (1/2)at².
+Here, d = 30 m, initial vertical velocity v₀ = 0 m/s, and acceleration a = g = 9.8 m/s².
+Substituting the values: 30 = (0)t + (1/2)(9.8)t².
+30 = 4.9t²
+t² = 30 / 4.9 ≈ 6.122
+t = √6.122 ≈ 2.474 s.
+Rounding to two decimal places gives 2.47 s.",gemini:gemini-2.5-pro,30399,5,5,Correct,5,"Clarity: The question is perfectly clear. It provides all necessary data (initial horizontal speed, height, gravity) and asks a specific, unambiguous question.
+Context Accuracy: The scenario is a classic, realistic physics problem. The values for the cliff height and initial speed are reasonable.
+Quality of Working: The generator's solution is excellent. It correctly identifies that only vertical motion determines the time of flight, uses the correct formula, and calculates the result accurately.
+Final Answer Accuracy: The generator's calculated answer of 2.47 s is correct. This corresponds to option A. The key provided with the question (B) is incorrect, but the generator's solution itself is correct.","SYSTEM: You are a Grade 12 Mathematics teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 medium-difficulty computational MCQ from ONE of: algebra (functions/inverse/systems), trigonometry (identities/evaluation), basic calculus (limits/derivatives/simple integrals), or short statistics.
+• Use realistic numbers; round to 2 decimals when needed; avoid formal proofs.
+• Distractors must reflect typical mistakes (sign errors, wrong identities, derivative/limit rules, rounding).
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object:
+  [{""question"":""..."",""options"":[""A. ..."",""B. ..."",""C. ..."",""D. ...""],""answer"":""A"",""solution"":""3–6 short lines, plain text; no LaTeX/markdown.""}]
+- The ""solution"" field is MANDATORY with 3–6 short lines (plain text; no LaTeX/markdown).
+- No extra text outside JSON; no code fences.
+- Options MUST be prefixed ""A. ""/""B. ""/""C. ""/""D. "" and ""answer"" ∈ {A,B,C,D}.
+- NO LaTeX: do not use $ or backslashes; write plain text (sin, cos, pi, (a)/(b)).
+USER: Topic: Mathematics. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: launched, ramp, how, straight, angle, 25, velocity, height, does, neglecting, 16, 12, rolling, find, 18, rest, its, 4, 10, interval, accelerates, dropped, sup, kilometers, thrown, after, centimeters, with, initial, what, vertically, travels, function, 22, 2, approaches, 20, down, position, particle, ignoring, per, above, from, 1.2, meters, 8, upwards, highway, 7, 3, rate, long, kicked, 9.8, line, 5, moves, ball, defined, average, 1.5, car, along, 1, air, speed, 30, degrees, derivative, 6, limit, constant.
+- Do NOT print this list in the output."
+mathematics,gemma,struktur1,24,2564,"A ball is thrown upwards with an initial velocity of 10 m/s. What is its velocity after 2 seconds, assuming constant acceleration due to gravity of -9.8 m/s²?",A. 0 m/s,B. -9.6 m/s,C. 19.6 m/s,D. -19.6 m/s,B,The velocity is the initial velocity plus the acceleration times time: 10 m/s + (-9.8 m/s²) * 2 s = 10 m/s - 19.6 m/s = -9.6 m/s,"This is a one-dimensional kinematics problem. The relevant equation of motion is v = u + at, where v is the final velocity, u is the initial velocity, a is the acceleration, and t is the time.
+Given values:
+u = 10 m/s
+a = -9.8 m/s²
+t = 2 s
+Substituting these values into the equation:
+v = 10 m/s + (-9.8 m/s²) * (2 s)
+v = 10 m/s - 19.6 m/s
+v = -9.6 m/s
+The final velocity is -9.6 m/s, which corresponds to option B.",gemini:gemini-2.5-pro,18950,5,5,Correct,5,"Clarity: The question is perfectly clear. It provides all necessary values (initial velocity, time, acceleration) and asks a specific question.
+Context Accuracy: The values are realistic for a physics problem. 10 m/s is a reasonable throwing speed, and -9.8 m/s² is the standard acceleration due to gravity on Earth.
+Quality of Working: The generator's solution correctly identifies and applies the appropriate kinematic formula. The calculation is straightforward and accurate.
+Final Answer Accuracy: The generator's calculated answer of -9.6 m/s is correct and matches the provided key B.","SYSTEM: You are a Grade 12 Mathematics teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 medium-difficulty computational MCQ from ONE of: algebra (functions/inverse/systems), trigonometry (identities/evaluation), basic calculus (limits/derivatives/simple integrals), or short statistics.
+• Use realistic numbers; round to 2 decimals when needed; avoid formal proofs.
+• Distractors must reflect typical mistakes (sign errors, wrong identities, derivative/limit rules, rounding).
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object:
+  [{""question"":""..."",""options"":[""A. ..."",""B. ..."",""C. ..."",""D. ...""],""answer"":""A"",""solution"":""3–6 short lines, plain text; no LaTeX/markdown.""}]
+- The ""solution"" field is MANDATORY with 3–6 short lines (plain text; no LaTeX/markdown).
+- No extra text outside JSON; no code fences.
+- Options MUST be prefixed ""A. ""/""B. ""/""C. ""/""D. "" and ""answer"" ∈ {A,B,C,D}.
+- NO LaTeX: do not use $ or backslashes; write plain text (sin, cos, pi, (a)/(b)).
+USER: Topic: Mathematics. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: launched, ramp, how, straight, angle, 25, velocity, height, does, neglecting, 16, 12, rolling, horizontally, find, 18, rest, its, 4, 10, interval, accelerates, dropped, sup, kilometers, thrown, after, centimeters, with, initial, what, vertically, travels, function, 22, 2, approaches, 20, down, position, particle, ignoring, per, above, from, 1.2, cliff, meters, 8, upwards, highway, 7, 3, rate, long, kicked, 9.8, line, 5, moves, ball, defined, average, 1.5, car, along, 1, air, speed, 30, degrees, derivative, 6, limit, constant.
+- Do NOT print this list in the output."
+mathematics,gemma,struktur1,25,2601,"A ball is thrown upwards with an initial velocity of 15 m/s. What is the ball's velocity after 2 seconds, assuming the acceleration due to gravity is -9.8 m/s²?",A. 1.4 m/s,B. 2.2 m/s,C. -1.4 m/s,D. -2.2 m/s,D,"The velocity is the integral of acceleration. The integral of -9.8 m/s² is -9.8t. So, the velocity after 2 seconds is -9.8(2) + 15 = -19.6 + 15 = -4.6 m/s.","This is a constant acceleration problem. The final velocity (v) can be found using the kinematic equation: v = u + at, where u is the initial velocity, a is the acceleration, and t is the time.
+Given:
+u = 15 m/s
+a = -9.8 m/s²
+t = 2 s
+Substituting the values:
+v = 15 + (-9.8) * 2
+v = 15 - 19.6
+v = -4.6 m/s",gemini:gemini-2.5-pro,33119,5,5,Correct,5,"Clarity: The question is perfectly clear, providing all necessary variables and asking for a specific quantity.
+Context Accuracy: The scenario is a standard and realistic physics problem. The initial velocity and acceleration due to gravity are reasonable values.
+Quality of Working: The generator correctly identifies the relevant physical principle (kinematic equation for constant acceleration) and executes the calculation flawlessly.
+Final Answer Accuracy: The generator's calculated answer of -4.6 m/s is the correct solution to the problem. It should be noted that this correct answer is not present in the MCQ options, and does not match the provided key 'D'. The question's options are flawed, but the generator's answer is correct.","SYSTEM: You are a Grade 12 Mathematics teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 medium-difficulty computational MCQ from ONE of: algebra (functions/inverse/systems), trigonometry (identities/evaluation), basic calculus (limits/derivatives/simple integrals), or short statistics.
+• Use realistic numbers; round to 2 decimals when needed; avoid formal proofs.
+• Distractors must reflect typical mistakes (sign errors, wrong identities, derivative/limit rules, rounding).
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object:
+  [{""question"":""..."",""options"":[""A. ..."",""B. ..."",""C. ..."",""D. ...""],""answer"":""A"",""solution"":""3–6 short lines, plain text; no LaTeX/markdown.""}]
+- The ""solution"" field is MANDATORY with 3–6 short lines (plain text; no LaTeX/markdown).
+- No extra text outside JSON; no code fences.
+- Options MUST be prefixed ""A. ""/""B. ""/""C. ""/""D. "" and ""answer"" ∈ {A,B,C,D}.
+- NO LaTeX: do not use $ or backslashes; write plain text (sin, cos, pi, (a)/(b)).
+USER: Topic: Mathematics. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: launched, ramp, how, straight, angle, 25, velocity, height, does, neglecting, 16, 12, rolling, horizontally, find, 18, rest, its, 4, 10, interval, accelerates, dropped, sup, kilometers, thrown, after, centimeters, with, initial, what, vertically, travels, function, 22, 2, approaches, 20, down, position, particle, ignoring, per, above, from, 1.2, cliff, meters, 8, upwards, highway, 7, 3, rate, long, kicked, 9.8, line, 5, moves, ball, defined, average, 1.5, car, along, 1, air, speed, 30, degrees, derivative, 6, limit, constant.
+- Do NOT print this list in the output."
+mathematics,gemma,struktur1,26,3682,"A ball is thrown upwards with an initial velocity of 10 m/s. What is its velocity after 2 seconds, assuming a constant acceleration due to gravity of -9.8 m/s<sup>2</sup>?",A. 0 m/s,B. -9.8 m/s,C. -19.6 m/s,D. -29.4 m/s,C,"The velocity is given by v = u + at, where u is initial velocity, a is acceleration, and t is time. So, v = 10 + (-9.8)(2) = 10 - 19.6 = -9.6 m/s","The problem is solved using the first kinematic equation: v = u + at.
+Given:
+Initial velocity (u) = +10 m/s (upwards is positive)
+Acceleration (a) = -9.8 m/s²
+Time (t) = 2 s
+
+Substitute the values into the equation:
+v = 10 m/s + (-9.8 m/s² * 2 s)
+v = 10 m/s - 19.6 m/s
+v = -9.6 m/s
+
+The calculated final velocity is -9.6 m/s. None of the provided options match this result. The closest option is B (-9.8 m/s). The provided key (C) is incorrect.",gemini:gemini-2.5-pro,26315,5,5,Correct,5,"Clarity: The question is perfectly clear, providing all necessary variables and their values.
+Context Accuracy: The physical scenario and the values used (initial velocity, gravity) are standard and realistic for an introductory kinematics problem.
+Quality of Working: The generator's solution correctly identifies the appropriate formula, substitutes the values correctly, and performs the arithmetic accurately.
+Final Answer Accuracy: The generator's calculated answer of -9.6 m/s is the correct solution to the physics problem posed. The MCQ itself is flawed because the correct answer is not listed as an option, and the provided key (C) is wrong. The generator's answer is correct relative to the question.","SYSTEM: You are a Grade 12 Mathematics teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 medium-difficulty computational MCQ from ONE of: algebra (functions/inverse/systems), trigonometry (identities/evaluation), basic calculus (limits/derivatives/simple integrals), or short statistics.
+• Use realistic numbers; round to 2 decimals when needed; avoid formal proofs.
+• Distractors must reflect typical mistakes (sign errors, wrong identities, derivative/limit rules, rounding).
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object:
+  [{""question"":""..."",""options"":[""A. ..."",""B. ..."",""C. ..."",""D. ...""],""answer"":""A"",""solution"":""3–6 short lines, plain text; no LaTeX/markdown.""}]
+- The ""solution"" field is MANDATORY with 3–6 short lines (plain text; no LaTeX/markdown).
+- No extra text outside JSON; no code fences.
+- Options MUST be prefixed ""A. ""/""B. ""/""C. ""/""D. "" and ""answer"" ∈ {A,B,C,D}.
+- NO LaTeX: do not use $ or backslashes; write plain text (sin, cos, pi, (a)/(b)).
+USER: Topic: Mathematics. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: launched, ramp, how, straight, angle, 25, velocity, height, does, neglecting, 16, 12, rolling, horizontally, find, 18, rest, its, 4, 10, interval, accelerates, dropped, sup, kilometers, thrown, after, centimeters, with, initial, what, vertically, travels, function, 22, 2, approaches, 20, down, position, particle, ignoring, per, above, from, 1.2, cliff, meters, 8, upwards, highway, 7, 3, rate, long, kicked, 9.8, line, 5, moves, ball, defined, average, 1.5, car, along, 15, 1, air, speed, 30, degrees, derivative, 6, limit, constant.
+- Do NOT print this list in the output."
+mathematics,gemma,struktur1,27,3989,"A ball is thrown upwards with an initial velocity of 10 m/s. What is its velocity after 2 seconds, given that the acceleration due to gravity is -9.8 m/s²?",A. 0.2 m/s,B. 5.2 m/s,C. -9.6 m/s,D. -19.6 m/s,C,"Velocity = Initial velocity + (acceleration * time). So, velocity = 10 m/s + (-9.8 m/s² * 2 s) = 10 m/s - 19.6 m/s = -9.6 m/s.","This is a one-dimensional kinematics problem. The final velocity (v) can be found using the equation v = u + at, where u is the initial velocity, a is the acceleration, and t is the time.
+Given:
+u = 10 m/s
+a = -9.8 m/s²
+t = 2 s
+
+Substitute the values into the equation:
+v = 10 + (-9.8 * 2)
+v = 10 - 19.6
+v = -9.6 m/s
+The negative sign indicates the ball is moving downwards.",gemini:gemini-2.5-pro,18017,5,5,Correct,5,"Clarity: The question is unambiguous and provides all necessary information and units for a straightforward calculation.
+Context Accuracy: The scenario is a classic, realistic physics problem. The initial velocity and acceleration due to gravity are standard and appropriate values.
+Quality of Working: The generator's solution correctly identifies and applies the appropriate kinematic formula. The substitution and arithmetic are performed without error.
+Final Answer Accuracy: The generator's calculated velocity of -9.6 m/s is correct and matches the provided key.","SYSTEM: You are a Grade 12 Mathematics teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 medium-difficulty computational MCQ from ONE of: algebra (functions/inverse/systems), trigonometry (identities/evaluation), basic calculus (limits/derivatives/simple integrals), or short statistics.
+• Use realistic numbers; round to 2 decimals when needed; avoid formal proofs.
+• Distractors must reflect typical mistakes (sign errors, wrong identities, derivative/limit rules, rounding).
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object:
+  [{""question"":""..."",""options"":[""A. ..."",""B. ..."",""C. ..."",""D. ...""],""answer"":""A"",""solution"":""3–6 short lines, plain text; no LaTeX/markdown.""}]
+- The ""solution"" field is MANDATORY with 3–6 short lines (plain text; no LaTeX/markdown).
+- No extra text outside JSON; no code fences.
+- Options MUST be prefixed ""A. ""/""B. ""/""C. ""/""D. "" and ""answer"" ∈ {A,B,C,D}.
+- NO LaTeX: do not use $ or backslashes; write plain text (sin, cos, pi, (a)/(b)).
+USER: Topic: Mathematics. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: launched, ramp, how, straight, angle, 25, velocity, height, does, neglecting, 16, 12, rolling, horizontally, find, 18, rest, its, 4, 10, interval, accelerates, dropped, sup, kilometers, thrown, after, centimeters, with, initial, what, vertically, travels, function, 22, 2, approaches, 20, down, position, particle, ignoring, per, above, from, 1.2, cliff, meters, 8, upwards, highway, 7, 3, rate, long, kicked, 9.8, line, 5, moves, ball, defined, average, 1.5, car, along, 15, 1, air, speed, 30, degrees, derivative, 6, limit, constant.
+- Do NOT print this list in the output."
+mathematics,gemma,struktur1,28,2620,"A ball is thrown upwards with an initial velocity of 10 m/s. What is its velocity after 2 seconds, given that the acceleration due to gravity is -9.8 m/s²?",A. 0.2 m/s,B. -8.6 m/s,C. 19.6 m/s,D. -19.6 m/s,B,"The velocity is found using the equation: v = u + at. Where v is final velocity, u is initial velocity, a is acceleration, and t is time. Plugging in the values: v = 10 + (-9.8)(2) = 10 - 19.6 = -9.6 m/s","The problem can be solved using the first equation of motion for constant acceleration: v = u + at.
+Given:
+Initial velocity (u) = 10 m/s
+Acceleration (a) = -9.8 m/s²
+Time (t) = 2 s
+
+Substitute the values into the equation:
+v = 10 m/s + (-9.8 m/s² * 2 s)
+v = 10 m/s - 19.6 m/s
+v = -9.6 m/s
+
+The calculated final velocity is -9.6 m/s. This answer is not among the options provided.",gemini:gemini-2.5-pro,37243,5,5,Correct,5,"Clarity: The question is perfectly clear, providing all necessary values and establishing a sign convention for acceleration.
+Context Accuracy: The scenario is a standard kinematics problem with realistic physical values for an object thrown on Earth.
+Quality of Working: The generator correctly identifies the relevant formula, substitutes the values properly, and performs the arithmetic without error. The reasoning is sound.
+Final Answer Accuracy: The generator's calculated result of -9.6 m/s is the correct answer to the physics problem. The MCQ is flawed because this correct answer is not an option, and the provided key (B: -8.6 m/s) is incorrect. The generator's solution itself is correct.","SYSTEM: You are a Grade 12 Mathematics teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 medium-difficulty computational MCQ from ONE of: algebra (functions/inverse/systems), trigonometry (identities/evaluation), basic calculus (limits/derivatives/simple integrals), or short statistics.
+• Use realistic numbers; round to 2 decimals when needed; avoid formal proofs.
+• Distractors must reflect typical mistakes (sign errors, wrong identities, derivative/limit rules, rounding).
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object:
+  [{""question"":""..."",""options"":[""A. ..."",""B. ..."",""C. ..."",""D. ...""],""answer"":""A"",""solution"":""3–6 short lines, plain text; no LaTeX/markdown.""}]
+- The ""solution"" field is MANDATORY with 3–6 short lines (plain text; no LaTeX/markdown).
+- No extra text outside JSON; no code fences.
+- Options MUST be prefixed ""A. ""/""B. ""/""C. ""/""D. "" and ""answer"" ∈ {A,B,C,D}.
+- NO LaTeX: do not use $ or backslashes; write plain text (sin, cos, pi, (a)/(b)).
+USER: Topic: Mathematics. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: launched, ramp, how, straight, angle, 25, velocity, height, does, neglecting, 16, 12, rolling, horizontally, find, 18, rest, its, 4, 10, interval, accelerates, dropped, sup, kilometers, thrown, after, centimeters, with, initial, what, vertically, travels, function, 22, 2, approaches, 20, down, position, particle, ignoring, per, above, from, 1.2, cliff, meters, 8, upwards, highway, 7, 3, rate, long, kicked, 9.8, line, 5, moves, ball, defined, average, 1.5, car, along, 15, 1, air, speed, 30, degrees, derivative, 6, limit, constant.
+- Do NOT print this list in the output."
+mathematics,gemma,struktur1,29,2733,A ball is thrown upwards with an initial speed of 10 m/s. What is its speed after 1 second? (Assume g = 9.8 m/s<sup>2</sup>),A. 8.2 m/s,B. 19.8 m/s,C. -8.2 m/s,D. 1.8 m/s,A,"The acceleration due to gravity is constant and acts downwards. Therefore, the ball's speed decreases by 9.8 m/s every second. After 1 second, the speed is 10 m/s - 9.8 m/s = 0.2 m/s. However, the question asks for the magnitude of the speed, so the answer is 8.2 m/s.","The problem is solved using the first kinematic equation: v = u + at.
+Let the upward direction be positive.
+Initial velocity (u) = +10 m/s.
+Acceleration (a) = -g = -9.8 m/s².
+Time (t) = 1 s.
+Final velocity (v) = 10 m/s + (-9.8 m/s²)(1 s) = 10 - 9.8 m/s = 0.2 m/s.
+Speed is the magnitude of velocity. Since the velocity is positive, the speed is 0.2 m/s.
+None of the provided options are correct.",gemini:gemini-2.5-pro,28256,5,5,Incorrect,1,"Clarity: The question is perfectly clear, providing all necessary information and using standard terminology.
+Context Accuracy: The scenario is a standard, realistic kinematics problem. The initial speed and acceleration due to gravity are appropriate values.
+Quality of Working: The generator's reasoning is deeply flawed. It correctly calculates the answer as 0.2 m/s but then illogically concludes the answer is 8.2 m/s, contradicting its own work without any valid justification.
+Final Answer Accuracy: The generator's final answer of 8.2 m/s is incorrect. The correct answer is 0.2 m/s. The provided key and options for the MCQ are also incorrect.","SYSTEM: You are a Grade 12 Mathematics teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 medium-difficulty computational MCQ from ONE of: algebra (functions/inverse/systems), trigonometry (identities/evaluation), basic calculus (limits/derivatives/simple integrals), or short statistics.
+• Use realistic numbers; round to 2 decimals when needed; avoid formal proofs.
+• Distractors must reflect typical mistakes (sign errors, wrong identities, derivative/limit rules, rounding).
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object:
+  [{""question"":""..."",""options"":[""A. ..."",""B. ..."",""C. ..."",""D. ...""],""answer"":""A"",""solution"":""3–6 short lines, plain text; no LaTeX/markdown.""}]
+- The ""solution"" field is MANDATORY with 3–6 short lines (plain text; no LaTeX/markdown).
+- No extra text outside JSON; no code fences.
+- Options MUST be prefixed ""A. ""/""B. ""/""C. ""/""D. "" and ""answer"" ∈ {A,B,C,D}.
+- NO LaTeX: do not use $ or backslashes; write plain text (sin, cos, pi, (a)/(b)).
+USER: Topic: Mathematics. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: launched, ramp, how, straight, angle, 25, velocity, height, does, neglecting, 16, 12, rolling, horizontally, find, 18, rest, its, 4, 10, interval, accelerates, dropped, sup, kilometers, thrown, after, centimeters, with, initial, what, vertically, travels, function, 22, 2, approaches, 20, down, position, particle, ignoring, per, above, from, 1.2, cliff, meters, 8, upwards, highway, 7, 3, rate, long, kicked, 9.8, line, 5, moves, ball, defined, average, 1.5, car, along, 15, 1, air, speed, 30, degrees, derivative, 6, limit, constant.
+- Do NOT print this list in the output."
+mathematics,gemma,struktur1,30,2254,"A ball is thrown upwards with an initial velocity of 10 m/s. What is the ball's velocity after 2 seconds, given that the acceleration due to gravity is -9.8 m/s<sup>2</sup>?",A. 0 m/s,B. -9.6 m/s,C. 19.6 m/s,D. -19.6 m/s,B,"The velocity is the initial velocity plus the acceleration times time. So, the velocity after 2 seconds is 10 m/s + (-9.8 m/s^2)(2 s) = 0.4 m/s","This is a constant acceleration problem. The relevant kinematic equation is v = u + at, where v is the final velocity, u is the initial velocity, a is the acceleration, and t is the time.
+Given values are:
+u = 10 m/s
+a = -9.8 m/s^2
+t = 2 s
+Substituting the values into the equation:
+v = 10 + (-9.8) * 2
+v = 10 - 19.6
+v = -9.6 m/s
+This corresponds to option B.",gemini:gemini-2.5-pro,17113,5,5,Incorrect,1.5,"Clarity: The question is perfectly clear. It provides all necessary variables and states the objective unambiguously.
+Context Accuracy: The scenario of throwing a ball and the values for initial velocity and gravity are standard and realistic for a physics problem.
+Quality of Working: The generator correctly identified the appropriate formula (v = u + at) and substituted the values correctly. However, a major arithmetic error was made in the final calculation (10 - 19.6 was calculated as 0.4 instead of -9.6).
+Final Answer Accuracy: The generator's final answer of 0.4 m/s is incorrect due to the calculation error. The correct answer is -9.6 m/s.","SYSTEM: You are a Grade 12 Mathematics teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 medium-difficulty computational MCQ from ONE of: algebra (functions/inverse/systems), trigonometry (identities/evaluation), basic calculus (limits/derivatives/simple integrals), or short statistics.
+• Use realistic numbers; round to 2 decimals when needed; avoid formal proofs.
+• Distractors must reflect typical mistakes (sign errors, wrong identities, derivative/limit rules, rounding).
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object:
+  [{""question"":""..."",""options"":[""A. ..."",""B. ..."",""C. ..."",""D. ...""],""answer"":""A"",""solution"":""3–6 short lines, plain text; no LaTeX/markdown.""}]
+- The ""solution"" field is MANDATORY with 3–6 short lines (plain text; no LaTeX/markdown).
+- No extra text outside JSON; no code fences.
+- Options MUST be prefixed ""A. ""/""B. ""/""C. ""/""D. "" and ""answer"" ∈ {A,B,C,D}.
+- NO LaTeX: do not use $ or backslashes; write plain text (sin, cos, pi, (a)/(b)).
+USER: Topic: Mathematics. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: launched, ramp, how, straight, angle, 25, velocity, height, does, neglecting, 16, 12, rolling, horizontally, find, 18, rest, its, 4, 10, interval, accelerates, dropped, sup, kilometers, thrown, after, centimeters, with, initial, what, vertically, travels, function, 22, 2, approaches, 20, down, position, particle, ignoring, per, above, from, 1.2, cliff, meters, 8, upwards, highway, 7, 3, rate, long, kicked, 9.8, line, 5, moves, ball, defined, average, 1.5, car, along, 15, 1, air, speed, 30, degrees, derivative, 6, limit, constant.
+- Do NOT print this list in the output."
+mathematics,gemma,struktur1,31,2859,"A ball is thrown upwards with an initial velocity of 10 m/s. What is the ball's velocity after 2 seconds, given that the acceleration due to gravity is -9.8 m/s²?",A. 0.2 m/s,B. -19.6 m/s,C. 19.6 m/s,D. 8.0 m/s,B,"The velocity is the initial velocity plus the product of acceleration and time: v = u + at. So, v = 10 + (-9.8)(2) = 10 - 19.6 = -9.6 m/s.","The problem asks for the final velocity (v) of a ball given its initial velocity (u), acceleration (a), and time (t).
+The relevant kinematic equation is v = u + at.
+Given values are:
+u = 10 m/s
+a = -9.8 m/s²
+t = 2 s
+Substituting the values into the equation:
+v = 10 m/s + (-9.8 m/s² * 2 s)
+v = 10 m/s - 19.6 m/s
+v = -9.6 m/s",gemini:gemini-2.5-pro,37359,4,5,Correct,5,"Clarity: The question's prompt is clear, but the MCQ is fundamentally flawed because the correct answer (-9.6 m/s) is not among the options. This makes the question unsolvable in its multiple-choice format.
+Context Accuracy: The physical scenario is a standard, realistic kinematics problem. The initial velocity and acceleration values are appropriate and physically plausible.
+Quality of Working: The generator's solution is perfect. It correctly identifies the appropriate formula, substitutes the values correctly, and performs the arithmetic without error.
+Final Answer Accuracy: The generator's calculated answer of -9.6 m/s is the correct solution to the physics problem posed. The provided key (B) is incorrect, as is the entire set of options.","SYSTEM: You are a Grade 12 Mathematics teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 medium-difficulty computational MCQ from ONE of: algebra (functions/inverse/systems), trigonometry (identities/evaluation), basic calculus (limits/derivatives/simple integrals), or short statistics.
+• Use realistic numbers; round to 2 decimals when needed; avoid formal proofs.
+• Distractors must reflect typical mistakes (sign errors, wrong identities, derivative/limit rules, rounding).
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object:
+  [{""question"":""..."",""options"":[""A. ..."",""B. ..."",""C. ..."",""D. ...""],""answer"":""A"",""solution"":""3–6 short lines, plain text; no LaTeX/markdown.""}]
+- The ""solution"" field is MANDATORY with 3–6 short lines (plain text; no LaTeX/markdown).
+- No extra text outside JSON; no code fences.
+- Options MUST be prefixed ""A. ""/""B. ""/""C. ""/""D. "" and ""answer"" ∈ {A,B,C,D}.
+- NO LaTeX: do not use $ or backslashes; write plain text (sin, cos, pi, (a)/(b)).
+USER: Topic: Mathematics. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: launched, ramp, how, straight, angle, 25, velocity, height, does, neglecting, 16, 12, rolling, horizontally, find, 18, rest, its, 4, 10, interval, accelerates, dropped, sup, kilometers, thrown, after, centimeters, with, initial, what, vertically, travels, function, 22, 2, approaches, 20, down, position, particle, ignoring, per, above, from, 1.2, cliff, meters, 8, upwards, highway, 7, 3, rate, long, kicked, 9.8, line, 5, moves, ball, defined, average, 1.5, car, along, 15, 1, air, speed, 30, degrees, derivative, 6, limit, constant.
+- Do NOT print this list in the output."
+mathematics,gemma,struktur1,32,2522,"A ball is thrown upwards with an initial velocity of 28 m/s. What is the ball's velocity after 3 seconds, assuming a constant acceleration due to gravity of -9.8 m/s²?",A. 1.4 m/s,B. 10.6 m/s,C. 2.6 m/s,D. -1.4 m/s,D,"The velocity is given by v = u + at, where u is initial velocity, a is acceleration, and t is time. So, v = 28 + (-9.8)(3) = 28 - 29.4 = -1.4 m/s","This is a one-dimensional kinematics problem. The final velocity (v) can be found using the equation v = u + at, where u is the initial velocity, a is the acceleration, and t is the time.
+Given:
+u = 28 m/s
+a = -9.8 m/s²
+t = 3 s
+Substituting the values:
+v = 28 + (-9.8) * 3
+v = 28 - 29.4
+v = -1.4 m/s
+The negative sign indicates the ball is moving downwards. This corresponds to option D.",gemini:gemini-2.5-pro,17216,5,5,Correct,5,"Clarity: The question is perfectly clear, providing all necessary variables and stating the objective unambiguously.
+Context Accuracy: The scenario is a standard and realistic physics problem. The initial velocity is high but plausible, and the value for g is standard.
+Quality of Working: The generator correctly identified the appropriate kinematic formula, substituted the values correctly, and performed the arithmetic without error. The logic is sound.
+Final Answer Accuracy: The generator's calculated answer of -1.4 m/s is correct and matches the provided key.","SYSTEM: You are a Grade 12 Mathematics teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 medium-difficulty computational MCQ from ONE of: algebra (functions/inverse/systems), trigonometry (identities/evaluation), basic calculus (limits/derivatives/simple integrals), or short statistics.
+• Use realistic numbers; round to 2 decimals when needed; avoid formal proofs.
+• Distractors must reflect typical mistakes (sign errors, wrong identities, derivative/limit rules, rounding).
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object:
+  [{""question"":""..."",""options"":[""A. ..."",""B. ..."",""C. ..."",""D. ...""],""answer"":""A"",""solution"":""3–6 short lines, plain text; no LaTeX/markdown.""}]
+- The ""solution"" field is MANDATORY with 3–6 short lines (plain text; no LaTeX/markdown).
+- No extra text outside JSON; no code fences.
+- Options MUST be prefixed ""A. ""/""B. ""/""C. ""/""D. "" and ""answer"" ∈ {A,B,C,D}.
+- NO LaTeX: do not use $ or backslashes; write plain text (sin, cos, pi, (a)/(b)).
+USER: Topic: Mathematics. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: launched, ramp, how, straight, angle, 25, velocity, height, does, neglecting, 16, 12, rolling, horizontally, find, 18, rest, its, 4, 10, interval, accelerates, dropped, sup, kilometers, thrown, after, centimeters, with, initial, what, vertically, travels, function, 22, 2, approaches, 20, down, position, particle, ignoring, per, above, from, 1.2, cliff, meters, 8, upwards, highway, 7, 3, rate, long, kicked, 9.8, line, 5, moves, ball, defined, average, 1.5, car, along, 15, 1, air, speed, 30, degrees, derivative, 6, limit, constant.
+- Do NOT print this list in the output."
+mathematics,gemma,struktur1,33,2383,A ball is thrown upwards with an initial velocity of 14 m/s. After how many seconds does it reach its maximum height? (Assume g = 9.8 m/s²),A. 1.43 seconds,B. 2.86 seconds,C. 0.71 seconds,D. 4.29 seconds,B,"At maximum height, the final velocity is 0 m/s. Using the equation v = u + at, where v is final velocity, u is initial velocity, a is acceleration, and t is time, we get 0 = 14 - 9.8t. Solving for t, we find t = 1.43 seconds.","The problem asks for the time to reach the maximum height. At the peak of its trajectory, the vertical velocity of the ball is momentarily zero.
+Given:
+Initial velocity (u) = 14 m/s
+Final velocity (v) = 0 m/s
+Acceleration (a) = -g = -9.8 m/s²
+Using the first kinematic equation, v = u + at:
+0 = 14 + (-9.8)t
+9.8t = 14
+t = 14 / 9.8 ≈ 1.42857 s
+Rounding to two decimal places, the time is 1.43 seconds.",gemini:gemini-2.5-pro,30202,5,5,Correct,5,"Clarity: The question is perfectly clear. It provides all necessary data and states the objective without ambiguity.
+Context Accuracy: The initial velocity is realistic for a thrown object, and the value for g is the standard approximation. The physical context is accurate.
+Quality of Working: The generator's reasoning is flawless. It correctly identifies that v=0 at max height, uses the appropriate kinematic formula, and performs the calculation correctly.
+Final Answer Accuracy: The generator's calculated answer of 1.43s is correct. This corresponds to option A. The provided key (B) is incorrect, as it represents the total time of flight (up and down), not the time to reach the maximum height.","SYSTEM: You are a Grade 12 Mathematics teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 medium-difficulty computational MCQ from ONE of: algebra (functions/inverse/systems), trigonometry (identities/evaluation), basic calculus (limits/derivatives/simple integrals), or short statistics.
+• Use realistic numbers; round to 2 decimals when needed; avoid formal proofs.
+• Distractors must reflect typical mistakes (sign errors, wrong identities, derivative/limit rules, rounding).
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object:
+  [{""question"":""..."",""options"":[""A. ..."",""B. ..."",""C. ..."",""D. ...""],""answer"":""A"",""solution"":""3–6 short lines, plain text; no LaTeX/markdown.""}]
+- The ""solution"" field is MANDATORY with 3–6 short lines (plain text; no LaTeX/markdown).
+- No extra text outside JSON; no code fences.
+- Options MUST be prefixed ""A. ""/""B. ""/""C. ""/""D. "" and ""answer"" ∈ {A,B,C,D}.
+- NO LaTeX: do not use $ or backslashes; write plain text (sin, cos, pi, (a)/(b)).
+USER: Topic: Mathematics. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: angle, velocity, 12, kilometers, what, travels, 2, 20, ignoring, above, from, 8, 7, 3, line, defined, along, 15, 6, does, horizontally, interval, thrown, initial, vertically, 22, particle, per, 28, 5, moves, 1, neglecting, constant, straight, rolling, find, its, 25, 4, dropped, accelerates, centimeters, approaches, down, 1.2, highway, 9.8, degrees, speed, 30, after, 1.5, rest, derivative, limit, launched, ramp, how, height, 16, 18, cliff, 10, sup, with, function, position, meters, upwards, rate, kicked, long, ball, average, car, air.
+- Do NOT print this list in the output."
+mathematics,gemma,struktur1,34,2170,"A ball is thrown upwards with an initial velocity of 10 meters per second. What is the ball's velocity after 2 seconds, assuming acceleration due to gravity is -9.8 meters per second squared?",A. 0 m/s,B. 19.6 m/s,C. -19.6 m/s,D. 10 m/s,C,"The velocity is the initial velocity plus the acceleration times time. So, the velocity after 2 seconds is 10 m/s + (-9.8 m/s^2)(2 s) = 0.4 m/s.","This is a standard kinematics problem. The final velocity (v) can be found using the equation v = u + at, where u is the initial velocity, a is the acceleration, and t is the time.
+Given:
+u = 10 m/s
+a = -9.8 m/s²
+t = 2 s
+
+Substituting the values:
+v = 10 m/s + (-9.8 m/s² * 2 s)
+v = 10 m/s - 19.6 m/s
+v = -9.6 m/s
+
+The calculated velocity is -9.6 m/s. None of the provided options match this correct answer.",gemini:gemini-2.5-pro,30489,5,5,Incorrect,1,"Clarity: The question is perfectly clear, providing all necessary data and asking a specific, unambiguous question.
+Context Accuracy: The scenario is a classic, realistic physics problem, and the values for initial velocity and gravity are standard.
+Quality of Working: The generator correctly identified the relevant formula (v = u + at) and substituted the values correctly. However, it made a significant arithmetic error, calculating 10 - 19.6 as 0.4.
+Final Answer Accuracy: The generator's answer of 0.4 m/s is incorrect. The correct answer is -9.6 m/s. It should be noted that the question itself is flawed, as the correct answer is not listed in the options, and the provided key (C) is also incorrect.","SYSTEM: You are a Grade 12 Mathematics teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 medium-difficulty computational MCQ from ONE of: algebra (functions/inverse/systems), trigonometry (identities/evaluation), basic calculus (limits/derivatives/simple integrals), or short statistics.
+• Use realistic numbers; round to 2 decimals when needed; avoid formal proofs.
+• Distractors must reflect typical mistakes (sign errors, wrong identities, derivative/limit rules, rounding).
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object:
+  [{""question"":""..."",""options"":[""A. ..."",""B. ..."",""C. ..."",""D. ...""],""answer"":""A"",""solution"":""3–6 short lines, plain text; no LaTeX/markdown.""}]
+- The ""solution"" field is MANDATORY with 3–6 short lines (plain text; no LaTeX/markdown).
+- No extra text outside JSON; no code fences.
+- Options MUST be prefixed ""A. ""/""B. ""/""C. ""/""D. "" and ""answer"" ∈ {A,B,C,D}.
+- NO LaTeX: do not use $ or backslashes; write plain text (sin, cos, pi, (a)/(b)).
+USER: Topic: Mathematics. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: angle, velocity, 12, kilometers, what, travels, 2, 20, ignoring, above, from, 8, 7, 3, line, defined, along, 15, 6, does, horizontally, interval, thrown, initial, vertically, 22, particle, per, 28, 5, moves, 1, neglecting, constant, straight, rolling, find, its, 25, 4, dropped, accelerates, centimeters, approaches, down, 1.2, highway, 9.8, degrees, speed, 30, after, 1.5, rest, derivative, limit, launched, ramp, how, height, 16, 18, cliff, 10, sup, with, 14, function, position, meters, upwards, rate, kicked, long, ball, average, car, air.
+- Do NOT print this list in the output."
+mathematics,gemma,struktur1,35,2464,"A ball is thrown upwards with an initial velocity of 10 m/s. What is its velocity after 1 second, given that the acceleration due to gravity is -9.8 m/s<sup>2</sup>?",A. 0.2 m/s,B. 9.8 m/s,C. -0.2 m/s,D. 19.8 m/s,C,"The velocity is the initial velocity plus the acceleration times time. So, the velocity after 1 second is 10 m/s + (-9.8 m/s/s) * 1 s = 0.2 m/s","The problem can be solved using the first kinematic equation: v = u + at.
+Here, the initial velocity (u) is +10 m/s (taking upwards as the positive direction).
+The acceleration due to gravity (a) is given as -9.8 m/s².
+The time (t) is 1 s.
+Substituting the values into the equation:
+v = 10 m/s + (-9.8 m/s²) * (1 s)
+v = 10 - 9.8 m/s
+v = 0.2 m/s.
+The final velocity is 0.2 m/s.",gemini:gemini-2.5-pro,29898,5,5,Correct,5,"Clarity: The question is perfectly clear, providing all necessary values and an unambiguous scenario.
+Context Accuracy: The physical context is a standard kinematics problem, and the values for initial velocity and gravity are realistic.
+Quality of Working: The generator's solution correctly identifies the relevant formula (v = u + at), substitutes the given values correctly, and performs the arithmetic accurately.
+Final Answer Accuracy: The generator's calculated answer of 0.2 m/s is correct. It should be noted that the provided key 'C' is incorrect; the correct option is A.","SYSTEM: You are a Grade 12 Mathematics teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 medium-difficulty computational MCQ from ONE of: algebra (functions/inverse/systems), trigonometry (identities/evaluation), basic calculus (limits/derivatives/simple integrals), or short statistics.
+• Use realistic numbers; round to 2 decimals when needed; avoid formal proofs.
+• Distractors must reflect typical mistakes (sign errors, wrong identities, derivative/limit rules, rounding).
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object:
+  [{""question"":""..."",""options"":[""A. ..."",""B. ..."",""C. ..."",""D. ...""],""answer"":""A"",""solution"":""3–6 short lines, plain text; no LaTeX/markdown.""}]
+- The ""solution"" field is MANDATORY with 3–6 short lines (plain text; no LaTeX/markdown).
+- No extra text outside JSON; no code fences.
+- Options MUST be prefixed ""A. ""/""B. ""/""C. ""/""D. "" and ""answer"" ∈ {A,B,C,D}.
+- NO LaTeX: do not use $ or backslashes; write plain text (sin, cos, pi, (a)/(b)).
+USER: Topic: Mathematics. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: angle, velocity, 12, kilometers, what, travels, 2, 20, ignoring, above, from, 8, 7, 3, line, defined, along, 15, 6, does, horizontally, interval, thrown, initial, vertically, 22, particle, per, 28, 5, moves, 1, neglecting, constant, straight, rolling, find, its, 25, 4, dropped, accelerates, centimeters, approaches, down, 1.2, highway, 9.8, degrees, speed, 30, after, 1.5, rest, derivative, limit, launched, ramp, how, height, 16, 18, cliff, 10, sup, with, 14, function, position, meters, upwards, rate, kicked, long, ball, average, car, air.
+- Do NOT print this list in the output."
+mathematics,gemma,struktur1,36,2764,"A ball is thrown upwards with an initial velocity of 10 meters per second. What is its velocity after 1 second, assuming no air resistance and a constant acceleration of -9.8 meters per second squared?",A. 0.2 m/s,B. 10.2 m/s,C. -0.2 m/s,D. -10.2 m/s,D,"The velocity is found using the equation v = u + at, where u is the initial velocity, a is the acceleration, and t is time. So, v = 10 + (-9.8)(1) = 0.2 m/s. However, since the ball is moving upwards, the velocity is negative. Therefore, the answer is -0.2 m/s.","This is a one-dimensional kinematics problem. The final velocity (v) can be found using the equation of motion: v = u + at.
+Given:
+Initial velocity (u) = +10 m/s (upwards is positive)
+Acceleration (a) = -9.8 m/s²
+Time (t) = 1 s
+
+Calculation:
+v = 10 m/s + (-9.8 m/s² * 1 s)
+v = 10 - 9.8
+v = 0.2 m/s
+
+The positive sign indicates the ball is still moving upwards. The correct option is A.",gemini:gemini-2.5-pro,26417,5,5,Incorrect,1,"Clarity: The question is perfectly clear. It provides all necessary variables and uses standard physics terminology.
+Context Accuracy: The values for initial velocity and gravitational acceleration are realistic and standard for this type of physics problem.
+Quality of Working: The generator correctly identifies the formula and performs the calculation. However, it then introduces completely flawed reasoning ('since the ball is moving upwards, the velocity is negative') to incorrectly change the sign of the result. This demonstrates a fundamental misunderstanding of sign conventions.
+Final Answer Accuracy: The generator's answer is -0.2 m/s (Option C), while the correct answer is 0.2 m/s (Option A). Note that the provided key (D) is also incorrect.","SYSTEM: You are a Grade 12 Mathematics teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 medium-difficulty computational MCQ from ONE of: algebra (functions/inverse/systems), trigonometry (identities/evaluation), basic calculus (limits/derivatives/simple integrals), or short statistics.
+• Use realistic numbers; round to 2 decimals when needed; avoid formal proofs.
+• Distractors must reflect typical mistakes (sign errors, wrong identities, derivative/limit rules, rounding).
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object:
+  [{""question"":""..."",""options"":[""A. ..."",""B. ..."",""C. ..."",""D. ...""],""answer"":""A"",""solution"":""3–6 short lines, plain text; no LaTeX/markdown.""}]
+- The ""solution"" field is MANDATORY with 3–6 short lines (plain text; no LaTeX/markdown).
+- No extra text outside JSON; no code fences.
+- Options MUST be prefixed ""A. ""/""B. ""/""C. ""/""D. "" and ""answer"" ∈ {A,B,C,D}.
+- NO LaTeX: do not use $ or backslashes; write plain text (sin, cos, pi, (a)/(b)).
+USER: Topic: Mathematics. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: angle, velocity, 12, kilometers, what, travels, 2, 20, ignoring, above, from, 8, 7, 3, line, defined, along, 15, 6, does, horizontally, interval, thrown, initial, vertically, 22, particle, per, 28, 5, moves, 1, neglecting, constant, straight, rolling, find, its, 25, 4, dropped, accelerates, centimeters, approaches, down, 1.2, highway, 9.8, degrees, speed, 30, after, 1.5, rest, derivative, limit, launched, ramp, how, height, 16, 18, cliff, 10, sup, with, 14, function, position, meters, upwards, rate, kicked, long, ball, average, car, air.
+- Do NOT print this list in the output."
+mathematics,gemma,struktur1,37,2451,"A ball is thrown upwards with an initial velocity of 10 meters per second. What is its velocity after 1 second, assuming acceleration due to gravity is -9.8 meters per second squared?",A. 0.2 m/s,B. 0.8 m/s,C. 1.2 m/s,D. 19.8 m/s,C,Velocity is the derivative of position. The derivative of the position function (given by -4.9t^2 + 10t) is -9.8t + 10. Plugging in t=1 gives us -9.8(1) + 10 = 0.2 m/s,"The problem can be solved using the first kinematic equation for constant acceleration: v = v₀ + at.
+Given:
+Initial velocity (v₀) = 10 m/s
+Acceleration (a) = -9.8 m/s²
+Time (t) = 1 s
+
+Substitute the values into the equation:
+v = 10 m/s + (-9.8 m/s² * 1 s)
+v = 10 - 9.8
+v = 0.2 m/s",gemini:gemini-2.5-pro,28058,5,5,Correct,5,"Clarity: The question is perfectly clear, providing all necessary information (initial velocity, time, acceleration) without ambiguity.
+Context Accuracy: The values for initial velocity and acceleration due to gravity are standard and realistic for a basic physics problem.
+Quality of Working: The generator's solution is excellent. It uses a valid calculus-based method that is equivalent to the standard kinematic formula. The steps and calculation are correct.
+Final Answer Accuracy: The generator's calculated answer of 0.2 m/s is correct based on the provided data. Note that the key provided with the question ('C') is incorrect; the correct option is A.","SYSTEM: You are a Grade 12 Mathematics teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 medium-difficulty computational MCQ from ONE of: algebra (functions/inverse/systems), trigonometry (identities/evaluation), basic calculus (limits/derivatives/simple integrals), or short statistics.
+• Use realistic numbers; round to 2 decimals when needed; avoid formal proofs.
+• Distractors must reflect typical mistakes (sign errors, wrong identities, derivative/limit rules, rounding).
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object:
+  [{""question"":""..."",""options"":[""A. ..."",""B. ..."",""C. ..."",""D. ...""],""answer"":""A"",""solution"":""3–6 short lines, plain text; no LaTeX/markdown.""}]
+- The ""solution"" field is MANDATORY with 3–6 short lines (plain text; no LaTeX/markdown).
+- No extra text outside JSON; no code fences.
+- Options MUST be prefixed ""A. ""/""B. ""/""C. ""/""D. "" and ""answer"" ∈ {A,B,C,D}.
+- NO LaTeX: do not use $ or backslashes; write plain text (sin, cos, pi, (a)/(b)).
+USER: Topic: Mathematics. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: angle, velocity, 12, kilometers, what, travels, 2, 20, ignoring, above, from, 8, 7, 3, line, defined, along, 15, 6, does, horizontally, interval, thrown, initial, vertically, 22, particle, per, 28, 5, moves, 1, neglecting, constant, straight, rolling, find, its, 25, 4, dropped, accelerates, centimeters, approaches, down, 1.2, highway, 9.8, degrees, speed, 30, after, 1.5, rest, derivative, limit, launched, ramp, how, height, 16, 18, cliff, 10, sup, with, 14, function, position, meters, upwards, rate, kicked, long, ball, average, car, air.
+- Do NOT print this list in the output."
+mathematics,gemma,struktur1,38,2655,"A ball is thrown upwards with an initial velocity of 10 meters per second. What is its velocity after 1 second, given that the acceleration due to gravity is -9.8 meters per second squared?",A. 0.2 m/s,B. 19.8 m/s,C. -0.2 m/s,D. -19.8 m/s,C,"Velocity is the integral of acceleration. The integral of -9.8 m/s^2 is -9.8t. The initial velocity is 10 m/s, so the velocity after 1 second is 10 - 9.8(1) = 0.2 m/s","The problem can be solved using the first equation of motion for constant acceleration: v = u + at.
+Here, the initial velocity (u) is +10 m/s (taking upwards as positive).
+The acceleration due to gravity (a) is given as -9.8 m/s².
+The time (t) is 1 s.
+Substituting the values:
+v = 10 m/s + (-9.8 m/s² * 1 s)
+v = 10 m/s - 9.8 m/s
+v = 0.2 m/s
+This corresponds to option A. The provided key (C) is incorrect.",gemini:gemini-2.5-pro,26523,5,5,Correct,5,"Clarity: The question is perfectly clear, providing all necessary values and using standard terminology. The sign of the acceleration (-9.8 m/s²) implies a standard coordinate system where upwards is positive.
+Context Accuracy: The values for initial velocity and gravitational acceleration are physically realistic for a simple projectile motion problem on Earth.
+Quality of Working: The generator's reasoning is sound. It correctly identifies the relationship between velocity, initial velocity, and acceleration over time and performs the calculation correctly.
+Final Answer Accuracy: The generator's calculated answer of 0.2 m/s is the correct solution to the problem. The key provided with the question (C) is incorrect.","SYSTEM: You are a Grade 12 Mathematics teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 medium-difficulty computational MCQ from ONE of: algebra (functions/inverse/systems), trigonometry (identities/evaluation), basic calculus (limits/derivatives/simple integrals), or short statistics.
+• Use realistic numbers; round to 2 decimals when needed; avoid formal proofs.
+• Distractors must reflect typical mistakes (sign errors, wrong identities, derivative/limit rules, rounding).
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object:
+  [{""question"":""..."",""options"":[""A. ..."",""B. ..."",""C. ..."",""D. ...""],""answer"":""A"",""solution"":""3–6 short lines, plain text; no LaTeX/markdown.""}]
+- The ""solution"" field is MANDATORY with 3–6 short lines (plain text; no LaTeX/markdown).
+- No extra text outside JSON; no code fences.
+- Options MUST be prefixed ""A. ""/""B. ""/""C. ""/""D. "" and ""answer"" ∈ {A,B,C,D}.
+- NO LaTeX: do not use $ or backslashes; write plain text (sin, cos, pi, (a)/(b)).
+USER: Topic: Mathematics. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: angle, velocity, 12, kilometers, what, travels, 2, 20, ignoring, above, from, 8, 7, 3, line, defined, along, 15, 6, does, horizontally, interval, thrown, initial, vertically, 22, particle, per, 28, 5, moves, 1, neglecting, constant, straight, rolling, find, its, 25, 4, dropped, accelerates, centimeters, approaches, down, 1.2, highway, 9.8, degrees, speed, 30, after, 1.5, rest, derivative, limit, launched, ramp, how, height, 16, 18, cliff, 10, sup, with, 14, function, position, meters, upwards, rate, kicked, long, ball, average, car, air.
+- Do NOT print this list in the output."
+mathematics,gemma,struktur1,39,2299,"Given the function f(x) = 3x<sup>2</sup> - 5x + 2, find f'(2)",A. 1,B. 4,C. 7,D. 11,B,"f'(x) = 6x - 5. Substituting x = 2, we get f'(2) = 6(2) - 5 = 12 - 5 = 7.","The function is f(x) = 3x^2 - 5x + 2.
+To find f'(2), first find the derivative of f(x), which is f'(x).
+Using the power rule for differentiation, d/dx(ax^n) = n*a*x^(n-1).
+The derivative of 3x^2 is 6x.
+The derivative of -5x is -5.
+The derivative of the constant 2 is 0.
+So, f'(x) = 6x - 5.
+Now, substitute x = 2 into f'(x).
+f'(2) = 6(2) - 5 = 12 - 5 = 7.
+The correct option is C.",gemini:gemini-2.5-pro,22243,5,5,Correct,5,"Clarity: The question is unambiguous, using standard mathematical notation for a function and its derivative.
+Context Accuracy: This is a pure mathematics problem, and the concepts of functions and derivatives are used correctly.
+Quality of Working: The generator's solution correctly applies the power rule to find the derivative and then accurately substitutes the value to find the result. The reasoning is sound.
+Final Answer Accuracy: The generator correctly calculates the value of f'(2) as 7. This corresponds to option C. The provided key (B) is incorrect, but the generator's answer to the question is correct.","SYSTEM: You are a Grade 12 Mathematics teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 medium-difficulty computational MCQ from ONE of: algebra (functions/inverse/systems), trigonometry (identities/evaluation), basic calculus (limits/derivatives/simple integrals), or short statistics.
+• Use realistic numbers; round to 2 decimals when needed; avoid formal proofs.
+• Distractors must reflect typical mistakes (sign errors, wrong identities, derivative/limit rules, rounding).
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object:
+  [{""question"":""..."",""options"":[""A. ..."",""B. ..."",""C. ..."",""D. ...""],""answer"":""A"",""solution"":""3–6 short lines, plain text; no LaTeX/markdown.""}]
+- The ""solution"" field is MANDATORY with 3–6 short lines (plain text; no LaTeX/markdown).
+- No extra text outside JSON; no code fences.
+- Options MUST be prefixed ""A. ""/""B. ""/""C. ""/""D. "" and ""answer"" ∈ {A,B,C,D}.
+- NO LaTeX: do not use $ or backslashes; write plain text (sin, cos, pi, (a)/(b)).
+USER: Topic: Mathematics. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: angle, velocity, 12, kilometers, what, travels, 2, 20, ignoring, above, from, 8, 7, 3, line, defined, along, 15, 6, does, horizontally, interval, thrown, initial, vertically, 22, particle, per, 28, 5, moves, 1, neglecting, constant, straight, rolling, find, its, 25, 4, dropped, accelerates, centimeters, approaches, down, 1.2, highway, 9.8, degrees, speed, 30, after, 1.5, rest, derivative, limit, launched, ramp, how, height, 16, 18, cliff, 10, sup, with, 14, function, position, meters, upwards, rate, kicked, long, ball, average, car, air.
+- Do NOT print this list in the output."
+mathematics,gemma,struktur1,40,2396,"A ball is thrown upwards with an initial velocity of 10 m/s. What is the ball's velocity after 1 second, assuming g = 9.8 m/s²?",A. 8.8 m/s upwards,B. 8.8 m/s downwards,C. 19.8 m/s upwards,D. 19.8 m/s downwards,B,"The acceleration due to gravity acts downwards, so the velocity decreases by 9.8 m/s every second. After 1 second, the velocity is 10 m/s - 9.8 m/s = 0.2 m/s upwards. However, since gravity is acting downwards, the velocity is actually 0.2 m/s downwards.","This is a standard kinematics problem. Using the equation of motion v = u + at, where 'v' is the final velocity, 'u' is the initial velocity, 'a' is acceleration, and 't' is time.
+
+Let's define the upward direction as positive.
+Initial velocity (u) = +10 m/s.
+Acceleration (a) = -g = -9.8 m/s² (since gravity acts downwards).
+Time (t) = 1 s.
+
+v = 10 m/s + (-9.8 m/s²) * (1 s)
+v = 10 - 9.8 m/s
+v = 0.2 m/s
+
+Since the result is positive, the velocity is 0.2 m/s in the upward direction. None of the provided options match this correct answer.",gemini:gemini-2.5-pro,34235,2,4.5,Incorrect,1,"Clarity: The question's text is clear, but it is critically flawed because the correct answer (0.2 m/s upwards) is not among the options, making the question unsolvable as presented.
+Context Accuracy: The physical scenario of throwing a ball and the values for initial velocity and gravity are realistic and standard for a physics problem.
+Quality of Working: The generator correctly calculates 10 - 9.8 = 0.2. However, its reasoning is deeply flawed and self-contradictory. It correctly identifies the result as '0.2 m/s upwards' and then immediately negates this by incorrectly stating the velocity is 'downwards' because gravity is downwards, which makes no logical sense.
+Final Answer Accuracy: The generator's reasoning leads to an answer of 0.2 m/s, which does not match the provided key (B: 8.8 m/s downwards). The generator's conclusion is also physically incorrect. The correct answer is not among the options.","SYSTEM: You are a Grade 12 Mathematics teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 medium-difficulty computational MCQ from ONE of: algebra (functions/inverse/systems), trigonometry (identities/evaluation), basic calculus (limits/derivatives/simple integrals), or short statistics.
+• Use realistic numbers; round to 2 decimals when needed; avoid formal proofs.
+• Distractors must reflect typical mistakes (sign errors, wrong identities, derivative/limit rules, rounding).
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object:
+  [{""question"":""..."",""options"":[""A. ..."",""B. ..."",""C. ..."",""D. ...""],""answer"":""A"",""solution"":""3–6 short lines, plain text; no LaTeX/markdown.""}]
+- The ""solution"" field is MANDATORY with 3–6 short lines (plain text; no LaTeX/markdown).
+- No extra text outside JSON; no code fences.
+- Options MUST be prefixed ""A. ""/""B. ""/""C. ""/""D. "" and ""answer"" ∈ {A,B,C,D}.
+- NO LaTeX: do not use $ or backslashes; write plain text (sin, cos, pi, (a)/(b)).
+USER: Topic: Mathematics. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: angle, velocity, 12, kilometers, what, travels, 2, 20, ignoring, above, from, 8, 7, 3, line, defined, along, 15, 6, does, horizontally, given, interval, thrown, initial, vertically, 22, particle, per, 28, 5, moves, 1, neglecting, constant, straight, rolling, find, its, 25, 4, dropped, accelerates, centimeters, approaches, down, 1.2, highway, 9.8, degrees, speed, 30, after, 1.5, rest, derivative, limit, launched, ramp, how, height, 16, 18, cliff, 10, sup, with, 14, function, position, meters, upwards, rate, kicked, long, ball, average, car, air.
+- Do NOT print this list in the output."

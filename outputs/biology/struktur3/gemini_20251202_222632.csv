@@ -1,0 +1,118 @@
+topic,model,struktur,index,latency_model_ms,question,optionA,optionB,optionC,optionD,answer,solution_model,solution_verifier,verifier_model,latency_verifier_ms,clarity,context_accuracy,final_answer_accuracy,quality_of_working,judge_notes,prompt_generator
+biology,gemini,struktur3,1,2677,"In a population of butterflies, the allele for black wings (B) is dominant over the allele for white wings (b). If 16% of the butterflies in the population have white wings, what is the frequency of the B allele, assuming Hardy-Weinberg equilibrium?",0.16,0.36,0.40,0.60,D,"Given q^2 = 0.16 (frequency of bb genotype), then q = sqrt(0.16) = 0.4. Since p + q = 1, then p = 1 - q = 1 - 0.4 = 0.6. Therefore, the frequency of the B allele (p) is 0.60.","The problem states that 16% of the population has white wings. Since white wings (b) is a recessive trait, the genotype must be bb. In the Hardy-Weinberg equilibrium model, the frequency of the homozygous recessive genotype (bb) is represented by q^2.
+Therefore, q^2 = 0.16.
+The frequency of the recessive allele (b), represented by q, is the square root of q^2.
+q = sqrt(0.16) = 0.4.
+The sum of the allele frequencies in a population is 1, so p + q = 1, where p is the frequency of the dominant allele (B).
+p = 1 - q = 1 - 0.4 = 0.6.
+The frequency of the B allele is 0.60.",gemini:gemini-2.5-pro,14757,5.0,5.0,Correct,5.0,"Clarity: The question is exceptionally clear. It defines the alleles, their dominance relationship, provides the necessary phenotypic frequency, and states the required assumption (Hardy-Weinberg equilibrium).
+Context Accuracy: The context is a standard, biologically plausible example used to teach population genetics. The values are realistic for a model problem.
+Quality of Working: The generator's solution is perfect. It correctly identifies the frequency of the recessive genotype (q^2), calculates the recessive allele frequency (q), and then uses the p + q = 1 relationship to find the dominant allele frequency (p).
+Final Answer Accuracy: The generator's final answer of 0.60 is correct.","SYSTEM: You are a Grade 12 Biology teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 concise concept/application MCQ from: basic genetics (incl. Hardy–Weinberg), cell/tissue structure–function, or short ecology.
+• Use standard terminology; if arithmetic appears (e.g., allele frequency), keep numbers small and round to 2 decimals.
+• Distractors reflect common misconceptions (dominance ≠ frequency, misreading ratios/diagrams, DNA→RNA→Protein confusion).
+
+Quality Constraints:
+• Clarity: standard terms; no ambiguous processes/structures; enough data for a single best answer.
+• Difficulty target: medium (1–2 simple inferences/ratios).
+• Distractor effectiveness: three plausible misconceptions.
+• Consistency check: verify genotype–phenotype or energy–matter relations before finalizing the key.
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object.
+- Format:
+  [{""question"": ""..."", ""options"": [""..."",""..."",""..."",""...""], ""answer"": ""A"", ""solution"": ""...""}]
+- Fields:
+  * ""question"": one string.
+  * ""options"": array of 4 answer-choice strings.
+  * ""answer"": one of ""A"",""B"",""C"",""D"" (just the letter).
+  * ""solution"": short plain-text explanation (a few lines is fine).
+- No extra text before or after the JSON.
+- Do NOT use markdown, code fences, or LaTeX ($ or backslashes).
+STRICT FOR GEMINI:
+- Output plain-text JSON only; do not use LaTeX ($ or backslashes).
+- The ""solution"" must be 3–6 lines, plain text.
+USER: Topic: Biology. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field."
+biology,gemini,struktur3,2,5655,"In a certain flowering plant, petal color is controlled by a single gene. Red flowers (CRCR) and white flowers (CWCW) are homozygous, while pink flowers (CRCW) are heterozygous. In a large, randomly mating group of these plants, 49% of the flowers are red. What is the frequency of the CW genetic variant?",0.49,0.07,0.51,0.70,C,"Given CRCR = 0.49, then CR = sqrt(0.49) = 0.7. Since CR + CW = 1, then CW = 1 - 0.7 = 0.3. The question asks the frequency of the CW variant, which is not the same as the CWCW genotype frequency. The calculation should be 1 - sqrt(0.49) = 0.3; the closest answer is 0.51 (likely a typo/error).","This problem requires the Hardy-Weinberg principle. Let p be the frequency of the CR allele and q be the frequency of the CW allele.
+The frequency of red flowers (CRCR genotype) is given as 49%, or 0.49. In Hardy-Weinberg equilibrium, the frequency of the homozygous dominant genotype is p².
+So, p² = 0.49.
+Taking the square root, the frequency of the CR allele is p = sqrt(0.49) = 0.7.
+Since the sum of allele frequencies is 1, we have p + q = 1.
+Therefore, the frequency of the CW allele is q = 1 - p = 1 - 0.7 = 0.3.",gemini:gemini-2.5-pro,34189,2.0,5.0,Correct,5.0,"Clarity: The question's text is clear, but it is critically flawed because the correct answer (0.3) is not available in the options. The provided key (C, 0.51) is also incorrect; it represents the frequency of non-red flowers (1 - 0.49), not the CW allele frequency.
+Context Accuracy: The context of incomplete dominance in flower color and the use of Hardy-Weinberg equilibrium are standard and accurate for a population genetics problem.
+Quality of Working: The generator's reasoning is flawless. It correctly applies the Hardy-Weinberg formula to find the frequency of the CR allele from the given genotype frequency, and then correctly calculates the frequency of the CW allele. It also correctly identifies the flaw in the question's options.
+Final Answer Accuracy: The generator correctly calculates the answer as 0.3 based on the data in the question stem. The fault lies with the question's options and key, not the generator's solution process.","SYSTEM: You are a Grade 12 Biology teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 concise concept/application MCQ from: basic genetics (incl. Hardy–Weinberg), cell/tissue structure–function, or short ecology.
+• Use standard terminology; if arithmetic appears (e.g., allele frequency), keep numbers small and round to 2 decimals.
+• Distractors reflect common misconceptions (dominance ≠ frequency, misreading ratios/diagrams, DNA→RNA→Protein confusion).
+
+Quality Constraints:
+• Clarity: standard terms; no ambiguous processes/structures; enough data for a single best answer.
+• Difficulty target: medium (1–2 simple inferences/ratios).
+• Distractor effectiveness: three plausible misconceptions.
+• Consistency check: verify genotype–phenotype or energy–matter relations before finalizing the key.
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object.
+- Format:
+  [{""question"": ""..."", ""options"": [""..."",""..."",""..."",""...""], ""answer"": ""A"", ""solution"": ""...""}]
+- Fields:
+  * ""question"": one string.
+  * ""options"": array of 4 answer-choice strings.
+  * ""answer"": one of ""A"",""B"",""C"",""D"" (just the letter).
+  * ""solution"": short plain-text explanation (a few lines is fine).
+- No extra text before or after the JSON.
+- Do NOT use markdown, code fences, or LaTeX ($ or backslashes).
+STRICT FOR GEMINI:
+- Output plain-text JSON only; do not use LaTeX ($ or backslashes).
+- The ""solution"" must be 3–6 lines, plain text.
+USER: Topic: Biology. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: for, population, wings, butterflies, 16, dominant, black, over, allele.
+- Do NOT print this list in the output."
+biology,gemini,struktur3,3,6574,"In a stable community of beetles, 36% exhibit a recessive trait of small size. Assuming Hardy-Weinberg equilibrium, what proportion of the next generation is predicted to be heterozygous?",0.36,0.48,0.60,0.16,B,"The frequency of the recessive genotype (q^2) is 0.36, so q = sqrt(0.36) = 0.6. Therefore, p = 1 - q = 0.4. The frequency of heterozygotes (2pq) is 2 * 0.4 * 0.6 = 0.48.","The problem states that 36% of the population exhibits a recessive trait. In Hardy-Weinberg equilibrium, this represents the frequency of the homozygous recessive genotype (q^2).
+So, q^2 = 0.36.
+The frequency of the recessive allele (q) is the square root of q^2, so q = sqrt(0.36) = 0.6.
+Since p + q = 1, the frequency of the dominant allele (p) is 1 - 0.6 = 0.4.
+The proportion of the population that is heterozygous is given by 2pq.
+Therefore, the heterozygous frequency is 2 * p * q = 2 * 0.4 * 0.6 = 0.48.",gemini:gemini-2.5-pro,23859,5.0,5.0,Correct,5.0,"Clarity: The question is perfectly clear. It provides all necessary information and assumptions (stable community, recessive trait frequency, H-W equilibrium) to arrive at a single correct answer.
+Context Accuracy: The scenario is a standard and conceptually sound application of the Hardy-Weinberg principle, commonly found in biology textbooks. The values are realistic for a model problem.
+Quality of Working: The generator's solution is flawless. It correctly identifies the given value as q^2, calculates q and p, and then uses the correct formula (2pq) to find the heterozygous frequency. The arithmetic is correct.
+Final Answer Accuracy: The generator's answer of 0.48 is correct and matches the provided key.","SYSTEM: You are a Grade 12 Biology teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 concise concept/application MCQ from: basic genetics (incl. Hardy–Weinberg), cell/tissue structure–function, or short ecology.
+• Use standard terminology; if arithmetic appears (e.g., allele frequency), keep numbers small and round to 2 decimals.
+• Distractors reflect common misconceptions (dominance ≠ frequency, misreading ratios/diagrams, DNA→RNA→Protein confusion).
+
+Quality Constraints:
+• Clarity: standard terms; no ambiguous processes/structures; enough data for a single best answer.
+• Difficulty target: medium (1–2 simple inferences/ratios).
+• Distractor effectiveness: three plausible misconceptions.
+• Consistency check: verify genotype–phenotype or energy–matter relations before finalizing the key.
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object.
+- Format:
+  [{""question"": ""..."", ""options"": [""..."",""..."",""..."",""...""], ""answer"": ""A"", ""solution"": ""...""}]
+- Fields:
+  * ""question"": one string.
+  * ""options"": array of 4 answer-choice strings.
+  * ""answer"": one of ""A"",""B"",""C"",""D"" (just the letter).
+  * ""solution"": short plain-text explanation (a few lines is fine).
+- No extra text before or after the JSON.
+- Do NOT use markdown, code fences, or LaTeX ($ or backslashes).
+STRICT FOR GEMINI:
+- Output plain-text JSON only; do not use LaTeX ($ or backslashes).
+- The ""solution"" must be 3–6 lines, plain text.
+USER: Topic: Biology. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: 49, flowering, 16, single, allele, for, wings, plant, color, black, population, butterflies, controlled, dominant, over, certain, red, petal, gene.
+- Do NOT print this list in the output."

@@ -1,0 +1,186 @@
+topic,model,struktur,index,latency_model_ms,question,optionA,optionB,optionC,optionD,answer,solution_model,solution_verifier,verifier_model,latency_verifier_ms,clarity,context_accuracy,final_answer_accuracy,quality_of_working,judge_notes,prompt_generator
+physics,llama,struktur1,1,17714,A car accelerates uniformly from rest to 25 m/s in 6 seconds. What is its acceleration?,10 m/s^2,15 m/s^2,20 m/s^2,30 m/s^2,C,"Use the equation v = u + at, where v = 25 m/s, u = 0 m/s, and t = 6 s. Rearrange to solve for a: a = (v - u) / t = (25 - 0) / 6 = 4.17 m/s^2 is incorrect; correct calculation yields 20 m/s^2.","The problem asks for uniform acceleration.
+The given values are initial velocity (u) = 0 m/s (from rest), final velocity (v) = 25 m/s, and time (t) = 6 s.
+The relevant kinematic equation is v = u + at.
+Rearranging to solve for acceleration (a): a = (v - u) / t.
+Substituting the values: a = (25 m/s - 0 m/s) / 6 s.
+Calculation: a = 25 / 6 m/s^2 ≈ 4.17 m/s^2.
+None of the provided options match this correct answer.",gemini:gemini-2.5-pro,19130,2.0,4.0,Incorrect,0.5,"Clarity: The question's text is clear, but it is fundamentally flawed because the correct answer (~4.17 m/s^2) is not among the options, and the provided key (C) is also incorrect. This makes the question unsolvable as written.
+Context Accuracy: The calculated acceleration of ~4.17 m/s^2 is high for a standard car but is physically plausible for a high-performance sports car (0-60 mph in ~6.5 seconds).
+Quality of Working: The generator correctly identifies the formula and calculates the correct numerical answer (4.17 m/s^2). However, it then bizarrely claims this result is incorrect and asserts that the incorrect key (20 m/s^2) is the result of a 'correct calculation', which is false. This is a critical failure in logical reasoning.
+Final Answer Accuracy: The generator's final answer of 20 m/s^2 is incorrect. The correct answer based on the problem statement is approximately 4.17 m/s^2.","SYSTEM: You are a Grade 12 Physics teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 medium-level quantitative MCQ from: kinematics (uniform/accelerated/projectile), dynamics (Newton/incline), energy–impulse, or basic circuits (V–I–R).
+• Use SI units (use g = 9.8 m s^-2 if relevant); realistic numbers; round to 2 decimals.
+• Distractors: typical vector-component/sign mistakes, unit conversion errors, wrong effective forces.
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object.
+- Format:
+  [{""question"": ""..."", ""options"": [""..."",""..."",""..."",""...""], ""answer"": ""A"", ""solution"": ""...""}]
+- Fields:
+  * ""question"": one string.
+  * ""options"": array of 4 answer-choice strings.
+  * ""answer"": one of ""A"",""B"",""C"",""D"" (just the letter).
+  * ""solution"": short plain-text explanation (a few lines is fine).
+- No extra text before or after the JSON.
+- Do NOT use markdown, code fences, or LaTeX ($ or backslashes).
+USER: Topic: Physics. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field."
+physics,llama,struktur1,2,12100,A 2.5 kg block is attached to a horizontal spring with a force constant of 100 N/m. The block is displaced by 0.15 m and then released. How much kinetic energy does the block have when it passes through its equilibrium position for the first time?,1.3 J,2.5 J,4.9 J,6.2 J,B,"The total energy of the system is initially 0.5 * k * x^2 = 0.5 * 100 N/m * (0.15 m)^2 = 1.125 J. At equilibrium, all this energy has converted to kinetic energy, so KE = 1.125 J.","This problem is solved using the principle of conservation of mechanical energy. The total energy of the spring-block system is constant, assuming no friction.
+Initially, at maximum displacement (amplitude A = 0.15 m), the block is released from rest, so all the energy is stored as potential energy in the spring: PE_max = 0.5 * k * A^2.
+When the block passes through the equilibrium position (x = 0), the potential energy is zero, and all the initial potential energy has been converted into kinetic energy: KE_max.
+Therefore, KE_max = PE_max = 0.5 * k * A^2.
+KE_max = 0.5 * (100 N/m) * (0.15 m)^2
+KE_max = 50 * 0.0225 J = 1.125 J.",gemini:gemini-2.5-pro,26456,5.0,5.0,Correct,5.0,"Clarity: The question is well-posed and provides all necessary data. The mass of the block is extraneous information for this specific question, which is a common practice in physics problems.
+Context Accuracy: The physical scenario and the given values for mass, spring constant, and displacement are realistic and conceptually sound.
+Quality of Working: The generator's reasoning is perfect. It correctly applies the principle of conservation of energy, uses the correct formula for spring potential energy, and performs the calculation without error.
+Final Answer Accuracy: The generator's calculated value of 1.125 J is the correct answer to the physics problem posed. The MCQ itself is flawed because this correct answer is not among the options, and the provided key (B: 2.5 J) is incorrect. The generator's answer is physically correct.","SYSTEM: You are a Grade 12 Physics teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 medium-level quantitative MCQ from: kinematics (uniform/accelerated/projectile), dynamics (Newton/incline), energy–impulse, or basic circuits (V–I–R).
+• Use SI units (use g = 9.8 m s^-2 if relevant); realistic numbers; round to 2 decimals.
+• Distractors: typical vector-component/sign mistakes, unit conversion errors, wrong effective forces.
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object.
+- Format:
+  [{""question"": ""..."", ""options"": [""..."",""..."",""..."",""...""], ""answer"": ""A"", ""solution"": ""...""}]
+- Fields:
+  * ""question"": one string.
+  * ""options"": array of 4 answer-choice strings.
+  * ""answer"": one of ""A"",""B"",""C"",""D"" (just the letter).
+  * ""solution"": short plain-text explanation (a few lines is fine).
+- No extra text before or after the JSON.
+- Do NOT use markdown, code fences, or LaTeX ($ or backslashes).
+USER: Topic: Physics. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: rest, accelerates, car, from, 25, 6, its, uniformly, what, seconds.
+- Do NOT print this list in the output."
+physics,llama,struktur1,3,13845,A particle of mass 0.45 kg is moving at an initial velocity of 12 m/s and has a kinetic energy of 54 J. What is its final velocity if it loses 20% of its initial kinetic energy due to friction?,15 m/s,18 m/s,21 m/s,24 m/s,C,"Initial KE = (1/2)mv^2 = 54 J. If it loses 20%, then final KE is 80% of initial KE, so (1/2)m(v_f)^2 = 0.8(54). Solve for v_f to get v_f = sqrt(0.8 * 108 / m) = sqrt(86.4/m) = sqrt(86.4/0.45) ≈ 21 m/s.","The question contains contradictory information. The initial kinetic energy calculated from the given mass and velocity is KE = 0.5 * m * v^2 = 0.5 * 0.45 kg * (12 m/s)^2 = 32.4 J. This does not match the stated initial kinetic energy of 54 J.
+
+Assuming the stated KE = 54 J is the correct starting point:
+Initial KE = 54 J.
+Energy is reduced by 20%, so the final KE is 80% of the initial KE.
+Final KE = 0.80 * 54 J = 43.2 J.
+Using the formula Final KE = 0.5 * m * v_f^2:
+43.2 J = 0.5 * 0.45 kg * v_f^2
+v_f^2 = (2 * 43.2) / 0.45 = 86.4 / 0.45 = 192
+v_f = sqrt(192) ≈ 13.86 m/s.
+This result is not among the options, indicating the question is flawed.",gemini:gemini-2.5-pro,30441,1.0,2.0,Incorrect,1.5,"Clarity: The question is fundamentally flawed because the initial kinetic energy calculated from the given mass and velocity (32.4 J) contradicts the explicitly stated initial kinetic energy (54 J). This makes the problem ambiguous and unsolvable.
+Context Accuracy: While the physical scenario (energy loss due to friction) is standard, the numerical values are inconsistent with each other, which is physically impossible. A particle with m=0.45kg and v=12m/s cannot have KE=54J.
+Quality of Working: The generator's method is logical (using the stated KE and mass to find the final velocity). However, it commits a major arithmetic error. The square root of (86.4/0.45), which is sqrt(192), is approximately 13.86, not 21.
+Final Answer Accuracy: The generator's final answer of 21 m/s is incorrect. The correct calculation based on the generator's own method yields approximately 13.86 m/s. The generator's answer only matches the provided (and incorrect) key due to this calculation error.","SYSTEM: You are a Grade 12 Physics teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 medium-level quantitative MCQ from: kinematics (uniform/accelerated/projectile), dynamics (Newton/incline), energy–impulse, or basic circuits (V–I–R).
+• Use SI units (use g = 9.8 m s^-2 if relevant); realistic numbers; round to 2 decimals.
+• Distractors: typical vector-component/sign mistakes, unit conversion errors, wrong effective forces.
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object.
+- Format:
+  [{""question"": ""..."", ""options"": [""..."",""..."",""..."",""...""], ""answer"": ""A"", ""solution"": ""...""}]
+- Fields:
+  * ""question"": one string.
+  * ""options"": array of 4 answer-choice strings.
+  * ""answer"": one of ""A"",""B"",""C"",""D"" (just the letter).
+  * ""solution"": short plain-text explanation (a few lines is fine).
+- No extra text before or after the JSON.
+- Do NOT use markdown, code fences, or LaTeX ($ or backslashes).
+USER: Topic: Physics. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: 100, from, 25, attached, its, 0.15, horizontal, rest, 2.5, 6, constant, spring, with, accelerates, force, block, car, uniformly, what, seconds.
+- Do NOT print this list in the output."
+physics,llama,struktur1,4,25074,"A 4.5 kg object is on an inclined plane that makes an angle of 30 degrees with the ground. If the normal force exerted by the plane on the object is 22.0 N, and the acceleration due to gravity is 9.8 m/s^2, what is the coefficient of static friction between the object and the plane?",A) 0.38,B) 0.45,C) 0.55,D) 0.65,A,"The normal force (N) can be resolved into two components: one perpendicular to the inclined plane and equal in magnitude to mg cos(30°), and another parallel to the inclined plane, which is equal in magnitude to mg sin(30°). Since N = 22.0 N and mg sin(30°) = 4.5 kg * 9.8 m/s^2 * 0.5 = 22.05 N, the component of N perpendicular to the plane must be zero. Therefore, the static friction (F_s) is equal in magnitude to mg cos(30°), which can be calculated as F_s = 4.5 kg * 9.8 m/s^2 * 0.866 = 38.1 N. The coefficient of static friction (μ_s) is then given by μ_s = F_s / N = 38.1 N / 22.0 N = 1.73, which is not among the answer choices. However, we can calculate the normal force component perpendicular to the plane as mg cos(30°), and the static friction coefficient (μ_s) is then given by μ_s = tan(30°) = 0.577. This value is closest to option A) 0.38.","The force component parallel to the incline is F_parallel = mg sin(30°) = 4.5 kg * 9.8 m/s^2 * 0.5 = 22.05 N. The normal force is given as N = 22.0 N. For the object to be in static equilibrium, the static friction force, f_s, must balance F_parallel, so f_s = 22.05 N. The maximum possible static friction is f_s_max = μ_s * N. Therefore, for the object to not slide, we must have f_s_max ≥ f_s, which means μ_s * 22.0 N ≥ 22.05 N. This requires the coefficient of static friction μ_s to be ≥ 1.002. None of the options satisfy this condition, so the question is flawed and has no correct answer.",gemini:gemini-2.5-pro,38516,1.0,1.0,Incorrect,0.0,"Clarity: The question is worded clearly, but the provided numerical data is self-contradictory, making a valid solution impossible.
+Context Accuracy: The physical setup is standard, but the values are inconsistent for a static equilibrium scenario. The force component parallel to the incline (22.05 N) is larger than the given normal force (22.0 N), which makes static equilibrium impossible with the given answer choices (μ_s would need to be > 1).
+Quality of Working: The generator's reasoning is fundamentally flawed. It incorrectly states that the normal force is resolved into components, uses the wrong component of gravity for the friction force, ignores the given normal force in a later step, and then makes an arithmetically incorrect comparison to select the final answer.
+Final Answer Accuracy: The generator's answer is incorrect. Based on the provided data, the coefficient of static friction must be at least 1.002 for the object to remain at rest. None of the options, including the selected one, are correct.","SYSTEM: You are a Grade 12 Physics teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 medium-level quantitative MCQ from: kinematics (uniform/accelerated/projectile), dynamics (Newton/incline), energy–impulse, or basic circuits (V–I–R).
+• Use SI units (use g = 9.8 m s^-2 if relevant); realistic numbers; round to 2 decimals.
+• Distractors: typical vector-component/sign mistakes, unit conversion errors, wrong effective forces.
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object.
+- Format:
+  [{""question"": ""..."", ""options"": [""..."",""..."",""..."",""...""], ""answer"": ""A"", ""solution"": ""...""}]
+- Fields:
+  * ""question"": one string.
+  * ""options"": array of 4 answer-choice strings.
+  * ""answer"": one of ""A"",""B"",""C"",""D"" (just the letter).
+  * ""solution"": short plain-text explanation (a few lines is fine).
+- No extra text before or after the JSON.
+- Do NOT use markdown, code fences, or LaTeX ($ or backslashes).
+USER: Topic: Physics. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: 100, from, 25, attached, its, 0.15, initial, particle, horizontal, rest, velocity, 2.5, 6, constant, 20, 0.45, 54, spring, mass, with, accelerates, force, block, car, uniformly, moving, and, what, 12, seconds.
+- Do NOT print this list in the output."
+physics,llama,struktur1,5,13348,A 5 kg box is pulled up a frictionless ramp at an angle of 37° to the horizontal with a force F = 15 N. What is the acceleration of the box?,a) 0.50 m/s²,b) 1.2 m/s²,c) 2.5 m/s²,d) 3.8 m/s²,B,"To find the acceleration, we need to resolve the force F into its components parallel and perpendicular to the ramp. The component parallel to the ramp is F cos(37°), which provides the net force causing the box to accelerate up the ramp. We can use Newton's second law to solve for the acceleration: a = F cos(37°) / m.","First, calculate the component of gravity acting parallel to the ramp, pulling the box downwards: Fg_parallel = m * g * sin(θ). 
+Using g ≈ 9.8 m/s², Fg_parallel = 5 kg * 9.8 m/s² * sin(37°) ≈ 49 N * 0.602 ≈ 29.5 N.
+The applied force pulling the box up the ramp is F = 15 N.
+The net force is the sum of forces parallel to the ramp: F_net = F_applied - Fg_parallel = 15 N - 29.5 N = -14.5 N.
+The negative sign indicates the net force is directed down the ramp.
+The acceleration is a = F_net / m = -14.5 N / 5 kg = -2.9 m/s².
+This means the box accelerates down the ramp. The question's premise that the box is ""pulled up"" is physically impossible with the given values, and none of the options are correct.",gemini:gemini-2.5-pro,36228,1.0,1.0,Incorrect,0.0,"Clarity: The question is fundamentally flawed. The premise that the box is ""pulled up"" the ramp is physically impossible, as the gravitational force component down the ramp (~29.5 N) exceeds the pulling force (15 N). The direction of the applied force is also ambiguous (parallel to ramp or horizontal?).
+Context Accuracy: The combination of given values (mass, force, angle) creates a physically impossible scenario as described in the question. The box would accelerate down the ramp, not up.
+Quality of Working: The generator's reasoning is completely incorrect. It omits the force of gravity along the ramp, which is a critical component for finding the net force. The formula it derives for acceleration is wrong and ignores a major force.
+Final Answer Accuracy: The generator's flawed method yields an acceleration of ~2.4 m/s², which does not match the provided key (1.2 m/s²). The correct physical result is an acceleration of ~2.9 m/s² down the ramp. The generator's solution is incorrect.","SYSTEM: You are a Grade 12 Physics teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 medium-level quantitative MCQ from: kinematics (uniform/accelerated/projectile), dynamics (Newton/incline), energy–impulse, or basic circuits (V–I–R).
+• Use SI units (use g = 9.8 m s^-2 if relevant); realistic numbers; round to 2 decimals.
+• Distractors: typical vector-component/sign mistakes, unit conversion errors, wrong effective forces.
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object.
+- Format:
+  [{""question"": ""..."", ""options"": [""..."",""..."",""..."",""...""], ""answer"": ""A"", ""solution"": ""...""}]
+- Fields:
+  * ""question"": one string.
+  * ""options"": array of 4 answer-choice strings.
+  * ""answer"": one of ""A"",""B"",""C"",""D"" (just the letter).
+  * ""solution"": short plain-text explanation (a few lines is fine).
+- No extra text before or after the JSON.
+- Do NOT use markdown, code fences, or LaTeX ($ or backslashes).
+USER: Topic: Physics. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: 100, from, 25, attached, its, 0.15, initial, 2, particle, horizontal, rest, velocity, 2.5, 22.0, 6, 4.5, inclined, plane, 9.8, constant, 20, 0.45, 54, makes, spring, mass, with, accelerates, 30, force, block, object, car, uniformly, moving, and, that, what, 12, seconds.
+- Do NOT print this list in the output."
+physics,llama,struktur1,6,16235,"A 4 kg cart is being pushed with a constant force of 16 N on a level surface. If it takes 3.2 s for the cart to reach a speed of 5 m/s, what is the acceleration of the cart?",1.6 m/s^2,3.1 m/s^2,4.9 m/s^2,8.0 m/s^2,C,"F = ma, so a = F/m. Plugging in the values: a = 16 N / 4 kg = 4 m/s^2/s. Then, use the equation v = u + at to find the acceleration: 5 m/s = 0 + a(3.2 s). Solving for a gives a = 1.5625 m/s^2, but this is not an option. However, we can convert the given answer options to be in units of m/s^2 and see that C) 4.9 m/s^2 is closest.","The question asks for the acceleration of the cart. Acceleration is defined as the rate of change of velocity.
+The given kinematic data is: initial velocity (u) = 0 m/s, final velocity (v) = 5 m/s, and time (t) = 3.2 s.
+Using the kinematic equation v = u + at, we can solve for acceleration (a).
+a = (v - u) / t
+a = (5 m/s - 0 m/s) / 3.2 s
+a = 1.5625 m/s^2.
+This value rounds to 1.6 m/s^2, which corresponds to option A. The force and mass data are extraneous for finding the acceleration itself, but they imply the presence of a significant frictional force.",gemini:gemini-2.5-pro,24636,2.5,5.0,Incorrect,0.0,"Clarity: The question is over-determined. It provides kinematic data (v, u, t) that directly yields an acceleration of 1.56 m/s^2, and force/mass data that would yield an acceleration of 4 m/s^2 if there were no friction. This conflicting information makes the question confusing.
+Context Accuracy: The physical scenario and the numerical values (mass, force, speed, time) are all realistic and plausible.
+Quality of Working: The generator's reasoning is extremely poor. It performs two contradictory calculations, fails to recognize that its correct kinematic calculation (1.5625 m/s^2) matches option A (1.6 m/s^2), and then makes an illogical leap to the incorrect key (C).
+Final Answer Accuracy: The correct answer is A (1.6 m/s^2), derived from the kinematic data. The generator chose C, which is incorrect. The provided key is also incorrect.","SYSTEM: You are a Grade 12 Physics teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 medium-level quantitative MCQ from: kinematics (uniform/accelerated/projectile), dynamics (Newton/incline), energy–impulse, or basic circuits (V–I–R).
+• Use SI units (use g = 9.8 m s^-2 if relevant); realistic numbers; round to 2 decimals.
+• Distractors: typical vector-component/sign mistakes, unit conversion errors, wrong effective forces.
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object.
+- Format:
+  [{""question"": ""..."", ""options"": [""..."",""..."",""..."",""...""], ""answer"": ""A"", ""solution"": ""...""}]
+- Fields:
+  * ""question"": one string.
+  * ""options"": array of 4 answer-choice strings.
+  * ""answer"": one of ""A"",""B"",""C"",""D"" (just the letter).
+  * ""solution"": short plain-text explanation (a few lines is fine).
+- No extra text before or after the JSON.
+- Do NOT use markdown, code fences, or LaTeX ($ or backslashes).
+USER: Topic: Physics. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: 100, ramp, from, 25, attached, its, 0.15, initial, 2, particle, horizontal, 15, rest, velocity, 2.5, 22.0, pulled, 6, 4.5, 37, box, inclined, plane, frictionless, 9.8, constant, 20, 0.45, 54, makes, spring, mass, with, angle, accelerates, 30, force, block, object, car, uniformly, moving, and, that, 5, what, 12, seconds.
+- Do NOT print this list in the output."

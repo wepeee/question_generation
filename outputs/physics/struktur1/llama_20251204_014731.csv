@@ -1,0 +1,1504 @@
+topic,model,struktur,index,latency_model_ms,question,optionA,optionB,optionC,optionD,answer,solution_model,solution_verifier,verifier_model,latency_verifier_ms,clarity,context_accuracy,final_answer_accuracy,quality_of_working,judge_notes,prompt_generator
+physics,llama,struktur1,1,15792,A car accelerates from rest to a speed of 25 m/s in 5 seconds. What is its acceleration?,4.0 m/s^2,6.7 m/s^2,10.0 m/s^2,15.0 m/s^2,B,"To find the acceleration, we use the equation a = Δv / Δt. Given Δv = 25 m/s and Δt = 5 s, we get a = 5.0 m/s^2.","The problem asks for acceleration, which is the rate of change of velocity.
+The formula for constant acceleration is a = Δv / Δt, where Δv is the change in velocity and Δt is the time interval.
+The car starts from rest, so the initial velocity is 0 m/s. The final velocity is 25 m/s.
+The change in velocity is Δv = 25 m/s - 0 m/s = 25 m/s.
+The time interval is Δt = 5 s.
+Plugging the values into the formula: a = 25 m/s / 5 s = 5.0 m/s^2.",gemini:gemini-2.5-pro,17521,2,5,Correct,5,"Clarity: The question stem is clear, but the MCQ is fundamentally flawed because none of the provided options are correct. The correct answer is 5.0 m/s^2, which is not listed. The provided key ('B') is also incorrect.
+Context Accuracy: The values are realistic. Accelerating from 0 to 25 m/s (90 km/h) in 5 seconds is a plausible performance for a car, resulting in a reasonable acceleration of about 0.5g.
+Quality of Working: The generator's solution is perfect. It correctly identifies the formula, substitutes the correct values from the problem, and performs the calculation accurately with the correct units.
+Final Answer Accuracy: The generator's calculated answer of 5.0 m/s^2 is the correct solution to the physics problem posed in the question stem. The error lies in the question's options and key, not in the generator's solution.","SYSTEM: You are a Grade 12 Physics teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 medium-level quantitative MCQ from: kinematics (uniform/accelerated/projectile), dynamics (Newton/incline), energy–impulse, or basic circuits (V–I–R).
+• Use SI units (use g = 9.8 m s^-2 if relevant); realistic numbers; round to 2 decimals.
+• Distractors: typical vector-component/sign mistakes, unit conversion errors, wrong effective forces.
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object.
+- Format:
+  [{""question"": ""..."", ""options"": [""..."",""..."",""..."",""...""], ""answer"": ""A"", ""solution"": ""...""}]
+- Fields:
+  * ""question"": one string.
+  * ""options"": array of 4 answer-choice strings.
+  * ""answer"": one of ""A"",""B"",""C"",""D"" (just the letter).
+  * ""solution"": short plain-text explanation (a few lines is fine).
+- No extra text before or after the JSON.
+- Do NOT use markdown, code fences, or LaTeX ($ or backslashes).
+USER: Topic: Physics. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field."
+physics,llama,struktur1,2,132385,"A block of mass 4.2 kg is pulled up a frictionless inclined plane with an angle of elevation of 30°. If the block gains 1.8 m/s every second as it moves up, how much work is done on the block in 3.0 s?",12.6 J,18.4 J,36.9 J,54.2 J,C,"The block's velocity increases by 1.8 m/s every second, so after 3.0 s it will have a final velocity of 5.4 m/s (since 1.8 x 3 = 5.4). The work done is W = F × d, where F is the force parallel to the incline and d is the distance up the incline. The force is given by F = mg sin(30°) = 20.48 N. The distance is given by d = 3.0 m (since it's a frictionless inclined plane). Therefore, W = 20.48 × 3.0 = 61.44 J. Since the question asks for work done in 3.0 s, we need to find the work done per unit time and multiply by 3.0. The work done per unit time is given by ΔW/Δt = Fv, where v is the final velocity (5.4 m/s). Therefore, W = Fv × 3.0 = 36.9 J.","The acceleration is given as a = 1.8 m/s². The time interval is t = 3.0 s. Assuming the block starts from rest, its final velocity is v = a * t = 1.8 m/s² * 3.0 s = 5.4 m/s.
+The work done on the block refers to the net work, which equals the change in the block's kinetic energy (Work-Energy Theorem).
+W_net = ΔKE = (1/2)mv² - (1/2)mu²
+W_net = 0.5 * 4.2 kg * (5.4 m/s)² - 0
+W_net = 61.236 J.
+None of the provided options match this correct result. The question or its options are flawed.",gemini:gemini-2.5-pro,54712,2,5,Correct,0.5,"Clarity: The question's wording is mostly clear, but the phrase ""work done on the block"" can be ambiguous (net work vs. work by applied force). The primary issue is that none of the options, including the provided key, are correct for any valid physical interpretation, making the question unsolvable.
+Context Accuracy: The physical scenario (block on an incline) and the given numerical values are standard and realistic for an introductory physics problem.
+Quality of Working: The generator's reasoning is deeply flawed and incoherent. It correctly calculates the final velocity but then makes numerous critical errors, such as confusing time with distance (d = 3.0 m). The final steps use a nonsensical formula that is internally inconsistent and appears reverse-engineered to match the incorrect key.
+Final Answer Accuracy: The generator's final answer matches the provided key 'C'. However, it must be noted that both the generator's reasoning and the key itself are physically incorrect. The correct answer is approximately 61.2 J.","SYSTEM: You are a Grade 12 Physics teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 medium-level quantitative MCQ from: kinematics (uniform/accelerated/projectile), dynamics (Newton/incline), energy–impulse, or basic circuits (V–I–R).
+• Use SI units (use g = 9.8 m s^-2 if relevant); realistic numbers; round to 2 decimals.
+• Distractors: typical vector-component/sign mistakes, unit conversion errors, wrong effective forces.
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object.
+- Format:
+  [{""question"": ""..."", ""options"": [""..."",""..."",""..."",""...""], ""answer"": ""A"", ""solution"": ""...""}]
+- Fields:
+  * ""question"": one string.
+  * ""options"": array of 4 answer-choice strings.
+  * ""answer"": one of ""A"",""B"",""C"",""D"" (just the letter).
+  * ""solution"": short plain-text explanation (a few lines is fine).
+- No extra text before or after the JSON.
+- Do NOT use markdown, code fences, or LaTeX ($ or backslashes).
+USER: Topic: Physics. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: car, accelerates, from, what, rest, seconds, 25, 5, speed, its.
+- Do NOT print this list in the output."
+physics,llama,struktur1,3,55284,"A force of 12 N is applied to an object initially at a velocity of 6 m/s. After 2.0 s, the object's velocity has increased by 3 m/s. What is the net force acting on the object during this time?",A,B,C,D,D,"The net force is equal to the change in momentum divided by the time, Δp / Δt. Since the velocity increases by 3 m/s and the time is 2.0 s, the change in momentum is Δp = (m)(Δv) = (m)(3 m/s). The force is then F = Δp / Δt = (m)(3 m/s) / 2.0 s = 4.5 N. Since this is less than the applied force of 12 N, there must be an opposing force with a magnitude of 7.5 N (12 - 4.5).","The net force is calculated using Newton's second law, F_net = m * a.
+The acceleration (a) can be found from the given information:
+a = Δv / Δt = (3 m/s) / (2.0 s) = 1.5 m/s².
+To find the net force, we need the mass (m) of the object: F_net = m * (1.5 m/s²).
+The problem does not provide the mass of the object.
+Therefore, the question is unanswerable as it lacks sufficient information.",gemini:gemini-2.5-pro,29210,1,4,Incorrect,0,"Clarity: The question is worded clearly, but it is fundamentally flawed because it omits the mass of the object, making it impossible to solve. The data provided is insufficient.
+Context Accuracy: The physical scenario and the numerical values (forces, velocities, time) are plausible and consistent with a typical introductory physics problem.
+Quality of Working: The generator's reasoning is completely unsound. It introduces a value for the net force (4.5 N) without any justification, which requires assuming a mass of 3 kg. It then calculates the opposing force (7.5 N), not the net force requested by the question.
+Final Answer Accuracy: The question is unsolvable. The generator's working is invalid as it assumes missing data and calculates the wrong physical quantity (opposing force instead of net force).","SYSTEM: You are a Grade 12 Physics teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 medium-level quantitative MCQ from: kinematics (uniform/accelerated/projectile), dynamics (Newton/incline), energy–impulse, or basic circuits (V–I–R).
+• Use SI units (use g = 9.8 m s^-2 if relevant); realistic numbers; round to 2 decimals.
+• Distractors: typical vector-component/sign mistakes, unit conversion errors, wrong effective forces.
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object.
+- Format:
+  [{""question"": ""..."", ""options"": [""..."",""..."",""..."",""...""], ""answer"": ""A"", ""solution"": ""...""}]
+- Fields:
+  * ""question"": one string.
+  * ""options"": array of 4 answer-choice strings.
+  * ""answer"": one of ""A"",""B"",""C"",""D"" (just the letter).
+  * ""solution"": short plain-text explanation (a few lines is fine).
+- No extra text before or after the JSON.
+- Do NOT use markdown, code fences, or LaTeX ($ or backslashes).
+USER: Topic: Physics. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: block, rest, seconds, pulled, car, accelerates, 3.0, plane, 5, speed, its, from, what, 30, 1.8, inclined, 25, frictionless, 4.2, mass.
+- Do NOT print this list in the output."
+physics,llama,struktur1,4,12312,"A 7 m long string is wrapped around a fixed pulley with a radius of 0.5 m. If a 1.5 kg object is lifted to a height of 2.5 m above the initial position, what is the tension in the string?",15 N,20 N,25 N,30 N,C,"The work done in lifting the object is equal to the change in potential energy: W = ΔPE = mgh. The height is 2.5 m, and the mass is 1.5 kg. Plugging in the values gives W = (1.5 kg)(9.8 m/s^2)(2.5 m) = 37.35 J. Since the string does all the work, the tension must be equal to the force required to lift the object: F = W / d = 37.35 J / 0.5 m = 74.7 N. However, only half of this force is in the direction of the string, so the tension is T = 74.7 N / 2 = 25 N.","To lift an object at a constant velocity or hold it stationary, the tension in the string must equal the object's weight. The weight (force due to gravity) is calculated as F = m * g. Using the standard approximation g ≈ 10 m/s^2, the tension T = 1.5 kg * 10 m/s^2 = 15 N. If using g = 9.8 m/s^2, T = 14.7 N. In either case, 15 N is the correct answer. The string length, pulley radius, and height lifted are distractors and irrelevant to the calculation of tension in this context.",gemini:gemini-2.5-pro,28498,3.5,5,Incorrect,0,"Clarity: The question is clearly worded, but it includes three pieces of irrelevant information (string length, pulley radius, height lifted), which can make the problem unnecessarily confusing for students.
+Context Accuracy: The physical scenario and the given values for mass, length, and radius are realistic and appropriate for a basic physics problem.
+Quality of Working: The generator's solution is nonsensical. It divides work by the pulley radius (physically meaningless), invents a baseless rule about halving the force, and then performs an arithmetic error (74.7 / 2 is not 25). The reasoning is completely flawed.
+Final Answer Accuracy: The correct answer is 15 N (Option A). The generator's answer of 25 N is incorrect. It appears the generator has fabricated a solution to match an incorrect key.","SYSTEM: You are a Grade 12 Physics teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 medium-level quantitative MCQ from: kinematics (uniform/accelerated/projectile), dynamics (Newton/incline), energy–impulse, or basic circuits (V–I–R).
+• Use SI units (use g = 9.8 m s^-2 if relevant); realistic numbers; round to 2 decimals.
+• Distractors: typical vector-component/sign mistakes, unit conversion errors, wrong effective forces.
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object.
+- Format:
+  [{""question"": ""..."", ""options"": [""..."",""..."",""..."",""...""], ""answer"": ""A"", ""solution"": ""...""}]
+- Fields:
+  * ""question"": one string.
+  * ""options"": array of 4 answer-choice strings.
+  * ""answer"": one of ""A"",""B"",""C"",""D"" (just the letter).
+  * ""solution"": short plain-text explanation (a few lines is fine).
+- No extra text before or after the JSON.
+- Do NOT use markdown, code fences, or LaTeX ($ or backslashes).
+USER: Topic: Physics. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: 2.0, 3, block, rest, seconds, velocity, pulled, car, accelerates, 3.0, initially, plane, 5, speed, applied, 12, 6, its, from, after, what, 30, 1.8, inclined, 25, frictionless, 4.2, mass, object, force.
+- Do NOT print this list in the output."
+physics,llama,struktur1,5,83261,"A 10 kg box is pushed up a rough ramp with an acceleration of 0.8 m/s^2. If the coefficient of kinetic friction is 0.3, what is the net force acting on the box?",9.6 N,12.0 N,15.2 N,17.4 N,C,"The weight of the box is 98 N (10 kg * 9.8 m/s^2). The force parallel to the ramp is the sum of the normal force and the frictional force, which is 0.3 * 98 N = 29.4 N. The net force acting on the box is then the acceleration times its mass, or 0.8 m/s^2 * 10 kg = 8.0 N, plus the force parallel to the ramp (29.4 N), which gives a total of 37.4 N. This is closest to option C.","According to Newton's Second Law, the net force (F_net) on an object is the product of its mass (m) and acceleration (a).
+Given:
+m = 10 kg
+a = 0.8 m/s^2
+Therefore, F_net = m * a = 10 kg * 0.8 m/s^2 = 8.0 N.
+The information about the ramp being rough and the coefficient of friction is extraneous to the question being asked, which is specifically for the *net force*.
+Since 8.0 N is not among the options, the question is fundamentally flawed.",gemini:gemini-2.5-pro,32999,1,2,Incorrect,0,"Clarity: The question is poorly formulated. It asks for the net force, for which the necessary data (m, a) is provided, but the correct answer (8.0 N) is not an option. It includes extraneous information (ramp, friction) that misleads the solver.
+
+Context Accuracy: The physical scenario is plausible, but the options provided are inconsistent with the data in the question stem. This indicates a significant conceptual error in the question's design, making it impossible to solve correctly.
+
+Quality of Working: The generator's reasoning is completely flawed. It correctly calculates the net force as 8.0 N but then nonsensically adds a miscalculated friction force to it. The friction force calculation itself is incorrect for a ramp. The final claim that its result (37.4 N) is 'closest' to option C (15.2 N) is also false.
+
+Final Answer Accuracy: The generator's calculated answer is 37.4 N. This does not match the provided key (Option C, 15.2 N). The generator's attempt to justify selecting option C is based on a false claim and flawed physics, making its final answer incorrect.","SYSTEM: You are a Grade 12 Physics teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 medium-level quantitative MCQ from: kinematics (uniform/accelerated/projectile), dynamics (Newton/incline), energy–impulse, or basic circuits (V–I–R).
+• Use SI units (use g = 9.8 m s^-2 if relevant); realistic numbers; round to 2 decimals.
+• Distractors: typical vector-component/sign mistakes, unit conversion errors, wrong effective forces.
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object.
+- Format:
+  [{""question"": ""..."", ""options"": [""..."",""..."",""..."",""...""], ""answer"": ""A"", ""solution"": ""...""}]
+- Fields:
+  * ""question"": one string.
+  * ""options"": array of 4 answer-choice strings.
+  * ""answer"": one of ""A"",""B"",""C"",""D"" (just the letter).
+  * ""solution"": short plain-text explanation (a few lines is fine).
+- No extra text before or after the JSON.
+- Do NOT use markdown, code fences, or LaTeX ($ or backslashes).
+USER: Topic: Physics. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: 2.0, 3, block, rest, seconds, 0.5, velocity, pulled, around, car, accelerates, 3.0, wrapped, fixed, long, string, initially, plane, 7, pulley, 5, speed, applied, 12, 6, its, from, after, what, 30, 1.8, 1.5, inclined, 25, frictionless, 4.2, mass, object, force, 2.5.
+- Do NOT print this list in the output."
+physics,llama,struktur1,6,159414,"A 40 kg student is standing on a horizontal platform that is moving with a constant speed of 1.2 m/s. If the student then jumps off the platform and lands safely after falling 3.4 meters, what was their average deceleration during the fall?",0.25 m/s^2,0.45 m/s^2,0.65 m/s^2,0.85 m/s^2,A,"The student's initial speed is 1.2 m/s, and they fall a distance of 3.4 meters. Using the equation Δv = -gt, we can find their final speed: Δv = -9.8 m/s^2 * 3.4 m / (1/0.85 m/s) ≈ -11.5 m/s. Then, we can use the equation Δv = aΔt to solve for the average deceleration: 11.5 m/s - 1.2 m/s = 10.3 m/s, and Δt = 3.4 m / (0.85 m/s) ≈ 4.04 s. Finally, we can find the average deceleration: a = Δv / Δt ≈ 2.57 m/s^2.","The question asks for the average deceleration during a fall. In physics, an object in free fall accelerates due to gravity at approximately 9.8 m/s². The term 'deceleration' is incorrect as the vertical speed increases. The student's mass and initial horizontal speed are irrelevant to the vertical acceleration. The acceleration during the fall is constant at g ≈ 9.8 m/s². None of the provided options are physically correct, indicating the question is fundamentally flawed.",gemini:gemini-2.5-pro,27272,1,0.5,Incorrect,0,"Clarity: The question is very unclear. It uses the incorrect term 'deceleration' for a situation involving acceleration. It also includes irrelevant data (mass, horizontal speed) which are pure distractors and add to the confusion.
+Context Accuracy: The physical premise is wrong. The acceleration of a falling body near Earth is g ≈ 9.8 m/s². The options provided are all less than 1 m/s², which is physically impossible for a free fall, even with significant air resistance over this short distance.
+Quality of Working: The generator's solution is nonsensical. It uses dimensionally inconsistent formulas (e.g., g * distance / (1/speed)), performs circular reasoning by using a value from the options (0.85 m/s) in its calculation, and the steps are physically meaningless.
+Final Answer Accuracy: The generator calculates a final answer of 2.57 m/s², which does not match the provided key 'A' (0.25 m/s²). The entire working is invalid.","SYSTEM: You are a Grade 12 Physics teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 medium-level quantitative MCQ from: kinematics (uniform/accelerated/projectile), dynamics (Newton/incline), energy–impulse, or basic circuits (V–I–R).
+• Use SI units (use g = 9.8 m s^-2 if relevant); realistic numbers; round to 2 decimals.
+• Distractors: typical vector-component/sign mistakes, unit conversion errors, wrong effective forces.
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object.
+- Format:
+  [{""question"": ""..."", ""options"": [""..."",""..."",""..."",""...""], ""answer"": ""A"", ""solution"": ""...""}]
+- Fields:
+  * ""question"": one string.
+  * ""options"": array of 4 answer-choice strings.
+  * ""answer"": one of ""A"",""B"",""C"",""D"" (just the letter).
+  * ""solution"": short plain-text explanation (a few lines is fine).
+- No extra text before or after the JSON.
+- Do NOT use markdown, code fences, or LaTeX ($ or backslashes).
+USER: Topic: Physics. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: 2.0, rough, 3, block, rest, seconds, 0.8, 0.3, 0.5, velocity, pulled, around, acceleration, 10, 2, car, accelerates, 3.0, wrapped, fixed, with, box, long, string, initially, plane, 7, pulley, 5, speed, applied, 12, 6, its, from, after, what, 30, 1.8, ramp, 1.5, inclined, 25, frictionless, 4.2, mass, object, force, pushed, 2.5.
+- Do NOT print this list in the output."
+physics,llama,struktur1,7,73821,"A 5 kg object is projected upwards from the ground with an initial speed of 15 m/s. If air resistance is negligible, what is the maximum height reached by the object? (Assume g = 9.8 m/s^2.)",12.4 m,18.7 m,24.5 m,30.3 m,A,"Using conservation of energy, we can set the initial kinetic energy equal to the maximum potential energy: 0.5 × (15)^2 × 5 = 9.38 J ≈ m × g × h. Solving for h, we get h ≈ 12.4 m.","The problem can be solved using the principle of conservation of energy. The initial kinetic energy (KE) at the ground is converted into gravitational potential energy (PE) at the maximum height.
+Initial KE = 0.5 * m * v^2
+Maximum PE = m * g * h
+Setting them equal: 0.5 * m * v^2 = m * g * h
+The mass (m) cancels out: 0.5 * v^2 = g * h
+Solving for height (h): h = v^2 / (2 * g)
+h = (15 m/s)^2 / (2 * 9.8 m/s^2) = 225 / 19.6
+h ≈ 11.48 m.",gemini:gemini-2.5-pro,27468,5,2.5,Incorrect,0,"Clarity: The question is perfectly clear. It provides all necessary data (mass, initial speed, g) and assumptions (negligible air resistance) to solve for the maximum height.
+Context Accuracy: The physical scenario is valid, but the question is flawed because the correct answer (~11.5 m) is not among the options. The provided key (A: 12.4 m) is also incorrect for the given values.
+Quality of Working: The generator's solution is completely wrong. The calculation of kinetic energy is incorrect (it gets 9.38 J when the correct value is 562.5 J). The subsequent step to solve for 'h' is also arithmetically incorrect and appears fabricated to match the flawed key.
+Final Answer Accuracy: The generator's answer of 12.4 m is incorrect. The correct answer based on the physics and the numbers provided in the question is approximately 11.5 m.","SYSTEM: You are a Grade 12 Physics teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 medium-level quantitative MCQ from: kinematics (uniform/accelerated/projectile), dynamics (Newton/incline), energy–impulse, or basic circuits (V–I–R).
+• Use SI units (use g = 9.8 m s^-2 if relevant); realistic numbers; round to 2 decimals.
+• Distractors: typical vector-component/sign mistakes, unit conversion errors, wrong effective forces.
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object.
+- Format:
+  [{""question"": ""..."", ""options"": [""..."",""..."",""..."",""...""], ""answer"": ""A"", ""solution"": ""...""}]
+- Fields:
+  * ""question"": one string.
+  * ""options"": array of 4 answer-choice strings.
+  * ""answer"": one of ""A"",""B"",""C"",""D"" (just the letter).
+  * ""solution"": short plain-text explanation (a few lines is fine).
+- No extra text before or after the JSON.
+- Do NOT use markdown, code fences, or LaTeX ($ or backslashes).
+USER: Topic: Physics. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: 2.0, 40, rough, 3, that, block, rest, seconds, 0.8, 0.3, 0.5, velocity, standing, pulled, around, acceleration, 10, 2, car, accelerates, platform, 3.0, wrapped, 3.4, horizontal, fixed, moving, with, box, long, string, 1.2, initially, plane, 7, pulley, 5, speed, applied, 12, 6, its, student, from, after, what, 30, 1.8, ramp, 1.5, inclined, 25, frictionless, 4.2, mass, object, force, pushed, 2.5.
+- Do NOT print this list in the output."
+physics,llama,struktur1,8,100131,"A 6 kg object is placed on an inclined plane with an angle of 27°. If the coefficient of kinetic friction is 0.25, what is the magnitude of the force required to keep the object moving at a constant speed?",15 N,20 N,25 N,30 N,D,"The force required to keep the object moving can be found using F = μkN, where N is the normal force. The normal force is given by N = mg cos θ, and since the object is on an inclined plane, we have g sin θ = a, where a is the acceleration down the ramp. Plugging in the values, we get N = (6 kg)(9.8 m/s^2) * 0.5194 ≈ 31.5 N. Then F = μkN = 0.25 * 31.5 N ≈ 7.875 N. Since the force must be greater than this value to keep the object moving, we round up to the nearest whole number, which is 30 N.","To keep the object moving at a constant speed, the net force must be zero. The forces parallel to the incline are the component of gravity (Fg_p), kinetic friction (Fk), and the applied force (F_app).
+Fg_p = m*g*sin(θ) = 6 kg * 9.8 m/s² * sin(27°) = 26.7 N (down the incline).
+Normal force N = m*g*cos(θ) = 6 * 9.8 * cos(27°) = 52.4 N.
+Fk = μk*N = 0.25 * 52.4 N = 13.1 N (opposes motion).
+Case 1 (moving up): F_app must overcome both Fg_p and Fk. F_app = 26.7 + 13.1 = 39.8 N.
+Case 2 (moving down): F_app must oppose the net downward force. F_app = Fg_p - Fk = 26.7 - 13.1 = 13.6 N.
+Neither result matches the provided key (30 N). The question is flawed.",gemini:gemini-2.5-pro,41915,1.5,5,Incorrect,0,"Clarity: The question is ambiguous as it does not specify the direction of motion ('up' or 'down' the incline). This leads to two different possible answers (~40 N or ~14 N), neither of which matches the options well.
+Context Accuracy: The context is a standard and realistic physics problem. The given values for mass, angle, and coefficient of friction are physically plausible.
+Quality of Working: The generator's solution is fundamentally flawed. It misidentifies the required force as the friction force, incorrectly uses radians instead of degrees for the angle (cos(27 rad) instead of cos(27°)), and makes an entirely illogical jump from a calculated value of ~8 N to the final answer of 30 N.
+Final Answer Accuracy: The generator's reasoning is completely incorrect and does not logically lead to the chosen answer. Furthermore, the question itself is flawed, as the provided key (30 N) does not correspond to a correct physical calculation for either possible interpretation of the problem.","SYSTEM: You are a Grade 12 Physics teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 medium-level quantitative MCQ from: kinematics (uniform/accelerated/projectile), dynamics (Newton/incline), energy–impulse, or basic circuits (V–I–R).
+• Use SI units (use g = 9.8 m s^-2 if relevant); realistic numbers; round to 2 decimals.
+• Distractors: typical vector-component/sign mistakes, unit conversion errors, wrong effective forces.
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object.
+- Format:
+  [{""question"": ""..."", ""options"": [""..."",""..."",""..."",""...""], ""answer"": ""A"", ""solution"": ""...""}]
+- Fields:
+  * ""question"": one string.
+  * ""options"": array of 4 answer-choice strings.
+  * ""answer"": one of ""A"",""B"",""C"",""D"" (just the letter).
+  * ""solution"": short plain-text explanation (a few lines is fine).
+- No extra text before or after the JSON.
+- Do NOT use markdown, code fences, or LaTeX ($ or backslashes).
+USER: Topic: Physics. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: 2.0, 40, rough, 3, that, block, rest, seconds, 0.8, 0.3, upwards, 0.5, 9.8, velocity, standing, pulled, around, acceleration, 10, 2, car, accelerates, platform, 15, 3.0, wrapped, 3.4, horizontal, fixed, moving, with, ground, box, long, string, 1.2, projected, initially, plane, 7, pulley, 5, speed, applied, 12, 6, its, student, from, after, what, 30, 1.8, ramp, 1.5, inclined, 25, frictionless, 4.2, mass, object, force, pushed, 2.5.
+- Do NOT print this list in the output."
+physics,llama,struktur1,9,78870,"A 6 kg box is pulled along a frictionless surface by a rope at a constant speed of 1.4 m/s. If the tension in the rope is 12 N, what is the force exerted by the box on the rope?",A) 12 N,B) 8.4 N,C) 10.2 N,D) 6.0 N,B,"The force exerted by the box on the rope is equal to the tension in the rope, which is given as 12 N. However, since the box is being pulled at a constant speed, there must be an equal and opposite force applied by the box on the rope. This force can be found using F = m * a, where m is the mass of the box (6 kg) and a is its acceleration (which is 0 since it's moving at a constant speed). Plugging in the values, we get F = 6 * 0 = 0 N. However, the problem states that the tension in the rope is 12 N, which means there must be an additional force applied by the box on the rope to counteract this tension. This force can be found using F = T - m * a, where T is the tension (12 N). Plugging in the values, we get F = 12 - 6 * 0 = 12 N.","According to Newton's Third Law of Motion, for every action, there is an equal and opposite reaction. The force exerted by the rope on the box (the tension) is given as 12 N. This is the 'action'. The 'reaction' is the force exerted by the box on the rope. These two forces must be equal in magnitude. Therefore, the force exerted by the box on the rope is 12 N. The information about the mass, constant speed, and frictionless surface is extraneous to finding this specific reaction force, and in fact describes a physically impossible scenario.",gemini:gemini-2.5-pro,23651,3,1,Correct,1,"Clarity: The question is worded clearly, but the physical premise is contradictory. A non-zero net force (12 N tension on a frictionless surface) cannot produce a constant velocity, which can confuse students.
+Context Accuracy: The scenario described violates Newton's Second Law (F=ma). A 12 N net force on a 6 kg mass would cause an acceleration of 2 m/s^2, not a constant velocity of 1.4 m/s. The context is physically impossible.
+Quality of Working: The generator's reasoning is extremely poor. It starts by correctly stating the answer is 12 N, but then uses incorrect physics (calculating net force with F=ma=0) and a nonsensical formula (F = T - m*a) to justify its answer. It arrives at the correct number by coincidence through flawed logic.
+Final Answer Accuracy: The generator's final answer of 12 N is the correct answer to the question, based on Newton's Third Law. The provided key (B) is incorrect; it appears to be the result of multiplying mass by velocity (6 kg * 1.4 m/s = 8.4 kg*m/s), which calculates momentum, not force.","SYSTEM: You are a Grade 12 Physics teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 medium-level quantitative MCQ from: kinematics (uniform/accelerated/projectile), dynamics (Newton/incline), energy–impulse, or basic circuits (V–I–R).
+• Use SI units (use g = 9.8 m s^-2 if relevant); realistic numbers; round to 2 decimals.
+• Distractors: typical vector-component/sign mistakes, unit conversion errors, wrong effective forces.
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object.
+- Format:
+  [{""question"": ""..."", ""options"": [""..."",""..."",""..."",""...""], ""answer"": ""A"", ""solution"": ""...""}]
+- Fields:
+  * ""question"": one string.
+  * ""options"": array of 4 answer-choice strings.
+  * ""answer"": one of ""A"",""B"",""C"",""D"" (just the letter).
+  * ""solution"": short plain-text explanation (a few lines is fine).
+- No extra text before or after the JSON.
+- Do NOT use markdown, code fences, or LaTeX ($ or backslashes).
+USER: Topic: Physics. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: 2.0, 40, rough, 3, that, block, rest, seconds, 0.8, 0.3, upwards, 0.25, 0.5, 9.8, velocity, standing, angle, pulled, around, acceleration, 10, 2, car, accelerates, platform, 15, 3.0, wrapped, 3.4, horizontal, fixed, coefficient, moving, with, ground, box, long, string, 1.2, projected, initially, plane, 7, pulley, placed, 5, speed, applied, 12, 6, its, student, from, after, what, 30, 1.8, ramp, 1.5, inclined, 25, frictionless, 4.2, 27, mass, object, force, pushed, 2.5.
+- Do NOT print this list in the output."
+physics,llama,struktur1,10,76426,A 5 kg object is pulled by a constant force of 15 N at an angle of 30° to the horizontal. What is its acceleration?,0.25 m/s²,0.50 m/s²,1.00 m/s²,2.00 m/s²,C,"Using trigonometry, we can find the component of the force parallel to the surface: F_parallel = 15 N * cos(30°) = 12.5 N. Then, we can use Newton's second law to find the acceleration: a = F_parallel / m = 2.5 m/s².","The solution requires finding the acceleration caused by a force applied at an angle. Assuming a frictionless horizontal surface, the net force is the horizontal component of the applied force.
+1. Calculate the horizontal component of the force: F_x = F * cos(θ).
+   F_x = 15 N * cos(30°) = 15 N * (√3 / 2) ≈ 12.99 N.
+2. Apply Newton's second law: F_net = m * a.
+   a = F_net / m = 12.99 N / 5 kg ≈ 2.60 m/s².
+3. This calculated value is not among the options, indicating that the question is flawed. The keyed answer of 1.00 m/s² would require an unstated opposing force (like friction) of approximately 8 N.",gemini:gemini-2.5-pro,26264,1,4,Incorrect,0.5,"Clarity: The question is critically flawed. It omits information about friction. If friction is assumed to be zero (standard for such problems unless stated otherwise), the correct answer (~2.6 m/s²) is not among the options. The question is unsolvable as written.
+Context Accuracy: The physical scenario (pulling an object) and the given values for mass, force, and angle are realistic and standard for an introductory physics problem.
+Quality of Working: The generator's method is conceptually correct (using the parallel component of force and Newton's second law), but it contains a major calculation error: 15 * cos(30°) is ~12.99 N, not 12.5 N. Furthermore, it fails to notice that its own calculated answer (2.5 m/s²) is not one of the provided options.
+Final Answer Accuracy: The generator's calculated answer is 2.5 m/s², which does not match the provided key for option C (1.00 m/s²). Both the generator's answer and the key are incorrect based on the problem statement.","SYSTEM: You are a Grade 12 Physics teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 medium-level quantitative MCQ from: kinematics (uniform/accelerated/projectile), dynamics (Newton/incline), energy–impulse, or basic circuits (V–I–R).
+• Use SI units (use g = 9.8 m s^-2 if relevant); realistic numbers; round to 2 decimals.
+• Distractors: typical vector-component/sign mistakes, unit conversion errors, wrong effective forces.
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object.
+- Format:
+  [{""question"": ""..."", ""options"": [""..."",""..."",""..."",""...""], ""answer"": ""A"", ""solution"": ""...""}]
+- Fields:
+  * ""question"": one string.
+  * ""options"": array of 4 answer-choice strings.
+  * ""answer"": one of ""A"",""B"",""C"",""D"" (just the letter).
+  * ""solution"": short plain-text explanation (a few lines is fine).
+- No extra text before or after the JSON.
+- Do NOT use markdown, code fences, or LaTeX ($ or backslashes).
+USER: Topic: Physics. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: 2.0, 40, rough, 3, that, block, rest, seconds, 0.8, 0.3, upwards, 0.25, along, 0.5, 9.8, velocity, standing, angle, pulled, around, acceleration, 10, 2, car, accelerates, platform, rope, 15, 3.0, wrapped, 3.4, horizontal, fixed, coefficient, moving, with, ground, box, long, string, 1.2, projected, initially, surface, plane, constant, 7, pulley, placed, 5, speed, applied, 1.4, 12, 6, its, student, from, after, what, 30, 1.8, ramp, 1.5, inclined, 25, frictionless, 4.2, 27, mass, object, force, pushed, 2.5.
+- Do NOT print this list in the output."
+physics,llama,struktur1,11,8181,"A 5 kg object is placed on a frictionless incline that makes an angle of 20° with the horizontal. If the object is displaced by 8 m down the incline, what is its change in potential energy?",-32 J,-40 J,-56 J,-64 J,C,"The change in potential energy (ΔU) is given by ΔU = mgh. Since the object moves down the incline, h is negative. Plugging in the values, we get ΔU = 5 kg × 9.8 m/s^2 × (-0.8 m) = -56 J.","The change in gravitational potential energy is given by the formula ΔU = mgΔh, where Δh is the change in vertical height.
+The object is displaced by d = 8 m down an incline of θ = 20°.
+The vertical change in height is Δh = -d * sin(θ).
+Δh = -8 m * sin(20°) ≈ -8 m * 0.34202 ≈ -2.736 m.
+Using m = 5 kg and g = 9.8 m/s², the change in potential energy is:
+ΔU = (5 kg) * (9.8 m/s²) * (-2.736 m) ≈ -134.07 J.
+None of the provided options are correct. The question is flawed.",gemini:gemini-2.5-pro,34714,5,2,Incorrect,0,"Clarity: The question is well-defined, unambiguous, and provides all necessary data for a solution.
+Context Accuracy: The physical setup is standard, but the question is fundamentally flawed because none of the options correspond to the correct answer (~ -134 J) calculated from the given values.
+Quality of Working: The generator's solution is extremely poor. It invents an incorrect value for the vertical height change (h = -0.8 m) without any justification. Furthermore, its arithmetic is wrong: 5 * 9.8 * (-0.8) equals -39.2, not -56.
+Final Answer Accuracy: The generator's answer of -56 J is incorrect. The correct answer is approximately -134 J. The generator's answer matches the provided (and incorrect) key, but its own flawed calculation leads to a different value.","SYSTEM: You are a Grade 12 Physics teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 medium-level quantitative MCQ from: kinematics (uniform/accelerated/projectile), dynamics (Newton/incline), energy–impulse, or basic circuits (V–I–R).
+• Use SI units (use g = 9.8 m s^-2 if relevant); realistic numbers; round to 2 decimals.
+• Distractors: typical vector-component/sign mistakes, unit conversion errors, wrong effective forces.
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object.
+- Format:
+  [{""question"": ""..."", ""options"": [""..."",""..."",""..."",""...""], ""answer"": ""A"", ""solution"": ""...""}]
+- Fields:
+  * ""question"": one string.
+  * ""options"": array of 4 answer-choice strings.
+  * ""answer"": one of ""A"",""B"",""C"",""D"" (just the letter).
+  * ""solution"": short plain-text explanation (a few lines is fine).
+- No extra text before or after the JSON.
+- Do NOT use markdown, code fences, or LaTeX ($ or backslashes).
+USER: Topic: Physics. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: 2.0, 40, rough, 3, that, block, rest, seconds, 0.8, 0.3, upwards, 0.25, along, 0.5, 9.8, velocity, standing, angle, pulled, around, acceleration, 10, 2, car, accelerates, platform, rope, 15, 3.0, wrapped, 3.4, horizontal, fixed, coefficient, moving, with, ground, box, long, string, 1.2, projected, initially, surface, plane, constant, 7, pulley, placed, 5, speed, applied, 1.4, 12, 6, its, student, from, after, what, 30, 1.8, ramp, 1.5, inclined, 25, frictionless, 4.2, 27, mass, object, force, pushed, 2.5.
+- Do NOT print this list in the output."
+physics,llama,struktur1,13,8520,"A particle is thrown from a height of 16.0 m above the ground with an initial vertical velocity of 12.5 m/s. Assuming air resistance is negligible, how long does it take for the particle to hit the ground?",2.56 s,3.13 s,4.23 s,5.17 s,A,"Use the equation: t = sqrt(2h/g), where h is the initial height and g is the acceleration due to gravity (approximately 9.8 m/s^2). Plug in the values: t = sqrt(2*16.0/9.8) ≈ 2.56 s.","The problem is solved using the kinematic equation for vertical displacement: y(t) = y₀ + v₀t + (1/2)at². Let the upward direction be positive. The initial height y₀ = 16.0 m, initial velocity v₀ = +12.5 m/s, and acceleration a = -g = -9.8 m/s². The particle hits the ground when y(t) = 0.
+0 = 16.0 + 12.5t - 4.9t²
+This is a quadratic equation: 4.9t² - 12.5t - 16.0 = 0.
+Using the quadratic formula, t = [-b ± sqrt(b² - 4ac)] / (2a):
+t = [12.5 ± sqrt((-12.5)² - 4(4.9)(-16.0))] / (2 * 4.9)
+t = [12.5 ± sqrt(156.25 + 313.6)] / 9.8
+t = [12.5 ± sqrt(469.85)] / 9.8
+Since time must be positive, we take the positive root: t = (12.5 + 21.676) / 9.8 ≈ 3.49 s.
+None of the provided options are correct.",gemini:gemini-2.5-pro,34709,4.5,3,Incorrect,0,"Clarity: The question is clearly worded, but it would be slightly better to explicitly state the direction of the initial velocity (e.g., 'upwards'), though positive is the standard convention.
+Context Accuracy: The physical scenario is realistic. However, the question is critically flawed because none of the options, including the provided key, are correct for the given values. The correct answer is ~3.49 s.
+Quality of Working: The generator's reasoning is completely incorrect. It uses the formula for an object dropped from rest (v₀=0), ignoring the initial velocity given in the problem. Furthermore, its arithmetic is wrong; sqrt(2*16.0/9.8) is approximately 1.81, not 2.56.
+Final Answer Accuracy: The generator's answer of 2.56 s is incorrect. The correct answer to the question as stated is approximately 3.49 s. The generator's answer matches the incorrect key but does not solve the problem.","SYSTEM: You are a Grade 12 Physics teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 medium-level quantitative MCQ from: kinematics (uniform/accelerated/projectile), dynamics (Newton/incline), energy–impulse, or basic circuits (V–I–R).
+• Use SI units (use g = 9.8 m s^-2 if relevant); realistic numbers; round to 2 decimals.
+• Distractors: typical vector-component/sign mistakes, unit conversion errors, wrong effective forces.
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object.
+- Format:
+  [{""question"": ""..."", ""options"": [""..."",""..."",""..."",""...""], ""answer"": ""A"", ""solution"": ""...""}]
+- Fields:
+  * ""question"": one string.
+  * ""options"": array of 4 answer-choice strings.
+  * ""answer"": one of ""A"",""B"",""C"",""D"" (just the letter).
+  * ""solution"": short plain-text explanation (a few lines is fine).
+- No extra text before or after the JSON.
+- Do NOT use markdown, code fences, or LaTeX ($ or backslashes).
+USER: Topic: Physics. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: 20, 0.8, upwards, velocity, pulled, wrapped, coefficient, moving, with, constant, 7, placed, 1.4, from, 1.8, inclined, force, pushed, 40, 0.3, standing, rope, 3.0, 3.4, box, 1.2, surface, pulley, 5, student, what, 1.5, 27, 2.5, rough, 3, along, rest, seconds, 0.25, 0.5, 9.8, angle, car, accelerates, 15, horizontal, incline, ground, long, makes, initially, 8, 12, 6, its, after, 30, frictionless, 4.2, mass, 2.0, that, block, acceleration, around, 10, 2, platform, fixed, string, projected, plane, speed, applied, ramp, 25, object.
+- Do NOT print this list in the output."
+physics,llama,struktur1,14,69531,A car accelerates from rest to a speed of 9.00 m/s over a distance of 15.0 meters. What is its average acceleration?,A) 0.60 m/s^2,B) 0.67 m/s^2,C) 0.80 m/s^2,D) 1.00 m/s^2,B,"Using the equation a = Δv / Δt, we can find the average acceleration: a = (9.00 - 0.00) / (15.00) ≈ 0.67 m/s^2.","The problem provides initial velocity (v₀ = 0 m/s), final velocity (v = 9.00 m/s), and distance (Δx = 15.0 m). The goal is to find the average acceleration (a).
+The appropriate time-independent kinematic equation is v² = v₀² + 2aΔx.
+Rearranging the formula to solve for acceleration gives: a = (v² - v₀²) / (2Δx).
+Substituting the given values:
+a = ((9.00 m/s)² - (0 m/s)²) / (2 * 15.0 m)
+a = (81.0 m²/s²) / (30.0 m)
+a = 2.70 m/s².
+This correct answer is not among the options provided.",gemini:gemini-2.5-pro,19712,5,5,Incorrect,0,"Clarity: The question is perfectly clear, providing all necessary variables and stating the objective unambiguously.
+Context Accuracy: The values for speed, distance, and the resulting acceleration are physically realistic for a car.
+Quality of Working: The generator's solution is fundamentally flawed. It uses the formula a = Δv / Δt but incorrectly substitutes distance (15.0 m) for time (Δt). This is a major conceptual error. Furthermore, the arithmetic is wrong; (9.00 / 15.0) equals 0.60, not 0.67.
+Final Answer Accuracy: The generator's answer of 0.67 m/s^2 is incorrect. The correct answer, based on the provided data, is 2.70 m/s², which is not listed as an option. The question itself is flawed.","SYSTEM: You are a Grade 12 Physics teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 medium-level quantitative MCQ from: kinematics (uniform/accelerated/projectile), dynamics (Newton/incline), energy–impulse, or basic circuits (V–I–R).
+• Use SI units (use g = 9.8 m s^-2 if relevant); realistic numbers; round to 2 decimals.
+• Distractors: typical vector-component/sign mistakes, unit conversion errors, wrong effective forces.
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object.
+- Format:
+  [{""question"": ""..."", ""options"": [""..."",""..."",""..."",""...""], ""answer"": ""A"", ""solution"": ""...""}]
+- Fields:
+  * ""question"": one string.
+  * ""options"": array of 4 answer-choice strings.
+  * ""answer"": one of ""A"",""B"",""C"",""D"" (just the letter).
+  * ""solution"": short plain-text explanation (a few lines is fine).
+- No extra text before or after the JSON.
+- Do NOT use markdown, code fences, or LaTeX ($ or backslashes).
+USER: Topic: Physics. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: 20, 0.8, upwards, velocity, pulled, wrapped, coefficient, moving, with, constant, 7, placed, particle, initial, 1.4, from, 1.8, inclined, force, pushed, 40, 0.3, standing, rope, thrown, 3.0, 3.4, box, 1.2, 16.0, surface, pulley, 5, student, what, 1.5, 27, height, 2.5, rough, 3, along, rest, seconds, 0.25, above, 0.5, 9.8, angle, car, accelerates, 15, horizontal, incline, ground, long, makes, initially, 8, 12, 6, its, after, 30, frictionless, 4.2, mass, 2.0, that, block, acceleration, around, 10, 2, platform, 12.5, fixed, string, projected, plane, speed, applied, ramp, 25, object.
+- Do NOT print this list in the output."
+physics,llama,struktur1,15,113962,A block of mass 4.0 kg is released from rest at the top of a frictionless track that has a circular arc with a radius of 2.5 m. What is the acceleration of the block as it approaches the bottom of the track?,A) 1.6 m/s^2,B) 3.2 m/s^2,C) 4.0 m/s^2,D) 5.0 m/s^2,B,"As the block approaches the bottom of the track, it is under the influence of gravity only (since the track is frictionless). The acceleration due to gravity is given by g = 9.8 m/s^2, and since the block has a mass of 4.0 kg, its weight is mg = 39.2 N. Since the force acting on the block is purely downward, its acceleration is equal to g, which is approximately 3.2 m/s^2.","Using conservation of energy, the potential energy at the top (mgR) is converted to kinetic energy at the bottom (1/2 mv^2). This gives mgR = 1/2 mv^2, which simplifies to v^2 = 2gR. At the bottom of the circular path, the acceleration is purely centripetal, directed upwards towards the center of the circle. The magnitude of this acceleration is a = v^2 / R. Substituting the expression for v^2 gives a = (2gR) / R = 2g. Using g = 9.8 m/s^2, the acceleration is a = 2 * 9.8 m/s^2 = 19.6 m/s^2. None of the options are correct.",gemini:gemini-2.5-pro,41302,5,1,Incorrect,0,"Clarity: The question is well-phrased, unambiguous, and provides all necessary data for a standard physics problem.
+Context Accuracy: The physical scenario is realistic, but the question is critically flawed. The correct answer, 19.6 m/s^2, is not among the options, and the provided key is incorrect. This makes the question unsolvable as presented.
+Quality of Working: The generator's reasoning is completely wrong. It incorrectly states that gravity is the only force (ignoring the normal force), that the acceleration is g (it is 2g), and then invents a value for g (3.2 m/s^2) to match an option.
+Final Answer Accuracy: The generator's answer (3.2 m/s^2) is incorrect. The correct physical answer based on the problem statement is 19.6 m/s^2.","SYSTEM: You are a Grade 12 Physics teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 medium-level quantitative MCQ from: kinematics (uniform/accelerated/projectile), dynamics (Newton/incline), energy–impulse, or basic circuits (V–I–R).
+• Use SI units (use g = 9.8 m s^-2 if relevant); realistic numbers; round to 2 decimals.
+• Distractors: typical vector-component/sign mistakes, unit conversion errors, wrong effective forces.
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object.
+- Format:
+  [{""question"": ""..."", ""options"": [""..."",""..."",""..."",""...""], ""answer"": ""A"", ""solution"": ""...""}]
+- Fields:
+  * ""question"": one string.
+  * ""options"": array of 4 answer-choice strings.
+  * ""answer"": one of ""A"",""B"",""C"",""D"" (just the letter).
+  * ""solution"": short plain-text explanation (a few lines is fine).
+- No extra text before or after the JSON.
+- Do NOT use markdown, code fences, or LaTeX ($ or backslashes).
+USER: Topic: Physics. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: 20, 0.8, upwards, velocity, pulled, wrapped, coefficient, moving, with, meters, constant, 7, placed, particle, initial, 1.4, from, 1.8, inclined, force, pushed, 40, 0.3, standing, rope, thrown, 3.0, 3.4, box, 1.2, 16.0, surface, pulley, 5, student, what, 1.5, 15.0, 27, height, 2.5, rough, 3, along, rest, seconds, 0.25, above, 0.5, 9.8, angle, car, accelerates, 15, horizontal, incline, ground, long, makes, initially, 8, 12, 6, its, after, 30, frictionless, 4.2, mass, 2.0, that, block, acceleration, around, 10, 2, platform, over, 12.5, fixed, string, projected, plane, distance, speed, applied, 9.00, ramp, 25, object.
+- Do NOT print this list in the output."
+physics,llama,struktur1,16,71048,"A block accelerates down a frictionless ramp with an acceleration of 2.1 m/s². If it starts from rest at a distance of 12.5 cm from the bottom of the ramp, how long will it take to reach the bottom?",4.3 s,6.8 s,9.0 s,11.7 s,A,"The acceleration is given as 2.1 m/s². The initial velocity is 0, and the final position is at the bottom of the ramp (0 cm). We can use the equation a = Δv / Δt to find the time: 2.1 = Δv / Δt. Rearranging for Δt, we get Δt = Δv / 2.1. Since the initial velocity is 0, the final velocity will be vf = a * t = 2.1 * t. We can plug in the given distance and solve for t: 12.5 cm = (vf * t) + (0.5 * a * t²). Plugging in values and solving for t, we get approximately 4.3 s.","The problem is solved using a standard kinematic equation. First, convert the distance to meters: Δx = 12.5 cm = 0.125 m. The given values are initial velocity v₀ = 0 m/s (starts from rest) and acceleration a = 2.1 m/s². Use the equation Δx = v₀t + (1/2)at². Substituting the values: 0.125 = (0)t + 0.5 * (2.1) * t². This simplifies to 0.125 = 1.05 * t². Solving for t, we get t² = 0.125 / 1.05 ≈ 0.119. Therefore, t = √0.119 ≈ 0.345 s. None of the provided options are correct.",gemini:gemini-2.5-pro,28598,4.5,4,Incorrect,0,"Clarity: The question is clearly worded and provides all necessary data. However, the provided options are all incorrect, which significantly detracts from the question's quality.
+Context Accuracy: The physical scenario (block on a ramp) and the given values for acceleration and distance are plausible. The issue is the inconsistency between the problem data and the answer choices.
+Quality of Working: The generator's reasoning is deeply flawed. It uses a fundamentally incorrect kinematic equation, fails to address the unit mismatch between cm and m/s², and does not show how it arrived at the final answer, which does not follow from its own incorrect formula.
+Final Answer Accuracy: The correct answer is approximately 0.345 s. The generator's answer of 4.3 s matches the provided (incorrect) key, but is wrong.","SYSTEM: You are a Grade 12 Physics teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 medium-level quantitative MCQ from: kinematics (uniform/accelerated/projectile), dynamics (Newton/incline), energy–impulse, or basic circuits (V–I–R).
+• Use SI units (use g = 9.8 m s^-2 if relevant); realistic numbers; round to 2 decimals.
+• Distractors: typical vector-component/sign mistakes, unit conversion errors, wrong effective forces.
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object.
+- Format:
+  [{""question"": ""..."", ""options"": [""..."",""..."",""..."",""...""], ""answer"": ""A"", ""solution"": ""...""}]
+- Fields:
+  * ""question"": one string.
+  * ""options"": array of 4 answer-choice strings.
+  * ""answer"": one of ""A"",""B"",""C"",""D"" (just the letter).
+  * ""solution"": short plain-text explanation (a few lines is fine).
+- No extra text before or after the JSON.
+- Do NOT use markdown, code fences, or LaTeX ($ or backslashes).
+USER: Topic: Physics. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: 20, 0.8, upwards, velocity, pulled, wrapped, coefficient, moving, with, meters, constant, 7, placed, particle, initial, 1.4, from, 1.8, inclined, top, force, pushed, 40, 0.3, standing, rope, thrown, 3.0, 3.4, box, 1.2, 16.0, surface, released, pulley, 5, student, what, 1.5, 15.0, 27, height, 2.5, rough, 3, along, rest, seconds, 0.25, above, 0.5, 9.8, angle, car, accelerates, 15, horizontal, incline, ground, 4.0, long, makes, initially, 8, 12, 6, its, after, 30, frictionless, 4.2, mass, 2.0, that, block, acceleration, around, 10, 2, platform, over, 12.5, fixed, string, projected, plane, distance, speed, applied, 9.00, ramp, 25, track, object.
+- Do NOT print this list in the output."
+physics,llama,struktur1,17,102901,"A block of mass 4.2 kg is released from rest on a rough inclined plane with an angle of 24° to the horizontal. If it accelerates down the plane at 1.9 m/s², what is the magnitude of the effective force acting on the block? (Assume g = 9.8 m/s².)",A) 5.3 N,B) 10.6 N,C) 17.2 N,D) 21.4 N,C,"The effective force acting on the block is the component of its weight parallel to the inclined plane, which can be calculated using trigonometry: F = mg sin(24°). Plugging in the given values, we get F ≈ 17.2 N.","The term 'effective force' is ambiguous. It could mean the net force causing acceleration, or the component of gravity pulling the block down the incline.
+1. Net Force: F_net = m * a = 4.2 kg * 1.9 m/s² = 7.98 N. This is not among the options.
+2. Gravitational Component: F_g_parallel = m * g * sin(θ) = 4.2 kg * 9.8 m/s² * sin(24°) = 16.74 N.
+This value is closest to option C. The question likely intended to ask for the gravitational component, making the acceleration data a red herring. However, the value in option C (17.2 N) is arithmetically incorrect.",gemini:gemini-2.5-pro,30860,1.5,3,Correct,1,"Clarity: The term 'effective force' is non-standard and ambiguous. The presence of the acceleration value is confusing and acts as a red herring for the intended solution path, which relies only on the gravitational component.
+Context Accuracy: The physical scenario is realistic. However, the numerical value provided in the correct option (C) is inconsistent with the data given in the question. The calculated value for mg*sin(24) is 16.74 N, not 17.2 N.
+Quality of Working: The generator's solution identifies the intended formula but performs the calculation incorrectly, simply asserting that the result is 17.2 N when it is actually 16.74 N. It also fails to acknowledge or explain why the acceleration data is ignored.
+Final Answer Accuracy: The generator's answer matches the provided key (C). However, it should be noted that the key itself is based on a flawed premise and an incorrect calculation.","SYSTEM: You are a Grade 12 Physics teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 medium-level quantitative MCQ from: kinematics (uniform/accelerated/projectile), dynamics (Newton/incline), energy–impulse, or basic circuits (V–I–R).
+• Use SI units (use g = 9.8 m s^-2 if relevant); realistic numbers; round to 2 decimals.
+• Distractors: typical vector-component/sign mistakes, unit conversion errors, wrong effective forces.
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object.
+- Format:
+  [{""question"": ""..."", ""options"": [""..."",""..."",""..."",""...""], ""answer"": ""A"", ""solution"": ""...""}]
+- Fields:
+  * ""question"": one string.
+  * ""options"": array of 4 answer-choice strings.
+  * ""answer"": one of ""A"",""B"",""C"",""D"" (just the letter).
+  * ""solution"": short plain-text explanation (a few lines is fine).
+- No extra text before or after the JSON.
+- Do NOT use markdown, code fences, or LaTeX ($ or backslashes).
+USER: Topic: Physics. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: 20, 0.8, upwards, velocity, pulled, wrapped, coefficient, moving, with, 2.1, meters, constant, 7, placed, particle, initial, 1.4, from, 1.8, starts, inclined, top, force, pushed, 40, 0.3, standing, rope, thrown, 3.0, 3.4, box, 1.2, 16.0, surface, released, pulley, 5, student, what, 1.5, 15.0, 27, height, 2.5, rough, 3, along, rest, seconds, 0.25, above, 0.5, 9.8, angle, car, accelerates, 15, horizontal, incline, ground, 4.0, long, makes, initially, 8, 12, 6, its, after, 30, frictionless, 4.2, mass, 2.0, that, block, acceleration, around, 10, 2, platform, over, 12.5, fixed, string, projected, plane, distance, speed, applied, 9.00, ramp, 25, down, track, object.
+- Do NOT print this list in the output."
+physics,llama,struktur1,18,217858,A block of mass 4.0 kg is released from rest at the top of a frictionless inclined plane with an angle of 30 degrees relative to the horizontal. What is its acceleration down the plane?,0.5 m s^-2,1.3 m s^-2,4.8 m s^-2,9.8 m s^-2,A,"The block accelerates due to gravity, and the acceleration is given by g * sin(30°) = 4.9 m/s². Since it's a frictionless surface, this is also the net acceleration.","The acceleration of an object on a frictionless inclined plane is determined by the component of gravity acting parallel to the plane's surface.
+The force parallel to the incline is F_parallel = mg * sin(θ).
+According to Newton's second law, F = ma.
+Setting these equal gives ma = mg * sin(θ).
+The mass 'm' cancels out, so the acceleration 'a' is independent of mass: a = g * sin(θ).
+Given g ≈ 9.8 m/s² and θ = 30°:
+a = 9.8 m/s² * sin(30°) = 9.8 m/s² * 0.5 = 4.9 m/s².",gemini:gemini-2.5-pro,18817,5,5,Correct,5,"Clarity: The question is perfectly clear, providing all necessary information for a standard physics problem. The inclusion of mass is a common distractor that tests conceptual understanding.
+Context Accuracy: The scenario is a classic, realistic problem in introductory mechanics. The values for mass and angle are reasonable.
+Quality of Working: The generator's solution is excellent. It correctly identifies the relevant formula (a = g * sin(θ)) and executes the calculation perfectly to arrive at the correct physical answer.
+Final Answer Accuracy: The generator's calculated answer of 4.9 m/s² is correct. It should be noted that the MCQ itself is flawed, as this correct answer is not an option and the provided key ('A') is incorrect. The closest option is C (4.8 m/s²).","SYSTEM: You are a Grade 12 Physics teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 medium-level quantitative MCQ from: kinematics (uniform/accelerated/projectile), dynamics (Newton/incline), energy–impulse, or basic circuits (V–I–R).
+• Use SI units (use g = 9.8 m s^-2 if relevant); realistic numbers; round to 2 decimals.
+• Distractors: typical vector-component/sign mistakes, unit conversion errors, wrong effective forces.
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object.
+- Format:
+  [{""question"": ""..."", ""options"": [""..."",""..."",""..."",""...""], ""answer"": ""A"", ""solution"": ""...""}]
+- Fields:
+  * ""question"": one string.
+  * ""options"": array of 4 answer-choice strings.
+  * ""answer"": one of ""A"",""B"",""C"",""D"" (just the letter).
+  * ""solution"": short plain-text explanation (a few lines is fine).
+- No extra text before or after the JSON.
+- Do NOT use markdown, code fences, or LaTeX ($ or backslashes).
+USER: Topic: Physics. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: 20, 0.8, upwards, 24, velocity, pulled, wrapped, coefficient, moving, with, 2.1, meters, constant, 7, placed, particle, initial, 1.4, from, 1.8, starts, inclined, top, force, pushed, 40, 0.3, standing, rope, thrown, 3.0, 3.4, box, 1.2, 16.0, surface, released, pulley, 5, student, what, 1.5, 15.0, 27, height, 2.5, rough, 3, along, rest, seconds, 0.25, above, 0.5, 9.8, angle, car, accelerates, 15, horizontal, incline, ground, 4.0, long, makes, initially, 8, 12, 6, its, after, 30, frictionless, 4.2, mass, 2.0, that, block, acceleration, around, 10, 2, platform, over, 12.5, fixed, 1.9, string, projected, plane, distance, speed, applied, 9.00, ramp, 25, down, track, object.
+- Do NOT print this list in the output."
+physics,llama,struktur1,19,85027,"A block of mass 3.0 kg is released from rest at the top of a frictionless inclined plane that makes an angle of 30° with respect to the horizontal. If the block accelerates down the plane, what is its acceleration?",4.2 m s^-2,9.8 m s^-2,1.9 m s^-2,6.0 m s^-2,A,The block accelerates down the plane due to the component of gravity parallel to the inclined plane. The acceleration is given by a = g sin(θ) = 9.8 m/s^2 * sin(30°) = 4.2 m/s^2.,"The acceleration of an object on a frictionless inclined plane is determined by the component of gravity parallel to the plane's surface. The force of gravity is Fg = mg. The component parallel to the incline is F_parallel = mg * sin(θ). According to Newton's second law, F_net = ma. Since there is no friction, F_net = F_parallel. Therefore, ma = mg * sin(θ). The mass (m) cancels out, leaving a = g * sin(θ). Using g = 9.8 m/s² and θ = 30°, the calculation is: a = 9.8 m/s² * sin(30°) = 9.8 m/s² * 0.5 = 4.9 m/s².",gemini:gemini-2.5-pro,21471,5,2,Incorrect,1,"Clarity: The question is well-worded, unambiguous, and provides all necessary information. The inclusion of mass is a standard way to test conceptual understanding.
+Context Accuracy: The physical setup is a standard and realistic introductory physics problem. However, the question is fundamentally flawed because the correct answer (4.9 m/s²) is not available in the options.
+Quality of Working: The generator correctly identifies the governing equation (a = g sin(θ)) but makes a significant arithmetic error, calculating 9.8 * 0.5 as 4.2 instead of the correct 4.9.
+Final Answer Accuracy: The generator's answer is 4.2 m/s², which is incorrect. The correct acceleration based on the provided data is 4.9 m/s².","SYSTEM: You are a Grade 12 Physics teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 medium-level quantitative MCQ from: kinematics (uniform/accelerated/projectile), dynamics (Newton/incline), energy–impulse, or basic circuits (V–I–R).
+• Use SI units (use g = 9.8 m s^-2 if relevant); realistic numbers; round to 2 decimals.
+• Distractors: typical vector-component/sign mistakes, unit conversion errors, wrong effective forces.
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object.
+- Format:
+  [{""question"": ""..."", ""options"": [""..."",""..."",""..."",""...""], ""answer"": ""A"", ""solution"": ""...""}]
+- Fields:
+  * ""question"": one string.
+  * ""options"": array of 4 answer-choice strings.
+  * ""answer"": one of ""A"",""B"",""C"",""D"" (just the letter).
+  * ""solution"": short plain-text explanation (a few lines is fine).
+- No extra text before or after the JSON.
+- Do NOT use markdown, code fences, or LaTeX ($ or backslashes).
+USER: Topic: Physics. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: 20, 0.8, upwards, 24, velocity, pulled, wrapped, coefficient, moving, with, 2.1, meters, constant, 7, placed, particle, initial, 1.4, from, 1.8, starts, inclined, top, force, pushed, 40, 0.3, standing, rope, thrown, 3.0, 3.4, box, 1.2, 16.0, surface, released, pulley, 5, student, what, 1.5, 15.0, 27, height, 2.5, rough, 3, along, rest, seconds, 0.25, above, 0.5, 9.8, angle, car, accelerates, 15, horizontal, incline, ground, 4.0, long, makes, initially, 8, 12, 6, its, after, 30, frictionless, 4.2, mass, 2.0, that, block, acceleration, around, 10, 2, platform, over, 12.5, fixed, 1.9, string, projected, plane, distance, speed, applied, 9.00, ramp, 25, down, track, object.
+- Do NOT print this list in the output."
+physics,llama,struktur1,20,102456,A block of mass 3.0 kg is released from rest at a height of 4.5 m above a frictionless table. What is its speed when it hits the table?,1.2 m/s,3.6 m/s,9.8 m/s,12.5 m/s,A,"Using conservation of energy, we know that the potential energy at the top is converted to kinetic energy as it falls. The initial potential energy is 3.0 kg * 9.8 m/s^2 * 4.5 m = 131.4 J. As it hits the table, this energy becomes kinetic energy. We can set up an equation: 1/2 * 3.0 kg * v^2 = 131.4 J. Solving for v, we get approximately 3.6 m/s.","This problem can be solved using the principle of conservation of mechanical energy. The initial potential energy (PE) of the block is converted into kinetic energy (KE) as it falls.
+PE_initial = m*g*h
+KE_final = (1/2)*m*v^2
+Setting PE_initial = KE_final gives: m*g*h = (1/2)*m*v^2.
+The mass (m) cancels out, so the equation simplifies to v = sqrt(2*g*h).
+Plugging in the values: v = sqrt(2 * 9.8 m/s^2 * 4.5 m).
+v = sqrt(88.2) m/s.
+v ≈ 9.39 m/s.
+None of the options are correct. The closest option is 9.8 m/s.",gemini:gemini-2.5-pro,31356,5,3,Incorrect,1,"Clarity: The question is clearly worded, uses standard terminology, and provides all necessary information for solving the problem.
+Context Accuracy: The physical scenario is standard and realistic. However, the question is fundamentally flawed because none of the multiple-choice options are correct. The calculated answer is ~9.4 m/s.
+Quality of Working: The generator correctly identifies the principle of conservation of energy. However, it makes an arithmetic error when calculating the potential energy. It then makes a second, inexplicable error, stating a final answer (3.6 m/s) that does not follow from its own (already flawed) calculation.
+Final Answer Accuracy: The generator's answer of 3.6 m/s is incorrect. The correct speed is approximately 9.4 m/s. The generator's answer also does not match the provided key (A).","SYSTEM: You are a Grade 12 Physics teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 medium-level quantitative MCQ from: kinematics (uniform/accelerated/projectile), dynamics (Newton/incline), energy–impulse, or basic circuits (V–I–R).
+• Use SI units (use g = 9.8 m s^-2 if relevant); realistic numbers; round to 2 decimals.
+• Distractors: typical vector-component/sign mistakes, unit conversion errors, wrong effective forces.
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object.
+- Format:
+  [{""question"": ""..."", ""options"": [""..."",""..."",""..."",""...""], ""answer"": ""A"", ""solution"": ""...""}]
+- Fields:
+  * ""question"": one string.
+  * ""options"": array of 4 answer-choice strings.
+  * ""answer"": one of ""A"",""B"",""C"",""D"" (just the letter).
+  * ""solution"": short plain-text explanation (a few lines is fine).
+- No extra text before or after the JSON.
+- Do NOT use markdown, code fences, or LaTeX ($ or backslashes).
+USER: Topic: Physics. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: 20, 0.8, upwards, 24, velocity, pulled, wrapped, coefficient, moving, with, 2.1, meters, constant, 7, placed, particle, initial, 1.4, from, 1.8, starts, inclined, top, force, pushed, 40, 0.3, standing, rope, thrown, 3.0, 3.4, box, 1.2, 16.0, surface, released, pulley, 5, student, what, 1.5, 15.0, 27, height, 2.5, rough, 3, along, rest, seconds, 0.25, above, 0.5, 9.8, angle, car, accelerates, 15, horizontal, incline, ground, 4.0, long, makes, initially, 8, 12, 6, its, after, 30, frictionless, 4.2, mass, 2.0, that, block, acceleration, around, 10, 2, platform, over, 12.5, fixed, 1.9, string, projected, plane, distance, speed, applied, 9.00, ramp, 25, down, track, object.
+- Do NOT print this list in the output."
+physics,llama,struktur1,21,93210,A block of mass 3.0 kg is released from rest at the top of a frictionless inclined plane that makes an angle of 30° with the horizontal. What is the acceleration of the block down the ramp?,1.5 m/s^2,3.0 m/s^2,4.5 m/s^2,6.0 m/s^2,A,"The acceleration of the block is given by a = g sin θ, where g = 9.8 m/s^2 and θ = 30°. Plugging in these values gives a = 4.9 m/s^2.","The net force on the block along the inclined plane is the component of gravity parallel to the surface, F_net = mg sin(θ). According to Newton's second law, F_net = ma. Therefore, ma = mg sin(θ). The mass 'm' cancels out, leaving the acceleration as a = g sin(θ). Using the standard value for g ≈ 9.8 m/s^2 and the given angle θ = 30°, the acceleration is a = 9.8 m/s^2 * sin(30°). Since sin(30°) = 0.5, the acceleration is a = 9.8 * 0.5 = 4.9 m/s^2.",gemini:gemini-2.5-pro,26393,5,1,Incorrect,5,"Clarity: The question is clearly worded, providing all necessary information for a standard physics problem.
+Context Accuracy: The question is fundamentally flawed. The physically correct answer (4.9 m/s^2) is not among the options. The provided key 'A' (1.5 m/s^2) appears to be derived from the nonsensical calculation m*sin(θ), which is dimensionally and conceptually incorrect.
+Quality of Working: The generator's solution provides the correct formula (a = g sin θ) and performs the calculation accurately using the standard value for g. The reasoning is perfectly sound.
+Final Answer Accuracy: The generator's calculated answer of 4.9 m/s^2 is physically correct. However, it does not match the value corresponding to the provided key 'A' (1.5 m/s^2). Therefore, the generator's answer is incorrect with respect to the flawed question's key.","SYSTEM: You are a Grade 12 Physics teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 medium-level quantitative MCQ from: kinematics (uniform/accelerated/projectile), dynamics (Newton/incline), energy–impulse, or basic circuits (V–I–R).
+• Use SI units (use g = 9.8 m s^-2 if relevant); realistic numbers; round to 2 decimals.
+• Distractors: typical vector-component/sign mistakes, unit conversion errors, wrong effective forces.
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object.
+- Format:
+  [{""question"": ""..."", ""options"": [""..."",""..."",""..."",""...""], ""answer"": ""A"", ""solution"": ""...""}]
+- Fields:
+  * ""question"": one string.
+  * ""options"": array of 4 answer-choice strings.
+  * ""answer"": one of ""A"",""B"",""C"",""D"" (just the letter).
+  * ""solution"": short plain-text explanation (a few lines is fine).
+- No extra text before or after the JSON.
+- Do NOT use markdown, code fences, or LaTeX ($ or backslashes).
+USER: Topic: Physics. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: 4.5, 20, 0.8, upwards, 24, velocity, pulled, wrapped, coefficient, moving, with, 2.1, meters, constant, 7, placed, particle, initial, 1.4, from, 1.8, starts, inclined, top, force, pushed, 40, 0.3, standing, rope, thrown, 3.0, 3.4, box, 1.2, 16.0, surface, released, pulley, 5, student, what, 1.5, 15.0, 27, height, 2.5, rough, 3, along, rest, seconds, 0.25, above, 0.5, 9.8, angle, car, accelerates, 15, horizontal, incline, ground, 4.0, long, makes, initially, 8, 12, 6, its, after, 30, frictionless, 4.2, mass, 2.0, that, block, acceleration, around, 10, 2, platform, over, 12.5, fixed, 1.9, string, projected, plane, distance, speed, applied, 9.00, ramp, 25, down, track, object.
+- Do NOT print this list in the output."
+physics,llama,struktur1,22,11080,"A block of mass 6.0 kg is projected up an inclined plane with an angle of elevation 30°. If the acceleration due to gravity is 9.8 m s^-2 and the block accelerates down the plane at a rate of -3.5 m s^-2, what is the magnitude of the normal force exerted by the plane on the block?",A) 17.4 N,B) 18.1 N,C) 19.8 N,D) 21.6 N,C,"The normal force is given by F_N = mg sin(θ) - m a, where g is the acceleration due to gravity and a is the acceleration down the plane. Plugging in the values, we get F_N = (6.0 kg)(9.8 m s^-2)sin(30°) - (6.0 kg)(-3.5 m s^-2) ≈ 19.8 N.","The normal force (F_N) is the force exerted by the plane on the block, perpendicular to the surface of the plane. To find it, we analyze the forces perpendicular to the incline.
+The component of gravity perpendicular to the plane is given by F_g_perp = mg cos(θ).
+Since the block is not accelerating in the direction perpendicular to the plane (i.e., it's not lifting off or sinking into the plane), the net force in this direction is zero.
+Therefore, the normal force must balance the perpendicular component of gravity: F_N = mg cos(θ).
+Plugging in the values: F_N = (6.0 kg) * (9.8 m/s^2) * cos(30°).
+F_N = 58.8 N * (√3 / 2) ≈ 50.9 N.
+The information about the acceleration along the plane is irrelevant for calculating the normal force. The correct answer is not among the options.",gemini:gemini-2.5-pro,35011,2,1,Correct,0,"Clarity: The question is poorly posed. The phrasing 'accelerates down the plane at a rate of -3.5 m s^-2' is ambiguous. More significantly, it provides extraneous information (the acceleration) which, combined with the incorrect options, makes the question highly misleading.
+Context Accuracy: The physical setup is standard, but the question is fundamentally flawed because the correct physical answer (approx. 50.9 N) is not among the options. This indicates an error in the question's construction.
+Quality of Working: The generator's reasoning is completely incorrect. It uses a physically nonsensical formula, F_N = mg sin(θ) - m a, which incorrectly mixes force components parallel to the plane with the normal force. Furthermore, the arithmetic is wrong; the values in its formula compute to 50.4 N, not the 19.8 N it claims.
+Final Answer Accuracy: Despite the profoundly flawed reasoning and incorrect arithmetic, the generator's stated final answer matches the provided key (C).","SYSTEM: You are a Grade 12 Physics teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 medium-level quantitative MCQ from: kinematics (uniform/accelerated/projectile), dynamics (Newton/incline), energy–impulse, or basic circuits (V–I–R).
+• Use SI units (use g = 9.8 m s^-2 if relevant); realistic numbers; round to 2 decimals.
+• Distractors: typical vector-component/sign mistakes, unit conversion errors, wrong effective forces.
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object.
+- Format:
+  [{""question"": ""..."", ""options"": [""..."",""..."",""..."",""...""], ""answer"": ""A"", ""solution"": ""...""}]
+- Fields:
+  * ""question"": one string.
+  * ""options"": array of 4 answer-choice strings.
+  * ""answer"": one of ""A"",""B"",""C"",""D"" (just the letter).
+  * ""solution"": short plain-text explanation (a few lines is fine).
+- No extra text before or after the JSON.
+- Do NOT use markdown, code fences, or LaTeX ($ or backslashes).
+USER: Topic: Physics. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: 4.5, 20, 0.8, upwards, 24, velocity, pulled, wrapped, coefficient, moving, with, 2.1, meters, constant, 7, placed, particle, initial, 1.4, from, 1.8, starts, inclined, top, force, pushed, 40, 0.3, standing, rope, thrown, 3.0, 3.4, box, 1.2, 16.0, surface, released, pulley, 5, student, what, 1.5, 15.0, 27, height, 2.5, rough, 3, along, rest, seconds, 0.25, above, 0.5, 9.8, angle, car, accelerates, 15, horizontal, incline, ground, 4.0, long, makes, initially, 8, 12, 6, its, after, 30, frictionless, 4.2, mass, 2.0, that, block, acceleration, around, 10, 2, platform, over, 12.5, fixed, 1.9, string, projected, plane, distance, speed, applied, 9.00, ramp, 25, down, track, object.
+- Do NOT print this list in the output."
+physics,llama,struktur1,23,11394,"A block of mass 2.0 kg is released from rest at the top of a frictionless inclined plane with an angle of 30° to the horizontal. At the instant it starts rolling down the ramp, its speed is measured to be 4.00 m/s. What is its acceleration as it rolls down the ramp?",A) 2.44 m/s^2,B) 3.16 m/s^2,C) 1.22 m/s^2,D) 9.80 m/s^2,A,"The acceleration down the ramp is given by a = g sin(30°). Plugging in the values, we get a = (9.8 m/s^2) * (0.5) = 4.90 m/s^2. Since this is a frictionless surface, the block's kinetic energy will not be converted to potential energy, so its acceleration remains constant at approximately 4.90 m/s^2.","The question contains multiple contradictions (frictionless vs. rolling; released from rest vs. initial speed of 4.00 m/s). To arrive at one of the options, one must assume 'rolling' implies rolling without slipping, and that the 'block' has the properties of a hollow cylinder/hoop (moment of inertia I = mr^2). The initial speed is irrelevant for constant acceleration.
+Net force down the incline: F_net = mg*sin(θ) - f_s = ma
+Torque from static friction (f_s): τ = f_s*r = Iα
+For a hoop, I=mr^2. For rolling without slipping, a = αr.
+So, f_s*r = (mr^2)(a/r)  => f_s = ma.
+Substitute f_s into the force equation: mg*sin(θ) - ma = ma
+mg*sin(θ) = 2ma
+a = g*sin(θ) / 2 = (9.8 m/s^2 * 0.5) / 2 = 2.45 m/s^2.
+This value is approximately equal to option A.",gemini:gemini-2.5-pro,31310,1,0.5,Incorrect,1,"Clarity: The question is deeply flawed and contradictory. It states the block is 'released from rest' but has an initial speed of 4.00 m/s. It says the plane is 'frictionless' but the block is 'rolling', which requires friction. The shape of the 'block' is not specified, which is essential for a rolling problem.
+Context Accuracy: The physical scenario is impossible. An object cannot roll down a frictionless incline because there is no force to provide the torque required for angular acceleration. This is a fundamental conceptual error in the problem's premise.
+Quality of Working: The generator's solution is for a sliding block, completely ignoring the term 'rolling' in the question. The reasoning provided ('kinetic energy will not be converted to potential energy') is nonsensical. The calculated value of 4.90 m/s^2 does not match any of the options.
+Final Answer Accuracy: The generator's calculated answer is 4.90 m/s^2, while the provided key is A (2.44 m/s^2). The generator's answer is incorrect.","SYSTEM: You are a Grade 12 Physics teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 medium-level quantitative MCQ from: kinematics (uniform/accelerated/projectile), dynamics (Newton/incline), energy–impulse, or basic circuits (V–I–R).
+• Use SI units (use g = 9.8 m s^-2 if relevant); realistic numbers; round to 2 decimals.
+• Distractors: typical vector-component/sign mistakes, unit conversion errors, wrong effective forces.
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object.
+- Format:
+  [{""question"": ""..."", ""options"": [""..."",""..."",""..."",""...""], ""answer"": ""A"", ""solution"": ""...""}]
+- Fields:
+  * ""question"": one string.
+  * ""options"": array of 4 answer-choice strings.
+  * ""answer"": one of ""A"",""B"",""C"",""D"" (just the letter).
+  * ""solution"": short plain-text explanation (a few lines is fine).
+- No extra text before or after the JSON.
+- Do NOT use markdown, code fences, or LaTeX ($ or backslashes).
+USER: Topic: Physics. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: 4.5, 20, 0.8, upwards, 24, 3.5, velocity, pulled, wrapped, coefficient, moving, with, 2.1, meters, constant, 7, placed, particle, initial, 1.4, from, 1.8, starts, inclined, top, force, pushed, 40, 0.3, standing, rope, thrown, 3.0, 3.4, box, 1.2, 16.0, surface, released, pulley, 5, student, what, 6.0, 1.5, 15.0, 27, height, 2.5, rough, 3, along, rest, seconds, 0.25, above, 0.5, 9.8, angle, car, accelerates, 15, horizontal, incline, ground, 4.0, long, makes, initially, 8, 12, 6, its, after, 30, frictionless, 4.2, mass, 2.0, that, block, acceleration, around, 10, 2, platform, over, 12.5, fixed, 1.9, string, projected, plane, distance, speed, applied, 9.00, ramp, 25, down, track, object.
+- Do NOT print this list in the output."
+physics,llama,struktur1,24,12723,"A block of mass 2.0 kg is released from rest at the top of a frictionless inclined plane with an angle of 30 degrees. If it accelerates downwards at 4.00 m/s², what is its acceleration when it reaches the bottom of the plane?",1.5 m/s²,3.0 m/s²,2.0 m/s²,6.0 m/s²,C,"Since there's no friction, only gravity is acting on the block. The acceleration due to gravity is 9.8 m/s². Since the plane has an angle of 30 degrees, the effective force due to gravity is reduced by a factor of cos(30°) = 0.866. Therefore, the acceleration at the bottom of the plane is (9.8 m/s²) * 0.866 = 8.52 m/s². Since the block accelerates downwards, its acceleration when it reaches the bottom is -8.52 m/s². However, since we're asked for the magnitude, the correct answer is |8.52| = 8.52 m/s².","The acceleration of an object on a uniform, frictionless inclined plane is constant. The question states that the block accelerates at 4.00 m/s². Therefore, its acceleration at the bottom of the plane must also be 4.00 m/s². However, this value is not among the options. The question is also physically inconsistent, as a frictionless 30-degree plane should result in an acceleration of g*sin(30°) ≈ 4.9 m/s². The question is fundamentally flawed and unanswerable as written.",gemini:gemini-2.5-pro,36122,0.5,1,Incorrect,0,"Clarity: The question is contradictory. It gives physical parameters (frictionless, 30°) that imply a=4.9 m/s², but then states a=4.00 m/s². The logical answer based on the premise (4.00 m/s²) is not an option, making the question unsolvable.
+Context Accuracy: The combination of a frictionless 30-degree plane and an acceleration of 4.00 m/s² is physically impossible on Earth. The acceleration should be g*sin(30°) = 4.9 m/s².
+Quality of Working: The generator's solution is completely wrong. It incorrectly uses cos(30°) instead of sin(30°) to calculate acceleration. It also ignores the given acceleration value of 4.00 m/s² from the problem statement.
+Final Answer Accuracy: The generator's calculated answer of 8.52 m/s² is incorrect. It does not match the provided key (C, 2.0 m/s²) or any logical answer derived from the question's premises.","SYSTEM: You are a Grade 12 Physics teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 medium-level quantitative MCQ from: kinematics (uniform/accelerated/projectile), dynamics (Newton/incline), energy–impulse, or basic circuits (V–I–R).
+• Use SI units (use g = 9.8 m s^-2 if relevant); realistic numbers; round to 2 decimals.
+• Distractors: typical vector-component/sign mistakes, unit conversion errors, wrong effective forces.
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object.
+- Format:
+  [{""question"": ""..."", ""options"": [""..."",""..."",""..."",""...""], ""answer"": ""A"", ""solution"": ""...""}]
+- Fields:
+  * ""question"": one string.
+  * ""options"": array of 4 answer-choice strings.
+  * ""answer"": one of ""A"",""B"",""C"",""D"" (just the letter).
+  * ""solution"": short plain-text explanation (a few lines is fine).
+- No extra text before or after the JSON.
+- Do NOT use markdown, code fences, or LaTeX ($ or backslashes).
+USER: Topic: Physics. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: 4.5, 20, 0.8, upwards, 24, 3.5, velocity, pulled, wrapped, coefficient, moving, with, 2.1, 4.00, meters, constant, 7, placed, particle, initial, 1.4, from, 1.8, starts, inclined, top, force, pushed, 40, 0.3, standing, rope, thrown, 3.0, 3.4, box, 1.2, 16.0, surface, released, pulley, 5, student, what, 6.0, 1.5, 15.0, 27, height, 2.5, rough, 3, along, rest, seconds, 0.25, above, 0.5, 9.8, angle, car, accelerates, 15, horizontal, incline, ground, 4.0, long, makes, initially, 8, 12, 6, its, after, 30, frictionless, 4.2, mass, 2.0, that, block, acceleration, around, 10, 2, platform, over, 12.5, fixed, 1.9, string, projected, plane, distance, speed, applied, 9.00, ramp, 25, down, track, object.
+- Do NOT print this list in the output."
+physics,llama,struktur1,25,12038,"A block is released from rest at the top of a frictionless inclined plane with an angle of 30°. If it takes 2.0 seconds to reach the bottom, what is its acceleration down the ramp?",1.5 m/s^2,3.0 m/s^2,4.5 m/s^2,6.0 m/s^2,A,"Use the equation a = g sin(θ) to find the acceleration down the ramp, where θ is the angle of the inclined plane. Plug in the values: a = 9.8 m/s^2 * sin(30°) = 4.9 m/s^2. Since it takes 2.0 seconds to reach the bottom, we can use the equation s = (1/2)at^2 to find the acceleration. Rearrange to solve for a: a = 2s/t^2. Plug in the values: a = 2 * 9.8 m/s^2 / (2.0 s)^2 = 4.9 m/s^2.","The acceleration of an object on a frictionless inclined plane is determined by the component of gravity acting parallel to the plane. This is given by the formula a = g * sin(θ), where g is the acceleration due to gravity and θ is the angle of inclination.
+Given g ≈ 9.8 m/s² and θ = 30°.
+The sine of 30° is 0.5.
+So, a = 9.8 m/s² * sin(30°) = 9.8 m/s² * 0.5 = 4.9 m/s².
+The time given (2.0 seconds) is extraneous information and is not needed to find the acceleration. The correct acceleration is 4.9 m/s², which is not among the options.",gemini:gemini-2.5-pro,25084,2.5,1,Incorrect,1,"Clarity: The question is clearly worded, but it includes extraneous information (time = 2.0s) which is confusing, especially since the physically correct answer is not an option. This makes the intended solution path ambiguous.
+Context Accuracy: The physical scenario is standard, but the question is fundamentally flawed. The correct acceleration is a = g*sin(30°) = 4.9 m/s^2. This value is not among the options, and the provided key (A = 1.5 m/s^2) is incorrect.
+Quality of Working: The generator correctly calculates the answer using a = g*sin(θ). However, it then presents a second, completely nonsensical method using a kinematic formula where it illogically substitutes the value of g (an acceleration) for the distance 's'. This demonstrates a profound misunderstanding of physics principles.
+Final Answer Accuracy: The generator's calculated answer is 4.9 m/s^2. The question's provided key is A (1.5 m/s^2). The generator's answer does not match the incorrect key provided with the question.","SYSTEM: You are a Grade 12 Physics teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 medium-level quantitative MCQ from: kinematics (uniform/accelerated/projectile), dynamics (Newton/incline), energy–impulse, or basic circuits (V–I–R).
+• Use SI units (use g = 9.8 m s^-2 if relevant); realistic numbers; round to 2 decimals.
+• Distractors: typical vector-component/sign mistakes, unit conversion errors, wrong effective forces.
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object.
+- Format:
+  [{""question"": ""..."", ""options"": [""..."",""..."",""..."",""...""], ""answer"": ""A"", ""solution"": ""...""}]
+- Fields:
+  * ""question"": one string.
+  * ""options"": array of 4 answer-choice strings.
+  * ""answer"": one of ""A"",""B"",""C"",""D"" (just the letter).
+  * ""solution"": short plain-text explanation (a few lines is fine).
+- No extra text before or after the JSON.
+- Do NOT use markdown, code fences, or LaTeX ($ or backslashes).
+USER: Topic: Physics. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: 4.5, 20, 0.8, upwards, 24, 3.5, velocity, pulled, wrapped, coefficient, moving, with, 2.1, 4.00, meters, constant, 7, placed, particle, initial, 1.4, from, 1.8, starts, inclined, top, force, pushed, 40, 0.3, standing, rope, thrown, 3.0, 3.4, box, 1.2, 16.0, surface, released, pulley, 5, student, what, 6.0, 1.5, 15.0, 27, height, 2.5, rough, 3, along, rest, seconds, 0.25, above, 0.5, 9.8, angle, car, accelerates, 15, horizontal, incline, ground, 4.0, long, makes, initially, 8, 12, 6, its, after, 30, frictionless, 4.2, mass, 2.0, that, block, acceleration, around, 10, 2, platform, over, 12.5, fixed, 1.9, string, projected, plane, distance, speed, applied, 9.00, ramp, 25, down, track, object.
+- Do NOT print this list in the output."
+physics,llama,struktur1,26,9552,"A block of mass 3.0 kg is released from rest at the top of a frictionless inclined plane with an angle of 30° to the horizontal. If it accelerates down the ramp at 2.00 m/s^2, what is its acceleration along the incline?",1.5 m/s^2,2.0 m/s^2,2.50 m/s^2,3.0 m/s^2,A,"The block's acceleration down the ramp is given by a = g sinθ, where g = 9.8 m/s^2 and θ = 30°. Plugging in the values, we get a = 4.9 m/s^2 sin(30°) = 1.5 m/s^2.","The question is fundamentally flawed due to contradictory information. 
+1. It states the plane is frictionless with an angle of 30°, which implies the acceleration must be a = g*sin(30°) = 9.8 m/s² * 0.5 = 4.9 m/s².
+2. It then gives a premise that the block ""accelerates down the ramp at 2.00 m/s^2"".
+3. It then asks for the ""acceleration along the incline"", which is the same quantity given in the premise.
+Based on a literal reading of the premise, the answer should be 2.00 m/s². However, this contradicts the physical setup. The provided key (1.5 m/s²) cannot be derived through any correct physical reasoning from the given information.",gemini:gemini-2.5-pro,44120,0.5,0,Correct,0,"Clarity: The question is extremely unclear and self-contradictory. It provides a physical setup (frictionless, 30°) that dictates one acceleration (4.9 m/s^2), then states a different acceleration (2.00 m/s^2) as a premise, and then asks for the acceleration.
+
+Context Accuracy: The physical context is impossible. An object on a frictionless 30° incline on Earth cannot accelerate at 2.00 m/s^2. The acceleration is determined by gravity and the angle, and must be 4.9 m/s^2.
+
+Quality of Working: The generator's reasoning is nonsensical. It ignores the premise (a=2.00 m/s^2), misapplies the formula for acceleration (effectively calculating g*sin^2(30°)), and then performs incorrect arithmetic (4.9 * 0.5 = 2.45, not 1.5).
+
+Final Answer Accuracy: The generator's final answer (1.5 m/s^2) matches the provided key (A). However, it must be noted that the key itself is incorrect and cannot be logically or physically derived from the question's contradictory statements.","SYSTEM: You are a Grade 12 Physics teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 medium-level quantitative MCQ from: kinematics (uniform/accelerated/projectile), dynamics (Newton/incline), energy–impulse, or basic circuits (V–I–R).
+• Use SI units (use g = 9.8 m s^-2 if relevant); realistic numbers; round to 2 decimals.
+• Distractors: typical vector-component/sign mistakes, unit conversion errors, wrong effective forces.
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object.
+- Format:
+  [{""question"": ""..."", ""options"": [""..."",""..."",""..."",""...""], ""answer"": ""A"", ""solution"": ""...""}]
+- Fields:
+  * ""question"": one string.
+  * ""options"": array of 4 answer-choice strings.
+  * ""answer"": one of ""A"",""B"",""C"",""D"" (just the letter).
+  * ""solution"": short plain-text explanation (a few lines is fine).
+- No extra text before or after the JSON.
+- Do NOT use markdown, code fences, or LaTeX ($ or backslashes).
+USER: Topic: Physics. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: 4.5, 20, 0.8, upwards, 24, 3.5, velocity, pulled, wrapped, coefficient, moving, with, 2.1, 4.00, meters, constant, 7, placed, particle, initial, 1.4, from, 1.8, starts, inclined, top, force, pushed, 40, 0.3, standing, rope, thrown, 3.0, 3.4, box, 1.2, 16.0, surface, released, pulley, 5, student, what, 6.0, 1.5, 15.0, 27, height, 2.5, rough, 3, along, rest, seconds, 0.25, above, 0.5, 9.8, angle, car, accelerates, 15, horizontal, incline, ground, 4.0, long, makes, initially, 8, 12, 6, its, after, 30, frictionless, 4.2, mass, 2.0, that, block, acceleration, around, 10, 2, platform, over, 12.5, fixed, 1.9, string, projected, plane, distance, speed, applied, 9.00, ramp, 25, down, track, object.
+- Do NOT print this list in the output."
+physics,llama,struktur1,27,11332,"A block of mass 2.0 kg is released from rest on a frictionless inclined plane that makes an angle of 30° with the horizontal. If the block accelerates down the plane at 1.5 m/s², what is its acceleration component parallel to the ground?",A) 0.75 m/s²,B) 1.00 m/s²,C) 1.25 m/s²,D) 1.50 m/s²,D,"The acceleration component parallel to the ground is given by sin(30°) × g, where g = 9.8 m/s². Since the block accelerates down the plane at 1.5 m/s², we can set up the equation: 1.5 m/s² = sin(30°) × 9.8 m/s². Solving for the acceleration component parallel to the ground, we get 1.50 m/s².","The question provides the acceleration of the block down the inclined plane, a = 1.5 m/s². The plane is inclined at an angle θ = 30° with the horizontal (the ground).
+The question asks for the component of this acceleration that is parallel to the ground, which is the horizontal component, a_x.
+The acceleration vector 'a' is directed down the plane, so it makes an angle of 30° with the horizontal.
+The horizontal component is calculated as a_x = a * cos(θ).
+Substituting the values: a_x = 1.5 m/s² * cos(30°) = 1.5 * (√3 / 2) ≈ 1.299 m/s².
+This value is closest to option C) 1.25 m/s².",gemini:gemini-2.5-pro,30665,3,1,Incorrect,0,"Clarity: The question is mostly clear in its request, but it contains a significant contradiction by stating the plane is 'frictionless' while giving an acceleration (1.5 m/s²) that is inconsistent with this premise. The mass is also irrelevant information.
+Context Accuracy: The physical context is incorrect. For a frictionless 30° incline, the acceleration due to gravity would be g*sin(30°) = 9.8 * 0.5 = 4.9 m/s². The given acceleration of 1.5 m/s² contradicts the 'frictionless' condition.
+Quality of Working: The generator's reasoning is completely flawed. It presents incorrect physical formulas, sets up a false mathematical equality (1.5 = 4.9), and performs no valid calculation. It simply restates the given acceleration magnitude as the answer for its horizontal component.
+Final Answer Accuracy: The generator's answer is 1.50 m/s², which is the magnitude of the total acceleration along the plane, not its component parallel to the ground. The correct horizontal component is approximately 1.30 m/s². Therefore, the generator's answer is incorrect.","SYSTEM: You are a Grade 12 Physics teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 medium-level quantitative MCQ from: kinematics (uniform/accelerated/projectile), dynamics (Newton/incline), energy–impulse, or basic circuits (V–I–R).
+• Use SI units (use g = 9.8 m s^-2 if relevant); realistic numbers; round to 2 decimals.
+• Distractors: typical vector-component/sign mistakes, unit conversion errors, wrong effective forces.
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object.
+- Format:
+  [{""question"": ""..."", ""options"": [""..."",""..."",""..."",""...""], ""answer"": ""A"", ""solution"": ""...""}]
+- Fields:
+  * ""question"": one string.
+  * ""options"": array of 4 answer-choice strings.
+  * ""answer"": one of ""A"",""B"",""C"",""D"" (just the letter).
+  * ""solution"": short plain-text explanation (a few lines is fine).
+- No extra text before or after the JSON.
+- Do NOT use markdown, code fences, or LaTeX ($ or backslashes).
+USER: Topic: Physics. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: 4.5, 20, 0.8, upwards, 24, 3.5, velocity, pulled, wrapped, coefficient, moving, with, 2.1, 4.00, meters, constant, 7, placed, particle, initial, 1.4, from, 1.8, starts, inclined, top, force, pushed, 40, 0.3, standing, rope, thrown, 3.0, 3.4, box, 1.2, 16.0, surface, released, pulley, 5, student, what, 6.0, 1.5, 15.0, 27, height, 2.5, 2.00, rough, 3, along, rest, seconds, 0.25, above, 0.5, 9.8, angle, car, accelerates, 15, horizontal, incline, ground, 4.0, long, makes, initially, 8, 12, 6, its, after, 30, frictionless, 4.2, mass, 2.0, that, block, acceleration, around, 10, 2, platform, over, 12.5, fixed, 1.9, string, projected, plane, distance, speed, applied, 9.00, ramp, 25, down, track, object.
+- Do NOT print this list in the output."
+physics,llama,struktur1,28,11843,A block of mass 2.0 kg is released from rest at a height of 6.5 m on a frictionless inclined plane with an angle of 30° above the horizontal. What is its speed when it reaches the bottom of the plane?,1.3 m/s,4.2 m/s,9.8 m/s,12.5 m/s,B,"The block accelerates down the inclined plane due to gravity, which has a magnitude of 6.5 * 9.8 sin(30°) = 19.7 N. Since there is no friction, all the energy is converted into kinetic energy. The speed can be found using the equation v² = 2as, where s is the distance and a is the acceleration. Plugging in the values, we get: v² = 2 * 6.5 * 9.8 sin(30°) = 47.4 m²/s². Taking the square root of both sides gives us an answer of approximately 4.2 m/s.","This is a conservation of energy problem. The initial potential energy (PE) is converted into final kinetic energy (KE) as the block slides down the frictionless plane.
+Initial Energy = PE = mgh
+Final Energy = KE = 0.5 * m * v^2
+Setting them equal: mgh = 0.5 * m * v^2
+The mass (m) cancels out: gh = 0.5 * v^2
+Solving for v: v = sqrt(2gh)
+Plugging in the values: v = sqrt(2 * 9.8 m/s^2 * 6.5 m) = sqrt(127.4) ≈ 11.3 m/s.",gemini:gemini-2.5-pro,33392,5,5,Incorrect,0,"Clarity: The question is clearly worded and provides all necessary information. The inclusion of extraneous data (mass and angle) is a common and valid technique for physics problems.
+Context Accuracy: The scenario of a block on an inclined plane is a standard physics problem, and the given values are physically reasonable.
+Quality of Working: The generator's solution is completely flawed. It confuses height with mass when calculating force, uses an incorrect kinematic formula (substituting height for distance), and contains multiple arithmetic errors. The reasoning is unsound from start to finish.
+Final Answer Accuracy: The correct answer is approximately 11.3 m/s. The generator's answer of 4.2 m/s is incorrect. It should be noted that the provided options and key are also incorrect; the correct answer is not listed.","SYSTEM: You are a Grade 12 Physics teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 medium-level quantitative MCQ from: kinematics (uniform/accelerated/projectile), dynamics (Newton/incline), energy–impulse, or basic circuits (V–I–R).
+• Use SI units (use g = 9.8 m s^-2 if relevant); realistic numbers; round to 2 decimals.
+• Distractors: typical vector-component/sign mistakes, unit conversion errors, wrong effective forces.
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object.
+- Format:
+  [{""question"": ""..."", ""options"": [""..."",""..."",""..."",""...""], ""answer"": ""A"", ""solution"": ""...""}]
+- Fields:
+  * ""question"": one string.
+  * ""options"": array of 4 answer-choice strings.
+  * ""answer"": one of ""A"",""B"",""C"",""D"" (just the letter).
+  * ""solution"": short plain-text explanation (a few lines is fine).
+- No extra text before or after the JSON.
+- Do NOT use markdown, code fences, or LaTeX ($ or backslashes).
+USER: Topic: Physics. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: 4.5, 20, 0.8, upwards, 24, 3.5, velocity, pulled, wrapped, coefficient, moving, with, 2.1, 4.00, meters, constant, 7, placed, particle, initial, 1.4, from, 1.8, starts, inclined, top, force, pushed, 40, 0.3, standing, rope, thrown, 3.0, 3.4, box, 1.2, 16.0, surface, released, pulley, 5, student, what, 6.0, 1.5, 15.0, 27, height, 2.5, 2.00, rough, 3, along, rest, seconds, 0.25, above, 0.5, 9.8, angle, car, accelerates, 15, horizontal, incline, ground, 4.0, long, makes, initially, 8, 12, 6, its, after, 30, frictionless, 4.2, mass, 2.0, that, block, acceleration, around, 10, 2, platform, over, 12.5, fixed, 1.9, string, projected, plane, distance, speed, applied, 9.00, ramp, 25, down, track, object.
+- Do NOT print this list in the output."
+physics,llama,struktur1,29,291329,A block of mass 2.0 kg is accelerated from rest to a speed of 12.5 m/s over a distance of 15.0 meters on a frictionless inclined plane with an angle of 30° above the horizontal. What is the effective force acting on the block?,A) 29.4 N,B) 31.8 N,C) 32.2 N,D) 34.7 N,C,"The acceleration of the block can be found using the equation a = g * sin(θ), where g is the acceleration due to gravity (9.8 m/s^2) and θ is the angle above the horizontal (30°). Plugging in the values, we get a = 9.8 * sin(30°) = 4.9 m/s^2. The force acting on the block can then be found using F = ma, where m is the mass of the block and a is its acceleration. Substituting the values, we get F = (2.0 kg) * (4.9 m/s^2) = 32.2 N.","The problem provides conflicting information. 
+1. From kinematics, the acceleration is calculated using v_f^2 = v_i^2 + 2ad. This gives a = (12.5^2 - 0^2) / (2 * 15.0) = 156.25 / 30.0 = 5.208 m/s^2.
+2. The net force (or ""effective force"") is F_net = ma = (2.0 kg) * (5.208 m/s^2) = 10.42 N.
+3. This result is not among the options. The conflict arises because if only gravity were acting on the frictionless incline, the acceleration would be a = g*sin(30°) = 9.8 * 0.5 = 4.9 m/s^2. Since the actual acceleration is different, an external force must be present, but the options do not match the net force or a correctly calculated applied force.",gemini:gemini-2.5-pro,48912,1,1.5,Correct,0,"Clarity: The question is fundamentally flawed as it contains contradictory data. The acceleration derived from the kinematic information (v_f, d) is inconsistent with the acceleration expected from the dynamic setup (incline angle), implying an unstated external force. The term 'effective force' is also slightly ambiguous.
+Context Accuracy: While the scenario is a standard physics problem, the numerical values provided create a physically impossible situation as stated. The options provided do not correspond to any correctly calculated physical quantity (net force, applied force, etc.) based on the given data.
+Quality of Working: The generator's reasoning is invalid. It incorrectly ignores the kinematic data (speed, distance) which describes the actual motion. It then makes a severe arithmetic error, stating that 2.0 * 4.9 = 32.2, when the correct answer is 9.8. The entire solution is unsound.
+Final Answer Accuracy: The generator's answer matches the provided key (C). However, the key itself is incorrect due to the flawed nature of the question. The physically correct net force is approximately 10.4 N, which is not an option.","SYSTEM: You are a Grade 12 Physics teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 medium-level quantitative MCQ from: kinematics (uniform/accelerated/projectile), dynamics (Newton/incline), energy–impulse, or basic circuits (V–I–R).
+• Use SI units (use g = 9.8 m s^-2 if relevant); realistic numbers; round to 2 decimals.
+• Distractors: typical vector-component/sign mistakes, unit conversion errors, wrong effective forces.
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object.
+- Format:
+  [{""question"": ""..."", ""options"": [""..."",""..."",""..."",""...""], ""answer"": ""A"", ""solution"": ""...""}]
+- Fields:
+  * ""question"": one string.
+  * ""options"": array of 4 answer-choice strings.
+  * ""answer"": one of ""A"",""B"",""C"",""D"" (just the letter).
+  * ""solution"": short plain-text explanation (a few lines is fine).
+- No extra text before or after the JSON.
+- Do NOT use markdown, code fences, or LaTeX ($ or backslashes).
+USER: Topic: Physics. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: 4.5, 20, 0.8, upwards, 24, 3.5, velocity, pulled, wrapped, coefficient, moving, with, 2.1, 4.00, meters, constant, 7, placed, particle, initial, 1.4, from, 1.8, starts, inclined, top, force, pushed, 40, 0.3, standing, rope, thrown, 3.0, 3.4, 6.5, box, 1.2, 16.0, surface, released, pulley, 5, student, what, 6.0, 1.5, 15.0, 27, height, 2.5, 2.00, rough, 3, along, rest, seconds, 0.25, above, 0.5, 9.8, angle, car, accelerates, 15, horizontal, incline, ground, 4.0, long, makes, initially, 8, 12, 6, its, after, 30, frictionless, 4.2, mass, 2.0, that, block, acceleration, around, 10, 2, platform, over, 12.5, fixed, 1.9, string, projected, plane, distance, speed, applied, 9.00, ramp, 25, down, track, object.
+- Do NOT print this list in the output."
+physics,llama,struktur1,30,33973,"A block of mass 8.0 kg is released from rest at the top of a frictionless inclined plane that makes an angle of 30° with respect to the horizontal. Assuming g = 9.8 m/s², what is the speed of the block when it reaches the bottom of the plane?",2.5 m/s,4.1 m/s,6.0 m/s,7.3 m/s,C,"Using kinematics and the equation for uniformly accelerated motion, we can find the speed at the bottom of the plane: v² = u² + 2as, where u is the initial velocity (0), s is the displacement (-8.0 m), and a is the acceleration due to gravity. Plugging in the values, we get v² = 0 + 2(9.8)(-8.0) = -156.8 m²/s². Taking the square root of both sides gives us the final speed: v ≈ 6.0 m/s.","The question is unsolvable as it lacks the length of the incline (s) or the vertical height (h). Assuming the intended answer is 6.0 m/s, we can work backward.
+Using conservation of energy: Potential Energy (top) = Kinetic Energy (bottom).
+mgh = (1/2)mv²
+v² = 2gh
+To get v = 6.0 m/s:
+(6.0)² = 2 * 9.8 * h
+36 = 19.6 * h
+h ≈ 1.84 m. 
+The question would be solvable if it stated the block was released from a vertical height of 1.84 m.",gemini:gemini-2.5-pro,22984,0.5,4,Correct,0,"Clarity: The question is fundamentally flawed because it is missing a necessary piece of information (the length of the incline or the vertical height). It cannot be solved with the data provided.
+Context Accuracy: The physical scenario of a block on a frictionless incline is a standard physics problem, and the given values for mass, angle, and g are realistic.
+Quality of Working: The generator's solution is exceptionally poor. It incorrectly uses mass (8.0 kg) as displacement (s = -8.0 m), uses the wrong acceleration (g instead of g*sin(30°)), calculates a physically impossible negative v², and then states a final answer that does not follow from its own incorrect calculation.
+Final Answer Accuracy: The generator's stated final answer matches the provided key (C). This appears to be a coincidence, as the question is unsolvable and the generator's reasoning is entirely fallacious.","SYSTEM: You are a Grade 12 Physics teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 medium-level quantitative MCQ from: kinematics (uniform/accelerated/projectile), dynamics (Newton/incline), energy–impulse, or basic circuits (V–I–R).
+• Use SI units (use g = 9.8 m s^-2 if relevant); realistic numbers; round to 2 decimals.
+• Distractors: typical vector-component/sign mistakes, unit conversion errors, wrong effective forces.
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object.
+- Format:
+  [{""question"": ""..."", ""options"": [""..."",""..."",""..."",""...""], ""answer"": ""A"", ""solution"": ""...""}]
+- Fields:
+  * ""question"": one string.
+  * ""options"": array of 4 answer-choice strings.
+  * ""answer"": one of ""A"",""B"",""C"",""D"" (just the letter).
+  * ""solution"": short plain-text explanation (a few lines is fine).
+- No extra text before or after the JSON.
+- Do NOT use markdown, code fences, or LaTeX ($ or backslashes).
+USER: Topic: Physics. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: 4.5, 20, 0.8, upwards, 24, 3.5, velocity, pulled, wrapped, coefficient, moving, with, 2.1, 4.00, meters, constant, 7, placed, particle, initial, 1.4, from, 1.8, starts, inclined, top, force, pushed, 40, 0.3, standing, rope, thrown, 3.0, 3.4, 6.5, box, 1.2, 16.0, surface, released, pulley, 5, student, what, 6.0, 1.5, 15.0, 27, height, 2.5, 2.00, rough, 3, along, rest, seconds, 0.25, above, 0.5, 9.8, angle, car, accelerates, 15, horizontal, incline, ground, 4.0, long, makes, initially, 8, 12, 6, its, after, 30, frictionless, 4.2, mass, 2.0, that, block, acceleration, around, 10, 2, platform, over, 12.5, fixed, 1.9, string, projected, accelerated, plane, distance, speed, applied, 9.00, ramp, 25, down, track, object.
+- Do NOT print this list in the output."
+physics,llama,struktur1,31,86631,"A block of mass 2.5 kg is released from rest at the top of a frictionless inclined plane that makes an angle of 30° with the horizontal. If it accelerates down the plane, what is its acceleration?",0.25 m/s^2,1.67 m/s^2,3.33 m/s^2,4.5 m/s^2,C,"The acceleration of the block can be found using the equation a = g sinθ, where g is the acceleration due to gravity (9.8 m/s^2) and θ is the angle of the inclined plane. Plugging in the values given, we get a = 9.8 m/s^2 * sin(30°) = 4.9 m/s^2. Since the block accelerates down the plane, its acceleration is positive, so we take the absolute value to get |a| = 4.9 m/s^2. However, since the question asks for the acceleration, not the magnitude of the acceleration, we can simplify this to a = 1.67 m/s^2.","The net force on the block along the frictionless inclined plane is the component of gravity parallel to the surface, given by F_net = mg * sin(θ). According to Newton's second law, F_net = ma. Equating the two expressions gives ma = mg * sin(θ). The mass 'm' cancels out, leaving the acceleration as a = g * sin(θ). Using the standard value for acceleration due to gravity, g ≈ 9.8 m/s^2, and the given angle θ = 30°, the calculation is: a = 9.8 m/s^2 * sin(30°) = 9.8 m/s^2 * 0.5 = 4.9 m/s^2. None of the options match this correct answer.",gemini:gemini-2.5-pro,26443,5,1,Incorrect,1,"Clarity: The question is well-phrased, unambiguous, and provides all necessary data. The inclusion of mass, while not needed for the acceleration calculation, is a common feature in such problems.
+Context Accuracy: The physical scenario is standard, but the provided options and key are fundamentally flawed. The correct acceleration is 4.9 m/s^2, which is not among the choices. A multiple-choice question with no correct answer is highly inaccurate.
+Quality of Working: The generator correctly identifies the formula and calculates the right answer (4.9 m/s^2). However, it then makes a completely illogical leap, discarding its correct result and stating the answer is 1.67 m/s^2 without any reasoning. This is a catastrophic failure in logic.
+Final Answer Accuracy: The generator's answer (1.67 m/s^2) is incorrect. The correct answer is 4.9 m/s^2. The generator's answer also fails to match the provided (and also incorrect) key of 3.33 m/s^2.","SYSTEM: You are a Grade 12 Physics teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 medium-level quantitative MCQ from: kinematics (uniform/accelerated/projectile), dynamics (Newton/incline), energy–impulse, or basic circuits (V–I–R).
+• Use SI units (use g = 9.8 m s^-2 if relevant); realistic numbers; round to 2 decimals.
+• Distractors: typical vector-component/sign mistakes, unit conversion errors, wrong effective forces.
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object.
+- Format:
+  [{""question"": ""..."", ""options"": [""..."",""..."",""..."",""...""], ""answer"": ""A"", ""solution"": ""...""}]
+- Fields:
+  * ""question"": one string.
+  * ""options"": array of 4 answer-choice strings.
+  * ""answer"": one of ""A"",""B"",""C"",""D"" (just the letter).
+  * ""solution"": short plain-text explanation (a few lines is fine).
+- No extra text before or after the JSON.
+- Do NOT use markdown, code fences, or LaTeX ($ or backslashes).
+USER: Topic: Physics. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: 4.5, 20, 0.8, upwards, 24, 3.5, velocity, pulled, wrapped, coefficient, moving, with, 2.1, 4.00, meters, constant, 7, placed, particle, initial, 1.4, from, 8.0, 1.8, starts, inclined, top, force, pushed, 40, 0.3, standing, rope, thrown, 3.0, 3.4, 6.5, box, 1.2, 16.0, surface, released, pulley, 5, student, what, 6.0, 1.5, 15.0, 27, height, 2.5, 2.00, rough, 3, along, rest, seconds, 0.25, above, 0.5, 9.8, angle, car, accelerates, 15, horizontal, incline, ground, 4.0, long, makes, initially, 8, 12, 6, its, after, 30, frictionless, 4.2, mass, 2.0, that, block, acceleration, around, 10, 2, platform, over, 12.5, fixed, 1.9, string, projected, accelerated, plane, distance, speed, applied, 9.00, ramp, 25, down, track, object.
+- Do NOT print this list in the output."
+physics,llama,struktur1,32,70505,"A block of mass 2.5 kg is released from rest at the top of a frictionless inclined plane with an angle of 30° to the horizontal. If it accelerates down the plane at 1.9 m/s², what is its acceleration parallel to the incline?",0.75 m/s²,0.95 m/s²,1.4 m/s²,2.5 m/s²,A,"The acceleration parallel to the incline is given by a = g sin θ, where g is 9.8 m/s² and θ is the angle of the inclined plane. Plugging in the values, we get a = (9.8 m/s²) * sin(30°) = 0.75 m/s².","The question is fundamentally flawed due to contradictory information. 
+1. For a frictionless inclined plane at 30°, the acceleration is determined by the component of gravity parallel to the incline: a = g * sin(θ).
+2. Using g = 9.8 m/s², the acceleration should be a = 9.8 * sin(30°) = 9.8 * 0.5 = 4.9 m/s².
+3. The problem explicitly states the acceleration is 1.9 m/s², which contradicts the physical conditions given.
+4. The question then asks for the ""acceleration parallel to the incline,"" which is the very quantity it just stated was 1.9 m/s².
+5. None of the options match the physically correct value (4.9 m/s²) or the value given in the premise (1.9 m/s²). The question is unsolvable as written.",gemini:gemini-2.5-pro,45322,0.5,0.5,Correct,0.5,"Clarity: The question is extremely unclear because it contains contradictory information. The condition ""frictionless"" and angle 30° implies an acceleration of 4.9 m/s², but the problem states the acceleration is 1.9 m/s². The phrasing is also redundant and confusing.
+Context Accuracy: The physical situation described is impossible. An object on a frictionless 30° incline on Earth cannot accelerate at 1.9 m/s². The values are inconsistent with the laws of physics.
+Quality of Working: The generator uses the correct physical formula for a frictionless incline but ignores the contradictory data given in the problem. More importantly, the arithmetic is completely wrong (9.8 * sin(30°) = 4.9, not 0.75). The correct answer is reached only by a major calculation error.
+Final Answer Accuracy: The generator's final answer matches the provided key. However, it should be noted that both the question and the solution are deeply flawed, and the key itself appears to be incorrect based on any valid physical reasoning.","SYSTEM: You are a Grade 12 Physics teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 medium-level quantitative MCQ from: kinematics (uniform/accelerated/projectile), dynamics (Newton/incline), energy–impulse, or basic circuits (V–I–R).
+• Use SI units (use g = 9.8 m s^-2 if relevant); realistic numbers; round to 2 decimals.
+• Distractors: typical vector-component/sign mistakes, unit conversion errors, wrong effective forces.
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object.
+- Format:
+  [{""question"": ""..."", ""options"": [""..."",""..."",""..."",""...""], ""answer"": ""A"", ""solution"": ""...""}]
+- Fields:
+  * ""question"": one string.
+  * ""options"": array of 4 answer-choice strings.
+  * ""answer"": one of ""A"",""B"",""C"",""D"" (just the letter).
+  * ""solution"": short plain-text explanation (a few lines is fine).
+- No extra text before or after the JSON.
+- Do NOT use markdown, code fences, or LaTeX ($ or backslashes).
+USER: Topic: Physics. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: 4.5, 20, 0.8, upwards, 24, 3.5, velocity, pulled, wrapped, coefficient, moving, with, 2.1, 4.00, meters, constant, 7, placed, particle, initial, 1.4, from, 8.0, 1.8, starts, inclined, top, force, pushed, 40, 0.3, standing, rope, thrown, 3.0, 3.4, 6.5, box, 1.2, 16.0, surface, released, pulley, 5, student, what, 6.0, 1.5, 15.0, 27, height, 2.5, 2.00, rough, 3, along, rest, seconds, 0.25, above, 0.5, 9.8, angle, car, accelerates, 15, horizontal, incline, ground, 4.0, long, makes, initially, 8, 12, 6, its, after, 30, frictionless, 4.2, mass, 2.0, that, block, acceleration, around, 10, 2, platform, over, 12.5, fixed, 1.9, string, projected, accelerated, plane, distance, speed, applied, 9.00, ramp, 25, down, track, object.
+- Do NOT print this list in the output."
+physics,llama,struktur1,33,207473,A block of mass 2.0 kg is placed on a horizontal frictionless air track and then given an acceleration of 1.5 m/s². What is the net force acting on the block?,A) 3.0 N,B) 4.5 N,C) 6.0 N,D) 9.0 N,D,"The acceleration of the block is given by F = ma, where F is the net force acting on the block and m is its mass. Substituting the values, we get F = (2.0 kg)(1.5 m/s²) = 3.0 N.","The user wants to find the net force on a block given its mass and acceleration.
+According to Newton's Second Law of Motion, the net force (F_net) acting on an object is the product of its mass (m) and its acceleration (a).
+The formula is F_net = m * a.
+Given values are m = 2.0 kg and a = 1.5 m/s².
+Substituting the values: F_net = (2.0 kg) * (1.5 m/s²) = 3.0 N.
+This corresponds to option A.",gemini:gemini-2.5-pro,17783,5,5,Correct,5,"Clarity: The question is perfectly clear, providing all necessary information (mass, acceleration) and asking a direct question. The context of a frictionless air track is unambiguous.
+Context Accuracy: The scenario and the physical values are entirely realistic for an introductory physics problem. An air track is a standard piece of lab equipment for demonstrating this principle.
+Quality of Working: The generator's solution correctly identifies and applies Newton's Second Law (F=ma). The substitution and arithmetic are performed correctly, and the final answer includes the correct units.
+Final Answer Accuracy: The generator's calculated answer of 3.0 N is the correct solution to the problem. Note that the key provided in the prompt (D) is incorrect; the correct option is A, which matches the generator's result.","SYSTEM: You are a Grade 12 Physics teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 medium-level quantitative MCQ from: kinematics (uniform/accelerated/projectile), dynamics (Newton/incline), energy–impulse, or basic circuits (V–I–R).
+• Use SI units (use g = 9.8 m s^-2 if relevant); realistic numbers; round to 2 decimals.
+• Distractors: typical vector-component/sign mistakes, unit conversion errors, wrong effective forces.
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object.
+- Format:
+  [{""question"": ""..."", ""options"": [""..."",""..."",""..."",""...""], ""answer"": ""A"", ""solution"": ""...""}]
+- Fields:
+  * ""question"": one string.
+  * ""options"": array of 4 answer-choice strings.
+  * ""answer"": one of ""A"",""B"",""C"",""D"" (just the letter).
+  * ""solution"": short plain-text explanation (a few lines is fine).
+- No extra text before or after the JSON.
+- Do NOT use markdown, code fences, or LaTeX ($ or backslashes).
+USER: Topic: Physics. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: 4.5, 20, 0.8, upwards, 24, 3.5, velocity, pulled, wrapped, coefficient, moving, with, 2.1, 4.00, meters, constant, 7, placed, particle, initial, 1.4, from, 8.0, 1.8, starts, inclined, top, force, pushed, 40, 0.3, standing, rope, thrown, 3.0, 3.4, 6.5, box, 1.2, 16.0, surface, released, pulley, 5, student, what, 6.0, 1.5, 15.0, 27, height, 2.5, 2.00, rough, 3, along, rest, seconds, 0.25, above, 0.5, 9.8, angle, car, accelerates, 15, horizontal, incline, ground, 4.0, long, makes, initially, 8, 12, 6, its, after, 30, frictionless, 4.2, mass, 2.0, that, block, acceleration, around, 10, 2, platform, over, 12.5, fixed, 1.9, string, projected, accelerated, plane, distance, speed, applied, 9.00, ramp, 25, down, track, object.
+- Do NOT print this list in the output."
+physics,llama,struktur1,34,12848,"A block is projected down a frictionless inclined plane with an initial speed of 5.0 m/s and an angle of elevation of 30°. If the acceleration due to gravity is 9.8 m/s², what is the block's speed after it has traveled 10.0 meters?",4.2 m/s,6.3 m/s,7.5 m/s,8.1 m/s,B,"Using the equation for uniformly accelerated motion, we can calculate the block's acceleration down the plane: a = g * sin(30°) = 4.9 m/s². Then, we can use the equation to find the block's final speed after traveling 10.0 meters: v² = u² + 2as, where u is the initial speed and s is the distance traveled. Plugging in the values, we get v² = (5.0)² + 2 * 4.9 * 10.0, which simplifies to approximately 63 m²/s². Taking the square root of both sides gives us the block's final speed: v ≈ √63 ≈ 7.5 m/s.","The acceleration of the block down the frictionless incline is the component of gravity parallel to the plane: a = g * sin(θ).
+Given g = 9.8 m/s² and θ = 30°, the acceleration is a = 9.8 * sin(30°) = 9.8 * 0.5 = 4.9 m/s².
+Using the kinematic equation v² = u² + 2as, where u = 5.0 m/s and s = 10.0 m.
+v² = (5.0)² + 2 * (4.9) * (10.0)
+v² = 25 + 98 = 123 m²/s²
+v = √123 ≈ 11.1 m/s.
+None of the provided options match the correct answer.",gemini:gemini-2.5-pro,31385,5,2,Incorrect,0,"Clarity: The question is clearly stated, providing all necessary information without ambiguity.
+Context Accuracy: The physical setup is standard, but the question is critically flawed because the correct answer (~11.1 m/s) is not among the options. This makes the MCQ unsolvable.
+Quality of Working: The generator's solution contains a major arithmetic error, incorrectly calculating (5.0)² + 2 * 4.9 * 10.0 (which is 123) as ~63. It then makes a second error, stating √63 is ~7.5 (it is ~7.9). The reasoning is completely unsound.
+Final Answer Accuracy: The generator's answer of 7.5 m/s is incorrect. The correct answer is ~11.1 m/s. The generator's answer also disagrees with the provided key.","SYSTEM: You are a Grade 12 Physics teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 medium-level quantitative MCQ from: kinematics (uniform/accelerated/projectile), dynamics (Newton/incline), energy–impulse, or basic circuits (V–I–R).
+• Use SI units (use g = 9.8 m s^-2 if relevant); realistic numbers; round to 2 decimals.
+• Distractors: typical vector-component/sign mistakes, unit conversion errors, wrong effective forces.
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object.
+- Format:
+  [{""question"": ""..."", ""options"": [""..."",""..."",""..."",""...""], ""answer"": ""A"", ""solution"": ""...""}]
+- Fields:
+  * ""question"": one string.
+  * ""options"": array of 4 answer-choice strings.
+  * ""answer"": one of ""A"",""B"",""C"",""D"" (just the letter).
+  * ""solution"": short plain-text explanation (a few lines is fine).
+- No extra text before or after the JSON.
+- Do NOT use markdown, code fences, or LaTeX ($ or backslashes).
+USER: Topic: Physics. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: 4.5, 20, 0.8, upwards, 24, 3.5, velocity, pulled, wrapped, coefficient, moving, with, 2.1, 4.00, meters, constant, 7, placed, particle, initial, 1.4, from, 8.0, 1.8, starts, inclined, top, force, pushed, 40, 0.3, standing, rope, thrown, 3.0, 3.4, 6.5, box, 1.2, 16.0, surface, released, pulley, 5, student, what, 6.0, 1.5, 15.0, 27, air, height, 2.5, 2.00, and, rough, 3, along, rest, seconds, 0.25, above, 0.5, 9.8, angle, car, accelerates, 15, horizontal, incline, ground, 4.0, long, makes, initially, 8, 12, 6, its, after, 30, frictionless, 4.2, mass, 2.0, that, block, acceleration, around, 10, 2, platform, over, 12.5, fixed, 1.9, string, projected, accelerated, plane, distance, speed, applied, 9.00, ramp, 25, down, track, object.
+- Do NOT print this list in the output."
+physics,llama,struktur1,35,175065,A block of mass 2.5 kg is released from rest at a height of 10.0 m above a frictionless surface and accelerates downwards due to gravity. What is its speed when it hits the ground?,1.9 m/s,4.2 m/s,6.5 m/s,9.8 m/s,D,"The block's acceleration is 9.8 m/s^2, and its initial potential energy is converted to kinetic energy as it falls. Using the equation for kinetic energy (0.5*m*v^2), we can solve for v when the block hits the ground (v = sqrt(2*gh)). Plugging in g = 9.8 m/s^2 and h = 10.0 m, we get v ≈ 9.8 m/s.","This is a conservation of energy problem. The initial potential energy (PE) is converted into final kinetic energy (KE).
+Initial state: PE_i = mgh, KE_i = 0 (starts from rest).
+Final state: PE_f = 0 (at the ground), KE_f = 0.5 * m * v^2.
+By conservation of energy: mgh = 0.5 * m * v^2.
+The mass 'm' cancels out, so v^2 = 2gh.
+Solving for v: v = sqrt(2 * g * h).
+Plugging in the values: v = sqrt(2 * 9.8 m/s^2 * 10.0 m) = sqrt(196 m^2/s^2) = 14 m/s.
+The correct answer is 14 m/s, which is not among the options.",gemini:gemini-2.5-pro,21780,5,1,Incorrect,2,"Clarity: The question is clearly stated, providing all necessary information (mass, height, initial velocity) for a standard physics problem.
+Context Accuracy: The physical setup is standard, but the question is fundamentally flawed because the correct answer (14 m/s) is not provided as an option. The keyed answer (9.8 m/s) is numerically equal to the acceleration due to gravity, a common conceptual error.
+Quality of Working: The generator correctly identifies the conservation of energy principle and the correct formula, v = sqrt(2gh). However, it fails completely at the calculation step, incorrectly stating that sqrt(2 * 9.8 * 10) is approximately 9.8, when it is exactly 14.
+Final Answer Accuracy: The generator's answer of 9.8 m/s is incorrect. The correct speed calculated from the problem's data is 14 m/s.","SYSTEM: You are a Grade 12 Physics teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 medium-level quantitative MCQ from: kinematics (uniform/accelerated/projectile), dynamics (Newton/incline), energy–impulse, or basic circuits (V–I–R).
+• Use SI units (use g = 9.8 m s^-2 if relevant); realistic numbers; round to 2 decimals.
+• Distractors: typical vector-component/sign mistakes, unit conversion errors, wrong effective forces.
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object.
+- Format:
+  [{""question"": ""..."", ""options"": [""..."",""..."",""..."",""...""], ""answer"": ""A"", ""solution"": ""...""}]
+- Fields:
+  * ""question"": one string.
+  * ""options"": array of 4 answer-choice strings.
+  * ""answer"": one of ""A"",""B"",""C"",""D"" (just the letter).
+  * ""solution"": short plain-text explanation (a few lines is fine).
+- No extra text before or after the JSON.
+- Do NOT use markdown, code fences, or LaTeX ($ or backslashes).
+USER: Topic: Physics. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: 4.5, 20, 0.8, upwards, 24, 3.5, velocity, pulled, wrapped, coefficient, moving, with, 2.1, 4.00, meters, constant, 7, placed, particle, initial, 1.4, from, 8.0, 1.8, starts, inclined, top, force, pushed, 40, 0.3, standing, rope, thrown, 3.0, 3.4, 6.5, box, 1.2, 16.0, surface, released, pulley, 5, student, what, 6.0, 1.5, 15.0, 27, air, height, 2.5, 2.00, and, rough, 3, along, rest, seconds, 0.25, above, 0.5, 9.8, angle, car, accelerates, 15, horizontal, incline, ground, 4.0, long, makes, initially, 5.0, 8, 12, 6, its, after, 30, frictionless, 4.2, mass, 2.0, that, block, acceleration, around, 10, 2, platform, over, 12.5, fixed, 1.9, string, projected, 10.0, accelerated, plane, distance, speed, applied, 9.00, ramp, 25, down, track, object.
+- Do NOT print this list in the output."
+physics,llama,struktur1,36,7551,A block of mass 3.5 kg is placed on a horizontal surface and then given an acceleration of 2.0 m/s². What is the net force acting on the block?,A) 6.9 N,B) 7.0 N,C) 7.1 N,D) 7.2 N,B,"The net force acting on the block is its mass multiplied by its acceleration, which is 3.5 kg * 2.0 m/s² = 7.0 N.","This problem is a direct application of Newton's Second Law of Motion, which states that the net force (F_net) acting on an object is the product of its mass (m) and its acceleration (a).
+Formula: F_net = m * a
+Given values:
+m = 3.5 kg
+a = 2.0 m/s²
+Calculation:
+F_net = 3.5 kg * 2.0 m/s²
+F_net = 7.0 N
+The correct option is B.",gemini:gemini-2.5-pro,14379,5,5,Correct,5,"Clarity: The question is exceptionally clear. It provides all necessary data (mass, acceleration) and asks a direct question. The mention of a horizontal surface is minor context that does not cause confusion.
+Context Accuracy: The physical scenario is standard and the values for mass and acceleration are entirely realistic for a simple mechanics problem.
+Quality of Working: The generator's solution correctly identifies Newton's Second Law as the required principle. The calculation is accurate, and the explanation is concise and correct.
+Final Answer Accuracy: The generator's answer of 7.0 N is correct and matches the provided key (B).","SYSTEM: You are a Grade 12 Physics teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 medium-level quantitative MCQ from: kinematics (uniform/accelerated/projectile), dynamics (Newton/incline), energy–impulse, or basic circuits (V–I–R).
+• Use SI units (use g = 9.8 m s^-2 if relevant); realistic numbers; round to 2 decimals.
+• Distractors: typical vector-component/sign mistakes, unit conversion errors, wrong effective forces.
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object.
+- Format:
+  [{""question"": ""..."", ""options"": [""..."",""..."",""..."",""...""], ""answer"": ""A"", ""solution"": ""...""}]
+- Fields:
+  * ""question"": one string.
+  * ""options"": array of 4 answer-choice strings.
+  * ""answer"": one of ""A"",""B"",""C"",""D"" (just the letter).
+  * ""solution"": short plain-text explanation (a few lines is fine).
+- No extra text before or after the JSON.
+- Do NOT use markdown, code fences, or LaTeX ($ or backslashes).
+USER: Topic: Physics. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: 4.5, 20, 0.8, upwards, 24, 3.5, velocity, pulled, wrapped, coefficient, moving, with, 2.1, 4.00, meters, constant, 7, placed, particle, initial, 1.4, from, 8.0, 1.8, starts, inclined, top, force, pushed, 40, 0.3, standing, rope, thrown, 3.0, 3.4, 6.5, box, 1.2, 16.0, surface, released, pulley, 5, student, what, 6.0, 1.5, 15.0, 27, air, height, 2.5, 2.00, and, rough, 3, along, rest, seconds, 0.25, above, 0.5, 9.8, angle, car, accelerates, 15, horizontal, incline, ground, 4.0, long, makes, initially, 5.0, 8, 12, 6, its, after, 30, frictionless, 4.2, mass, 2.0, that, block, acceleration, around, 10, 2, platform, over, 12.5, fixed, 1.9, string, projected, 10.0, accelerated, plane, distance, speed, applied, 9.00, ramp, 25, down, track, object.
+- Do NOT print this list in the output."
+physics,llama,struktur1,37,83367,A block of mass 3.2 kg is accelerated uniformly from rest to a final speed of 12.5 m/s over a distance of 15.0 meters on a frictionless surface. What is the magnitude of the acceleration of the block?,1.4 m/s²,2.9 m/s²,3.8 m/s²,4.6 m/s²,C,"The acceleration can be found using the equation a = Δv / Δt, where Δv is the change in velocity (12.5 - 0) and Δt is the time taken to cover the distance (15.0). Plugging in the values, we get a = 12.5 / 15.0 ≈ 3.8 m/s².","The problem requires finding acceleration given initial velocity, final velocity, and distance. The appropriate kinematic equation is v² = u² + 2as.
+Given values are:
+Initial velocity (u) = 0 m/s (from rest)
+Final velocity (v) = 12.5 m/s
+Distance (s) = 15.0 m
+
+Rearranging the formula to solve for acceleration (a):
+a = (v² - u²) / (2s)
+a = (12.5² - 0²) / (2 * 15.0)
+a = 156.25 / 30.0
+a ≈ 5.21 m/s²
+None of the provided options are correct.",gemini:gemini-2.5-pro,23189,5,5,Incorrect,0,"Clarity: The question is perfectly clear. It provides all necessary variables and states the objective without ambiguity. The extra information (mass) does not cause confusion.
+Context Accuracy: The physical scenario and the given values are realistic for an introductory physics problem. The frictionless surface is a standard idealization.
+Quality of Working: The generator's solution is fundamentally incorrect. It misuses the formula a = Δv / Δt by substituting distance (15.0 m) for time (Δt). Additionally, the arithmetic is wrong, as 12.5 / 15.0 is approximately 0.83, not 3.8.
+Final Answer Accuracy: The correct acceleration is ~5.21 m/s², which is not among the options. The generator's solution incorrectly supports option C (3.8 m/s²).","SYSTEM: You are a Grade 12 Physics teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 medium-level quantitative MCQ from: kinematics (uniform/accelerated/projectile), dynamics (Newton/incline), energy–impulse, or basic circuits (V–I–R).
+• Use SI units (use g = 9.8 m s^-2 if relevant); realistic numbers; round to 2 decimals.
+• Distractors: typical vector-component/sign mistakes, unit conversion errors, wrong effective forces.
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object.
+- Format:
+  [{""question"": ""..."", ""options"": [""..."",""..."",""..."",""...""], ""answer"": ""A"", ""solution"": ""...""}]
+- Fields:
+  * ""question"": one string.
+  * ""options"": array of 4 answer-choice strings.
+  * ""answer"": one of ""A"",""B"",""C"",""D"" (just the letter).
+  * ""solution"": short plain-text explanation (a few lines is fine).
+- No extra text before or after the JSON.
+- Do NOT use markdown, code fences, or LaTeX ($ or backslashes).
+USER: Topic: Physics. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: 4.5, 20, 0.8, upwards, 24, 3.5, velocity, pulled, wrapped, coefficient, moving, with, 2.1, 4.00, meters, constant, 7, placed, particle, initial, 1.4, from, 8.0, 1.8, starts, inclined, top, force, pushed, 40, 0.3, standing, rope, given, thrown, 3.0, 3.4, 6.5, box, 1.2, 16.0, surface, released, pulley, 5, student, what, 6.0, 1.5, 15.0, 27, air, height, 2.5, 2.00, and, rough, 3, along, rest, seconds, 0.25, above, 0.5, 9.8, angle, car, accelerates, 15, horizontal, incline, ground, 4.0, long, makes, initially, 5.0, 8, 12, 6, its, after, 30, frictionless, 4.2, mass, 2.0, that, block, then, acceleration, around, 10, 2, platform, over, 12.5, fixed, 1.9, string, projected, 10.0, accelerated, plane, distance, speed, applied, 9.00, ramp, 25, down, track, object.
+- Do NOT print this list in the output."
+physics,llama,struktur1,38,70585,"A block with a mass of 5.6 kg is projected up an inclined plane with an angle of 30°. If the block accelerates at 1.2 m/s² up the plane, what is its speed after 4.0 seconds?",1.8 m/s,3.4 m/s,5.6 m/s,7.2 m/s,C,"We can use the equation a = g sinθ to find the acceleration component up the plane, where a is 1.2 m/s², g is 9.8 m/s², and θ is 30°. Then, we can use the equation s = ut + (1/2)at² to find the block's speed after 4.0 seconds.","The question is unsolvable as stated because it fails to provide the initial velocity of the block. The term ""projected up"" implies an initial velocity (u > 0), which is a necessary component of the kinematic equation v = u + at.
+
+Given:
+a = 1.2 m/s²
+t = 4.0 s
+
+Required: v (final speed)
+Using the standard kinematic equation: v = u + a*t = u + (1.2 m/s²)(4.0 s) = u + 4.8 m/s.
+Since 'u' is unknown, 'v' cannot be determined. The question is fundamentally flawed. The fact that the mass (5.6 kg) numerically matches an answer option (5.6 m/s) suggests it is a poorly designed trick question.",gemini:gemini-2.5-pro,35150,1,1,Incorrect,0,"Clarity: The question is critically flawed because it omits the initial velocity, making it impossible to solve. The phrase ""projected up"" is ambiguous and contradicts the direction of the given acceleration.
+
+Context Accuracy: The physical situation is described incorrectly. An object that is simply ""projected"" up an incline will accelerate *down* the incline due to gravity. An upward acceleration requires a continuous applied force, which is not mentioned.
+
+Quality of Working: The generator's solution is completely incorrect. It attempts to use `a = g sin(theta)` to find an acceleration that is already given. It then proposes using the formula for displacement (`s = ...`) to find speed. This demonstrates a fundamental misunderstanding of kinematics.
+
+Final Answer Accuracy: The generator's reasoning is nonsensical and does not lead to any numerical answer, let alone the correct one. The provided key is likely the result of a flawed question design where the answer matches a given value (the mass).","SYSTEM: You are a Grade 12 Physics teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 medium-level quantitative MCQ from: kinematics (uniform/accelerated/projectile), dynamics (Newton/incline), energy–impulse, or basic circuits (V–I–R).
+• Use SI units (use g = 9.8 m s^-2 if relevant); realistic numbers; round to 2 decimals.
+• Distractors: typical vector-component/sign mistakes, unit conversion errors, wrong effective forces.
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object.
+- Format:
+  [{""question"": ""..."", ""options"": [""..."",""..."",""..."",""...""], ""answer"": ""A"", ""solution"": ""...""}]
+- Fields:
+  * ""question"": one string.
+  * ""options"": array of 4 answer-choice strings.
+  * ""answer"": one of ""A"",""B"",""C"",""D"" (just the letter).
+  * ""solution"": short plain-text explanation (a few lines is fine).
+- No extra text before or after the JSON.
+- Do NOT use markdown, code fences, or LaTeX ($ or backslashes).
+USER: Topic: Physics. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: 4.5, 20, 0.8, upwards, 24, 3.5, velocity, pulled, wrapped, coefficient, moving, with, 2.1, 4.00, meters, constant, 7, placed, particle, initial, 1.4, from, 8.0, 1.8, starts, inclined, top, force, pushed, 40, 0.3, standing, rope, given, thrown, 3.0, 3.4, 6.5, box, 1.2, 16.0, surface, released, pulley, 5, student, what, 6.0, 1.5, 15.0, 27, air, height, 2.5, 2.00, and, rough, final, 3, along, rest, seconds, 0.25, above, 0.5, 9.8, angle, car, accelerates, 15, uniformly, horizontal, incline, ground, 4.0, long, makes, initially, 5.0, 3.2, 8, 12, 6, its, after, 30, frictionless, 4.2, mass, 2.0, that, block, then, acceleration, around, 10, 2, platform, over, 12.5, fixed, 1.9, string, projected, 10.0, accelerated, plane, distance, speed, applied, 9.00, ramp, 25, down, track, object.
+- Do NOT print this list in the output."
+physics,llama,struktur1,39,58532,"A block with a mass of 2.5 kg is projected up an inclined plane with an angle of elevation of 30°. If the block accelerates uniformly at 1.9 m/s², what is its speed after it has traveled 12.5 meters?",0.75 m/s,1.25 m/s,2.00 m/s,3.50 m/s,A,"The block's acceleration remains constant, so we can use the equation a = Δv / Δt to find its final speed. Since Δt is unknown, let's first find the time it takes for the block to travel 12.5 meters: t = d / v0 + (1/2) * a * t². We know the mass and angle of elevation, so we can use these to find the acceleration using F = ma. Then, we can plug in our values and solve for t. Finally, we can use the equation above to find the block's final speed.","The problem is unsolvable as stated because it is missing the initial velocity (v₀). The relevant kinematic equation is v² = v₀² + 2ad. We are given the acceleration (a = 1.9 m/s²) and the distance (d = 12.5 m), but without knowing v₀, we cannot solve for the final velocity, v. Furthermore, the physical setup is contradictory. An object projected up a 30° incline must have a deceleration of at least g*sin(30°) ≈ 4.9 m/s². The given acceleration of 1.9 m/s² is physically impossible for this scenario.",gemini:gemini-2.5-pro,45218,1,0.5,Incorrect,0,"Clarity: The question is critically flawed because it omits the initial velocity, which is essential for solving the problem. The wording 'accelerates' is also ambiguous for an object projected upwards, which should be decelerating.
+Context Accuracy: The physics of the problem is incorrect. The minimum possible magnitude of acceleration for an object moving up a 30° incline (due to gravity alone) is g*sin(30°) ≈ 4.9 m/s². The given value of 1.9 m/s² is physically impossible.
+Quality of Working: The generator's reasoning is completely flawed. It cites a non-existent kinematic equation, suggests calculating an acceleration that is already given, and fails to identify the core issue that the problem is unsolvable due to the missing initial velocity. It provides no actual calculation.
+Final Answer Accuracy: The generator provides a flawed method and does not arrive at a final answer. The provided key (A) is unreachable through any correct application of physics or kinematics to the given data.","SYSTEM: You are a Grade 12 Physics teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 medium-level quantitative MCQ from: kinematics (uniform/accelerated/projectile), dynamics (Newton/incline), energy–impulse, or basic circuits (V–I–R).
+• Use SI units (use g = 9.8 m s^-2 if relevant); realistic numbers; round to 2 decimals.
+• Distractors: typical vector-component/sign mistakes, unit conversion errors, wrong effective forces.
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object.
+- Format:
+  [{""question"": ""..."", ""options"": [""..."",""..."",""..."",""...""], ""answer"": ""A"", ""solution"": ""...""}]
+- Fields:
+  * ""question"": one string.
+  * ""options"": array of 4 answer-choice strings.
+  * ""answer"": one of ""A"",""B"",""C"",""D"" (just the letter).
+  * ""solution"": short plain-text explanation (a few lines is fine).
+- No extra text before or after the JSON.
+- Do NOT use markdown, code fences, or LaTeX ($ or backslashes).
+USER: Topic: Physics. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: 4.5, 20, 0.8, upwards, 24, 3.5, velocity, pulled, wrapped, coefficient, moving, with, 2.1, 5.6, 4.00, meters, constant, 7, placed, particle, initial, 1.4, from, 8.0, 1.8, starts, inclined, top, force, pushed, 40, 0.3, standing, rope, given, thrown, 3.0, 3.4, 6.5, box, 1.2, 16.0, surface, released, pulley, 5, student, what, 6.0, 1.5, 15.0, 27, air, height, 2.5, 2.00, and, rough, final, 3, along, rest, seconds, 0.25, above, 0.5, 9.8, angle, car, accelerates, 15, uniformly, horizontal, incline, ground, 4.0, long, makes, initially, 5.0, 3.2, 8, 12, 6, its, after, 30, frictionless, 4.2, mass, 2.0, that, block, then, acceleration, around, 10, 2, platform, over, 12.5, fixed, 1.9, string, projected, 10.0, accelerated, plane, distance, speed, applied, 9.00, ramp, 25, down, track, object.
+- Do NOT print this list in the output."
+physics,llama,struktur1,40,55719,A block of mass 2.5 kg is released from rest at a height of 12.0 m on a frictionless inclined plane with an angle of elevation 30°. What is its speed when it reaches the bottom of the track?,4.13 m/s,6.25 m/s,8.33 m/s,10.42 m/s,C,"Using kinematics, we can calculate the block's acceleration down the inclined plane: a = g * sin(30°) = 9.8 m/s² * (1/2) = 4.9 m/s². Then, we can use the equation for uniformly accelerated motion to find the final speed: v² = u² + 2as, where u is the initial velocity (0), a is the acceleration, and s is the distance traveled. Plugging in the values, we get: v² = 0² + 2 * 4.9 m/s² * 12.0 m ≈ 118.8 m²/s². Taking the square root of both sides, we find the final speed: v ≈ √118.8 m²/s² ≈ 10.42 m/s.","The problem can be solved using the conservation of mechanical energy. The initial potential energy (PE) is converted into final kinetic energy (KE).
+PE_initial + KE_initial = PE_final + KE_final
+m*g*h + 0 = 0 + (1/2)*m*v^2
+The mass 'm' cancels out, so v = sqrt(2*g*h).
+Plugging in the values: v = sqrt(2 * 9.8 m/s^2 * 12.0 m).
+v = sqrt(235.2 m^2/s^2) ≈ 15.34 m/s.
+The correct answer is not available in the options provided.",gemini:gemini-2.5-pro,33644,2,5,Incorrect,0,"Clarity: The question's text is clear, but the provided options do not include the correct answer (approx. 15.34 m/s), making the question fundamentally flawed as a multiple-choice item.
+Context Accuracy: The scenario is a standard, idealized physics problem with plausible values for mass, height, and angle.
+Quality of Working: The generator's solution has a critical conceptual error, incorrectly using the vertical height (12.0 m) as the distance traveled along the incline in the kinematic equation. It also contains multiple arithmetic errors to arrive at the wrong option.
+Final Answer Accuracy: The generator's answer is incorrect. The correct speed, calculated by both energy conservation and kinematics, is approximately 15.34 m/s.","SYSTEM: You are a Grade 12 Physics teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 medium-level quantitative MCQ from: kinematics (uniform/accelerated/projectile), dynamics (Newton/incline), energy–impulse, or basic circuits (V–I–R).
+• Use SI units (use g = 9.8 m s^-2 if relevant); realistic numbers; round to 2 decimals.
+• Distractors: typical vector-component/sign mistakes, unit conversion errors, wrong effective forces.
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object.
+- Format:
+  [{""question"": ""..."", ""options"": [""..."",""..."",""..."",""...""], ""answer"": ""A"", ""solution"": ""...""}]
+- Fields:
+  * ""question"": one string.
+  * ""options"": array of 4 answer-choice strings.
+  * ""answer"": one of ""A"",""B"",""C"",""D"" (just the letter).
+  * ""solution"": short plain-text explanation (a few lines is fine).
+- No extra text before or after the JSON.
+- Do NOT use markdown, code fences, or LaTeX ($ or backslashes).
+USER: Topic: Physics. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: 4.5, 20, 0.8, upwards, 24, 3.5, velocity, pulled, wrapped, coefficient, moving, with, 2.1, 5.6, 4.00, meters, constant, 7, placed, particle, initial, 1.4, from, 8.0, 1.8, starts, inclined, top, force, pushed, 40, 0.3, standing, rope, given, thrown, 3.0, 3.4, 6.5, box, 1.2, 16.0, surface, released, pulley, 5, student, what, 6.0, 1.5, 15.0, 27, air, height, 2.5, 2.00, and, rough, final, 3, along, rest, seconds, 0.25, above, 0.5, 9.8, angle, car, accelerates, 15, uniformly, horizontal, incline, ground, 4.0, long, makes, initially, 5.0, 3.2, 8, 12, 6, its, after, 30, frictionless, 4.2, mass, 2.0, that, block, then, acceleration, around, 10, 2, platform, over, 12.5, fixed, 1.9, string, projected, 10.0, accelerated, plane, distance, speed, applied, 9.00, ramp, 25, down, track, object.
+- Do NOT print this list in the output."
+physics,llama,struktur1,41,75007,"A block of mass 2.5 kg is released from rest at a height of 6.0 m on a frictionless inclined plane that makes an angle of 30° with respect to the horizontal. Assuming g = 9.8 m/s², what is the speed of the block when it reaches the ground?",2.5 m/s,4.1 m/s,6.3 m/s,7.9 m/s,C,"The block accelerates down the plane due to gravity, with an acceleration given by a = g sin(30°) = 4.9 m/s². Since it starts from rest, its speed when reaching the ground is calculated as s = √(2a * h), where h is the height. Plugging in values gives s ≈ 6.3 m/s.","The problem can be solved using the principle of conservation of mechanical energy, as the plane is frictionless. The initial potential energy (PE) is converted into final kinetic energy (KE).
+Initial Energy = PE = mgh
+Final Energy = KE = (1/2)mv²
+Setting them equal: mgh = (1/2)mv²
+The mass (m) cancels out, so v = sqrt(2gh).
+Plugging in the values: v = sqrt(2 * 9.8 m/s² * 6.0 m)
+v = sqrt(117.6) ≈ 10.84 m/s.
+None of the provided options are correct.",gemini:gemini-2.5-pro,38424,5,5,Incorrect,0,"Clarity: The question is clearly worded and provides all necessary information to solve the problem. The inclusion of extra information (mass, angle) is a common and valid way to test conceptual understanding.
+Context Accuracy: The scenario is a standard, realistic problem in introductory physics. The values are physically plausible.
+Quality of Working: The generator's reasoning is fundamentally flawed. It uses the formula v = sqrt(2*a*h), which incorrectly combines the acceleration along the incline (a) with the vertical height (h). Furthermore, the numerical calculation from this incorrect formula is also wrong: sqrt(2 * 4.9 * 6.0) is approximately 7.7 m/s, not 6.3 m/s.
+Final Answer Accuracy: The correct answer is approximately 10.8 m/s. The generator's answer of 6.3 m/s is incorrect. The question itself is flawed because the correct answer is not among the options.","SYSTEM: You are a Grade 12 Physics teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 medium-level quantitative MCQ from: kinematics (uniform/accelerated/projectile), dynamics (Newton/incline), energy–impulse, or basic circuits (V–I–R).
+• Use SI units (use g = 9.8 m s^-2 if relevant); realistic numbers; round to 2 decimals.
+• Distractors: typical vector-component/sign mistakes, unit conversion errors, wrong effective forces.
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object.
+- Format:
+  [{""question"": ""..."", ""options"": [""..."",""..."",""..."",""...""], ""answer"": ""A"", ""solution"": ""...""}]
+- Fields:
+  * ""question"": one string.
+  * ""options"": array of 4 answer-choice strings.
+  * ""answer"": one of ""A"",""B"",""C"",""D"" (just the letter).
+  * ""solution"": short plain-text explanation (a few lines is fine).
+- No extra text before or after the JSON.
+- Do NOT use markdown, code fences, or LaTeX ($ or backslashes).
+USER: Topic: Physics. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: 4.5, 20, 0.8, upwards, 24, 3.5, velocity, pulled, wrapped, coefficient, moving, with, 2.1, 5.6, 4.00, meters, constant, 7, placed, particle, initial, 1.4, from, 8.0, 1.8, starts, inclined, top, force, pushed, 40, 12.0, 0.3, standing, rope, given, thrown, 3.0, 3.4, 6.5, box, 1.2, 16.0, surface, released, pulley, 5, student, what, 6.0, 1.5, 15.0, 27, air, height, 2.5, 2.00, and, rough, final, 3, along, rest, seconds, 0.25, above, 0.5, 9.8, angle, car, accelerates, 15, uniformly, horizontal, incline, ground, 4.0, long, makes, initially, 5.0, 3.2, 8, 12, 6, its, after, 30, frictionless, 4.2, mass, 2.0, that, block, then, acceleration, around, 10, 2, platform, over, 12.5, fixed, 1.9, string, projected, 10.0, accelerated, plane, distance, speed, applied, 9.00, ramp, 25, down, track, object.
+- Do NOT print this list in the output."
+physics,llama,struktur1,42,379009,"A block of mass 2.0 kg is released from rest at the top of a frictionless inclined plane with an angle of 30° to the horizontal. If it accelerates uniformly down the plane, what is its acceleration after traveling 10.0 m?",1.5 m/s²,3.0 m/s²,4.2 m/s²,6.0 m/s²,C,"The block's acceleration can be calculated using the equation a = g * sin(θ), where θ is the angle of the inclined plane. Plugging in the values, we get: a = 9.8 m/s² * sin(30°) ≈ 4.2 m/s².","The acceleration of an object on a frictionless inclined plane is determined by the component of gravity acting parallel to the slope. This is given by the formula a = g * sin(θ), where g is the acceleration due to gravity and θ is the angle of inclination. The mass of the block and the distance traveled are irrelevant because the acceleration is uniform.
+Using the standard value for g ≈ 9.8 m/s² and the given angle θ = 30°:
+a = 9.8 m/s² * sin(30°)
+a = 9.8 m/s² * 0.5
+a = 4.9 m/s²
+None of the provided options match the physically correct answer.",gemini:gemini-2.5-pro,23922,4,2,Correct,1,"Clarity: The question is clearly worded but includes distractor information (mass and distance) which, while common in physics problems, slightly reduces its quality. The main issue is the flawed options.
+Context Accuracy: The physical scenario is standard, but the provided options are incorrect. The correct answer, 4.9 m/s², is not available, making the question fundamentally flawed from a physics perspective.
+Quality of Working: The generator identifies the correct physical principle and formula (a = g * sin(θ)). However, it performs a demonstrably false calculation (9.8 * sin(30°) ≈ 4.2) to match the incorrect key. The correct calculation is 9.8 * 0.5 = 4.9.
+Final Answer Accuracy: The generator's answer matches the provided key (C). It successfully identified the intended, albeit physically incorrect, answer.","SYSTEM: You are a Grade 12 Physics teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 medium-level quantitative MCQ from: kinematics (uniform/accelerated/projectile), dynamics (Newton/incline), energy–impulse, or basic circuits (V–I–R).
+• Use SI units (use g = 9.8 m s^-2 if relevant); realistic numbers; round to 2 decimals.
+• Distractors: typical vector-component/sign mistakes, unit conversion errors, wrong effective forces.
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object.
+- Format:
+  [{""question"": ""..."", ""options"": [""..."",""..."",""..."",""...""], ""answer"": ""A"", ""solution"": ""...""}]
+- Fields:
+  * ""question"": one string.
+  * ""options"": array of 4 answer-choice strings.
+  * ""answer"": one of ""A"",""B"",""C"",""D"" (just the letter).
+  * ""solution"": short plain-text explanation (a few lines is fine).
+- No extra text before or after the JSON.
+- Do NOT use markdown, code fences, or LaTeX ($ or backslashes).
+USER: Topic: Physics. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: 4.5, 20, 0.8, upwards, 24, 3.5, velocity, pulled, wrapped, coefficient, moving, with, 2.1, 5.6, 4.00, meters, constant, 7, placed, particle, initial, 1.4, from, 8.0, 1.8, starts, inclined, top, force, pushed, 40, 12.0, 0.3, standing, rope, given, thrown, 3.0, 3.4, 6.5, box, 1.2, 16.0, surface, released, pulley, 5, student, what, 6.0, 1.5, 15.0, 27, air, height, 2.5, 2.00, and, rough, final, 3, along, rest, seconds, 0.25, above, 0.5, 9.8, angle, car, accelerates, 15, uniformly, horizontal, incline, ground, 4.0, long, makes, initially, 5.0, 3.2, 8, 12, 6, its, after, 30, frictionless, 4.2, mass, 2.0, that, block, then, acceleration, around, 10, 2, platform, over, 12.5, fixed, 1.9, string, projected, 10.0, accelerated, plane, distance, speed, applied, 9.00, ramp, 25, down, track, object.
+- Do NOT print this list in the output."
+physics,llama,struktur1,43,10006,"A block of mass 2.0 kg is projected up a frictionless inclined plane with an initial acceleration of 1.9 m/s^2. If the block accelerates uniformly at this rate for 10 seconds, what is its final speed?",9.0 m/s,12.5 m/s,15.0 m/s,18.8 m/s,A,"The block's initial acceleration is given as 1.9 m/s^2, and it accelerates uniformly for 10 seconds. We can use the equation a = Δv / Δt to find its final speed: v_f = v_i + a * Δt. Since v_i = 0 (initially at rest), we get v_f = 1.9 m/s^2 * 10 s = 18.8 m/s.","The question is ambiguous. The phrase 'projected up' implies an initial velocity, but none is given. The only way to solve it is to assume the block starts from rest (v_i = 0) and that the given acceleration is the net acceleration. Using the kinematic equation for constant acceleration:
+v_f = v_i + a*t
+v_f = 0 + (1.9 m/s^2) * (10 s)
+v_f = 19.0 m/s
+This result (19.0 m/s) is closest to option D (18.8 m/s). The provided key (A) is not derivable from the problem data.",gemini:gemini-2.5-pro,43260,1,2,Incorrect,3.5,"Clarity: The question is very unclear. 'Projected up' implies an initial velocity, but none is given, making the problem unsolvable as written. The terms 'initial acceleration' and 'accelerates uniformly' are redundant and potentially confusing. The mass and incline are irrelevant distractors.
+Context Accuracy: The physical scenario is unrealistic. A block projected up a frictionless incline would decelerate due to gravity. The problem states it accelerates, which would require an unmentioned external force.
+Quality of Working: The generator makes the most logical assumption (v_i = 0) to solve an otherwise unsolvable problem and uses the correct formula. However, it makes a small arithmetic error, stating 1.9 * 10 = 18.8 instead of 19.0.
+Final Answer Accuracy: The generator's answer (18.8 m/s) is incorrect because it does not match the provided key (A: 9.0 m/s). Furthermore, the generator's own reasoning leads to 19.0 m/s, which is also not the keyed answer.","SYSTEM: You are a Grade 12 Physics teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 medium-level quantitative MCQ from: kinematics (uniform/accelerated/projectile), dynamics (Newton/incline), energy–impulse, or basic circuits (V–I–R).
+• Use SI units (use g = 9.8 m s^-2 if relevant); realistic numbers; round to 2 decimals.
+• Distractors: typical vector-component/sign mistakes, unit conversion errors, wrong effective forces.
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object.
+- Format:
+  [{""question"": ""..."", ""options"": [""..."",""..."",""..."",""...""], ""answer"": ""A"", ""solution"": ""...""}]
+- Fields:
+  * ""question"": one string.
+  * ""options"": array of 4 answer-choice strings.
+  * ""answer"": one of ""A"",""B"",""C"",""D"" (just the letter).
+  * ""solution"": short plain-text explanation (a few lines is fine).
+- No extra text before or after the JSON.
+- Do NOT use markdown, code fences, or LaTeX ($ or backslashes).
+USER: Topic: Physics. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: 4.5, 20, 0.8, upwards, 24, 3.5, velocity, pulled, wrapped, coefficient, moving, with, 2.1, 5.6, 4.00, meters, constant, 7, placed, particle, initial, 1.4, from, 8.0, 1.8, starts, inclined, top, force, pushed, 40, 12.0, 0.3, standing, rope, given, thrown, 3.0, 3.4, 6.5, box, 1.2, 16.0, surface, released, pulley, 5, student, what, 6.0, 1.5, 15.0, 27, air, height, 2.5, 2.00, and, rough, final, 3, along, rest, seconds, 0.25, above, 0.5, 9.8, angle, car, accelerates, 15, uniformly, horizontal, incline, ground, 4.0, long, makes, initially, 5.0, 3.2, 8, 12, 6, its, after, 30, frictionless, 4.2, mass, 2.0, that, block, then, acceleration, around, 10, 2, platform, over, 12.5, fixed, 1.9, string, projected, 10.0, accelerated, plane, distance, speed, applied, 9.00, ramp, 25, down, track, object.
+- Do NOT print this list in the output."
+physics,llama,struktur1,44,131860,"A block of mass 2.00 kg is projected up a frictionless inclined plane with an angle of 30° to the horizontal. If it accelerates at 1.50 m/s², what is its speed after 5.00 s?",4.25 m/s,6.75 m/s,9.25 m/s,12.5 m/s,C,"Use the equation a = Δv / Δt to find the change in velocity (Δv) over 5 s: Δv = a * Δt = 1.50 m/s² * 5 s = 7.50 m/s. Then, use the equation v² = v0² + 2aΔt to find the final speed (v): v = √(v0² + 2aΔt) = √((0 m/s)² + 2 * 1.50 m/s² * 5 s) ≈ 6.75 m/s.","The question is fundamentally flawed and unsolvable as stated. It is a kinematics problem that requires an initial velocity (v0), which is not provided. The phrase 'projected up' implies v0 > 0. The problem gives an acceleration (a = 1.50 m/s²) that contradicts the physical setup. For a frictionless plane at 30°, the acceleration due to gravity alone would be g*sin(30°) = 9.8 m/s² * 0.5 = 4.9 m/s² down the incline. The given mass and angle are red herrings if the acceleration is simply given. Without the initial velocity, the final speed (v = v0 + at) cannot be determined.",gemini:gemini-2.5-pro,41673,1,0,Incorrect,0,"Clarity: The question is extremely unclear because it omits the necessary initial velocity. Furthermore, the direction of the given acceleration is ambiguous.
+Context Accuracy: The physical context is incorrect. An acceleration of 1.50 m/s² is inconsistent with a block on a frictionless 30° incline, where the acceleration from gravity should be 4.9 m/s² down the slope. This implies an unstated external force, making the problem ill-defined.
+Quality of Working: The generator's reasoning is nonsensical. It incorrectly assumes an initial velocity of zero, which contradicts 'projected up'. It uses a physically and dimensionally incorrect formula (v² = v0² + 2aΔt instead of v² = v0² + 2aΔx). The arithmetic is also wrong (sqrt(2*1.5*5) is approx 3.87, not 6.75).
+Final Answer Accuracy: The generator's answer is 6.75 m/s (Option B), but the provided key is C (9.25 m/s). The generator's answer is incorrect.","SYSTEM: You are a Grade 12 Physics teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 medium-level quantitative MCQ from: kinematics (uniform/accelerated/projectile), dynamics (Newton/incline), energy–impulse, or basic circuits (V–I–R).
+• Use SI units (use g = 9.8 m s^-2 if relevant); realistic numbers; round to 2 decimals.
+• Distractors: typical vector-component/sign mistakes, unit conversion errors, wrong effective forces.
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object.
+- Format:
+  [{""question"": ""..."", ""options"": [""..."",""..."",""..."",""...""], ""answer"": ""A"", ""solution"": ""...""}]
+- Fields:
+  * ""question"": one string.
+  * ""options"": array of 4 answer-choice strings.
+  * ""answer"": one of ""A"",""B"",""C"",""D"" (just the letter).
+  * ""solution"": short plain-text explanation (a few lines is fine).
+- No extra text before or after the JSON.
+- Do NOT use markdown, code fences, or LaTeX ($ or backslashes).
+USER: Topic: Physics. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: 4.5, 20, 0.8, upwards, 24, 3.5, velocity, pulled, wrapped, coefficient, moving, with, 2.1, 5.6, 4.00, meters, constant, 7, placed, particle, initial, 1.4, from, 8.0, 1.8, starts, inclined, top, force, pushed, 40, 12.0, 0.3, standing, rope, given, thrown, 3.0, 3.4, 6.5, box, 1.2, 16.0, surface, released, pulley, 5, student, what, 6.0, 1.5, 15.0, 27, air, height, 2.5, 2.00, and, rough, final, 3, along, rest, seconds, 0.25, above, 0.5, 9.8, angle, car, accelerates, 15, uniformly, horizontal, incline, ground, 4.0, long, makes, initially, 5.0, 3.2, 8, 12, 6, its, after, 30, frictionless, 4.2, mass, 2.0, that, block, then, acceleration, around, 10, 2, platform, over, 12.5, fixed, 1.9, string, projected, 10.0, accelerated, plane, distance, speed, applied, 9.00, ramp, 25, down, track, object.
+- Do NOT print this list in the output."
+physics,llama,struktur1,45,251113,"A block of mass 2.50 kg is projected up a frictionless inclined plane with an angle of 30° to the horizontal. If it takes 1.50 seconds for the block to travel a distance of 5.00 m, what is its acceleration?",0.80 m/s²,1.20 m/s²,2.50 m/s²,3.00 m/s²,C,"Using kinematics, we can calculate the block's initial speed using the equation d = (v0 + 0.5a*t)^2. Plugging in the values given, we get v0 = 4.17 m/s. Then, we can use the equation a = Δv / Δt to find the acceleration: a = (v - v0) / t = (0 m/s - 4.17 m/s) / 1.50 s = 2.50 m/s².","The problem is contradictory. Using dynamics for a frictionless plane at 30°, the acceleration must be a = g*sin(30°) = 9.8 m/s² * 0.5 = 4.9 m/s². This is not an option. Using kinematics, the equation d = v₀t + 0.5at² has two unknowns (v₀ and a) and cannot be solved with the given information. If we assume the block stops after 5.00 m (v=0), we can solve the system of equations d = 0.5(v₀+v)t and a = (v-v₀)/t. This gives v₀ = 6.67 m/s and a = -4.44 m/s². This is also not an option. The question is fundamentally flawed.",gemini:gemini-2.5-pro,49478,1,1,Correct,0,"Clarity: The question is very poorly posed because it provides contradictory information. The physical setup (frictionless 30° incline) implies an acceleration of 4.9 m/s², which contradicts the options. The kinematic data provided is insufficient to solve for acceleration without making unstated assumptions.
+Context Accuracy: The scenario is physically impossible as stated. The kinematic values (distance, time) are inconsistent with the acceleration that must result from the given physical setup (frictionless 30° incline, g=9.8 m/s²).
+Quality of Working: The generator's solution is completely invalid. It uses a non-existent kinematic formula, makes an unjustified assumption (final velocity is zero), performs incorrect arithmetic ((-4.17)/1.50 is -2.78, not 2.50), and appears to have worked backward from the key.
+Final Answer Accuracy: The generator's final answer matches the provided key (C). Despite the flawed question and the nonsensical working, the final output is technically correct according to the key.","SYSTEM: You are a Grade 12 Physics teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 medium-level quantitative MCQ from: kinematics (uniform/accelerated/projectile), dynamics (Newton/incline), energy–impulse, or basic circuits (V–I–R).
+• Use SI units (use g = 9.8 m s^-2 if relevant); realistic numbers; round to 2 decimals.
+• Distractors: typical vector-component/sign mistakes, unit conversion errors, wrong effective forces.
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object.
+- Format:
+  [{""question"": ""..."", ""options"": [""..."",""..."",""..."",""...""], ""answer"": ""A"", ""solution"": ""...""}]
+- Fields:
+  * ""question"": one string.
+  * ""options"": array of 4 answer-choice strings.
+  * ""answer"": one of ""A"",""B"",""C"",""D"" (just the letter).
+  * ""solution"": short plain-text explanation (a few lines is fine).
+- No extra text before or after the JSON.
+- Do NOT use markdown, code fences, or LaTeX ($ or backslashes).
+USER: Topic: Physics. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: 4.5, 20, 0.8, upwards, 24, 3.5, velocity, pulled, wrapped, coefficient, moving, with, 2.1, 5.6, 4.00, meters, constant, 7, placed, particle, initial, 1.4, from, 8.0, 1.8, starts, inclined, top, force, pushed, 40, 12.0, 0.3, standing, rope, given, thrown, 3.0, 3.4, 6.5, box, 1.2, 16.0, surface, released, pulley, 5, student, what, 6.0, 1.5, 15.0, 27, air, height, 2.5, 2.00, and, rough, final, 3, along, rest, seconds, 0.25, above, 0.5, 9.8, angle, car, accelerates, 15, uniformly, horizontal, incline, ground, 4.0, long, makes, initially, 5.0, 3.2, 1.50, 5.00, 8, 12, 6, its, after, 30, frictionless, 4.2, mass, 2.0, that, block, then, acceleration, around, 10, 2, platform, over, 12.5, fixed, 1.9, string, projected, 10.0, accelerated, plane, distance, speed, applied, 9.00, ramp, 25, down, track, object.
+- Do NOT print this list in the output."
+physics,llama,struktur1,46,40924,"A block of mass 2.50 kg is released from rest at the top of a frictionless inclined plane with an angle of 30° above the horizontal. If the block accelerates uniformly down the plane, what is its acceleration after falling for 1.00 s?",0.25 m/s^2,0.50 m/s^2,0.75 m/s^2,1.00 m/s^2,C,"The block's acceleration is given by g * sin(30°) = 9.8 m/s^2 * (1/2) = 2.47 m/s^2. After falling for 1.00 s, the block's acceleration remains unchanged.","The acceleration of a block on a frictionless incline is determined by the component of gravity parallel to the slope. The formula is a = g * sin(theta), where g is the acceleration due to gravity (~9.8 m/s^2) and theta is the angle of inclination.
+Given theta = 30°, sin(30°) = 0.5.
+So, a = 9.8 m/s^2 * 0.5 = 4.9 m/s^2.
+Since the plane is frictionless, the acceleration is uniform (constant).
+Therefore, the acceleration after 1.00 s is the same as the initial acceleration, 4.9 m/s^2.
+None of the provided options are correct.",gemini:gemini-2.5-pro,24486,4,1,Incorrect,2.5,"Clarity: The question's text is clear and describes a standard physics problem. However, the nonsensical options detract from the overall clarity, as they force a solver to doubt their understanding.
+Context Accuracy: The physical scenario is realistic, but the question is fundamentally flawed because the correct answer (~4.9 m/s^2) is not available. The provided options and key are incorrect by a large margin, making the question invalid.
+Quality of Working: The generator correctly identifies the governing equation (a = g*sin(theta)) and correctly states that the acceleration is constant. However, it makes a significant arithmetic error, calculating 9.8 * 0.5 as 2.47 instead of 4.9.
+Final Answer Accuracy: The generator's answer (2.47 m/s^2) is incorrect. It does not match the provided key (0.75 m/s^2), and it is also not the physically correct answer (4.9 m/s^2).","SYSTEM: You are a Grade 12 Physics teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 medium-level quantitative MCQ from: kinematics (uniform/accelerated/projectile), dynamics (Newton/incline), energy–impulse, or basic circuits (V–I–R).
+• Use SI units (use g = 9.8 m s^-2 if relevant); realistic numbers; round to 2 decimals.
+• Distractors: typical vector-component/sign mistakes, unit conversion errors, wrong effective forces.
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object.
+- Format:
+  [{""question"": ""..."", ""options"": [""..."",""..."",""..."",""...""], ""answer"": ""A"", ""solution"": ""...""}]
+- Fields:
+  * ""question"": one string.
+  * ""options"": array of 4 answer-choice strings.
+  * ""answer"": one of ""A"",""B"",""C"",""D"" (just the letter).
+  * ""solution"": short plain-text explanation (a few lines is fine).
+- No extra text before or after the JSON.
+- Do NOT use markdown, code fences, or LaTeX ($ or backslashes).
+USER: Topic: Physics. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: 4.5, 20, 0.8, upwards, 24, 3.5, velocity, pulled, wrapped, coefficient, moving, with, 2.1, 5.6, 4.00, meters, constant, 7, placed, particle, initial, 1.4, from, 8.0, 1.8, starts, inclined, top, force, pushed, 40, 12.0, 0.3, standing, rope, given, thrown, 3.0, 3.4, 6.5, box, 1.2, 16.0, surface, released, pulley, 5, student, what, 6.0, 1.5, 15.0, 27, air, height, 2.5, 2.00, and, rough, final, 3, along, rest, seconds, 0.25, above, 0.5, 9.8, 2.50, angle, car, accelerates, 15, uniformly, horizontal, incline, ground, 4.0, long, makes, initially, 5.0, 3.2, 1.50, 5.00, 8, 12, 6, its, after, 30, frictionless, 4.2, mass, 2.0, that, block, then, acceleration, around, 10, 2, platform, over, 12.5, fixed, 1.9, string, projected, 10.0, accelerated, plane, distance, speed, applied, 9.00, ramp, 25, down, track, object.
+- Do NOT print this list in the output."
+physics,llama,struktur1,47,86923,"A block is projected up a frictionless inclined plane with an initial speed of 10.0 m/s and an angle of elevation of 30°. If the acceleration due to gravity is 9.8 m/s^2, what is the maximum height the block will reach?",6.5 m,7.3 m,8.1 m,9.4 m,A,"The maximum height is reached when the block momentarily comes to rest. Since the acceleration due to gravity acts downwards, the block will accelerate down the plane until it reaches its maximum height. The initial speed and angle of elevation are given, so we can use kinematics to find the maximum height: h = v0*t - 0.5*g*t^2, where t is the time taken to reach the maximum height. Solving for h, we get h ≈ 6.5 m.","The problem can be solved using the principle of conservation of mechanical energy. The initial kinetic energy of the block is converted into gravitational potential energy at its maximum height. 
+Initial Energy (KE) = 0.5 * m * v^2
+Final Energy (PE) = m * g * h
+Since the plane is frictionless, KE = PE.
+0.5 * m * (10.0 m/s)^2 = m * (9.8 m/s^2) * h
+The mass 'm' cancels out.
+0.5 * 100 = 9.8 * h
+50 = 9.8 * h
+h = 50 / 9.8 ≈ 5.10 m.
+The angle of the incline does not affect the maximum vertical height reached, only the distance traveled along the incline to reach that height.",gemini:gemini-2.5-pro,33427,5,1,Incorrect,0,"Clarity: The question is clearly worded, providing all necessary information for a standard inclined plane problem.
+Context Accuracy: The physical setup is realistic, but the provided options and key are incorrect. The calculated correct answer (approx. 5.1 m) is not among the choices, which is a major flaw in the question's design.
+Quality of Working: The generator's reasoning is completely flawed. It uses an incorrect kinematic formula for vertical projectile motion (h = v0*t - 0.5*g*t^2) which is not applicable to motion along an incline. It provides no valid steps to support its answer.
+Final Answer Accuracy: The correct answer is approximately 5.1 m. The generator's answer of 6.5 m is incorrect, although it happens to match the flawed key provided with the question.","SYSTEM: You are a Grade 12 Physics teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 medium-level quantitative MCQ from: kinematics (uniform/accelerated/projectile), dynamics (Newton/incline), energy–impulse, or basic circuits (V–I–R).
+• Use SI units (use g = 9.8 m s^-2 if relevant); realistic numbers; round to 2 decimals.
+• Distractors: typical vector-component/sign mistakes, unit conversion errors, wrong effective forces.
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object.
+- Format:
+  [{""question"": ""..."", ""options"": [""..."",""..."",""..."",""...""], ""answer"": ""A"", ""solution"": ""...""}]
+- Fields:
+  * ""question"": one string.
+  * ""options"": array of 4 answer-choice strings.
+  * ""answer"": one of ""A"",""B"",""C"",""D"" (just the letter).
+  * ""solution"": short plain-text explanation (a few lines is fine).
+- No extra text before or after the JSON.
+- Do NOT use markdown, code fences, or LaTeX ($ or backslashes).
+USER: Topic: Physics. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: 4.5, 20, 0.8, upwards, 24, 3.5, velocity, pulled, wrapped, coefficient, moving, with, 2.1, 5.6, 4.00, meters, constant, 7, placed, particle, initial, 1.4, from, 8.0, 1.8, starts, inclined, top, force, pushed, 40, 12.0, 0.3, standing, rope, given, thrown, 3.0, 3.4, 6.5, box, 1.2, 16.0, surface, released, pulley, 5, student, what, 6.0, 1.5, 15.0, 27, air, height, 2.5, 2.00, and, rough, final, 3, along, rest, seconds, 0.25, above, 0.5, 9.8, 2.50, angle, car, accelerates, 15, uniformly, horizontal, incline, ground, 4.0, long, makes, initially, 5.0, 3.2, 1.50, 5.00, 8, 12, 6, its, after, 30, frictionless, 4.2, mass, 2.0, that, block, then, acceleration, around, 10, 2, platform, over, 12.5, fixed, 1.9, string, projected, 10.0, accelerated, plane, distance, speed, applied, 9.00, 1.00, ramp, 25, down, track, object.
+- Do NOT print this list in the output."
+physics,llama,struktur1,48,68066,"A block of mass 2.50 kg is projected up an inclined plane with an initial speed of 10.0 m/s at an angle of 30° to the horizontal. If the acceleration due to gravity is 9.8 m/s², what is the time taken by the block to reach its maximum height?",1.25 s,2.50 s,5.00 s,10.0 s,A,"The block accelerates down the inclined plane due to gravity. Since the acceleration is uniform, we can use the equation v² = u² + 2as to find the time taken to reach the maximum height. Plugging in the values, we get: v² = (10.0 m/s)² - 2 × 9.8 m/s² × t² Simplifying and solving for t, we get t ≈ 1.25 s.","The acceleration of the block down the inclined plane is given by a = g * sin(θ). The initial velocity is up the plane, so this is a deceleration.
+Given g = 9.8 m/s² and θ = 30°, the acceleration is a = -9.8 * sin(30°) = -4.9 m/s².
+At the maximum height, the final velocity v = 0.
+Using the kinematic equation v = u + at:
+0 = 10.0 m/s + (-4.9 m/s²) * t
+Solving for t: t = 10.0 / 4.9 ≈ 2.04 s.",gemini:gemini-2.5-pro,36427,4,3,Incorrect,0,"Clarity: The question is clearly worded and provides all necessary data (the mass is irrelevant). However, the provided options are inconsistent with the data, which is a significant flaw.
+Context Accuracy: The physical scenario is standard, but the numerical values given in the problem lead to an answer (~2.04 s) that is not among the options. This makes the question fundamentally flawed as an MCQ.
+Quality of Working: The generator's reasoning is nonsensical. It uses the wrong kinematic equation (v²=u²+2as) to find time, incorrectly substitutes t² for distance (s), uses the wrong acceleration (g instead of g*sin(θ)), and its calculation does not even yield the answer it claims.
+Final Answer Accuracy: The correct answer, based on the provided data, is approximately 2.04 s. The generator's answer of 1.25 s is incorrect. The generator appears to have stated the provided key, which is itself incorrect.","SYSTEM: You are a Grade 12 Physics teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 medium-level quantitative MCQ from: kinematics (uniform/accelerated/projectile), dynamics (Newton/incline), energy–impulse, or basic circuits (V–I–R).
+• Use SI units (use g = 9.8 m s^-2 if relevant); realistic numbers; round to 2 decimals.
+• Distractors: typical vector-component/sign mistakes, unit conversion errors, wrong effective forces.
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object.
+- Format:
+  [{""question"": ""..."", ""options"": [""..."",""..."",""..."",""...""], ""answer"": ""A"", ""solution"": ""...""}]
+- Fields:
+  * ""question"": one string.
+  * ""options"": array of 4 answer-choice strings.
+  * ""answer"": one of ""A"",""B"",""C"",""D"" (just the letter).
+  * ""solution"": short plain-text explanation (a few lines is fine).
+- No extra text before or after the JSON.
+- Do NOT use markdown, code fences, or LaTeX ($ or backslashes).
+USER: Topic: Physics. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: 4.5, 20, 0.8, upwards, 24, 3.5, velocity, pulled, wrapped, coefficient, moving, with, 2.1, 5.6, 4.00, meters, constant, 7, placed, particle, initial, 1.4, from, 8.0, 1.8, starts, inclined, top, force, pushed, 40, 12.0, 0.3, standing, rope, given, thrown, 3.0, 3.4, 6.5, box, 1.2, 16.0, surface, released, pulley, 5, student, what, 6.0, 1.5, 15.0, 27, air, height, 2.5, 2.00, and, rough, final, 3, along, rest, seconds, 0.25, above, 0.5, 9.8, 2.50, angle, car, accelerates, 15, uniformly, horizontal, incline, ground, 4.0, long, makes, initially, 5.0, 3.2, 1.50, 5.00, 8, 12, 6, its, after, 30, frictionless, 4.2, mass, 2.0, that, block, then, acceleration, around, 10, 2, platform, over, 12.5, fixed, 1.9, string, projected, 10.0, accelerated, plane, distance, speed, applied, 9.00, 1.00, ramp, 25, down, track, object.
+- Do NOT print this list in the output."
+physics,llama,struktur1,49,68689,"A block of mass 2.50 kg is projected up an inclined plane with an acceleration of 1.60 m/s^2. If it takes 10 seconds to travel a distance of 15.0 meters, what is its initial speed?",5.00 m/s,6.40 m/s,8.00 m/s,9.80 m/s,C,"Using the equation s = ut + (1/2)at^2, we can solve for u (initial speed). Plugging in values, we get 6.40 m/s.","This is a kinematics problem. The mass of the block is irrelevant information. The appropriate equation of motion is s = ut + (1/2)at^2, where s is distance, u is initial speed, t is time, and a is acceleration.
+The block is projected 'up' the plane, so we define this direction as positive. The acceleration will be a deceleration, acting down the plane, so a = -1.60 m/s^2.
+Given: s = 15.0 m, t = 10 s, a = -1.60 m/s^2.
+Rearranging the formula to solve for u: u = (s - (1/2)at^2) / t.
+Plugging in the values: u = (15.0 - (0.5)(-1.60)(10^2)) / 10.
+u = (15.0 - (-0.80)(100)) / 10 = (15.0 + 80) / 10 = 95.0 / 10 = 9.50 m/s.
+None of the options match this result. The question's parameters are inconsistent.",gemini:gemini-2.5-pro,37480,2.5,1,Incorrect,1,"Clarity: The question is ambiguous about the direction of acceleration. For an object projected up an incline, acceleration is typically a deceleration (negative), but this is not explicitly stated. The inclusion of the block's mass is irrelevant and serves as a distractor.
+Context Accuracy: The numerical values given in the question (s, t, a) are mutually inconsistent with any of the provided options for initial speed (u). The correct initial speed for the given s, t, and a is 9.50 m/s, which is not an option. The scenario as stated is impossible.
+Quality of Working: The generator correctly identified the relevant kinematic equation. However, it provided no calculation steps and arrived at an incorrect numerical answer (6.40 m/s) that cannot be derived from the problem data.
+Final Answer Accuracy: The generator's answer is 6.40 m/s. The provided key is 8.00 m/s. The correct answer derived from the problem statement is 9.50 m/s. The generator's answer is incorrect.","SYSTEM: You are a Grade 12 Physics teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 medium-level quantitative MCQ from: kinematics (uniform/accelerated/projectile), dynamics (Newton/incline), energy–impulse, or basic circuits (V–I–R).
+• Use SI units (use g = 9.8 m s^-2 if relevant); realistic numbers; round to 2 decimals.
+• Distractors: typical vector-component/sign mistakes, unit conversion errors, wrong effective forces.
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object.
+- Format:
+  [{""question"": ""..."", ""options"": [""..."",""..."",""..."",""...""], ""answer"": ""A"", ""solution"": ""...""}]
+- Fields:
+  * ""question"": one string.
+  * ""options"": array of 4 answer-choice strings.
+  * ""answer"": one of ""A"",""B"",""C"",""D"" (just the letter).
+  * ""solution"": short plain-text explanation (a few lines is fine).
+- No extra text before or after the JSON.
+- Do NOT use markdown, code fences, or LaTeX ($ or backslashes).
+USER: Topic: Physics. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: 4.5, 20, 0.8, upwards, 24, 3.5, velocity, pulled, wrapped, coefficient, moving, with, 2.1, 5.6, 4.00, meters, constant, 7, placed, particle, initial, 1.4, from, 8.0, 1.8, starts, inclined, top, force, pushed, 40, 12.0, 0.3, standing, rope, given, thrown, 3.0, 3.4, 6.5, box, 1.2, 16.0, surface, released, pulley, 5, student, what, 6.0, 1.5, 15.0, 27, air, height, 2.5, 2.00, and, rough, final, 3, along, rest, seconds, 0.25, above, 0.5, 9.8, 2.50, angle, car, accelerates, 15, uniformly, horizontal, incline, ground, 4.0, long, makes, initially, 5.0, 3.2, 1.50, 5.00, 8, 12, 6, its, after, 30, frictionless, 4.2, mass, 2.0, that, block, then, acceleration, around, 10, 2, platform, over, 12.5, fixed, 1.9, string, projected, 10.0, accelerated, plane, distance, speed, applied, 9.00, 1.00, ramp, 25, down, track, object.
+- Do NOT print this list in the output."
+physics,llama,struktur1,50,9012,A block of mass 2.50 kg is projected up an inclined plane with an angle of 30° and an initial speed of 10.0 m s^-1. What is the acceleration of the block as it travels up the incline?,9.8 m s^-2,4.5 m s^-2,6.7 m s^-2,3.2 m s^-2,A,"The acceleration of the block is given by a = g * sin(30°) - (g * cos(30°)) / 2.50 kg, where g is the acceleration due to gravity. Plugging in the values, we get a ≈ 4.9 m s^-2.","The acceleration of the block on a frictionless inclined plane is determined by the component of gravity parallel to the plane's surface. The net force parallel to the incline is F_net = -mg * sin(θ), where the negative sign indicates the force is directed down the incline.
+Using Newton's second law, F_net = ma.
+Therefore, ma = -mg * sin(θ), which simplifies to a = -g * sin(θ).
+The magnitude of the acceleration is |a| = g * sin(θ).
+Given g ≈ 9.8 m/s² and θ = 30°:
+|a| = 9.8 m/s² * sin(30°) = 9.8 m/s² * 0.5 = 4.9 m/s².
+The mass and initial speed are irrelevant for calculating the acceleration.",gemini:gemini-2.5-pro,33399,4,1,Incorrect,0,"Clarity: The question is clearly worded, but it omits whether the surface is frictionless, which is a key assumption required for the solution. The inclusion of mass and initial speed as distractors is acceptable.
+Context Accuracy: The physical scenario is realistic, but the question is fundamentally flawed. The correct answer, 4.9 m/s², is not among the options. The provided key 'A' (9.8 m/s²) corresponds to vertical free fall, which is physically incorrect for a 30° incline.
+Quality of Working: The generator's provided formula is dimensionally inconsistent and physically nonsensical, as it involves dividing an acceleration term by mass. The reasoning is completely unsound, even though the final numerical value stated happens to be the correct physical answer (by ignoring the flawed part of its own formula).
+Final Answer Accuracy: The generator's answer of 4.9 m/s² is the correct physical acceleration. However, it is not one of the multiple-choice options and contradicts the provided key. As a solution to the given MCQ item, it is incorrect because it fails to select an option or address the discrepancy.","SYSTEM: You are a Grade 12 Physics teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 medium-level quantitative MCQ from: kinematics (uniform/accelerated/projectile), dynamics (Newton/incline), energy–impulse, or basic circuits (V–I–R).
+• Use SI units (use g = 9.8 m s^-2 if relevant); realistic numbers; round to 2 decimals.
+• Distractors: typical vector-component/sign mistakes, unit conversion errors, wrong effective forces.
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object.
+- Format:
+  [{""question"": ""..."", ""options"": [""..."",""..."",""..."",""...""], ""answer"": ""A"", ""solution"": ""...""}]
+- Fields:
+  * ""question"": one string.
+  * ""options"": array of 4 answer-choice strings.
+  * ""answer"": one of ""A"",""B"",""C"",""D"" (just the letter).
+  * ""solution"": short plain-text explanation (a few lines is fine).
+- No extra text before or after the JSON.
+- Do NOT use markdown, code fences, or LaTeX ($ or backslashes).
+USER: Topic: Physics. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: 4.5, 20, 0.8, upwards, 24, 3.5, velocity, pulled, wrapped, coefficient, moving, with, 2.1, 5.6, 4.00, meters, constant, 7, placed, particle, initial, 1.4, from, 8.0, 1.8, starts, inclined, top, force, pushed, 40, 12.0, 0.3, standing, rope, given, thrown, 3.0, 3.4, 6.5, box, 1.2, 16.0, surface, released, pulley, 5, student, what, 6.0, 1.5, 15.0, 27, air, height, 2.5, 2.00, and, rough, final, 3, along, rest, seconds, 0.25, above, 0.5, 9.8, 2.50, angle, car, accelerates, 15, uniformly, horizontal, incline, ground, 4.0, long, makes, initially, 5.0, 3.2, 1.50, 5.00, 8, 12, 6, its, after, 30, frictionless, 4.2, mass, 2.0, that, block, then, 1.60, acceleration, around, 10, 2, platform, over, 12.5, fixed, 1.9, string, projected, 10.0, accelerated, plane, distance, speed, applied, 9.00, 1.00, ramp, 25, down, track, object.
+- Do NOT print this list in the output."

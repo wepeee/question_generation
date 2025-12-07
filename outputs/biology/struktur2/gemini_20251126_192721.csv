@@ -1,0 +1,1162 @@
+topic,model,struktur,index,latency_model_ms,question,optionA,optionB,optionC,optionD,answer,solution_model,solution_verifier,verifier_model,latency_verifier_ms,clarity,context_accuracy,final_answer_accuracy,quality_of_working,judge_notes,prompt_generator
+biology,gemini,struktur2,1,3231,"In a population of butterflies, wing color is determined by a single gene with two alleles: black (B) and white (b). If 84% of the butterflies have white wings, assuming Hardy-Weinberg equilibrium, what is the approximate frequency of the black allele (B)?",A. 0.08,B. 0.16,C. 0.41,D. 0.92,C,"q^2 = 0.84, so q = sqrt(0.84) = 0.92. Since p + q = 1, then p = 1 - q. Therefore, p = 1 - 0.92 = 0.08. However, the question asks for the *frequency of the black allele* p (which is 0.08), but the options are misleading (reflecting p^2 or similar). The closest answer is C, obtained by taking the square root of 1-0.84 = 0.16, then taking the square root again. There might be an issue with the question or options.","The question is ambiguous as it does not state which allele is dominant. Standard notation (B, b) implies black is dominant. If so, the white phenotype is recessive (bb), and its frequency is q^2 = 0.84. This gives q ≈ 0.92, and p (frequency of B) = 1 - 0.92 = 0.08 (Option A).
+
+However, for the provided key (C) to be correct, black must be the recessive trait. In this case, the frequency of the black phenotype is 1 - 0.84 = 0.16. This frequency corresponds to the homozygous recessive genotype (let's call it BB as per the question's notation). The frequency of the black allele (B) is p, so p^2 = 0.16. Therefore, p = sqrt(0.16) = 0.4. This matches option C.",gemini:gemini-2.5-pro,45266,1.0,4.0,Correct,1.0,"Clarity: The question is critically flawed because it fails to specify the dominance relationship between the alleles. The standard notation (B, b) implies black is dominant, which leads to answer A. The intended answer (C) requires assuming black is recessive, contradicting the notation.
+
+Context Accuracy: The biological context of wing color in butterflies as a single-gene trait under Hardy-Weinberg equilibrium is a standard and plausible scenario for genetics problems.
+
+Quality of Working: The generator's reasoning is very poor. It correctly calculates the result for one interpretation (0.08) but then tries to justify the intended answer (C) with a nonsensical and arithmetically incorrect method ('taking the square root again'). The logic is fundamentally broken.
+
+Final Answer Accuracy: Despite the deeply flawed reasoning, the generator correctly identifies C as the intended answer to this poorly constructed question. The final choice matches the key.","SYSTEM: You are a Grade 12 Biology teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 concise concept/application MCQ from: basic genetics (incl. Hardy–Weinberg), cell/tissue structure–function, or short ecology.
+• Use standard terminology; if arithmetic appears (e.g., allele frequency), keep numbers small and round to 2 decimals.
+• Distractors reflect common misconceptions (dominance ≠ frequency, misreading ratios/diagrams, DNA→RNA→Protein confusion).
+
+CoT (few-shot analogue; hidden 1–2 steps):
+• Identify concept/ratio/mini-table relations INTERNALLY; do NOT show steps.
+
+Style example (Hardy–Weinberg): compute 2pq internally → choose option.
+• Create a NEW item of the same family (small table/genotype ratio/energy flow).
+• Distractors must be plausible and map to real misconceptions.
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object:
+  [{""question"":""..."",""options"":[""A. ..."",""B. ..."",""C. ..."",""D. ...""],""answer"":""A"",""solution"":""3–6 short lines, plain text; no LaTeX/markdown.""}]
+- The ""solution"" field is MANDATORY with 3–6 short lines (plain text; no LaTeX/markdown).
+- No extra text outside JSON; no code fences.
+- Options MUST be prefixed ""A. ""/""B. ""/""C. ""/""D. "" and ""answer"" ∈ {A,B,C,D}.
+- NO LaTeX: do not use $ or backslashes; write plain text (sin, cos, pi, (a)/(b)).
+STRICT FOR GEMINI:
+- Output plain-text JSON only; do not use LaTeX ($ or backslashes).
+- The ""solution"" must be 3–6 lines, plain text.
+USER: Topic: Biology. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field."
+biology,gemini,struktur2,2,2598,"In a certain plant species, the smooth seed phenotype is dominant to wrinkled seeds. In a sample of 500 plants, 320 have smooth seeds and 180 have wrinkled seeds. Assuming Hardy-Weinberg equilibrium, what is the approximate frequency of the recessive allele?",A. 0.36,B. 0.42,C. 0.60,D. 0.64,C,"The frequency of the wrinkled phenotype (q^2) is 180/500 = 0.36. Therefore, the frequency of the recessive allele (q) is the square root of 0.36, which equals 0.60. The question asks for the recessive allele frequency, not genotype. Dominance does not directly give allele frequency.","The problem assumes Hardy-Weinberg equilibrium. The frequency of the recessive phenotype (wrinkled seeds) corresponds to the frequency of the homozygous recessive genotype (q^2).
+First, calculate q^2 from the given data:
+q^2 = (Number of wrinkled seed plants) / (Total number of plants)
+q^2 = 180 / 500 = 0.36
+The frequency of the recessive allele (q) is the square root of the genotype frequency (q^2).
+q = sqrt(0.36) = 0.60
+Therefore, the frequency of the recessive allele is 0.60.",gemini:gemini-2.5-pro,16135,5.0,5.0,Correct,5.0,"Clarity: The question is very clear. It provides all necessary data (phenotype counts), states the dominance relationship, and specifies the key assumption (Hardy-Weinberg equilibrium).
+Context Accuracy: The context is a classic and accurate application of Hardy-Weinberg principles to a Mendelian trait. The numbers are plausible for a sample population.
+Quality of Working: The generator's solution is perfect. It correctly identifies the frequency of the recessive phenotype as q^2, calculates its value, and then correctly finds the allele frequency q by taking the square root. The reasoning is concise and sound.
+Final Answer Accuracy: The generator's answer of 0.60 is correct and matches the provided key.","SYSTEM: You are a Grade 12 Biology teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 concise concept/application MCQ from: basic genetics (incl. Hardy–Weinberg), cell/tissue structure–function, or short ecology.
+• Use standard terminology; if arithmetic appears (e.g., allele frequency), keep numbers small and round to 2 decimals.
+• Distractors reflect common misconceptions (dominance ≠ frequency, misreading ratios/diagrams, DNA→RNA→Protein confusion).
+
+CoT (few-shot analogue; hidden 1–2 steps):
+• Identify concept/ratio/mini-table relations INTERNALLY; do NOT show steps.
+
+Style example (Hardy–Weinberg): compute 2pq internally → choose option.
+• Create a NEW item of the same family (small table/genotype ratio/energy flow).
+• Distractors must be plausible and map to real misconceptions.
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object:
+  [{""question"":""..."",""options"":[""A. ..."",""B. ..."",""C. ..."",""D. ...""],""answer"":""A"",""solution"":""3–6 short lines, plain text; no LaTeX/markdown.""}]
+- The ""solution"" field is MANDATORY with 3–6 short lines (plain text; no LaTeX/markdown).
+- No extra text outside JSON; no code fences.
+- Options MUST be prefixed ""A. ""/""B. ""/""C. ""/""D. "" and ""answer"" ∈ {A,B,C,D}.
+- NO LaTeX: do not use $ or backslashes; write plain text (sin, cos, pi, (a)/(b)).
+STRICT FOR GEMINI:
+- Output plain-text JSON only; do not use LaTeX ($ or backslashes).
+- The ""solution"" must be 3–6 lines, plain text.
+USER: Topic: Biology. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: with, two, single, 84, population, color, determined, wing, gene, butterflies.
+- Do NOT print this list in the output."
+biology,gemini,struktur2,3,2374,"In a grassland ecosystem, grasshoppers consume plants, frogs consume grasshoppers, and snakes consume frogs. If the grass has 5000 kcal of energy, approximately how much energy is available to the snakes?",A. 500 kcal,B. 50 kcal,C. 5 kcal,D. 5000 kcal,B,"Energy transfer between trophic levels is inefficient. Roughly 10% of energy is transferred to the next level. Grasshoppers receive 5000 * 0.1 = 500 kcal. Frogs receive 500 * 0.1 = 50 kcal. Snakes receive 50 * 0.1 = 5 kcal. The closest answer is 50 kcal, considering energy loss through respiration.","The problem describes a food chain with four trophic levels: Grass (producer), Grasshoppers (primary consumer), Frogs (secondary consumer), and Snakes (tertiary consumer).
+The 10% rule of energy transfer states that only about 10% of the energy from one trophic level is transferred to the next.
+1. Energy for Grasshoppers = 10% of 5000 kcal = 500 kcal.
+2. Energy for Frogs = 10% of 500 kcal = 50 kcal.
+3. Energy for Snakes = 10% of 50 kcal = 5 kcal.
+Therefore, approximately 5 kcal of energy is available to the snakes, which corresponds to option C.",gemini:gemini-2.5-pro,30536,5.0,5.0,Incorrect,1.0,"Clarity: The question is very clear. It presents a simple food chain and asks for the energy at the final trophic level, providing all necessary information.
+Context Accuracy: The scenario is a standard example of an ecological food chain, and the 10% rule for energy transfer is a widely accepted approximation in biology.
+Quality of Working: The generator correctly applies the 10% rule and calculates the energy at each trophic level, correctly finding that snakes receive 5 kcal. However, it then inexplicably concludes that the answer is 50 kcal, directly contradicting its own correct calculation. This is a major logical flaw.
+Final Answer Accuracy: The generator's answer is 50 kcal (Option B), which is the energy available to the frogs. The correct answer, derived from the generator's own working, is 5 kcal (Option C). The provided key (B) is also incorrect.","SYSTEM: You are a Grade 12 Biology teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 concise concept/application MCQ from: basic genetics (incl. Hardy–Weinberg), cell/tissue structure–function, or short ecology.
+• Use standard terminology; if arithmetic appears (e.g., allele frequency), keep numbers small and round to 2 decimals.
+• Distractors reflect common misconceptions (dominance ≠ frequency, misreading ratios/diagrams, DNA→RNA→Protein confusion).
+
+CoT (few-shot analogue; hidden 1–2 steps):
+• Identify concept/ratio/mini-table relations INTERNALLY; do NOT show steps.
+
+Style example (Hardy–Weinberg): compute 2pq internally → choose option.
+• Create a NEW item of the same family (small table/genotype ratio/energy flow).
+• Distractors must be plausible and map to real misconceptions.
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object:
+  [{""question"":""..."",""options"":[""A. ..."",""B. ..."",""C. ..."",""D. ...""],""answer"":""A"",""solution"":""3–6 short lines, plain text; no LaTeX/markdown.""}]
+- The ""solution"" field is MANDATORY with 3–6 short lines (plain text; no LaTeX/markdown).
+- No extra text outside JSON; no code fences.
+- Options MUST be prefixed ""A. ""/""B. ""/""C. ""/""D. "" and ""answer"" ∈ {A,B,C,D}.
+- NO LaTeX: do not use $ or backslashes; write plain text (sin, cos, pi, (a)/(b)).
+STRICT FOR GEMINI:
+- Output plain-text JSON only; do not use LaTeX ($ or backslashes).
+- The ""solution"" must be 3–6 lines, plain text.
+USER: Topic: Biology. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: phenotype, single, wing, dominant, with, certain, plant, population, determined, 320, 84, 500, color, smooth, gene, butterflies, seed, two, species, 180.
+- Do NOT print this list in the output."
+biology,gemini,struktur2,4,1711,"In a food web, which trophic level primarily obtains energy by feeding on dead organic matter?",A. Primary producers,B. Primary consumers,C. Decomposers,D. Secondary consumers,C,"Decomposers, like fungi and bacteria, break down dead organisms. This process releases nutrients back into the environment. Primary producers create their own food. Consumers eat other organisms to obtain energy. The energy flow starts from producers to consumers.","The question asks to identify the trophic level that consumes dead organic matter. 
+- Primary producers (A) create their own food (e.g., plants via photosynthesis).
+- Primary consumers (B) eat primary producers.
+- Secondary consumers (D) eat primary consumers.
+- Decomposers (C) are organisms like bacteria and fungi that break down dead organic material from all trophic levels, obtaining energy in the process. Therefore, decomposers are the correct answer.",gemini:gemini-2.5-pro,18816,5.0,5.0,Correct,5.0,"Clarity: The question is clearly worded using standard ecological terminology. The options are distinct and unambiguous.
+Context Accuracy: The question is based on a fundamental and accurate concept in ecology regarding energy flow and nutrient cycling in food webs.
+Quality of Working: The generator's explanation is excellent. It correctly defines decomposers and their role, and briefly contrasts them with producers and consumers to eliminate the other options.
+Final Answer Accuracy: The provided key 'C' is correct. Decomposers are the trophic level responsible for breaking down dead organic matter.","SYSTEM: You are a Grade 12 Biology teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 concise concept/application MCQ from: basic genetics (incl. Hardy–Weinberg), cell/tissue structure–function, or short ecology.
+• Use standard terminology; if arithmetic appears (e.g., allele frequency), keep numbers small and round to 2 decimals.
+• Distractors reflect common misconceptions (dominance ≠ frequency, misreading ratios/diagrams, DNA→RNA→Protein confusion).
+
+CoT (few-shot analogue; hidden 1–2 steps):
+• Identify concept/ratio/mini-table relations INTERNALLY; do NOT show steps.
+
+Style example (Hardy–Weinberg): compute 2pq internally → choose option.
+• Create a NEW item of the same family (small table/genotype ratio/energy flow).
+• Distractors must be plausible and map to real misconceptions.
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object:
+  [{""question"":""..."",""options"":[""A. ..."",""B. ..."",""C. ..."",""D. ...""],""answer"":""A"",""solution"":""3–6 short lines, plain text; no LaTeX/markdown.""}]
+- The ""solution"" field is MANDATORY with 3–6 short lines (plain text; no LaTeX/markdown).
+- No extra text outside JSON; no code fences.
+- Options MUST be prefixed ""A. ""/""B. ""/""C. ""/""D. "" and ""answer"" ∈ {A,B,C,D}.
+- NO LaTeX: do not use $ or backslashes; write plain text (sin, cos, pi, (a)/(b)).
+STRICT FOR GEMINI:
+- Output plain-text JSON only; do not use LaTeX ($ or backslashes).
+- The ""solution"" must be 3–6 lines, plain text.
+USER: Topic: Biology. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: phenotype, consume, ecosystem, single, wing, dominant, with, certain, plant, plants, population, determined, grasshoppers, 5000, 320, 84, 500, color, smooth, frogs, gene, butterflies, seed, and, two, species, grassland, 180.
+- Do NOT print this list in the output."
+biology,gemini,struktur2,5,2171,"In a hypothetical bird group, beak shape is controlled by a locus featuring alleles B and b. A study finds that 16% of the birds display the recessive beak shape. Assuming Hardy-Weinberg equilibrium, what is the predicted frequency of the B allele in this group?",A. 0.16,B. 0.36,C. 0.60,D. 0.84,C,"The frequency of the bb genotype (q^2) is 0.16. Therefore, q = sqrt(0.16) = 0.4. Since p + q = 1, the frequency of B (p) is 1 - 0.4 = 0.6. Thus the answer is 0.60.","The problem states that the frequency of the recessive phenotype (genotype bb) is 16%, or 0.16. In the Hardy-Weinberg equation, this frequency is represented by q^2.
+So, q^2 = 0.16.
+The frequency of the recessive allele (b), which is q, is the square root of q^2.
+q = sqrt(0.16) = 0.4.
+The sum of the allele frequencies must equal 1 (p + q = 1).
+Therefore, the frequency of the dominant allele B (p) is 1 - q.
+p = 1 - 0.4 = 0.6.
+The predicted frequency of the B allele is 0.60.",gemini:gemini-2.5-pro,28048,5.0,5.0,Correct,5.0,"Clarity: The question is exceptionally clear. It defines the variables, states the given information, specifies the necessary assumption (Hardy-Weinberg), and asks a direct question.
+Context Accuracy: The context of beak shape in birds is a classic, realistic example for population genetics. The provided frequency is plausible.
+Quality of Working: The generator's solution is perfect. It correctly identifies q^2, calculates q, and then uses p + q = 1 to find p. The logic is sound and the arithmetic is correct.
+Final Answer Accuracy: The generator's final answer of 0.60 is correct.","SYSTEM: You are a Grade 12 Biology teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 concise concept/application MCQ from: basic genetics (incl. Hardy–Weinberg), cell/tissue structure–function, or short ecology.
+• Use standard terminology; if arithmetic appears (e.g., allele frequency), keep numbers small and round to 2 decimals.
+• Distractors reflect common misconceptions (dominance ≠ frequency, misreading ratios/diagrams, DNA→RNA→Protein confusion).
+
+CoT (few-shot analogue; hidden 1–2 steps):
+• Identify concept/ratio/mini-table relations INTERNALLY; do NOT show steps.
+
+Style example (Hardy–Weinberg): compute 2pq internally → choose option.
+• Create a NEW item of the same family (small table/genotype ratio/energy flow).
+• Distractors must be plausible and map to real misconceptions.
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object:
+  [{""question"":""..."",""options"":[""A. ..."",""B. ..."",""C. ..."",""D. ...""],""answer"":""A"",""solution"":""3–6 short lines, plain text; no LaTeX/markdown.""}]
+- The ""solution"" field is MANDATORY with 3–6 short lines (plain text; no LaTeX/markdown).
+- No extra text outside JSON; no code fences.
+- Options MUST be prefixed ""A. ""/""B. ""/""C. ""/""D. "" and ""answer"" ∈ {A,B,C,D}.
+- NO LaTeX: do not use $ or backslashes; write plain text (sin, cos, pi, (a)/(b)).
+STRICT FOR GEMINI:
+- Output plain-text JSON only; do not use LaTeX ($ or backslashes).
+- The ""solution"" must be 3–6 lines, plain text.
+USER: Topic: Biology. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: web, phenotype, consume, ecosystem, level, single, wing, dominant, with, certain, plant, plants, obtains, dead, population, determined, grasshoppers, primarily, 5000, 320, 84, food, trophic, feeding, 500, color, smooth, frogs, gene, butterflies, seed, and, two, energy, which, species, grassland, 180.
+- Do NOT print this list in the output."
+biology,gemini,struktur2,6,2229,"In a stable community, primary producers generate 10,000 kcal of gross production. Approximately how much chemical potential is expected to be available to secondary consumers?",A. 10 kcal,B. 100 kcal,"C. 1,000 kcal","D. 10,000 kcal",B,"Approximately 10% of chemical potential is transferred between levels. Primary producers have 10,000 kcal. Primary consumers receive 10% or 1,000 kcal. Secondary consumers receive 10% of 1,000 kcal. Therefore, secondary consumers receive 100 kcal.","The problem involves calculating energy transfer across trophic levels using the 10% rule.
+Primary producers start with 10,000 kcal.
+Primary consumers (the next level) receive approximately 10% of this energy: 10% of 10,000 kcal = 1,000 kcal.
+Secondary consumers (the level after primary consumers) receive approximately 10% of the energy from the level below them: 10% of 1,000 kcal = 100 kcal.
+Therefore, about 100 kcal is available to secondary consumers.",gemini:gemini-2.5-pro,26179,5.0,5.0,Correct,5.0,"Clarity: The question is clearly worded using standard ecological terminology. The goal is unambiguous.
+Context Accuracy: The question is based on the well-established ecological principle of the 10% rule for energy transfer between trophic levels. The values are appropriate for a hypothetical scenario.
+Quality of Working: The generator's solution correctly identifies the trophic levels and applies the 10% rule sequentially. The reasoning is sound and the arithmetic is correct.
+Final Answer Accuracy: The generator's calculation correctly arrives at 100 kcal, which corresponds to the provided key B.","SYSTEM: You are a Grade 12 Biology teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 concise concept/application MCQ from: basic genetics (incl. Hardy–Weinberg), cell/tissue structure–function, or short ecology.
+• Use standard terminology; if arithmetic appears (e.g., allele frequency), keep numbers small and round to 2 decimals.
+• Distractors reflect common misconceptions (dominance ≠ frequency, misreading ratios/diagrams, DNA→RNA→Protein confusion).
+
+CoT (few-shot analogue; hidden 1–2 steps):
+• Identify concept/ratio/mini-table relations INTERNALLY; do NOT show steps.
+
+Style example (Hardy–Weinberg): compute 2pq internally → choose option.
+• Create a NEW item of the same family (small table/genotype ratio/energy flow).
+• Distractors must be plausible and map to real misconceptions.
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object:
+  [{""question"":""..."",""options"":[""A. ..."",""B. ..."",""C. ..."",""D. ...""],""answer"":""A"",""solution"":""3–6 short lines, plain text; no LaTeX/markdown.""}]
+- The ""solution"" field is MANDATORY with 3–6 short lines (plain text; no LaTeX/markdown).
+- No extra text outside JSON; no code fences.
+- Options MUST be prefixed ""A. ""/""B. ""/""C. ""/""D. "" and ""answer"" ∈ {A,B,C,D}.
+- NO LaTeX: do not use $ or backslashes; write plain text (sin, cos, pi, (a)/(b)).
+STRICT FOR GEMINI:
+- Output plain-text JSON only; do not use LaTeX ($ or backslashes).
+- The ""solution"" must be 3–6 lines, plain text.
+USER: Topic: Biology. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: locus, web, phenotype, consume, ecosystem, bird, level, single, shape, wing, controlled, dominant, with, certain, plant, plants, obtains, alleles, dead, population, determined, grasshoppers, primarily, 5000, 320, 84, food, trophic, feeding, beak, 500, color, smooth, frogs, group, gene, butterflies, featuring, seed, and, two, hypothetical, energy, 16, which, species, grassland, 180.
+- Do NOT print this list in the output."
+biology,gemini,struktur2,7,1997,"In a forest, sunlight reaches the forest floor at differing intensities. Which tissue type in a leaf would you expect to find in larger quantities in a shade-adapted leaf compared to a sun-adapted leaf?",A. Spongy mesophyll,B. Palisade mesophyll,C. Epidermis,D. Vascular bundles,A,"Shade-adapted leaves need to maximize light capture. Spongy mesophyll has air spaces that enhance light diffusion within the leaf. Palisade mesophyll is for direct light capture. Epidermis protects, and vascular bundles transport. Thus, the spongy mesophyll increases relative to palisade.","Sun-adapted leaves are optimized for high light intensity and typically have multiple, thick layers of palisade mesophyll for direct light absorption. Shade-adapted leaves must maximize the capture of lower-intensity, diffuse light. They achieve this by being thinner and broader, with a less developed palisade layer and a proportionally larger spongy mesophyll. The extensive air spaces in the spongy mesophyll scatter the incoming light, increasing the path length of photons within the leaf and thus the probability of their absorption. Therefore, spongy mesophyll is found in relatively larger quantities in shade leaves compared to sun leaves.",gemini:gemini-2.5-pro,37539,4.5,5.0,Correct,5.0,"Clarity: The question is clear, though the term ""larger quantities"" could be slightly ambiguous (absolute volume vs. relative proportion). However, in a biological context, the intended meaning is discernible.
+Context Accuracy: The premise is entirely accurate. The anatomical and physiological differences between sun-adapted and shade-adapted leaves are a classic example of phenotypic plasticity in botany.
+Quality of Working: The generator's reasoning is excellent. It is concise, accurate, and correctly explains the functional roles of the tissues, leading directly to the correct conclusion that spongy mesophyll increases relative to palisade mesophyll.
+Final Answer Accuracy: The generator's answer is correct.","SYSTEM: You are a Grade 12 Biology teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 concise concept/application MCQ from: basic genetics (incl. Hardy–Weinberg), cell/tissue structure–function, or short ecology.
+• Use standard terminology; if arithmetic appears (e.g., allele frequency), keep numbers small and round to 2 decimals.
+• Distractors reflect common misconceptions (dominance ≠ frequency, misreading ratios/diagrams, DNA→RNA→Protein confusion).
+
+CoT (few-shot analogue; hidden 1–2 steps):
+• Identify concept/ratio/mini-table relations INTERNALLY; do NOT show steps.
+
+Style example (Hardy–Weinberg): compute 2pq internally → choose option.
+• Create a NEW item of the same family (small table/genotype ratio/energy flow).
+• Distractors must be plausible and map to real misconceptions.
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object:
+  [{""question"":""..."",""options"":[""A. ..."",""B. ..."",""C. ..."",""D. ...""],""answer"":""A"",""solution"":""3–6 short lines, plain text; no LaTeX/markdown.""}]
+- The ""solution"" field is MANDATORY with 3–6 short lines (plain text; no LaTeX/markdown).
+- No extra text outside JSON; no code fences.
+- Options MUST be prefixed ""A. ""/""B. ""/""C. ""/""D. "" and ""answer"" ∈ {A,B,C,D}.
+- NO LaTeX: do not use $ or backslashes; write plain text (sin, cos, pi, (a)/(b)).
+STRICT FOR GEMINI:
+- Output plain-text JSON only; do not use LaTeX ($ or backslashes).
+- The ""solution"" must be 3–6 lines, plain text.
+USER: Topic: Biology. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: locus, web, phenotype, consume, stable, ecosystem, bird, level, gross, single, shape, wing, controlled, kcal, dominant, with, certain, plant, plants, obtains, alleles, dead, primary, 000, population, determined, grasshoppers, community, primarily, 5000, 320, 84, food, trophic, feeding, beak, 500, color, smooth, frogs, group, gene, butterflies, featuring, seed, and, two, hypothetical, energy, 16, generate, production, which, producers, species, grassland, 180, 10,000.
+- Do NOT print this list in the output."
+biology,gemini,struktur2,8,2528,"In a habitat, rabbits (prey) transfer 100 J of available nutritional content to foxes (predator). If the rabbits required 2000 J of nutritional content from vegetation, what is the ecological efficiency between the rabbits and foxes?",A. 5%,B. 10%,C. 20%,D. 50%,A,"Ecological efficiency is the transfer of nutritional content between levels. It's calculated as (nutritional content transferred)/(nutritional content available) * 100. In this case, (100 J)/(2000 J) * 100 = 5%. Therefore, the ecological efficiency is 5%.","Ecological efficiency, or trophic level transfer efficiency, is the ratio of energy assimilated by a higher trophic level to the energy assimilated by the trophic level below it, expressed as a percentage.
+
+Trophic Level 1 (Producers): Vegetation
+Trophic Level 2 (Primary Consumers): Rabbits (assimilated 2000 J)
+Trophic Level 3 (Secondary Consumers): Foxes (assimilated 100 J from rabbits)
+
+Efficiency = (Energy at fox level / Energy at rabbit level) * 100%
+Efficiency = (100 J / 2000 J) * 100%
+Efficiency = 0.05 * 100% = 5%",gemini:gemini-2.5-pro,20079,4.5,5.0,Correct,5.0,"Clarity: The question is well-posed and provides all necessary data. The phrasing ""between the rabbits and foxes"" correctly implies the efficiency of energy transfer from the former to the latter.
+
+Context Accuracy: The predator-prey scenario is a standard ecological context. A 5% transfer efficiency is a realistic value, as the '10% rule' is an average and actual efficiencies often range from 5-20%.
+
+Quality of Working: The generator correctly defines ecological efficiency, applies the formula using the correct values from the problem (energy transferred to the predator divided by energy available in the prey), and calculates the result accurately.
+
+Final Answer Accuracy: The generator's answer of 5% is correct and matches the provided key.","SYSTEM: You are a Grade 12 Biology teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 concise concept/application MCQ from: basic genetics (incl. Hardy–Weinberg), cell/tissue structure–function, or short ecology.
+• Use standard terminology; if arithmetic appears (e.g., allele frequency), keep numbers small and round to 2 decimals.
+• Distractors reflect common misconceptions (dominance ≠ frequency, misreading ratios/diagrams, DNA→RNA→Protein confusion).
+
+CoT (few-shot analogue; hidden 1–2 steps):
+• Identify concept/ratio/mini-table relations INTERNALLY; do NOT show steps.
+
+Style example (Hardy–Weinberg): compute 2pq internally → choose option.
+• Create a NEW item of the same family (small table/genotype ratio/energy flow).
+• Distractors must be plausible and map to real misconceptions.
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object:
+  [{""question"":""..."",""options"":[""A. ..."",""B. ..."",""C. ..."",""D. ...""],""answer"":""A"",""solution"":""3–6 short lines, plain text; no LaTeX/markdown.""}]
+- The ""solution"" field is MANDATORY with 3–6 short lines (plain text; no LaTeX/markdown).
+- No extra text outside JSON; no code fences.
+- Options MUST be prefixed ""A. ""/""B. ""/""C. ""/""D. "" and ""answer"" ∈ {A,B,C,D}.
+- NO LaTeX: do not use $ or backslashes; write plain text (sin, cos, pi, (a)/(b)).
+STRICT FOR GEMINI:
+- Output plain-text JSON only; do not use LaTeX ($ or backslashes).
+- The ""solution"" must be 3–6 lines, plain text.
+USER: Topic: Biology. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: locus, web, phenotype, consume, tissue, stable, intensities, floor, ecosystem, differing, bird, level, gross, single, shape, wing, controlled, kcal, dominant, with, certain, plant, plants, forest, obtains, alleles, dead, primary, 000, population, determined, grasshoppers, community, primarily, 5000, 320, 84, food, trophic, feeding, beak, 500, sunlight, color, type, smooth, frogs, reaches, group, gene, butterflies, featuring, seed, and, two, hypothetical, energy, 16, generate, production, which, producers, species, grassland, 180, 10,000.
+- Do NOT print this list in the output."
+biology,gemini,struktur2,9,1740,"In a eukaryotic cell, which structure is directly involved in the synthesis of ribosomal RNA (rRNA)?",A. Golgi apparatus,B. Nucleolus,C. Endoplasmic reticulum,D. Lysosome,B,The nucleolus is the site of rRNA synthesis and ribosome assembly. rRNA is a crucial component of ribosomes. The Golgi apparatus modifies and packages proteins. The endoplasmic reticulum is involved in protein and lipid synthesis. Lysosomes are involved in cellular waste breakdown.,"The question asks for the site of ribosomal RNA (rRNA) synthesis in a eukaryotic cell.
+1. The Golgi apparatus modifies and packages proteins and lipids.
+2. The nucleolus, a dense region within the nucleus, is the primary site of rRNA transcription and ribosome biogenesis.
+3. The endoplasmic reticulum is involved in protein (rough ER) and lipid (smooth ER) synthesis.
+4. Lysosomes contain digestive enzymes for breaking down cellular waste.
+Therefore, the nucleolus is the correct answer.",gemini:gemini-2.5-pro,21809,5.0,5.0,Correct,5.0,"Clarity: The question is clear, concise, and uses standard biological terminology. The options are distinct and relevant organelles.
+Context Accuracy: The question addresses a fundamental and accurate concept in eukaryotic cell biology. The functions implied for each organelle are correct.
+Quality of Working: The generator's explanation is excellent. It correctly identifies the function of the nucleolus and accurately describes the functions of the distractor organelles, providing a thorough justification for the correct answer.
+Final Answer Accuracy: The generator's key (B) is correct. The nucleolus is the site of rRNA synthesis.","SYSTEM: You are a Grade 12 Biology teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 concise concept/application MCQ from: basic genetics (incl. Hardy–Weinberg), cell/tissue structure–function, or short ecology.
+• Use standard terminology; if arithmetic appears (e.g., allele frequency), keep numbers small and round to 2 decimals.
+• Distractors reflect common misconceptions (dominance ≠ frequency, misreading ratios/diagrams, DNA→RNA→Protein confusion).
+
+CoT (few-shot analogue; hidden 1–2 steps):
+• Identify concept/ratio/mini-table relations INTERNALLY; do NOT show steps.
+
+Style example (Hardy–Weinberg): compute 2pq internally → choose option.
+• Create a NEW item of the same family (small table/genotype ratio/energy flow).
+• Distractors must be plausible and map to real misconceptions.
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object:
+  [{""question"":""..."",""options"":[""A. ..."",""B. ..."",""C. ..."",""D. ...""],""answer"":""A"",""solution"":""3–6 short lines, plain text; no LaTeX/markdown.""}]
+- The ""solution"" field is MANDATORY with 3–6 short lines (plain text; no LaTeX/markdown).
+- No extra text outside JSON; no code fences.
+- Options MUST be prefixed ""A. ""/""B. ""/""C. ""/""D. "" and ""answer"" ∈ {A,B,C,D}.
+- NO LaTeX: do not use $ or backslashes; write plain text (sin, cos, pi, (a)/(b)).
+STRICT FOR GEMINI:
+- Output plain-text JSON only; do not use LaTeX ($ or backslashes).
+- The ""solution"" must be 3–6 lines, plain text.
+USER: Topic: Biology. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: locus, web, phenotype, consume, tissue, stable, intensities, floor, ecosystem, differing, bird, level, available, gross, single, shape, wing, controlled, kcal, dominant, with, certain, plant, plants, 2000, forest, obtains, prey, alleles, dead, primary, 000, population, determined, grasshoppers, community, habitat, transfer, primarily, 100, 5000, nutritional, 320, 84, food, trophic, feeding, beak, 500, sunlight, color, type, smooth, frogs, reaches, group, gene, butterflies, featuring, seed, content, and, two, hypothetical, energy, 16, generate, production, which, producers, species, rabbits, grassland, 180, 10,000.
+- Do NOT print this list in the output."
+biology,gemini,struktur2,10,2277,"A farmer uses insecticide on a field. Initially, most insects are susceptible, but after several generations, a large fraction is resistant. The MOST likely explanation is:",A. The insecticide caused a mutation for resistance in insects.,"B. Insects needed to develop resistance to survive, driving evolution.",C. Natural selection favored insects with pre-existing resistance.,D. The insecticide altered the insects' DNA to promote resistance.,C,"Insecticide acts as a selection pressure. Insects with a pre-existing resistance trait survive. These resistant insects reproduce more successfully. Over time, the frequency of resistance increases. Natural selection acts on existing variation.","This is a classic example of natural selection. The insecticide acts as a strong selective pressure on the insect population. Within the initial population, there is natural genetic variation, meaning a few insects already possess a random mutation that confers resistance. These resistant individuals are more likely to survive the insecticide application and reproduce. They pass the resistance gene to their offspring. Over several generations, the frequency of this resistance allele increases in the population, leading to a large fraction of resistant insects. Options A, B, and D describe incorrect, Lamarckian-like mechanisms where the environment causes or directs the necessary genetic changes.",gemini:gemini-2.5-pro,29163,5.0,5.0,Correct,5.0,"Clarity: The question presents a clear, classic scenario. The options are distinct and effectively test the core concept of natural selection versus common misconceptions.
+Context Accuracy: The development of insecticide resistance in pest populations is a well-documented, real-world example of evolution by natural selection, making the context highly accurate.
+Quality of Working: The generator's explanation is a perfect, concise summary of the process. It correctly identifies the insecticide as a selection pressure acting on pre-existing variation.
+Final Answer Accuracy: The generator's key (C) is correct. It accurately describes natural selection as the driving force behind the observed change in the insect population.","SYSTEM: You are a Grade 12 Biology teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 concise concept/application MCQ from: basic genetics (incl. Hardy–Weinberg), cell/tissue structure–function, or short ecology.
+• Use standard terminology; if arithmetic appears (e.g., allele frequency), keep numbers small and round to 2 decimals.
+• Distractors reflect common misconceptions (dominance ≠ frequency, misreading ratios/diagrams, DNA→RNA→Protein confusion).
+
+CoT (few-shot analogue; hidden 1–2 steps):
+• Identify concept/ratio/mini-table relations INTERNALLY; do NOT show steps.
+
+Style example (Hardy–Weinberg): compute 2pq internally → choose option.
+• Create a NEW item of the same family (small table/genotype ratio/energy flow).
+• Distractors must be plausible and map to real misconceptions.
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object:
+  [{""question"":""..."",""options"":[""A. ..."",""B. ..."",""C. ..."",""D. ...""],""answer"":""A"",""solution"":""3–6 short lines, plain text; no LaTeX/markdown.""}]
+- The ""solution"" field is MANDATORY with 3–6 short lines (plain text; no LaTeX/markdown).
+- No extra text outside JSON; no code fences.
+- Options MUST be prefixed ""A. ""/""B. ""/""C. ""/""D. "" and ""answer"" ∈ {A,B,C,D}.
+- NO LaTeX: do not use $ or backslashes; write plain text (sin, cos, pi, (a)/(b)).
+STRICT FOR GEMINI:
+- Output plain-text JSON only; do not use LaTeX ($ or backslashes).
+- The ""solution"" must be 3–6 lines, plain text.
+USER: Topic: Biology. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: web, tissue, differing, available, single, kcal, plant, forest, obtains, determined, community, transfer, 84, food, trophic, 500, sunlight, gene, and, hypothetical, production, which, reaches, 180, phenotype, level, gross, rna, plants, habitat, feeding, beak, color, content, two, energy, rabbits, shape, locus, consume, eukaryotic, intensities, floor, ecosystem, bird, dominant, certain, 2000, alleles, dead, population, primarily, 100, nutritional, ribosomal, group, butterflies, featuring, seed, directly, rrna, 16, generate, species, grassland, 10,000, stable, wing, controlled, synthesis, with, cell, prey, primary, 000, grasshoppers, 5000, 320, type, smooth, frogs, structure, involved, producers.
+- Do NOT print this list in the output."
+biology,gemini,struktur2,11,2323,"In a small, isolated mouse colony, coat texture is governed by one location. Individuals 'MM' exhibit coarse coats, 'Mm' have medium coats, and 'mm' display fine coats. If the frequency of the 'm' version is 0.4, what is the predicted proportion of medium-coated mice, assuming Hardy-Weinberg equilibrium?",A. 0.16,B. 0.48,C. 0.36,D. 0.24,B,"Hardy-Weinberg equilibrium: p + q = 1. Given q (m) = 0.4, then p (M) = 1 - 0.4 = 0.6. Heterozygotes (Mm) are 2pq. Thus, 2 * 0.6 * 0.4 = 0.48.","The problem assumes Hardy-Weinberg equilibrium. The frequency of the 'm' allele (q) is given as 0.4.
+The frequency of the 'M' allele (p) can be calculated as p = 1 - q.
+So, p = 1 - 0.4 = 0.6.
+The proportion of medium-coated mice corresponds to the frequency of the heterozygous genotype 'Mm'.
+This frequency is calculated using the Hardy-Weinberg equation term 2pq.
+Frequency of 'Mm' = 2 * p * q = 2 * 0.6 * 0.4 = 0.48.",gemini:gemini-2.5-pro,28230,5.0,5.0,Correct,5.0,"Clarity: The question is exceptionally clear. It defines the alleles, genotypes, phenotypes, provides the necessary allele frequency, and states the assumption of Hardy-Weinberg equilibrium.
+Context Accuracy: The scenario is a classic, biologically plausible example used to teach population genetics. The concept of an isolated mouse colony with a single-locus trait showing incomplete dominance is realistic.
+Quality of Working: The generator's solution is perfect. It correctly identifies the variables, applies the correct Hardy-Weinberg formulas (p+q=1 and 2pq), and performs the calculation accurately.
+Final Answer Accuracy: The generator's final answer of 0.48 is correct.","SYSTEM: You are a Grade 12 Biology teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 concise concept/application MCQ from: basic genetics (incl. Hardy–Weinberg), cell/tissue structure–function, or short ecology.
+• Use standard terminology; if arithmetic appears (e.g., allele frequency), keep numbers small and round to 2 decimals.
+• Distractors reflect common misconceptions (dominance ≠ frequency, misreading ratios/diagrams, DNA→RNA→Protein confusion).
+
+CoT (few-shot analogue; hidden 1–2 steps):
+• Identify concept/ratio/mini-table relations INTERNALLY; do NOT show steps.
+
+Style example (Hardy–Weinberg): compute 2pq internally → choose option.
+• Create a NEW item of the same family (small table/genotype ratio/energy flow).
+• Distractors must be plausible and map to real misconceptions.
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object:
+  [{""question"":""..."",""options"":[""A. ..."",""B. ..."",""C. ..."",""D. ...""],""answer"":""A"",""solution"":""3–6 short lines, plain text; no LaTeX/markdown.""}]
+- The ""solution"" field is MANDATORY with 3–6 short lines (plain text; no LaTeX/markdown).
+- No extra text outside JSON; no code fences.
+- Options MUST be prefixed ""A. ""/""B. ""/""C. ""/""D. "" and ""answer"" ∈ {A,B,C,D}.
+- NO LaTeX: do not use $ or backslashes; write plain text (sin, cos, pi, (a)/(b)).
+STRICT FOR GEMINI:
+- Output plain-text JSON only; do not use LaTeX ($ or backslashes).
+- The ""solution"" must be 3–6 lines, plain text.
+USER: Topic: Biology. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: web, tissue, differing, available, single, uses, kcal, plant, forest, obtains, determined, community, insects, transfer, 84, food, trophic, 500, sunlight, gene, and, hypothetical, production, which, reaches, 180, phenotype, level, gross, rna, plants, farmer, habitat, feeding, beak, color, content, two, energy, rabbits, shape, locus, initially, consume, eukaryotic, intensities, floor, ecosystem, bird, dominant, certain, 2000, alleles, dead, population, primarily, 100, field, nutritional, but, ribosomal, group, butterflies, featuring, seed, directly, after, rrna, insecticide, 16, generate, most, species, grassland, 10,000, stable, wing, controlled, synthesis, with, cell, susceptible, prey, primary, 000, grasshoppers, 5000, 320, type, smooth, frogs, structure, involved, producers.
+- Do NOT print this list in the output."
+biology,gemini,struktur2,12,2685,"In a particular biome, the net production of the autotrophs is 8000 J/m²/year. The decomposers utilize 500 J/m²/year. Herbivores utilize 1500 J/m²/year. What is the net production available for carnivores?",A. 500 J/m²/year,B. 6000 J/m²/year,C. 7500 J/m²/year,D. 8000 J/m²/year,B,"Net production is the total production minus respiration. The production moving towards carnivores is the autotroph production less what is used by the decomposers and herbivores. Therefore, 8000 - 500 - 1500 = 6000 J/m²/year.","The question asks for the net production available for carnivores. Ecologically, this would be the net production of the herbivores. However, the data provided does not allow for this calculation. The question is likely flawed and is instead asking for the amount of autotroph net production that remains unconsumed.
+
+Net production of autotrophs = 8000 J/m²/year.
+Energy utilized by decomposers = 500 J/m²/year.
+Energy utilized by herbivores = 1500 J/m²/year.
+Remaining autotroph production = 8000 - 500 - 1500 = 6000 J/m²/year.",gemini:gemini-2.5-pro,39288,1.0,1.0,Correct,2.0,"Clarity: The question is very poorly worded. ""Net production available for carnivores"" refers to the net production of the herbivore trophic level. The question's structure implies a different calculation (unconsumed producer biomass), creating significant ambiguity.
+Context Accuracy: The question is based on a fundamental misunderstanding of trophic energy flow. The energy available to carnivores comes from the biomass of herbivores, not from the unconsumed biomass of autotrophs. The premise is ecologically incorrect.
+Quality of Working: The generator performs the simple subtraction that the flawed question intends. However, its reasoning (""The production moving towards carnivores is the autotroph production less..."") is ecologically incorrect and simply repeats the conceptual error present in the question.
+Final Answer Accuracy: The generator's answer is correct based on the flawed premise of the question. It successfully identifies and executes the intended calculation.","SYSTEM: You are a Grade 12 Biology teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 concise concept/application MCQ from: basic genetics (incl. Hardy–Weinberg), cell/tissue structure–function, or short ecology.
+• Use standard terminology; if arithmetic appears (e.g., allele frequency), keep numbers small and round to 2 decimals.
+• Distractors reflect common misconceptions (dominance ≠ frequency, misreading ratios/diagrams, DNA→RNA→Protein confusion).
+
+CoT (few-shot analogue; hidden 1–2 steps):
+• Identify concept/ratio/mini-table relations INTERNALLY; do NOT show steps.
+
+Style example (Hardy–Weinberg): compute 2pq internally → choose option.
+• Create a NEW item of the same family (small table/genotype ratio/energy flow).
+• Distractors must be plausible and map to real misconceptions.
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object:
+  [{""question"":""..."",""options"":[""A. ..."",""B. ..."",""C. ..."",""D. ...""],""answer"":""A"",""solution"":""3–6 short lines, plain text; no LaTeX/markdown.""}]
+- The ""solution"" field is MANDATORY with 3–6 short lines (plain text; no LaTeX/markdown).
+- No extra text outside JSON; no code fences.
+- Options MUST be prefixed ""A. ""/""B. ""/""C. ""/""D. "" and ""answer"" ∈ {A,B,C,D}.
+- NO LaTeX: do not use $ or backslashes; write plain text (sin, cos, pi, (a)/(b)).
+STRICT FOR GEMINI:
+- Output plain-text JSON only; do not use LaTeX ($ or backslashes).
+- The ""solution"" must be 3–6 lines, plain text.
+USER: Topic: Biology. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: web, tissue, one, differing, available, single, uses, kcal, plant, forest, obtains, determined, community, insects, transfer, 84, food, trophic, 500, sunlight, gene, and, hypothetical, location, production, which, reaches, 180, phenotype, level, gross, rna, plants, coat, farmer, habitat, small, feeding, beak, color, content, two, energy, rabbits, texture, shape, locus, initially, consume, eukaryotic, intensities, floor, ecosystem, bird, mouse, dominant, certain, 0.4, 2000, alleles, dead, population, primarily, 100, field, nutritional, but, ribosomal, group, butterflies, featuring, seed, directly, after, rrna, insecticide, 16, generate, governed, most, species, grassland, 10,000, stable, wing, controlled, synthesis, with, colony, cell, susceptible, prey, primary, 000, grasshoppers, 5000, 320, type, smooth, frogs, structure, involved, isolated, producers.
+- Do NOT print this list in the output."
+biology,gemini,struktur2,14,2287,"In a closed ecological system, phytoplankton are consumed by zooplankton, which are then consumed by fish. If the phytoplankton initially contain 50,000 units of stored chemical potential vitality, approximately how much vitality is expected to be stored in the fish?",A. 50 units,B. 500 units,"C. 5,000 units","D. 25,000 units",B,"Vitality transfer between trophic stages is inefficient. Only about 10% of vitality is transferred to the next superior stage. Thus, phytoplankton to zooplankton is 50,000 * 0.1 = 5,000. Zooplankton to fish is 5,000 * 0.1 = 500 units.","This problem describes energy transfer across trophic levels. The standard ecological principle, the '10% rule', states that only about 10% of energy is transferred from one level to the next.
+1. Transfer from phytoplankton (producers) to zooplankton (primary consumers):
+   50,000 units * 10% = 5,000 units.
+2. Transfer from zooplankton to fish (secondary consumers):
+   5,000 units * 10% = 500 units.
+Thus, the fish would store approximately 500 units of vitality.",gemini:gemini-2.5-pro,17191,4.5,4.0,Correct,5.0,"Clarity: The question is well-phrased and the food chain is explicit. The use of the non-standard term ""vitality"" instead of ""energy"" is a minor point of confusion, slightly reducing the score.
+Context Accuracy: The food chain is a classic, realistic example. The 10% rule for energy transfer is a standard approximation in ecology. The main inaccuracy is the term ""vitality"" as a substitute for energy.
+Quality of Working: The generator's solution correctly identifies the 10% rule, applies it sequentially for each trophic transfer, and performs the arithmetic correctly. The reasoning is sound and easy to follow.
+Final Answer Accuracy: The generator's answer of 500 units is correct based on the standard 10% rule and matches the provided key.","SYSTEM: You are a Grade 12 Biology teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 concise concept/application MCQ from: basic genetics (incl. Hardy–Weinberg), cell/tissue structure–function, or short ecology.
+• Use standard terminology; if arithmetic appears (e.g., allele frequency), keep numbers small and round to 2 decimals.
+• Distractors reflect common misconceptions (dominance ≠ frequency, misreading ratios/diagrams, DNA→RNA→Protein confusion).
+
+CoT (few-shot analogue; hidden 1–2 steps):
+• Identify concept/ratio/mini-table relations INTERNALLY; do NOT show steps.
+
+Style example (Hardy–Weinberg): compute 2pq internally → choose option.
+• Create a NEW item of the same family (small table/genotype ratio/energy flow).
+• Distractors must be plausible and map to real misconceptions.
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object:
+  [{""question"":""..."",""options"":[""A. ..."",""B. ..."",""C. ..."",""D. ...""],""answer"":""A"",""solution"":""3–6 short lines, plain text; no LaTeX/markdown.""}]
+- The ""solution"" field is MANDATORY with 3–6 short lines (plain text; no LaTeX/markdown).
+- No extra text outside JSON; no code fences.
+- Options MUST be prefixed ""A. ""/""B. ""/""C. ""/""D. "" and ""answer"" ∈ {A,B,C,D}.
+- NO LaTeX: do not use $ or backslashes; write plain text (sin, cos, pi, (a)/(b)).
+STRICT FOR GEMINI:
+- Output plain-text JSON only; do not use LaTeX ($ or backslashes).
+- The ""solution"" must be 3–6 lines, plain text.
+USER: Topic: Biology. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: web, tissue, one, differing, available, single, uses, kcal, plant, forest, obtains, determined, biome, community, insects, transfer, 84, food, trophic, net, 500, sunlight, gene, and, hypothetical, location, production, which, reaches, 180, phenotype, level, gross, rna, plants, coat, farmer, habitat, small, feeding, beak, color, content, two, energy, rabbits, texture, shape, locus, initially, year, consume, eukaryotic, intensities, floor, ecosystem, bird, mouse, autotrophs, dominant, certain, 0.4, 2000, 8000, alleles, dead, population, primarily, 100, field, nutritional, but, ribosomal, group, butterflies, featuring, seed, directly, after, rrna, insecticide, 16, generate, governed, most, species, grassland, 10,000, stable, wing, controlled, synthesis, with, colony, cell, susceptible, prey, primary, 000, grasshoppers, 5000, 320, type, smooth, frogs, particular, structure, involved, isolated, 1500, producers.
+- Do NOT print this list in the output."
+biology,gemini,struktur2,15,2281,"In a certain mammal, fur firmness is determined by two co- genes, *F* and *f*. *F* produces a rigid fur, *f* produces a soft fur, and *Ff* individuals have medium firmness. If 36% of a sample have rigid fur, assuming Hardy-Weinberg equilibrium, what proportion have soft fur?",A. 0.16,B. 0.36,C. 0.48,D. 0.60,A,"Given FF = 0.36, so F = sqrt(0.36) = 0.6. Since F + f = 1, f = 1 - 0.6 = 0.4. The proportion of soft fur (ff) = f^2 = (0.4)^2 = 0.16.","The problem describes a single gene with two alleles showing incomplete dominance, under Hardy-Weinberg equilibrium. The frequency of rigid fur corresponds to the homozygous dominant genotype (FF).
+Let p be the frequency of the F allele and q be the frequency of the f allele.
+The frequency of the FF genotype is p², which is given as 0.36.
+Therefore, the frequency of the F allele is p = sqrt(0.36) = 0.6.
+Since allele frequencies must sum to 1 (p + q = 1), the frequency of the f allele is q = 1 - 0.6 = 0.4.
+The proportion of the population with soft fur corresponds to the frequency of the homozygous recessive genotype (ff), which is q².
+Thus, the proportion with soft fur is (0.4)² = 0.16.",gemini:gemini-2.5-pro,29274,4.5,5.0,Correct,5.0,"Clarity: The question is clear, but the term 'co-genes' is non-standard. 'Alleles with incomplete dominance' would be more accurate. However, the description of the heterozygous phenotype makes the genetic relationship unambiguous.
+Context Accuracy: The scenario is a classic, biologically plausible example for a Hardy-Weinberg problem. The data provided is clean and suitable for this context.
+Quality of Working: The generator's solution is concise and logically sound. It correctly applies the Hardy-Weinberg principle to find the allele frequencies from the given genotype frequency and then calculates the required genotype frequency.
+Final Answer Accuracy: The generator's calculated answer of 0.16 is correct and matches the provided key.","SYSTEM: You are a Grade 12 Biology teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 concise concept/application MCQ from: basic genetics (incl. Hardy–Weinberg), cell/tissue structure–function, or short ecology.
+• Use standard terminology; if arithmetic appears (e.g., allele frequency), keep numbers small and round to 2 decimals.
+• Distractors reflect common misconceptions (dominance ≠ frequency, misreading ratios/diagrams, DNA→RNA→Protein confusion).
+
+CoT (few-shot analogue; hidden 1–2 steps):
+• Identify concept/ratio/mini-table relations INTERNALLY; do NOT show steps.
+
+Style example (Hardy–Weinberg): compute 2pq internally → choose option.
+• Create a NEW item of the same family (small table/genotype ratio/energy flow).
+• Distractors must be plausible and map to real misconceptions.
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object:
+  [{""question"":""..."",""options"":[""A. ..."",""B. ..."",""C. ..."",""D. ...""],""answer"":""A"",""solution"":""3–6 short lines, plain text; no LaTeX/markdown.""}]
+- The ""solution"" field is MANDATORY with 3–6 short lines (plain text; no LaTeX/markdown).
+- No extra text outside JSON; no code fences.
+- Options MUST be prefixed ""A. ""/""B. ""/""C. ""/""D. "" and ""answer"" ∈ {A,B,C,D}.
+- NO LaTeX: do not use $ or backslashes; write plain text (sin, cos, pi, (a)/(b)).
+STRICT FOR GEMINI:
+- Output plain-text JSON only; do not use LaTeX ($ or backslashes).
+- The ""solution"" must be 3–6 lines, plain text.
+USER: Topic: Biology. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: web, tissue, one, differing, available, single, uses, kcal, plant, forest, obtains, determined, biome, community, insects, transfer, 84, food, trophic, system, 50,000, net, 500, sunlight, gene, and, hypothetical, location, production, which, reaches, 180, phenotype, level, gross, rna, plants, coat, farmer, habitat, small, feeding, beak, then, color, consumed, content, two, energy, rabbits, texture, shape, locus, initially, year, consume, eukaryotic, intensities, floor, ecosystem, bird, mouse, autotrophs, dominant, certain, 0.4, 2000, 8000, alleles, dead, population, primarily, 100, field, nutritional, but, ribosomal, group, butterflies, featuring, seed, directly, after, rrna, insecticide, 16, generate, governed, most, species, grassland, 10,000, stable, wing, controlled, synthesis, with, colony, cell, susceptible, prey, primary, 000, grasshoppers, ecological, 5000, 320, phytoplankton, type, smooth, frogs, particular, structure, involved, isolated, zooplankton, closed, 1500, producers.
+- Do NOT print this list in the output."
+biology,gemini,struktur2,16,2943,"In a given area, the birth rate is 30 per 1000 individuals, and the death rate is 10 per 1000 individuals. What is the per capita rate of increase (r)?",A. 0.02,B. 0.03,C. 0.20,D. 0.30,A,"The per capita rate of increase (r) is calculated as (birth rate - death rate) / initial population size. Here, that is (30-10)/1000. This simplifies to 20/1000, or 0.02. Thus, the per capita rate of increase is 0.02.","The per capita rate of increase (r) is the difference between the per capita birth rate (b) and the per capita death rate (d).
+The birth rate is given as 30 per 1000 individuals, so b = 30/1000 = 0.03.
+The death rate is given as 10 per 1000 individuals, so d = 10/1000 = 0.01.
+The per capita rate of increase is r = b - d.
+Therefore, r = 0.03 - 0.01 = 0.02.
+This corresponds to option A.",gemini:gemini-2.5-pro,19826,5.0,5.0,Correct,4.5,"Clarity: The question is unambiguous, uses standard terminology (per capita rate of increase, r), and provides all necessary data.
+Context Accuracy: The given birth and death rates are realistic for a biological population, leading to a plausible 2% annual growth rate.
+Quality of Working: The generator's logic is sound and the arithmetic is correct. The initial formula stated is slightly imprecise but the subsequent calculation correctly interprets the rates and arrives at the right answer.
+Final Answer Accuracy: The generator's answer of 0.02 is correct and matches the provided key.","SYSTEM: You are a Grade 12 Biology teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 concise concept/application MCQ from: basic genetics (incl. Hardy–Weinberg), cell/tissue structure–function, or short ecology.
+• Use standard terminology; if arithmetic appears (e.g., allele frequency), keep numbers small and round to 2 decimals.
+• Distractors reflect common misconceptions (dominance ≠ frequency, misreading ratios/diagrams, DNA→RNA→Protein confusion).
+
+CoT (few-shot analogue; hidden 1–2 steps):
+• Identify concept/ratio/mini-table relations INTERNALLY; do NOT show steps.
+
+Style example (Hardy–Weinberg): compute 2pq internally → choose option.
+• Create a NEW item of the same family (small table/genotype ratio/energy flow).
+• Distractors must be plausible and map to real misconceptions.
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object:
+  [{""question"":""..."",""options"":[""A. ..."",""B. ..."",""C. ..."",""D. ...""],""answer"":""A"",""solution"":""3–6 short lines, plain text; no LaTeX/markdown.""}]
+- The ""solution"" field is MANDATORY with 3–6 short lines (plain text; no LaTeX/markdown).
+- No extra text outside JSON; no code fences.
+- Options MUST be prefixed ""A. ""/""B. ""/""C. ""/""D. "" and ""answer"" ∈ {A,B,C,D}.
+- NO LaTeX: do not use $ or backslashes; write plain text (sin, cos, pi, (a)/(b)).
+STRICT FOR GEMINI:
+- Output plain-text JSON only; do not use LaTeX ($ or backslashes).
+- The ""solution"" must be 3–6 lines, plain text.
+USER: Topic: Biology. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: web, tissue, one, differing, available, single, uses, kcal, plant, forest, firmness, obtains, determined, biome, community, insects, transfer, 84, food, trophic, system, 50,000, net, 500, sunlight, gene, and, hypothetical, location, production, which, reaches, 180, fur, phenotype, level, gross, rna, plants, coat, farmer, habitat, small, feeding, beak, then, color, consumed, content, two, energy, genes, rabbits, texture, shape, locus, initially, year, consume, eukaryotic, intensities, floor, ecosystem, bird, mouse, autotrophs, dominant, certain, 0.4, 2000, 8000, 36, alleles, dead, population, co-, primarily, 100, field, nutritional, but, ribosomal, group, butterflies, featuring, seed, directly, after, rrna, insecticide, 16, generate, governed, most, species, grassland, 10,000, stable, mammal, wing, controlled, synthesis, with, colony, cell, susceptible, prey, primary, 000, grasshoppers, ecological, 5000, 320, phytoplankton, type, smooth, frogs, particular, structure, involved, isolated, zooplankton, closed, 1500, producers.
+- Do NOT print this list in the output."
+biology,gemini,struktur2,17,2074,"In a given area, foxes prey on rodents. If the rodent population increases, what immediate change is MOST likely to occur in the fox population?",A. The fox population will decrease due to increased competition.,B. The fox population will increase due to increased resources.,C. The fox population will remain the same because resources are not a limiting factor.,D. The fox population will migrate to a different area to find new resources.,B,An increase in rodent numbers provides more resources for foxes. More resources generally lead to increased survival and reproduction. This causes the fox population to grow. The other options are less likely given the direct predator-prey relationship.,"This question describes a classic predator-prey relationship. The rodents are the prey, and the foxes are the predators. An increase in the prey population (rodents) means there is more food available for the predators (foxes). This abundance of resources leads to better health, higher survival rates, and increased reproductive success for the foxes. As a result, the fox population is most likely to increase. Option B correctly identifies this outcome.",gemini:gemini-2.5-pro,26701,5.0,5.0,Correct,5.0,"Clarity: The question is very clear, presenting a simple and direct ecological scenario. The options are distinct and easy to understand.
+Context Accuracy: The context is a standard and accurate representation of predator-prey dynamics, a fundamental concept in ecology. The example of foxes and rodents is realistic.
+Quality of Working: The generator's explanation is concise, logical, and perfectly explains the reasoning behind the correct answer by linking increased resources to population growth.
+Final Answer Accuracy: The generator's answer (B) is correct. An increase in a primary food source will most likely lead to an increase in the predator population that relies on it.","SYSTEM: You are a Grade 12 Biology teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 concise concept/application MCQ from: basic genetics (incl. Hardy–Weinberg), cell/tissue structure–function, or short ecology.
+• Use standard terminology; if arithmetic appears (e.g., allele frequency), keep numbers small and round to 2 decimals.
+• Distractors reflect common misconceptions (dominance ≠ frequency, misreading ratios/diagrams, DNA→RNA→Protein confusion).
+
+CoT (few-shot analogue; hidden 1–2 steps):
+• Identify concept/ratio/mini-table relations INTERNALLY; do NOT show steps.
+
+Style example (Hardy–Weinberg): compute 2pq internally → choose option.
+• Create a NEW item of the same family (small table/genotype ratio/energy flow).
+• Distractors must be plausible and map to real misconceptions.
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object:
+  [{""question"":""..."",""options"":[""A. ..."",""B. ..."",""C. ..."",""D. ...""],""answer"":""A"",""solution"":""3–6 short lines, plain text; no LaTeX/markdown.""}]
+- The ""solution"" field is MANDATORY with 3–6 short lines (plain text; no LaTeX/markdown).
+- No extra text outside JSON; no code fences.
+- Options MUST be prefixed ""A. ""/""B. ""/""C. ""/""D. "" and ""answer"" ∈ {A,B,C,D}.
+- NO LaTeX: do not use $ or backslashes; write plain text (sin, cos, pi, (a)/(b)).
+STRICT FOR GEMINI:
+- Output plain-text JSON only; do not use LaTeX ($ or backslashes).
+- The ""solution"" must be 3–6 lines, plain text.
+USER: Topic: Biology. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: web, tissue, one, differing, available, single, uses, birth, kcal, plant, forest, firmness, obtains, determined, biome, community, insects, transfer, 84, food, trophic, system, 50,000, net, 500, sunlight, gene, and, hypothetical, location, production, which, reaches, 180, fur, phenotype, level, gross, rna, plants, coat, farmer, habitat, small, feeding, beak, then, color, consumed, content, two, energy, genes, 30, rabbits, texture, shape, 1000, locus, initially, year, consume, eukaryotic, intensities, floor, ecosystem, bird, mouse, autotrophs, dominant, certain, 0.4, 2000, 10, 8000, 36, given, alleles, dead, population, co-, primarily, 100, field, nutritional, but, ribosomal, area, group, butterflies, featuring, seed, directly, after, rrna, insecticide, 16, generate, governed, most, species, grassland, 10,000, stable, mammal, wing, controlled, synthesis, with, colony, cell, susceptible, prey, per, primary, 000, grasshoppers, ecological, 5000, 320, phytoplankton, type, rate, smooth, frogs, particular, structure, involved, isolated, zooplankton, closed, 1500, producers, individuals.
+- Do NOT print this list in the output."
+biology,gemini,struktur2,18,2274,"In a certain region, primary consumers acquire approximately 600 J of energy from the producers. If the consumers convert roughly 30 J into biomass, how much energy is lost as heat due to metabolic processes?",A. 30 J,B. 570 J,C. 600 J,D. 630 J,B,"The energy acquired is 600 J. Biomass conversion is 30 J. The remainder is lost as heat. 600 J - 30 J = 570 J. Thus, 570 J is lost as heat.","The problem is based on the principle of energy conservation in an ecosystem. The total energy acquired by the primary consumers is the sum of the energy converted into new biomass and the energy lost to metabolic processes (respiration), which is dissipated as heat.
+Total Energy Acquired = Energy for Biomass + Energy Lost as Heat
+600 J = 30 J + Energy Lost as Heat
+Energy Lost as Heat = 600 J - 30 J
+Energy Lost as Heat = 570 J.",gemini:gemini-2.5-pro,26699,5.0,5.0,Correct,5.0,"Clarity: The question is very clear, providing all necessary values and asking a specific, unambiguous question about energy loss.
+Context Accuracy: The context of energy flow between trophic levels is accurate. The given values, representing a 5% energy conversion efficiency (30J/600J), are realistic for ecosystems.
+Quality of Working: The generator's solution correctly identifies the relationship between acquired energy, biomass energy, and heat loss. The calculation is simple and accurate.
+Final Answer Accuracy: The generator's answer of 570 J is correct and matches the provided key (B).","SYSTEM: You are a Grade 12 Biology teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 concise concept/application MCQ from: basic genetics (incl. Hardy–Weinberg), cell/tissue structure–function, or short ecology.
+• Use standard terminology; if arithmetic appears (e.g., allele frequency), keep numbers small and round to 2 decimals.
+• Distractors reflect common misconceptions (dominance ≠ frequency, misreading ratios/diagrams, DNA→RNA→Protein confusion).
+
+CoT (few-shot analogue; hidden 1–2 steps):
+• Identify concept/ratio/mini-table relations INTERNALLY; do NOT show steps.
+
+Style example (Hardy–Weinberg): compute 2pq internally → choose option.
+• Create a NEW item of the same family (small table/genotype ratio/energy flow).
+• Distractors must be plausible and map to real misconceptions.
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object:
+  [{""question"":""..."",""options"":[""A. ..."",""B. ..."",""C. ..."",""D. ...""],""answer"":""A"",""solution"":""3–6 short lines, plain text; no LaTeX/markdown.""}]
+- The ""solution"" field is MANDATORY with 3–6 short lines (plain text; no LaTeX/markdown).
+- No extra text outside JSON; no code fences.
+- Options MUST be prefixed ""A. ""/""B. ""/""C. ""/""D. "" and ""answer"" ∈ {A,B,C,D}.
+- NO LaTeX: do not use $ or backslashes; write plain text (sin, cos, pi, (a)/(b)).
+STRICT FOR GEMINI:
+- Output plain-text JSON only; do not use LaTeX ($ or backslashes).
+- The ""solution"" must be 3–6 lines, plain text.
+USER: Topic: Biology. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: web, tissue, one, rodent, differing, available, single, uses, birth, kcal, plant, forest, firmness, obtains, determined, biome, community, insects, transfer, 84, food, trophic, system, 50,000, net, increases, 500, sunlight, foxes, gene, and, hypothetical, location, production, which, reaches, 180, fur, phenotype, level, gross, rna, plants, coat, farmer, habitat, small, feeding, beak, then, color, consumed, content, two, energy, what, immediate, genes, 30, rabbits, texture, shape, 1000, locus, initially, year, consume, eukaryotic, intensities, floor, ecosystem, bird, mouse, autotrophs, dominant, certain, 0.4, 2000, 10, 8000, 36, given, alleles, dead, population, co-, primarily, 100, field, nutritional, but, ribosomal, area, group, butterflies, featuring, seed, directly, after, rrna, insecticide, 16, generate, governed, most, species, grassland, 10,000, stable, mammal, rodents, wing, controlled, synthesis, with, colony, cell, susceptible, prey, per, primary, 000, grasshoppers, ecological, 5000, 320, phytoplankton, type, rate, smooth, frogs, particular, structure, involved, isolated, zooplankton, closed, 1500, producers, individuals.
+- Do NOT print this list in the output."
+biology,gemini,struktur2,19,1932,"In a certain fish farm, 91 out of 100 fish display a recessive trait. Assuming Hardy-Weinberg equilibrium, what is the frequency of the recessive allele?",A. 0.09,B. 0.30,C. 0.03,D. 0.91,D,"The proportion of the fish with the recessive trait (q^2) is 0.91. Therefore, q = square root of 0.91 = 0.95 (approx). Thus, the frequency of the recessive allele is about 0.95. Closest answer is 0.91. This is an error; the correct answer should be approximately 0.95.","The frequency of individuals displaying the recessive trait corresponds to the frequency of the homozygous recessive genotype (q^2) in the Hardy-Weinberg equation.
+Given that 91 out of 100 fish show the trait, q^2 = 91/100 = 0.91.
+The frequency of the recessive allele (q) is the square root of q^2.
+Therefore, q = sqrt(0.91) ≈ 0.9539.
+None of the provided options are correct. Option D (0.91) is the value for q^2, not q.",gemini:gemini-2.5-pro,33419,5.0,5.0,Correct,5.0,"Clarity: The question is clearly stated, uses standard terminology, and provides all necessary information. The flaw is in the provided options and key, not the question's wording.
+Context Accuracy: The scenario is a standard and plausible application of Hardy-Weinberg principles in a population genetics context. The values are reasonable.
+Quality of Working: The generator's reasoning is flawless. It correctly identifies q^2 = 0.91, calculates q ≈ 0.95, and accurately diagnoses that the provided options are incorrect and that the key mistakes q^2 for q.
+Final Answer Accuracy: The generator's conclusion that the correct answer is approximately 0.95 and that the provided options/key are flawed is entirely correct.","SYSTEM: You are a Grade 12 Biology teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 concise concept/application MCQ from: basic genetics (incl. Hardy–Weinberg), cell/tissue structure–function, or short ecology.
+• Use standard terminology; if arithmetic appears (e.g., allele frequency), keep numbers small and round to 2 decimals.
+• Distractors reflect common misconceptions (dominance ≠ frequency, misreading ratios/diagrams, DNA→RNA→Protein confusion).
+
+CoT (few-shot analogue; hidden 1–2 steps):
+• Identify concept/ratio/mini-table relations INTERNALLY; do NOT show steps.
+
+Style example (Hardy–Weinberg): compute 2pq internally → choose option.
+• Create a NEW item of the same family (small table/genotype ratio/energy flow).
+• Distractors must be plausible and map to real misconceptions.
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object:
+  [{""question"":""..."",""options"":[""A. ..."",""B. ..."",""C. ..."",""D. ...""],""answer"":""A"",""solution"":""3–6 short lines, plain text; no LaTeX/markdown.""}]
+- The ""solution"" field is MANDATORY with 3–6 short lines (plain text; no LaTeX/markdown).
+- No extra text outside JSON; no code fences.
+- Options MUST be prefixed ""A. ""/""B. ""/""C. ""/""D. "" and ""answer"" ∈ {A,B,C,D}.
+- NO LaTeX: do not use $ or backslashes; write plain text (sin, cos, pi, (a)/(b)).
+STRICT FOR GEMINI:
+- Output plain-text JSON only; do not use LaTeX ($ or backslashes).
+- The ""solution"" must be 3–6 lines, plain text.
+USER: Topic: Biology. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: web, tissue, one, rodent, differing, available, single, uses, birth, kcal, plant, forest, firmness, obtains, determined, biome, community, insects, transfer, 84, food, trophic, system, 50,000, net, increases, consumers, 500, sunlight, foxes, gene, and, hypothetical, location, 600, production, which, reaches, 180, fur, phenotype, level, gross, rna, plants, coat, farmer, habitat, small, feeding, beak, then, color, consumed, content, two, energy, what, immediate, genes, 30, rabbits, texture, shape, 1000, locus, initially, year, region, consume, eukaryotic, approximately, intensities, floor, ecosystem, bird, mouse, autotrophs, dominant, certain, 0.4, 2000, 10, 8000, 36, given, alleles, dead, population, co-, primarily, 100, field, nutritional, but, ribosomal, area, group, butterflies, featuring, seed, directly, after, rrna, insecticide, 16, generate, governed, most, species, grassland, 10,000, acquire, stable, mammal, rodents, wing, controlled, synthesis, with, colony, cell, susceptible, prey, per, primary, 000, grasshoppers, ecological, 5000, 320, phytoplankton, type, rate, smooth, frogs, particular, structure, involved, isolated, zooplankton, closed, 1500, producers, individuals.
+- Do NOT print this list in the output."
+biology,gemini,struktur2,20,3012,"A plot of land contains 50 snakes. The snakes exist at the third trophic position. If the trophic efficiency is 15%, how much initial kilojoules (kJ) are required from the first trophic position to support these snakes if they represent 750 kJ?","A. 337,500 kJ","B. 50,000 kJ","C. 75,000 kJ","D. 33,333 kJ",D,"Trophic efficiency dictates that only 15% of the previous level transfers. Snakes are at the third trophic position, so they receive 15% of 15% of the initial energy. We can set up the equation 0.15 * 0.15 * x = 750 kJ. Solving for x, we get x = 750 / (0.15 * 0.15) = 33,333 kJ.","The snakes are at the third trophic level (TL3) and represent 750 kJ of energy.
+The trophic efficiency is 15% (or 0.15) between levels.
+Energy at TL2 = Energy at TL3 / 0.15 = 750 kJ / 0.15 = 5,000 kJ.
+Energy at TL1 (initial energy) = Energy at TL2 / 0.15 = 5,000 kJ / 0.15 = 33,333.33... kJ.
+Alternatively, Energy at TL1 = 750 kJ / (0.15 * 0.15) = 750 / 0.0225 = 33,333.33... kJ.
+This rounds to 33,333 kJ, matching option D.",gemini:gemini-2.5-pro,23867,4.5,2.5,Correct,5.0,"Clarity: The question is clearly stated, but the inclusion of the number of snakes (50) is irrelevant data that could potentially confuse a student.
+Context Accuracy: A trophic efficiency of 15% is plausible (though high). However, an energy content of 750 kJ for 50 snakes (15 kJ/snake) is biologically unrealistic, as it is an extremely small amount of energy for an organism's biomass.
+Quality of Working: The generator's solution is perfect. It correctly identifies the two-step energy loss, sets up the equation correctly, and calculates the answer accurately.
+Final Answer Accuracy: The generator's answer is correct based on the numbers provided in the question.","SYSTEM: You are a Grade 12 Biology teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 concise concept/application MCQ from: basic genetics (incl. Hardy–Weinberg), cell/tissue structure–function, or short ecology.
+• Use standard terminology; if arithmetic appears (e.g., allele frequency), keep numbers small and round to 2 decimals.
+• Distractors reflect common misconceptions (dominance ≠ frequency, misreading ratios/diagrams, DNA→RNA→Protein confusion).
+
+CoT (few-shot analogue; hidden 1–2 steps):
+• Identify concept/ratio/mini-table relations INTERNALLY; do NOT show steps.
+
+Style example (Hardy–Weinberg): compute 2pq internally → choose option.
+• Create a NEW item of the same family (small table/genotype ratio/energy flow).
+• Distractors must be plausible and map to real misconceptions.
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object:
+  [{""question"":""..."",""options"":[""A. ..."",""B. ..."",""C. ..."",""D. ...""],""answer"":""A"",""solution"":""3–6 short lines, plain text; no LaTeX/markdown.""}]
+- The ""solution"" field is MANDATORY with 3–6 short lines (plain text; no LaTeX/markdown).
+- No extra text outside JSON; no code fences.
+- Options MUST be prefixed ""A. ""/""B. ""/""C. ""/""D. "" and ""answer"" ∈ {A,B,C,D}.
+- NO LaTeX: do not use $ or backslashes; write plain text (sin, cos, pi, (a)/(b)).
+STRICT FOR GEMINI:
+- Output plain-text JSON only; do not use LaTeX ($ or backslashes).
+- The ""solution"" must be 3–6 lines, plain text.
+USER: Topic: Biology. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: web, tissue, one, rodent, differing, available, single, uses, birth, kcal, plant, forest, firmness, obtains, determined, biome, community, insects, transfer, 84, food, trophic, system, 50,000, net, increases, consumers, 500, sunlight, foxes, gene, and, hypothetical, location, 600, production, which, display, reaches, 180, fur, phenotype, level, gross, rna, plants, recessive, coat, farmer, habitat, small, feeding, beak, then, color, consumed, fish, content, two, energy, what, immediate, genes, 30, rabbits, texture, shape, 1000, locus, initially, year, region, consume, eukaryotic, approximately, intensities, floor, ecosystem, bird, mouse, autotrophs, dominant, certain, 0.4, 2000, 10, 8000, 36, given, alleles, dead, population, co-, primarily, 100, field, nutritional, but, ribosomal, out, 91, area, group, butterflies, featuring, seed, directly, after, rrna, insecticide, 16, generate, governed, most, species, grassland, 10,000, acquire, stable, mammal, rodents, wing, controlled, synthesis, with, colony, cell, susceptible, prey, per, primary, 000, grasshoppers, ecological, 5000, 320, phytoplankton, type, rate, smooth, frogs, particular, structure, involved, isolated, farm, zooplankton, closed, 1500, producers, individuals.
+- Do NOT print this list in the output."
+biology,gemini,struktur2,21,2070,"A wetland has cattails, algae, invertebrates, and bacteria. If the algae capture 800 units of light energy, and the invertebrates obtain 60 units from the algae, how much energy is likely incorporated into the next trophic position?",A. 6 units,B. 60 units,C. 740 units,D. 800 units,A,"Only about 10% of the energy at one position is transferred to the next. The invertebrates got 60 from the algae. So, the next position gets about 10% of that 60. 10% of 60 = 6. Therefore, the answer is 6 units.","The question describes a food chain where algae are producers and invertebrates are primary consumers. The energy available at the primary consumer level (invertebrates) is given as 60 units. The next trophic position would be the secondary consumers. According to the 10% rule of energy transfer in ecology, only about 10% of the energy from one trophic level is incorporated into the next. Therefore, the energy transferred to the secondary consumers would be approximately 10% of the 60 units available from the invertebrates. Calculation: 0.10 * 60 units = 6 units.",gemini:gemini-2.5-pro,25207,5.0,5.0,Correct,5.0,"Clarity: The question is well-defined. It provides the necessary energy values and clearly asks for the energy at the next trophic level. The extra organisms mentioned (cattails, bacteria) provide context without causing confusion.
+Context Accuracy: The scenario is ecologically realistic. The trophic levels are correct, and the use of the 10% rule for energy transfer is a standard concept in ecology. The implied producer-to-primary-consumer efficiency (60/800 = 7.5%) is also a reasonable value.
+Quality of Working: The generator's solution is excellent. It correctly identifies the relevant ecological principle (10% rule), applies it to the correct starting value (60 units), and performs the calculation accurately.
+Final Answer Accuracy: The generator's final answer is correct based on the application of the 10% rule.","SYSTEM: You are a Grade 12 Biology teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 concise concept/application MCQ from: basic genetics (incl. Hardy–Weinberg), cell/tissue structure–function, or short ecology.
+• Use standard terminology; if arithmetic appears (e.g., allele frequency), keep numbers small and round to 2 decimals.
+• Distractors reflect common misconceptions (dominance ≠ frequency, misreading ratios/diagrams, DNA→RNA→Protein confusion).
+
+CoT (few-shot analogue; hidden 1–2 steps):
+• Identify concept/ratio/mini-table relations INTERNALLY; do NOT show steps.
+
+Style example (Hardy–Weinberg): compute 2pq internally → choose option.
+• Create a NEW item of the same family (small table/genotype ratio/energy flow).
+• Distractors must be plausible and map to real misconceptions.
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object:
+  [{""question"":""..."",""options"":[""A. ..."",""B. ..."",""C. ..."",""D. ...""],""answer"":""A"",""solution"":""3–6 short lines, plain text; no LaTeX/markdown.""}]
+- The ""solution"" field is MANDATORY with 3–6 short lines (plain text; no LaTeX/markdown).
+- No extra text outside JSON; no code fences.
+- Options MUST be prefixed ""A. ""/""B. ""/""C. ""/""D. "" and ""answer"" ∈ {A,B,C,D}.
+- NO LaTeX: do not use $ or backslashes; write plain text (sin, cos, pi, (a)/(b)).
+STRICT FOR GEMINI:
+- Output plain-text JSON only; do not use LaTeX ($ or backslashes).
+- The ""solution"" must be 3–6 lines, plain text.
+USER: Topic: Biology. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: web, tissue, third, one, rodent, differing, available, single, uses, birth, kcal, plant, forest, firmness, obtains, determined, biome, community, insects, transfer, 84, food, trophic, system, 50,000, net, increases, consumers, 500, sunlight, foxes, gene, and, hypothetical, location, 600, production, which, display, reaches, 180, fur, plot, phenotype, level, gross, rna, plants, recessive, coat, 15, farmer, habitat, small, feeding, beak, then, color, consumed, fish, content, two, energy, what, immediate, genes, 30, rabbits, texture, shape, 1000, snakes, locus, initially, year, region, consume, eukaryotic, approximately, intensities, floor, ecosystem, bird, mouse, autotrophs, dominant, certain, 0.4, 2000, 10, 8000, 50, 36, given, alleles, dead, population, co-, primarily, 100, field, nutritional, but, ribosomal, out, 91, area, group, butterflies, featuring, seed, directly, after, rrna, insecticide, 16, generate, governed, contains, most, species, land, grassland, 10,000, 750, acquire, stable, mammal, rodents, wing, controlled, synthesis, with, colony, cell, susceptible, prey, per, primary, 000, exist, grasshoppers, ecological, 5000, 320, phytoplankton, type, rate, smooth, frogs, particular, structure, involved, isolated, farm, zooplankton, closed, 1500, producers, individuals.
+- Do NOT print this list in the output."
+biology,gemini,struktur2,22,1968,"In a certain animal population, the frequency of the 'A' allele is 0.6. Assuming the population is in Hardy-Weinberg equilibrium, what is the expected frequency of heterozygous individuals (Aa)?",A. 0.16,B. 0.24,C. 0.48,D. 0.84,C,"Hardy-Weinberg equilibrium states: p^2 + 2pq + q^2 = 1. Here, p = 0.6, so q = 1 - p = 0.4. The frequency of heterozygotes (Aa) is 2pq = 2 * 0.6 * 0.4 = 0.48.","The problem requires finding the frequency of heterozygous individuals (Aa) in a population in Hardy-Weinberg equilibrium.
+The frequency of the 'A' allele is given as p = 0.6.
+The frequency of the 'a' allele, q, is calculated as q = 1 - p.
+So, q = 1 - 0.6 = 0.4.
+The frequency of heterozygous individuals (Aa) is given by the term 2pq in the Hardy-Weinberg equation.
+Calculating 2pq: 2 * 0.6 * 0.4 = 0.48.
+This corresponds to option C.",gemini:gemini-2.5-pro,24284,5.0,5.0,Correct,5.0,"Clarity: The question is unambiguous, providing all necessary information (allele frequency, HWE assumption) to solve for the single correct answer.
+Context Accuracy: The scenario is a standard and realistic application of the Hardy-Weinberg principle, a fundamental concept in population genetics.
+Quality of Working: The generator's solution correctly identifies the relevant variables (p and q), uses the correct formula for heterozygote frequency (2pq), and performs the arithmetic flawlessly.
+Final Answer Accuracy: The generator's calculated answer of 0.48 is correct and matches the provided key.","SYSTEM: You are a Grade 12 Biology teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 concise concept/application MCQ from: basic genetics (incl. Hardy–Weinberg), cell/tissue structure–function, or short ecology.
+• Use standard terminology; if arithmetic appears (e.g., allele frequency), keep numbers small and round to 2 decimals.
+• Distractors reflect common misconceptions (dominance ≠ frequency, misreading ratios/diagrams, DNA→RNA→Protein confusion).
+
+CoT (few-shot analogue; hidden 1–2 steps):
+• Identify concept/ratio/mini-table relations INTERNALLY; do NOT show steps.
+
+Style example (Hardy–Weinberg): compute 2pq internally → choose option.
+• Create a NEW item of the same family (small table/genotype ratio/energy flow).
+• Distractors must be plausible and map to real misconceptions.
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object:
+  [{""question"":""..."",""options"":[""A. ..."",""B. ..."",""C. ..."",""D. ...""],""answer"":""A"",""solution"":""3–6 short lines, plain text; no LaTeX/markdown.""}]
+- The ""solution"" field is MANDATORY with 3–6 short lines (plain text; no LaTeX/markdown).
+- No extra text outside JSON; no code fences.
+- Options MUST be prefixed ""A. ""/""B. ""/""C. ""/""D. "" and ""answer"" ∈ {A,B,C,D}.
+- NO LaTeX: do not use $ or backslashes; write plain text (sin, cos, pi, (a)/(b)).
+STRICT FOR GEMINI:
+- Output plain-text JSON only; do not use LaTeX ($ or backslashes).
+- The ""solution"" must be 3–6 lines, plain text.
+USER: Topic: Biology. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: web, tissue, third, one, rodent, differing, available, single, uses, birth, kcal, plant, forest, firmness, obtains, 800, determined, biome, community, insects, transfer, 84, food, trophic, system, 50,000, net, increases, consumers, 500, sunlight, foxes, gene, and, hypothetical, location, 600, production, which, display, reaches, 180, fur, plot, phenotype, level, gross, rna, plants, has, recessive, coat, 15, wetland, farmer, habitat, small, feeding, beak, then, color, consumed, cattails, fish, content, two, energy, what, immediate, genes, 30, rabbits, texture, shape, 1000, snakes, locus, initially, year, region, consume, eukaryotic, approximately, intensities, invertebrates, floor, ecosystem, bird, mouse, autotrophs, dominant, certain, 0.4, 2000, 10, 8000, 50, 36, given, alleles, dead, 60, population, co-, primarily, 100, field, algae, nutritional, but, ribosomal, out, 91, area, group, butterflies, featuring, seed, directly, after, rrna, insecticide, 16, generate, governed, contains, most, species, land, grassland, 10,000, 750, acquire, stable, mammal, rodents, wing, controlled, synthesis, with, colony, cell, susceptible, prey, per, primary, 000, exist, grasshoppers, ecological, 5000, 320, bacteria, phytoplankton, type, rate, smooth, frogs, particular, structure, involved, isolated, farm, zooplankton, closed, 1500, producers, individuals.
+- Do NOT print this list in the output."
+biology,gemini,struktur2,23,2287,A population of flowering organisms exists in Hardy-Weinberg equilibrium for a trait. The trait is determined by genotypes at a certain site. 'AA' genotypes appear in 9% of organisms. What percentage of the organisms are 'Aa'?,A. 21%,B. 42%,C. 49%,D. 91%,B,"Let 'A' = p, and 'a' = q. Then p^2 = 0.09, so p = 0.3. Because p + q = 1, q = 0.7. Heterozygotes 'Aa' = 2pq = 2 * 0.3 * 0.7 = 0.42, or 42%.","The problem assumes Hardy-Weinberg equilibrium, where allele frequencies are p (for 'A') and q (for 'a'), and genotype frequencies are p², 2pq, and q².
+The frequency of the 'AA' genotype is given as 9%, so p² = 0.09.
+Taking the square root gives the frequency of the 'A' allele: p = √0.09 = 0.3.
+Since p + q = 1, the frequency of the 'a' allele is q = 1 - 0.3 = 0.7.
+The frequency of the heterozygous 'Aa' genotype is 2pq.
+Frequency of 'Aa' = 2 * 0.3 * 0.7 = 0.42.
+Converting this to a percentage gives 42%.",gemini:gemini-2.5-pro,28066,5.0,5.0,Correct,5.0,"Clarity: The question is perfectly clear, providing all necessary information and stating the required output unambiguously. It's a classic textbook problem.
+Context Accuracy: The scenario is a standard and accurate application of the Hardy-Weinberg principle in population genetics. The values are plausible for a model system.
+Quality of Working: The generator's solution is flawless. It correctly identifies each term in the Hardy-Weinberg equation, follows a logical sequence of steps, and performs the arithmetic correctly.
+Final Answer Accuracy: The generator's answer of 42% is correct and matches the provided key.","SYSTEM: You are a Grade 12 Biology teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 concise concept/application MCQ from: basic genetics (incl. Hardy–Weinberg), cell/tissue structure–function, or short ecology.
+• Use standard terminology; if arithmetic appears (e.g., allele frequency), keep numbers small and round to 2 decimals.
+• Distractors reflect common misconceptions (dominance ≠ frequency, misreading ratios/diagrams, DNA→RNA→Protein confusion).
+
+CoT (few-shot analogue; hidden 1–2 steps):
+• Identify concept/ratio/mini-table relations INTERNALLY; do NOT show steps.
+
+Style example (Hardy–Weinberg): compute 2pq internally → choose option.
+• Create a NEW item of the same family (small table/genotype ratio/energy flow).
+• Distractors must be plausible and map to real misconceptions.
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object:
+  [{""question"":""..."",""options"":[""A. ..."",""B. ..."",""C. ..."",""D. ...""],""answer"":""A"",""solution"":""3–6 short lines, plain text; no LaTeX/markdown.""}]
+- The ""solution"" field is MANDATORY with 3–6 short lines (plain text; no LaTeX/markdown).
+- No extra text outside JSON; no code fences.
+- Options MUST be prefixed ""A. ""/""B. ""/""C. ""/""D. "" and ""answer"" ∈ {A,B,C,D}.
+- NO LaTeX: do not use $ or backslashes; write plain text (sin, cos, pi, (a)/(b)).
+STRICT FOR GEMINI:
+- Output plain-text JSON only; do not use LaTeX ($ or backslashes).
+- The ""solution"" must be 3–6 lines, plain text.
+USER: Topic: Biology. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: web, tissue, third, one, rodent, differing, available, single, uses, birth, kcal, plant, forest, firmness, obtains, 800, determined, biome, community, insects, transfer, 84, food, trophic, system, 50,000, net, increases, consumers, 500, sunlight, foxes, gene, and, hypothetical, location, 600, production, which, display, reaches, 180, fur, plot, assuming, phenotype, level, gross, rna, plants, has, recessive, coat, 15, wetland, farmer, habitat, small, feeding, beak, then, allele, color, consumed, cattails, fish, content, two, energy, what, immediate, genes, 30, rabbits, texture, shape, 1000, snakes, locus, initially, year, region, consume, eukaryotic, approximately, intensities, invertebrates, floor, ecosystem, bird, mouse, autotrophs, dominant, certain, 0.4, 2000, 10, 8000, equilibrium, 50, 36, given, alleles, dead, 60, population, co-, primarily, 100, field, algae, nutritional, but, ribosomal, out, 91, area, group, butterflies, featuring, seed, 0.6, directly, after, rrna, insecticide, 16, generate, governed, contains, most, species, land, grassland, 10,000, 750, acquire, stable, mammal, rodents, wing, frequency, controlled, synthesis, with, colony, cell, susceptible, prey, per, primary, 000, exist, grasshoppers, ecological, hardy-weinberg, 5000, 320, bacteria, phytoplankton, type, rate, smooth, frogs, particular, structure, involved, isolated, farm, zooplankton, closed, 1500, producers, individuals, animal.
+- Do NOT print this list in the output."
+biology,gemini,struktur2,24,2745,"In a specific environment, mushrooms decompose leaf litter. A portion of the carbon originally present in the leaves is incorporated into the mushroom biomass, while another portion is released back into the atmosphere. This release is MOST likely due to what process?",A. Transpiration within the fungal hyphae.,B. Cellular respiration within the fungal hyphae.,C. Osmosis across the mushroom cap.,D. Active transport into the mushroom stalk.,B,Decomposition by fungi involves breaking down organic matter. Cellular respiration breaks down organic molecules (like carbon compounds). This releases energy and carbon dioxide into the atmosphere. Transpiration is water movement; osmosis is water diffusion; active transport moves specific molecules.,"The question asks for the process by which decomposers, like mushrooms, release carbon from organic matter (leaves) back into the atmosphere. Fungi are heterotrophs that obtain energy by breaking down organic compounds. This metabolic process is cellular respiration. In aerobic respiration, organic carbon molecules are oxidized, producing ATP for the fungus's life processes and releasing carbon dioxide (CO₂) as a waste product. The other options are incorrect: transpiration and osmosis relate to water movement, and active transport is a mechanism for moving substances across membranes, not releasing gas into the atmosphere.",gemini:gemini-2.5-pro,25477,5.0,5.0,Correct,5.0,"Clarity: The question is well-phrased, presenting a clear ecological scenario and asking for a specific biological process. The options are distinct and relevant.
+Context Accuracy: The scenario described is a fundamental concept in ecology and carbon cycling. Fungi are primary decomposers, and their respiration is a major flux of carbon to the atmosphere.
+Quality of Working: The generator's explanation is concise and correct. It accurately identifies cellular respiration as the key process and correctly defines the distractor processes to show why they are incorrect.
+Final Answer Accuracy: The generator's answer (B) is correct. Cellular respiration is the metabolic process that releases carbon dioxide from organic matter.","SYSTEM: You are a Grade 12 Biology teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 concise concept/application MCQ from: basic genetics (incl. Hardy–Weinberg), cell/tissue structure–function, or short ecology.
+• Use standard terminology; if arithmetic appears (e.g., allele frequency), keep numbers small and round to 2 decimals.
+• Distractors reflect common misconceptions (dominance ≠ frequency, misreading ratios/diagrams, DNA→RNA→Protein confusion).
+
+CoT (few-shot analogue; hidden 1–2 steps):
+• Identify concept/ratio/mini-table relations INTERNALLY; do NOT show steps.
+
+Style example (Hardy–Weinberg): compute 2pq internally → choose option.
+• Create a NEW item of the same family (small table/genotype ratio/energy flow).
+• Distractors must be plausible and map to real misconceptions.
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object:
+  [{""question"":""..."",""options"":[""A. ..."",""B. ..."",""C. ..."",""D. ...""],""answer"":""A"",""solution"":""3–6 short lines, plain text; no LaTeX/markdown.""}]
+- The ""solution"" field is MANDATORY with 3–6 short lines (plain text; no LaTeX/markdown).
+- No extra text outside JSON; no code fences.
+- Options MUST be prefixed ""A. ""/""B. ""/""C. ""/""D. "" and ""answer"" ∈ {A,B,C,D}.
+- NO LaTeX: do not use $ or backslashes; write plain text (sin, cos, pi, (a)/(b)).
+STRICT FOR GEMINI:
+- Output plain-text JSON only; do not use LaTeX ($ or backslashes).
+- The ""solution"" must be 3–6 lines, plain text.
+USER: Topic: Biology. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: web, tissue, third, one, rodent, differing, available, single, uses, birth, kcal, plant, forest, firmness, obtains, 800, exists, determined, biome, community, insects, transfer, 84, food, trophic, system, 50,000, net, increases, consumers, 500, sunlight, foxes, gene, and, hypothetical, location, 600, production, which, display, reaches, 180, for, fur, plot, assuming, phenotype, level, gross, rna, plants, has, recessive, coat, 15, wetland, farmer, habitat, small, trait, feeding, beak, then, allele, color, consumed, cattails, fish, content, two, energy, what, immediate, genes, 30, rabbits, texture, shape, 1000, snakes, locus, initially, year, region, consume, eukaryotic, approximately, intensities, invertebrates, floor, ecosystem, bird, mouse, autotrophs, dominant, certain, 0.4, 2000, 10, 8000, equilibrium, 50, 36, given, alleles, dead, 60, population, co-, primarily, 100, field, algae, nutritional, but, ribosomal, out, 91, area, group, butterflies, featuring, seed, 0.6, directly, after, rrna, insecticide, 16, generate, governed, contains, most, species, land, grassland, 9, 10,000, 750, acquire, stable, mammal, rodents, wing, frequency, controlled, synthesis, with, colony, cell, susceptible, prey, per, primary, 000, exist, grasshoppers, ecological, hardy-weinberg, 5000, organisms, 320, bacteria, phytoplankton, type, rate, smooth, frogs, particular, structure, involved, isolated, farm, zooplankton, closed, 1500, producers, individuals, flowering, animal.
+- Do NOT print this list in the output."
+biology,gemini,struktur2,25,2513,"In a population of wildflowers, the number of red flowers (CRCR) is 32, pink flowers (CRCW) is 64, and white flowers (CWCW) is 4. What is the observed decimal number of the CR allele in this wildflower population?",A. 0.33,B. 0.40,C. 0.67,D. 0.80,C,"Total flowers = 32 + 64 + 4 = 100. Total CR = (2 * 32) + 64 = 128. Total C = 2 * 100 = 200. Therefore, CR decimal = 128/200 = 0.64. Close to 0.67.","1. Calculate the total number of individuals in the population:
+   Total individuals = 32 (CRCR) + 64 (CRCW) + 4 (CWCW) = 100.
+2. Calculate the total number of alleles in the gene pool:
+   Total alleles = 100 individuals × 2 alleles/individual = 200.
+3. Count the number of CR alleles:
+   From CRCR individuals: 32 × 2 = 64 CR alleles.
+   From CRCW individuals: 64 × 1 = 64 CR alleles.
+   Total CR alleles = 64 + 64 = 128.
+4. Calculate the frequency of the CR allele:
+   Frequency = (Total CR alleles) / (Total alleles) = 128 / 200 = 0.64.
+The correct answer is 0.64, which is not an option.",gemini:gemini-2.5-pro,51221,4.0,5.0,Incorrect,3.5,"Clarity: The question is clearly worded and provides all necessary data. However, it is fundamentally flawed because the correct answer (0.64) is not included in the options.
+Context Accuracy: The biological context of incomplete dominance in flower color is a standard, realistic, and accurate example used in introductory genetics.
+Quality of Working: The generator's arithmetic is correct, accurately calculating the allele frequency as 0.64. However, the reasoning is poor because it doesn't flag the options as incorrect. Instead, it weakly justifies the incorrect key (C) by stating that 0.64 is ""Close to 0.67"", which is not a valid scientific or mathematical conclusion.
+Final Answer Accuracy: The generator's calculation correctly finds the answer to be 0.64. However, its solution implies that the answer is C (0.67) because it is ""close"". Since 0.67 is not the correct answer, the generator's implied final answer is incorrect.","SYSTEM: You are a Grade 12 Biology teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 concise concept/application MCQ from: basic genetics (incl. Hardy–Weinberg), cell/tissue structure–function, or short ecology.
+• Use standard terminology; if arithmetic appears (e.g., allele frequency), keep numbers small and round to 2 decimals.
+• Distractors reflect common misconceptions (dominance ≠ frequency, misreading ratios/diagrams, DNA→RNA→Protein confusion).
+
+CoT (few-shot analogue; hidden 1–2 steps):
+• Identify concept/ratio/mini-table relations INTERNALLY; do NOT show steps.
+
+Style example (Hardy–Weinberg): compute 2pq internally → choose option.
+• Create a NEW item of the same family (small table/genotype ratio/energy flow).
+• Distractors must be plausible and map to real misconceptions.
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object:
+  [{""question"":""..."",""options"":[""A. ..."",""B. ..."",""C. ..."",""D. ...""],""answer"":""A"",""solution"":""3–6 short lines, plain text; no LaTeX/markdown.""}]
+- The ""solution"" field is MANDATORY with 3–6 short lines (plain text; no LaTeX/markdown).
+- No extra text outside JSON; no code fences.
+- Options MUST be prefixed ""A. ""/""B. ""/""C. ""/""D. "" and ""answer"" ∈ {A,B,C,D}.
+- NO LaTeX: do not use $ or backslashes; write plain text (sin, cos, pi, (a)/(b)).
+STRICT FOR GEMINI:
+- Output plain-text JSON only; do not use LaTeX ($ or backslashes).
+- The ""solution"" must be 3–6 lines, plain text.
+USER: Topic: Biology. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: web, tissue, third, one, rodent, differing, available, decompose, single, uses, birth, kcal, plant, forest, firmness, obtains, 800, exists, determined, biome, community, insects, transfer, carbon, 84, food, trophic, system, 50,000, net, increases, consumers, 500, sunlight, specific, foxes, gene, and, hypothetical, location, 600, production, which, present, display, reaches, 180, for, fur, plot, assuming, phenotype, portion, level, gross, rna, plants, has, recessive, coat, 15, wetland, farmer, habitat, small, trait, feeding, beak, then, allele, color, consumed, cattails, fish, originally, content, two, leaf, energy, what, immediate, genes, 30, rabbits, texture, shape, 1000, snakes, locus, initially, year, region, consume, eukaryotic, approximately, intensities, invertebrates, floor, ecosystem, bird, mouse, autotrophs, dominant, certain, 0.4, 2000, 10, 8000, equilibrium, 50, 36, given, alleles, dead, 60, population, co-, primarily, 100, field, algae, nutritional, but, ribosomal, out, 91, area, group, butterflies, featuring, seed, 0.6, directly, after, environment, rrna, insecticide, 16, generate, governed, contains, most, species, land, grassland, 9, 10,000, litter, 750, acquire, stable, mammal, mushrooms, rodents, wing, frequency, controlled, synthesis, with, colony, cell, susceptible, prey, per, primary, 000, exist, grasshoppers, ecological, hardy-weinberg, 5000, organisms, 320, bacteria, phytoplankton, type, rate, smooth, frogs, particular, structure, involved, isolated, farm, zooplankton, closed, 1500, producers, individuals, flowering, animal.
+- Do NOT print this list in the output."
+biology,gemini,struktur2,26,2912,"In a population of butterflies, the brown wing variant (BB or Bb) is observed in 96 out of 400 butterflies. The remaining butterflies express the white wing variant (bb). Under Hardy-Weinberg conditions, what is the calculated decimal value of the 'b' allele?",A. 0.20,B. 0.49,C. 0.70,D. 0.80,D,"bb individuals = 400 - 96 = 304. The 'bb' genotype's frequency is 304/400 = 0.76. Since q^2 = 0.76, then q = sqrt(0.76) = 0.87 (approx.). Therefore, the 'b' allele is about 0.87.","1. Identify the total population size: 400.
+2. Identify the number of individuals with the dominant phenotype (brown wings): 96.
+3. Calculate the number of individuals with the recessive phenotype (white wings, bb): 400 - 96 = 304.
+4. Calculate the frequency of the recessive genotype (q^2): 304 / 400 = 0.76.
+5. Calculate the frequency of the recessive allele 'b' (q) by taking the square root of q^2.
+6. q = sqrt(0.76) ≈ 0.872.
+7. None of the provided options match this result. The question is flawed as the numbers in the stem are inconsistent with the options and key.",gemini:gemini-2.5-pro,34806,3.5,5.0,Correct,5.0,"Clarity: The question's text is clear, but the provided numbers are inconsistent with the options, creating a confusing and unsolvable problem for the test-taker.
+Context Accuracy: The biological context of Hardy-Weinberg equilibrium applied to butterfly wing color is standard and accurate.
+Quality of Working: The generator's reasoning is flawless. It correctly calculates the frequency of the recessive phenotype (q^2 = 0.76) and then correctly finds the allele frequency (q ≈ 0.87) from the data given in the question.
+Final Answer Accuracy: The generator's calculated answer (0.87) is the correct solution based on the numbers in the question's stem. The question itself is flawed because this correct answer is not among the options, and the provided key (D, 0.80) is incorrect.","SYSTEM: You are a Grade 12 Biology teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 concise concept/application MCQ from: basic genetics (incl. Hardy–Weinberg), cell/tissue structure–function, or short ecology.
+• Use standard terminology; if arithmetic appears (e.g., allele frequency), keep numbers small and round to 2 decimals.
+• Distractors reflect common misconceptions (dominance ≠ frequency, misreading ratios/diagrams, DNA→RNA→Protein confusion).
+
+CoT (few-shot analogue; hidden 1–2 steps):
+• Identify concept/ratio/mini-table relations INTERNALLY; do NOT show steps.
+
+Style example (Hardy–Weinberg): compute 2pq internally → choose option.
+• Create a NEW item of the same family (small table/genotype ratio/energy flow).
+• Distractors must be plausible and map to real misconceptions.
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object:
+  [{""question"":""..."",""options"":[""A. ..."",""B. ..."",""C. ..."",""D. ...""],""answer"":""A"",""solution"":""3–6 short lines, plain text; no LaTeX/markdown.""}]
+- The ""solution"" field is MANDATORY with 3–6 short lines (plain text; no LaTeX/markdown).
+- No extra text outside JSON; no code fences.
+- Options MUST be prefixed ""A. ""/""B. ""/""C. ""/""D. "" and ""answer"" ∈ {A,B,C,D}.
+- NO LaTeX: do not use $ or backslashes; write plain text (sin, cos, pi, (a)/(b)).
+STRICT FOR GEMINI:
+- Output plain-text JSON only; do not use LaTeX ($ or backslashes).
+- The ""solution"" must be 3–6 lines, plain text.
+USER: Topic: Biology. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: web, tissue, third, 4, one, rodent, differing, available, decompose, single, uses, birth, kcal, plant, forest, firmness, obtains, 800, exists, determined, biome, community, insects, transfer, carbon, 84, food, trophic, system, 50,000, net, increases, consumers, 500, sunlight, specific, foxes, gene, and, hypothetical, location, 600, production, which, present, display, reaches, 180, for, fur, plot, assuming, wildflowers, phenotype, portion, level, gross, 32, rna, plants, has, recessive, coat, 15, wetland, farmer, habitat, small, trait, feeding, beak, then, allele, color, consumed, cattails, fish, originally, content, two, leaf, energy, what, immediate, genes, 30, rabbits, texture, shape, 1000, snakes, locus, initially, year, region, consume, eukaryotic, approximately, intensities, invertebrates, floor, ecosystem, bird, 64, mouse, autotrophs, dominant, certain, 0.4, 2000, 10, 8000, equilibrium, 50, 36, given, alleles, dead, 60, population, co-, primarily, 100, field, algae, nutritional, but, ribosomal, red, number, out, 91, area, group, butterflies, featuring, seed, 0.6, directly, after, environment, rrna, insecticide, 16, generate, governed, contains, most, species, land, grassland, 9, 10,000, litter, 750, acquire, stable, mammal, mushrooms, rodents, flowers, wing, frequency, controlled, synthesis, with, colony, cell, susceptible, prey, per, primary, 000, exist, grasshoppers, ecological, hardy-weinberg, 5000, organisms, 320, bacteria, phytoplankton, type, rate, smooth, frogs, particular, structure, involved, isolated, farm, zooplankton, closed, 1500, pink, producers, individuals, flowering, crcr, animal.
+- Do NOT print this list in the output."
+biology,gemini,struktur2,27,2778,"In a population of butterflies, wing patterns are controlled by a single locus with two co- alleles, CW and CY. CW CW individuals have white wings, CY CY individuals have yellow wings, and CW CY individuals have cream wings. If 49% of the butterflies are white winged, what is the predicted of the CY allele?",A. 0.09,B. 0.3,C. 0.51,D. 0.7,B,"Since 49% are CW CW, the CW allele = sqrt(0.49) = 0.7. Because there are only two , the CY allele = 1 - 0.7 = 0.3.","This problem assumes the population is in Hardy-Weinberg equilibrium. Let p be the frequency of the CW allele and q be the frequency of the CY allele.
+The frequency of white-winged butterflies (genotype CW CW) is given as 49%, or 0.49.
+In the Hardy-Weinberg equation, the frequency of the homozygous dominant genotype is p².
+Therefore, p² = 0.49.
+Solving for p, the frequency of the CW allele, we get p = sqrt(0.49) = 0.7.
+Since there are only two alleles, their frequencies must sum to 1 (p + q = 1).
+The frequency of the CY allele (q) is therefore 1 - p = 1 - 0.7 = 0.3.",gemini:gemini-2.5-pro,19166,4.0,4.5,Correct,4.5,"Clarity: The question is mostly clear but contains a typo: ""predicted of the CY allele"" should be ""predicted frequency of the CY allele"". This makes the question slightly awkward to read.
+Context Accuracy: The biological context is plausible and a standard example for population genetics. The term ""co-alleles"" is slightly non-standard; ""incomplete dominance"" would be more precise for the described phenotype, but this doesn't affect the calculation.
+Quality of Working: The generator's reasoning is sound and correctly applies the Hardy-Weinberg principle. The steps are logical and concise. A minor typo is present (""only two ,"") but it does not detract from the correctness of the method.
+Final Answer Accuracy: The generator's final answer of 0.3 is correct and matches the independent solution.","SYSTEM: You are a Grade 12 Biology teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 concise concept/application MCQ from: basic genetics (incl. Hardy–Weinberg), cell/tissue structure–function, or short ecology.
+• Use standard terminology; if arithmetic appears (e.g., allele frequency), keep numbers small and round to 2 decimals.
+• Distractors reflect common misconceptions (dominance ≠ frequency, misreading ratios/diagrams, DNA→RNA→Protein confusion).
+
+CoT (few-shot analogue; hidden 1–2 steps):
+• Identify concept/ratio/mini-table relations INTERNALLY; do NOT show steps.
+
+Style example (Hardy–Weinberg): compute 2pq internally → choose option.
+• Create a NEW item of the same family (small table/genotype ratio/energy flow).
+• Distractors must be plausible and map to real misconceptions.
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object:
+  [{""question"":""..."",""options"":[""A. ..."",""B. ..."",""C. ..."",""D. ...""],""answer"":""A"",""solution"":""3–6 short lines, plain text; no LaTeX/markdown.""}]
+- The ""solution"" field is MANDATORY with 3–6 short lines (plain text; no LaTeX/markdown).
+- No extra text outside JSON; no code fences.
+- Options MUST be prefixed ""A. ""/""B. ""/""C. ""/""D. "" and ""answer"" ∈ {A,B,C,D}.
+- NO LaTeX: do not use $ or backslashes; write plain text (sin, cos, pi, (a)/(b)).
+STRICT FOR GEMINI:
+- Output plain-text JSON only; do not use LaTeX ($ or backslashes).
+- The ""solution"" must be 3–6 lines, plain text.
+USER: Topic: Biology. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: web, tissue, third, 4, one, rodent, differing, available, decompose, single, uses, birth, kcal, plant, forest, firmness, obtains, 800, exists, determined, biome, community, insects, transfer, carbon, 84, food, trophic, system, 50,000, net, increases, consumers, 500, sunlight, specific, foxes, gene, and, hypothetical, location, 600, production, which, present, display, reaches, 180, for, fur, plot, assuming, wildflowers, phenotype, portion, level, gross, 32, rna, plants, has, recessive, coat, 15, wetland, brown, farmer, habitat, small, trait, feeding, beak, then, allele, color, consumed, cattails, fish, originally, content, observed, two, leaf, energy, what, immediate, genes, 30, rabbits, texture, shape, 1000, snakes, locus, initially, year, region, consume, eukaryotic, approximately, intensities, invertebrates, floor, ecosystem, bird, 64, mouse, autotrophs, dominant, certain, 0.4, 2000, 10, 8000, equilibrium, 50, 36, given, alleles, dead, 60, population, co-, primarily, 100, field, algae, nutritional, but, ribosomal, red, number, out, 91, area, 96, group, butterflies, featuring, seed, 0.6, directly, after, environment, rrna, insecticide, 16, generate, governed, contains, most, species, land, grassland, 9, 10,000, litter, 750, acquire, stable, mammal, mushrooms, rodents, flowers, wing, frequency, controlled, synthesis, with, variant, colony, cell, susceptible, prey, per, primary, 000, exist, grasshoppers, ecological, 400, hardy-weinberg, 5000, organisms, 320, bacteria, phytoplankton, type, rate, smooth, frogs, particular, structure, involved, isolated, farm, zooplankton, closed, 1500, pink, producers, individuals, flowering, crcr, animal.
+- Do NOT print this list in the output."
+biology,gemini,struktur2,28,3017,"In a certain population of ducks, the genotype BB confers black feathers, Bb confers grey feathers, and bb confers white feathers. If the population initially consists of 8 black ducks, 4 grey ducks, and 4 white ducks, what are the genotype frequencies?","A. BB = 0.50, Bb = 0.25, bb = 0.25","B. BB = 0.33, Bb = 0.33, bb = 0.33","C. BB = 0.40, Bb = 0.20, bb = 0.40","D. BB = 0.66, Bb = 0.16, bb = 0.16",A,There are 8+4+4 = 16 ducks total. Genotype frequencies are calculated as the count of each genotype divided by the total count. BB frequency = 8/16 = 0.50. Bb frequency = 4/16 = 0.25. bb frequency = 4/16 = 0.25.,"First, calculate the total number of ducks in the population.
+Total ducks = (number of black ducks) + (number of grey ducks) + (number of white ducks)
+Total ducks = 8 + 4 + 4 = 16.
+Next, calculate the frequency of each genotype by dividing the number of individuals with that genotype by the total population size.
+Frequency of BB = 8 / 16 = 0.50
+Frequency of Bb = 4 / 16 = 0.25
+Frequency of bb = 4 / 16 = 0.25
+This corresponds to option A.",gemini:gemini-2.5-pro,20662,5.0,5.0,Correct,5.0,"Clarity: The question is perfectly clear. It provides the genotype-phenotype mapping and the exact counts of each phenotype, making the calculation straightforward.
+Context Accuracy: The genetic context of incomplete dominance (where the heterozygote has an intermediate phenotype) is a standard and accurate biological concept. The numbers are simple and appropriate for a genetics problem.
+Quality of Working: The generator's solution is flawless. It correctly calculates the total population size and then accurately determines the frequency of each genotype. The steps are logical and easy to follow.
+Final Answer Accuracy: The generator's calculated frequencies are correct and match the provided key (A).","SYSTEM: You are a Grade 12 Biology teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 concise concept/application MCQ from: basic genetics (incl. Hardy–Weinberg), cell/tissue structure–function, or short ecology.
+• Use standard terminology; if arithmetic appears (e.g., allele frequency), keep numbers small and round to 2 decimals.
+• Distractors reflect common misconceptions (dominance ≠ frequency, misreading ratios/diagrams, DNA→RNA→Protein confusion).
+
+CoT (few-shot analogue; hidden 1–2 steps):
+• Identify concept/ratio/mini-table relations INTERNALLY; do NOT show steps.
+
+Style example (Hardy–Weinberg): compute 2pq internally → choose option.
+• Create a NEW item of the same family (small table/genotype ratio/energy flow).
+• Distractors must be plausible and map to real misconceptions.
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object:
+  [{""question"":""..."",""options"":[""A. ..."",""B. ..."",""C. ..."",""D. ...""],""answer"":""A"",""solution"":""3–6 short lines, plain text; no LaTeX/markdown.""}]
+- The ""solution"" field is MANDATORY with 3–6 short lines (plain text; no LaTeX/markdown).
+- No extra text outside JSON; no code fences.
+- Options MUST be prefixed ""A. ""/""B. ""/""C. ""/""D. "" and ""answer"" ∈ {A,B,C,D}.
+- NO LaTeX: do not use $ or backslashes; write plain text (sin, cos, pi, (a)/(b)).
+STRICT FOR GEMINI:
+- Output plain-text JSON only; do not use LaTeX ($ or backslashes).
+- The ""solution"" must be 3–6 lines, plain text.
+USER: Topic: Biology. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: web, tissue, third, 4, one, rodent, differing, available, decompose, single, uses, birth, kcal, plant, 49, forest, firmness, obtains, 800, exists, determined, biome, community, insects, transfer, carbon, 84, food, trophic, system, 50,000, net, increases, consumers, 500, sunlight, specific, foxes, gene, and, hypothetical, location, 600, production, which, present, display, reaches, 180, for, fur, plot, assuming, wildflowers, phenotype, portion, level, gross, 32, rna, plants, has, recessive, coat, 15, wetland, brown, farmer, habitat, small, trait, feeding, beak, then, allele, color, consumed, cattails, fish, originally, content, observed, two, leaf, energy, what, patterns, immediate, genes, 30, rabbits, texture, shape, 1000, snakes, locus, initially, year, region, consume, eukaryotic, approximately, intensities, invertebrates, floor, ecosystem, bird, 64, mouse, autotrophs, dominant, certain, 0.4, 2000, 10, 8000, equilibrium, 50, 36, given, alleles, dead, 60, population, co-, primarily, 100, field, algae, nutritional, but, ribosomal, red, number, out, 91, area, 96, group, butterflies, featuring, seed, 0.6, directly, after, environment, rrna, insecticide, 16, generate, governed, contains, most, species, land, grassland, 9, 10,000, litter, 750, acquire, stable, mammal, mushrooms, rodents, flowers, wing, frequency, controlled, synthesis, with, variant, colony, cell, susceptible, prey, per, primary, 000, exist, grasshoppers, ecological, 400, hardy-weinberg, 5000, organisms, 320, bacteria, phytoplankton, type, rate, smooth, frogs, particular, structure, involved, isolated, farm, zooplankton, closed, 1500, pink, producers, individuals, flowering, crcr, animal.
+- Do NOT print this list in the output."
+biology,gemini,struktur2,29,1862,"A new population of goats is introduced to an isolated island. The goats exhibit variation in horn size, with some having long horns and others having short horns. After several generations, it is noticed that the goats with medium-sized horns are most prevalent. This suggests that __________ is occurring.",A. directional selection,B. disruptive selection,C. stabilizing selection,D. sexual selection,C,"Stabilizing selection favors intermediate phenotypes. Directional selection favors one extreme. Disruptive selection favors both extremes. Sexual selection is based on mate choice, not horn size in this case.","The question describes a scenario where a population's trait distribution changes over time. Initially, there is variation (long and short horns). After several generations, the intermediate phenotype (medium-sized horns) becomes the most common. This pattern, where extreme phenotypes are selected against and the average phenotype is favored, is the definition of stabilizing selection. Directional selection would favor one extreme (e.g., only long horns). Disruptive selection would favor both extremes (long and short horns) over the intermediate. Sexual selection is a mechanism, but the described outcome is best classified as stabilizing selection.",gemini:gemini-2.5-pro,24896,5.0,5.0,Correct,5.0,"Clarity: The question is well-worded and presents a classic, unambiguous example used to teach modes of natural selection.
+Context Accuracy: The scenario is biologically plausible. Horn size is a variable trait in goats and could easily be subject to stabilizing selection pressures (e.g., long horns are cumbersome, short horns are poor for defense).
+Quality of Working: The generator's solution provides a concise and accurate definition for each relevant type of selection, correctly identifying why stabilizing selection is the answer and why the others are not.
+Final Answer Accuracy: The generator's reasoning correctly supports the provided key (C).","SYSTEM: You are a Grade 12 Biology teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 concise concept/application MCQ from: basic genetics (incl. Hardy–Weinberg), cell/tissue structure–function, or short ecology.
+• Use standard terminology; if arithmetic appears (e.g., allele frequency), keep numbers small and round to 2 decimals.
+• Distractors reflect common misconceptions (dominance ≠ frequency, misreading ratios/diagrams, DNA→RNA→Protein confusion).
+
+CoT (few-shot analogue; hidden 1–2 steps):
+• Identify concept/ratio/mini-table relations INTERNALLY; do NOT show steps.
+
+Style example (Hardy–Weinberg): compute 2pq internally → choose option.
+• Create a NEW item of the same family (small table/genotype ratio/energy flow).
+• Distractors must be plausible and map to real misconceptions.
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object:
+  [{""question"":""..."",""options"":[""A. ..."",""B. ..."",""C. ..."",""D. ...""],""answer"":""A"",""solution"":""3–6 short lines, plain text; no LaTeX/markdown.""}]
+- The ""solution"" field is MANDATORY with 3–6 short lines (plain text; no LaTeX/markdown).
+- No extra text outside JSON; no code fences.
+- Options MUST be prefixed ""A. ""/""B. ""/""C. ""/""D. "" and ""answer"" ∈ {A,B,C,D}.
+- NO LaTeX: do not use $ or backslashes; write plain text (sin, cos, pi, (a)/(b)).
+STRICT FOR GEMINI:
+- Output plain-text JSON only; do not use LaTeX ($ or backslashes).
+- The ""solution"" must be 3–6 lines, plain text.
+USER: Topic: Biology. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: web, tissue, third, ducks, 4, one, rodent, differing, available, decompose, single, uses, birth, kcal, plant, 49, forest, firmness, obtains, 800, exists, determined, biome, community, insects, transfer, carbon, 84, food, trophic, system, 50,000, net, increases, consumers, 500, sunlight, specific, foxes, gene, and, hypothetical, location, 600, production, which, present, confers, display, reaches, 180, for, fur, plot, assuming, wildflowers, phenotype, portion, level, gross, 32, rna, plants, has, recessive, coat, 15, wetland, brown, farmer, habitat, 8, small, trait, feeding, beak, then, allele, color, consumed, cattails, fish, originally, content, observed, two, leaf, energy, what, patterns, immediate, genes, 30, rabbits, texture, shape, 1000, snakes, locus, initially, year, region, consume, eukaryotic, approximately, intensities, invertebrates, floor, ecosystem, bird, black, 64, mouse, autotrophs, dominant, certain, 0.4, 2000, 10, 8000, equilibrium, 50, 36, given, alleles, dead, 60, population, co-, primarily, 100, field, algae, nutritional, but, ribosomal, red, number, out, 91, area, 96, group, butterflies, featuring, seed, 0.6, directly, after, environment, rrna, insecticide, 16, generate, governed, contains, most, species, land, feathers, grassland, 9, 10,000, litter, 750, acquire, stable, mammal, mushrooms, rodents, flowers, wing, frequency, controlled, synthesis, with, variant, colony, cell, susceptible, prey, per, primary, genotype, 000, exist, grasshoppers, ecological, 400, hardy-weinberg, 5000, organisms, 320, bacteria, phytoplankton, type, rate, smooth, frogs, particular, structure, involved, isolated, farm, zooplankton, closed, 1500, pink, producers, individuals, flowering, crcr, animal.
+- Do NOT print this list in the output."
+biology,gemini,struktur2,30,2684,"In a closed meadow, the ratio of dandelion plants with yellow petals to those with white petals is 9:1. Yellow petals are completely prevalent to white petals. If the meadow is at a state of genetic balance, the prevalent petal version's relative abundance is closest to:",A. 0.10,B. 0.33,C. 0.70,D. 0.90,C,"Let p = prevalent version, q = uncommon version. q^2 = 1/10 = 0.1. Therefore, q = sqrt(0.1) = 0.32. Then p = 1 - q = 1 - 0.32 = 0.68, closest to 0.70.","The problem describes a population in Hardy-Weinberg equilibrium. The ratio of yellow (dominant) to white (recessive) phenotypes is 9:1. The frequency of the recessive phenotype (white petals) is therefore 1/(9+1) = 0.1.
+This frequency corresponds to the homozygous recessive genotype, so q² = 0.1.
+The frequency of the recessive allele, q, is the square root of q², so q = √0.1 ≈ 0.316.
+The frequency of the dominant ('prevalent') allele, p, is given by p = 1 - q.
+p = 1 - 0.316 = 0.684.
+This value is closest to the option 0.70.",gemini:gemini-2.5-pro,35146,3.0,5.0,Correct,5.0,"Clarity: The wording is slightly awkward. ""Completely prevalent"" is used instead of the standard term ""completely dominant"". The phrase ""prevalent petal version's relative abundance"" is ambiguous, as it could refer to the dominant phenotype (frequency 0.9, option D) or the dominant allele (frequency ~0.7, option C).
+Context Accuracy: The scenario is a standard and realistic application of the Hardy-Weinberg principle for a simple Mendelian trait in a population.
+Quality of Working: The generator's solution correctly identifies the frequency of the recessive phenotype as q², calculates the allele frequencies p and q using the correct formulas, and arrives at the correct conclusion. The reasoning is sound.
+Final Answer Accuracy: The generator's final answer is correct based on the most likely interpretation of the question (calculating the dominant allele frequency).","SYSTEM: You are a Grade 12 Biology teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 concise concept/application MCQ from: basic genetics (incl. Hardy–Weinberg), cell/tissue structure–function, or short ecology.
+• Use standard terminology; if arithmetic appears (e.g., allele frequency), keep numbers small and round to 2 decimals.
+• Distractors reflect common misconceptions (dominance ≠ frequency, misreading ratios/diagrams, DNA→RNA→Protein confusion).
+
+CoT (few-shot analogue; hidden 1–2 steps):
+• Identify concept/ratio/mini-table relations INTERNALLY; do NOT show steps.
+
+Style example (Hardy–Weinberg): compute 2pq internally → choose option.
+• Create a NEW item of the same family (small table/genotype ratio/energy flow).
+• Distractors must be plausible and map to real misconceptions.
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object:
+  [{""question"":""..."",""options"":[""A. ..."",""B. ..."",""C. ..."",""D. ...""],""answer"":""A"",""solution"":""3–6 short lines, plain text; no LaTeX/markdown.""}]
+- The ""solution"" field is MANDATORY with 3–6 short lines (plain text; no LaTeX/markdown).
+- No extra text outside JSON; no code fences.
+- Options MUST be prefixed ""A. ""/""B. ""/""C. ""/""D. "" and ""answer"" ∈ {A,B,C,D}.
+- NO LaTeX: do not use $ or backslashes; write plain text (sin, cos, pi, (a)/(b)).
+STRICT FOR GEMINI:
+- Output plain-text JSON only; do not use LaTeX ($ or backslashes).
+- The ""solution"" must be 3–6 lines, plain text.
+USER: Topic: Biology. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: web, tissue, third, ducks, 4, one, rodent, differing, available, decompose, single, uses, birth, kcal, plant, 49, new, forest, firmness, obtains, 800, exists, determined, biome, community, insects, transfer, carbon, 84, food, trophic, system, 50,000, net, increases, consumers, 500, sunlight, specific, foxes, gene, and, exhibit, hypothetical, location, 600, production, which, present, confers, display, reaches, 180, for, fur, plot, assuming, wildflowers, phenotype, portion, level, gross, 32, island, rna, plants, has, recessive, coat, 15, wetland, brown, farmer, habitat, 8, goats, variation, small, trait, feeding, beak, then, allele, color, consumed, cattails, fish, originally, content, observed, two, leaf, energy, what, patterns, immediate, genes, 30, rabbits, texture, shape, 1000, snakes, locus, initially, year, region, consume, eukaryotic, approximately, intensities, invertebrates, floor, ecosystem, bird, black, 64, mouse, autotrophs, dominant, certain, 0.4, 2000, 10, 8000, equilibrium, 50, 36, given, alleles, dead, 60, population, co-, primarily, 100, field, algae, nutritional, but, ribosomal, red, number, out, 91, area, introduced, 96, group, butterflies, featuring, seed, 0.6, directly, after, environment, rrna, insecticide, 16, generate, governed, contains, most, species, land, feathers, grassland, 9, 10,000, litter, 750, acquire, stable, mammal, mushrooms, rodents, flowers, wing, frequency, controlled, synthesis, with, variant, colony, cell, susceptible, prey, per, primary, genotype, 000, exist, grasshoppers, ecological, 400, hardy-weinberg, 5000, organisms, 320, bacteria, phytoplankton, type, horn, rate, smooth, frogs, particular, structure, involved, isolated, farm, zooplankton, closed, 1500, pink, producers, individuals, flowering, crcr, animal.
+- Do NOT print this list in the output."
+biology,gemini,struktur2,31,3489,"In a given animal group, the inheritance of tail length is controlled by a single locus with incomplete dominance. Individuals with genotype LL have long tails, LM have medium tails, and MM have short tails. If a large, interbreeding group initially contains 25 LL, 50 LM, and 25 MM individuals, what are the expected genotypic proportions in the next generation, assuming Hardy-Weinberg conditions?","A. LL = 0.25, LM = 0.50, MM = 0.25","B. LL = 0.33, LM = 0.33, MM = 0.33","C. LL = 0.50, LM = 0.25, MM = 0.25","D. LL = 0.25, LM = 0.25, MM = 0.50",A,"Calculate the initial L and M allele frequencies: L = (2*25 + 50)/200 = 0.5 and M = (2*25 + 50)/200 = 0.5. Under Hardy-Weinberg, the next generation's genotypic frequencies are: LL = (0.5)^2 = 0.25, LM = 2*(0.5)(0.5) = 0.50, MM = (0.5)^2 = 0.25.","First, calculate the total number of individuals: 25 + 50 + 25 = 100. The total number of alleles in the gene pool is 100 * 2 = 200.
+Next, determine the frequency of each allele. The number of L alleles is (2 * 25) + 50 = 100. The frequency of L (p) is 100/200 = 0.5.
+The number of M alleles is (2 * 25) + 50 = 100. The frequency of M (q) is 100/200 = 0.5. As a check, p + q = 0.5 + 0.5 = 1.0.
+Under Hardy-Weinberg conditions, the expected genotypic frequencies in the next generation are p², 2pq, and q².
+Frequency of LL = p² = (0.5)² = 0.25.
+Frequency of LM = 2pq = 2 * 0.5 * 0.5 = 0.50.
+Frequency of MM = q² = (0.5)² = 0.25.
+This corresponds to option A.",gemini:gemini-2.5-pro,23501,5.0,5.0,Correct,5.0,"Clarity: The question is exceptionally clear. It defines the genotypes, phenotypes, inheritance pattern, initial population numbers, and the required assumptions (Hardy-Weinberg).
+Context Accuracy: The scenario is a classic, biologically sound example used to teach population genetics, involving incomplete dominance and Hardy-Weinberg equilibrium.
+Quality of Working: The generator's solution is perfect. It correctly calculates the allele frequencies from the initial genotypic counts and then accurately applies the Hardy-Weinberg principle to find the expected genotypic frequencies in the next generation.
+Final Answer Accuracy: The generator's calculated proportions (LL=0.25, LM=0.50, MM=0.25) are correct and match the provided key (A).","SYSTEM: You are a Grade 12 Biology teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 concise concept/application MCQ from: basic genetics (incl. Hardy–Weinberg), cell/tissue structure–function, or short ecology.
+• Use standard terminology; if arithmetic appears (e.g., allele frequency), keep numbers small and round to 2 decimals.
+• Distractors reflect common misconceptions (dominance ≠ frequency, misreading ratios/diagrams, DNA→RNA→Protein confusion).
+
+CoT (few-shot analogue; hidden 1–2 steps):
+• Identify concept/ratio/mini-table relations INTERNALLY; do NOT show steps.
+
+Style example (Hardy–Weinberg): compute 2pq internally → choose option.
+• Create a NEW item of the same family (small table/genotype ratio/energy flow).
+• Distractors must be plausible and map to real misconceptions.
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object:
+  [{""question"":""..."",""options"":[""A. ..."",""B. ..."",""C. ..."",""D. ...""],""answer"":""A"",""solution"":""3–6 short lines, plain text; no LaTeX/markdown.""}]
+- The ""solution"" field is MANDATORY with 3–6 short lines (plain text; no LaTeX/markdown).
+- No extra text outside JSON; no code fences.
+- Options MUST be prefixed ""A. ""/""B. ""/""C. ""/""D. "" and ""answer"" ∈ {A,B,C,D}.
+- NO LaTeX: do not use $ or backslashes; write plain text (sin, cos, pi, (a)/(b)).
+STRICT FOR GEMINI:
+- Output plain-text JSON only; do not use LaTeX ($ or backslashes).
+- The ""solution"" must be 3–6 lines, plain text.
+USER: Topic: Biology. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: web, tissue, third, ducks, 4, one, rodent, differing, available, decompose, single, uses, birth, kcal, plant, 49, new, forest, firmness, obtains, 800, exists, determined, biome, community, insects, transfer, carbon, 84, food, trophic, system, 50,000, net, increases, consumers, 500, sunlight, specific, foxes, gene, and, exhibit, hypothetical, location, 600, production, which, present, confers, dandelion, display, reaches, 180, for, fur, plot, assuming, wildflowers, phenotype, portion, level, gross, 32, island, rna, plants, has, recessive, coat, 15, wetland, brown, farmer, habitat, meadow, 8, goats, variation, small, trait, feeding, beak, then, allele, color, consumed, cattails, fish, originally, content, observed, two, leaf, energy, what, patterns, immediate, genes, 30, rabbits, texture, shape, 1000, snakes, ratio, locus, initially, year, region, consume, eukaryotic, approximately, intensities, invertebrates, floor, ecosystem, bird, black, 64, mouse, 1, autotrophs, dominant, certain, 0.4, 2000, 10, 8000, equilibrium, 50, 36, given, alleles, dead, 60, population, co-, primarily, 100, field, algae, nutritional, but, ribosomal, red, number, out, 91, area, introduced, 96, group, yellow, petals, butterflies, featuring, seed, 0.6, directly, after, environment, rrna, insecticide, 16, generate, governed, contains, most, species, land, feathers, grassland, 9, 10,000, litter, 750, acquire, stable, mammal, mushrooms, rodents, flowers, wing, frequency, controlled, synthesis, with, variant, colony, cell, susceptible, prey, per, primary, genotype, 000, exist, grasshoppers, ecological, 400, hardy-weinberg, 5000, organisms, 320, bacteria, phytoplankton, type, horn, rate, smooth, frogs, particular, structure, involved, isolated, farm, zooplankton, closed, 1500, pink, producers, individuals, flowering, crcr, animal.
+- Do NOT print this list in the output."
+biology,gemini,struktur2,32,2480,"In a population of beetles, the A1A1 beetles are green, A1A2 are mottled, and A2A2 are blue. If the number of green beetles is 40, mottled beetles is 40, and blue beetles is 20, the observed frequency of the A1 is closest to:",A. 0.40,B. 0.60,C. 0.80,D. 0.20,B,Total beetles = 40 + 40 + 20 = 100. Total A1 = (2 * 40) + 40 = 120. A1 frequency = 120 / (2 * 100) = 0.60.,"First, calculate the total number of individuals in the population: 40 (A1A1) + 40 (A1A2) + 20 (A2A2) = 100 individuals.
+Since beetles are diploid, the total number of alleles in the gene pool is 2 * 100 = 200.
+Next, count the number of A1 alleles. Each A1A1 individual has two A1 alleles, and each A1A2 individual has one.
+Number of A1 alleles = (2 * 40) + (1 * 40) = 80 + 40 = 120.
+The frequency of the A1 allele is the number of A1 alleles divided by the total number of alleles.
+Frequency of A1 = 120 / 200 = 0.60.",gemini:gemini-2.5-pro,23232,5.0,5.0,Correct,5.0,"Clarity: The question is perfectly clear. It provides the genotype-phenotype relationship and the exact counts for each group, making the calculation straightforward.
+Context Accuracy: The scenario is a standard, biologically plausible problem in population genetics, demonstrating codominance or incomplete dominance.
+Quality of Working: The generator's solution is concise and methodologically sound. It correctly calculates the total number of A1 alleles and divides by the total number of alleles in the population gene pool.
+Final Answer Accuracy: The generator's calculated frequency of 0.60 is correct and matches the provided key.","SYSTEM: You are a Grade 12 Biology teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 concise concept/application MCQ from: basic genetics (incl. Hardy–Weinberg), cell/tissue structure–function, or short ecology.
+• Use standard terminology; if arithmetic appears (e.g., allele frequency), keep numbers small and round to 2 decimals.
+• Distractors reflect common misconceptions (dominance ≠ frequency, misreading ratios/diagrams, DNA→RNA→Protein confusion).
+
+CoT (few-shot analogue; hidden 1–2 steps):
+• Identify concept/ratio/mini-table relations INTERNALLY; do NOT show steps.
+
+Style example (Hardy–Weinberg): compute 2pq internally → choose option.
+• Create a NEW item of the same family (small table/genotype ratio/energy flow).
+• Distractors must be plausible and map to real misconceptions.
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object:
+  [{""question"":""..."",""options"":[""A. ..."",""B. ..."",""C. ..."",""D. ...""],""answer"":""A"",""solution"":""3–6 short lines, plain text; no LaTeX/markdown.""}]
+- The ""solution"" field is MANDATORY with 3–6 short lines (plain text; no LaTeX/markdown).
+- No extra text outside JSON; no code fences.
+- Options MUST be prefixed ""A. ""/""B. ""/""C. ""/""D. "" and ""answer"" ∈ {A,B,C,D}.
+- NO LaTeX: do not use $ or backslashes; write plain text (sin, cos, pi, (a)/(b)).
+STRICT FOR GEMINI:
+- Output plain-text JSON only; do not use LaTeX ($ or backslashes).
+- The ""solution"" must be 3–6 lines, plain text.
+USER: Topic: Biology. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: web, tissue, third, ducks, 4, one, rodent, differing, available, decompose, single, uses, birth, kcal, plant, 49, new, forest, firmness, obtains, 800, exists, determined, biome, community, insects, transfer, carbon, 84, food, trophic, system, 50,000, net, increases, consumers, 500, sunlight, specific, foxes, gene, and, exhibit, hypothetical, location, 600, production, which, present, confers, dandelion, display, reaches, 180, for, fur, plot, assuming, wildflowers, phenotype, portion, level, gross, 32, island, rna, plants, has, recessive, coat, 15, wetland, brown, farmer, habitat, meadow, 8, goats, variation, small, trait, feeding, beak, then, allele, color, consumed, cattails, fish, originally, content, observed, two, leaf, energy, what, patterns, immediate, genes, 30, rabbits, texture, shape, 1000, snakes, ratio, tail, locus, initially, year, region, inheritance, consume, eukaryotic, approximately, intensities, invertebrates, floor, ecosystem, bird, black, 64, mouse, 1, autotrophs, dominant, certain, 0.4, 2000, 10, 8000, equilibrium, 50, 36, given, alleles, dead, 60, population, co-, primarily, 100, field, algae, nutritional, but, ribosomal, red, number, out, 91, area, introduced, length, 96, group, yellow, petals, butterflies, featuring, seed, 0.6, directly, after, environment, rrna, insecticide, 16, generate, governed, contains, most, species, land, feathers, grassland, 9, 10,000, litter, 750, acquire, stable, mammal, mushrooms, rodents, flowers, wing, frequency, controlled, synthesis, with, variant, colony, cell, susceptible, prey, per, primary, genotype, 000, exist, grasshoppers, ecological, 400, hardy-weinberg, 5000, organisms, 320, bacteria, 25, phytoplankton, type, horn, rate, smooth, frogs, particular, structure, involved, isolated, farm, zooplankton, closed, 1500, pink, producers, individuals, flowering, crcr, animal.
+- Do NOT print this list in the output."
+biology,gemini,struktur2,33,2565,"In a population of butterflies, body pigmentation is controlled by a locus with completely dominant and recessive variants. The variant 'D' codes for dark pigmentation, while 'd' codes for light pigmentation. If 9% of the butterflies in the population have light pigmentation, what proportion of the butterflies are heterozygous for this variant, assuming the population is in Hardy-Weinberg equilibrium?",A. 0.21,B. 0.42,C. 0.91,D. 0.09,B,"Let d be the recessive variant with a frequency of q. The frequency of dd is q^2 = 0.09, so q = sqrt(0.09) = 0.3. Since p + q = 1, then p = 1 - q = 0.7. The frequency of heterozygotes (Dd) is 2pq = 2 * 0.7 * 0.3 = 0.42.",,,,,,,,,"SYSTEM: You are a Grade 12 Biology teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 concise concept/application MCQ from: basic genetics (incl. Hardy–Weinberg), cell/tissue structure–function, or short ecology.
+• Use standard terminology; if arithmetic appears (e.g., allele frequency), keep numbers small and round to 2 decimals.
+• Distractors reflect common misconceptions (dominance ≠ frequency, misreading ratios/diagrams, DNA→RNA→Protein confusion).
+
+CoT (few-shot analogue; hidden 1–2 steps):
+• Identify concept/ratio/mini-table relations INTERNALLY; do NOT show steps.
+
+Style example (Hardy–Weinberg): compute 2pq internally → choose option.
+• Create a NEW item of the same family (small table/genotype ratio/energy flow).
+• Distractors must be plausible and map to real misconceptions.
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object:
+  [{""question"":""..."",""options"":[""A. ..."",""B. ..."",""C. ..."",""D. ...""],""answer"":""A"",""solution"":""3–6 short lines, plain text; no LaTeX/markdown.""}]
+- The ""solution"" field is MANDATORY with 3–6 short lines (plain text; no LaTeX/markdown).
+- No extra text outside JSON; no code fences.
+- Options MUST be prefixed ""A. ""/""B. ""/""C. ""/""D. "" and ""answer"" ∈ {A,B,C,D}.
+- NO LaTeX: do not use $ or backslashes; write plain text (sin, cos, pi, (a)/(b)).
+STRICT FOR GEMINI:
+- Output plain-text JSON only; do not use LaTeX ($ or backslashes).
+- The ""solution"" must be 3–6 lines, plain text.
+USER: Topic: Biology. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: web, tissue, third, ducks, 4, one, rodent, differing, available, decompose, mottled, single, uses, birth, kcal, plant, 49, new, forest, firmness, obtains, 800, exists, determined, biome, community, insects, transfer, carbon, 84, food, trophic, system, 50,000, net, increases, consumers, 500, sunlight, specific, a1a1, a1a2, foxes, gene, and, exhibit, hypothetical, location, 600, production, which, present, confers, dandelion, display, reaches, 180, for, fur, plot, assuming, wildflowers, phenotype, portion, level, gross, 32, island, rna, plants, has, recessive, coat, 15, wetland, brown, farmer, habitat, meadow, 8, goats, variation, small, trait, feeding, beak, then, allele, color, consumed, cattails, fish, originally, content, observed, two, leaf, energy, what, patterns, immediate, genes, 30, rabbits, texture, shape, 1000, snakes, ratio, tail, locus, initially, year, region, inheritance, consume, eukaryotic, approximately, beetles, intensities, invertebrates, floor, ecosystem, bird, black, 64, 20, mouse, 1, autotrophs, dominant, certain, 0.4, 2000, 10, 8000, equilibrium, 50, 36, given, alleles, dead, 60, population, co-, primarily, 100, field, algae, nutritional, but, ribosomal, red, number, out, 91, area, introduced, length, 96, group, yellow, petals, butterflies, featuring, seed, 0.6, directly, after, environment, rrna, insecticide, 16, generate, governed, contains, most, species, land, feathers, grassland, 9, 10,000, litter, 750, acquire, stable, mammal, mushrooms, rodents, flowers, wing, frequency, controlled, synthesis, with, green, variant, colony, cell, susceptible, prey, per, primary, genotype, 000, exist, grasshoppers, ecological, 400, hardy-weinberg, 5000, organisms, 320, bacteria, 25, phytoplankton, type, horn, rate, smooth, frogs, particular, structure, involved, isolated, farm, zooplankton, closed, 1500, pink, producers, individuals, flowering, crcr, animal, 40.
+- Do NOT print this list in the output."

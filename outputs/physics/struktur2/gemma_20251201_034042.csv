@@ -1,0 +1,73 @@
+topic,model,struktur,index,latency_model_ms,question,optionA,optionB,optionC,optionD,answer,solution_model,solution_verifier,verifier_model,latency_verifier_ms,clarity,context_accuracy,final_answer_accuracy,quality_of_working,judge_notes,prompt_generator
+physics,gemma,struktur2,1,8451,"A projectile is launched from the ground with an initial velocity of 30.0 m/s at an angle of 30.0° above the horizontal. Assuming air resistance is negligible, what is the projectile's horizontal velocity component just before it hits the ground?",15.0 m/s,21.0 m/s,30.0 m/s,42.0 m/s,B,"The horizontal velocity component remains constant throughout the projectile's motion. The initial horizontal velocity is v₀ₓ = v₀ * cos(θ) = 30.0 m/s * cos(30.0°) ≈ 21.0 m/s. Therefore, the answer is 21.0 m/s.","In projectile motion without air resistance, the horizontal component of velocity remains constant. The initial horizontal velocity (v_x) is calculated using the initial speed (v₀) and the launch angle (θ).
+v_x = v₀ * cos(θ)
+v_x = 30.0 m/s * cos(30.0°)
+v_x = 30.0 m/s * (√3 / 2)
+v_x ≈ 30.0 m/s * 0.866
+v_x ≈ 25.98 m/s
+Since this value is constant, the horizontal velocity just before hitting the ground is also 25.98 m/s. The closest option is not provided, indicating a flaw in the question's options.",gemini:gemini-2.5-pro,21744,5.0,5.0,Incorrect,2.0,"Clarity: The question is clearly worded, provides all necessary data with appropriate significant figures, and has no ambiguity.
+Context Accuracy: The scenario is a standard introductory physics problem. The initial speed and angle are physically reasonable values for a projectile.
+Quality of Working: The generator correctly states the physical principle (constant horizontal velocity) and uses the correct formula. However, it performs an incorrect calculation (30.0 * cos(30.0°) ≈ 26.0, not 21.0) to match the flawed key.
+Final Answer Accuracy: The correct answer, 26.0 m/s, is not among the options. The generator's answer of 21.0 m/s is numerically incorrect. The question itself is flawed.","SYSTEM: You are a Grade 12 Physics teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 medium-level quantitative MCQ from: kinematics (uniform/accelerated/projectile), dynamics (Newton/incline), energy–impulse, or basic circuits (V–I–R).
+• Use SI units (use g = 9.8 m s^-2 if relevant); realistic numbers; round to 2 decimals.
+• Distractors: typical vector-component/sign mistakes, unit conversion errors, wrong effective forces.
+
+CoT (few-shot; hidden 2–3 steps):
+• Decompose quantities/equations INTERNALLY; do NOT show steps.
+
+Style example (projectile): compute components; apply kinematic relations; recombine speed → choose option.
+• Create a NEW item (projectile/incline/energy–impulse/circuit).
+• Distractors = sin/cos swap, sign errors, wrong units.
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object.
+- Format:
+  [{""question"": ""..."", ""options"": [""..."",""..."",""..."",""...""], ""answer"": ""A"", ""solution"": ""...""}]
+- Fields:
+  * ""question"": one string.
+  * ""options"": array of 4 answer-choice strings.
+  * ""answer"": one of ""A"",""B"",""C"",""D"" (just the letter).
+  * ""solution"": short plain-text explanation (a few lines is fine).
+- No extra text before or after the JSON.
+- Do NOT use markdown, code fences, or LaTeX ($ or backslashes).
+USER: Topic: Physics. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field."
+physics,gemma,struktur2,2,7869,"A ball is released upwards on a frictionless incline. It reaches a maximum height of 2.5 meters. Assuming g = 9.8 m s⁻², what is the potential energy of the ball at that point?",10.20 J,24.50 J,49.00 J,19.60 J,B,"The potential energy is calculated as PE = mgh, where m is mass, g is acceleration due to gravity, and h is height. Since mass isn't provided, we assume it is 1 kg. Therefore, PE = 1 * 9.8 * 2.5 = 24.50 J.","The formula for gravitational potential energy (PE) is PE = mgh.
+The question provides the height (h = 2.5 m) and the acceleration due to gravity (g = 9.8 m/s²), but it fails to provide the mass (m) of the ball.
+This makes the question unsolvable as written. However, in such flawed problems, it is common to assume a standard mass of 1 kg.
+Assuming m = 1 kg, the potential energy is:
+PE = 1 kg * 9.8 m/s² * 2.5 m = 24.5 J.",gemini:gemini-2.5-pro,15986,1.0,4.5,Correct,5.0,"Clarity: The question is critically flawed because it omits the mass of the ball, a necessary variable to calculate a specific potential energy value. The problem is unsolvable without making an assumption.
+Context Accuracy: The physical scenario (ball on an incline, potential energy) and the given numerical values for height and gravity are standard and realistic for an introductory physics problem.
+Quality of Working: The generator correctly identifies the formula and the missing variable. It makes a reasonable and explicit assumption (m=1 kg) to proceed with the flawed question, and the calculation is correct.
+Final Answer Accuracy: The generator's answer matches the provided key. It is the correct answer under the common (though unstated) assumption that the mass is 1 kg.","SYSTEM: You are a Grade 12 Physics teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 medium-level quantitative MCQ from: kinematics (uniform/accelerated/projectile), dynamics (Newton/incline), energy–impulse, or basic circuits (V–I–R).
+• Use SI units (use g = 9.8 m s^-2 if relevant); realistic numbers; round to 2 decimals.
+• Distractors: typical vector-component/sign mistakes, unit conversion errors, wrong effective forces.
+
+CoT (few-shot; hidden 2–3 steps):
+• Decompose quantities/equations INTERNALLY; do NOT show steps.
+
+Style example (projectile): compute components; apply kinematic relations; recombine speed → choose option.
+• Create a NEW item (projectile/incline/energy–impulse/circuit).
+• Distractors = sin/cos swap, sign errors, wrong units.
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object.
+- Format:
+  [{""question"": ""..."", ""options"": [""..."",""..."",""..."",""...""], ""answer"": ""A"", ""solution"": ""...""}]
+- Fields:
+  * ""question"": one string.
+  * ""options"": array of 4 answer-choice strings.
+  * ""answer"": one of ""A"",""B"",""C"",""D"" (just the letter).
+  * ""solution"": short plain-text explanation (a few lines is fine).
+- No extra text before or after the JSON.
+- Do NOT use markdown, code fences, or LaTeX ($ or backslashes).
+USER: Topic: Physics. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: from, projectile, ground, angle, velocity, initial, 30.0, launched, with, above.
+- Do NOT print this list in the output."

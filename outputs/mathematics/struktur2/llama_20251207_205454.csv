@@ -1,0 +1,1432 @@
+topic,model,struktur,index,latency_model_ms,question,optionA,optionB,optionC,optionD,answer,solution_model,solution_verifier,verifier_model,latency_verifier_ms,clarity,context_accuracy,final_answer_accuracy,quality_of_working,judge_notes,prompt_generator
+mathematics,llama,struktur2,1,14796,Find the derivative of f(x) = (2x + 5)(3x - 2) using product rule.,6x^2 - 4x,(6x^2 - 8x + 10),3x^2 + x,9x^2 - 12,C,"Using the product rule, we have (2x+5) × (3x-2)' = [(2x+5)(3x-2)' + (3x-2)(2x+5)'] = (6x^2 - 8x + 10).","The user wants me to find the derivative of f(x) = (2x + 5)(3x - 2) using the product rule.
+Let u(x) = 2x + 5, so u'(x) = 2.
+Let v(x) = 3x - 2, so v'(x) = 3.
+The product rule is f'(x) = u'(x)v(x) + u(x)v'(x).
+Substituting the functions and their derivatives:
+f'(x) = (2)(3x - 2) + (2x + 5)(3)
+f'(x) = (6x - 4) + (6x + 15)
+f'(x) = 12x + 11.
+None of the provided options match the correct answer.",maia:maia/gemini-2.5-pro,21798,5.0,1.0,Incorrect,1.0,"Clarity: The question is clearly worded, specifying the function and the required differentiation method (product rule).
+
+Context Accuracy: The question is a standard calculus problem, but it is fundamentally flawed because the correct derivative, 12x + 11, is not among the options. The provided key (C) is also incorrect.
+
+Quality of Working: The generator's solution correctly states the formula for the product rule but then provides a final answer that does not follow from it. No intermediate steps are shown to justify the incorrect result, making the working a non-sequitur.
+
+Final Answer Accuracy: The generator's answer is incorrect. The correct derivative is 12x + 11. The generator provides a quadratic expression which is not the derivative of the function.","SYSTEM: You are a Grade 12 Mathematics teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 medium-difficulty computational MCQ from ONE of: algebra (functions/inverse/systems), trigonometry (identities/evaluation), basic calculus (limits/derivatives/simple integrals), or short statistics.
+• Use realistic numbers; round to 2 decimals when needed; avoid formal proofs.
+• Distractors must reflect typical mistakes (sign errors, wrong identities, derivative/limit rules, rounding).
+
+CoT (few-shot style; hidden 2–3 steps):
+• Perform multi-step reasoning INTERNALLY; do NOT reveal the steps.
+
+Style example: plan elimination/substitution for a linear system → compute → choose option.
+• Create a NEW problem of the same family (SLE, trig identity+evaluation, derivative+substitution, small-data stats).
+• Distractors map to step errors (bad elimination, wrong identity, wrong derivative rule, wrong rounding).
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object.
+- Format:
+  [{""question"": ""..."", ""options"": [""..."",""..."",""..."",""...""], ""answer"": ""A"", ""solution"": ""...""}]
+- Fields:
+  * ""question"": one string.
+  * ""options"": array of 4 answer-choice strings.
+  * ""answer"": one of ""A"",""B"",""C"",""D"" (just the letter).
+  * ""solution"": short plain-text explanation (a few lines is fine).
+- No extra text before or after the JSON.
+- Do NOT use markdown, code fences, or LaTeX ($ or backslashes).
+USER: Topic: Mathematics. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field."
+mathematics,llama,struktur2,2,9635,The inverse of the function f(x) = (3x - 1) / (x + 2) is f^(-1)(x) = ?,(1/3)x + 7/3,(x+2)/3 - 1,-x-2,x-3,A,"To find the inverse, set x equal to (3y - 1) / (y + 2), and solve for y. Simplify and rewrite as a function of y.","To find the inverse of f(x) = (3x - 1) / (x + 2), first write it as y = (3x - 1) / (x + 2).
+Next, swap the variables x and y to get x = (3y - 1) / (y + 2).
+Now, solve for y in terms of x.
+x(y + 2) = 3y - 1
+xy + 2x = 3y - 1
+2x + 1 = 3y - xy
+2x + 1 = y(3 - x)
+y = (2x + 1) / (3 - x)
+Therefore, the inverse function is f^(-1)(x) = (2x + 1) / (3 - x).
+None of the provided options match this correct answer.",maia:maia/gemini-2.5-pro,31945,5.0,5.0,Incorrect,2.0,"Clarity: The question is clearly stated using standard mathematical notation. The objective is unambiguous.
+Context Accuracy: The problem is a standard, conceptually correct exercise in algebra involving a valid rational function and its inverse.
+Quality of Working: The generator correctly describes the high-level method for finding the inverse. However, it does not execute any of the required algebraic steps, making the working entirely incomplete. It is more of a hint than a solution.
+Final Answer Accuracy: The generator provides no final answer. Critically, the correct inverse function is not among the options, and the provided key ('A') is wrong. Since the generator's output is just an incomplete method with no answer, it is evaluated as incorrect.","SYSTEM: You are a Grade 12 Mathematics teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 medium-difficulty computational MCQ from ONE of: algebra (functions/inverse/systems), trigonometry (identities/evaluation), basic calculus (limits/derivatives/simple integrals), or short statistics.
+• Use realistic numbers; round to 2 decimals when needed; avoid formal proofs.
+• Distractors must reflect typical mistakes (sign errors, wrong identities, derivative/limit rules, rounding).
+
+CoT (few-shot style; hidden 2–3 steps):
+• Perform multi-step reasoning INTERNALLY; do NOT reveal the steps.
+
+Style example: plan elimination/substitution for a linear system → compute → choose option.
+• Create a NEW problem of the same family (SLE, trig identity+evaluation, derivative+substitution, small-data stats).
+• Distractors map to step errors (bad elimination, wrong identity, wrong derivative rule, wrong rounding).
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object.
+- Format:
+  [{""question"": ""..."", ""options"": [""..."",""..."",""..."",""...""], ""answer"": ""A"", ""solution"": ""...""}]
+- Fields:
+  * ""question"": one string.
+  * ""options"": array of 4 answer-choice strings.
+  * ""answer"": one of ""A"",""B"",""C"",""D"" (just the letter).
+  * ""solution"": short plain-text explanation (a few lines is fine).
+- No extra text before or after the JSON.
+- Do NOT use markdown, code fences, or LaTeX ($ or backslashes).
+USER: Topic: Mathematics. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: using, derivative, rule, 5, product, 2, find.
+- Do NOT print this list in the output."
+mathematics,llama,struktur2,3,12957,A particle moves along a straight line with an initial velocity of 3.25 meters per second and constant acceleration of 0.45 meter per second squared. What is its velocity after 2.1 seconds?,8.35 m/s,10.85 m/s,12.95 m/s,4.75 m/s,A,"To solve, first calculate the acceleration: Δv = at = 0.45 × 2.1 ≈ 0.945 m/s. Then add this to the initial velocity: v = 3.25 + 0.945 ≈ 4.245 m/s. Finally, multiply by the time to get the new velocity: v = 4.245 × 2.1 ≈ 8.35 m/s.","This is a constant acceleration kinematics problem. The final velocity (v) can be found using the equation v = u + at, where u is the initial velocity, a is the acceleration, and t is the time.
+Given:
+u = 3.25 m/s
+a = 0.45 m/s²
+t = 2.1 s
+
+Substitute the values into the equation:
+v = 3.25 + (0.45 * 2.1)
+v = 3.25 + 0.945
+v = 4.195 m/s
+
+None of the provided options match the correct answer of 4.195 m/s.",maia:maia/gemini-2.5-pro,30872,2.0,5.0,Incorrect,0.0,"Clarity: The question's prompt is clearly stated, but the multiple-choice aspect is critically flawed because none of the options are correct. The correct answer is 4.195 m/s, which is not provided.
+
+Context Accuracy: The physical scenario and the numerical values (initial velocity, acceleration, time) are realistic and appropriate for an introductory physics problem.
+
+Quality of Working: The generator's solution is completely incorrect. It contains a nonsensical step where it multiplies an intermediate velocity by time to get a final velocity. It also contains multiple arithmetic errors. The entire process is invalid.
+
+Final Answer Accuracy: The generator's answer (8.35 m/s) is incorrect. The correct answer, derived from the question's data using the proper physics formula, is 4.195 m/s.","SYSTEM: You are a Grade 12 Mathematics teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 medium-difficulty computational MCQ from ONE of: algebra (functions/inverse/systems), trigonometry (identities/evaluation), basic calculus (limits/derivatives/simple integrals), or short statistics.
+• Use realistic numbers; round to 2 decimals when needed; avoid formal proofs.
+• Distractors must reflect typical mistakes (sign errors, wrong identities, derivative/limit rules, rounding).
+
+CoT (few-shot style; hidden 2–3 steps):
+• Perform multi-step reasoning INTERNALLY; do NOT reveal the steps.
+
+Style example: plan elimination/substitution for a linear system → compute → choose option.
+• Create a NEW problem of the same family (SLE, trig identity+evaluation, derivative+substitution, small-data stats).
+• Distractors map to step errors (bad elimination, wrong identity, wrong derivative rule, wrong rounding).
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object.
+- Format:
+  [{""question"": ""..."", ""options"": [""..."",""..."",""..."",""...""], ""answer"": ""A"", ""solution"": ""...""}]
+- Fields:
+  * ""question"": one string.
+  * ""options"": array of 4 answer-choice strings.
+  * ""answer"": one of ""A"",""B"",""C"",""D"" (just the letter).
+  * ""solution"": short plain-text explanation (a few lines is fine).
+- No extra text before or after the JSON.
+- Do NOT use markdown, code fences, or LaTeX ($ or backslashes).
+USER: Topic: Mathematics. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: 1, using, function, derivative, inverse, rule, 5, product, 2, find.
+- Do NOT print this list in the output."
+mathematics,llama,struktur2,4,9555,"A company's profit, P(x), from selling x units of a new product is given by the equation P(x) = -x^2 + 12x - 9. If they sell 7 units, what is their estimated profit?",-4,-24,-36.5,-49,D,"By substituting x = 7 into P(x) and simplifying, we get P(7) = -7^2 + 12*7 - 9 = -49.","The profit function is given by P(x) = -x^2 + 12x - 9.
+To find the profit from selling 7 units, we need to calculate P(7).
+Substitute x = 7 into the equation:
+P(7) = -(7)^2 + 12(7) - 9
+P(7) = -49 + 84 - 9
+P(7) = 35 - 9
+P(7) = 26.
+The correct profit is 26. This answer is not available in the options provided.",maia:maia/gemini-2.5-pro,20904,4.5,1.0,Incorrect,0.5,"Clarity: The question is clearly worded and the mathematical task is unambiguous. The use of ""estimated"" is slightly imprecise for a deterministic function but does not create confusion.
+Context Accuracy: While a downward-opening parabola is a standard model for profit, the provided options are deeply flawed. The correct profit is 26, which is positive and near the function's maximum. All options are negative, making the problem contextually absurd.
+Quality of Working: The generator correctly sets up the substitution of x=7. However, it makes a major arithmetic error, incorrectly stating that -49 + 84 - 9 equals -49. The correct result is 26. This invalidates the entire calculation.
+Final Answer Accuracy: The generator's answer is -49, which is incorrect. The correct answer derived from the function is 26. The generator's answer matches the provided (and also incorrect) key, but it does not correctly solve the problem.","SYSTEM: You are a Grade 12 Mathematics teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 medium-difficulty computational MCQ from ONE of: algebra (functions/inverse/systems), trigonometry (identities/evaluation), basic calculus (limits/derivatives/simple integrals), or short statistics.
+• Use realistic numbers; round to 2 decimals when needed; avoid formal proofs.
+• Distractors must reflect typical mistakes (sign errors, wrong identities, derivative/limit rules, rounding).
+
+CoT (few-shot style; hidden 2–3 steps):
+• Perform multi-step reasoning INTERNALLY; do NOT reveal the steps.
+
+Style example: plan elimination/substitution for a linear system → compute → choose option.
+• Create a NEW problem of the same family (SLE, trig identity+evaluation, derivative+substitution, small-data stats).
+• Distractors map to step errors (bad elimination, wrong identity, wrong derivative rule, wrong rounding).
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object.
+- Format:
+  [{""question"": ""..."", ""options"": [""..."",""..."",""..."",""...""], ""answer"": ""A"", ""solution"": ""...""}]
+- Fields:
+  * ""question"": one string.
+  * ""options"": array of 4 answer-choice strings.
+  * ""answer"": one of ""A"",""B"",""C"",""D"" (just the letter).
+  * ""solution"": short plain-text explanation (a few lines is fine).
+- No extra text before or after the JSON.
+- Do NOT use markdown, code fences, or LaTeX ($ or backslashes).
+USER: Topic: Mathematics. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: using, inverse, 5, 1, particle, derivative, along, with, 2.1, 0.45, product, 2, find, function, moves, line, rule, initial, straight, 3.25.
+- Do NOT print this list in the output."
+mathematics,llama,struktur2,5,9784,The expression (x^2 + 4x - 5) / (x + 1) can be simplified by first factoring out which value from the numerator and denominator?,x,x-1,-x,x+2,A,"The expression can be simplified by factoring out x from both the numerator and the denominator. The numerator then becomes (x+5)(x-1) / (x+1), which simplifies to x+5 when the (x+1) is cancelled.","1. The expression to simplify is (x^2 + 4x - 5) / (x + 1).
+2. First, factor the numerator polynomial: x^2 + 4x - 5. We need two numbers that multiply to -5 and add to 4. These are +5 and -1.
+3. The factored numerator is (x + 5)(x - 1).
+4. The expression becomes (x + 5)(x - 1) / (x + 1).
+5. There are no common factors between the numerator and the denominator.
+6. Therefore, the expression cannot be simplified by cancellation. The premise of the question is incorrect, and none of the options are valid.",maia:maia/gemini-2.5-pro,28782,0.5,0.0,Correct,0.0,"Clarity: The question is extremely unclear. It asks what can be ""factored out"" from both the numerator and denominator, which implies a common factor exists. For the given expression, no such common factor exists, making the question's premise false and confusing.
+
+Context Accuracy: The question is mathematically incorrect. The rational expression (x^2 + 4x - 5) / (x + 1) cannot be simplified by cancelling a common factor. The numerator factors to (x+5)(x-1), which has no factors in common with the denominator (x+1).
+
+Quality of Working: The generator's solution is completely wrong. It incorrectly claims 'x' can be factored out. It then performs an illegal cancellation of (x+1), which is not a factor of the numerator. The entire reasoning is a sequence of fundamental algebraic errors.
+
+Final Answer Accuracy: The generator's solution begins by stating that 'x' can be factored out, which corresponds to option A, the provided key. Although the question, key, and reasoning are all incorrect, the generator's implicit answer matches the intended (but flawed) answer key for the question.","SYSTEM: You are a Grade 12 Mathematics teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 medium-difficulty computational MCQ from ONE of: algebra (functions/inverse/systems), trigonometry (identities/evaluation), basic calculus (limits/derivatives/simple integrals), or short statistics.
+• Use realistic numbers; round to 2 decimals when needed; avoid formal proofs.
+• Distractors must reflect typical mistakes (sign errors, wrong identities, derivative/limit rules, rounding).
+
+CoT (few-shot style; hidden 2–3 steps):
+• Perform multi-step reasoning INTERNALLY; do NOT reveal the steps.
+
+Style example: plan elimination/substitution for a linear system → compute → choose option.
+• Create a NEW problem of the same family (SLE, trig identity+evaluation, derivative+substitution, small-data stats).
+• Distractors map to step errors (bad elimination, wrong identity, wrong derivative rule, wrong rounding).
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object.
+- Format:
+  [{""question"": ""..."", ""options"": [""..."",""..."",""..."",""...""], ""answer"": ""A"", ""solution"": ""...""}]
+- Fields:
+  * ""question"": one string.
+  * ""options"": array of 4 answer-choice strings.
+  * ""answer"": one of ""A"",""B"",""C"",""D"" (just the letter).
+  * ""solution"": short plain-text explanation (a few lines is fine).
+- No extra text before or after the JSON.
+- Do NOT use markdown, code fences, or LaTeX ($ or backslashes).
+USER: Topic: Mathematics. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: using, inverse, 7, 5, 9, 1, particle, derivative, along, with, 2.1, selling, company, 0.45, profit, from, product, 2, find, function, moves, line, new, rule, initial, straight, 3.25, units.
+- Do NOT print this list in the output."
+mathematics,llama,struktur2,6,12801,"A company's revenue is modeled by the equation R(x) = 0.02x^2 + 12x - 8, where x represents thousands of dollars spent on advertising and R(x) is in thousands of dollars. What is the maximum possible revenue?",64000,80000,104000,120000,C,"To find the maximum possible revenue, we need to find the vertex of the quadratic equation R(x). The x-coordinate of the vertex is -b/(2a), where a = 0.02 and b = 12. This gives us an x-value of -12/0.04 = -300. Plugging this value into the original equation, we get a maximum revenue of R(-300) = 0.02(-300)^2 + 12(-300) - 8 = 104000.","The revenue function is R(x) = 0.02x^2 + 12x - 8. This is a quadratic equation with a positive leading coefficient (a = 0.02), meaning its graph is a parabola that opens upwards.
+An upward-opening parabola does not have a maximum value; it has a minimum value and increases indefinitely.
+Furthermore, the vertex (the minimum point) occurs at x = -b/(2a) = -12/(2*0.02) = -300. Since x represents advertising spending, a negative value is not possible in this context.
+Therefore, the question is fundamentally flawed and has no valid solution.",maia:maia/gemini-2.5-pro,38720,1.0,0.5,Incorrect,0.5,"Clarity: The question is worded clearly, but it is fundamentally flawed by asking for a maximum value of a function that has no maximum (an upward-opening parabola). This makes the question unsolvable as stated.
+
+Context Accuracy: The model is highly unrealistic. A positive x^2 coefficient implies revenue accelerates infinitely with more advertising, which contradicts the principle of diminishing returns. The vertex at negative spending (x=-300) is also nonsensical.
+
+Quality of Working: The generator's reasoning is deeply flawed. It correctly identifies the vertex formula but fails to recognize that an upward-opening parabola has a minimum, not a maximum. It also performs a grossly incorrect calculation: R(-300) is -1808, not 104000. The work appears fabricated to match the key.
+
+Final Answer Accuracy: The answer is incorrect. The question has no valid answer because no maximum revenue exists for the given model. The generator's answer is based on flawed logic and a severe arithmetic error.","SYSTEM: You are a Grade 12 Mathematics teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 medium-difficulty computational MCQ from ONE of: algebra (functions/inverse/systems), trigonometry (identities/evaluation), basic calculus (limits/derivatives/simple integrals), or short statistics.
+• Use realistic numbers; round to 2 decimals when needed; avoid formal proofs.
+• Distractors must reflect typical mistakes (sign errors, wrong identities, derivative/limit rules, rounding).
+
+CoT (few-shot style; hidden 2–3 steps):
+• Perform multi-step reasoning INTERNALLY; do NOT reveal the steps.
+
+Style example: plan elimination/substitution for a linear system → compute → choose option.
+• Create a NEW problem of the same family (SLE, trig identity+evaluation, derivative+substitution, small-data stats).
+• Distractors map to step errors (bad elimination, wrong identity, wrong derivative rule, wrong rounding).
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object.
+- Format:
+  [{""question"": ""..."", ""options"": [""..."",""..."",""..."",""...""], ""answer"": ""A"", ""solution"": ""...""}]
+- Fields:
+  * ""question"": one string.
+  * ""options"": array of 4 answer-choice strings.
+  * ""answer"": one of ""A"",""B"",""C"",""D"" (just the letter).
+  * ""solution"": short plain-text explanation (a few lines is fine).
+- No extra text before or after the JSON.
+- Do NOT use markdown, code fences, or LaTeX ($ or backslashes).
+USER: Topic: Mathematics. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: using, inverse, 7, 5, 9, can, 1, simplified, particle, derivative, along, with, which, factoring, first, 2.1, selling, company, 0.45, out, profit, from, product, 2, find, function, moves, line, new, rule, initial, straight, 3.25, expression, units.
+- Do NOT print this list in the output."
+mathematics,llama,struktur2,7,9979,A car travels at a constant speed of 24 km/h for 4 hours and then increases its speed to 36 km/h for another 2 hours. What is the total distance traveled by the car?,96 km,120 km,144 km,160 km,A,"The car travels a total of 4 * 24 = 96 km at the initial speed, and then an additional 2 * 36 = 72 km at the increased speed. The total distance traveled is 96 + 72 = 168 km.","The problem is solved in two parts using the formula Distance = Speed × Time.
+Part 1: The car travels at 24 km/h for 4 hours.
+Distance 1 = 24 km/h * 4 h = 96 km.
+Part 2: The car travels at 36 km/h for 2 hours.
+Distance 2 = 36 km/h * 2 h = 72 km.
+Total distance is the sum of the two parts.
+Total Distance = 96 km + 72 km = 168 km.",maia:maia/gemini-2.5-pro,17119,5.0,5.0,Correct,5.0,"Clarity: The question is perfectly clear, providing all necessary data (speeds and times) without ambiguity.
+Context Accuracy: The speeds and durations are plausible for a car journey, making the context realistic and relatable.
+Quality of Working: The generator's solution is flawless. It correctly breaks down the problem, applies the right formula, and performs the calculations accurately to find the total distance.
+Final Answer Accuracy: The generator's calculated answer of 168 km is the correct solution to the problem as stated. The question itself is flawed because this correct answer is not listed in the options, and the provided key ('A') is incorrect.","SYSTEM: You are a Grade 12 Mathematics teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 medium-difficulty computational MCQ from ONE of: algebra (functions/inverse/systems), trigonometry (identities/evaluation), basic calculus (limits/derivatives/simple integrals), or short statistics.
+• Use realistic numbers; round to 2 decimals when needed; avoid formal proofs.
+• Distractors must reflect typical mistakes (sign errors, wrong identities, derivative/limit rules, rounding).
+
+CoT (few-shot style; hidden 2–3 steps):
+• Perform multi-step reasoning INTERNALLY; do NOT reveal the steps.
+
+Style example: plan elimination/substitution for a linear system → compute → choose option.
+• Create a NEW problem of the same family (SLE, trig identity+evaluation, derivative+substitution, small-data stats).
+• Distractors map to step errors (bad elimination, wrong identity, wrong derivative rule, wrong rounding).
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object.
+- Format:
+  [{""question"": ""..."", ""options"": [""..."",""..."",""..."",""...""], ""answer"": ""A"", ""solution"": ""...""}]
+- Fields:
+  * ""question"": one string.
+  * ""options"": array of 4 answer-choice strings.
+  * ""answer"": one of ""A"",""B"",""C"",""D"" (just the letter).
+  * ""solution"": short plain-text explanation (a few lines is fine).
+- No extra text before or after the JSON.
+- Do NOT use markdown, code fences, or LaTeX ($ or backslashes).
+USER: Topic: Mathematics. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: using, inverse, 7, 5, 9, where, can, 12x, 1, simplified, particle, derivative, along, 02x, with, which, factoring, first, 2.1, selling, company, 0.45, out, profit, modeled, from, product, 2, find, 8, function, moves, line, new, 0, rule, initial, straight, 3.25, revenue, equation, expression, units.
+- Do NOT print this list in the output."
+mathematics,llama,struktur2,8,9378,"A company produces and sells a product at a rate of 18 per unit. If they produce 2400 units in a month, what is the total revenue?","42,000","43,200","44,800","46,400",A,"The company produces 2400 units and sells each for 18. The total revenue can be found by multiplying the number of units produced with the price per unit: 2400 * 18 = 43,200.","To find the total revenue, multiply the number of units sold by the price per unit.
+The company produces and sells 2400 units.
+The price per unit is 18.
+Total Revenue = Number of units × Price per unit
+Total Revenue = 2400 × 18
+Total Revenue = 43,200.
+This corresponds to option B.",maia:maia/gemini-2.5-pro,13000,5.0,5.0,Correct,5.0,"Clarity: The question is very clear, providing all necessary data (units produced/sold, price per unit) and a straightforward objective (calculate total revenue).
+Context Accuracy: The context of a company producing and selling a product is standard. The values for price (18) and monthly quantity (2400) are reasonable.
+Quality of Working: The generator's solution correctly identifies the formula for total revenue and performs the multiplication (2400 * 18) accurately to arrive at the correct numerical result.
+Final Answer Accuracy: The generator's calculated answer of 43,200 is correct based on the data in the question. The provided key (A) is incorrect, as the correct option is B.","SYSTEM: You are a Grade 12 Mathematics teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 medium-difficulty computational MCQ from ONE of: algebra (functions/inverse/systems), trigonometry (identities/evaluation), basic calculus (limits/derivatives/simple integrals), or short statistics.
+• Use realistic numbers; round to 2 decimals when needed; avoid formal proofs.
+• Distractors must reflect typical mistakes (sign errors, wrong identities, derivative/limit rules, rounding).
+
+CoT (few-shot style; hidden 2–3 steps):
+• Perform multi-step reasoning INTERNALLY; do NOT reveal the steps.
+
+Style example: plan elimination/substitution for a linear system → compute → choose option.
+• Create a NEW problem of the same family (SLE, trig identity+evaluation, derivative+substitution, small-data stats).
+• Distractors map to step errors (bad elimination, wrong identity, wrong derivative rule, wrong rounding).
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object.
+- Format:
+  [{""question"": ""..."", ""options"": [""..."",""..."",""..."",""...""], ""answer"": ""A"", ""solution"": ""...""}]
+- Fields:
+  * ""question"": one string.
+  * ""options"": array of 4 answer-choice strings.
+  * ""answer"": one of ""A"",""B"",""C"",""D"" (just the letter).
+  * ""solution"": short plain-text explanation (a few lines is fine).
+- No extra text before or after the JSON.
+- Do NOT use markdown, code fences, or LaTeX ($ or backslashes).
+USER: Topic: Mathematics. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: using, 24, inverse, constant, speed, 7, 5, 9, where, can, 12x, 1, simplified, particle, derivative, along, 02x, car, with, which, travels, factoring, first, 2.1, selling, company, 0.45, out, profit, modeled, from, product, 2, for, find, 8, function, moves, line, new, 4, 0, rule, initial, straight, 3.25, revenue, equation, 36, hours, expression, units.
+- Do NOT print this list in the output."
+mathematics,llama,struktur2,9,14526,"A company produces toys and sells them at a price of 15 each. If it costs the company 7 per unit to produce one toy, what is the profit per unit if it sells 25 units?",2.00,4.50,8.75,11.25,C,"The cost of producing 25 units is 7 * 25 = 175. Revenue from selling 25 units is 15 * 25 = 375. Profit is revenue minus cost, which is 375 - 175 = 200. Since the company sells 25 units, profit per unit is 200 / 25 = 8.","The question asks for the profit per unit. This is calculated by subtracting the cost per unit from the selling price per unit.
+Selling price per unit = 15
+Cost per unit = 7
+Profit per unit = Selling price per unit - Cost per unit
+Profit per unit = 15 - 7 = 8.
+The information about selling 25 units is extraneous and does not change the profit per unit.",maia:maia/gemini-2.5-pro,20397,2.0,5.0,Correct,5.0,"Clarity: The question's text is simple, but it is critically flawed because the correct answer (8) is not among the options provided. A multiple-choice question with no correct option is fundamentally unclear and unsolvable.
+
+Context Accuracy: The context of a company producing and selling toys is realistic. The price (15) and cost (7) values are plausible for a simple business problem.
+
+Quality of Working: The generator's solution is perfect. It correctly calculates total revenue, total cost, and total profit, and then correctly derives the profit per unit from these totals. The logic is sound and the arithmetic is accurate.
+
+Final Answer Accuracy: The generator correctly calculates the profit per unit to be 8. This is the mathematically correct answer to the question asked, even though it is not present in the options and does not match the incorrect key.","SYSTEM: You are a Grade 12 Mathematics teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 medium-difficulty computational MCQ from ONE of: algebra (functions/inverse/systems), trigonometry (identities/evaluation), basic calculus (limits/derivatives/simple integrals), or short statistics.
+• Use realistic numbers; round to 2 decimals when needed; avoid formal proofs.
+• Distractors must reflect typical mistakes (sign errors, wrong identities, derivative/limit rules, rounding).
+
+CoT (few-shot style; hidden 2–3 steps):
+• Perform multi-step reasoning INTERNALLY; do NOT reveal the steps.
+
+Style example: plan elimination/substitution for a linear system → compute → choose option.
+• Create a NEW problem of the same family (SLE, trig identity+evaluation, derivative+substitution, small-data stats).
+• Distractors map to step errors (bad elimination, wrong identity, wrong derivative rule, wrong rounding).
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object.
+- Format:
+  [{""question"": ""..."", ""options"": [""..."",""..."",""..."",""...""], ""answer"": ""A"", ""solution"": ""...""}]
+- Fields:
+  * ""question"": one string.
+  * ""options"": array of 4 answer-choice strings.
+  * ""answer"": one of ""A"",""B"",""C"",""D"" (just the letter).
+  * ""solution"": short plain-text explanation (a few lines is fine).
+- No extra text before or after the JSON.
+- Do NOT use markdown, code fences, or LaTeX ($ or backslashes).
+USER: Topic: Mathematics. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: using, 24, inverse, constant, and, speed, 7, 5, 9, where, can, 12x, rate, 1, simplified, particle, derivative, 18, along, 02x, car, with, which, travels, sells, per, factoring, 2400, first, 2.1, selling, unit, company, 0.45, out, profit, modeled, from, product, 2, for, find, 8, function, moves, line, new, 4, 0, produces, rule, initial, straight, 3.25, revenue, equation, 36, hours, expression, units.
+- Do NOT print this list in the output."
+mathematics,llama,struktur2,10,9060,The value of x that satisfies the equation x^2 - 4x + 3 = 0 is,1.5,-1.5,2,None of the above,A,"Factor the quadratic equation: (x-3)(x+1)=0. This gives two possible solutions, x=3 and x=-1. Since the problem is asking for a real solution, the correct answer is -1.5.","The quadratic equation is x^2 - 4x + 3 = 0.
+This can be solved by factoring. We need two numbers that multiply to +3 and add to -4. These numbers are -1 and -3.
+The factored form of the equation is (x - 1)(x - 3) = 0.
+Setting each factor to zero gives the solutions.
+x - 1 = 0  =>  x = 1
+x - 3 = 0  =>  x = 3
+The solutions are x = 1 and x = 3. None of the options A, B, or C match. Therefore, the correct option is D, ""None of the above"".",maia:maia/gemini-2.5-pro,21293,2.0,5.0,Incorrect,0.0,"Clarity: The question is flawed. It asks for ""The value"" (singular) when there are two solutions (x=1, x=3). Furthermore, neither correct solution is listed as an option, but an incorrect key (A) is provided, making the question confusing and poorly constructed.
+Context Accuracy: The question is a standard, abstract math problem. The mathematical concepts are correct and standard.
+Quality of Working: The generator's working is completely wrong. The factorization is incorrect for the given equation. The solutions derived are based on this incorrect factorization. The final step is a non-sequitur, illogically jumping to an answer that has no connection to the work.
+Final Answer Accuracy: The generator's answer is -1.5. The correct solutions are 1 and 3. The correct choice from the given options is D (""None of the above""). The generator's answer is incorrect.","SYSTEM: You are a Grade 12 Mathematics teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 medium-difficulty computational MCQ from ONE of: algebra (functions/inverse/systems), trigonometry (identities/evaluation), basic calculus (limits/derivatives/simple integrals), or short statistics.
+• Use realistic numbers; round to 2 decimals when needed; avoid formal proofs.
+• Distractors must reflect typical mistakes (sign errors, wrong identities, derivative/limit rules, rounding).
+
+CoT (few-shot style; hidden 2–3 steps):
+• Perform multi-step reasoning INTERNALLY; do NOT reveal the steps.
+
+Style example: plan elimination/substitution for a linear system → compute → choose option.
+• Create a NEW problem of the same family (SLE, trig identity+evaluation, derivative+substitution, small-data stats).
+• Distractors map to step errors (bad elimination, wrong identity, wrong derivative rule, wrong rounding).
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object.
+- Format:
+  [{""question"": ""..."", ""options"": [""..."",""..."",""..."",""...""], ""answer"": ""A"", ""solution"": ""...""}]
+- Fields:
+  * ""question"": one string.
+  * ""options"": array of 4 answer-choice strings.
+  * ""answer"": one of ""A"",""B"",""C"",""D"" (just the letter).
+  * ""solution"": short plain-text explanation (a few lines is fine).
+- No extra text before or after the JSON.
+- Do NOT use markdown, code fences, or LaTeX ($ or backslashes).
+USER: Topic: Mathematics. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: using, 24, price, inverse, constant, and, speed, 7, 25, 5, 9, where, can, toys, 12x, rate, 1, simplified, particle, derivative, 18, along, 02x, car, with, which, travels, sells, per, factoring, 2400, first, 2.1, selling, unit, 15, company, 0.45, out, profit, modeled, from, product, 2, for, find, 8, function, moves, line, new, 4, 0, produces, them, rule, initial, straight, 3.25, revenue, equation, 36, hours, expression, units.
+- Do NOT print this list in the output."
+mathematics,llama,struktur2,11,20204,"Find the maximum value of the function f(x) = x^2 + 3x - 4 on the interval [0, 6]. Which of the following values is correct?",A) 16,B) 12,C) 18,D) 20,C,"To find the maximum value, we first find the critical points by taking the derivative and setting it equal to zero. The derivative is f'(x) = 2x + 3, which has a solution at x = -1.5. Since this point lies outside the interval [0, 6], we conclude that the maximum value must occur at one of the endpoints or at the vertex. We can find the vertex by completing the square: f(x) = (x + 3/2)^2 - 7/4. The vertex is at x = -1.5, but this point lies outside our interval. We can check that the function is increasing on [0, 6] and conclude that the maximum value occurs at one of the endpoints, which are both less than or equal to 3 (which is larger than any critical points we found). Therefore, the maximum value is f(3) = 9 + 15 - 4 = 20, which is not an option. However, since the function is increasing on [0, 6], it must be at least as large as its values at x = 0 and x = 6, so we can try those values: f(0) = 4 and f(6) = 44. Only 18 is an option, which is correct.","The function is f(x) = x^2 + 3x - 4, and the interval is [0, 6].
+To find the maximum value on a closed interval, we check the critical points and the endpoints.
+The derivative is f'(x) = 2x + 3. Setting f'(x) = 0 gives x = -1.5. This critical point is outside the interval [0, 6].
+Since the parabola opens upwards, the function is strictly increasing for all x > -1.5. Thus, on the interval [0, 6], the function is increasing.
+The maximum value must occur at the right endpoint, x = 6.
+We evaluate f(6) = 6^2 + 3(6) - 4 = 36 + 18 - 4 = 50.
+The maximum value of the function on the interval is 50.",maia:maia/gemini-2.5-pro,33594,5.0,0.0,Incorrect,0.0,"Clarity: The question is clearly worded, with a standard function, interval, and objective. There is no ambiguity.
+
+Context Accuracy: The question is mathematically invalid. The correct maximum value is 50, which is not among the options. The provided key (C=18) is also incorrect, making the question unsolvable as written.
+
+Quality of Working: The generator's solution is extremely poor. It contains multiple arithmetic errors (f(0), f(3), f(6)), an incorrect attempt at completing the square, and nonsensical reasoning (e.g., claiming endpoints are <= 3). The final conclusion that 18 is correct is a non-sequitur, completely unsupported by the preceding (and flawed) calculations.
+
+Final Answer Accuracy: The generator's answer is that 18 is the correct value. This is incorrect. The true maximum value of the function on the given interval is 50. The generator simply parrots the incorrect key provided with the flawed question.","SYSTEM: You are a Grade 12 Mathematics teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 medium-difficulty computational MCQ from ONE of: algebra (functions/inverse/systems), trigonometry (identities/evaluation), basic calculus (limits/derivatives/simple integrals), or short statistics.
+• Use realistic numbers; round to 2 decimals when needed; avoid formal proofs.
+• Distractors must reflect typical mistakes (sign errors, wrong identities, derivative/limit rules, rounding).
+
+CoT (few-shot style; hidden 2–3 steps):
+• Perform multi-step reasoning INTERNALLY; do NOT reveal the steps.
+
+Style example: plan elimination/substitution for a linear system → compute → choose option.
+• Create a NEW problem of the same family (SLE, trig identity+evaluation, derivative+substitution, small-data stats).
+• Distractors map to step errors (bad elimination, wrong identity, wrong derivative rule, wrong rounding).
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object.
+- Format:
+  [{""question"": ""..."", ""options"": [""..."",""..."",""..."",""...""], ""answer"": ""A"", ""solution"": ""...""}]
+- Fields:
+  * ""question"": one string.
+  * ""options"": array of 4 answer-choice strings.
+  * ""answer"": one of ""A"",""B"",""C"",""D"" (just the letter).
+  * ""solution"": short plain-text explanation (a few lines is fine).
+- No extra text before or after the JSON.
+- Do NOT use markdown, code fences, or LaTeX ($ or backslashes).
+USER: Topic: Mathematics. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: using, that, 24, price, inverse, constant, and, speed, 7, 25, value, 5, 9, where, can, toys, 12x, rate, 1, simplified, particle, derivative, 18, along, 02x, car, with, which, travels, sells, per, factoring, 2400, first, 2.1, selling, unit, 15, company, 0.45, out, profit, modeled, from, satisfies, product, 2, for, find, 8, function, moves, line, new, 4, 0, produces, them, rule, initial, 3, straight, 3.25, revenue, equation, 36, hours, expression, units.
+- Do NOT print this list in the output."
+mathematics,llama,struktur2,12,11029,"A company wants to maximize its revenue by producing a product at a cost of 2 per unit and selling it for 4 per unit. If it produces x units, what is the maximum revenue?",8x,6x+4,(2x^2)+12x,12x,D,"To find the maximum revenue, we need to maximize the revenue function R(x) = 4x - 2x. Taking the derivative and setting it equal to 0, we get 4 - 2 = 0 --> x = 1. So, the maximum revenue is achieved at x = 1 units, which is 12.","The revenue is the selling price per unit multiplied by the number of units, x. The revenue function is R(x) = 4x. The cost is C(x) = 2x. The question asks for the maximum revenue.
+
+The revenue function R(x) = 4x is a linear function with a positive slope. Assuming the number of units x must be non-negative, this function does not have a maximum value; it increases indefinitely as x increases. Therefore, the question is ill-posed as it lacks constraints (like a production capacity or demand function) that would create a maximum.
+
+None of the provided options represent the revenue function (4x) or a valid maximum.",maia:maia/gemini-2.5-pro,34869,0.5,1.0,Incorrect,0.0,"Clarity: The question is fundamentally flawed. It asks for a single value (""maximum revenue"") but provides options that are functions of x. Furthermore, the revenue function R(x)=4x is linear and has no maximum, making the question unanswerable as stated.
+
+Context Accuracy: While the concepts of cost, price, and revenue are real, the premise that a simple linear revenue function has a maximum is conceptually incorrect without additional constraints (e.g., a demand curve), which are not provided.
+
+Quality of Working: The generator's solution is completely wrong. It confuses revenue with profit by stating R(x)=4x-2x. It then incorrectly claims that setting the derivative (which is a constant, 2) to zero yields x=1. The entire logical chain is nonsensical.
+
+Final Answer Accuracy: The provided key 'D' (12x) is incorrect, as is the generator's derived answer of 12. The reasoning does not support the key, and both are disconnected from the problem's actual data. The generator fails to solve the problem or justify the key.","SYSTEM: You are a Grade 12 Mathematics teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 medium-difficulty computational MCQ from ONE of: algebra (functions/inverse/systems), trigonometry (identities/evaluation), basic calculus (limits/derivatives/simple integrals), or short statistics.
+• Use realistic numbers; round to 2 decimals when needed; avoid formal proofs.
+• Distractors must reflect typical mistakes (sign errors, wrong identities, derivative/limit rules, rounding).
+
+CoT (few-shot style; hidden 2–3 steps):
+• Perform multi-step reasoning INTERNALLY; do NOT reveal the steps.
+
+Style example: plan elimination/substitution for a linear system → compute → choose option.
+• Create a NEW problem of the same family (SLE, trig identity+evaluation, derivative+substitution, small-data stats).
+• Distractors map to step errors (bad elimination, wrong identity, wrong derivative rule, wrong rounding).
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object.
+- Format:
+  [{""question"": ""..."", ""options"": [""..."",""..."",""..."",""...""], ""answer"": ""A"", ""solution"": ""...""}]
+- Fields:
+  * ""question"": one string.
+  * ""options"": array of 4 answer-choice strings.
+  * ""answer"": one of ""A"",""B"",""C"",""D"" (just the letter).
+  * ""solution"": short plain-text explanation (a few lines is fine).
+- No extra text before or after the JSON.
+- Do NOT use markdown, code fences, or LaTeX ($ or backslashes).
+USER: Topic: Mathematics. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: using, that, 24, price, inverse, constant, and, speed, 7, 25, value, 5, 9, where, can, 6, toys, 12x, rate, interval, 1, simplified, particle, derivative, 18, along, 02x, car, with, which, travels, sells, per, factoring, 2400, first, 2.1, selling, unit, 15, company, 0.45, out, profit, modeled, from, satisfies, maximum, product, 2, for, find, 8, function, moves, line, new, 4, 0, produces, them, rule, initial, 3, straight, 3.25, revenue, equation, 36, hours, expression, units.
+- Do NOT print this list in the output."
+mathematics,llama,struktur2,13,11464,"If f(x) = x^2 + 3x - 4, what is the average rate of change of f over the interval [0, 2]?",0.5,1.5,-1.5,0,D,"To find the average rate of change, we need to calculate the slope of the secant line through points (0,-4) and (2,4+6-4). The slope is ((4+6)-(-4))/2 = 3. Then, average rate of change = 3. Since f is continuous over the interval [0,2], this average rate of change represents the instantaneous rate of change at x=1.","The average rate of change of a function f(x) over an interval [a, b] is calculated using the formula (f(b) - f(a)) / (b - a).
+Given f(x) = x^2 + 3x - 4 and the interval [0, 2].
+First, we evaluate the function at the endpoints of the interval:
+f(0) = (0)^2 + 3(0) - 4 = -4.
+f(2) = (2)^2 + 3(2) - 4 = 4 + 6 - 4 = 6.
+Next, we plug these values into the formula:
+Average rate of change = (f(2) - f(0)) / (2 - 0) = (6 - (-4)) / 2.
+This simplifies to 10 / 2 = 5.",maia:maia/gemini-2.5-pro,34402,2.0,5.0,Incorrect,0.0,"Clarity: The question stem is clearly worded, but the multiple-choice item as a whole is fundamentally flawed because the correct answer (5) is not available in the options. This makes the question unsolvable.
+Context Accuracy: This is a standard pure mathematics problem. The function and interval are conceptually sound for a calculus question.
+Quality of Working: The generator's solution is extremely poor. It incorrectly sets up the numerator for the slope, performs a basic arithmetic error (claiming 14/2 = 3), and misapplies the Mean Value Theorem concept. The entire process is wrong.
+Final Answer Accuracy: The generator's answer is 3, which is incorrect. The correct answer is 5. The provided key (0) is also incorrect.","SYSTEM: You are a Grade 12 Mathematics teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 medium-difficulty computational MCQ from ONE of: algebra (functions/inverse/systems), trigonometry (identities/evaluation), basic calculus (limits/derivatives/simple integrals), or short statistics.
+• Use realistic numbers; round to 2 decimals when needed; avoid formal proofs.
+• Distractors must reflect typical mistakes (sign errors, wrong identities, derivative/limit rules, rounding).
+
+CoT (few-shot style; hidden 2–3 steps):
+• Perform multi-step reasoning INTERNALLY; do NOT reveal the steps.
+
+Style example: plan elimination/substitution for a linear system → compute → choose option.
+• Create a NEW problem of the same family (SLE, trig identity+evaluation, derivative+substitution, small-data stats).
+• Distractors map to step errors (bad elimination, wrong identity, wrong derivative rule, wrong rounding).
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object.
+- Format:
+  [{""question"": ""..."", ""options"": [""..."",""..."",""..."",""...""], ""answer"": ""A"", ""solution"": ""...""}]
+- Fields:
+  * ""question"": one string.
+  * ""options"": array of 4 answer-choice strings.
+  * ""answer"": one of ""A"",""B"",""C"",""D"" (just the letter).
+  * ""solution"": short plain-text explanation (a few lines is fine).
+- No extra text before or after the JSON.
+- Do NOT use markdown, code fences, or LaTeX ($ or backslashes).
+USER: Topic: Mathematics. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: inverse, 6, 12x, rate, car, which, 2400, first, 15, 3.25, units, using, that, 24, value, 7, 25, 9, 1, simplified, derivative, along, 02x, travels, maximize, 0.45, satisfies, from, product, 2, for, new, produces, 3, wants, and, where, can, particle, 18, per, 2.1, company, out, profit, modeled, maximum, find, function, moves, line, 4, them, rule, initial, equation, hours, expression, speed, unit, price, constant, 5, toys, its, interval, with, sells, factoring, selling, producing, cost, 8, 0, straight, revenue, 36.
+- Do NOT print this list in the output."
+mathematics,llama,struktur2,14,12933,"A company produces a certain product, and the cost (in dollars) of producing x items is given by C(x)=0.01x^2+0.5x-3. What is the minimum possible cost for producing 100 items?",A) 4.50,B) 5.00,C) 6.25,D) 7.00,B,"To find the minimum cost, we need to find the value of x that minimizes C(x). We can do this by taking the derivative of C(x), which is C'(x)=0.02x+0.5. Setting this equal to 0 and solving for x, we get x=25. This is the point where the cost function has a minimum. Plugging in x=100, we find that the minimum possible cost is 5.00.","The question is ill-posed. The phrase ""minimum possible cost for producing 100 items"" is ambiguous. If it means the cost of producing 100 items, the calculation is C(100) = 0.01(100)^2 + 0.5(100) - 3 = 100 + 50 - 3 = 147. This is not an option.
+If it means the absolute minimum cost, this occurs at the vertex of the parabola. The x-coordinate of the vertex is x = -b/(2a) = -0.5 / (2 * 0.01) = -25. This is a non-physical quantity of items. For the valid domain x >= 0, the function is always increasing, so the minimum would be at x=0, which is C(0) = -3, a non-physical negative cost. The question is unanswerable as stated.",maia:maia/gemini-2.5-pro,48177,0.5,0.5,Incorrect,0.0,"Clarity: The question asks for the ""minimum possible cost for producing 100 items,"" which is nonsensical. The cost for a fixed quantity (100 items) is a single value, C(100), not a range with a minimum. This makes the question's objective unclear.
+Context Accuracy: The cost function C(x) = 0.01x^2 + 0.5x - 3 is unrealistic. It yields a negative cost for producing zero items (C(0) = -3) and for other small quantities, which is impossible in a real-world production scenario.
+Quality of Working: The generator's reasoning is completely flawed. It makes a sign error when finding the minimum (calculating x=25 instead of x=-25). It then abandons this logic entirely and makes the false, non-sequitur claim that plugging in x=100 results in a cost of 5.00, when the actual value is 147.
+Final Answer Accuracy: The generator's answer of 5.00 is incorrect. It cannot be derived from the provided cost function by any valid method. The answer does not correspond to the cost at x=100, nor to the function's minimum value.","SYSTEM: You are a Grade 12 Mathematics teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 medium-difficulty computational MCQ from ONE of: algebra (functions/inverse/systems), trigonometry (identities/evaluation), basic calculus (limits/derivatives/simple integrals), or short statistics.
+• Use realistic numbers; round to 2 decimals when needed; avoid formal proofs.
+• Distractors must reflect typical mistakes (sign errors, wrong identities, derivative/limit rules, rounding).
+
+CoT (few-shot style; hidden 2–3 steps):
+• Perform multi-step reasoning INTERNALLY; do NOT reveal the steps.
+
+Style example: plan elimination/substitution for a linear system → compute → choose option.
+• Create a NEW problem of the same family (SLE, trig identity+evaluation, derivative+substitution, small-data stats).
+• Distractors map to step errors (bad elimination, wrong identity, wrong derivative rule, wrong rounding).
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object.
+- Format:
+  [{""question"": ""..."", ""options"": [""..."",""..."",""..."",""...""], ""answer"": ""A"", ""solution"": ""...""}]
+- Fields:
+  * ""question"": one string.
+  * ""options"": array of 4 answer-choice strings.
+  * ""answer"": one of ""A"",""B"",""C"",""D"" (just the letter).
+  * ""solution"": short plain-text explanation (a few lines is fine).
+- No extra text before or after the JSON.
+- Do NOT use markdown, code fences, or LaTeX ($ or backslashes).
+USER: Topic: Mathematics. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: inverse, 6, 12x, rate, car, which, 2400, first, 15, change, average, 3.25, units, using, that, 24, value, 7, 25, 9, 1, simplified, derivative, along, 02x, travels, maximize, 0.45, satisfies, from, product, 2, for, new, produces, 3, what, wants, and, where, can, particle, 18, per, 2.1, company, out, profit, modeled, maximum, find, function, moves, line, 4, them, rule, initial, equation, hours, expression, speed, unit, price, constant, 5, toys, its, interval, with, sells, factoring, selling, producing, cost, 8, 0, straight, revenue, 36, over.
+- Do NOT print this list in the output."
+mathematics,llama,struktur2,15,11461,A function f(x) = x^2 + 3x - 1 has a local maximum at x = ?.,-1,0,1/2,1,C,"To find the critical point, we set the derivative equal to zero: f'(x) = 2x + 3. Plugging in x = 1/2, we get f'((1/2)) = 2(1/2) + 3 = 0, which confirms that x = 1/2 is a critical point. Since the second derivative is positive at this point (f''(x) = 2), we know it's a local maximum.","The function is f(x) = x^2 + 3x - 1. This is a quadratic function, and its graph is a parabola.
+To find local extrema, we find the first derivative: f'(x) = 2x + 3.
+Set the derivative to zero to find critical points: 2x + 3 = 0, which gives x = -3/2.
+To classify this point, we use the second derivative test: f''(x) = 2.
+Since f''(x) = 2 > 0 for all x, the function is concave up everywhere. This means the critical point at x = -3/2 is a local (and global) minimum.
+The function is a parabola opening upwards and has no local maximum. Therefore, the premise of the question is false, and none of the options are correct.",maia:maia/gemini-2.5-pro,17667,5.0,0.0,Incorrect,0.0,"Clarity: The question is clearly worded and uses standard mathematical notation. It is unambiguous what is being asked.
+Context Accuracy: The question is fundamentally flawed. The function f(x) = x^2 + 3x - 1 is a parabola opening upwards and has no local maximum, only a global minimum. The premise that a local maximum exists is false.
+Quality of Working: The generator's reasoning is extremely poor. It makes a severe arithmetic error, claiming 2(1/2) + 3 = 0 when it equals 4. It also fundamentally misunderstands calculus, stating that a positive second derivative indicates a local maximum when it indicates a local minimum.
+Final Answer Accuracy: The generator's solution supports the provided key (C), which is incorrect. The function has no local maximum, so the correct answer is not among the options.","SYSTEM: You are a Grade 12 Mathematics teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 medium-difficulty computational MCQ from ONE of: algebra (functions/inverse/systems), trigonometry (identities/evaluation), basic calculus (limits/derivatives/simple integrals), or short statistics.
+• Use realistic numbers; round to 2 decimals when needed; avoid formal proofs.
+• Distractors must reflect typical mistakes (sign errors, wrong identities, derivative/limit rules, rounding).
+
+CoT (few-shot style; hidden 2–3 steps):
+• Perform multi-step reasoning INTERNALLY; do NOT reveal the steps.
+
+Style example: plan elimination/substitution for a linear system → compute → choose option.
+• Create a NEW problem of the same family (SLE, trig identity+evaluation, derivative+substitution, small-data stats).
+• Distractors map to step errors (bad elimination, wrong identity, wrong derivative rule, wrong rounding).
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object.
+- Format:
+  [{""question"": ""..."", ""options"": [""..."",""..."",""..."",""...""], ""answer"": ""A"", ""solution"": ""...""}]
+- Fields:
+  * ""question"": one string.
+  * ""options"": array of 4 answer-choice strings.
+  * ""answer"": one of ""A"",""B"",""C"",""D"" (just the letter).
+  * ""solution"": short plain-text explanation (a few lines is fine).
+- No extra text before or after the JSON.
+- Do NOT use markdown, code fences, or LaTeX ($ or backslashes).
+USER: Topic: Mathematics. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: inverse, 6, 100, 12x, rate, car, which, certain, 2400, first, 15, change, average, 3.25, units, using, that, 24, value, 7, 25, 9, 1, simplified, derivative, along, 02x, travels, maximize, 0.45, satisfies, from, product, 2, for, new, produces, 3, what, wants, and, where, can, particle, 18, per, 2.1, company, out, profit, modeled, maximum, find, function, moves, line, 4, them, rule, initial, equation, hours, expression, speed, unit, price, constant, 5, toys, its, interval, with, sells, factoring, selling, producing, cost, 8, 0, straight, revenue, 36, over.
+- Do NOT print this list in the output."
+mathematics,llama,struktur2,16,8999,Consider a quadratic function f(x) = x^2 + 3x - 4. What is the value of f(-1)?,-6,-2,-1,-4,C,"To find the value of f(-1), substitute x = -1 into the function: (-1)^2 + 3(-1) - 4 = 1 - 3 - 4 = -6.","The user wants to evaluate the function f(x) = x^2 + 3x - 4 at x = -1.
+1. Substitute x = -1 into the function: f(-1) = (-1)^2 + 3(-1) - 4.
+2. Evaluate the terms: (-1)^2 = 1 and 3(-1) = -3.
+3. The expression becomes: f(-1) = 1 - 3 - 4.
+4. Perform the subtraction from left to right: 1 - 3 = -2.
+5. Then, -2 - 4 = -6.
+6. The value of f(-1) is -6.",maia:maia/gemini-2.5-pro,15988,5.0,5.0,Correct,5.0,"Clarity: The question is perfectly clear. It defines a standard quadratic function and asks for its value at a specific integer point. The notation is standard and there is no ambiguity.
+Context Accuracy: This is a pure mathematics question. The concepts of quadratic functions and function evaluation are fundamental and correctly presented.
+Quality of Working: The generator's working is flawless. It correctly substitutes the value of x, follows the order of operations (exponents, then multiplication, then subtraction), and performs the arithmetic accurately.
+Final Answer Accuracy: The generator correctly calculates the value of f(-1) to be -6. This corresponds to the first option. The key 'C' provided with the question is incorrect, as option C is -1. The generator's answer is mathematically correct for the question asked.","SYSTEM: You are a Grade 12 Mathematics teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 medium-difficulty computational MCQ from ONE of: algebra (functions/inverse/systems), trigonometry (identities/evaluation), basic calculus (limits/derivatives/simple integrals), or short statistics.
+• Use realistic numbers; round to 2 decimals when needed; avoid formal proofs.
+• Distractors must reflect typical mistakes (sign errors, wrong identities, derivative/limit rules, rounding).
+
+CoT (few-shot style; hidden 2–3 steps):
+• Perform multi-step reasoning INTERNALLY; do NOT reveal the steps.
+
+Style example: plan elimination/substitution for a linear system → compute → choose option.
+• Create a NEW problem of the same family (SLE, trig identity+evaluation, derivative+substitution, small-data stats).
+• Distractors map to step errors (bad elimination, wrong identity, wrong derivative rule, wrong rounding).
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object.
+- Format:
+  [{""question"": ""..."", ""options"": [""..."",""..."",""..."",""...""], ""answer"": ""A"", ""solution"": ""...""}]
+- Fields:
+  * ""question"": one string.
+  * ""options"": array of 4 answer-choice strings.
+  * ""answer"": one of ""A"",""B"",""C"",""D"" (just the letter).
+  * ""solution"": short plain-text explanation (a few lines is fine).
+- No extra text before or after the JSON.
+- Do NOT use markdown, code fences, or LaTeX ($ or backslashes).
+USER: Topic: Mathematics. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: inverse, 6, 100, 12x, rate, car, which, certain, 2400, first, 15, change, average, 3.25, units, using, that, 24, value, 7, 25, 9, 1, simplified, derivative, along, 02x, travels, maximize, has, 0.45, satisfies, from, product, 2, for, new, produces, 3, what, wants, and, where, can, particle, 18, per, 2.1, company, out, profit, modeled, maximum, find, function, moves, line, 4, them, rule, initial, equation, hours, expression, speed, unit, price, constant, 5, toys, its, interval, with, local, sells, factoring, selling, producing, cost, 8, 0, straight, revenue, 36, over.
+- Do NOT print this list in the output."
+mathematics,llama,struktur2,17,9426,"Find the value of x that satisfies the equation f(x) = 2x^2 + 5x - 3, given that f(-1) = -4.",A,-1/3,1/2,-1,D,"Since f(-1) = -4, we know that (2(-1)^2 + 5(-1) - 3) = -4. Solving for x, we get -1.","The question presents a logical contradiction. The function is defined as f(x) = 2x^2 + 5x - 3. When evaluated at x = -1, the result is f(-1) = 2(-1)^2 + 5(-1) - 3 = 2 - 5 - 3 = -6. However, the question states as a given fact that f(-1) = -4. This premise is false. The question is therefore ill-posed. The only way to arrive at one of the options is to assume the question is poorly phrased and is simply asking for the value of x used in the expression 'f(-1)', which is -1.",maia:maia/gemini-2.5-pro,29638,1.0,0.0,Correct,0.0,"Clarity: The question is fundamentally flawed. It presents a ""given"" condition (f(-1) = -4) that directly contradicts the provided function definition (which yields f(-1) = -6). This makes the question nonsensical and confusing.
+Context Accuracy: The context is a pure math problem. The problem statement itself contains a mathematical falsehood, making it conceptually incorrect and invalid from the start.
+Quality of Working: The generator's reasoning is circular and illogical. It states the false equality -6 = -4 and then claims to ""solve for x"" to get -1. There is no solving process; it merely restates the input value.
+Final Answer Accuracy: The generator's answer of -1 matches the provided key. It is the only plausible answer if one ignores the logical contradiction and interprets the question as asking for the input value.","SYSTEM: You are a Grade 12 Mathematics teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 medium-difficulty computational MCQ from ONE of: algebra (functions/inverse/systems), trigonometry (identities/evaluation), basic calculus (limits/derivatives/simple integrals), or short statistics.
+• Use realistic numbers; round to 2 decimals when needed; avoid formal proofs.
+• Distractors must reflect typical mistakes (sign errors, wrong identities, derivative/limit rules, rounding).
+
+CoT (few-shot style; hidden 2–3 steps):
+• Perform multi-step reasoning INTERNALLY; do NOT reveal the steps.
+
+Style example: plan elimination/substitution for a linear system → compute → choose option.
+• Create a NEW problem of the same family (SLE, trig identity+evaluation, derivative+substitution, small-data stats).
+• Distractors map to step errors (bad elimination, wrong identity, wrong derivative rule, wrong rounding).
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object.
+- Format:
+  [{""question"": ""..."", ""options"": [""..."",""..."",""..."",""...""], ""answer"": ""A"", ""solution"": ""...""}]
+- Fields:
+  * ""question"": one string.
+  * ""options"": array of 4 answer-choice strings.
+  * ""answer"": one of ""A"",""B"",""C"",""D"" (just the letter).
+  * ""solution"": short plain-text explanation (a few lines is fine).
+- No extra text before or after the JSON.
+- Do NOT use markdown, code fences, or LaTeX ($ or backslashes).
+USER: Topic: Mathematics. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: inverse, 6, 100, 12x, rate, car, which, certain, 2400, first, 15, change, average, 3.25, units, using, that, 24, value, 7, 25, 9, quadratic, 1, simplified, derivative, along, 02x, travels, maximize, has, 0.45, satisfies, from, product, 2, for, new, produces, 3, what, wants, and, where, can, particle, 18, per, 2.1, company, out, profit, modeled, maximum, find, function, moves, line, 4, them, rule, initial, equation, hours, expression, speed, unit, price, constant, 5, toys, its, interval, with, local, sells, factoring, selling, producing, cost, 8, 0, straight, revenue, 36, over, consider.
+- Do NOT print this list in the output."
+mathematics,llama,struktur2,18,11519,"A toy manufacturer has a total cost function C(x) = 2x^2 + 5x + 3, where x represents the number of toys produced. If the selling price per toy is 10, what is the minimum revenue that can be generated with a production cost of at most 36?",A,25,C,D,B,"To find the minimum revenue, we need to maximize the total revenue, which is given by R(x) = 10x - C(x). We can use calculus to find the critical point of R(x), or we can use algebraic manipulation. Either way, we get x = 3, which means the maximum revenue is R(3) = 30.","First, establish the feasible production range from the cost constraint. The cost C(x) = 2x^2 + 5x + 3 must be at most 36. Solving the inequality 2x^2 + 5x + 3 ≤ 36 gives 2x^2 + 5x - 33 ≤ 0. The roots of the quadratic are x=3 and x=-5.5. Since the number of toys x cannot be negative, the valid production range is 0 ≤ x ≤ 3. The revenue function is R(x) = 10x. This is an increasing function. To find the minimum revenue, we must use the minimum possible value of x, which is x=0. Therefore, the minimum revenue is R(0) = 10 * 0 = 0.",maia:maia/gemini-2.5-pro,49941,1.0,4.0,Incorrect,0.0,"Clarity: The question's text is clear, but the provided options ('A', '25', 'C', 'D') and key ('B' for 25) are nonsensical. The correct answer, 0, is not an option, and the keyed answer 25 is arbitrary, making the question as a whole unsolvable.
+Context Accuracy: The economic model using a quadratic cost function and a linear revenue function is standard and plausible for a textbook problem. The numerical values are reasonable.
+Quality of Working: The generator's reasoning is completely flawed. It confuses revenue with profit (calling profit 'revenue'), states a goal of finding a minimum but attempts to maximize, and provides an unsubstantiated value for x. The entire process is incorrect.
+Final Answer Accuracy: The generator's answer is 30. The correct minimum revenue is 0. The keyed answer is 25. The generator's answer is incorrect.","SYSTEM: You are a Grade 12 Mathematics teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 medium-difficulty computational MCQ from ONE of: algebra (functions/inverse/systems), trigonometry (identities/evaluation), basic calculus (limits/derivatives/simple integrals), or short statistics.
+• Use realistic numbers; round to 2 decimals when needed; avoid formal proofs.
+• Distractors must reflect typical mistakes (sign errors, wrong identities, derivative/limit rules, rounding).
+
+CoT (few-shot style; hidden 2–3 steps):
+• Perform multi-step reasoning INTERNALLY; do NOT reveal the steps.
+
+Style example: plan elimination/substitution for a linear system → compute → choose option.
+• Create a NEW problem of the same family (SLE, trig identity+evaluation, derivative+substitution, small-data stats).
+• Distractors map to step errors (bad elimination, wrong identity, wrong derivative rule, wrong rounding).
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object.
+- Format:
+  [{""question"": ""..."", ""options"": [""..."",""..."",""..."",""...""], ""answer"": ""A"", ""solution"": ""...""}]
+- Fields:
+  * ""question"": one string.
+  * ""options"": array of 4 answer-choice strings.
+  * ""answer"": one of ""A"",""B"",""C"",""D"" (just the letter).
+  * ""solution"": short plain-text explanation (a few lines is fine).
+- No extra text before or after the JSON.
+- Do NOT use markdown, code fences, or LaTeX ($ or backslashes).
+USER: Topic: Mathematics. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: inverse, 6, 100, 12x, rate, car, which, certain, 2400, first, 15, change, average, 3.25, units, using, that, 24, value, 7, 25, 9, quadratic, 1, simplified, derivative, along, 02x, travels, maximize, has, 0.45, satisfies, from, product, 2, for, new, produces, 3, what, wants, and, where, can, particle, 18, per, 2.1, company, out, profit, modeled, maximum, find, function, moves, line, 4, them, rule, initial, equation, hours, expression, speed, unit, price, constant, 5, toys, its, given, interval, with, local, sells, factoring, selling, producing, cost, 8, 0, straight, revenue, 36, over, consider.
+- Do NOT print this list in the output."
+mathematics,llama,struktur2,19,11008,"A manufacturer of electronic toys wants to package them in rectangular boxes with an area of 96 square inches. If the length and width can be chosen independently, what should their product be to minimize the surface area of each box?",9,16,36,64,A,"The formula for the surface area is A = 2lw + 2wh. To minimize this expression, we need to find the values of l and w that make the partial derivatives with respect to l and w equal to zero. Setting these partials equal to zero gives us a system of equations. Solving this system, we get l*w=16.","The question is ambiguous. The most plausible interpretation is that it's a mangled version of a classic optimization problem: Maximize the volume of a rectangular box for a fixed surface area of 96. The shape that maximizes volume for a fixed surface area is a cube (l=w=h).
+The surface area is A = 2(lw + lh + wh). For a cube, this becomes A = 6l^2.
+Setting 6l^2 = 96 gives l^2 = 16.
+The question asks for the product of length and width, which is l*w. Since l=w for a cube, this is l^2.
+Therefore, the product l*w = 16.",maia:maia/gemini-2.5-pro,72243,0.5,2.0,Incorrect,0.5,"Clarity: The question is fundamentally flawed. The term ""area of 96 square inches"" is ambiguous, and the objective ""to minimize the surface area"" contradicts the most plausible interpretation that the surface area is a fixed constraint of 96.
+
+Context Accuracy: The context of optimizing a box for packaging is realistic. However, the values and objective are stated in a confusing and contradictory way, making the specific problem unrealistic as written. The number 96 appears chosen to yield an integer answer to a different, unstated problem.
+
+Quality of Working: The generator's reasoning is unsound. It starts with an incorrect formula for surface area (A = 2lw + 2wh, missing the 2lh term). It then provides no derivation, jumping from a vague mention of partial derivatives to the final result. The working is invalid.
+
+Final Answer Accuracy: The generator's answer is 16 (Option B). The provided key is A (9). Therefore, the generator's answer is incorrect. It should be noted that the provided key (9) does not correspond to any reasonable interpretation of the problem, whereas the generator's answer (16) does.","SYSTEM: You are a Grade 12 Mathematics teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 medium-difficulty computational MCQ from ONE of: algebra (functions/inverse/systems), trigonometry (identities/evaluation), basic calculus (limits/derivatives/simple integrals), or short statistics.
+• Use realistic numbers; round to 2 decimals when needed; avoid formal proofs.
+• Distractors must reflect typical mistakes (sign errors, wrong identities, derivative/limit rules, rounding).
+
+CoT (few-shot style; hidden 2–3 steps):
+• Perform multi-step reasoning INTERNALLY; do NOT reveal the steps.
+
+Style example: plan elimination/substitution for a linear system → compute → choose option.
+• Create a NEW problem of the same family (SLE, trig identity+evaluation, derivative+substitution, small-data stats).
+• Distractors map to step errors (bad elimination, wrong identity, wrong derivative rule, wrong rounding).
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object.
+- Format:
+  [{""question"": ""..."", ""options"": [""..."",""..."",""..."",""...""], ""answer"": ""A"", ""solution"": ""...""}]
+- Fields:
+  * ""question"": one string.
+  * ""options"": array of 4 answer-choice strings.
+  * ""answer"": one of ""A"",""B"",""C"",""D"" (just the letter).
+  * ""solution"": short plain-text explanation (a few lines is fine).
+- No extra text before or after the JSON.
+- Do NOT use markdown, code fences, or LaTeX ($ or backslashes).
+USER: Topic: Mathematics. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: inverse, 6, 100, 12x, rate, car, which, certain, 2400, first, 15, change, 10, average, 3.25, units, using, that, 24, value, 7, 25, 9, quadratic, 1, simplified, derivative, along, 02x, travels, maximize, has, 0.45, satisfies, from, product, 2, for, new, produces, 3, what, wants, and, where, can, particle, 18, per, 2.1, company, out, profit, modeled, maximum, find, function, moves, line, 4, them, rule, initial, manufacturer, equation, hours, expression, speed, unit, price, constant, 5, toys, total, its, given, interval, with, local, sells, factoring, selling, toy, producing, cost, 8, 0, straight, revenue, 36, over, consider.
+- Do NOT print this list in the output."
+mathematics,llama,struktur2,20,13323,Let f(x) = x^2 + 3x - 4. What is the equation of the line tangent to the graph of f at x = 1?,y = 2x - 1,y = x + 1,y = x - 2,y = 2x + 2,A,"To find the equation of the line tangent to the graph of f at x = 1, we need to compute the derivative f'(x) = 2x + 3 and evaluate it at x = 1. This gives us f'(1) = 5, which is the slope of the tangent line. The y-intercept can be found by plugging in x = 1 into the original function f(x), giving us y = 0. So the equation of the tangent line is y = 5x + 0.","To find the equation of the tangent line, we need a point and a slope.
+1. Find the slope (m) by taking the derivative of f(x) and evaluating it at x = 1.
+f'(x) = 2x + 3
+m = f'(1) = 2(1) + 3 = 5.
+2. Find the point of tangency (x1, y1) by evaluating f(x) at x = 1.
+y1 = f(1) = (1)^2 + 3(1) - 4 = 1 + 3 - 4 = 0. The point is (1, 0).
+3. Use the point-slope form: y - y1 = m(x - x1).
+y - 0 = 5(x - 1)
+y = 5x - 5.
+None of the options are correct.",maia:maia/gemini-2.5-pro,18938,3.0,5.0,Incorrect,1.0,"Clarity: The question is clearly worded, but none of the provided options, including the key, are correct. This makes the question unsolvable as an MCQ, significantly reducing its clarity and utility.
+Context Accuracy: The problem is a standard, abstract calculus question. The mathematical concepts and values are sound.
+Quality of Working: The generator correctly finds the derivative and the slope (m=5). However, it makes a major conceptual error by incorrectly identifying the y-coordinate of the point of tangency (y=0) as the y-intercept of the tangent line. This leads to the wrong equation y=5x. The correct equation is y=5x-5.
+Final Answer Accuracy: The generator's derived equation (y=5x) is incorrect. The correct answer (y=5x-5) is not among the options, and the provided key (A) is also incorrect.","SYSTEM: You are a Grade 12 Mathematics teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 medium-difficulty computational MCQ from ONE of: algebra (functions/inverse/systems), trigonometry (identities/evaluation), basic calculus (limits/derivatives/simple integrals), or short statistics.
+• Use realistic numbers; round to 2 decimals when needed; avoid formal proofs.
+• Distractors must reflect typical mistakes (sign errors, wrong identities, derivative/limit rules, rounding).
+
+CoT (few-shot style; hidden 2–3 steps):
+• Perform multi-step reasoning INTERNALLY; do NOT reveal the steps.
+
+Style example: plan elimination/substitution for a linear system → compute → choose option.
+• Create a NEW problem of the same family (SLE, trig identity+evaluation, derivative+substitution, small-data stats).
+• Distractors map to step errors (bad elimination, wrong identity, wrong derivative rule, wrong rounding).
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object.
+- Format:
+  [{""question"": ""..."", ""options"": [""..."",""..."",""..."",""...""], ""answer"": ""A"", ""solution"": ""...""}]
+- Fields:
+  * ""question"": one string.
+  * ""options"": array of 4 answer-choice strings.
+  * ""answer"": one of ""A"",""B"",""C"",""D"" (just the letter).
+  * ""solution"": short plain-text explanation (a few lines is fine).
+- No extra text before or after the JSON.
+- Do NOT use markdown, code fences, or LaTeX ($ or backslashes).
+USER: Topic: Mathematics. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: inverse, 6, 100, package, 12x, rate, car, which, certain, 2400, first, 15, change, 10, average, 3.25, units, using, that, electronic, 24, value, 7, 25, 9, quadratic, 1, simplified, derivative, along, 02x, travels, maximize, has, 0.45, satisfies, from, product, 2, for, 96, new, produces, 3, what, wants, and, where, can, particle, 18, per, 2.1, company, out, profit, modeled, maximum, find, function, moves, line, 4, them, rule, initial, manufacturer, boxes, equation, hours, expression, speed, unit, price, constant, 5, toys, total, its, given, interval, with, local, sells, factoring, selling, rectangular, toy, producing, cost, 8, 0, straight, revenue, 36, over, consider.
+- Do NOT print this list in the output."
+mathematics,llama,struktur2,21,10303,"What is the value of sin(x) when x = π/4? If we know that cos(x) = 3√2/4 and tan(x) = 1, what is the answer?",A. 1/√2,B. √2 - 1,C. 1/2,D. 1,A,"From the given trigonometric values, we know that sin(x) = cos(x) / tan(x) = (3√2)/4 / 1 = (√2)/4.","The question is internally inconsistent. It first asks for sin(x) when x = π/4, which is a standard value: sin(π/4) = 1/√2.
+It then provides contradictory information. The value cos(x) = 3√2/4 is impossible, as it is greater than 1 (approx. 1.06). Furthermore, if tan(x) = 1, then sin(x) = cos(x), and from sin²(x) + cos²(x) = 1, we get 2cos²(x) = 1, so cos(x) must be ±1/√2, not 3√2/4.
+Ignoring the impossible and contradictory information and answering the first part of the question, the answer is 1/√2.",maia:maia/gemini-2.5-pro,33223,1.0,0.0,Incorrect,0.0,"Clarity: The question is highly ambiguous. It asks a straightforward question and then provides an 'if' clause with contradictory and impossible information, making it unclear what the student is supposed to solve.
+Context Accuracy: The provided value cos(x) = 3√2/4 is mathematically impossible, as the range of the cosine function is [-1, 1] and 3√2/4 is approximately 1.06. The given conditions are self-contradictory.
+Quality of Working: The generator's reasoning is completely flawed. It uses an incorrect trigonometric identity (sin = cos/tan instead of sin = tan*cos) and then makes an arithmetic error, calculating (3√2)/4 / 1 as (√2)/4.
+Final Answer Accuracy: The generator's calculated value is (√2)/4. The correct answer to the only solvable part of the question (sin(π/4)) is 1/√2. The generator's answer is incorrect.","SYSTEM: You are a Grade 12 Mathematics teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 medium-difficulty computational MCQ from ONE of: algebra (functions/inverse/systems), trigonometry (identities/evaluation), basic calculus (limits/derivatives/simple integrals), or short statistics.
+• Use realistic numbers; round to 2 decimals when needed; avoid formal proofs.
+• Distractors must reflect typical mistakes (sign errors, wrong identities, derivative/limit rules, rounding).
+
+CoT (few-shot style; hidden 2–3 steps):
+• Perform multi-step reasoning INTERNALLY; do NOT reveal the steps.
+
+Style example: plan elimination/substitution for a linear system → compute → choose option.
+• Create a NEW problem of the same family (SLE, trig identity+evaluation, derivative+substitution, small-data stats).
+• Distractors map to step errors (bad elimination, wrong identity, wrong derivative rule, wrong rounding).
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object.
+- Format:
+  [{""question"": ""..."", ""options"": [""..."",""..."",""..."",""...""], ""answer"": ""A"", ""solution"": ""...""}]
+- Fields:
+  * ""question"": one string.
+  * ""options"": array of 4 answer-choice strings.
+  * ""answer"": one of ""A"",""B"",""C"",""D"" (just the letter).
+  * ""solution"": short plain-text explanation (a few lines is fine).
+- No extra text before or after the JSON.
+- Do NOT use markdown, code fences, or LaTeX ($ or backslashes).
+USER: Topic: Mathematics. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: inverse, 6, 100, package, 12x, rate, graph, car, which, certain, 2400, first, 15, change, 10, average, 3.25, units, using, that, electronic, 24, value, 7, 25, 9, quadratic, 1, simplified, derivative, along, 02x, let, travels, maximize, has, 0.45, satisfies, from, product, 2, for, 96, new, produces, 3, what, wants, and, where, can, particle, 18, per, 2.1, company, out, profit, modeled, maximum, find, function, moves, line, 4, them, rule, initial, manufacturer, boxes, equation, hours, expression, speed, unit, price, constant, 5, toys, total, its, given, interval, with, local, sells, factoring, selling, rectangular, toy, producing, cost, 8, tangent, 0, straight, revenue, 36, over, consider.
+- Do NOT print this list in the output."
+mathematics,llama,struktur2,22,11940,The function f(x) = x^2 + 3x - 1 is transformed into its reflection about x = 1/2 by which transformation?,Multiply by (-1),Shift left by 1/2,Shift right by 1/2,Reflect over y-axis,D,"To reflect f(x) over x = 1/2, we need to shift the function left by 1/2. This is because the reflection of a point (x, y) about a vertical line x = a is given by the point (x - a, y). In this case, a = 1/2, so we subtract 1/2 from the original function to get the reflected one.","To reflect a function f(x) about a vertical line x = a, the new function g(x) is given by g(x) = f(2a - x).
+In this case, the line of reflection is x = 1/2, so a = 1/2.
+The required transformation is g(x) = f(2*(1/2) - x) = f(1 - x).
+This transformation is a composition of a reflection about the y-axis (x -> -x) and a horizontal shift right by 1 unit (x -> x-1, so -x becomes -(x-1) = 1-x).
+None of the simple transformations listed in the options (A, B, C, D) correspond to f(1-x).
+Therefore, the question is flawed as there is no correct option.",maia:maia/gemini-2.5-pro,35793,1.0,2.0,Incorrect,0.0,"Clarity: The question is worded clearly, but it is fundamentally flawed because the correct transformation, f(1-x), is a composite transformation and is not available in the simple options provided. This makes the question unanswerable.
+Context Accuracy: The problem uses valid mathematical concepts (parabolas, reflections), but the premise is incorrect because the simple transformations offered as options cannot produce the required reflection about x=1/2.
+Quality of Working: The generator's reasoning is completely flawed. It incorrectly defines reflection as a shift ('To reflect... we need to shift...'). The formula it implies for reflection is the formula for a horizontal shift. The reasoning is nonsensical.
+Final Answer Accuracy: The generator's reasoning incorrectly concludes that a left shift is needed (Option B). This is mathematically wrong. The provided key (D) is also incorrect for the question as stated. The generator's solution is incorrect.","SYSTEM: You are a Grade 12 Mathematics teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 medium-difficulty computational MCQ from ONE of: algebra (functions/inverse/systems), trigonometry (identities/evaluation), basic calculus (limits/derivatives/simple integrals), or short statistics.
+• Use realistic numbers; round to 2 decimals when needed; avoid formal proofs.
+• Distractors must reflect typical mistakes (sign errors, wrong identities, derivative/limit rules, rounding).
+
+CoT (few-shot style; hidden 2–3 steps):
+• Perform multi-step reasoning INTERNALLY; do NOT reveal the steps.
+
+Style example: plan elimination/substitution for a linear system → compute → choose option.
+• Create a NEW problem of the same family (SLE, trig identity+evaluation, derivative+substitution, small-data stats).
+• Distractors map to step errors (bad elimination, wrong identity, wrong derivative rule, wrong rounding).
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object.
+- Format:
+  [{""question"": ""..."", ""options"": [""..."",""..."",""..."",""...""], ""answer"": ""A"", ""solution"": ""...""}]
+- Fields:
+  * ""question"": one string.
+  * ""options"": array of 4 answer-choice strings.
+  * ""answer"": one of ""A"",""B"",""C"",""D"" (just the letter).
+  * ""solution"": short plain-text explanation (a few lines is fine).
+- No extra text before or after the JSON.
+- Do NOT use markdown, code fences, or LaTeX ($ or backslashes).
+USER: Topic: Mathematics. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: inverse, 6, 100, package, 12x, rate, graph, car, which, certain, 2400, first, know, 15, change, 10, average, 3.25, units, using, that, electronic, 24, value, 7, 25, 9, quadratic, 1, simplified, derivative, along, 02x, let, travels, when, maximize, has, 0.45, satisfies, from, product, 2, for, 96, new, produces, 3, what, wants, and, where, can, particle, 18, per, 2.1, company, out, profit, modeled, maximum, find, function, moves, line, 4, them, rule, initial, manufacturer, boxes, equation, hours, expression, speed, unit, price, constant, 5, toys, total, its, given, interval, with, local, sells, factoring, selling, rectangular, toy, producing, cost, 8, tangent, sin, 0, straight, revenue, 36, over, consider.
+- Do NOT print this list in the output."
+mathematics,llama,struktur2,23,8830,Find the value of x that satisfies the equation: 2x + 5 = 11.,4.5,-1.5,3.0,6.0,A,"To solve for x, we subtract 5 from both sides of the equation, then divide by 2. This gives us x = (11 - 5)/2 = 3.","The user wants me to solve the linear equation 2x + 5 = 11.
+1. Subtract 5 from both sides of the equation:
+   2x + 5 - 5 = 11 - 5
+   2x = 6
+2. Divide both sides by 2 to isolate x:
+   2x / 2 = 6 / 2
+   x = 3
+3. The correct value for x is 3. This corresponds to option C.",maia:maia/gemini-2.5-pro,12142,5.0,5.0,Correct,5.0,"Clarity: The question is a standard, unambiguous linear equation problem.
+Context Accuracy: This is a pure mathematics problem with no real-world context to evaluate. The mathematical concepts are correct.
+Quality of Working: The generator's reasoning is sound and the calculation is correct. It correctly isolates the variable x to find its value.
+Final Answer Accuracy: The generator correctly solves the equation to find x = 3. It should be noted that the key provided with the question (A) is incorrect. The correct option is C, which matches the generator's answer.","SYSTEM: You are a Grade 12 Mathematics teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 medium-difficulty computational MCQ from ONE of: algebra (functions/inverse/systems), trigonometry (identities/evaluation), basic calculus (limits/derivatives/simple integrals), or short statistics.
+• Use realistic numbers; round to 2 decimals when needed; avoid formal proofs.
+• Distractors must reflect typical mistakes (sign errors, wrong identities, derivative/limit rules, rounding).
+
+CoT (few-shot style; hidden 2–3 steps):
+• Perform multi-step reasoning INTERNALLY; do NOT reveal the steps.
+
+Style example: plan elimination/substitution for a linear system → compute → choose option.
+• Create a NEW problem of the same family (SLE, trig identity+evaluation, derivative+substitution, small-data stats).
+• Distractors map to step errors (bad elimination, wrong identity, wrong derivative rule, wrong rounding).
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object.
+- Format:
+  [{""question"": ""..."", ""options"": [""..."",""..."",""..."",""...""], ""answer"": ""A"", ""solution"": ""...""}]
+- Fields:
+  * ""question"": one string.
+  * ""options"": array of 4 answer-choice strings.
+  * ""answer"": one of ""A"",""B"",""C"",""D"" (just the letter).
+  * ""solution"": short plain-text explanation (a few lines is fine).
+- No extra text before or after the JSON.
+- Do NOT use markdown, code fences, or LaTeX ($ or backslashes).
+USER: Topic: Mathematics. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: inverse, reflection, 6, 100, package, 12x, rate, graph, car, which, certain, 2400, first, know, 15, change, 10, average, into, 3.25, units, using, that, electronic, 24, value, 7, 25, 9, quadratic, transformed, 1, simplified, derivative, along, 02x, let, travels, when, maximize, has, 0.45, satisfies, from, product, 2, for, 96, new, produces, 3, what, wants, and, where, can, particle, 18, per, 2.1, company, out, profit, modeled, maximum, find, function, moves, line, 4, them, rule, initial, manufacturer, boxes, equation, hours, expression, speed, unit, price, constant, 5, about, toys, total, its, given, interval, with, local, sells, transformation, factoring, selling, rectangular, toy, producing, cost, 8, tangent, sin, 0, straight, revenue, 36, over, consider.
+- Do NOT print this list in the output."
+mathematics,llama,struktur2,24,11538,"A company produces boxes at a rate of 250 units every 5 hours. If the total production cost is given by C(x) = 500x + 1500, where x is the number of boxes produced, what is the revenue generated from producing 2000 boxes?",4000,4500,5000,5500,C,"To find the revenue, we need to multiply the production cost by the selling price of each box. Since the problem doesn't provide the selling price, let's assume it remains constant at 2 per box. The total revenue is then R(x) = 2x * C(x). Plugging in x = 2000, we get R(2000) = 2 * (500*2000 + 1500) = 9000.","The question asks for the revenue generated from producing 2000 boxes. Revenue is calculated as (Selling Price per unit) × (Number of units). The problem provides the number of units (x = 2000) and a cost function C(x) = 500x + 1500, but it does not provide the selling price per box. The production rate (250 units every 5 hours) is extraneous information. Without the selling price, the revenue cannot be calculated. Therefore, the question is unsolvable with the given information.",maia:maia/gemini-2.5-pro,25537,0.0,2.0,Incorrect,0.0,"Clarity: The question is fundamentally flawed as it asks for revenue but omits the necessary information to calculate it (the selling price per box). This makes the question impossible to solve.
+
+Context Accuracy: The business scenario is plausible, but the cost function C(x) = 500x + 1500 implies a variable cost of $500 per box, which is an absurdly high and unrealistic value for a generic 'box'.
+
+Quality of Working: The generator's solution is nonsensical. It correctly identifies that the selling price is missing, but then arbitrarily assumes a price of 2. It then uses a conceptually incorrect formula for revenue (multiplying by the cost function) and performs the arithmetic completely wrong, arriving at 9000 when the calculation should yield over 2 million.
+
+Final Answer Accuracy: The generator's calculated answer is 9000, which is not among the options and does not match the provided key (C, which is 5000). The solution is incorrect in every aspect.","SYSTEM: You are a Grade 12 Mathematics teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 medium-difficulty computational MCQ from ONE of: algebra (functions/inverse/systems), trigonometry (identities/evaluation), basic calculus (limits/derivatives/simple integrals), or short statistics.
+• Use realistic numbers; round to 2 decimals when needed; avoid formal proofs.
+• Distractors must reflect typical mistakes (sign errors, wrong identities, derivative/limit rules, rounding).
+
+CoT (few-shot style; hidden 2–3 steps):
+• Perform multi-step reasoning INTERNALLY; do NOT reveal the steps.
+
+Style example: plan elimination/substitution for a linear system → compute → choose option.
+• Create a NEW problem of the same family (SLE, trig identity+evaluation, derivative+substitution, small-data stats).
+• Distractors map to step errors (bad elimination, wrong identity, wrong derivative rule, wrong rounding).
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object.
+- Format:
+  [{""question"": ""..."", ""options"": [""..."",""..."",""..."",""...""], ""answer"": ""A"", ""solution"": ""...""}]
+- Fields:
+  * ""question"": one string.
+  * ""options"": array of 4 answer-choice strings.
+  * ""answer"": one of ""A"",""B"",""C"",""D"" (just the letter).
+  * ""solution"": short plain-text explanation (a few lines is fine).
+- No extra text before or after the JSON.
+- Do NOT use markdown, code fences, or LaTeX ($ or backslashes).
+USER: Topic: Mathematics. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: inverse, reflection, 6, 100, package, 12x, rate, graph, car, which, certain, 2400, first, know, 15, change, 10, average, into, 3.25, units, using, that, electronic, 24, value, 7, 25, 9, quadratic, transformed, 1, simplified, derivative, along, 02x, let, travels, when, maximize, has, 0.45, satisfies, from, product, 2, for, 96, new, produces, 3, what, wants, and, where, can, particle, 18, per, 2.1, company, out, profit, modeled, maximum, find, function, moves, line, 4, them, 11, rule, initial, manufacturer, boxes, equation, hours, expression, speed, unit, price, constant, 5, about, toys, total, its, given, interval, with, local, sells, transformation, factoring, selling, rectangular, toy, producing, cost, 8, tangent, sin, 0, straight, revenue, 36, over, consider.
+- Do NOT print this list in the output."
+mathematics,llama,struktur2,25,14010,"A company sells boxes of toys at a price of x per box. The total revenue is modeled by R(x) = 2x^2 + 5x - 3. If the company wants to maximize its profit, what is the price at which it should sell each box?",1.50,2.25,4.00,6.50,B,"To find the maximum profit, we need to find the critical points of R(x). Taking the derivative of R(x) and setting it equal to 0, we get 4x + 5 = 0 --> x = -5/4. Since this is not a valid price (negative), we consider the endpoints: x = 0 and x = infinity. Plugging these values into R(x), we find that the maximum revenue occurs at x = 2.25, where the company should sell each box for 2.25 to maximize its profit.","The user is asked to maximize profit, but is only given a revenue function, R(x) = 2x^2 + 5x - 3. Assuming the question meant to maximize revenue, we analyze the function R(x).
+This is a quadratic function representing an upward-opening parabola (since the coefficient of x^2 is positive). An upward-opening parabola does not have a maximum value; it increases to infinity as x increases.
+The vertex, found at x = -b/(2a) = -5/4, represents a minimum, not a maximum. 
+Therefore, the question is flawed and has no solution as written. The model is also economically nonsensical.",maia:maia/gemini-2.5-pro,29214,1.0,0.0,Incorrect,0.0,"Clarity: The question is fundamentally flawed. It asks to maximize profit but only provides a revenue function. Even if 'profit' is a typo for 'revenue', the given function has no maximum, making the question impossible to solve.
+Context Accuracy: The revenue model R(x) = 2x^2 + 5x - 3 is economically nonsensical. It's an upward-opening parabola, implying that revenue increases at an accelerating rate as price increases, which is unrealistic. Also, R(0) = -3, which is impossible for revenue.
+Quality of Working: The generator's reasoning is completely invalid. It correctly finds the derivative and the function's minimum, but then discards this and simply asserts that the maximum occurs at x = 2.25 without any mathematical justification. The reasoning does not lead to the answer.
+Final Answer Accuracy: The question is unsolvable as stated. The provided function has no maximum for positive prices. Therefore, the answer 2.25 is incorrect because it cannot be derived from the problem's premises.","SYSTEM: You are a Grade 12 Mathematics teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 medium-difficulty computational MCQ from ONE of: algebra (functions/inverse/systems), trigonometry (identities/evaluation), basic calculus (limits/derivatives/simple integrals), or short statistics.
+• Use realistic numbers; round to 2 decimals when needed; avoid formal proofs.
+• Distractors must reflect typical mistakes (sign errors, wrong identities, derivative/limit rules, rounding).
+
+CoT (few-shot style; hidden 2–3 steps):
+• Perform multi-step reasoning INTERNALLY; do NOT reveal the steps.
+
+Style example: plan elimination/substitution for a linear system → compute → choose option.
+• Create a NEW problem of the same family (SLE, trig identity+evaluation, derivative+substitution, small-data stats).
+• Distractors map to step errors (bad elimination, wrong identity, wrong derivative rule, wrong rounding).
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object.
+- Format:
+  [{""question"": ""..."", ""options"": [""..."",""..."",""..."",""...""], ""answer"": ""A"", ""solution"": ""...""}]
+- Fields:
+  * ""question"": one string.
+  * ""options"": array of 4 answer-choice strings.
+  * ""answer"": one of ""A"",""B"",""C"",""D"" (just the letter).
+  * ""solution"": short plain-text explanation (a few lines is fine).
+- No extra text before or after the JSON.
+- Do NOT use markdown, code fences, or LaTeX ($ or backslashes).
+USER: Topic: Mathematics. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: inverse, reflection, 6, 100, package, 12x, rate, graph, car, which, certain, 2400, first, know, 15, change, 10, average, into, 3.25, units, using, that, electronic, 24, value, 7, 25, 9, quadratic, transformed, 1, simplified, derivative, along, 02x, let, travels, when, maximize, has, 0.45, satisfies, from, product, 2, for, 96, new, produces, 3, what, wants, and, where, can, particle, 18, per, 2.1, company, out, profit, modeled, maximum, find, function, moves, line, 4, them, 11, rule, initial, manufacturer, boxes, equation, hours, expression, speed, unit, 1500, 2000, price, constant, 5, about, toys, total, its, given, interval, with, local, sells, transformation, factoring, selling, 250, rectangular, toy, producing, cost, 8, tangent, sin, 0, straight, revenue, 36, over, consider.
+- Do NOT print this list in the output."
+mathematics,llama,struktur2,26,16539,"A company produces toys and wants to maximize its profit. The revenue from selling x boxes is given by R(x) = 2x^2 + 5x, while the total cost is C(x) = 0.25x^2 + 50. What is the maximum possible profit?",75 when x = 15,100 when x = 20,There is no maximum possible profit.,150 when x = 18,C,"To find the maximum possible profit, we need to find the value of x that maximizes the difference between the revenue and the cost. Let's first find the critical points by taking the derivative of R(x) - C(x) with respect to x: d/dx [(2x^2 + 5x) - (0.25x^2 + 50)] = 4x - 0.5 = 0. Solving for x, we get x = 10. Since this is a critical point and the second derivative at this point is positive, it must be a maximum. The maximum possible profit occurs when x = 10, so R(10) - C(10) = 75.","The profit function is P(x) = Revenue(x) - Cost(x).
+P(x) = (2x^2 + 5x) - (0.25x^2 + 50)
+P(x) = 1.75x^2 + 5x - 50
+This is a quadratic function with a positive leading coefficient (1.75). This means the graph of the function is a parabola that opens upwards.
+An upward-opening parabola does not have a maximum value; it increases indefinitely as x increases.
+Therefore, there is no maximum possible profit.
+The correct option is C.",maia:maia/gemini-2.5-pro,26688,5.0,1.5,Incorrect,0.0,"Clarity: The question is perfectly clear. The functions for revenue and cost are explicitly given, and the objective (maximize profit) is unambiguous.
+Context Accuracy: The context of profit maximization is standard, but the functions are economically unrealistic. The revenue function R(x) = 2x^2 + 5x implies the price per unit (2x+5) increases with quantity, which contradicts the law of demand. This setup leads to an unbounded profit function, which is not a realistic business problem.
+Quality of Working: The generator's solution is completely flawed. It calculates the wrong derivative, incorrectly solves its own incorrect equation for x, and fundamentally misunderstands the second derivative test (a positive second derivative implies a minimum, not a maximum).
+Final Answer Accuracy: The generator's solution concludes that there is a maximum profit of 75. The correct answer is that there is no maximum profit because the profit function increases indefinitely. The generator's answer is incorrect.","SYSTEM: You are a Grade 12 Mathematics teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 medium-difficulty computational MCQ from ONE of: algebra (functions/inverse/systems), trigonometry (identities/evaluation), basic calculus (limits/derivatives/simple integrals), or short statistics.
+• Use realistic numbers; round to 2 decimals when needed; avoid formal proofs.
+• Distractors must reflect typical mistakes (sign errors, wrong identities, derivative/limit rules, rounding).
+
+CoT (few-shot style; hidden 2–3 steps):
+• Perform multi-step reasoning INTERNALLY; do NOT reveal the steps.
+
+Style example: plan elimination/substitution for a linear system → compute → choose option.
+• Create a NEW problem of the same family (SLE, trig identity+evaluation, derivative+substitution, small-data stats).
+• Distractors map to step errors (bad elimination, wrong identity, wrong derivative rule, wrong rounding).
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object.
+- Format:
+  [{""question"": ""..."", ""options"": [""..."",""..."",""..."",""...""], ""answer"": ""A"", ""solution"": ""...""}]
+- Fields:
+  * ""question"": one string.
+  * ""options"": array of 4 answer-choice strings.
+  * ""answer"": one of ""A"",""B"",""C"",""D"" (just the letter).
+  * ""solution"": short plain-text explanation (a few lines is fine).
+- No extra text before or after the JSON.
+- Do NOT use markdown, code fences, or LaTeX ($ or backslashes).
+USER: Topic: Mathematics. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: inverse, reflection, 6, 100, package, 12x, rate, graph, car, which, certain, 2400, first, know, 15, change, 10, average, into, 3.25, units, using, that, electronic, 24, value, 7, 25, 9, quadratic, transformed, 1, simplified, derivative, along, 02x, let, travels, when, maximize, has, box, 0.45, satisfies, from, product, 2, for, 96, new, produces, 3, what, wants, and, where, can, particle, 18, per, 2.1, company, out, profit, modeled, maximum, find, function, moves, line, 4, them, 11, rule, initial, manufacturer, boxes, equation, hours, expression, speed, unit, 1500, 2000, price, constant, 5, about, toys, total, its, given, interval, with, local, sells, transformation, factoring, selling, 250, rectangular, toy, producing, cost, 8, tangent, sin, 0, straight, revenue, 36, over, consider.
+- Do NOT print this list in the output."
+mathematics,llama,struktur2,27,9528,A rectangular toy box measures x cm by 2x + 3 cm. What is the perimeter of the box when x = 5 cm?,24 cm,30 cm,35 cm,40 cm,B,"When x = 5, the dimensions are 5 cm by 2(5) + 3 = 13 cm. So the perimeter is 2(5) + 13 + 5 + 13 = 30 cm.","1. The problem provides the dimensions of a rectangle as x cm and (2x + 3) cm.
+2. We are asked to find the perimeter when x = 5 cm.
+3. First, substitute x = 5 into the expressions for the dimensions.
+   - Width = x = 5 cm.
+   - Length = 2(5) + 3 = 10 + 3 = 13 cm.
+4. The formula for the perimeter of a rectangle is P = 2 * (length + width).
+5. P = 2 * (13 + 5) = 2 * (18) = 36 cm.
+6. The correct perimeter is 36 cm. This is not among the options.",maia:maia/gemini-2.5-pro,32527,2.0,5.0,Incorrect,0.5,"Clarity: The question's text is clear, but it is fundamentally flawed because the correct answer (36 cm) is not available in the options. This makes the question unsolvable as presented and confusing for the user.
+
+Context Accuracy: The context of a rectangular toy box is simple and appropriate. The resulting dimensions (5 cm x 13 cm) are realistic for a small box.
+
+Quality of Working: The generator correctly calculates the dimensions (5 cm and 13 cm). However, the subsequent step is completely wrong: the formula used for the perimeter is nonsensical, and the arithmetic is incorrect (2(5)+13+5+13 = 41, not 30). The working appears to be an attempt to force the incorrect key.
+
+Final Answer Accuracy: The correct answer, based on the question's parameters, is 36 cm. The generator's answer is 30 cm, which is incorrect. The provided key (B) is also incorrect.","SYSTEM: You are a Grade 12 Mathematics teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 medium-difficulty computational MCQ from ONE of: algebra (functions/inverse/systems), trigonometry (identities/evaluation), basic calculus (limits/derivatives/simple integrals), or short statistics.
+• Use realistic numbers; round to 2 decimals when needed; avoid formal proofs.
+• Distractors must reflect typical mistakes (sign errors, wrong identities, derivative/limit rules, rounding).
+
+CoT (few-shot style; hidden 2–3 steps):
+• Perform multi-step reasoning INTERNALLY; do NOT reveal the steps.
+
+Style example: plan elimination/substitution for a linear system → compute → choose option.
+• Create a NEW problem of the same family (SLE, trig identity+evaluation, derivative+substitution, small-data stats).
+• Distractors map to step errors (bad elimination, wrong identity, wrong derivative rule, wrong rounding).
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object.
+- Format:
+  [{""question"": ""..."", ""options"": [""..."",""..."",""..."",""...""], ""answer"": ""A"", ""solution"": ""...""}]
+- Fields:
+  * ""question"": one string.
+  * ""options"": array of 4 answer-choice strings.
+  * ""answer"": one of ""A"",""B"",""C"",""D"" (just the letter).
+  * ""solution"": short plain-text explanation (a few lines is fine).
+- No extra text before or after the JSON.
+- Do NOT use markdown, code fences, or LaTeX ($ or backslashes).
+USER: Topic: Mathematics. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: inverse, reflection, 6, 100, package, 12x, rate, graph, car, which, certain, 2400, first, know, 15, change, 10, average, into, 3.25, units, using, that, electronic, 24, value, 7, 25, 9, quadratic, transformed, 1, simplified, derivative, along, 02x, let, travels, when, maximize, has, box, 0.45, satisfies, from, product, 2, for, 96, new, produces, 3, what, wants, and, where, can, particle, 18, per, 2.1, 50, company, out, profit, modeled, maximum, find, function, moves, line, 4, them, 11, rule, initial, manufacturer, boxes, equation, hours, expression, speed, unit, 1500, 2000, price, constant, 5, about, toys, total, its, given, interval, with, local, sells, transformation, factoring, selling, 250, rectangular, toy, producing, cost, 8, tangent, sin, 0, straight, revenue, 36, over, consider.
+- Do NOT print this list in the output."
+mathematics,llama,struktur2,28,10068,The function g(x) = x^2 + 3x - 4 has an absolute maximum value at what point?,A) x = 1,B) x = 2,C) x = -2,D) x = 0,B,"To find the absolute maximum, we need to take the derivative of g(x) and set it equal to zero. This gives us the critical point x = 2. Since this is a parabola opening upwards, the absolute maximum occurs at this point.","The function given is g(x) = x^2 + 3x - 4.
+This is a quadratic function, which graphs as a parabola.
+The coefficient of the x^2 term is 1, which is positive. This means the parabola opens upwards.
+A parabola that opens upwards has an absolute minimum at its vertex, but it does not have an absolute maximum value because its value increases to infinity as x approaches positive or negative infinity.
+Therefore, the question is flawed as it asks for an absolute maximum that does not exist.",maia:maia/gemini-2.5-pro,18534,1.0,0.0,Incorrect,0.0,"Clarity: The question is worded clearly, but its premise is false. It asks for an absolute maximum of a function that does not have one, which makes the question fundamentally unanswerable and confusing.
+Context Accuracy: The question is conceptually incorrect. A parabola opening upwards (like g(x) = x^2 + 3x - 4) has an absolute minimum, not an absolute maximum. The premise of the question is false.
+Quality of Working: The generator's reasoning is completely flawed. The derivative of g(x) is g'(x) = 2x + 3, so the critical point is at x = -1.5, not x = 2. Furthermore, it incorrectly states that a parabola opening upwards has an absolute maximum at its vertex; it has an absolute minimum.
+Final Answer Accuracy: The question has no correct answer because the function has no absolute maximum. The generator's answer of x=2 is incorrect and does not correspond to any relevant feature of the function. The provided key is also incorrect.","SYSTEM: You are a Grade 12 Mathematics teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 medium-difficulty computational MCQ from ONE of: algebra (functions/inverse/systems), trigonometry (identities/evaluation), basic calculus (limits/derivatives/simple integrals), or short statistics.
+• Use realistic numbers; round to 2 decimals when needed; avoid formal proofs.
+• Distractors must reflect typical mistakes (sign errors, wrong identities, derivative/limit rules, rounding).
+
+CoT (few-shot style; hidden 2–3 steps):
+• Perform multi-step reasoning INTERNALLY; do NOT reveal the steps.
+
+Style example: plan elimination/substitution for a linear system → compute → choose option.
+• Create a NEW problem of the same family (SLE, trig identity+evaluation, derivative+substitution, small-data stats).
+• Distractors map to step errors (bad elimination, wrong identity, wrong derivative rule, wrong rounding).
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object.
+- Format:
+  [{""question"": ""..."", ""options"": [""..."",""..."",""..."",""...""], ""answer"": ""A"", ""solution"": ""...""}]
+- Fields:
+  * ""question"": one string.
+  * ""options"": array of 4 answer-choice strings.
+  * ""answer"": one of ""A"",""B"",""C"",""D"" (just the letter).
+  * ""solution"": short plain-text explanation (a few lines is fine).
+- No extra text before or after the JSON.
+- Do NOT use markdown, code fences, or LaTeX ($ or backslashes).
+USER: Topic: Mathematics. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: inverse, reflection, 6, 100, package, 12x, rate, graph, car, which, certain, 2400, first, know, 15, change, 10, average, into, 3.25, units, using, that, electronic, 24, value, 7, 25, 9, quadratic, transformed, 1, simplified, derivative, along, 02x, let, travels, when, maximize, has, box, 0.45, satisfies, from, product, 2, for, 96, new, produces, 3, what, wants, and, where, can, particle, 18, per, 2.1, 50, company, measures, out, profit, modeled, maximum, find, function, moves, line, 4, them, 11, rule, initial, manufacturer, boxes, equation, hours, expression, speed, unit, 1500, 2000, price, constant, 5, about, toys, total, its, given, interval, with, local, sells, transformation, factoring, perimeter, selling, 250, rectangular, toy, producing, cost, 8, tangent, sin, 0, straight, revenue, 36, over, consider.
+- Do NOT print this list in the output."
+mathematics,llama,struktur2,29,10144,The function f(x) = x^2 + 5x - 3 has a critical point at what value of x?,A: -1/5,B: 0,C: 4,D: 2,B,"To find the critical point, we first find the derivative f'(x) = 2x + 5. Setting this equal to zero gives us an equation in x: 2x + 5 = 0. Solving for x, we get x = -5/2.","To find the critical point of a function, we must find the value of x for which the first derivative, f'(x), is equal to zero or is undefined.
+The function is f(x) = x^2 + 5x - 3.
+The first derivative is f'(x) = 2x + 5.
+Setting the derivative to zero: 2x + 5 = 0.
+Solving for x, we get 2x = -5.
+Thus, the critical point is at x = -5/2.",maia:maia/gemini-2.5-pro,22894,2.0,5.0,Correct,5.0,"Clarity: The question's text is clear, but the multiple-choice item is fundamentally flawed. The correct answer (x = -5/2) is not among the options, and the provided key (B, which is x=0) is also incorrect. This makes the question unsolvable as presented.
+Context Accuracy: The question is a standard, context-free calculus problem. The mathematical concepts are accurate.
+Quality of Working: The generator's solution is perfect. It correctly identifies the method (find the derivative and set to zero), calculates the derivative correctly, and accurately solves for x.
+Final Answer Accuracy: The generator's calculated answer of x = -5/2 is the correct mathematical solution to the question. The error lies entirely within the question's options and key, not the generator's reasoning.","SYSTEM: You are a Grade 12 Mathematics teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 medium-difficulty computational MCQ from ONE of: algebra (functions/inverse/systems), trigonometry (identities/evaluation), basic calculus (limits/derivatives/simple integrals), or short statistics.
+• Use realistic numbers; round to 2 decimals when needed; avoid formal proofs.
+• Distractors must reflect typical mistakes (sign errors, wrong identities, derivative/limit rules, rounding).
+
+CoT (few-shot style; hidden 2–3 steps):
+• Perform multi-step reasoning INTERNALLY; do NOT reveal the steps.
+
+Style example: plan elimination/substitution for a linear system → compute → choose option.
+• Create a NEW problem of the same family (SLE, trig identity+evaluation, derivative+substitution, small-data stats).
+• Distractors map to step errors (bad elimination, wrong identity, wrong derivative rule, wrong rounding).
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object.
+- Format:
+  [{""question"": ""..."", ""options"": [""..."",""..."",""..."",""...""], ""answer"": ""A"", ""solution"": ""...""}]
+- Fields:
+  * ""question"": one string.
+  * ""options"": array of 4 answer-choice strings.
+  * ""answer"": one of ""A"",""B"",""C"",""D"" (just the letter).
+  * ""solution"": short plain-text explanation (a few lines is fine).
+- No extra text before or after the JSON.
+- Do NOT use markdown, code fences, or LaTeX ($ or backslashes).
+USER: Topic: Mathematics. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: inverse, reflection, 6, 100, package, 12x, rate, graph, car, which, certain, 2400, first, know, 15, change, 10, average, into, 3.25, units, using, that, electronic, 24, value, 7, 25, 9, quadratic, transformed, 1, simplified, derivative, along, 02x, let, travels, when, maximize, has, box, 0.45, satisfies, from, product, 2, for, 96, new, produces, 3, what, wants, and, where, can, particle, 18, per, point, 2.1, 50, company, measures, out, profit, modeled, maximum, find, function, moves, line, 4, them, 11, rule, initial, manufacturer, boxes, equation, hours, expression, speed, unit, 1500, 2000, price, constant, 5, about, toys, total, its, given, interval, with, local, sells, transformation, factoring, perimeter, selling, 250, absolute, rectangular, toy, producing, cost, 8, tangent, sin, 0, straight, revenue, 36, over, consider.
+- Do NOT print this list in the output."
+mathematics,llama,struktur2,30,13405,A small business sells toys at a price of p and has a fixed cost of c = 250. What is the maximum profit that can be made if it produces x boxes of toys?,250 when x = 5,500 when x = 10,1250 when x = 20,there is no maximum profit,D,"The profit made by the business is P(x) = p*x - c. To find the maximum profit, we need to find the value of x that maximizes this function. Since p and c are constants, the maximum profit will occur when the first derivative of P(x) with respect to x is equal to zero: p*(1) = 0. This means p = 0. However, since p represents the price at which toys are sold, it cannot be zero. Therefore, there is no maximum profit.","The profit function is P(x) = Revenue - Cost. 
+Revenue is R(x) = p*x, where p is the price and x is the number of boxes.
+The cost is a fixed cost c = 250. There are no variable costs mentioned.
+So, the profit function is P(x) = p*x - 250.
+Assuming the price 'p' is a positive constant (as is normal for a business), P(x) is a linear function of x with a positive slope 'p'.
+A linear function with a positive slope increases indefinitely as its variable (x) increases.
+Therefore, there is no maximum value for the profit; it can be made arbitrarily large by producing and selling more boxes.",maia:maia/gemini-2.5-pro,25025,2.5,1.5,Correct,3.5,"Clarity: The question is under-specified. It omits crucial information like the value of 'p' or a demand function relating price to quantity. This makes the problem a 'trick' question about the nature of linear functions, which may be unclear to students expecting a standard optimization problem.
+Context Accuracy: The economic model is highly unrealistic. A business cannot sell an infinite quantity at a fixed price due to market demand constraints. The model also unrealistically omits variable costs, which are fundamental to production.
+Quality of Working: The generator's reasoning is slightly flawed. It applies the first derivative test (P'(x)=0) to find a maximum, which is a method for finding local extrema. For a linear function, it's better to simply state that the derivative is a positive constant (p>0), meaning the function is always increasing and thus has no maximum. The conclusion is correct, but the justification is incomplete.
+Final Answer Accuracy: The generator's final answer is correct. Given the simplified linear model in the question, the profit is unbounded.","SYSTEM: You are a Grade 12 Mathematics teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 medium-difficulty computational MCQ from ONE of: algebra (functions/inverse/systems), trigonometry (identities/evaluation), basic calculus (limits/derivatives/simple integrals), or short statistics.
+• Use realistic numbers; round to 2 decimals when needed; avoid formal proofs.
+• Distractors must reflect typical mistakes (sign errors, wrong identities, derivative/limit rules, rounding).
+
+CoT (few-shot style; hidden 2–3 steps):
+• Perform multi-step reasoning INTERNALLY; do NOT reveal the steps.
+
+Style example: plan elimination/substitution for a linear system → compute → choose option.
+• Create a NEW problem of the same family (SLE, trig identity+evaluation, derivative+substitution, small-data stats).
+• Distractors map to step errors (bad elimination, wrong identity, wrong derivative rule, wrong rounding).
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object.
+- Format:
+  [{""question"": ""..."", ""options"": [""..."",""..."",""..."",""...""], ""answer"": ""A"", ""solution"": ""...""}]
+- Fields:
+  * ""question"": one string.
+  * ""options"": array of 4 answer-choice strings.
+  * ""answer"": one of ""A"",""B"",""C"",""D"" (just the letter).
+  * ""solution"": short plain-text explanation (a few lines is fine).
+- No extra text before or after the JSON.
+- Do NOT use markdown, code fences, or LaTeX ($ or backslashes).
+USER: Topic: Mathematics. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: inverse, reflection, 6, 100, package, 12x, rate, graph, car, which, certain, 2400, first, know, 15, change, 10, average, into, 3.25, units, using, that, electronic, 24, value, 7, 25, 9, quadratic, transformed, 1, simplified, derivative, along, 02x, let, travels, when, maximize, has, box, 0.45, satisfies, from, product, 2, for, 96, new, produces, 3, what, wants, and, where, can, particle, 18, per, point, 2.1, 50, company, measures, out, profit, modeled, maximum, find, function, moves, line, 4, them, 11, rule, initial, manufacturer, boxes, equation, hours, expression, speed, unit, 1500, 2000, price, constant, 5, about, toys, total, its, given, interval, with, local, sells, transformation, factoring, perimeter, critical, selling, 250, absolute, rectangular, toy, producing, cost, 8, tangent, sin, 0, straight, revenue, 36, over, consider.
+- Do NOT print this list in the output."
+mathematics,llama,struktur2,31,11715,The function f(x) = x^2 + 3x - 4 is reflected across the x-axis. What is the resulting equation?,f(x) = -(x^2 + 3x - 4),f(x) = x^2 - 3x + 4,f(x) = -x^2 - 3x + 4,f(x) = -(x^2 - 3x + 4),C,"To reflect the function f(x) across the x-axis, we multiply it by -1, resulting in -x^2 - 3x + 4.","To reflect a function f(x) across the x-axis, we compute the new function g(x) = -f(x).
+Given f(x) = x^2 + 3x - 4.
+The new function is g(x) = -(x^2 + 3x - 4).
+Distributing the negative sign across the terms in the parenthesis gives:
+g(x) = -x^2 - 3x + 4.
+This equation matches option C.",maia:maia/gemini-2.5-pro,18972,3.5,5.0,Correct,5.0,"Clarity: The question is mostly clear, but the options are poorly formatted. They all use `f(x) = ...` to describe the new, transformed function, which is incorrect notation. Additionally, option A is a non-simplified but correct form of the answer, which could cause confusion alongside the simplified option C.
+Context Accuracy: The question is a standard, conceptually correct problem in algebra about function transformations. The mathematical context is sound.
+Quality of Working: The generator's solution correctly identifies the rule for an x-axis reflection (multiplying the function by -1) and correctly applies it to find the resulting equation. The working is concise and accurate.
+Final Answer Accuracy: The generator's result, -x^2 - 3x + 4, corresponds to option C, which is the correct answer.","SYSTEM: You are a Grade 12 Mathematics teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 medium-difficulty computational MCQ from ONE of: algebra (functions/inverse/systems), trigonometry (identities/evaluation), basic calculus (limits/derivatives/simple integrals), or short statistics.
+• Use realistic numbers; round to 2 decimals when needed; avoid formal proofs.
+• Distractors must reflect typical mistakes (sign errors, wrong identities, derivative/limit rules, rounding).
+
+CoT (few-shot style; hidden 2–3 steps):
+• Perform multi-step reasoning INTERNALLY; do NOT reveal the steps.
+
+Style example: plan elimination/substitution for a linear system → compute → choose option.
+• Create a NEW problem of the same family (SLE, trig identity+evaluation, derivative+substitution, small-data stats).
+• Distractors map to step errors (bad elimination, wrong identity, wrong derivative rule, wrong rounding).
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object.
+- Format:
+  [{""question"": ""..."", ""options"": [""..."",""..."",""..."",""...""], ""answer"": ""A"", ""solution"": ""...""}]
+- Fields:
+  * ""question"": one string.
+  * ""options"": array of 4 answer-choice strings.
+  * ""answer"": one of ""A"",""B"",""C"",""D"" (just the letter).
+  * ""solution"": short plain-text explanation (a few lines is fine).
+- No extra text before or after the JSON.
+- Do NOT use markdown, code fences, or LaTeX ($ or backslashes).
+USER: Topic: Mathematics. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: inverse, reflection, 6, 100, package, 12x, rate, graph, car, which, certain, 2400, first, know, 15, change, 10, average, into, 3.25, units, using, that, electronic, 24, value, 7, 25, 9, quadratic, transformed, 1, simplified, derivative, along, 02x, let, travels, when, maximize, has, box, 0.45, satisfies, from, product, 2, for, 96, new, produces, 3, what, wants, and, where, can, particle, 18, per, point, 2.1, 50, company, measures, out, profit, modeled, maximum, find, function, moves, line, 4, them, 11, rule, initial, manufacturer, boxes, equation, hours, expression, speed, unit, 1500, 2000, price, small, constant, 5, about, toys, total, its, given, interval, with, local, sells, transformation, business, factoring, perimeter, critical, selling, 250, absolute, rectangular, fixed, toy, producing, cost, 8, tangent, sin, 0, straight, revenue, 36, over, consider.
+- Do NOT print this list in the output."
+mathematics,llama,struktur2,32,13654,"A company produces toys and sells them at a profit of 2 per unit. If it costs 5 to produce each toy, what is the maximum revenue that can be generated by producing x units of toys?",10x - 3x,12x - 8x,15x - 5x,18x - 2x,A,"The company makes a profit of 2 per unit, and the cost is 5 per unit. The revenue generated by producing x units will be R(x) = 2x. To maximize revenue, we set the derivative to zero: dR/dx = 0 => 2 - (5/1) * x = 0 => x = 5. So the maximum revenue is R(5) = 10*5 - 3*5 = 35.","Let C be the cost per unit, P be the profit per unit, and S be the selling price per unit. Let x be the number of units.
+The problem states P = 2 and C = 5.
+The relationship between these is: Profit = Selling Price - Cost.
+Therefore, S = P + C = 2 + 5 = 7.
+Total revenue, R(x), is the selling price per unit multiplied by the number of units sold.
+R(x) = S * x = 7x.
+The question asks for the maximum revenue, but the revenue function R(x) = 7x is linear and increases indefinitely with x. There is no maximum unless x is constrained. The question is poorly phrased and is likely just asking for the expression for revenue.
+Looking at the options, Option A is 10x - 3x, which simplifies to 7x. This matches our derived revenue function.",maia:maia/gemini-2.5-pro,22527,1.0,4.0,Incorrect,0.0,"Clarity: The question is very unclear. It asks for the ""maximum revenue"" of a linear function, R(x) = 7x, which has no maximum value without a constraint on x. It should have simply asked for the expression representing revenue.
+
+Context Accuracy: The business context is simple and standard. The values for cost and profit are reasonable for a basic economics problem.
+
+Quality of Working: The generator's reasoning is completely flawed. It incorrectly states that revenue is R(x) = 2x (confusing it with profit). It then invents a nonsensical derivative expression (2 - 5x) to find a maximum, which has no basis in the problem. The entire method is invalid.
+
+Final Answer Accuracy: The generator outputs a numerical value, 35, which it calls the maximum revenue. The correct answer is an algebraic expression, 7x, represented by option A. The generator's answer is incorrect in both its form and its derivation.","SYSTEM: You are a Grade 12 Mathematics teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 medium-difficulty computational MCQ from ONE of: algebra (functions/inverse/systems), trigonometry (identities/evaluation), basic calculus (limits/derivatives/simple integrals), or short statistics.
+• Use realistic numbers; round to 2 decimals when needed; avoid formal proofs.
+• Distractors must reflect typical mistakes (sign errors, wrong identities, derivative/limit rules, rounding).
+
+CoT (few-shot style; hidden 2–3 steps):
+• Perform multi-step reasoning INTERNALLY; do NOT reveal the steps.
+
+Style example: plan elimination/substitution for a linear system → compute → choose option.
+• Create a NEW problem of the same family (SLE, trig identity+evaluation, derivative+substitution, small-data stats).
+• Distractors map to step errors (bad elimination, wrong identity, wrong derivative rule, wrong rounding).
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object.
+- Format:
+  [{""question"": ""..."", ""options"": [""..."",""..."",""..."",""...""], ""answer"": ""A"", ""solution"": ""...""}]
+- Fields:
+  * ""question"": one string.
+  * ""options"": array of 4 answer-choice strings.
+  * ""answer"": one of ""A"",""B"",""C"",""D"" (just the letter).
+  * ""solution"": short plain-text explanation (a few lines is fine).
+- No extra text before or after the JSON.
+- Do NOT use markdown, code fences, or LaTeX ($ or backslashes).
+USER: Topic: Mathematics. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: inverse, reflection, 6, 100, package, 12x, rate, graph, car, which, certain, 2400, first, reflected, know, 15, change, 10, average, into, 3.25, units, using, that, electronic, across, 24, value, 7, 25, 9, quadratic, transformed, 1, simplified, derivative, along, 02x, let, travels, when, maximize, has, box, 0.45, satisfies, from, product, 2, for, 96, new, produces, resulting, 3, what, wants, and, where, can, particle, 18, per, point, 2.1, 50, x-axis, company, measures, out, profit, modeled, maximum, find, function, moves, line, 4, them, 11, rule, initial, manufacturer, boxes, equation, hours, expression, speed, unit, 1500, 2000, price, small, constant, 5, about, toys, total, its, given, interval, with, local, sells, transformation, business, factoring, perimeter, critical, selling, 250, absolute, rectangular, fixed, toy, producing, cost, 8, tangent, sin, 0, straight, revenue, 36, over, consider.
+- Do NOT print this list in the output."
+mathematics,llama,struktur2,33,11681,"A company sells toys at a price of x + 20 per unit and has a fixed cost of 2400. If the profit is modeled by the function P(x) = (x)(p - x - 20), where p is the maximum revenue, what is the value of x that maximizes the profit?",A450,B550,C650,D750,C,"To find the maximum profit, we need to find the vertex of the parabola P(x). The x-coordinate of the vertex is given by -b/(2a), where a = 1 and b = -20. Plugging in these values, we get x ≈ 550.","The problem is unsolvable as it contains multiple contradictions. First, the revenue function derived from the given price and quantity, R(x) = x(x+20), is an upward-opening parabola and has no maximum. This contradicts the definition of 'p' as the maximum revenue. Second, the given profit function P(x) = x(p - x - 20) has a constant term of zero, which contradicts the stated fixed cost of 2400 that should appear as a negative constant in the profit equation. Due to these fundamental inconsistencies, no logical solution can be derived.",maia:maia/gemini-2.5-pro,72033,0.0,0.0,Incorrect,0.0,"Clarity: The question's premises are self-contradictory, making it impossible to solve. The revenue function has no maximum, but a 'maximum revenue' parameter is used. The profit function form contradicts the given fixed cost.
+
+Context Accuracy: The economic model is nonsensical. A price that increases with quantity sold (price = x + 20) is unrealistic, as is the resulting revenue function that grows infinitely.
+
+Quality of Working: The generator's solution is nonsensical. It assumes coefficients (a=1, b=-20) that do not correspond to the problem's profit function. Its calculation of the vertex from these coefficients is arithmetically incorrect (-(-20)/(2*1) = 10, not 550). It simply states an answer that matches one of the options without valid reasoning.
+
+Final Answer Accuracy: The generator's answer is 550 (Option B), while the provided key is C (650). Therefore, the generator's answer is incorrect.","SYSTEM: You are a Grade 12 Mathematics teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 medium-difficulty computational MCQ from ONE of: algebra (functions/inverse/systems), trigonometry (identities/evaluation), basic calculus (limits/derivatives/simple integrals), or short statistics.
+• Use realistic numbers; round to 2 decimals when needed; avoid formal proofs.
+• Distractors must reflect typical mistakes (sign errors, wrong identities, derivative/limit rules, rounding).
+
+CoT (few-shot style; hidden 2–3 steps):
+• Perform multi-step reasoning INTERNALLY; do NOT reveal the steps.
+
+Style example: plan elimination/substitution for a linear system → compute → choose option.
+• Create a NEW problem of the same family (SLE, trig identity+evaluation, derivative+substitution, small-data stats).
+• Distractors map to step errors (bad elimination, wrong identity, wrong derivative rule, wrong rounding).
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object.
+- Format:
+  [{""question"": ""..."", ""options"": [""..."",""..."",""..."",""...""], ""answer"": ""A"", ""solution"": ""...""}]
+- Fields:
+  * ""question"": one string.
+  * ""options"": array of 4 answer-choice strings.
+  * ""answer"": one of ""A"",""B"",""C"",""D"" (just the letter).
+  * ""solution"": short plain-text explanation (a few lines is fine).
+- No extra text before or after the JSON.
+- Do NOT use markdown, code fences, or LaTeX ($ or backslashes).
+USER: Topic: Mathematics. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: inverse, reflection, 6, 100, package, 12x, rate, graph, car, which, certain, 2400, first, reflected, know, 15, change, 10, average, into, 3.25, units, using, that, electronic, across, 24, value, 7, 25, 9, quadratic, transformed, 1, simplified, derivative, along, 02x, let, travels, when, maximize, has, box, 0.45, satisfies, from, product, 2, for, 96, new, produces, resulting, 3, what, wants, and, where, can, particle, 18, per, point, 2.1, 50, x-axis, company, measures, out, profit, modeled, maximum, find, function, moves, line, 4, them, 11, rule, initial, manufacturer, boxes, equation, hours, expression, speed, unit, 1500, 2000, price, small, constant, 5, about, toys, total, its, given, interval, with, local, sells, transformation, business, factoring, perimeter, critical, selling, 250, absolute, rectangular, fixed, toy, producing, cost, 8, tangent, sin, 0, straight, revenue, 36, over, consider.
+- Do NOT print this list in the output."
+mathematics,llama,struktur2,34,11552,A company produces toys at a cost of 2 per unit and sells them for 5 each. What is the maximum profit that can be made by producing x units of toys?,0 when x = 4,2 when x = 10,4 when x = 8,12 when x = 6,D,"The maximum profit occurs when the cost is equal to the revenue. The cost is 2x, and the revenue is 5x. Setting them equal and solving for x gives 0 = 3x, so x = 8. The maximum profit is then 5(8) - 2(8) = 28.","1. The profit per unit is the selling price minus the cost per unit: 5 - 2 = 3.
+2. The total profit, P, for producing and selling x units is given by the function P(x) = 3x.
+3. This is a linear function with a positive slope. Therefore, profit increases as x increases, and there is no maximum profit unless there is a constraint on x, which is not provided. The question is ill-posed.
+4. We can check if any of the options are arithmetically correct. For option D, if x = 6, the profit should be P(6) = 3 * 6 = 18.
+5. The option states a profit of 12. This is incorrect. In fact, all four options are arithmetically inconsistent with the profit function P(x) = 3x.",maia:maia/gemini-2.5-pro,34570,1.0,2.5,Incorrect,0.0,"Clarity: The question is fundamentally flawed. It asks for a 'maximum profit' for a linear profit function (P=3x), which has no maximum. The question's objective is therefore nonsensical as stated.
+
+Context Accuracy: The context of calculating profit from cost and revenue is correct. However, the model is oversimplified to the point of being misleading, as finding a 'maximum' profit for an unconstrained linear function is not a valid business problem.
+
+Quality of Working: The generator's reasoning is completely wrong. It claims maximum profit occurs when cost equals revenue (the break-even point), which is false. It then incorrectly solves the equation 3x=0 as x=8 and miscalculates the final profit. The entire working is nonsensical.
+
+Final Answer Accuracy: The generator's flawed logic does not lead to the provided key (D). Furthermore, the key itself is incorrect, as the profit for x=6 is 18, not 12. The generator's solution is incorrect in every aspect.","SYSTEM: You are a Grade 12 Mathematics teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 medium-difficulty computational MCQ from ONE of: algebra (functions/inverse/systems), trigonometry (identities/evaluation), basic calculus (limits/derivatives/simple integrals), or short statistics.
+• Use realistic numbers; round to 2 decimals when needed; avoid formal proofs.
+• Distractors must reflect typical mistakes (sign errors, wrong identities, derivative/limit rules, rounding).
+
+CoT (few-shot style; hidden 2–3 steps):
+• Perform multi-step reasoning INTERNALLY; do NOT reveal the steps.
+
+Style example: plan elimination/substitution for a linear system → compute → choose option.
+• Create a NEW problem of the same family (SLE, trig identity+evaluation, derivative+substitution, small-data stats).
+• Distractors map to step errors (bad elimination, wrong identity, wrong derivative rule, wrong rounding).
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object.
+- Format:
+  [{""question"": ""..."", ""options"": [""..."",""..."",""..."",""...""], ""answer"": ""A"", ""solution"": ""...""}]
+- Fields:
+  * ""question"": one string.
+  * ""options"": array of 4 answer-choice strings.
+  * ""answer"": one of ""A"",""B"",""C"",""D"" (just the letter).
+  * ""solution"": short plain-text explanation (a few lines is fine).
+- No extra text before or after the JSON.
+- Do NOT use markdown, code fences, or LaTeX ($ or backslashes).
+USER: Topic: Mathematics. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: inverse, 20, reflection, 6, 100, package, 12x, rate, graph, car, which, certain, 2400, first, reflected, know, 15, change, 10, average, into, 3.25, units, using, that, electronic, across, 24, value, 7, 25, 9, quadratic, transformed, 1, simplified, derivative, along, 02x, let, travels, when, maximize, has, box, 0.45, satisfies, from, product, 2, for, 96, new, produces, resulting, 3, what, wants, and, where, can, particle, 18, per, point, 2.1, 50, x-axis, company, measures, out, profit, modeled, maximum, find, function, moves, line, 4, them, 11, rule, initial, manufacturer, boxes, equation, hours, expression, speed, unit, 1500, 2000, price, small, constant, 5, about, toys, total, its, given, interval, with, local, sells, transformation, business, factoring, perimeter, critical, selling, 250, absolute, rectangular, fixed, toy, producing, cost, 8, tangent, sin, 0, straight, revenue, 36, over, consider.
+- Do NOT print this list in the output."
+mathematics,llama,struktur2,36,11805,"A company sells toys at a price of p(x) = 2x + 5 and incurs a cost of c(x) = x^2 + 3x. Find the profit function P(x), assuming that the revenue is greater than or equal to the cost. What is the maximum possible revenue?",P(x) = -x^2 + 7x,P(x) = x^2 + 9x,P(x) = 3x^2 + 5x,P(x) = 2x^2 - 2x,A,"To find the profit function P(x), we need to subtract the cost from the revenue. The revenue is given by R(x) = p(x), which is a function of x. We set c(x) ≥ R(x) and solve for P(x). Simplifying, we get P(x) = -x^2 + 7x.","The profit function P(x) is the difference between the revenue function R(x) and the cost function c(x).
+The revenue R(x) is the product of the number of items sold, x, and the price per item, p(x).
+R(x) = x * p(x) = x(2x + 5) = 2x^2 + 5x.
+The cost function is given as c(x) = x^2 + 3x.
+Therefore, the profit function is P(x) = R(x) - c(x) = (2x^2 + 5x) - (x^2 + 3x) = x^2 + 2x.
+This result does not match any of the options provided. The question is flawed.
+Additionally, the revenue function R(x) = 2x^2 + 5x is an upward-opening parabola and has no maximum, so the second part of the question is unanswerable.",maia:maia/gemini-2.5-pro,44957,1.0,1.0,Correct,0.0,"Clarity: The question is very poorly constructed. It asks for two values (profit function and max revenue) but the options only list profit functions. More importantly, the functions provided in the stem do not lead to any of the options, indicating a fundamental error in the question's data.
+
+Context Accuracy: The economic context is flawed. A price function p(x) = 2x + 5, where price increases with quantity, is unrealistic. This leads to a revenue function R(x) = 2x^2 + 5x which has no maximum, making the second part of the question impossible to answer.
+
+Quality of Working: The generator's working is nonsensical. It incorrectly states that revenue equals the price function (R(x)=p(x)). It then sets up a nonsensical inequality (c(x) >= R(x)) that contradicts the problem statement. The final answer does not follow from its own flawed logic; it appears to be fabricated to match the key.
+
+Final Answer Accuracy: The generator's answer matches the provided key (A). Although the key is incorrect for the question as written, the generator successfully identified the intended answer for this flawed question. Therefore, its final answer is technically 'Correct' relative to the key.","SYSTEM: You are a Grade 12 Mathematics teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 medium-difficulty computational MCQ from ONE of: algebra (functions/inverse/systems), trigonometry (identities/evaluation), basic calculus (limits/derivatives/simple integrals), or short statistics.
+• Use realistic numbers; round to 2 decimals when needed; avoid formal proofs.
+• Distractors must reflect typical mistakes (sign errors, wrong identities, derivative/limit rules, rounding).
+
+CoT (few-shot style; hidden 2–3 steps):
+• Perform multi-step reasoning INTERNALLY; do NOT reveal the steps.
+
+Style example: plan elimination/substitution for a linear system → compute → choose option.
+• Create a NEW problem of the same family (SLE, trig identity+evaluation, derivative+substitution, small-data stats).
+• Distractors map to step errors (bad elimination, wrong identity, wrong derivative rule, wrong rounding).
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object.
+- Format:
+  [{""question"": ""..."", ""options"": [""..."",""..."",""..."",""...""], ""answer"": ""A"", ""solution"": ""...""}]
+- Fields:
+  * ""question"": one string.
+  * ""options"": array of 4 answer-choice strings.
+  * ""answer"": one of ""A"",""B"",""C"",""D"" (just the letter).
+  * ""solution"": short plain-text explanation (a few lines is fine).
+- No extra text before or after the JSON.
+- Do NOT use markdown, code fences, or LaTeX ($ or backslashes).
+USER: Topic: Mathematics. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: inverse, 20, reflection, 6, 100, package, 12x, rate, graph, car, which, certain, 2400, first, reflected, know, 15, change, 10, average, into, 3.25, units, using, that, electronic, across, 24, value, 7, 25, 9, quadratic, transformed, 1, simplified, derivative, along, 02x, let, travels, when, maximize, has, box, 0.45, satisfies, from, product, 2, for, 96, new, produces, resulting, 3, what, wants, and, where, can, particle, 18, per, point, 2.1, 50, x-axis, company, measures, out, profit, modeled, maximum, find, function, moves, line, 4, them, 11, rule, initial, manufacturer, boxes, equation, hours, expression, speed, unit, 1500, 2000, price, small, constant, 5, about, toys, total, its, given, interval, with, local, sells, transformation, business, factoring, perimeter, critical, selling, 250, absolute, rectangular, fixed, toy, producing, cost, 8, tangent, sin, 0, straight, revenue, 36, over, consider.
+- Do NOT print this list in the output."
+mathematics,llama,struktur2,37,12414,Find the derivative of the function f(x) = (x^2 + 3x - 1)/(x+1) at x=-1.,f'(-1)=0,f'(-1)=1/4,f'(-1)=-1/2,f'(-1) cannot be determined,C,"To find the derivative, we can use the quotient rule: (x^2+3x-1)'(x+1)^2 - (x^2+3x-1)(x+1)'. We evaluate this at x=-1 to get f'(-1)=(-4+6-1)/2-(1/2)(-1) = 0.5.","The function f(x) = (x^2 + 3x - 1)/(x+1) is not defined at x = -1 because the denominator (x+1) becomes zero. For a function to be differentiable at a point, it must be continuous at that point. Since f(x) is not continuous at x = -1 (it has a vertical asymptote), it is not differentiable at x = -1. Therefore, f'(-1) cannot be determined.",maia:maia/gemini-2.5-pro,26185,5.0,5.0,Incorrect,0.0,"Clarity: The question is perfectly clear, using standard mathematical notation and phrasing for a calculus problem.
+Context Accuracy: This is a pure mathematics problem. The function and values are standard and appropriate for the topic.
+Quality of Working: The generator's solution is fundamentally flawed. It fails to check the function's domain and continuity at x=-1, which is the critical first step. It then applies a completely incorrect formula for differentiation and performs an opaque calculation. The entire reasoning is invalid.
+Final Answer Accuracy: The correct answer is that the derivative cannot be determined. The generator's answer of 0.5 is incorrect. Note that the provided key (C, -0.5) is also incorrect.","SYSTEM: You are a Grade 12 Mathematics teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 medium-difficulty computational MCQ from ONE of: algebra (functions/inverse/systems), trigonometry (identities/evaluation), basic calculus (limits/derivatives/simple integrals), or short statistics.
+• Use realistic numbers; round to 2 decimals when needed; avoid formal proofs.
+• Distractors must reflect typical mistakes (sign errors, wrong identities, derivative/limit rules, rounding).
+
+CoT (few-shot style; hidden 2–3 steps):
+• Perform multi-step reasoning INTERNALLY; do NOT reveal the steps.
+
+Style example: plan elimination/substitution for a linear system → compute → choose option.
+• Create a NEW problem of the same family (SLE, trig identity+evaluation, derivative+substitution, small-data stats).
+• Distractors map to step errors (bad elimination, wrong identity, wrong derivative rule, wrong rounding).
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object.
+- Format:
+  [{""question"": ""..."", ""options"": [""..."",""..."",""..."",""...""], ""answer"": ""A"", ""solution"": ""...""}]
+- Fields:
+  * ""question"": one string.
+  * ""options"": array of 4 answer-choice strings.
+  * ""answer"": one of ""A"",""B"",""C"",""D"" (just the letter).
+  * ""solution"": short plain-text explanation (a few lines is fine).
+- No extra text before or after the JSON.
+- Do NOT use markdown, code fences, or LaTeX ($ or backslashes).
+USER: Topic: Mathematics. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: inverse, incurs, 20, reflection, 6, 100, package, 12x, rate, graph, car, which, certain, 2400, first, reflected, know, 15, change, 10, average, into, 3.25, units, using, that, electronic, across, 24, value, 7, 25, 9, quadratic, transformed, 1, simplified, derivative, along, 02x, let, travels, when, maximize, has, box, 0.45, satisfies, from, product, 2, for, 96, new, produces, resulting, 3, what, wants, and, where, can, particle, 18, per, point, 2.1, 50, x-axis, company, measures, out, profit, modeled, maximum, find, function, moves, line, 4, them, 11, rule, initial, manufacturer, boxes, equation, hours, expression, speed, unit, 1500, 2000, price, small, constant, 5, about, toys, total, its, given, interval, with, local, sells, transformation, business, factoring, perimeter, critical, selling, 250, absolute, rectangular, fixed, toy, producing, cost, 8, tangent, sin, 0, straight, revenue, 36, over, consider.
+- Do NOT print this list in the output."
+mathematics,llama,struktur2,38,12133,"A company sells toys and makes a profit of 50 per box. If it costs 25 to make each toy, what is the maximum profit it can make if it sells boxes containing at most 8 toys?",100,200,300,400,C,"The company makes a profit of 50 per box. Since it costs 25 to make each toy, and there are at most 8 toys per box, the maximum total cost is 25 * 8 = 200. Therefore, the maximum profit is 50 - 200 = -150. However, since profit cannot be negative, we can't sell any boxes. If we sell no boxes, our profit is 0. So, the correct answer is not among the options. The company will never make a profit.",,,,,,,,,"SYSTEM: You are a Grade 12 Mathematics teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 medium-difficulty computational MCQ from ONE of: algebra (functions/inverse/systems), trigonometry (identities/evaluation), basic calculus (limits/derivatives/simple integrals), or short statistics.
+• Use realistic numbers; round to 2 decimals when needed; avoid formal proofs.
+• Distractors must reflect typical mistakes (sign errors, wrong identities, derivative/limit rules, rounding).
+
+CoT (few-shot style; hidden 2–3 steps):
+• Perform multi-step reasoning INTERNALLY; do NOT reveal the steps.
+
+Style example: plan elimination/substitution for a linear system → compute → choose option.
+• Create a NEW problem of the same family (SLE, trig identity+evaluation, derivative+substitution, small-data stats).
+• Distractors map to step errors (bad elimination, wrong identity, wrong derivative rule, wrong rounding).
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object.
+- Format:
+  [{""question"": ""..."", ""options"": [""..."",""..."",""..."",""...""], ""answer"": ""A"", ""solution"": ""...""}]
+- Fields:
+  * ""question"": one string.
+  * ""options"": array of 4 answer-choice strings.
+  * ""answer"": one of ""A"",""B"",""C"",""D"" (just the letter).
+  * ""solution"": short plain-text explanation (a few lines is fine).
+- No extra text before or after the JSON.
+- Do NOT use markdown, code fences, or LaTeX ($ or backslashes).
+USER: Topic: Mathematics. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: inverse, incurs, 20, reflection, 6, 100, package, 12x, rate, graph, car, which, certain, 2400, first, reflected, know, 15, change, 10, average, into, 3.25, units, using, that, electronic, across, 24, value, 7, 25, 9, quadratic, transformed, 1, simplified, derivative, along, 02x, let, travels, when, maximize, has, box, 0.45, satisfies, from, product, 2, for, 96, new, produces, resulting, 3, what, wants, and, where, can, particle, 18, per, point, 2.1, 50, x-axis, company, measures, out, profit, modeled, maximum, find, function, moves, line, 4, them, 11, rule, initial, manufacturer, boxes, equation, hours, expression, speed, unit, 1500, 2000, price, small, constant, 5, about, toys, total, its, given, interval, with, local, sells, transformation, business, factoring, perimeter, critical, selling, 250, absolute, rectangular, fixed, toy, producing, cost, 8, tangent, sin, 0, straight, revenue, 36, over, consider.
+- Do NOT print this list in the output."

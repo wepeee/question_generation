@@ -1,0 +1,20 @@
+topic,model,struktur,index,latency_model_ms,question,optionA,optionB,optionC,optionD,answer,solution_model,solution_verifier,verifier_model,latency_verifier_ms,clarity,context_accuracy,final_answer_accuracy,quality_of_working,judge_notes,prompt_generator
+mathematics,phi,struktur1,1,11695,A function is defined as (f(x) = rac2x^2 - 5x + 3x - 1). What is the value of its limit as x approaches 1?,-1,-0.5,Infinity,Undefined,D,"The function appears to have a removable discontinuity at (x = 1). Factoring the numerator gives us ((2x - 3)(x - 1)), and canceling out the common factor with the denominator, we get (lim_x to 1 f(x) = 2(1) - 3 = -1), but since this is not one of the options due to a mistake in simplification. The correct approach would be direct substitution after canceling out the common factor which gives us (f(1) = rac2(1)^2 - 5(1) + 31 - 1 = rac00), an indeterminate form, so we apply L'Hôpital's Rule by differentiating the numerator and denominator separately. The derivative of the numerator is (4x - 5) which at x=1 gives us 4(1) - 5 = -1; for the denominator it remains as (since its limit will be a constant), hence (lim_x to 1 f'(x) = rac-10). However, this is an incorrect application of L'Hôpital's Rule because after simplification and direct substitution we should not end up with division by zero. The correct limit calculation using simplified function (f(x) = 2x - 3) when x approaches 1 would be (lim_x to 1 f(x) = 2(1) - 3 = -1), which is option B.",,,,,,,,,"SYSTEM: You are a Grade 12 Mathematics teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 medium-difficulty computational MCQ from ONE of: algebra (functions/inverse/systems), trigonometry (identities/evaluation), basic calculus (limits/derivatives/simple integrals), or short statistics.
+• Use realistic numbers; round to 2 decimals when needed; avoid formal proofs.
+• Distractors must reflect typical mistakes (sign errors, wrong identities, derivative/limit rules, rounding).
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object.
+- Format:
+  [{""question"": ""..."", ""options"": [""..."",""..."",""..."",""...""], ""answer"": ""A"", ""solution"": ""...""}]
+- Fields:
+  * ""question"": one string.
+  * ""options"": array of 4 answer-choice strings.
+  * ""answer"": one of ""A"",""B"",""C"",""D"" (just the letter).
+  * ""solution"": short plain-text explanation (a few lines is fine).
+- No extra text before or after the JSON.
+- Do NOT use markdown, code fences, or LaTeX ($ or backslashes).
+USER: Topic: Mathematics. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field."

@@ -1,0 +1,40 @@
+topic,model,struktur,index,latency_model_ms,question,optionA,optionB,optionC,optionD,answer,solution_model,solution_verifier,verifier_model,latency_verifier_ms,clarity,context_accuracy,final_answer_accuracy,quality_of_working,judge_notes,prompt_generator
+mathematics,llama,struktur2,1,22138,"Find the derivative of f(x) = (2x^2 + 5x - 3) / (x+1), where x is not equal to -1.",(4x+2)/(x+1),(2x-1)/(x+1),2x/(x+1),(2x^2 + 5x - 3)',A,"To find the derivative, apply the quotient rule to f(x). The numerator is a polynomial with degree 2. Take the derivative of each term using power rule, and then simplify. Then, apply the chain rule for the denominator by differentiating x+1 and multiplying by the derivative of the numerator's denominator. Combine these results.","To find the derivative of f(x) = (2x^2 + 5x - 3) / (x+1), the quotient rule is applied: f'(x) = [v(x)u'(x) - u(x)v'(x)] / [v(x)]^2.
+Let u(x) = 2x^2 + 5x - 3, so u'(x) = 4x + 5.
+Let v(x) = x + 1, so v'(x) = 1.
+Plugging these into the rule:
+f'(x) = [(x+1)(4x+5) - (2x^2 + 5x - 3)(1)] / (x+1)^2
+f'(x) = [4x^2 + 9x + 5 - 2x^2 - 5x + 3] / (x+1)^2
+f'(x) = (2x^2 + 4x + 8) / (x+1)^2.
+This correct answer is not among the options provided.",maia:maia/gemini-2.5-pro,38900,5.0,0.0,Incorrect,0.0,"Clarity: The question is clearly stated, using standard mathematical notation.
+
+Context Accuracy: The question itself is a standard calculus problem. However, all the provided options are incorrect, and the key is incorrect. A question with no correct answer is fundamentally flawed, hence a score of 0.
+
+Quality of Working: The generator's solution is nonsensical. It correctly names the quotient rule but then describes a garbled and incorrect procedure involving phrases like ""apply the chain rule for the denominator"" and ""derivative of the numerator's denominator"". It shows no actual calculation or understanding of the method.
+
+Final Answer Accuracy: The correct derivative is (2x^2 + 4x + 8)/(x+1)^2. The provided key 'A' corresponds to the option (4x+2)/(x+1), which is incorrect. The denominator alone, which should be (x+1)^2, proves all options are wrong.","SYSTEM: You are a Grade 12 Mathematics teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 medium-difficulty computational MCQ from ONE of: algebra (functions/inverse/systems), trigonometry (identities/evaluation), basic calculus (limits/derivatives/simple integrals), or short statistics.
+• Use realistic numbers; round to 2 decimals when needed; avoid formal proofs.
+• Distractors must reflect typical mistakes (sign errors, wrong identities, derivative/limit rules, rounding).
+
+CoT (few-shot style; hidden 2–3 steps):
+• Perform multi-step reasoning INTERNALLY; do NOT reveal the steps.
+
+Style example: plan elimination/substitution for a linear system → compute → choose option.
+• Create a NEW problem of the same family (SLE, trig identity+evaluation, derivative+substitution, small-data stats).
+• Distractors map to step errors (bad elimination, wrong identity, wrong derivative rule, wrong rounding).
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object.
+- Format:
+  [{""question"": ""..."", ""options"": [""..."",""..."",""..."",""...""], ""answer"": ""A"", ""solution"": ""...""}]
+- Fields:
+  * ""question"": one string.
+  * ""options"": array of 4 answer-choice strings.
+  * ""answer"": one of ""A"",""B"",""C"",""D"" (just the letter).
+  * ""solution"": short plain-text explanation (a few lines is fine).
+- No extra text before or after the JSON.
+- Do NOT use markdown, code fences, or LaTeX ($ or backslashes).
+USER: Topic: Mathematics. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field."

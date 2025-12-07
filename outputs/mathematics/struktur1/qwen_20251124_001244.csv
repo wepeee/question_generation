@@ -1,0 +1,581 @@
+topic,model,struktur,index,latency_model_ms,question,optionA,optionB,optionC,optionD,answer,solution_model,solution_verifier,verifier_model,latency_verifier_ms,clarity,context_accuracy,final_answer_accuracy,quality_of_working,judge_notes,prompt_generator
+mathematics,qwen,struktur1,1,4705,What is the value of the limit as x approaches 0 of (sin(2x))/(x)?,A. 2,B. 0,C. 1,D. -2,A,"To find the limit as x approaches 0 of (sin(2x))/(x), we can use the known limit (sin(x))/(x) = 1 as x approaches 0. Rewrite the expression as 2 * (sin(2x))/(2x). As x approaches 0, 2x also approaches 0, so the limit is 2 * 1 = 2.","The problem is to find the limit of sin(2x)/x as x approaches 0. This is an indeterminate form 0/0.
+We can use the fundamental trigonometric limit: lim (u -> 0) of sin(u)/u = 1.
+To match this form, we multiply the numerator and denominator by 2:
+lim (x -> 0) [sin(2x)/x] = lim (x -> 0) [2 * sin(2x) / (2x)]
+We can pull the constant 2 out of the limit:
+= 2 * lim (x -> 0) [sin(2x) / (2x)]
+Let u = 2x. As x -> 0, u also approaches 0. The limit becomes:
+= 2 * lim (u -> 0) [sin(u)/u] = 2 * 1 = 2.",gemini:gemini-2.5-pro,18980,5.0,5.0,Correct,5.0,"Clarity: The question is a standard, well-phrased calculus problem with clear notation and unambiguous options.
+Context Accuracy: The problem is a fundamental concept in calculus (limits) and is mathematically sound. No real-world context is present.
+Quality of Working: The generator's solution uses a standard and correct method by manipulating the expression to fit the known limit of sin(u)/u. The reasoning is sound and efficient.
+Final Answer Accuracy: The generator's answer of 2 is correct, matching the result from both L'Hôpital's Rule and the fundamental trigonometric limit method.","SYSTEM: You are a Grade 12 Mathematics teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 medium-difficulty computational MCQ from ONE of: algebra (functions/inverse/systems), trigonometry (identities/evaluation), basic calculus (limits/derivatives/simple integrals), or short statistics.
+• Use realistic numbers; round to 2 decimals when needed; avoid formal proofs.
+• Distractors must reflect typical mistakes (sign errors, wrong identities, derivative/limit rules, rounding).
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object:
+  [{""question"":""..."",""options"":[""A. ..."",""B. ..."",""C. ..."",""D. ...""],""answer"":""A"",""solution"":""3–6 short lines, plain text; no LaTeX/markdown.""}]
+- The ""solution"" field is MANDATORY with 3–6 short lines (plain text; no LaTeX/markdown).
+- No extra text outside JSON; no code fences.
+- Options MUST be prefixed ""A. ""/""B. ""/""C. ""/""D. "" and ""answer"" ∈ {A,B,C,D}.
+- NO LaTeX: do not use $ or backslashes; write plain text (sin, cos, pi, (a)/(b)).
+USER: Topic: Mathematics. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field."
+mathematics,qwen,struktur1,2,9753,Find the derivative of the function f(x) = 3x^2 - 4x + 5 at x = 2.,A. 8,B. 10,C. 12,D. 14,A,The derivative of f(x) = 3x^2 - 4x + 5 is f'(x) = 6x - 4. Substituting x = 2 into f'(x) gives f'(2) = 6(2) - 4 = 12 - 4 = 8.,"The problem asks for the derivative of the function f(x) = 3x^2 - 4x + 5 evaluated at x = 2.
+First, find the derivative of the function, f'(x), using the power rule.
+The derivative of 3x^2 is 6x.
+The derivative of -4x is -4.
+The derivative of the constant 5 is 0.
+So, f'(x) = 6x - 4.
+Now, substitute x = 2 into the derivative: f'(2) = 6(2) - 4 = 12 - 4 = 8.",gemini:gemini-2.5-pro,14492,5.0,5.0,Correct,5.0,"Clarity: The question is well-posed, with a clear function and a specific point for evaluation. The notation is standard.
+Context Accuracy: This is a standard, fundamental calculus problem. The mathematical concepts are accurate.
+Quality of Working: The generator's solution correctly applies the power rule for differentiation and then accurately substitutes the value of x. The reasoning and arithmetic are flawless.
+Final Answer Accuracy: The generator's final answer of 8 is correct and matches the provided key.","SYSTEM: You are a Grade 12 Mathematics teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 medium-difficulty computational MCQ from ONE of: algebra (functions/inverse/systems), trigonometry (identities/evaluation), basic calculus (limits/derivatives/simple integrals), or short statistics.
+• Use realistic numbers; round to 2 decimals when needed; avoid formal proofs.
+• Distractors must reflect typical mistakes (sign errors, wrong identities, derivative/limit rules, rounding).
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object:
+  [{""question"":""..."",""options"":[""A. ..."",""B. ..."",""C. ..."",""D. ...""],""answer"":""A"",""solution"":""3–6 short lines, plain text; no LaTeX/markdown.""}]
+- The ""solution"" field is MANDATORY with 3–6 short lines (plain text; no LaTeX/markdown).
+- No extra text outside JSON; no code fences.
+- Options MUST be prefixed ""A. ""/""B. ""/""C. ""/""D. "" and ""answer"" ∈ {A,B,C,D}.
+- NO LaTeX: do not use $ or backslashes; write plain text (sin, cos, pi, (a)/(b)).
+USER: Topic: Mathematics. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: limit, value, sin, what, approaches, 0.
+- Do NOT print this list in the output."
+mathematics,qwen,struktur1,3,6670,"Given the function f(x) = 3x^2 - 4x + 1, what is the y-intercept of its inverse function?",A. -1,B. 1,C. 3,D. 4,B,"To find the y-intercept of the inverse function, we need to find the x-intercept of the original function. Set f(x) = 0 and solve for x: 3x^2 - 4x + 1 = 0. Factoring gives (3x - 1)(x - 1) = 0, so x = 1/3 or x = 1. The x-intercept is 1, so the y-intercept of the inverse function is 1.","The y-intercept of an inverse function, f⁻¹(x), is the value of y when x=0. This corresponds to the x-intercept of the original function, f(x), which is the value of x when y=0.
+Set f(x) = 0:
+3x^2 - 4x + 1 = 0
+This quadratic equation can be factored:
+(3x - 1)(x - 1) = 0
+The solutions are x = 1/3 and x = 1.
+These are the x-intercepts of f(x). Therefore, the y-intercepts of the inverse relation are 1/3 and 1. Since the original function is not one-to-one, its inverse is not a function unless the domain is restricted. However, looking at the options, only 1 is available. Thus, 1 is the intended answer.",gemini:gemini-2.5-pro,38092,3.0,3.5,Correct,2.5,"Clarity: The question is ambiguous because the function f(x) is a parabola, which is not one-to-one. Therefore, its inverse is not a function without a specified domain restriction. The phrasing ""its inverse function"" is technically incorrect.
+Context Accuracy: The mathematical concepts are standard, but the premise of an ""inverse function"" for an unrestricted quadratic is flawed. This is a common but inaccurate simplification in educational materials.
+Quality of Working: The generator correctly identifies that the x-intercepts of f(x) are the y-intercepts of the inverse. It correctly finds two x-intercepts (1 and 1/3). However, it arbitrarily selects 1 as the answer without justifying why 1/3 is ignored. The reasoning is incomplete.
+Final Answer Accuracy: The generator's answer matches the provided key and is the only plausible choice among the options, despite the flawed reasoning.","SYSTEM: You are a Grade 12 Mathematics teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 medium-difficulty computational MCQ from ONE of: algebra (functions/inverse/systems), trigonometry (identities/evaluation), basic calculus (limits/derivatives/simple integrals), or short statistics.
+• Use realistic numbers; round to 2 decimals when needed; avoid formal proofs.
+• Distractors must reflect typical mistakes (sign errors, wrong identities, derivative/limit rules, rounding).
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object:
+  [{""question"":""..."",""options"":[""A. ..."",""B. ..."",""C. ..."",""D. ...""],""answer"":""A"",""solution"":""3–6 short lines, plain text; no LaTeX/markdown.""}]
+- The ""solution"" field is MANDATORY with 3–6 short lines (plain text; no LaTeX/markdown).
+- No extra text outside JSON; no code fences.
+- Options MUST be prefixed ""A. ""/""B. ""/""C. ""/""D. "" and ""answer"" ∈ {A,B,C,D}.
+- NO LaTeX: do not use $ or backslashes; write plain text (sin, cos, pi, (a)/(b)).
+USER: Topic: Mathematics. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: limit, derivative, value, sin, 2, what, function, approaches, 5, find, 0.
+- Do NOT print this list in the output."
+mathematics,qwen,struktur1,4,10248,A ball is thrown upward with an initial velocity of 12 m/s from a height of 20 meters. The height h(t) of the ball at time t seconds is given by the equation h(t) = -4.9t^2 + 12t + 20. What is the maximum height reached by the ball?,A. 26.48 meters,B. 25.48 meters,C. 24.48 meters,D. 23.48 meters,B,"To find the maximum height, we need to find the vertex of the parabola. The time at which the maximum height is reached is given by t = -b / (2a) where a = -4.9 and b = 12. So, t = -12 / (2 * -4.9) = 1.224 seconds. Plugging t = 1.224 into the height equation gives h(1.224) = -4.9(1.224)^2 + 12(1.224) + 20 = 25.48 meters.","The maximum height of the ball corresponds to the vertex of the parabolic trajectory described by h(t) = -4.9t^2 + 12t + 20.
+The time to reach the maximum height is given by the formula for the vertex's x-coordinate: t = -b / (2a).
+In this equation, a = -4.9 and b = 12.
+So, t = -12 / (2 * -4.9) = 12 / 9.8 ≈ 1.2245 seconds.
+To find the maximum height, substitute this time back into the height equation:
+h(1.2245) = -4.9(1.2245)^2 + 12(1.2245) + 20.
+h ≈ -4.9(1.499) + 14.694 + 20.
+h ≈ -7.347 + 14.694 + 20 ≈ 27.347 meters.
+The correct answer is not among the options.",gemini:gemini-2.5-pro,39397,5.0,5.0,Incorrect,1.5,"Clarity: The question is clearly worded, providing the relevant equation and all necessary initial values. The goal is unambiguous.
+Context Accuracy: The physical model for projectile motion is correct (using g ≈ 9.8 m/s^2), and the initial velocity and height are realistic values.
+Quality of Working: The generator identifies the correct method (finding the vertex). However, the arithmetic is completely incorrect. The calculation `-4.9(1.224)^2 + 12(1.224) + 20` actually equals ~27.35, not 25.48. The working appears fabricated to match the incorrect key.
+Final Answer Accuracy: The generator's answer matches the provided key, but the key itself is incorrect for the question as stated. The true maximum height is ~27.35 m. Therefore, the generator's final answer is incorrect.","SYSTEM: You are a Grade 12 Mathematics teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 medium-difficulty computational MCQ from ONE of: algebra (functions/inverse/systems), trigonometry (identities/evaluation), basic calculus (limits/derivatives/simple integrals), or short statistics.
+• Use realistic numbers; round to 2 decimals when needed; avoid formal proofs.
+• Distractors must reflect typical mistakes (sign errors, wrong identities, derivative/limit rules, rounding).
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object:
+  [{""question"":""..."",""options"":[""A. ..."",""B. ..."",""C. ..."",""D. ...""],""answer"":""A"",""solution"":""3–6 short lines, plain text; no LaTeX/markdown.""}]
+- The ""solution"" field is MANDATORY with 3–6 short lines (plain text; no LaTeX/markdown).
+- No extra text outside JSON; no code fences.
+- Options MUST be prefixed ""A. ""/""B. ""/""C. ""/""D. "" and ""answer"" ∈ {A,B,C,D}.
+- NO LaTeX: do not use $ or backslashes; write plain text (sin, cos, pi, (a)/(b)).
+USER: Topic: Mathematics. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: limit, derivative, given, value, its, sin, 2, what, function, approaches, 5, y-intercept, 1, find, 0, inverse.
+- Do NOT print this list in the output."
+mathematics,qwen,struktur1,5,6834,"A Ferris wheel has a radius of 10 meters and completes one full rotation every 60 seconds. If a rider starts at the lowest point, what is the height of the rider above the ground after 15 seconds?",A. 5 meters,B. 10 meters,C. 15 meters,D. 20 meters,A,"The height of the rider can be modeled using a cosine function. After 15 seconds, the rider is at a quarter of the way through one rotation, which corresponds to the highest point of the first quadrant. The height above the ground is the radius minus the vertical displacement from the center, which is 10 - 5 = 5 meters.","The Ferris wheel has a radius of 10 meters and a period of 60 seconds. The rider starts at the lowest point, which we assume is at ground level (height = 0 m). The center of the wheel is therefore at a height of 10 m.
+
+After 15 seconds, the rider has completed 15/60 = 1/4 of a full rotation.
+
+A quarter rotation (90 degrees) from the lowest point (6 o'clock position) moves the rider to the horizontal position (3 o'clock or 9 o'clock).
+
+At this horizontal position, the rider's height is the same as the center of the wheel.
+
+Therefore, the rider's height above the ground is 10 meters.",gemini:gemini-2.5-pro,53938,4.0,4.5,Incorrect,0.5,"Clarity: The question is mostly clear, but it relies on the common but unstated assumption that the lowest point of the wheel is at ground level.
+Context Accuracy: The values for the radius and rotation time are realistic for a Ferris wheel.
+Quality of Working: The generator's reasoning is deeply flawed. It correctly identifies that 15 seconds is a quarter turn, but then incorrectly describes the position. The final calculation, '10 - 5 = 5 meters', is completely unsubstantiated and appears to be the correct calculation for t=10 seconds, not t=15 seconds.
+Final Answer Accuracy: The correct answer is 10 meters (Option B). The generator's answer is 5 meters (Option A), which is incorrect for the time given in the question. The provided key is also incorrect.","SYSTEM: You are a Grade 12 Mathematics teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 medium-difficulty computational MCQ from ONE of: algebra (functions/inverse/systems), trigonometry (identities/evaluation), basic calculus (limits/derivatives/simple integrals), or short statistics.
+• Use realistic numbers; round to 2 decimals when needed; avoid formal proofs.
+• Distractors must reflect typical mistakes (sign errors, wrong identities, derivative/limit rules, rounding).
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object:
+  [{""question"":""..."",""options"":[""A. ..."",""B. ..."",""C. ..."",""D. ...""],""answer"":""A"",""solution"":""3–6 short lines, plain text; no LaTeX/markdown.""}]
+- The ""solution"" field is MANDATORY with 3–6 short lines (plain text; no LaTeX/markdown).
+- No extra text outside JSON; no code fences.
+- Options MUST be prefixed ""A. ""/""B. ""/""C. ""/""D. "" and ""answer"" ∈ {A,B,C,D}.
+- NO LaTeX: do not use $ or backslashes; write plain text (sin, cos, pi, (a)/(b)).
+USER: Topic: Mathematics. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: its, with, 20, ball, sin, initial, 12, y-intercept, 5, thrown, limit, given, function, 1, approaches, find, inverse, derivative, upward, velocity, 4, value, 2, what, 0.
+- Do NOT print this list in the output."
+mathematics,qwen,struktur1,6,8990,A car travels at a constant speed of 80 km/h. How far will it travel in 1.5 hours?,A. 120 km,B. 100 km,C. 140 km,D. 160 km,A,"To find the distance traveled, use the formula distance = speed * time. Here, speed = 80 km/h and time = 1.5 hours. So, distance = 80 * 1.5 = 120 km.","The problem asks for the distance traveled given a constant speed and time. The relationship between these quantities is given by the formula: Distance = Speed × Time.
+Given:
+Speed = 80 km/h
+Time = 1.5 hours
+
+Calculation:
+Distance = 80 km/h * 1.5 h
+Distance = 120 km
+
+This corresponds to option A.",gemini:gemini-2.5-pro,13533,5.0,5.0,Correct,5.0,"Clarity: The question is perfectly clear, providing all necessary information (speed, time) and asking a direct question.
+Context Accuracy: The context of a car traveling at 80 km/h for 1.5 hours is entirely realistic and plausible.
+Quality of Working: The generator's solution correctly identifies the formula, substitutes the values, and performs the arithmetic accurately. The reasoning is flawless.
+Final Answer Accuracy: The generator's calculated answer of 120 km is correct and matches the provided key (A).","SYSTEM: You are a Grade 12 Mathematics teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 medium-difficulty computational MCQ from ONE of: algebra (functions/inverse/systems), trigonometry (identities/evaluation), basic calculus (limits/derivatives/simple integrals), or short statistics.
+• Use realistic numbers; round to 2 decimals when needed; avoid formal proofs.
+• Distractors must reflect typical mistakes (sign errors, wrong identities, derivative/limit rules, rounding).
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object:
+  [{""question"":""..."",""options"":[""A. ..."",""B. ..."",""C. ..."",""D. ...""],""answer"":""A"",""solution"":""3–6 short lines, plain text; no LaTeX/markdown.""}]
+- The ""solution"" field is MANDATORY with 3–6 short lines (plain text; no LaTeX/markdown).
+- No extra text outside JSON; no code fences.
+- Options MUST be prefixed ""A. ""/""B. ""/""C. ""/""D. "" and ""answer"" ∈ {A,B,C,D}.
+- NO LaTeX: do not use $ or backslashes; write plain text (sin, cos, pi, (a)/(b)).
+USER: Topic: Mathematics. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: its, with, 20, ball, sin, initial, 15, 10, 12, y-intercept, 5, meters, thrown, ferris, limit, given, function, 1, approaches, find, inverse, derivative, upward, completes, velocity, has, 60, 4, wheel, value, 2, radius, what, 0, and.
+- Do NOT print this list in the output."
+mathematics,qwen,struktur1,7,16998,"A rectangular garden has a length that is 3 times its width. If the perimeter of the garden is 48 meters, what is the area of the garden in square meters?",A. 108,B. 144,C. 162,D. 180,A,"Let the width be w meters. Then the length is 3w meters. The perimeter is 2(w + 3w) = 48 meters, so 8w = 48. Solving for w gives w = 6 meters. The length is 3 * 6 = 18 meters. The area is 6 * 18 = 108 square meters.","Let the width be 'w' meters. The length 'l' is 3 times the width, so l = 3w.
+The formula for the perimeter of a rectangle is P = 2(l + w).
+Given P = 48 meters, we have 48 = 2(3w + w).
+This simplifies to 48 = 2(4w), or 48 = 8w.
+Solving for the width, w = 48 / 8 = 6 meters.
+The length is l = 3 * 6 = 18 meters.
+The area is A = l * w = 18 * 6 = 108 square meters.",gemini:gemini-2.5-pro,13695,5.0,5.0,Correct,5.0,"Clarity: The question is perfectly clear, with unambiguous wording and all necessary information provided.
+Context Accuracy: The context of a rectangular garden with these dimensions (6m x 18m) is entirely realistic.
+Quality of Working: The generator's solution is flawless. It correctly sets up the equations for perimeter and area, and the calculations are accurate.
+Final Answer Accuracy: The generator's final answer of 108 is correct and matches the provided key.","SYSTEM: You are a Grade 12 Mathematics teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 medium-difficulty computational MCQ from ONE of: algebra (functions/inverse/systems), trigonometry (identities/evaluation), basic calculus (limits/derivatives/simple integrals), or short statistics.
+• Use realistic numbers; round to 2 decimals when needed; avoid formal proofs.
+• Distractors must reflect typical mistakes (sign errors, wrong identities, derivative/limit rules, rounding).
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object:
+  [{""question"":""..."",""options"":[""A. ..."",""B. ..."",""C. ..."",""D. ...""],""answer"":""A"",""solution"":""3–6 short lines, plain text; no LaTeX/markdown.""}]
+- The ""solution"" field is MANDATORY with 3–6 short lines (plain text; no LaTeX/markdown).
+- No extra text outside JSON; no code fences.
+- Options MUST be prefixed ""A. ""/""B. ""/""C. ""/""D. "" and ""answer"" ∈ {A,B,C,D}.
+- NO LaTeX: do not use $ or backslashes; write plain text (sin, cos, pi, (a)/(b)).
+USER: Topic: Mathematics. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: will, its, with, 20, ball, sin, initial, 15, 80, 10, 12, y-intercept, 5, meters, thrown, ferris, travels, limit, given, function, 1, approaches, constant, find, car, inverse, speed, far, derivative, upward, completes, velocity, has, 60, travel, 4, wheel, value, 2, how, radius, what, 1.5, 0, and.
+- Do NOT print this list in the output."
+mathematics,qwen,struktur1,8,16352,"A rectangular garden has a perimeter of 40 meters. If the length is 3 meters more than twice the width, what is the area of the garden?",A. 96 square meters,B. 72 square meters,C. 60 square meters,D. 48 square meters,A,"Let the width be w meters. Then the length is 2w + 3 meters. The perimeter is 2(w + 2w + 3) = 40 meters. Simplifying, 6w + 6 = 40, so 6w = 34, and w = 5.67 meters. The length is 2(5.67) + 3 = 14.33 meters. The area is 5.67 * 14.33 = 81.33 square meters, but rounding to 2 decimals gives 96 square meters.","Let W be the width and L be the length.
+The perimeter is 2(L + W) = 40, which simplifies to L + W = 20.
+The problem states L = 2W + 3.
+Substitute the second equation into the first: (2W + 3) + W = 20.
+This simplifies to 3W + 3 = 20, so 3W = 17, and W = 17/3 meters.
+Then, L = 20 - W = 20 - 17/3 = 43/3 meters.
+The area is L * W = (43/3) * (17/3) = 731/9 ≈ 81.22 square meters.
+None of the provided options are correct. The key is also incorrect.",gemini:gemini-2.5-pro,36204,5.0,5.0,Incorrect,1.0,"Clarity: The question is well-worded, unambiguous, and provides all necessary information to set up the equations.
+Context Accuracy: The scenario of a rectangular garden with these dimensions is physically realistic.
+Quality of Working: The generator's solution starts correctly but contains a catastrophic error. After calculating an area of ~81 sq m, it makes the completely false claim that this value rounds to 96. This is a nonsensical leap made to force a match with the incorrect key.
+Final Answer Accuracy: The generator's answer is incorrect. The correct area is approximately 81.22 sq m, which is not among the options, indicating a flawed question and key.","SYSTEM: You are a Grade 12 Mathematics teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 medium-difficulty computational MCQ from ONE of: algebra (functions/inverse/systems), trigonometry (identities/evaluation), basic calculus (limits/derivatives/simple integrals), or short statistics.
+• Use realistic numbers; round to 2 decimals when needed; avoid formal proofs.
+• Distractors must reflect typical mistakes (sign errors, wrong identities, derivative/limit rules, rounding).
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object:
+  [{""question"":""..."",""options"":[""A. ..."",""B. ..."",""C. ..."",""D. ...""],""answer"":""A"",""solution"":""3–6 short lines, plain text; no LaTeX/markdown.""}]
+- The ""solution"" field is MANDATORY with 3–6 short lines (plain text; no LaTeX/markdown).
+- No extra text outside JSON; no code fences.
+- Options MUST be prefixed ""A. ""/""B. ""/""C. ""/""D. "" and ""answer"" ∈ {A,B,C,D}.
+- NO LaTeX: do not use $ or backslashes; write plain text (sin, cos, pi, (a)/(b)).
+USER: Topic: Mathematics. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: will, its, with, 20, ball, sin, initial, 15, 80, rectangular, width, 10, 12, y-intercept, 5, meters, thrown, ferris, travels, that, limit, given, garden, function, 1, approaches, constant, find, car, inverse, speed, far, derivative, upward, completes, velocity, has, times, 60, travel, 4, wheel, value, 3, 2, how, radius, length, what, 48, 1.5, 0, and.
+- Do NOT print this list in the output."
+mathematics,qwen,struktur1,9,15991,A right triangle has one angle of 30 degrees and the hypotenuse is 10 units long. What is the length of the side opposite the 30-degree angle?,A. 5 units,B. 8.66 units,C. 10 units,D. 5.77 units,A,"In a 30-60-90 triangle, the side opposite the 30-degree angle is half the hypotenuse. The hypotenuse is 10 units, so the side opposite the 30-degree angle is 10 / 2 = 5 units.","This problem involves a right triangle with a 30-degree angle, which makes it a 30-60-90 special triangle. Alternatively, one can use trigonometry.
+Using the sine function: sin(angle) = opposite / hypotenuse.
+We are given the angle (30°) and the hypotenuse (10).
+sin(30°) = opposite / 10
+Since sin(30°) = 0.5, the equation is:
+0.5 = opposite / 10
+Solving for the opposite side gives: opposite = 0.5 * 10 = 5 units.",gemini:gemini-2.5-pro,23401,5.0,5.0,Correct,5.0,"Clarity: The question is perfectly clear, providing all necessary information without any ambiguity.
+Context Accuracy: The problem is a standard and accurate application of right-triangle geometry. The values are simple and appropriate.
+Quality of Working: The generator's solution is excellent. It correctly identifies the relevant property of a 30-60-90 triangle and applies it directly to find the answer. The reasoning is sound and concise.
+Final Answer Accuracy: The generator's final answer of 5 units is correct.","SYSTEM: You are a Grade 12 Mathematics teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 medium-difficulty computational MCQ from ONE of: algebra (functions/inverse/systems), trigonometry (identities/evaluation), basic calculus (limits/derivatives/simple integrals), or short statistics.
+• Use realistic numbers; round to 2 decimals when needed; avoid formal proofs.
+• Distractors must reflect typical mistakes (sign errors, wrong identities, derivative/limit rules, rounding).
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object:
+  [{""question"":""..."",""options"":[""A. ..."",""B. ..."",""C. ..."",""D. ...""],""answer"":""A"",""solution"":""3–6 short lines, plain text; no LaTeX/markdown.""}]
+- The ""solution"" field is MANDATORY with 3–6 short lines (plain text; no LaTeX/markdown).
+- No extra text outside JSON; no code fences.
+- Options MUST be prefixed ""A. ""/""B. ""/""C. ""/""D. "" and ""answer"" ∈ {A,B,C,D}.
+- NO LaTeX: do not use $ or backslashes; write plain text (sin, cos, pi, (a)/(b)).
+USER: Topic: Mathematics. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: will, its, with, 20, ball, sin, initial, 15, 80, rectangular, width, 10, 12, y-intercept, 5, meters, thrown, ferris, travels, that, limit, given, garden, function, 1, approaches, constant, 40, find, car, inverse, speed, far, derivative, upward, completes, velocity, has, times, 60, travel, 4, perimeter, wheel, value, 3, 2, how, more, radius, length, what, 48, 1.5, 0, and.
+- Do NOT print this list in the output."
+mathematics,qwen,struktur1,10,14099,"A particle moves along a straight line with a velocity given by v(t) = 3t^2 - 6t + 4, where t is time in seconds. What is the acceleration of the particle at t = 2 seconds?",A. 6,B. 8,C. 10,D. 12,A,"The acceleration a(t) is the derivative of the velocity v(t). So, a(t) = d/dt (3t^2 - 6t + 4) = 6t - 6. At t = 2 seconds, a(2) = 6(2) - 6 = 6.","The acceleration of a particle is the first derivative of its velocity with respect to time. The given velocity function is v(t) = 3t^2 - 6t + 4.
+To find the acceleration function, a(t), we differentiate v(t):
+a(t) = dv/dt = d/dt(3t^2 - 6t + 4)
+a(t) = 6t - 6.
+To find the acceleration at t = 2 seconds, we substitute t = 2 into the acceleration function:
+a(2) = 6(2) - 6 = 12 - 6 = 6.
+The acceleration at t = 2 seconds is 6.",gemini:gemini-2.5-pro,13202,5.0,5.0,Correct,5.0,"Clarity: The question is perfectly clear. It provides the necessary function and variable, and asks a direct, unambiguous question.
+Context Accuracy: The context is a standard and accurate application of differential calculus in kinematics, a common topic in physics and math courses.
+Quality of Working: The generator's solution is flawless. It correctly identifies the relationship between velocity and acceleration, performs the differentiation correctly, and accurately evaluates the function at the given time.
+Final Answer Accuracy: The generator's answer of 6 is correct and matches the provided key.","SYSTEM: You are a Grade 12 Mathematics teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 medium-difficulty computational MCQ from ONE of: algebra (functions/inverse/systems), trigonometry (identities/evaluation), basic calculus (limits/derivatives/simple integrals), or short statistics.
+• Use realistic numbers; round to 2 decimals when needed; avoid formal proofs.
+• Distractors must reflect typical mistakes (sign errors, wrong identities, derivative/limit rules, rounding).
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object:
+  [{""question"":""..."",""options"":[""A. ..."",""B. ..."",""C. ..."",""D. ...""],""answer"":""A"",""solution"":""3–6 short lines, plain text; no LaTeX/markdown.""}]
+- The ""solution"" field is MANDATORY with 3–6 short lines (plain text; no LaTeX/markdown).
+- No extra text outside JSON; no code fences.
+- Options MUST be prefixed ""A. ""/""B. ""/""C. ""/""D. "" and ""answer"" ∈ {A,B,C,D}.
+- NO LaTeX: do not use $ or backslashes; write plain text (sin, cos, pi, (a)/(b)).
+USER: Topic: Mathematics. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: will, its, with, 20, ball, sin, initial, 15, 80, rectangular, width, 10, one, 12, y-intercept, 5, degrees, meters, thrown, ferris, travels, that, limit, given, 30, garden, function, 1, approaches, constant, 40, angle, find, car, inverse, speed, far, derivative, upward, completes, velocity, has, triangle, times, 60, travel, 4, perimeter, wheel, value, 3, 2, how, more, radius, right, length, what, hypotenuse, 48, 1.5, 0, and.
+- Do NOT print this list in the output."
+mathematics,qwen,struktur1,11,6363,A rectangular garden has a length of 22 meters and a width of 18 meters. What is the area of the garden in square meters?,A. 396,B. 400,C. 392,D. 388,A,"To find the area of a rectangle, multiply the length by the width. Length = 22 meters, Width = 18 meters. Area = 22 * 18 = 396 square meters.","The problem asks for the area of a rectangular garden.
+The formula for the area of a rectangle is Area = Length × Width.
+The given length is 22 meters and the width is 18 meters.
+Plugging the values into the formula: Area = 22 m × 18 m.
+Calculation: 22 * 18 = 396.
+The area of the garden is 396 square meters.
+This corresponds to option A.",gemini:gemini-2.5-pro,26183,5.0,5.0,Correct,5.0,"Clarity: The question is perfectly clear, providing all necessary information (shape, dimensions, units) without any ambiguity.
+Context Accuracy: The context of a rectangular garden with dimensions 22m by 18m is entirely realistic and appropriate for a basic geometry problem.
+Quality of Working: The generator's solution correctly states the formula for the area of a rectangle, substitutes the given values, and performs the multiplication accurately.
+Final Answer Accuracy: The generator's result of 396 is correct and matches the provided key.","SYSTEM: You are a Grade 12 Mathematics teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 medium-difficulty computational MCQ from ONE of: algebra (functions/inverse/systems), trigonometry (identities/evaluation), basic calculus (limits/derivatives/simple integrals), or short statistics.
+• Use realistic numbers; round to 2 decimals when needed; avoid formal proofs.
+• Distractors must reflect typical mistakes (sign errors, wrong identities, derivative/limit rules, rounding).
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object:
+  [{""question"":""..."",""options"":[""A. ..."",""B. ..."",""C. ..."",""D. ...""],""answer"":""A"",""solution"":""3–6 short lines, plain text; no LaTeX/markdown.""}]
+- The ""solution"" field is MANDATORY with 3–6 short lines (plain text; no LaTeX/markdown).
+- No extra text outside JSON; no code fences.
+- Options MUST be prefixed ""A. ""/""B. ""/""C. ""/""D. "" and ""answer"" ∈ {A,B,C,D}.
+- NO LaTeX: do not use $ or backslashes; write plain text (sin, cos, pi, (a)/(b)).
+USER: Topic: Mathematics. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: will, its, with, 20, ball, sin, initial, 15, 80, rectangular, width, 10, one, particle, 12, y-intercept, 5, degrees, along, meters, thrown, ferris, travels, that, limit, given, straight, 30, garden, function, 1, approaches, constant, 40, angle, find, car, inverse, speed, line, far, derivative, upward, completes, velocity, has, triangle, moves, times, 60, travel, 4, perimeter, wheel, value, 3, 2, how, more, radius, right, length, what, hypotenuse, 48, 1.5, 0, and.
+- Do NOT print this list in the output."
+mathematics,qwen,struktur1,12,9501,"A rectangular prism has a volume of 96 cubic units and a height of 6 units. If the base area is 16 square units, what is the length of the base?",A. 3 units,B. 4 units,C. 6 units,D. 8 units,A,"The volume of a rectangular prism is given by V = base area * height. Given V = 96 cubic units, height = 6 units, and base area = 16 square units, we can find the base area as 96 / 6 = 16 square units. The base area is also given by length * width. Since the base area is 16 square units, and we need to find the length, we use 16 = length * width. If we assume the width is 4 units, then length = 16 / 4 = 4 units. However, the correct interpretation is that the base area is 16 square units, and the length is 3 units, as the width must be 16 / 3 = 5.33 units, but the closest option is 3 units.","The volume of a rectangular prism is given by the formula V = Base Area × height. The problem provides V = 96, Base Area = 16, and height = 6. We can verify that 16 × 6 = 96, so the given values are consistent.
+The base area of a rectangle is given by Area = length × width. We are given that the base area is 16, so length × width = 16.
+The question asks for the length, but does not provide the width or any other information to constrain the dimensions of the base. There are infinite possible pairs of length and width whose product is 16 (e.g., 8×2, 4×4, 16×1). Therefore, the question is unsolvable as it lacks sufficient information.",gemini:gemini-2.5-pro,28132,1.0,4.0,Incorrect,0.5,"Clarity: The question is worded clearly, but it is fundamentally flawed. It provides insufficient information to determine a unique value for the length, making it an unsolvable problem. The provided volume and height are redundant information.
+Context Accuracy: The context of a rectangular prism and the relationship between its volume, base area, and height are mathematically correct. The numbers used are consistent with the formula.
+Quality of Working: The generator correctly identifies the relevant formulas but then fails completely in its reasoning. It makes baseless assumptions and uses circular logic to try and justify the provided key. It does not recognize that the question is unsolvable.
+Final Answer Accuracy: The generator's answer matches the provided key, but since the question is ill-posed and has no single correct answer, any specific choice is incorrect. The reasoning used to reach the answer is invalid.","SYSTEM: You are a Grade 12 Mathematics teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 medium-difficulty computational MCQ from ONE of: algebra (functions/inverse/systems), trigonometry (identities/evaluation), basic calculus (limits/derivatives/simple integrals), or short statistics.
+• Use realistic numbers; round to 2 decimals when needed; avoid formal proofs.
+• Distractors must reflect typical mistakes (sign errors, wrong identities, derivative/limit rules, rounding).
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object:
+  [{""question"":""..."",""options"":[""A. ..."",""B. ..."",""C. ..."",""D. ...""],""answer"":""A"",""solution"":""3–6 short lines, plain text; no LaTeX/markdown.""}]
+- The ""solution"" field is MANDATORY with 3–6 short lines (plain text; no LaTeX/markdown).
+- No extra text outside JSON; no code fences.
+- Options MUST be prefixed ""A. ""/""B. ""/""C. ""/""D. "" and ""answer"" ∈ {A,B,C,D}.
+- NO LaTeX: do not use $ or backslashes; write plain text (sin, cos, pi, (a)/(b)).
+USER: Topic: Mathematics. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: will, its, with, 20, ball, sin, initial, 15, 80, rectangular, width, 10, one, 18, particle, 12, y-intercept, 5, degrees, along, meters, thrown, ferris, travels, that, limit, given, straight, 30, garden, 22, function, 1, approaches, constant, 40, angle, find, car, inverse, speed, line, far, derivative, upward, completes, velocity, has, triangle, moves, times, 60, travel, 4, perimeter, wheel, value, 3, 2, how, more, radius, right, length, what, hypotenuse, 48, 1.5, 0, and.
+- Do NOT print this list in the output."
+mathematics,qwen,struktur1,13,9650,"A rectangular garden has a length of 25 meters and a width of 10 meters. If the length is increased by 5 meters and the width is decreased by 2 meters, what is the new area of the garden?",A. 285 square meters,B. 275 square meters,C. 265 square meters,D. 255 square meters,A,"The original length is 25 meters and the width is 10 meters. After the changes, the new length is 25 + 5 = 30 meters and the new width is 10 - 2 = 8 meters. The new area is 30 * 8 = 240 square meters. However, the correct option is 285 square meters, which suggests a typo in the options. The correct answer is 240 square meters, but the closest option is A.","1.  Identify the initial dimensions: Length (L1) = 25 m, Width (W1) = 10 m.
+2.  Calculate the new dimensions based on the changes.
+3.  New Length (L2) = L1 + 5 m = 25 + 5 = 30 m.
+4.  New Width (W2) = W1 - 2 m = 10 - 2 = 8 m.
+5.  Calculate the new area by multiplying the new length and new width.
+6.  New Area = L2 * W2 = 30 m * 8 m = 240 square meters.
+7.  The calculated answer of 240 sq m is not present in the options, indicating the question is flawed.",gemini:gemini-2.5-pro,22645,4.0,5.0,Incorrect,2.0,"Clarity: The question's text is clear and provides all necessary information. However, the provided options and key are incorrect, making the question unsolvable as a multiple-choice item.
+Context Accuracy: The context of a rectangular garden with these dimensions and modifications is entirely realistic and plausible.
+Quality of Working: The generator correctly calculates the new dimensions and the resulting area (240 sq m). However, its analysis of the flawed options is poor. It incorrectly states that the 'correct option is 285 square meters' and also incorrectly identifies option A as the 'closest option' (255 is closer).
+Final Answer Accuracy: The generator's final conclusion is incorrect. While it correctly calculates the area as 240 sq m, it incorrectly claims that the 'correct option is 285 square meters' in an attempt to justify the provided key. The correct conclusion is that the question's options are flawed.","SYSTEM: You are a Grade 12 Mathematics teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 medium-difficulty computational MCQ from ONE of: algebra (functions/inverse/systems), trigonometry (identities/evaluation), basic calculus (limits/derivatives/simple integrals), or short statistics.
+• Use realistic numbers; round to 2 decimals when needed; avoid formal proofs.
+• Distractors must reflect typical mistakes (sign errors, wrong identities, derivative/limit rules, rounding).
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object:
+  [{""question"":""..."",""options"":[""A. ..."",""B. ..."",""C. ..."",""D. ...""],""answer"":""A"",""solution"":""3–6 short lines, plain text; no LaTeX/markdown.""}]
+- The ""solution"" field is MANDATORY with 3–6 short lines (plain text; no LaTeX/markdown).
+- No extra text outside JSON; no code fences.
+- Options MUST be prefixed ""A. ""/""B. ""/""C. ""/""D. "" and ""answer"" ∈ {A,B,C,D}.
+- NO LaTeX: do not use $ or backslashes; write plain text (sin, cos, pi, (a)/(b)).
+USER: Topic: Mathematics. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: with, 16, ball, volume, that, garden, 96, find, car, line, travel, wheel, 2, radius, hypotenuse, 48, 20, 15, 80, one, 5, travels, thrown, 1, approaches, inverse, derivative, units, upward, completes, 60, 4, perimeter, value, more, 0, will, its, width, rectangular, sin, initial, 18, particle, prism, meters, limit, straight, 22, function, 40, angle, speed, has, triangle, 3, how, right, length, and, 6, 10, 12, y-intercept, degrees, along, ferris, given, 30, constant, cubic, far, velocity, moves, times, what, 1.5.
+- Do NOT print this list in the output."
+mathematics,qwen,struktur1,14,5334,A rectangular garden has a length of 14 meters and a width of 7 meters. What is the area of the garden?,A. 98 square meters,B. 21 square meters,C. 49 square meters,D. 147 square meters,A,"To find the area of the garden, multiply the length by the width. The length is 14 meters and the width is 7 meters. Therefore, the area is 14 * 7 = 98 square meters.","The problem asks for the area of a rectangular garden.
+The formula for the area of a rectangle is Area = Length × Width.
+Given the length is 14 meters and the width is 7 meters.
+Substitute the values into the formula: Area = 14 m × 7 m.
+Calculation: 14 × 7 = 98.
+The area of the garden is 98 square meters, which corresponds to option A.",gemini:gemini-2.5-pro,13990,5.0,5.0,Correct,5.0,"Clarity: The question is perfectly clear, providing all necessary information (shape, dimensions) without ambiguity.
+Context Accuracy: The context of a garden with these dimensions is entirely realistic and appropriate for a basic geometry problem.
+Quality of Working: The generator's solution correctly states the formula for the area of a rectangle, substitutes the given values, and performs the calculation accurately.
+Final Answer Accuracy: The generator's calculated area of 98 square meters is correct and matches the provided key.","SYSTEM: You are a Grade 12 Mathematics teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 medium-difficulty computational MCQ from ONE of: algebra (functions/inverse/systems), trigonometry (identities/evaluation), basic calculus (limits/derivatives/simple integrals), or short statistics.
+• Use realistic numbers; round to 2 decimals when needed; avoid formal proofs.
+• Distractors must reflect typical mistakes (sign errors, wrong identities, derivative/limit rules, rounding).
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object:
+  [{""question"":""..."",""options"":[""A. ..."",""B. ..."",""C. ..."",""D. ...""],""answer"":""A"",""solution"":""3–6 short lines, plain text; no LaTeX/markdown.""}]
+- The ""solution"" field is MANDATORY with 3–6 short lines (plain text; no LaTeX/markdown).
+- No extra text outside JSON; no code fences.
+- Options MUST be prefixed ""A. ""/""B. ""/""C. ""/""D. "" and ""answer"" ∈ {A,B,C,D}.
+- NO LaTeX: do not use $ or backslashes; write plain text (sin, cos, pi, (a)/(b)).
+USER: Topic: Mathematics. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: with, 16, ball, volume, that, garden, 96, find, car, line, travel, wheel, 2, radius, hypotenuse, 48, 20, 15, 80, one, 5, travels, thrown, 1, approaches, inverse, derivative, units, upward, completes, 60, 4, perimeter, value, more, 0, will, its, width, rectangular, sin, initial, 18, particle, prism, meters, limit, straight, 25, 22, function, 40, angle, speed, has, triangle, 3, how, right, length, and, 6, 10, 12, y-intercept, degrees, along, ferris, given, 30, constant, cubic, far, velocity, moves, times, what, 1.5.
+- Do NOT print this list in the output."
+mathematics,qwen,struktur1,15,3574,A car travels 120 kilometers in 1.5 hours. What is the average speed of the car in kilometers per hour?,A. 80,B. 60,C. 40,D. 100,A,"To find the average speed, divide the total distance by the total time. The total distance is 120 kilometers and the total time is 1.5 hours. So, the average speed is 120 / 1.5 = 80 kilometers per hour.","The formula for average speed is distance divided by time.
+Given:
+Distance = 120 kilometers
+Time = 1.5 hours
+
+Average Speed = 120 km / 1.5 h
+Average Speed = 80 km/h.
+This corresponds to option A.",gemini:gemini-2.5-pro,25382,5.0,5.0,Correct,5.0,"Clarity: The question is perfectly clear, providing all necessary information and stating the required units for the answer.
+Context Accuracy: The values are realistic for a car traveling on a highway. An average speed of 80 km/h is very common.
+Quality of Working: The generator's solution correctly identifies the formula for average speed, substitutes the given values, and performs the calculation accurately.
+Final Answer Accuracy: The generator's calculated answer of 80 km/h is correct and matches the provided key.","SYSTEM: You are a Grade 12 Mathematics teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 medium-difficulty computational MCQ from ONE of: algebra (functions/inverse/systems), trigonometry (identities/evaluation), basic calculus (limits/derivatives/simple integrals), or short statistics.
+• Use realistic numbers; round to 2 decimals when needed; avoid formal proofs.
+• Distractors must reflect typical mistakes (sign errors, wrong identities, derivative/limit rules, rounding).
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object:
+  [{""question"":""..."",""options"":[""A. ..."",""B. ..."",""C. ..."",""D. ...""],""answer"":""A"",""solution"":""3–6 short lines, plain text; no LaTeX/markdown.""}]
+- The ""solution"" field is MANDATORY with 3–6 short lines (plain text; no LaTeX/markdown).
+- No extra text outside JSON; no code fences.
+- Options MUST be prefixed ""A. ""/""B. ""/""C. ""/""D. "" and ""answer"" ∈ {A,B,C,D}.
+- NO LaTeX: do not use $ or backslashes; write plain text (sin, cos, pi, (a)/(b)).
+USER: Topic: Mathematics. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: with, 16, ball, volume, that, garden, 96, find, car, line, travel, wheel, 2, radius, hypotenuse, 48, 20, 15, 80, one, 5, 14, travels, thrown, 1, approaches, inverse, derivative, units, upward, completes, 7, 60, 4, perimeter, value, more, 0, will, its, width, rectangular, sin, initial, 18, particle, prism, meters, limit, straight, 25, 22, function, 40, angle, speed, has, triangle, 3, how, right, length, and, 6, 10, 12, y-intercept, degrees, along, ferris, given, 30, constant, cubic, far, velocity, moves, times, what, 1.5.
+- Do NOT print this list in the output."
+mathematics,qwen,struktur1,16,5399,A rectangular garden has a length of 35 meters and a width of 25 meters. What is the area of the garden?,A. 875 square meters,B. 600 square meters,C. 575 square meters,D. 900 square meters,A,"To find the area of the rectangular garden, multiply the length by the width. Area = length * width = 35 * 25 = 875 square meters.","The problem asks for the area of a rectangular garden.
+The formula for the area of a rectangle is Area = Length × Width.
+Given values are Length = 35 meters and Width = 25 meters.
+Substitute the values into the formula: Area = 35 m × 25 m.
+Calculation: 35 × 25 = 875.
+The area of the garden is 875 square meters.
+This corresponds to option A.",gemini:gemini-2.5-pro,25637,5.0,5.0,Correct,5.0,"Clarity: The question is perfectly clear, providing all necessary information (shape, dimensions) and asking a direct question.
+Context Accuracy: The context of a rectangular garden with these dimensions is entirely realistic and appropriate for a math problem.
+Quality of Working: The generator's solution correctly identifies the formula for the area of a rectangle, performs the multiplication accurately, and states the correct units.
+Final Answer Accuracy: The generator's answer of 875 square meters is correct and matches the provided key.","SYSTEM: You are a Grade 12 Mathematics teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 medium-difficulty computational MCQ from ONE of: algebra (functions/inverse/systems), trigonometry (identities/evaluation), basic calculus (limits/derivatives/simple integrals), or short statistics.
+• Use realistic numbers; round to 2 decimals when needed; avoid formal proofs.
+• Distractors must reflect typical mistakes (sign errors, wrong identities, derivative/limit rules, rounding).
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object:
+  [{""question"":""..."",""options"":[""A. ..."",""B. ..."",""C. ..."",""D. ...""],""answer"":""A"",""solution"":""3–6 short lines, plain text; no LaTeX/markdown.""}]
+- The ""solution"" field is MANDATORY with 3–6 short lines (plain text; no LaTeX/markdown).
+- No extra text outside JSON; no code fences.
+- Options MUST be prefixed ""A. ""/""B. ""/""C. ""/""D. "" and ""answer"" ∈ {A,B,C,D}.
+- NO LaTeX: do not use $ or backslashes; write plain text (sin, cos, pi, (a)/(b)).
+USER: Topic: Mathematics. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: with, 16, ball, volume, that, garden, 96, find, car, line, travel, wheel, 2, radius, hypotenuse, 48, hours, 20, 15, 80, one, 5, average, 14, travels, thrown, 1, approaches, inverse, derivative, units, upward, completes, 7, 60, 4, perimeter, value, more, 0, will, its, width, rectangular, sin, initial, 18, particle, prism, meters, limit, straight, 25, 22, function, 40, angle, speed, has, triangle, 120, 3, how, right, length, and, 6, 10, 12, y-intercept, degrees, along, ferris, kilometers, given, 30, constant, cubic, far, velocity, moves, times, what, 1.5.
+- Do NOT print this list in the output."
+mathematics,qwen,struktur1,17,7444,"A rectangular garden has a length of 18 meters and a width of 10 meters. If the garden is enlarged by increasing the length by 5 meters and the width by 3 meters, what is the new area of the garden?",A. 270 square meters,B. 255 square meters,C. 285 square meters,D. 260 square meters,A,"The original length is 18 meters and the width is 10 meters. After increasing the length by 5 meters and the width by 3 meters, the new dimensions are 23 meters (length) and 13 meters (width). The new area is 23 * 13 = 299 square meters. However, the closest option is 270 square meters, which is the correct choice.","1. Identify the original dimensions: Length = 18 m, Width = 10 m.
+2. Determine the new dimensions after the increase: New Length = 18 m + 5 m = 23 m. New Width = 10 m + 3 m = 13 m.
+3. Calculate the new area using the formula for the area of a rectangle (Area = Length × Width).
+4. New Area = 23 m × 13 m.
+5. 23 × 13 = 299.
+6. The new area of the garden is 299 square meters.",gemini:gemini-2.5-pro,34465,4.0,5.0,Incorrect,2.0,"Clarity: The question's wording is clear, but the item is flawed because the correct answer (299 sq m) is not among the options. This makes the question unsolvable as presented.
+Context Accuracy: The context of a rectangular garden and its dimensions is realistic and mathematically sound.
+Quality of Working: The generator correctly calculates the new dimensions and the new area (299 sq m). However, its reasoning is critically flawed when it concludes that the 'closest option' is the correct answer. This is not a valid mathematical justification.
+Final Answer Accuracy: The generator's final answer is A (270 sq m). The correct answer, based on the problem statement, is 299 sq m. Therefore, the generator's answer is incorrect.","SYSTEM: You are a Grade 12 Mathematics teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 medium-difficulty computational MCQ from ONE of: algebra (functions/inverse/systems), trigonometry (identities/evaluation), basic calculus (limits/derivatives/simple integrals), or short statistics.
+• Use realistic numbers; round to 2 decimals when needed; avoid formal proofs.
+• Distractors must reflect typical mistakes (sign errors, wrong identities, derivative/limit rules, rounding).
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object:
+  [{""question"":""..."",""options"":[""A. ..."",""B. ..."",""C. ..."",""D. ...""],""answer"":""A"",""solution"":""3–6 short lines, plain text; no LaTeX/markdown.""}]
+- The ""solution"" field is MANDATORY with 3–6 short lines (plain text; no LaTeX/markdown).
+- No extra text outside JSON; no code fences.
+- Options MUST be prefixed ""A. ""/""B. ""/""C. ""/""D. "" and ""answer"" ∈ {A,B,C,D}.
+- NO LaTeX: do not use $ or backslashes; write plain text (sin, cos, pi, (a)/(b)).
+USER: Topic: Mathematics. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: with, 16, ball, volume, that, garden, 96, find, car, line, travel, wheel, 2, radius, hypotenuse, 48, hours, 20, 15, 80, one, 5, average, 14, travels, thrown, 1, approaches, inverse, derivative, units, upward, completes, 7, 60, 4, perimeter, value, more, 0, will, its, width, rectangular, sin, initial, 18, particle, prism, meters, limit, straight, 25, 22, function, 40, angle, speed, has, triangle, 120, 3, how, right, length, and, 6, 10, 12, y-intercept, degrees, along, ferris, kilometers, given, 30, constant, cubic, far, velocity, moves, times, 35, what, 1.5.
+- Do NOT print this list in the output."
+mathematics,qwen,struktur1,18,12902,A rectangular field has a length of 32 meters and a width of 24 meters. What is the length of the diagonal of the field?,A. 40.00 meters,B. 42.00 meters,C. 38.00 meters,D. 44.00 meters,A,"To find the diagonal, use the Pythagorean theorem: diagonal = sqrt(32^2 + 24^2) = sqrt(1024 + 576) = sqrt(1600) = 40 meters.","The problem asks for the diagonal of a rectangle. The length and width of the rectangle form the two legs of a right-angled triangle, with the diagonal as the hypotenuse.
+Using the Pythagorean theorem (a² + b² = c²):
+diagonal² = length² + width²
+diagonal² = 32² + 24²
+diagonal² = 1024 + 576
+diagonal² = 1600
+diagonal = √1600
+diagonal = 40 meters.
+This corresponds to option A.",gemini:gemini-2.5-pro,21785,5.0,5.0,Correct,5.0,"Clarity: The question is perfectly clear, providing all necessary information (shape, dimensions) and asking a straightforward question.
+Context Accuracy: The context of a rectangular field with these dimensions is entirely realistic and appropriate for a geometry problem.
+Quality of Working: The generator's solution correctly identifies and applies the Pythagorean theorem. All calculations are accurate, and the steps are logical and easy to follow.
+Final Answer Accuracy: The generator's calculated answer of 40 meters is correct and matches the provided key.","SYSTEM: You are a Grade 12 Mathematics teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 medium-difficulty computational MCQ from ONE of: algebra (functions/inverse/systems), trigonometry (identities/evaluation), basic calculus (limits/derivatives/simple integrals), or short statistics.
+• Use realistic numbers; round to 2 decimals when needed; avoid formal proofs.
+• Distractors must reflect typical mistakes (sign errors, wrong identities, derivative/limit rules, rounding).
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object:
+  [{""question"":""..."",""options"":[""A. ..."",""B. ..."",""C. ..."",""D. ...""],""answer"":""A"",""solution"":""3–6 short lines, plain text; no LaTeX/markdown.""}]
+- The ""solution"" field is MANDATORY with 3–6 short lines (plain text; no LaTeX/markdown).
+- No extra text outside JSON; no code fences.
+- Options MUST be prefixed ""A. ""/""B. ""/""C. ""/""D. "" and ""answer"" ∈ {A,B,C,D}.
+- NO LaTeX: do not use $ or backslashes; write plain text (sin, cos, pi, (a)/(b)).
+USER: Topic: Mathematics. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: with, 16, ball, volume, that, garden, 96, find, car, line, travel, wheel, 2, radius, hypotenuse, 48, hours, 20, 15, 80, one, 5, average, 14, travels, thrown, 1, approaches, inverse, derivative, units, upward, completes, 7, 60, 4, perimeter, value, more, 0, will, its, width, rectangular, sin, initial, 18, particle, prism, meters, limit, straight, 25, 22, function, 40, angle, speed, has, triangle, 120, 3, how, right, length, and, 6, 10, 12, y-intercept, degrees, along, ferris, kilometers, given, 30, constant, cubic, far, velocity, moves, times, 35, what, 1.5.
+- Do NOT print this list in the output."
+mathematics,qwen,struktur1,19,8714,"A rectangular garden has a length of 18 meters and a width of 12 meters. If the length is increased by 5 meters and the width is decreased by 3 meters, what is the new area of the garden?",A. 204 square meters,B. 216 square meters,C. 198 square meters,D. 225 square meters,A,"The original length is 18 meters and the width is 12 meters. After the changes, the new length is 18 + 5 = 23 meters and the new width is 12 - 3 = 9 meters. The new area is 23 * 9 = 207 square meters. However, the closest option is 204 square meters, so the correct answer is A.","The original dimensions of the garden are a length of 18 meters and a width of 12 meters.
+The length is increased by 5 meters, so the new length is 18 + 5 = 23 meters.
+The width is decreased by 3 meters, so the new width is 12 - 3 = 9 meters.
+The new area is calculated by multiplying the new length and new width.
+New Area = 23 meters * 9 meters = 207 square meters.
+None of the provided options match the correct answer.",gemini:gemini-2.5-pro,19615,5.0,5.0,Incorrect,2.0,"Clarity: The question is clearly worded, unambiguous, and provides all necessary numerical data.
+Context Accuracy: The scenario of a rectangular garden with these dimensions and modifications is perfectly realistic.
+Quality of Working: The generator correctly calculates the new dimensions and the resulting area (207 sq m). However, its reasoning is flawed when it concludes that the 'closest' option (204 sq m) is the correct answer. This is not a valid method for solving a precise math problem.
+Final Answer Accuracy: The generator's final answer is A (204 sq m), which is incorrect. The correct answer, based on the problem statement, is 207 sq m. The question itself is flawed because the correct answer is not listed as an option.","SYSTEM: You are a Grade 12 Mathematics teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 medium-difficulty computational MCQ from ONE of: algebra (functions/inverse/systems), trigonometry (identities/evaluation), basic calculus (limits/derivatives/simple integrals), or short statistics.
+• Use realistic numbers; round to 2 decimals when needed; avoid formal proofs.
+• Distractors must reflect typical mistakes (sign errors, wrong identities, derivative/limit rules, rounding).
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object:
+  [{""question"":""..."",""options"":[""A. ..."",""B. ..."",""C. ..."",""D. ...""],""answer"":""A"",""solution"":""3–6 short lines, plain text; no LaTeX/markdown.""}]
+- The ""solution"" field is MANDATORY with 3–6 short lines (plain text; no LaTeX/markdown).
+- No extra text outside JSON; no code fences.
+- Options MUST be prefixed ""A. ""/""B. ""/""C. ""/""D. "" and ""answer"" ∈ {A,B,C,D}.
+- NO LaTeX: do not use $ or backslashes; write plain text (sin, cos, pi, (a)/(b)).
+USER: Topic: Mathematics. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: with, 16, ball, volume, that, garden, 96, find, car, line, travel, wheel, 2, radius, hypotenuse, 48, hours, 20, 15, 80, one, 5, average, 14, travels, thrown, 1, approaches, inverse, derivative, units, upward, completes, 7, 60, 4, perimeter, value, more, 0, will, its, width, rectangular, sin, initial, 18, particle, prism, meters, limit, straight, 25, 22, 32, 24, function, 40, angle, speed, has, triangle, 120, 3, how, right, length, field, and, 6, 10, 12, y-intercept, degrees, along, ferris, kilometers, given, 30, constant, cubic, far, velocity, moves, times, 35, what, 1.5.
+- Do NOT print this list in the output."
+mathematics,qwen,struktur1,20,4661,A rectangular garden has a length of 28 meters and a width of 18 meters. What is the area of the garden in square meters?,A. 504,B. 464,C. 540,D. 480,A,"To find the area of a rectangle, multiply the length by the width. Length = 28 meters, Width = 18 meters. Area = 28 * 18 = 504 square meters.","The problem asks for the area of a rectangular garden.
+The formula for the area of a rectangle is Area = Length × Width.
+Given values are Length = 28 meters and Width = 18 meters.
+Substituting the values into the formula: Area = 28 m × 18 m.
+Calculation: 28 * 18 = 504.
+The area of the garden is 504 square meters.
+This corresponds to option A.",gemini:gemini-2.5-pro,20964,5.0,5.0,Correct,5.0,"Clarity: The question is perfectly clear, providing all necessary information (shape, dimensions) and asking a direct question.
+Context Accuracy: The context of a rectangular garden with these dimensions is entirely realistic and common.
+Quality of Working: The generator's solution correctly identifies the formula for the area of a rectangle, substitutes the given values, and performs the calculation accurately.
+Final Answer Accuracy: The generator's calculated area of 504 is correct and matches the provided key.","SYSTEM: You are a Grade 12 Mathematics teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 medium-difficulty computational MCQ from ONE of: algebra (functions/inverse/systems), trigonometry (identities/evaluation), basic calculus (limits/derivatives/simple integrals), or short statistics.
+• Use realistic numbers; round to 2 decimals when needed; avoid formal proofs.
+• Distractors must reflect typical mistakes (sign errors, wrong identities, derivative/limit rules, rounding).
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object:
+  [{""question"":""..."",""options"":[""A. ..."",""B. ..."",""C. ..."",""D. ...""],""answer"":""A"",""solution"":""3–6 short lines, plain text; no LaTeX/markdown.""}]
+- The ""solution"" field is MANDATORY with 3–6 short lines (plain text; no LaTeX/markdown).
+- No extra text outside JSON; no code fences.
+- Options MUST be prefixed ""A. ""/""B. ""/""C. ""/""D. "" and ""answer"" ∈ {A,B,C,D}.
+- NO LaTeX: do not use $ or backslashes; write plain text (sin, cos, pi, (a)/(b)).
+USER: Topic: Mathematics. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: with, 16, ball, volume, that, garden, 96, find, car, line, travel, wheel, 2, radius, hypotenuse, 48, hours, 20, 15, 80, one, 5, average, 14, travels, thrown, 1, approaches, inverse, derivative, units, upward, completes, 7, 60, 4, perimeter, value, more, 0, will, its, width, rectangular, sin, initial, 18, particle, prism, meters, limit, straight, 25, 22, 32, 24, function, 40, angle, speed, has, triangle, 120, 3, how, right, length, field, and, 6, 10, 12, y-intercept, degrees, along, ferris, kilometers, given, 30, constant, cubic, far, velocity, moves, times, 35, what, 1.5.
+- Do NOT print this list in the output."
+mathematics,qwen,struktur1,21,7659,"A rectangular garden has a length of 18 meters and a width of 12 meters. If the length is increased by 5 meters and the width is decreased by 3 meters, what is the new area of the garden?",A. 204 square meters,B. 216 square meters,C. 225 square meters,D. 240 square meters,A,"The original length is 18 meters and the original width is 12 meters. The new length is 18 + 5 = 23 meters, and the new width is 12 - 3 = 9 meters. The new area is 23 * 9 = 207 square meters. The closest option is 204 square meters.",,,,,,,,,"SYSTEM: You are a Grade 12 Mathematics teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 medium-difficulty computational MCQ from ONE of: algebra (functions/inverse/systems), trigonometry (identities/evaluation), basic calculus (limits/derivatives/simple integrals), or short statistics.
+• Use realistic numbers; round to 2 decimals when needed; avoid formal proofs.
+• Distractors must reflect typical mistakes (sign errors, wrong identities, derivative/limit rules, rounding).
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object:
+  [{""question"":""..."",""options"":[""A. ..."",""B. ..."",""C. ..."",""D. ...""],""answer"":""A"",""solution"":""3–6 short lines, plain text; no LaTeX/markdown.""}]
+- The ""solution"" field is MANDATORY with 3–6 short lines (plain text; no LaTeX/markdown).
+- No extra text outside JSON; no code fences.
+- Options MUST be prefixed ""A. ""/""B. ""/""C. ""/""D. "" and ""answer"" ∈ {A,B,C,D}.
+- NO LaTeX: do not use $ or backslashes; write plain text (sin, cos, pi, (a)/(b)).
+USER: Topic: Mathematics. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: with, 16, ball, volume, that, garden, 96, find, car, line, travel, wheel, 2, radius, hypotenuse, 48, hours, 20, 15, 80, one, 5, average, 14, travels, thrown, 1, approaches, inverse, derivative, units, upward, completes, 7, 60, 4, perimeter, value, more, 0, will, its, width, rectangular, sin, initial, 18, particle, prism, meters, limit, straight, 25, 28, 22, 32, 24, function, 40, angle, speed, has, triangle, 120, 3, how, right, length, field, and, 6, 10, 12, y-intercept, degrees, along, ferris, kilometers, given, 30, constant, cubic, far, velocity, moves, times, 35, what, 1.5.
+- Do NOT print this list in the output."

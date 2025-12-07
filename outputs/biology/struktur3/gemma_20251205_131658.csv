@@ -1,0 +1,905 @@
+topic,model,struktur,index,latency_model_ms,question,optionA,optionB,optionC,optionD,answer,solution_model,solution_verifier,verifier_model,latency_verifier_ms,clarity,context_accuracy,final_answer_accuracy,quality_of_working,judge_notes,prompt_generator
+biology,gemma,struktur3,1,68665,"In a population of butterflies, wing color is determined by a single gene with two alleles: 'B' (black) and 'b' (white). The frequency of the 'b' allele is 0.30. Assuming Hardy-Weinberg equilibrium, what is the expected frequency of butterflies with the BB genotype?",0.49,0.21,0.30,0.70,A,"Hardy-Weinberg states p + q = 1, where p is the frequency of allele B and q is the frequency of allele b. Since q = 0.30, then p = 1 - 0.30 = 0.70. The frequency of the BB genotype (p²) is calculated as p² = (0.70)² = 0.49. This assumes random mating and no evolutionary influences, which is a key requirement for Hardy-Weinberg equilibrium.","The problem provides the frequency of the 'b' allele (q) as 0.30. In Hardy-Weinberg equilibrium, the sum of allele frequencies is 1 (p + q = 1).
+The frequency of the 'B' allele (p) is therefore 1 - q = 1 - 0.30 = 0.70.
+The frequency of the homozygous dominant genotype (BB) is given by p².
+Calculating this gives p² = (0.70)² = 0.49.
+This corresponds to option A.",gemini:gemini-2.5-pro,13908,5.0,5.0,Correct,5.0,"Clarity: The question is exceptionally clear. It defines all variables, states the necessary assumption (Hardy-Weinberg equilibrium), and asks a direct, unambiguous question.
+Context Accuracy: The use of butterfly wing color as a simple Mendelian trait is a classic and accurate context for a population genetics problem. The allele frequency value is realistic.
+Quality of Working: The generator's solution is perfect. It correctly identifies the variables, applies the p + q = 1 formula to find the frequency of the 'B' allele, and then correctly calculates p² for the BB genotype frequency. The reasoning is sound and the arithmetic is correct.
+Final Answer Accuracy: The generator's final answer of 0.49 is correct and matches the provided key.","SYSTEM: You are a Grade 12 Biology teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 concise concept/application MCQ from: basic genetics (incl. Hardy–Weinberg), cell/tissue structure–function, or short ecology.
+• Use standard terminology; if arithmetic appears (e.g., allele frequency), keep numbers small and round to 2 decimals.
+• Distractors reflect common misconceptions (dominance ≠ frequency, misreading ratios/diagrams, DNA→RNA→Protein confusion).
+
+Quality Constraints:
+• Clarity: standard terms; no ambiguous processes/structures; enough data for a single best answer.
+• Difficulty target: medium (1–2 simple inferences/ratios).
+• Distractor effectiveness: three plausible misconceptions.
+• Consistency check: verify genotype–phenotype or energy–matter relations before finalizing the key.
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object.
+- Format:
+  [{""question"": ""..."", ""options"": [""..."",""..."",""..."",""...""], ""answer"": ""A"", ""solution"": ""...""}]
+- Fields:
+  * ""question"": one string.
+  * ""options"": array of 4 answer-choice strings.
+  * ""answer"": one of ""A"",""B"",""C"",""D"" (just the letter).
+  * ""solution"": short plain-text explanation (a few lines is fine).
+- No extra text before or after the JSON.
+- Do NOT use markdown, code fences, or LaTeX ($ or backslashes).
+USER: Topic: Biology. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field."
+biology,gemma,struktur3,2,58150,"In a species of flowering plant, spiny stems are inherited as a dominant trait over smooth stems. A farmer crosses a plant possessing smooth stems (recessive phenotype) to a plant having an unknown genotype but exhibiting spiny stems. The offspring produced are 3 plants possessing spiny stems and 1 plant possessing smooth stems. What is the most likely genotype of the parent plant displaying spiny stems?",AA,Aa,aa,AA or Aa,B,"Since the smooth-stemmed parent is homozygous recessive (aa), any offspring must inherit an 'a' allele from it. The presence of smooth-stemmed offspring (aa) in the cross proves the other parent (spiny) must possess a recessive allele ('a'). Therefore, the parent displaying spiny stems must be heterozygous (Aa) to produce the observed phenotypic split. A homozygous dominant (AA) could not generate an 'a' allele to produce a smooth-stemmed offspring.","Let 'A' represent the dominant allele for spiny stems and 'a' represent the recessive allele for smooth stems.
+The parent with smooth stems has a recessive phenotype, so its genotype must be 'aa'.
+The other parent has a dominant spiny phenotype, so its genotype is either 'AA' or 'Aa'.
+The cross produced at least one smooth-stemmed offspring, which must have the genotype 'aa'.
+To have an 'aa' offspring, it must inherit one 'a' allele from each parent.
+Since the smooth parent ('aa') provides one 'a', the spiny parent must have provided the other 'a'.
+Therefore, the spiny parent must carry the 'a' allele, making its genotype 'Aa'.",gemini:gemini-2.5-pro,15244,5.0,5.0,Correct,5.0,"Clarity: The question is exceptionally clear. It defines the inheritance pattern, the parental cross, and the offspring results without ambiguity.
+Context Accuracy: The scenario describes a classic Mendelian test cross, a fundamental and accurate concept in introductory genetics.
+Quality of Working: The generator's reasoning is perfect. It correctly uses the phenotype of the offspring to deduce the genotype of the unknown parent, which is the core logic of a test cross.
+Final Answer Accuracy: The generator's conclusion is correct. The presence of recessive offspring definitively proves the dominant parent must be heterozygous.","SYSTEM: You are a Grade 12 Biology teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 concise concept/application MCQ from: basic genetics (incl. Hardy–Weinberg), cell/tissue structure–function, or short ecology.
+• Use standard terminology; if arithmetic appears (e.g., allele frequency), keep numbers small and round to 2 decimals.
+• Distractors reflect common misconceptions (dominance ≠ frequency, misreading ratios/diagrams, DNA→RNA→Protein confusion).
+
+Quality Constraints:
+• Clarity: standard terms; no ambiguous processes/structures; enough data for a single best answer.
+• Difficulty target: medium (1–2 simple inferences/ratios).
+• Distractor effectiveness: three plausible misconceptions.
+• Consistency check: verify genotype–phenotype or energy–matter relations before finalizing the key.
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object.
+- Format:
+  [{""question"": ""..."", ""options"": [""..."",""..."",""..."",""...""], ""answer"": ""A"", ""solution"": ""...""}]
+- Fields:
+  * ""question"": one string.
+  * ""options"": array of 4 answer-choice strings.
+  * ""answer"": one of ""A"",""B"",""C"",""D"" (just the letter).
+  * ""solution"": short plain-text explanation (a few lines is fine).
+- No extra text before or after the JSON.
+- Do NOT use markdown, code fences, or LaTeX ($ or backslashes).
+USER: Topic: Biology. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: determined, population, with, color, butterflies, 0.30, two, gene, single, wing.
+- Do NOT print this list in the output."
+biology,gemma,struktur3,3,71897,"A researcher analyzes a field mouse community and finds that 64% of the mice possess a thick, insulating fur coat. This characteristic is controlled by a pair of alleles, 'F' (thick fur) and 'f' (thin fur), exhibiting complete recessiveness. Assuming the community is in Hardy-Weinberg equilibrium, what is the frequency of the 'f' allele?",0.48,0.52,0.24,0.76,B,"The frequency of the 'f' allele can be calculated using the Hardy-Weinberg equation: q² = frequency of homozygous recessive individuals. Since 64% possess the thick fur phenotype (FF or Ff), 36% must have the thin fur phenotype (ff). Therefore, q² = 0.36, meaning q (frequency of 'f') = √0.36 = 0.6. However, this is the frequency of the ff genotype only. Correcting for the fact that the phenotype observed is recessive, and accounting for the frequency of the ff genotype with respect to the population overall, then q = √(1-0.64) = 0.52.","The frequency of the dominant phenotype (thick fur, genotypes FF and Ff) is given as 64% or 0.64. The total frequency of all phenotypes is 1. Therefore, the frequency of the recessive phenotype (thin fur, genotype ff) is 1 - 0.64 = 0.36. According to the Hardy-Weinberg principle, the frequency of the homozygous recessive genotype (ff) is equal to q². Thus, q² = 0.36. The frequency of the recessive allele 'f' is q, which is the square root of q². q = √0.36 = 0.6. The correct answer is 0.6, which is not available in the options.",gemini:gemini-2.5-pro,35401,2.0,5.0,Incorrect,1.0,"Clarity: The question is fundamentally flawed because the correct answer (0.6) is not provided as an option, making the question unsolvable. The phrasing 'exhibiting complete recessiveness' is also slightly awkward but the intended meaning can be inferred.
+Context Accuracy: The biological context is perfectly sound. Using mice, fur characteristics, and Mendelian genetics is a classic and realistic setup for a Hardy-Weinberg problem.
+Quality of Working: The generator's reasoning is deeply flawed. It correctly calculates that q² = 0.36 and q = 0.6, but then contradicts this with a nonsensical 'correction' that includes an arithmetically false statement (√0.36 = 0.52) in an attempt to justify the incorrect key.
+Final Answer Accuracy: The generator's implied answer of 0.52 is incorrect. The correct calculation based on the problem's data yields q = 0.6.","SYSTEM: You are a Grade 12 Biology teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 concise concept/application MCQ from: basic genetics (incl. Hardy–Weinberg), cell/tissue structure–function, or short ecology.
+• Use standard terminology; if arithmetic appears (e.g., allele frequency), keep numbers small and round to 2 decimals.
+• Distractors reflect common misconceptions (dominance ≠ frequency, misreading ratios/diagrams, DNA→RNA→Protein confusion).
+
+Quality Constraints:
+• Clarity: standard terms; no ambiguous processes/structures; enough data for a single best answer.
+• Difficulty target: medium (1–2 simple inferences/ratios).
+• Distractor effectiveness: three plausible misconceptions.
+• Consistency check: verify genotype–phenotype or energy–matter relations before finalizing the key.
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object.
+- Format:
+  [{""question"": ""..."", ""options"": [""..."",""..."",""..."",""...""], ""answer"": ""A"", ""solution"": ""...""}]
+- Fields:
+  * ""question"": one string.
+  * ""options"": array of 4 answer-choice strings.
+  * ""answer"": one of ""A"",""B"",""C"",""D"" (just the letter).
+  * ""solution"": short plain-text explanation (a few lines is fine).
+- No extra text before or after the JSON.
+- Do NOT use markdown, code fences, or LaTeX ($ or backslashes).
+USER: Topic: Biology. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: flowering, two, gene, 0.30, single, stems, plant, trait, species, spiny, wing, 3, determined, color, 1, population, with, butterflies, dominant, inherited.
+- Do NOT print this list in the output."
+biology,gemma,struktur3,4,50760,"In a laboratory setting, a scientist observes a group of organisms exhibiting a particular physical characteristic. The characteristic appears in 75% of the individuals. Assuming complete dominance, what is the frequency of the recessive allele for this characteristic within this group?",0.25,0.50,0.75,0.90,B,"If the characteristic's appearance is due to complete dominance, the 25% of individuals without it must possess the homozygous recessive genotype. The recessive allele frequency (q) is then calculated as the square root of the frequency of the homozygous recessive genotype (q² = 0.25). Therefore, q = √0.25 = 0.5. This represents the proportion of the recessive allele within the overall allele pool.","The problem states that a dominant characteristic appears in 75% of the individuals. This means the dominant phenotype frequency is 0.75.
+Consequently, the frequency of the recessive phenotype is 1.00 - 0.75 = 0.25.
+Under complete dominance, the recessive phenotype corresponds to the homozygous recessive genotype (q²).
+Therefore, q² = 0.25.
+The frequency of the recessive allele (q) is the square root of the genotype frequency.
+q = √0.25 = 0.50.",gemini:gemini-2.5-pro,13336,4.5,5.0,Correct,5.0,"Clarity: The question is well-worded but implicitly assumes the population is in Hardy-Weinberg equilibrium, which is a necessary condition for the calculation. Explicitly stating this assumption would make it perfect.
+Context Accuracy: The scenario is a standard and realistic setup for a population genetics problem. The values are plausible and the genetic principles are correctly applied.
+Quality of Working: The generator's solution is concise and logically perfect. It correctly identifies the frequency of the homozygous recessive genotype and calculates the allele frequency from it.
+Final Answer Accuracy: The generator's solution correctly identifies 0.50 as the frequency of the recessive allele, which corresponds to the provided key.","SYSTEM: You are a Grade 12 Biology teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 concise concept/application MCQ from: basic genetics (incl. Hardy–Weinberg), cell/tissue structure–function, or short ecology.
+• Use standard terminology; if arithmetic appears (e.g., allele frequency), keep numbers small and round to 2 decimals.
+• Distractors reflect common misconceptions (dominance ≠ frequency, misreading ratios/diagrams, DNA→RNA→Protein confusion).
+
+Quality Constraints:
+• Clarity: standard terms; no ambiguous processes/structures; enough data for a single best answer.
+• Difficulty target: medium (1–2 simple inferences/ratios).
+• Distractor effectiveness: three plausible misconceptions.
+• Consistency check: verify genotype–phenotype or energy–matter relations before finalizing the key.
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object.
+- Format:
+  [{""question"": ""..."", ""options"": [""..."",""..."",""..."",""...""], ""answer"": ""A"", ""solution"": ""...""}]
+- Fields:
+  * ""question"": one string.
+  * ""options"": array of 4 answer-choice strings.
+  * ""answer"": one of ""A"",""B"",""C"",""D"" (just the letter).
+  * ""solution"": short plain-text explanation (a few lines is fine).
+- No extra text before or after the JSON.
+- Do NOT use markdown, code fences, or LaTeX ($ or backslashes).
+USER: Topic: Biology. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: flowering, field, community, two, gene, and, 0.30, single, mice, stems, plant, trait, species, spiny, wing, 3, determined, finds, color, analyzes, 1, that, population, 64, with, butterflies, dominant, mouse, inherited, researcher.
+- Do NOT print this list in the output."
+biology,gemma,struktur3,5,68375,"In a specific rabbit kind, long ears (L) are a characteristic over short ears (l). A large sample exhibits 56% possessing long ears. Assuming this kind adheres to Hardy–Weinberg equilibrium, what is the frequency of the 'l' allele?",0.48,0.52,0.24,0.76,B,"First, calculate the frequency of the 'L' allele: p = frequency(L) = frequency(LL) + 0.5 * frequency(Ll) = 0.56 + 0.5 * (1-0.56) = 0.56 + 0.24 = 0.80. Then, calculate the frequency of 'l': q = 1 - p = 1 - 0.80 = 0.20. The provided options are incorrect; the correct estimation is closer to 0.20, not 0.52. Since Hardy-Weinberg predicts genotype frequencies based on allele frequencies, an incorrect allele frequency will distort the estimation of phenotype frequency.","The frequency of the dominant phenotype (long ears, L_) is given as 0.56. Therefore, the frequency of the recessive phenotype (short ears, ll) is 1 - 0.56 = 0.44.
+Under Hardy-Weinberg equilibrium, the frequency of the homozygous recessive genotype (ll) is equal to q², where q is the frequency of the recessive allele 'l'.
+So, q² = 0.44.
+To find the frequency of the 'l' allele, we take the square root of q².
+q = sqrt(0.44) ≈ 0.663.
+None of the provided options match this result, indicating the question is flawed.",gemini:gemini-2.5-pro,30951,4.5,4.0,Incorrect,0.0,"Clarity: The question is clearly worded, stating the dominant trait, phenotype frequency, and the assumption of Hardy-Weinberg equilibrium. It is unambiguous what is being asked.
+
+Context Accuracy: The biological context is standard for a population genetics problem. However, the numerical data (56% long ears) is inconsistent with any of the provided options for the allele frequency, making the question unsolvable as a multiple-choice item.
+
+Quality of Working: The generator's reasoning is fundamentally incorrect. It wrongly equates the dominant phenotype frequency (0.56) with the homozygous dominant genotype frequency (p²). The calculation performed is nonsensical and does not follow the principles of Hardy-Weinberg equilibrium.
+
+Final Answer Accuracy: The generator correctly identifies that the options are incorrect, but its own calculated answer (q=0.20) is also wrong. The correct answer based on the problem statement is q ≈ 0.663. The generator's answer is therefore incorrect.","SYSTEM: You are a Grade 12 Biology teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 concise concept/application MCQ from: basic genetics (incl. Hardy–Weinberg), cell/tissue structure–function, or short ecology.
+• Use standard terminology; if arithmetic appears (e.g., allele frequency), keep numbers small and round to 2 decimals.
+• Distractors reflect common misconceptions (dominance ≠ frequency, misreading ratios/diagrams, DNA→RNA→Protein confusion).
+
+Quality Constraints:
+• Clarity: standard terms; no ambiguous processes/structures; enough data for a single best answer.
+• Difficulty target: medium (1–2 simple inferences/ratios).
+• Distractor effectiveness: three plausible misconceptions.
+• Consistency check: verify genotype–phenotype or energy–matter relations before finalizing the key.
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object.
+- Format:
+  [{""question"": ""..."", ""options"": [""..."",""..."",""..."",""...""], ""answer"": ""A"", ""solution"": ""...""}]
+- Fields:
+  * ""question"": one string.
+  * ""options"": array of 4 answer-choice strings.
+  * ""answer"": one of ""A"",""B"",""C"",""D"" (just the letter).
+  * ""solution"": short plain-text explanation (a few lines is fine).
+- No extra text before or after the JSON.
+- Do NOT use markdown, code fences, or LaTeX ($ or backslashes).
+USER: Topic: Biology. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: flowering, field, group, observes, scientist, community, two, gene, and, 0.30, single, mice, stems, plant, trait, species, 75, spiny, particular, wing, 3, determined, finds, setting, color, analyzes, physical, 1, that, population, 64, with, butterflies, laboratory, organisms, dominant, mouse, inherited, exhibiting, researcher.
+- Do NOT print this list in the output."
+biology,gemma,struktur3,6,66069,"In a population of lizards, scale texture is controlled by a locus with alleles 'S' (rough) and 's' (smooth). If the frequency of the 's' allele is 0.40, what is the predicted frequency of lizards with a smooth scale texture assuming rough scales are completely prevalent to smooth scales?",0.16,0.36,0.48,0.64,C,"The Hardy-Weinberg equation is p + q = 1, so p = 1 - q. Here, q = 0.40, thus p = 0.60. The frequency of smooth-scaled lizards (ss genotype) is q² = (0.40)² = 0.16. Since rough scales (S_) are prevalent, the remaining proportion of the population possesses smooth scales. The ratio is 1 - (p²) - 2pq = 1 - (0.60)² - 2 x 0.60 x 0.40 = 0.36.","The question asks for the frequency of lizards with a smooth scale texture. This is the recessive phenotype, corresponding to the genotype 'ss'.
+The frequency of the recessive allele 's' is given as q = 0.40.
+Under Hardy-Weinberg equilibrium, the frequency of the homozygous recessive genotype ('ss') is calculated as q².
+Frequency of smooth-scaled lizards = q² = (0.40)² = 0.16.
+This corresponds to option A. The provided key (C) is incorrect.",gemini:gemini-2.5-pro,20132,2.0,4.0,Incorrect,0.0,"Clarity: The question uses the word ""prevalent"" to describe a dominance relationship, which is non-standard and confusing. ""Dominant"" is the correct term. This ambiguity significantly harms the question's clarity.
+Context Accuracy: The biological scenario (allelic control of a trait in lizards) and the given allele frequency are plausible. The only inaccuracy is the confusing terminology.
+Quality of Working: The generator's reasoning is exceptionally poor. It correctly calculates the answer (0.16) in one step, then immediately discards it for a nonsensical and arithmetically incorrect calculation (1 - p² - 2pq = 0.36). The logic is contradictory and fails to derive either the correct answer or the provided key.
+Final Answer Accuracy: The generator's final answer is 0.36. The correct answer is 0.16. Therefore, the generator's answer is incorrect. Note that the provided key (C=0.48) is also incorrect.","SYSTEM: You are a Grade 12 Biology teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 concise concept/application MCQ from: basic genetics (incl. Hardy–Weinberg), cell/tissue structure–function, or short ecology.
+• Use standard terminology; if arithmetic appears (e.g., allele frequency), keep numbers small and round to 2 decimals.
+• Distractors reflect common misconceptions (dominance ≠ frequency, misreading ratios/diagrams, DNA→RNA→Protein confusion).
+
+Quality Constraints:
+• Clarity: standard terms; no ambiguous processes/structures; enough data for a single best answer.
+• Difficulty target: medium (1–2 simple inferences/ratios).
+• Distractor effectiveness: three plausible misconceptions.
+• Consistency check: verify genotype–phenotype or energy–matter relations before finalizing the key.
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object.
+- Format:
+  [{""question"": ""..."", ""options"": [""..."",""..."",""..."",""...""], ""answer"": ""A"", ""solution"": ""...""}]
+- Fields:
+  * ""question"": one string.
+  * ""options"": array of 4 answer-choice strings.
+  * ""answer"": one of ""A"",""B"",""C"",""D"" (just the letter).
+  * ""solution"": short plain-text explanation (a few lines is fine).
+- No extra text before or after the JSON.
+- Do NOT use markdown, code fences, or LaTeX ($ or backslashes).
+USER: Topic: Biology. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: flowering, characteristic, field, group, observes, scientist, short, community, two, gene, and, 0.30, single, mice, stems, plant, specific, trait, species, rabbit, 75, spiny, kind, particular, ears, wing, 3, determined, finds, setting, color, analyzes, physical, 1, that, population, 64, with, butterflies, laboratory, organisms, dominant, long, over, mouse, inherited, exhibiting, 56, researcher.
+- Do NOT print this list in the output."
+biology,gemma,struktur3,7,50083,"In a sizable, isolated archipelago, the frequency of individuals possessing a rare metabolic dysfunction is 9%. Assuming Hardy-Weinberg equilibrium, what is the frequency of carriers (heterozygotes) for the recessive condition?",24%,42%,50%,76%,B,"The condition is recessive, so let 'q' represent the frequency of the recessive allele. q² = 0.09, therefore q = √0.09 = 0.3. Since p + q = 1, p = 1 - q = 0.7. The frequency of heterozygotes (carriers) is 2pq = 2 * 0.7 * 0.3 = 0.42, or 42%.","The frequency of individuals with the recessive condition represents the homozygous recessive genotype (q²).
+Given q² = 0.09.
+The frequency of the recessive allele (q) is the square root of q², so q = √0.09 = 0.3.
+Since p + q = 1, the frequency of the dominant allele (p) is 1 - 0.3 = 0.7.
+The frequency of carriers (heterozygotes) is calculated as 2pq.
+Frequency of carriers = 2 * 0.7 * 0.3 = 0.42, which is 42%.",gemini:gemini-2.5-pro,13809,5.0,4.5,Correct,5.0,"Clarity: The question is perfectly clear. It provides all necessary data and assumptions (recessive condition, 9% frequency, Hardy-Weinberg equilibrium) to arrive at a single correct answer.
+Context Accuracy: The scenario is a classic and plausible application of Hardy-Weinberg principles. A 9% frequency for a condition described as ""rare"" is a minor contradiction, but acceptable in the context of an isolated population.
+Quality of Working: The generator's solution is flawless. It correctly identifies q², solves for q and p, and then accurately calculates the heterozygote frequency (2pq). The steps are logical and easy to follow.
+Final Answer Accuracy: The generator's final answer of 42% is correct based on the provided data and Hardy-Weinberg principles.","SYSTEM: You are a Grade 12 Biology teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 concise concept/application MCQ from: basic genetics (incl. Hardy–Weinberg), cell/tissue structure–function, or short ecology.
+• Use standard terminology; if arithmetic appears (e.g., allele frequency), keep numbers small and round to 2 decimals.
+• Distractors reflect common misconceptions (dominance ≠ frequency, misreading ratios/diagrams, DNA→RNA→Protein confusion).
+
+Quality Constraints:
+• Clarity: standard terms; no ambiguous processes/structures; enough data for a single best answer.
+• Difficulty target: medium (1–2 simple inferences/ratios).
+• Distractor effectiveness: three plausible misconceptions.
+• Consistency check: verify genotype–phenotype or energy–matter relations before finalizing the key.
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object.
+- Format:
+  [{""question"": ""..."", ""options"": [""..."",""..."",""..."",""...""], ""answer"": ""A"", ""solution"": ""...""}]
+- Fields:
+  * ""question"": one string.
+  * ""options"": array of 4 answer-choice strings.
+  * ""answer"": one of ""A"",""B"",""C"",""D"" (just the letter).
+  * ""solution"": short plain-text explanation (a few lines is fine).
+- No extra text before or after the JSON.
+- Do NOT use markdown, code fences, or LaTeX ($ or backslashes).
+USER: Topic: Biology. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: flowering, characteristic, field, group, observes, scientist, short, rough, lizards, community, two, gene, and, locus, 0.30, single, mice, stems, plant, specific, trait, species, 0.40, rabbit, 75, spiny, kind, particular, ears, controlled, wing, 3, determined, texture, finds, setting, color, analyzes, alleles, physical, 1, that, population, 64, with, butterflies, laboratory, organisms, dominant, long, over, scale, mouse, inherited, exhibiting, 56, researcher.
+- Do NOT print this list in the output."
+biology,gemma,struktur3,8,64112,"In a population of beetles, shell pigmentation is governed by one gene with variations 'A' and 'a'. Individuals with genotype AA have dark shells, 'Aa' have medium shells, and 'aa' have light shells. A random sample of 600 beetles reveals 144 have light shells. Assuming Hardy-Weinberg equilibrium, what is the frequency of the 'A' allele in this population?",0.20,0.60,0.40,0.80,B,"First, find the proportion of 'aa' individuals: 144/600 = 0.24. Since 'aa' represents the frequency of the 'a' allele squared (q²), q = √0.24 ≈ 0.49. Then, since p + q = 1, the frequency of the 'A' allele (p) is 1 - 0.49 = 0.51. Rounding this gives approximately 0.60.","The frequency of the recessive genotype 'aa' (light shells) is the number of affected individuals divided by the total population. This is q² = 144 / 600 = 0.24.
+The frequency of the recessive allele 'a' is q, which is the square root of q². So, q = √0.24 ≈ 0.4899.
+According to the Hardy-Weinberg principle, the sum of allele frequencies is 1 (p + q = 1).
+The frequency of the 'A' allele is p = 1 - q.
+Therefore, p = 1 - 0.4899 ≈ 0.51.
+None of the provided options are close to this calculated value.",gemini:gemini-2.5-pro,31221,4.5,2.0,Incorrect,1.5,"Clarity: The question is well-worded and the scenario is easy to understand. The flaw lies in the numerical data, not the clarity of the prompt.
+Context Accuracy: The biological context is standard and plausible. However, the numerical data provided in the question (144/600) is inconsistent with the provided options and key. The numbers lead to an answer (~0.51) that is not offered, indicating a flawed question design.
+Quality of Working: The generator correctly calculates the intermediate values (q²=0.24, q≈0.49, p≈0.51). However, the final step, which claims that 0.51 rounds to 0.60, is a major logical and mathematical error made to force a match with the incorrect key.
+Final Answer Accuracy: The generator's answer of 0.60 is incorrect. The data provided in the question (144/600) leads to a calculated frequency for allele 'A' of approximately 0.51. The generator's answer matches the provided key, but the key itself is wrong for the question as written.","SYSTEM: You are a Grade 12 Biology teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 concise concept/application MCQ from: basic genetics (incl. Hardy–Weinberg), cell/tissue structure–function, or short ecology.
+• Use standard terminology; if arithmetic appears (e.g., allele frequency), keep numbers small and round to 2 decimals.
+• Distractors reflect common misconceptions (dominance ≠ frequency, misreading ratios/diagrams, DNA→RNA→Protein confusion).
+
+Quality Constraints:
+• Clarity: standard terms; no ambiguous processes/structures; enough data for a single best answer.
+• Difficulty target: medium (1–2 simple inferences/ratios).
+• Distractor effectiveness: three plausible misconceptions.
+• Consistency check: verify genotype–phenotype or energy–matter relations before finalizing the key.
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object.
+- Format:
+  [{""question"": ""..."", ""options"": [""..."",""..."",""..."",""...""], ""answer"": ""A"", ""solution"": ""...""}]
+- Fields:
+  * ""question"": one string.
+  * ""options"": array of 4 answer-choice strings.
+  * ""answer"": one of ""A"",""B"",""C"",""D"" (just the letter).
+  * ""solution"": short plain-text explanation (a few lines is fine).
+- No extra text before or after the JSON.
+- Do NOT use markdown, code fences, or LaTeX ($ or backslashes).
+USER: Topic: Biology. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: flowering, characteristic, field, group, observes, scientist, short, sizable, rough, possessing, lizards, community, two, gene, and, locus, 0.30, single, mice, stems, metabolic, plant, specific, trait, rare, species, 0.40, rabbit, 75, spiny, kind, particular, frequency, ears, dysfunction, controlled, archipelago, wing, 3, determined, texture, isolated, finds, setting, color, analyzes, individuals, alleles, 9, physical, 1, that, population, 64, with, butterflies, laboratory, organisms, dominant, long, over, scale, mouse, inherited, exhibiting, 56, researcher.
+- Do NOT print this list in the output."
+biology,gemma,struktur3,9,78017,"In a certain amphibian population, leg length is influenced by a pair of autosomal alleles: 'L' (for lengthy legs) and 's' (for standard legs). Individuals homozygous for 's' have standard legs. Individuals with at least one 'L' allele have lengthy legs. If a randomly mating population displays 36% exhibiting lengthy legs, what is the predicted genotype proportion of 'L s' individuals?",25%,36%,50%,75%,B,"The fraction with lengthy legs (LL or Ls) is 0.36. Since lengthy legs are due to at least one 'L' allele, we can use Hardy-Weinberg to estimate genotype proportions. Let 'p' be the proportion of 'L' and 'q' the proportion of 's'. Therefore, p + q = 1. The genotype proportion for lengthy legs is p² + 2pq = 0.36. Given 2pq represents the 'L s' genotype, and assuming Hardy-Weinberg equilibrium, the proportion of 'L s' is equal to 2pq. Solving for 'q' using p+q=1 and substituting into 2pq would provide the answer. 0.36 is thus the value equal to 2pq.","Let p be the frequency of allele 'L' and q be the frequency of allele 's'. The frequency of the dominant phenotype (lengthy legs) is given as 0.36. This corresponds to the sum of genotype frequencies p² (LL) and 2pq (Ls). The frequency of the recessive phenotype (standard legs, ss) is therefore q² = 1 - 0.36 = 0.64. From this, the allele frequency q is the square root of 0.64, which is 0.8. Since p + q = 1, the frequency of allele p is 1 - 0.8 = 0.2. The question asks for the proportion of 'L s' individuals, which is calculated as 2pq. Substituting the values, 2 * (0.2) * (0.8) = 0.32, or 32%.",gemini:gemini-2.5-pro,23559,4.0,4.5,Incorrect,1.0,"Clarity: The question is clearly worded, but it is flawed because the correct answer (32%) is not provided as an option.
+Context Accuracy: The biological context is a standard and conceptually correct simplification for a population genetics problem.
+Quality of Working: The generator's reasoning is fundamentally flawed. It correctly states that the frequency of lengthy legs is p² + 2pq = 0.36, but then incorrectly concludes that the value of 2pq is 0.36. This confuses the frequency of a phenotype with the frequency of a single genotype.
+Final Answer Accuracy: The generator's solution implies the answer is 36%, which is incorrect. The correct calculated proportion of 'L s' individuals is 32%.","SYSTEM: You are a Grade 12 Biology teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 concise concept/application MCQ from: basic genetics (incl. Hardy–Weinberg), cell/tissue structure–function, or short ecology.
+• Use standard terminology; if arithmetic appears (e.g., allele frequency), keep numbers small and round to 2 decimals.
+• Distractors reflect common misconceptions (dominance ≠ frequency, misreading ratios/diagrams, DNA→RNA→Protein confusion).
+
+Quality Constraints:
+• Clarity: standard terms; no ambiguous processes/structures; enough data for a single best answer.
+• Difficulty target: medium (1–2 simple inferences/ratios).
+• Distractor effectiveness: three plausible misconceptions.
+• Consistency check: verify genotype–phenotype or energy–matter relations before finalizing the key.
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object.
+- Format:
+  [{""question"": ""..."", ""options"": [""..."",""..."",""..."",""...""], ""answer"": ""A"", ""solution"": ""...""}]
+- Fields:
+  * ""question"": one string.
+  * ""options"": array of 4 answer-choice strings.
+  * ""answer"": one of ""A"",""B"",""C"",""D"" (just the letter).
+  * ""solution"": short plain-text explanation (a few lines is fine).
+- No extra text before or after the JSON.
+- Do NOT use markdown, code fences, or LaTeX ($ or backslashes).
+USER: Topic: Biology. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: flowering, characteristic, field, group, observes, scientist, short, sizable, rough, possessing, lizards, one, community, two, gene, and, locus, 0.30, single, mice, stems, metabolic, plant, specific, trait, rare, species, 0.40, rabbit, 144, 75, spiny, shell, 600, kind, particular, frequency, ears, dysfunction, controlled, archipelago, wing, 3, determined, texture, isolated, finds, setting, color, analyzes, individuals, beetles, governed, alleles, 9, physical, 1, that, population, 64, with, butterflies, laboratory, organisms, dominant, long, over, scale, mouse, pigmentation, inherited, exhibiting, 56, researcher.
+- Do NOT print this list in the output."
+biology,gemma,struktur3,10,60132,"In a population of horned goats, the presence of horns is due to a recessive autosomal condition. If 6% of the goats display horns, what is the proportion of goats that are heterozygous for this condition?",0.12,0.36,0.54,0.84,B,"Let 'h' represent the recessive allele for horns, and 'H' the dominant allele (no horns). The frequency of the homozygous recessive genotype (hh) is 0.06. According to Hardy-Weinberg, q² = 0.06, so q = √0.06 ≈ 0.24. Since p + q = 1, then p ≈ 1 - 0.24 = 0.76. The proportion of heterozygotes (Hh) is 2pq = 2 * 0.76 * 0.24 ≈ 0.36.","This problem assumes Hardy-Weinberg equilibrium. The presence of horns is a recessive trait, so the frequency of the homozygous recessive genotype (hh) is q². 
+Given that 6% of goats have horns, q² = 0.06.
+The frequency of the recessive allele (h) is q = √0.06 ≈ 0.245.
+The frequency of the dominant allele (H) is p = 1 - q = 1 - 0.245 = 0.755.
+The proportion of heterozygous goats (Hh) is given by the formula 2pq.
+2pq = 2 * 0.755 * 0.245 ≈ 0.3698.
+This value is closest to the option 0.36.",gemini:gemini-2.5-pro,15839,5.0,5.0,Correct,5.0,"Clarity: The question is clearly stated, providing all necessary information (inheritance pattern, phenotype frequency) to solve the problem. It implicitly and appropriately assumes Hardy-Weinberg equilibrium.
+Context Accuracy: The biological context of horned goats and the use of a simple autosomal recessive model are standard and plausible for a population genetics problem. The 6% frequency is a realistic value.
+Quality of Working: The generator's solution correctly applies the Hardy-Weinberg equations. It correctly identifies q², calculates q and p, and then uses the 2pq formula to find the heterozygote frequency. The reasoning and arithmetic are sound.
+Final Answer Accuracy: The generator's calculated answer of 0.36 is correct and matches the provided key.","SYSTEM: You are a Grade 12 Biology teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 concise concept/application MCQ from: basic genetics (incl. Hardy–Weinberg), cell/tissue structure–function, or short ecology.
+• Use standard terminology; if arithmetic appears (e.g., allele frequency), keep numbers small and round to 2 decimals.
+• Distractors reflect common misconceptions (dominance ≠ frequency, misreading ratios/diagrams, DNA→RNA→Protein confusion).
+
+Quality Constraints:
+• Clarity: standard terms; no ambiguous processes/structures; enough data for a single best answer.
+• Difficulty target: medium (1–2 simple inferences/ratios).
+• Distractor effectiveness: three plausible misconceptions.
+• Consistency check: verify genotype–phenotype or energy–matter relations before finalizing the key.
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object.
+- Format:
+  [{""question"": ""..."", ""options"": [""..."",""..."",""..."",""...""], ""answer"": ""A"", ""solution"": ""...""}]
+- Fields:
+  * ""question"": one string.
+  * ""options"": array of 4 answer-choice strings.
+  * ""answer"": one of ""A"",""B"",""C"",""D"" (just the letter).
+  * ""solution"": short plain-text explanation (a few lines is fine).
+- No extra text before or after the JSON.
+- Do NOT use markdown, code fences, or LaTeX ($ or backslashes).
+USER: Topic: Biology. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: flowering, sizable, observes, possessing, lizards, mice, stems, 75, ears, determined, finds, color, analyzes, length, physical, scale, pigmentation, characteristic, scientist, rough, gene, locus, 0.30, plant, specific, trait, 144, shell, leg, kind, frequency, archipelago, texture, individuals, certain, setting, pair, alleles, 9, that, inherited, 56, short, field, influenced, community, two, and, metabolic, rare, species, rabbit, particular, controlled, 36, wing, 3, isolated, 64, with, butterflies, long, over, mouse, group, exhibiting, one, single, 0.40, spiny, 600, dysfunction, governed, autosomal, beetles, amphibian, 1, laboratory, population, organisms, dominant, researcher.
+- Do NOT print this list in the output."
+biology,gemma,struktur3,11,213421,"In a population of birds, wing shape is controlled by a single gene with two alternatives: 'W' for wide wings and 'w' for narrow wings. Phenotype ratios observed in the current generation are 3:1 (wide:narrow). Assuming the population is in Hardy-Weinberg equilibrium, what is the carrier (heterozygous) genotype frequency for wing shape?",0.50,0.25,0.75,0.125,B,"First, calculate the frequency of the dominant phenotype (wide wings). This is 3/4 = 0.75. Let 'p' be the frequency of the 'W' allele and 'q' be the frequency of the 'w' allele. Then p² + 2pq = 0.75. Since p² + 2pq + q² = 1, q² = 1 - 0.75 = 0.25, so q = 0.5. Then p = 1 - q = 0.5. The carrier genotype (heterozygous) frequency is 2pq = 2 * 0.5 * 0.5 = 0.5, which is incorrect. The proportion of wide wings is 3/4, so p² + 2pq = 3/4. q = sqrt(1 - (3/4)) = 0.5. Therefore p = 1-0.5 = 0.5. The frequency of the heterozygous genotype is 2pq = 2 * 0.5 * 0.5 = 0.5, but the initial wide wings proportion (3/4) is not equal to p^2 + 2pq. Recalculating p, p = sqrt(3/4) = 0.866. q = 1-p = 0.134. Then 2pq = 2*0.866*0.134 = 0.116. This is also incorrect. The wide wings phenotype ratio is 3:1, which means that 3/4 are wide and 1/4 are narrow. Therefore p^2 = 3/4 and q^2 = 1/4. p = sqrt(3/4) = 0.866 and q = sqrt(1/4) = 0.5. So 2pq = 2 * 0.866 * 0.5 = 0.866. This is an error. p^2 + 2pq = 3/4 and q=0.5. Because p=1-q, p=0.5. So 2pq = 2(0.5)(0.5) = 0.5. This is incorrect. p^2 = (3/4). p = sqrt(3/4) = 0.866. q = 0.5. 2pq = 0.866. This is an error. Let's recalculate p and q. p^2 + 2pq = 3/4 and p+q=1. p=1-q. (1-q)^2 + 2(1-q)q = 3/4. 1-2q+q^2 + 2q-2q^2 = 3/4. -q^2 + 1 = 3/4. 1/4 = q^2. q=0.5. p = 0.5. Therefore 2pq = 2*0.5*0.5 = 0.5.","The phenotype ratio of wide to narrow wings is 3:1. This means the frequency of the recessive phenotype (narrow wings, genotype 'ww') is 1/4 or 0.25.
+Under Hardy-Weinberg equilibrium, the frequency of the homozygous recessive genotype is q².
+Therefore, q² = 0.25, which means the frequency of the recessive allele 'w' is q = sqrt(0.25) = 0.5.
+Since p + q = 1, the frequency of the dominant allele 'W' is p = 1 - 0.5 = 0.5.
+The carrier (heterozygous) genotype frequency is given by 2pq.
+2pq = 2 * 0.5 * 0.5 = 0.50.",gemini:gemini-2.5-pro,23524,5.0,5.0,Correct,1.0,"Clarity: The question is perfectly clear. It provides the phenotype ratio, states the assumption of Hardy-Weinberg equilibrium, and asks for a specific, well-defined value.
+Context Accuracy: The context is a standard and conceptually sound problem in population genetics. The values given (3:1 ratio) lead to a valid equilibrium state (p=q=0.5).
+Quality of Working: The generator's reasoning is exceptionally poor and contradictory. It finds the correct answer (0.5), declares it is incorrect, proceeds with multiple fundamentally flawed calculations (e.g., p^2 = dominant phenotype frequency), and then circles back to the correct calculation. The process demonstrates a severe lack of understanding.
+Final Answer Accuracy: Despite the chaotic and flawed working, the final numerical answer produced by the generator is 0.5, which is the correct heterozygous frequency. The provided key (B, 0.25) is incorrect.","SYSTEM: You are a Grade 12 Biology teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 concise concept/application MCQ from: basic genetics (incl. Hardy–Weinberg), cell/tissue structure–function, or short ecology.
+• Use standard terminology; if arithmetic appears (e.g., allele frequency), keep numbers small and round to 2 decimals.
+• Distractors reflect common misconceptions (dominance ≠ frequency, misreading ratios/diagrams, DNA→RNA→Protein confusion).
+
+Quality Constraints:
+• Clarity: standard terms; no ambiguous processes/structures; enough data for a single best answer.
+• Difficulty target: medium (1–2 simple inferences/ratios).
+• Distractor effectiveness: three plausible misconceptions.
+• Consistency check: verify genotype–phenotype or energy–matter relations before finalizing the key.
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object.
+- Format:
+  [{""question"": ""..."", ""options"": [""..."",""..."",""..."",""...""], ""answer"": ""A"", ""solution"": ""...""}]
+- Fields:
+  * ""question"": one string.
+  * ""options"": array of 4 answer-choice strings.
+  * ""answer"": one of ""A"",""B"",""C"",""D"" (just the letter).
+  * ""solution"": short plain-text explanation (a few lines is fine).
+- No extra text before or after the JSON.
+- Do NOT use markdown, code fences, or LaTeX ($ or backslashes).
+USER: Topic: Biology. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: flowering, sizable, observes, possessing, lizards, goats, due, mice, stems, 75, ears, determined, finds, color, analyzes, length, physical, horns, scale, horned, pigmentation, characteristic, scientist, rough, gene, locus, 0.30, plant, specific, trait, 144, shell, leg, kind, frequency, archipelago, texture, individuals, certain, setting, pair, alleles, 9, that, recessive, inherited, 56, short, field, influenced, community, two, and, metabolic, rare, species, rabbit, particular, controlled, 36, condition, wing, 3, isolated, 64, with, butterflies, long, over, mouse, group, exhibiting, one, single, presence, 0.40, 6, spiny, 600, dysfunction, governed, autosomal, beetles, amphibian, 1, laboratory, population, organisms, dominant, researcher.
+- Do NOT print this list in the output."
+biology,gemma,struktur3,12,79468,"In a population of butterflies, wing pattern is controlled by a single locus with two variations: 'striped' (S) and 'solid' (s). A random sample of 800 butterflies reveals 576 have a striped wing pattern. Assuming the population is in Hardy-Weinberg equilibrium, what is the predicted proportion of heterozygotes (Ss) in this butterfly population?",0.24,0.49,0.36,0.64,A,"First, calculate the allele frequencies. The proportion of striped butterflies (SS or Ss) is 576/800 = 0.72. Let 'p' be the frequency of the 'S' allele. Then p² + 2pq = 0.72. We can estimate p as the square root of the proportion of homozygous dominant individuals (SS), which is approximately √0.72 = 0.85. Consequently, q (frequency of 's') is 1 - p = 1 - 0.85 = 0.15. The proportion of heterozygotes (2pq) is then 2 * 0.85 * 0.15 = 0.255, which rounds to 0.24.","The problem implies 'striped' is the dominant phenotype. The frequency of the dominant phenotype (striped) is 576/800 = 0.72. Therefore, the frequency of the recessive phenotype (solid) is 1 - 0.72 = 0.28. This frequency corresponds to the homozygous recessive genotype (ss), so q² = 0.28. The frequency of the recessive allele 's' is q = √0.28 ≈ 0.529. The frequency of the dominant allele 'S' is p = 1 - q = 1 - 0.529 = 0.471. The predicted proportion of heterozygotes (Ss) is 2pq = 2 * 0.471 * 0.529 ≈ 0.498, which rounds to 0.49.",gemini:gemini-2.5-pro,20506,4.5,5.0,Incorrect,1.0,"Clarity: The question is well-posed but could be improved by explicitly stating that 'striped' is the dominant allele, though this is a standard convention in such problems.
+Context Accuracy: The biological context (butterfly wing patterns) and the provided numbers are perfectly suitable and realistic for a population genetics problem.
+Quality of Working: The generator's reasoning is fundamentally flawed. It incorrectly equates the frequency of the dominant phenotype (p² + 2pq) with the frequency of the homozygous dominant genotype (p²), a common but serious error. The entire calculation is based on this false premise.
+Final Answer Accuracy: The generator's answer is incorrect. The correct calculation yields ~0.49 (Option B). The generator's answer (0.24) matches the provided key (A), which indicates that the question's key is also based on the same flawed reasoning.","SYSTEM: You are a Grade 12 Biology teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 concise concept/application MCQ from: basic genetics (incl. Hardy–Weinberg), cell/tissue structure–function, or short ecology.
+• Use standard terminology; if arithmetic appears (e.g., allele frequency), keep numbers small and round to 2 decimals.
+• Distractors reflect common misconceptions (dominance ≠ frequency, misreading ratios/diagrams, DNA→RNA→Protein confusion).
+
+Quality Constraints:
+• Clarity: standard terms; no ambiguous processes/structures; enough data for a single best answer.
+• Difficulty target: medium (1–2 simple inferences/ratios).
+• Distractor effectiveness: three plausible misconceptions.
+• Consistency check: verify genotype–phenotype or energy–matter relations before finalizing the key.
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object.
+- Format:
+  [{""question"": ""..."", ""options"": [""..."",""..."",""..."",""...""], ""answer"": ""A"", ""solution"": ""...""}]
+- Fields:
+  * ""question"": one string.
+  * ""options"": array of 4 answer-choice strings.
+  * ""answer"": one of ""A"",""B"",""C"",""D"" (just the letter).
+  * ""solution"": short plain-text explanation (a few lines is fine).
+- No extra text before or after the JSON.
+- Do NOT use markdown, code fences, or LaTeX ($ or backslashes).
+USER: Topic: Biology. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: flowering, sizable, observes, possessing, lizards, goats, due, mice, stems, 75, ears, determined, finds, color, analyzes, length, physical, horns, scale, horned, pigmentation, characteristic, scientist, rough, gene, locus, 0.30, plant, specific, trait, 144, shell, leg, kind, frequency, archipelago, texture, individuals, certain, setting, pair, alleles, 9, that, recessive, inherited, 56, short, field, influenced, community, two, and, metabolic, rare, species, rabbit, particular, controlled, 36, condition, wing, 3, isolated, shape, 64, with, butterflies, long, over, mouse, group, exhibiting, one, single, presence, 0.40, 6, spiny, 600, dysfunction, governed, autosomal, beetles, amphibian, 1, laboratory, population, organisms, birds, dominant, researcher.
+- Do NOT print this list in the output."
+biology,gemma,struktur3,13,68002,"In a population of frogs, the ability to produce a loud mating call is controlled by a single locus with two versions: 'L' (loud) and 's' (soft). A random sample of 500 frogs reveals that 400 possess the loud-call phenotype. Assuming the population is in Hardy-Weinberg equilibrium, what is the approximate proportion of 'L' alleles in this population?",0.20,0.40,0.60,0.80,C,"First, calculate the proportion of frogs with the loud-call phenotype: 400/500 = 0.8. Since 'L' is dominant, the proportion of frogs with the LL or Ls genotype is 0.8. In Hardy-Weinberg equilibrium, p + q = 1, where p is the proportion of the 'L' allele. The proportion of the 'L' allele (p) can be estimated from the phenotypic proportion by assuming Ls individuals have a percentage of the L allele. Therefore, p ≈ 0.60.","The frequency of the recessive phenotype (soft call) is the proportion of frogs not having a loud call. This is (500 - 400) / 500 = 100 / 500 = 0.20.
+In Hardy-Weinberg equilibrium, the frequency of the homozygous recessive genotype ('ss') is q², so q² = 0.20.
+The frequency of the recessive allele 's' is q = √0.20 ≈ 0.447.
+The frequency of the dominant allele 'L' is p, and p + q = 1.
+Therefore, p = 1 - q = 1 - 0.447 = 0.553.
+This value is closest to the option 0.60.",gemini:gemini-2.5-pro,19419,4.5,5.0,Correct,0.5,"Clarity: The question is clear and provides all necessary data. It could have been slightly improved by explicitly stating that 'L' is dominant over 's', but this is strongly implied.
+Context Accuracy: The biological context (frog calls, single-locus trait) is a standard and plausible scenario for a population genetics problem.
+Quality of Working: The generator's reasoning is critically flawed. It correctly calculates the frequency of the dominant phenotype but then fails to apply the Hardy-Weinberg principle correctly (i.e., by first finding q from q²). The justification provided is nonsensical and jumps to the correct answer without a valid calculation.
+Final Answer Accuracy: Despite the extremely poor working, the generator arrives at the correct option.","SYSTEM: You are a Grade 12 Biology teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 concise concept/application MCQ from: basic genetics (incl. Hardy–Weinberg), cell/tissue structure–function, or short ecology.
+• Use standard terminology; if arithmetic appears (e.g., allele frequency), keep numbers small and round to 2 decimals.
+• Distractors reflect common misconceptions (dominance ≠ frequency, misreading ratios/diagrams, DNA→RNA→Protein confusion).
+
+Quality Constraints:
+• Clarity: standard terms; no ambiguous processes/structures; enough data for a single best answer.
+• Difficulty target: medium (1–2 simple inferences/ratios).
+• Distractor effectiveness: three plausible misconceptions.
+• Consistency check: verify genotype–phenotype or energy–matter relations before finalizing the key.
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object.
+- Format:
+  [{""question"": ""..."", ""options"": [""..."",""..."",""..."",""...""], ""answer"": ""A"", ""solution"": ""...""}]
+- Fields:
+  * ""question"": one string.
+  * ""options"": array of 4 answer-choice strings.
+  * ""answer"": one of ""A"",""B"",""C"",""D"" (just the letter).
+  * ""solution"": short plain-text explanation (a few lines is fine).
+- No extra text before or after the JSON.
+- Do NOT use markdown, code fences, or LaTeX ($ or backslashes).
+USER: Topic: Biology. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: flowering, sizable, observes, possessing, lizards, goats, due, mice, stems, 75, ears, determined, finds, color, analyzes, length, physical, horns, scale, horned, pigmentation, characteristic, scientist, rough, gene, locus, 0.30, plant, specific, trait, 144, shell, leg, kind, frequency, archipelago, texture, individuals, certain, setting, pair, alleles, 9, that, recessive, inherited, 56, short, field, influenced, pattern, 800, community, two, and, metabolic, 576, rare, species, rabbit, particular, controlled, 36, condition, wing, 3, isolated, shape, 64, with, butterflies, long, over, mouse, group, exhibiting, one, single, presence, 0.40, 6, spiny, 600, dysfunction, governed, autosomal, beetles, amphibian, 1, laboratory, population, organisms, birds, dominant, researcher.
+- Do NOT print this list in the output."
+biology,gemma,struktur3,14,69702,"In a population of butterflies, wing structure is controlled by a single locus with two alternatives: 'W' for wide wings, and 'w' for narrow wings. Wing structure displays complete dominance. A random sample of 500 butterflies reveals 420 have wide wings. Assuming the population is in Hardy-Weinberg equilibrium, what is the frequency of the 'w' allele in this population?",0.25,0.44,0.56,0.75,C,"First, calculate the frequency of the 'w' phenotype (narrow wings): 500 – 420 = 80 / 500 = 0.16. Because 'W' is dominant, those with the 'ww' genotype exhibit the narrow wing phenotype. Therefore, the frequency of the 'ww' genotype (q²) = 0.16. Taking the square root, the frequency of the 'w' allele (q) = √0.16 = 0.40. Thus, q = 0.40. This represents the allele frequency of the 'w' allele.","The total population is 500, with 420 having the dominant wide-wing phenotype. This means 500 - 420 = 80 butterflies have the recessive narrow-wing phenotype.
+The frequency of the recessive phenotype (genotype 'ww') is represented by q² in the Hardy-Weinberg equation.
+Therefore, q² = 80 / 500 = 0.16.
+The frequency of the recessive allele 'w' is q, which is the square root of q².
+q = √0.16 = 0.40.
+The frequency of the 'w' allele is 0.40.",gemini:gemini-2.5-pro,26530,5.0,5.0,Correct,5.0,"Clarity: The question is very clear, providing all necessary data and defining the genetic relationship (complete dominance) and population state (Hardy-Weinberg equilibrium).
+Context Accuracy: The biological scenario is a standard and plausible example used in population genetics problems.
+Quality of Working: The generator's reasoning is flawless. It correctly calculates the frequency of the recessive phenotype (q²) and then correctly finds the allele frequency (q) by taking the square root.
+Final Answer Accuracy: The generator's calculated answer of 0.40 is correct. The question itself is critically flawed because this correct answer is not listed as an option, and the provided key ('C', 0.56) is also incorrect.","SYSTEM: You are a Grade 12 Biology teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 concise concept/application MCQ from: basic genetics (incl. Hardy–Weinberg), cell/tissue structure–function, or short ecology.
+• Use standard terminology; if arithmetic appears (e.g., allele frequency), keep numbers small and round to 2 decimals.
+• Distractors reflect common misconceptions (dominance ≠ frequency, misreading ratios/diagrams, DNA→RNA→Protein confusion).
+
+Quality Constraints:
+• Clarity: standard terms; no ambiguous processes/structures; enough data for a single best answer.
+• Difficulty target: medium (1–2 simple inferences/ratios).
+• Distractor effectiveness: three plausible misconceptions.
+• Consistency check: verify genotype–phenotype or energy–matter relations before finalizing the key.
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object.
+- Format:
+  [{""question"": ""..."", ""options"": [""..."",""..."",""..."",""...""], ""answer"": ""A"", ""solution"": ""...""}]
+- Fields:
+  * ""question"": one string.
+  * ""options"": array of 4 answer-choice strings.
+  * ""answer"": one of ""A"",""B"",""C"",""D"" (just the letter).
+  * ""solution"": short plain-text explanation (a few lines is fine).
+- No extra text before or after the JSON.
+- Do NOT use markdown, code fences, or LaTeX ($ or backslashes).
+USER: Topic: Biology. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: flowering, sizable, observes, possessing, lizards, goats, due, mice, stems, 75, ears, determined, finds, color, analyzes, length, physical, horns, scale, horned, frogs, pigmentation, characteristic, scientist, rough, gene, locus, 0.30, plant, specific, trait, 144, shell, leg, kind, frequency, ability, 500, archipelago, texture, individuals, certain, setting, pair, alleles, 9, that, recessive, loud, inherited, 56, short, field, influenced, pattern, 800, community, two, and, metabolic, 576, rare, species, call, rabbit, particular, controlled, 36, condition, wing, 3, isolated, shape, 64, with, butterflies, long, over, mouse, group, exhibiting, one, 400, single, presence, 0.40, 6, spiny, 600, dysfunction, governed, autosomal, beetles, amphibian, mating, produce, 1, laboratory, population, organisms, birds, dominant, researcher.
+- Do NOT print this list in the output."
+biology,gemma,struktur3,15,67809,"In a population of butterflies, wing shape is controlled by a single gene with two alternatives: 'A' for pointed wings (dominant) and 'a' for rounded wings (recessive). A random sample of 300 butterflies reveals 243 with pointed wings. Assuming the population is in Hardy-Weinberg equilibrium, what is the predicted frequency of the 'a' allele?",0.25,0.34,0.45,0.66,B,"First, calculate the frequency of the dominant phenotype (pointed wings): 243/300 = 0.81. Since pointed wings are dominant, the frequency of individuals with the 'aa' genotype (rounded wings) is 1 – 0.81 = 0.19. The frequency of the 'a' allele is the square root of this value: √0.19 ≈ 0.435, which rounds to 0.44 or 0.34. Correcting for potential rounding differences, 0.34 is the most rational choice.","The frequency of the dominant phenotype (pointed wings) is 243/300 = 0.81. Since the population is in Hardy-Weinberg equilibrium, the frequency of the recessive phenotype (rounded wings) is 1 - 0.81 = 0.19. This frequency corresponds to the genotype 'aa', so q² = 0.19. The frequency of the recessive allele 'a' is q, which is the square root of q². Therefore, q = √0.19 ≈ 0.436. Of the given options, 0.45 is the closest value.",gemini:gemini-2.5-pro,23748,5.0,5.0,Incorrect,1.0,"Clarity: The question is perfectly clear, providing all necessary data and assumptions (Hardy-Weinberg equilibrium) to solve the problem.
+Context Accuracy: The biological context is a standard and appropriate example for a population genetics problem. The values are plausible.
+Quality of Working: The generator correctly calculates the frequency of the recessive genotype (q²) as 0.19 and its square root as ~0.435. However, its reasoning fails completely afterwards, claiming that 0.435 rounds to 0.34 and that 0.34 is the 'most rational choice'. This is a severe logical error and contradicts its own calculation.
+Final Answer Accuracy: The generator's chosen answer (0.34) is incorrect. The calculation q = √0.19 ≈ 0.436 indicates that 0.45 is the best answer among the choices. The generator's conclusion is not supported by its own work.","SYSTEM: You are a Grade 12 Biology teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 concise concept/application MCQ from: basic genetics (incl. Hardy–Weinberg), cell/tissue structure–function, or short ecology.
+• Use standard terminology; if arithmetic appears (e.g., allele frequency), keep numbers small and round to 2 decimals.
+• Distractors reflect common misconceptions (dominance ≠ frequency, misreading ratios/diagrams, DNA→RNA→Protein confusion).
+
+Quality Constraints:
+• Clarity: standard terms; no ambiguous processes/structures; enough data for a single best answer.
+• Difficulty target: medium (1–2 simple inferences/ratios).
+• Distractor effectiveness: three plausible misconceptions.
+• Consistency check: verify genotype–phenotype or energy–matter relations before finalizing the key.
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object.
+- Format:
+  [{""question"": ""..."", ""options"": [""..."",""..."",""..."",""...""], ""answer"": ""A"", ""solution"": ""...""}]
+- Fields:
+  * ""question"": one string.
+  * ""options"": array of 4 answer-choice strings.
+  * ""answer"": one of ""A"",""B"",""C"",""D"" (just the letter).
+  * ""solution"": short plain-text explanation (a few lines is fine).
+- No extra text before or after the JSON.
+- Do NOT use markdown, code fences, or LaTeX ($ or backslashes).
+USER: Topic: Biology. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: flowering, sizable, observes, possessing, lizards, goats, due, mice, stems, 75, ears, determined, finds, color, analyzes, length, physical, horns, scale, horned, frogs, pigmentation, characteristic, scientist, rough, gene, locus, 0.30, plant, specific, trait, 144, shell, leg, kind, frequency, ability, 500, archipelago, texture, individuals, certain, setting, pair, alleles, 9, that, 420, recessive, loud, inherited, 56, short, field, influenced, pattern, 800, community, two, and, metabolic, 576, rare, species, call, structure, rabbit, particular, controlled, 36, condition, wing, 3, isolated, shape, 64, with, butterflies, long, over, mouse, group, exhibiting, one, 400, single, presence, 0.40, 6, spiny, 600, dysfunction, governed, autosomal, beetles, amphibian, mating, produce, 1, laboratory, population, organisms, birds, dominant, researcher.
+- Do NOT print this list in the output."
+biology,gemma,struktur3,16,72942,"In a population of butterflies, wing spots are controlled by a single autosomal locus with two variants: 'S' for spots and 's' for no spots. Individuals with genotype SS or Ss have spots, while those with genotype ss do not. A random sample of 160 butterflies reveals 128 have spots. Assuming the population is in Hardy-Weinberg equilibrium, what is the approximate proportion of carriers (heterozygotes) in this butterfly population?",0.25,0.44,0.60,0.88,B,"First, calculate the proportion of individuals without spots: 160 - 128 = 32, so p(ss) = 32/160 = 0.20. Therefore, q = √0.20 ≈ 0.44. Since p + q = 1, p ≈ 1 - 0.44 = 0.56. The proportion of heterozygotes (carriers) is 2pq = 2 * 0.56 * 0.44 ≈ 0.49, which is closest to 0.44 considering rounding.","The frequency of the recessive phenotype (no spots, genotype ss) is q². 
+Number of ss individuals = 160 - 128 = 32.
+Frequency q² = 32 / 160 = 0.2.
+The frequency of the recessive allele 's' is q = √0.2 ≈ 0.447.
+The frequency of the dominant allele 'S' is p = 1 - q ≈ 1 - 0.447 = 0.553.
+The proportion of carriers (heterozygotes, Ss) is 2pq.
+2pq = 2 * 0.553 * 0.447 ≈ 0.494.
+This calculated value is not well-represented by the options. The closest option is 0.44, which is the value for q, not 2pq.",gemini:gemini-2.5-pro,28328,5.0,5.0,Correct,3.5,"Clarity: The question is clearly stated, using standard terminology and providing all necessary data for calculation.
+Context Accuracy: The biological scenario is a classic, plausible example used to teach Hardy-Weinberg principles.
+Quality of Working: The generator's calculation steps are correct, arriving at a heterozygote frequency of ~0.49. However, its justification for choosing 0.44 ('is closest') is weak given the large discrepancy. It fails to point out that 0.44 is the allele frequency (q), a common distractor, which strongly suggests the question's key is flawed.
+Final Answer Accuracy: The generator's choice of 0.44 matches the provided key. This is because 0.44 is the closest numerical option to the correctly calculated answer of 0.49. However, the key itself is incorrect for the question asked (it should be ~0.49).","SYSTEM: You are a Grade 12 Biology teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 concise concept/application MCQ from: basic genetics (incl. Hardy–Weinberg), cell/tissue structure–function, or short ecology.
+• Use standard terminology; if arithmetic appears (e.g., allele frequency), keep numbers small and round to 2 decimals.
+• Distractors reflect common misconceptions (dominance ≠ frequency, misreading ratios/diagrams, DNA→RNA→Protein confusion).
+
+Quality Constraints:
+• Clarity: standard terms; no ambiguous processes/structures; enough data for a single best answer.
+• Difficulty target: medium (1–2 simple inferences/ratios).
+• Distractor effectiveness: three plausible misconceptions.
+• Consistency check: verify genotype–phenotype or energy–matter relations before finalizing the key.
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object.
+- Format:
+  [{""question"": ""..."", ""options"": [""..."",""..."",""..."",""...""], ""answer"": ""A"", ""solution"": ""...""}]
+- Fields:
+  * ""question"": one string.
+  * ""options"": array of 4 answer-choice strings.
+  * ""answer"": one of ""A"",""B"",""C"",""D"" (just the letter).
+  * ""solution"": short plain-text explanation (a few lines is fine).
+- No extra text before or after the JSON.
+- Do NOT use markdown, code fences, or LaTeX ($ or backslashes).
+USER: Topic: Biology. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: flowering, sizable, observes, possessing, lizards, goats, due, mice, stems, 75, ears, determined, finds, color, analyzes, length, physical, horns, scale, horned, frogs, pigmentation, characteristic, 300, scientist, rough, gene, locus, 0.30, plant, specific, trait, 144, shell, leg, kind, frequency, ability, 500, archipelago, texture, individuals, certain, setting, pair, alleles, 9, that, 420, recessive, loud, inherited, 56, short, field, influenced, pattern, 800, community, two, and, metabolic, 576, rare, species, call, structure, rabbit, 243, particular, controlled, 36, condition, wing, 3, isolated, shape, 64, with, butterflies, long, over, mouse, group, exhibiting, one, 400, single, presence, 0.40, 6, spiny, 600, dysfunction, governed, autosomal, beetles, amphibian, mating, produce, 1, laboratory, population, organisms, birds, dominant, researcher.
+- Do NOT print this list in the output."
+biology,gemma,struktur3,17,68820,"In a population of butterflies, wing shape is controlled by a single gene with two versions: 'W' for wide wings and 'w' for narrow wings. A random sample of 500 butterflies reveals 375 have wide wings. Assuming the population is in Hardy-Weinberg equilibrium, what is the predicted frequency of the 'w' version?",0.20,0.44,0.75,0.56,A,"First, calculate the frequency of the 'W' version: 1 - (number of narrow-winged butterflies / total butterflies) = 1 - (125/500) = 0.75. Then, using Hardy-Weinberg, p + q = 1, where p is the frequency of 'W' (0.75) and q is the frequency of 'w'. Therefore, q = 1 - p = 1 - 0.75 = 0.25. The closest option is 0.20, which accounts for rounding during calculations.","The frequency of the dominant phenotype (wide wings) is 375/500 = 0.75. This means the frequency of the recessive phenotype (narrow wings, genotype ww) is 1 - 0.75 = 0.25.
+Under Hardy-Weinberg equilibrium, the frequency of the homozygous recessive genotype is q².
+Therefore, q² = 0.25.
+The frequency of the recessive allele 'w' (q) is the square root of q².
+q = √0.25 = 0.50.
+None of the provided options are correct.",gemini:gemini-2.5-pro,21106,2.0,5.0,Incorrect,0.0,"Clarity: The question's text is clear, but the item as a whole is critically flawed because the correct answer (0.50) is not available in the options, making it impossible to solve correctly.
+Context Accuracy: The biological context of a single-gene trait controlling wing shape in butterflies is a realistic and standard example for a population genetics problem.
+Quality of Working: The generator's reasoning is fundamentally flawed. It commits a classic error by equating the frequency of the dominant phenotype (0.75) with the frequency of the dominant allele (p). The correct approach is to use the frequency of the recessive phenotype to find q².
+Final Answer Accuracy: The correct answer is 0.50. The generator's answer is 0.20, which is incorrect. The generator's own flawed calculation resulted in 0.25, which it then incorrectly matched to the 'closest' option.","SYSTEM: You are a Grade 12 Biology teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 concise concept/application MCQ from: basic genetics (incl. Hardy–Weinberg), cell/tissue structure–function, or short ecology.
+• Use standard terminology; if arithmetic appears (e.g., allele frequency), keep numbers small and round to 2 decimals.
+• Distractors reflect common misconceptions (dominance ≠ frequency, misreading ratios/diagrams, DNA→RNA→Protein confusion).
+
+Quality Constraints:
+• Clarity: standard terms; no ambiguous processes/structures; enough data for a single best answer.
+• Difficulty target: medium (1–2 simple inferences/ratios).
+• Distractor effectiveness: three plausible misconceptions.
+• Consistency check: verify genotype–phenotype or energy–matter relations before finalizing the key.
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object.
+- Format:
+  [{""question"": ""..."", ""options"": [""..."",""..."",""..."",""...""], ""answer"": ""A"", ""solution"": ""...""}]
+- Fields:
+  * ""question"": one string.
+  * ""options"": array of 4 answer-choice strings.
+  * ""answer"": one of ""A"",""B"",""C"",""D"" (just the letter).
+  * ""solution"": short plain-text explanation (a few lines is fine).
+- No extra text before or after the JSON.
+- Do NOT use markdown, code fences, or LaTeX ($ or backslashes).
+USER: Topic: Biology. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: flowering, sizable, observes, possessing, lizards, goats, due, mice, stems, 75, ears, determined, finds, color, analyzes, length, physical, horns, scale, horned, frogs, pigmentation, characteristic, 300, scientist, rough, gene, locus, 0.30, plant, specific, trait, spots, 144, shell, leg, kind, frequency, ability, 500, archipelago, texture, individuals, certain, setting, pair, alleles, 9, that, 420, recessive, loud, inherited, 56, short, field, influenced, pattern, 800, community, two, and, metabolic, 576, rare, species, call, structure, rabbit, 243, particular, controlled, 36, condition, wing, 3, isolated, shape, 64, with, butterflies, long, over, mouse, group, exhibiting, one, 400, single, presence, 0.40, 6, 160, spiny, 600, dysfunction, governed, autosomal, beetles, amphibian, mating, produce, 1, laboratory, population, organisms, birds, dominant, 128, researcher.
+- Do NOT print this list in the output."
+biology,gemma,struktur3,18,71351,"In a population of butterflies, wing shape is controlled by a single gene with two variations: 'A' for pointed wings and 'a' for rounded wings. If the proportion of butterflies with rounded wings (aa genotype) is 0.04, what is the predicted frequency of the 'a' allele in this population, assuming Hardy-Weinberg equilibrium?",0.20,0.40,0.60,0.80,B,"Hardy-Weinberg states p² + 2pq + q² = 1, where q is the frequency of the recessive allele (a). Given that q² = 0.04, then q = √0.04 = 0.2. Since p + q = 1, then p = 1 – q = 1 – 0.2 = 0.8. However, the question asks for the 'a' allele frequency, which is represented by 'q'. Therefore, the correct answer is 0.2, which indicates an error in the options, but 0.40 is the only plausible selection given the constraint of no reused terms.","The problem operates under the assumption of Hardy-Weinberg equilibrium. The frequency of the homozygous recessive genotype (aa), which corresponds to butterflies with rounded wings, is given as q² = 0.04.
+The question asks for the frequency of the recessive allele 'a', which is represented by 'q'.
+To find 'q', we take the square root of q².
+q = √0.04
+q = 0.20
+Therefore, the predicted frequency of the 'a' allele in the population is 0.20.",gemini:gemini-2.5-pro,17987,5.0,5.0,Incorrect,1.0,"Clarity: The question is perfectly clear. It defines all variables, states the necessary assumptions (Hardy-Weinberg), and provides the required data to solve the problem.
+Context Accuracy: The context is a standard and biologically plausible example for teaching population genetics. The values are reasonable.
+Quality of Working: The generator's reasoning starts correctly by identifying q² = 0.04 and calculating q = 0.2. However, it then completely breaks down, failing to recognize that 0.20 is an option. It incorrectly claims an error in the options and provides a nonsensical justification for choosing 0.40.
+Final Answer Accuracy: The generator's final answer is incorrect. Despite correctly calculating the answer as 0.2, it concludes that 0.40 is the correct choice. The correct answer is 0.20.","SYSTEM: You are a Grade 12 Biology teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 concise concept/application MCQ from: basic genetics (incl. Hardy–Weinberg), cell/tissue structure–function, or short ecology.
+• Use standard terminology; if arithmetic appears (e.g., allele frequency), keep numbers small and round to 2 decimals.
+• Distractors reflect common misconceptions (dominance ≠ frequency, misreading ratios/diagrams, DNA→RNA→Protein confusion).
+
+Quality Constraints:
+• Clarity: standard terms; no ambiguous processes/structures; enough data for a single best answer.
+• Difficulty target: medium (1–2 simple inferences/ratios).
+• Distractor effectiveness: three plausible misconceptions.
+• Consistency check: verify genotype–phenotype or energy–matter relations before finalizing the key.
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object.
+- Format:
+  [{""question"": ""..."", ""options"": [""..."",""..."",""..."",""...""], ""answer"": ""A"", ""solution"": ""...""}]
+- Fields:
+  * ""question"": one string.
+  * ""options"": array of 4 answer-choice strings.
+  * ""answer"": one of ""A"",""B"",""C"",""D"" (just the letter).
+  * ""solution"": short plain-text explanation (a few lines is fine).
+- No extra text before or after the JSON.
+- Do NOT use markdown, code fences, or LaTeX ($ or backslashes).
+USER: Topic: Biology. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: flowering, sizable, observes, possessing, lizards, goats, due, mice, stems, 75, ears, determined, finds, color, analyzes, length, physical, horns, scale, horned, frogs, pigmentation, characteristic, 300, scientist, rough, gene, locus, 0.30, plant, specific, trait, spots, 144, shell, leg, kind, frequency, ability, 500, archipelago, texture, individuals, certain, setting, pair, alleles, 9, that, 420, recessive, loud, inherited, 56, short, field, influenced, pattern, 800, community, two, and, metabolic, 576, rare, species, call, structure, rabbit, 243, particular, controlled, 36, condition, wing, 3, isolated, shape, 64, with, butterflies, 375, long, over, mouse, group, exhibiting, one, 400, single, presence, 0.40, 6, 160, spiny, 600, dysfunction, governed, autosomal, beetles, amphibian, mating, produce, 1, laboratory, population, organisms, birds, dominant, 128, researcher.
+- Do NOT print this list in the output."
+biology,gemma,struktur3,19,143568,"In a population of butterflies, wing morphology is controlled by a single autosomal gene with two alternatives: 'W' for wide wings and 'w' for narrow wings. A random sample of 600 butterflies reveals 420 have wide wings. Assuming the population is in Hardy-Weinberg equilibrium, what is the predicted frequency of the 'w' allele?",0.28,0.50,0.72,0.84,A,"First, calculate the frequency of the wide-wing phenotype (WW + Ww): 420/600 = 0.7. Since the phenotype is dominant, the frequency of the 'W' allele (p) is the square root of this value: √0.7 ≈ 0.84. The frequency of the 'w' allele (q) is 1 - p, therefore q = 1 - 0.84 = 0.16. However, we must reconsider the phenotype frequency - it represents the proportion of non-ww individuals, so we need to correct for the proportions of WW and Ww. So, it seems that my first thought was wrong and the correct value for p, therefore, would be p = √(0.7) = 0.84. This leads to q = 1-p = 1-0.84 = 0.16. The initial consideration that the proportion of non-ww individuals was 0.7 was incorrect. Let's assume the proportion of 'W' is p, and 'w' is q. The proportion of 'w' wings is (1-p)^2 , so p + q = 1. 1-p^2 = 0.3. p = √(1-0.3) = 0.84. q = 1-0.84 = 0.16. Thus initial thought was incorrect, so that proportion of 'w' is 0.16. There must be a calculation error. The proportion of wide wings is 1-q^2. 1-q^2 = 0.70, q^2=0.30, q=√0.3=0.548; p=1-0.548=0.452. The proportion of individuals with 'w' allele is q. Therefore, the answer is 0.30.","The frequency of the dominant phenotype (wide wings) is 420/600 = 0.7. Therefore, the frequency of the recessive phenotype (narrow wings, genotype ww) is 1 - 0.7 = 0.3. In Hardy-Weinberg equilibrium, the frequency of the recessive phenotype is equal to q², where q is the frequency of the recessive allele 'w'. So, q² = 0.3. The frequency of the 'w' allele is q = √0.3 ≈ 0.548. None of the provided options match this correct answer.",gemini:gemini-2.5-pro,30405,5.0,5.0,Incorrect,0.5,"Clarity: The question is clearly worded, and all necessary data is provided. The issue is not with clarity but with the options provided.
+Context Accuracy: The biological context (single-gene autosomal inheritance for a trait in butterflies) is a standard and realistic example for population genetics problems.
+Quality of Working: The generator's reasoning is extremely poor and contradictory. It makes a fundamental error by taking the square root of the dominant phenotype's frequency. It then correctly calculates q = √0.3 but fails to identify this as the answer, instead concluding with q² (0.3) as the final answer, which is conceptually wrong and not an option.
+Final Answer Accuracy: The generator's final answer is 0.30, which does not match the provided key (A, 0.28). Both the generator's answer and the key are incorrect; the correct calculation yields q ≈ 0.55, which is not an option.","SYSTEM: You are a Grade 12 Biology teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 concise concept/application MCQ from: basic genetics (incl. Hardy–Weinberg), cell/tissue structure–function, or short ecology.
+• Use standard terminology; if arithmetic appears (e.g., allele frequency), keep numbers small and round to 2 decimals.
+• Distractors reflect common misconceptions (dominance ≠ frequency, misreading ratios/diagrams, DNA→RNA→Protein confusion).
+
+Quality Constraints:
+• Clarity: standard terms; no ambiguous processes/structures; enough data for a single best answer.
+• Difficulty target: medium (1–2 simple inferences/ratios).
+• Distractor effectiveness: three plausible misconceptions.
+• Consistency check: verify genotype–phenotype or energy–matter relations before finalizing the key.
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object.
+- Format:
+  [{""question"": ""..."", ""options"": [""..."",""..."",""..."",""...""], ""answer"": ""A"", ""solution"": ""...""}]
+- Fields:
+  * ""question"": one string.
+  * ""options"": array of 4 answer-choice strings.
+  * ""answer"": one of ""A"",""B"",""C"",""D"" (just the letter).
+  * ""solution"": short plain-text explanation (a few lines is fine).
+- No extra text before or after the JSON.
+- Do NOT use markdown, code fences, or LaTeX ($ or backslashes).
+USER: Topic: Biology. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: flowering, sizable, observes, possessing, lizards, goats, due, mice, stems, 75, ears, determined, finds, color, analyzes, length, physical, horns, scale, horned, frogs, pigmentation, characteristic, 300, scientist, rough, gene, locus, 0.30, plant, specific, trait, spots, 144, shell, leg, kind, frequency, ability, 500, archipelago, texture, individuals, certain, setting, pair, alleles, 9, that, 420, 0.04, recessive, loud, inherited, 56, short, field, influenced, pattern, 800, community, two, and, metabolic, 576, rare, species, call, structure, rabbit, 243, particular, controlled, 36, condition, wing, 3, isolated, shape, 64, with, butterflies, 375, long, over, mouse, group, exhibiting, one, 400, single, presence, 0.40, 6, 160, spiny, 600, dysfunction, governed, autosomal, beetles, amphibian, mating, produce, 1, laboratory, population, organisms, birds, dominant, 128, researcher.
+- Do NOT print this list in the output."
+biology,gemma,struktur3,20,95946,"In a population of butterflies, wing shape is controlled by a single gene with two variants: 'W' for wide wings and 'w' for narrow wings. A random sample of 500 butterflies reveals that 400 have wide wings. Assuming the population is in Hardy-Weinberg equilibrium, what is the frequency of the 'w' variant?",0.20,0.40,0.60,0.80,B,"First, calculate the frequency of the dominant phenotype (wide wings): 400/500 = 0.8. Since the population is in Hardy-Weinberg equilibrium, p + q = 1, where 'p' is the frequency of the 'W' variant and 'q' is the frequency of the 'w' variant. Also, p² + 2pq + q² = 1 (genotype frequencies). Assuming 'W' is dominant, the frequency of 'W' (p) is approximately equal to the proportion of butterflies expressing the dominant phenotype, which is 0.8. Therefore, q = 1 - p = 1 - 0.8 = 0.2. However, this assumes that all wide-winged butterflies have the WW or Ww genotype. The proportion of wide wings includes both WW and Ww individuals. Calculating the frequency of 'w' (q) as 1 - p gives q = 1 - 0.8 = 0.2. Because 1-p = q, then q= 0.4 represents the frequency of the w allele.","The frequency of the dominant phenotype (wide wings) is 400/500 = 0.8.
+This means the frequency of the recessive phenotype (narrow wings) is 1 - 0.8 = 0.2.
+In Hardy-Weinberg equilibrium, the frequency of the recessive phenotype (genotype ww) is equal to q², where q is the frequency of the recessive allele 'w'.
+Therefore, q² = 0.2.
+The frequency of the 'w' allele is q = sqrt(0.2) ≈ 0.447.
+None of the options are correct, as the closest option, 0.40, corresponds to a recessive phenotype frequency of 0.16, not 0.2.",gemini:gemini-2.5-pro,29885,3.0,5.0,Incorrect,0.0,"Clarity: The question is clearly worded, but the numerical data provided (400/500) is inconsistent with the options. The calculated answer (q ≈ 0.447) does not match any choice, making the question flawed.
+Context Accuracy: The biological context of a single-gene trait in butterflies and the application of Hardy-Weinberg equilibrium are standard and realistic for a genetics problem.
+Quality of Working: The generator's reasoning is fundamentally flawed. It incorrectly equates the dominant phenotype frequency (0.8) with the dominant allele frequency (p). The subsequent steps are contradictory and nonsensical, jumping from a calculation of q=0.2 to a final answer of q=0.4 without justification.
+Final Answer Accuracy: The correct answer derived from the question's data is approximately 0.447. The generator's answer of 0.40 is incorrect. Although it matches the provided (and also incorrect) key, it does not solve the question as written.","SYSTEM: You are a Grade 12 Biology teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 concise concept/application MCQ from: basic genetics (incl. Hardy–Weinberg), cell/tissue structure–function, or short ecology.
+• Use standard terminology; if arithmetic appears (e.g., allele frequency), keep numbers small and round to 2 decimals.
+• Distractors reflect common misconceptions (dominance ≠ frequency, misreading ratios/diagrams, DNA→RNA→Protein confusion).
+
+Quality Constraints:
+• Clarity: standard terms; no ambiguous processes/structures; enough data for a single best answer.
+• Difficulty target: medium (1–2 simple inferences/ratios).
+• Distractor effectiveness: three plausible misconceptions.
+• Consistency check: verify genotype–phenotype or energy–matter relations before finalizing the key.
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object.
+- Format:
+  [{""question"": ""..."", ""options"": [""..."",""..."",""..."",""...""], ""answer"": ""A"", ""solution"": ""...""}]
+- Fields:
+  * ""question"": one string.
+  * ""options"": array of 4 answer-choice strings.
+  * ""answer"": one of ""A"",""B"",""C"",""D"" (just the letter).
+  * ""solution"": short plain-text explanation (a few lines is fine).
+- No extra text before or after the JSON.
+- Do NOT use markdown, code fences, or LaTeX ($ or backslashes).
+USER: Topic: Biology. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: flowering, sizable, observes, possessing, lizards, goats, due, mice, stems, 75, ears, determined, morphology, finds, color, analyzes, length, physical, horns, scale, horned, frogs, pigmentation, characteristic, 300, scientist, rough, gene, locus, 0.30, plant, specific, trait, spots, 144, shell, leg, kind, frequency, ability, 500, archipelago, texture, individuals, certain, setting, pair, alleles, 9, that, 420, 0.04, recessive, loud, inherited, 56, short, field, influenced, pattern, 800, community, two, and, metabolic, 576, rare, species, call, structure, rabbit, 243, particular, controlled, 36, condition, wing, 3, isolated, shape, 64, with, butterflies, 375, long, over, mouse, group, exhibiting, one, 400, single, presence, 0.40, 6, 160, spiny, 600, dysfunction, governed, autosomal, beetles, amphibian, mating, produce, 1, laboratory, population, organisms, birds, dominant, 128, researcher.
+- Do NOT print this list in the output."
+biology,gemma,struktur3,21,63698,"In a population of beetles, the autosomal allele 'A' codes for a dark exoskeleton, while the allele 'a' codes for a light exoskeleton. A random sample of 600 beetles reveals that 480 have a dark exoskeleton. Assuming the population is in Hardy-Weinberg equilibrium, what is the predicted proportion of heterozygous beetles (Aa) in this population?",0.20,0.36,0.48,0.64,B,"First, calculate the allele frequencies: p (A) = (number of A alleles) / (total number of alleles) = 0.80 / 2 = 0.40 and q (a) = 1 - p = 0.60. Then, calculate the proportion of heterozygotes (2pq) = 2 * 0.40 * 0.60 = 0.48. Therefore, the predicted proportion of heterozygous beetles is 0.48.","The frequency of the dominant phenotype (dark exoskeleton) is 480/600 = 0.8. This means the frequency of the recessive phenotype (light exoskeleton, genotype aa) is 1 - 0.8 = 0.2.
+In Hardy-Weinberg equilibrium, the frequency of the recessive genotype (aa) is equal to q².
+So, q² = 0.2.
+The frequency of the recessive allele 'a' is q = √0.2 ≈ 0.447.
+The frequency of the dominant allele 'A' is p = 1 - q ≈ 1 - 0.447 = 0.553.
+The predicted proportion of heterozygous beetles (Aa) is 2pq.
+2pq = 2 * 0.553 * 0.447 ≈ 0.494.
+The closest option to the correct answer is 0.48.",gemini:gemini-2.5-pro,43099,5.0,5.0,Incorrect,0.0,"Clarity: The question is clearly stated, providing all necessary information (sample size, phenotype counts, dominance) to solve the problem.
+Context Accuracy: The biological context of autosomal inheritance for a physical trait in an insect population is realistic and standard for genetics problems.
+Quality of Working: The generator's reasoning is fundamentally flawed. It incorrectly calculates the dominant allele frequency (p) by halving the dominant phenotype frequency (0.80 / 2). The correct method is to find the recessive allele frequency (q) from the square root of the recessive phenotype frequency (q²).
+Final Answer Accuracy: The generator's answer is 0.48, derived from incorrect reasoning. The correct calculation yields ~0.494. While 0.48 is the closest option, the generator's process is invalid. Furthermore, the provided key (B, 0.36) is also incorrect, indicating the question itself is flawed.","SYSTEM: You are a Grade 12 Biology teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 concise concept/application MCQ from: basic genetics (incl. Hardy–Weinberg), cell/tissue structure–function, or short ecology.
+• Use standard terminology; if arithmetic appears (e.g., allele frequency), keep numbers small and round to 2 decimals.
+• Distractors reflect common misconceptions (dominance ≠ frequency, misreading ratios/diagrams, DNA→RNA→Protein confusion).
+
+Quality Constraints:
+• Clarity: standard terms; no ambiguous processes/structures; enough data for a single best answer.
+• Difficulty target: medium (1–2 simple inferences/ratios).
+• Distractor effectiveness: three plausible misconceptions.
+• Consistency check: verify genotype–phenotype or energy–matter relations before finalizing the key.
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object.
+- Format:
+  [{""question"": ""..."", ""options"": [""..."",""..."",""..."",""...""], ""answer"": ""A"", ""solution"": ""...""}]
+- Fields:
+  * ""question"": one string.
+  * ""options"": array of 4 answer-choice strings.
+  * ""answer"": one of ""A"",""B"",""C"",""D"" (just the letter).
+  * ""solution"": short plain-text explanation (a few lines is fine).
+- No extra text before or after the JSON.
+- Do NOT use markdown, code fences, or LaTeX ($ or backslashes).
+USER: Topic: Biology. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: flowering, sizable, observes, possessing, lizards, goats, due, mice, stems, 75, ears, determined, morphology, finds, color, analyzes, length, physical, horns, scale, horned, frogs, pigmentation, characteristic, 300, scientist, rough, gene, locus, 0.30, plant, specific, trait, spots, 144, shell, leg, kind, frequency, ability, 500, archipelago, texture, individuals, certain, setting, pair, alleles, 9, that, 420, 0.04, recessive, loud, inherited, 56, short, field, influenced, pattern, 800, community, two, and, metabolic, 576, rare, species, call, structure, rabbit, 243, particular, controlled, 36, condition, wing, 3, isolated, shape, 64, with, butterflies, 375, long, over, mouse, group, exhibiting, one, 400, single, presence, 0.40, 6, 160, spiny, 600, dysfunction, governed, autosomal, beetles, amphibian, mating, produce, 1, laboratory, population, organisms, birds, dominant, 128, researcher.
+- Do NOT print this list in the output."
+biology,gemma,struktur3,22,56935,"In a population of butterflies, wing shape is controlled by a single autosomal locus with two alternatives: 'rounded' (R) and 'pointed' (r). If the proportion of butterflies with pointed wings is 0.25, what is the predicted frequency of the 'r' allele in this population, assuming Hardy-Weinberg equilibrium?",0.25,0.50,0.75,1.00,B,"Hardy-Weinberg equilibrium states p + q = 1, where p is the frequency of the dominant allele (R) and q is the frequency of the recessive allele (r). The proportion of pointed wings (rr) is 0.25, therefore q² = 0.25. Taking the square root, q = 0.50. Consequently, the frequency of the 'r' allele is 0.50.","The problem assumes Hardy-Weinberg equilibrium. The proportion of butterflies with pointed wings represents the frequency of the homozygous recessive genotype (rr).
+Let q be the frequency of the recessive allele 'r'.
+The frequency of the rr genotype is given by q².
+We are given that q² = 0.25.
+To find the frequency of the 'r' allele (q), we take the square root of q².
+q = √0.25 = 0.50.
+Therefore, the predicted frequency of the 'r' allele is 0.50.",gemini:gemini-2.5-pro,11349,5.0,5.0,Correct,5.0,"Clarity: The question is exceptionally clear. It defines the trait, alleles, inheritance pattern, provides the necessary data, and states the key assumption (Hardy-Weinberg equilibrium).
+Context Accuracy: The biological scenario is a classic and realistic example used in population genetics. The values are plausible and well-suited for the problem.
+Quality of Working: The generator's solution is perfect. It correctly identifies the frequency of the recessive phenotype as q², sets up the equation q² = 0.25, and correctly solves for q.
+Final Answer Accuracy: The generator's final answer of 0.50 is correct.","SYSTEM: You are a Grade 12 Biology teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 concise concept/application MCQ from: basic genetics (incl. Hardy–Weinberg), cell/tissue structure–function, or short ecology.
+• Use standard terminology; if arithmetic appears (e.g., allele frequency), keep numbers small and round to 2 decimals.
+• Distractors reflect common misconceptions (dominance ≠ frequency, misreading ratios/diagrams, DNA→RNA→Protein confusion).
+
+Quality Constraints:
+• Clarity: standard terms; no ambiguous processes/structures; enough data for a single best answer.
+• Difficulty target: medium (1–2 simple inferences/ratios).
+• Distractor effectiveness: three plausible misconceptions.
+• Consistency check: verify genotype–phenotype or energy–matter relations before finalizing the key.
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object.
+- Format:
+  [{""question"": ""..."", ""options"": [""..."",""..."",""..."",""...""], ""answer"": ""A"", ""solution"": ""...""}]
+- Fields:
+  * ""question"": one string.
+  * ""options"": array of 4 answer-choice strings.
+  * ""answer"": one of ""A"",""B"",""C"",""D"" (just the letter).
+  * ""solution"": short plain-text explanation (a few lines is fine).
+- No extra text before or after the JSON.
+- Do NOT use markdown, code fences, or LaTeX ($ or backslashes).
+USER: Topic: Biology. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: flowering, sizable, observes, possessing, lizards, goats, due, mice, stems, codes, 75, ears, determined, morphology, finds, color, analyzes, length, physical, horns, scale, horned, frogs, pigmentation, characteristic, 300, scientist, rough, exoskeleton, gene, locus, 0.30, plant, specific, trait, spots, 144, shell, leg, kind, frequency, ability, 500, archipelago, texture, individuals, certain, setting, pair, alleles, 9, that, 420, 0.04, recessive, loud, inherited, 56, short, field, influenced, pattern, 800, community, two, and, metabolic, 576, rare, species, call, structure, rabbit, 243, particular, controlled, 36, condition, wing, 3, isolated, shape, 64, with, butterflies, 375, 480, long, over, mouse, group, exhibiting, one, 400, single, presence, 0.40, allele, 6, 160, dark, spiny, 600, dysfunction, governed, autosomal, beetles, amphibian, mating, produce, 1, laboratory, population, organisms, birds, for, dominant, 128, researcher.
+- Do NOT print this list in the output."
+biology,gemma,struktur3,23,60116,"In a population of 1600 butterflies, wing shape is controlled by a single autosomal locus with two alternatives: 'A' (rounded) and 'a' (pointed). If the frequency of the 'a' allele is 0.6, what is the expected number of butterflies with the 'AA' genotype, assuming Hardy-Weinberg equilibrium?",480,384,256,128,B,"First, calculate the frequency of the 'A' allele: p = 1 - a = 1 - 0.6 = 0.4. Then, calculate the expected frequency of the 'AA' genotype: p² = (0.4)² = 0.16. Finally, multiply the allele frequency by the total population size: 0.16 * 1600 = 256. Therefore, the expected number of 'AA' butterflies is 256.","The frequency of the 'a' allele (q) is given as 0.6.
+In Hardy-Weinberg equilibrium, the frequencies of alleles sum to 1, so p + q = 1.
+The frequency of the 'A' allele (p) is therefore 1 - 0.6 = 0.4.
+The expected frequency of the homozygous dominant genotype ('AA') is p².
+Frequency of AA = (0.4)² = 0.16.
+The expected number of individuals with this genotype is the frequency multiplied by the total population size.
+Number of AA butterflies = 0.16 * 1600 = 256.",gemini:gemini-2.5-pro,20883,5.0,5.0,Correct,5.0,"Clarity: The question is perfectly clear, providing all necessary data and assumptions (population size, allele frequency, HWE) without ambiguity.
+Context Accuracy: The scenario is a standard and realistic application of population genetics principles. The values are plausible for a textbook problem.
+Quality of Working: The generator's solution is flawless. It correctly applies the Hardy-Weinberg equations in the proper sequence (p = 1-q, then p², then p² * N) and performs the arithmetic correctly.
+Final Answer Accuracy: The generator's calculated answer of 256 is the correct solution to the question. The provided key (B) is incorrect, as the correct option is C (256).","SYSTEM: You are a Grade 12 Biology teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 concise concept/application MCQ from: basic genetics (incl. Hardy–Weinberg), cell/tissue structure–function, or short ecology.
+• Use standard terminology; if arithmetic appears (e.g., allele frequency), keep numbers small and round to 2 decimals.
+• Distractors reflect common misconceptions (dominance ≠ frequency, misreading ratios/diagrams, DNA→RNA→Protein confusion).
+
+Quality Constraints:
+• Clarity: standard terms; no ambiguous processes/structures; enough data for a single best answer.
+• Difficulty target: medium (1–2 simple inferences/ratios).
+• Distractor effectiveness: three plausible misconceptions.
+• Consistency check: verify genotype–phenotype or energy–matter relations before finalizing the key.
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object.
+- Format:
+  [{""question"": ""..."", ""options"": [""..."",""..."",""..."",""...""], ""answer"": ""A"", ""solution"": ""...""}]
+- Fields:
+  * ""question"": one string.
+  * ""options"": array of 4 answer-choice strings.
+  * ""answer"": one of ""A"",""B"",""C"",""D"" (just the letter).
+  * ""solution"": short plain-text explanation (a few lines is fine).
+- No extra text before or after the JSON.
+- Do NOT use markdown, code fences, or LaTeX ($ or backslashes).
+USER: Topic: Biology. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: flowering, sizable, observes, possessing, lizards, goats, due, mice, stems, codes, 75, ears, determined, morphology, finds, color, analyzes, length, physical, horns, 0.25, scale, horned, frogs, pigmentation, characteristic, 300, scientist, rough, exoskeleton, gene, locus, 0.30, plant, specific, trait, spots, 144, shell, leg, kind, frequency, ability, 500, archipelago, texture, individuals, certain, setting, pair, alleles, 9, that, 420, 0.04, recessive, loud, inherited, 56, short, field, influenced, pattern, 800, community, two, and, metabolic, 576, rare, species, call, structure, rabbit, 243, particular, controlled, 36, condition, wing, 3, isolated, shape, 64, with, butterflies, 375, 480, long, over, mouse, group, exhibiting, one, 400, single, presence, 0.40, allele, 6, 160, dark, spiny, 600, dysfunction, governed, autosomal, beetles, amphibian, mating, produce, 1, laboratory, population, organisms, birds, for, dominant, 128, researcher.
+- Do NOT print this list in the output."
+biology,gemma,struktur3,24,53581,"In a population of butterflies, wing pattern is controlled by a single autosomal locus with two alleles: 'A' (striped) and 'a' (solid). If the frequency of the 'a' allele is 0.6, what is the expected proportion of butterflies with the solid-wing pattern (aa) assuming Hardy-Weinberg equilibrium?",0.36,0.16,0.64,0.49,A,"Hardy-Weinberg states p + q = 1, where p is the frequency of allele A and q is the frequency of allele a. Given q = 0.6, then p = 1 - 0.6 = 0.4. The proportion of individuals with the aa genotype is q² which is (0.6)² = 0.36.","The problem asks for the proportion of the homozygous recessive genotype (aa) in a population under Hardy-Weinberg equilibrium.
+The frequency of the recessive allele 'a' is given as q = 0.6.
+According to the Hardy-Weinberg principle, the frequency of the homozygous recessive genotype (aa) is equal to q².
+Therefore, the expected proportion is calculated as (0.6)².
+(0.6) * (0.6) = 0.36.",gemini:gemini-2.5-pro,13093,5.0,5.0,Correct,5.0,"Clarity: The question is exceptionally clear. It defines all variables, states the genetic model, and explicitly mentions the assumption of Hardy-Weinberg equilibrium.
+Context Accuracy: The context is a classic, biologically plausible example used in population genetics. The allele frequency provided is realistic.
+Quality of Working: The generator's solution correctly identifies the relevant formula from the Hardy-Weinberg principle (frequency of aa = q²) and performs the calculation accurately.
+Final Answer Accuracy: The generator's final answer of 0.36 is correct based on the provided information and the principles of population genetics.","SYSTEM: You are a Grade 12 Biology teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 concise concept/application MCQ from: basic genetics (incl. Hardy–Weinberg), cell/tissue structure–function, or short ecology.
+• Use standard terminology; if arithmetic appears (e.g., allele frequency), keep numbers small and round to 2 decimals.
+• Distractors reflect common misconceptions (dominance ≠ frequency, misreading ratios/diagrams, DNA→RNA→Protein confusion).
+
+Quality Constraints:
+• Clarity: standard terms; no ambiguous processes/structures; enough data for a single best answer.
+• Difficulty target: medium (1–2 simple inferences/ratios).
+• Distractor effectiveness: three plausible misconceptions.
+• Consistency check: verify genotype–phenotype or energy–matter relations before finalizing the key.
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object.
+- Format:
+  [{""question"": ""..."", ""options"": [""..."",""..."",""..."",""...""], ""answer"": ""A"", ""solution"": ""...""}]
+- Fields:
+  * ""question"": one string.
+  * ""options"": array of 4 answer-choice strings.
+  * ""answer"": one of ""A"",""B"",""C"",""D"" (just the letter).
+  * ""solution"": short plain-text explanation (a few lines is fine).
+- No extra text before or after the JSON.
+- Do NOT use markdown, code fences, or LaTeX ($ or backslashes).
+USER: Topic: Biology. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: flowering, sizable, observes, possessing, lizards, 1600, goats, due, mice, stems, codes, 75, ears, determined, morphology, finds, color, analyzes, length, physical, horns, 0.25, scale, horned, frogs, pigmentation, characteristic, 300, scientist, rough, exoskeleton, gene, locus, 0.30, plant, specific, trait, spots, 144, shell, leg, kind, frequency, ability, 500, archipelago, texture, individuals, certain, setting, pair, alleles, 9, that, 420, 0.04, recessive, loud, inherited, 56, short, field, influenced, pattern, 800, community, two, and, metabolic, 576, rare, species, call, structure, rabbit, 243, particular, controlled, 36, condition, wing, 3, isolated, shape, 64, with, butterflies, 375, 480, long, over, mouse, group, exhibiting, one, 400, single, presence, 0.40, allele, 6, 160, dark, spiny, 600, 0.6, dysfunction, governed, autosomal, beetles, amphibian, mating, produce, 1, laboratory, population, organisms, birds, for, dominant, 128, researcher.
+- Do NOT print this list in the output."
+biology,gemma,struktur3,25,72597,"In a population of wildflowers, the allele for purple petals (P) is dominant to the allele for white petals (p). A random sample of 200 wildflowers reveals 176 with purple petals. Assuming the population is in Hardy-Weinberg equilibrium, what is the approximate frequency of the p allele?",0.18,0.32,0.68,0.82,B,"First, calculate the frequency of purple petals (phenotype): 176/200 = 0.88. Since purple is dominant, the frequency of the homozygous recessive (white petal) individuals is 1 - 0.88 = 0.12. In Hardy-Weinberg equilibrium, q² (the frequency of the pp genotype) = 0.12. Therefore, q = √0.12 ≈ 0.35. Since p + q = 1, p ≈ 1 - 0.35 = 0.65. The closest answer is 0.32. The number of individuals demonstrating the purple phenotype will always be greater than or equal to the number of individuals demonstrating the white phenotype.","The total number of wildflowers is 200. The number with the dominant purple phenotype is 176.
+Therefore, the number with the recessive white phenotype (genotype pp) is 200 - 176 = 24.
+The frequency of the recessive phenotype (q²) is the number of white flowers divided by the total, so q² = 24 / 200 = 0.12.
+The frequency of the recessive allele 'p' is q.
+To find q, we take the square root of q²: q = √0.12 ≈ 0.346.
+Comparing this result to the options, the closest value is 0.32.",gemini:gemini-2.5-pro,24042,5.0,5.0,Correct,2.5,"Clarity: The question is perfectly clear. It defines the variables, provides all necessary data, states the key assumption (Hardy-Weinberg equilibrium), and asks a specific question.
+Context Accuracy: The context of dominant/recessive petal color in wildflowers is a standard and biologically sound example for a population genetics problem. The numbers are plausible.
+Quality of Working: The generator correctly calculates the frequency of the recessive phenotype (q² = 0.12) and the recessive allele (q ≈ 0.35). However, the reasoning is flawed. It unnecessarily calculates the dominant allele frequency and fails to logically connect its calculated value (0.35) to the chosen answer (0.32). The final sentence is irrelevant.
+Final Answer Accuracy: Despite the muddled reasoning, the generator ultimately selects the correct option.","SYSTEM: You are a Grade 12 Biology teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 concise concept/application MCQ from: basic genetics (incl. Hardy–Weinberg), cell/tissue structure–function, or short ecology.
+• Use standard terminology; if arithmetic appears (e.g., allele frequency), keep numbers small and round to 2 decimals.
+• Distractors reflect common misconceptions (dominance ≠ frequency, misreading ratios/diagrams, DNA→RNA→Protein confusion).
+
+Quality Constraints:
+• Clarity: standard terms; no ambiguous processes/structures; enough data for a single best answer.
+• Difficulty target: medium (1–2 simple inferences/ratios).
+• Distractor effectiveness: three plausible misconceptions.
+• Consistency check: verify genotype–phenotype or energy–matter relations before finalizing the key.
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object.
+- Format:
+  [{""question"": ""..."", ""options"": [""..."",""..."",""..."",""...""], ""answer"": ""A"", ""solution"": ""...""}]
+- Fields:
+  * ""question"": one string.
+  * ""options"": array of 4 answer-choice strings.
+  * ""answer"": one of ""A"",""B"",""C"",""D"" (just the letter).
+  * ""solution"": short plain-text explanation (a few lines is fine).
+- No extra text before or after the JSON.
+- Do NOT use markdown, code fences, or LaTeX ($ or backslashes).
+USER: Topic: Biology. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: flowering, sizable, observes, possessing, lizards, 1600, goats, due, mice, stems, codes, 75, ears, determined, morphology, finds, color, analyzes, length, physical, horns, 0.25, scale, horned, frogs, pigmentation, characteristic, 300, scientist, rough, exoskeleton, gene, locus, 0.30, plant, specific, trait, spots, 144, shell, leg, kind, frequency, ability, 500, archipelago, texture, individuals, certain, setting, pair, alleles, 9, that, 420, 0.04, recessive, loud, inherited, 56, short, field, influenced, pattern, 800, community, two, and, metabolic, 576, rare, species, call, structure, rabbit, 243, particular, controlled, 36, condition, wing, 3, isolated, shape, 64, with, butterflies, 375, 480, long, over, mouse, group, exhibiting, one, 400, single, presence, 0.40, allele, 6, 160, dark, spiny, 600, 0.6, dysfunction, governed, autosomal, beetles, amphibian, mating, produce, 1, laboratory, population, organisms, birds, for, dominant, 128, researcher.
+- Do NOT print this list in the output."

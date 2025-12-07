@@ -1,0 +1,1461 @@
+topic,model,struktur,index,latency_model_ms,question,optionA,optionB,optionC,optionD,answer,solution_model,solution_verifier,verifier_model,latency_verifier_ms,clarity,context_accuracy,final_answer_accuracy,quality_of_working,judge_notes,prompt_generator
+chemistry,qwen,struktur1,1,17724,What is the mass of sodium chloride (NaCl) produced when 2 moles of sodium metal (Na) react completely with chlorine gas (Cl₂) according to the reaction: (2 extNa + extCl_2 ightarrow 2 extNaCl)?,A. 71 g,B. 142 g,C. 35.5 g,D. 28.5 g,B,"From the balanced equation, 2 moles of Na produce 2 moles of NaCl. The molar mass of NaCl is (23 + 35.5) = 58.5 g/mol. Therefore, 2 moles of NaCl have a mass of 2 × 58.5 = 142 g.","The balanced chemical equation is 2 Na + Cl₂ → 2 NaCl. The mole ratio between the reactant Na and the product NaCl is 2:2, or 1:1. Therefore, if 2 moles of Na react, 2 moles of NaCl are produced. The molar mass of NaCl is the sum of the atomic masses of Na (approx. 23.0 g/mol) and Cl (approx. 35.5 g/mol), which equals 58.5 g/mol. The mass of 2 moles of NaCl is calculated by multiplying the moles by the molar mass: 2 mol × 58.5 g/mol = 117 g. The correct answer is 117 g, which is not available in the options.",gemini:gemini-2.5-pro,30582,4.5,5.0,Incorrect,2.0,"Clarity: The question is clearly stated, but uses slightly non-standard notation (e.g., 'extNa'). The primary issue is not clarity but the flawed options.
+Context Accuracy: The chemical reaction, stoichiometric principles, and atomic masses are all scientifically accurate and appropriate.
+Quality of Working: The generator correctly identifies the mole ratio and calculates the molar mass. However, it makes a major arithmetic error in the final step (2 × 58.5 = 117, not 142), which invalidates the result.
+Final Answer Accuracy: The generator's answer is 142 g, but the correct answer is 117 g. The generator's answer matches the incorrect key provided with the question, but it is not the correct solution.","SYSTEM: You are a Grade 12 Chemistry teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 medium-level quantitative MCQ from: stoichiometry (incl. limiting reagent), concentration (molarity/mass percent), strong acid–base (pH), or simple equilibria.
+• Use common atomic masses (H=1, C=12, N=14, O=16, Na=23, Cl=35.5); round to 2 decimals; correct units.
+• Distractors: wrong coefficients, wrong mol–gram–volume conversions, log/pH errors.
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object:
+  [{""question"":""..."",""options"":[""A. ..."",""B. ..."",""C. ..."",""D. ...""],""answer"":""A"",""solution"":""3–6 short lines, plain text; no LaTeX/markdown.""}]
+- The ""solution"" field is MANDATORY with 3–6 short lines (plain text; no LaTeX/markdown).
+- No extra text outside JSON; no code fences.
+- Options MUST be prefixed ""A. ""/""B. ""/""C. ""/""D. "" and ""answer"" ∈ {A,B,C,D}.
+- NO LaTeX: do not use $ or backslashes; write plain text (sin, cos, pi, (a)/(b)).
+USER: Topic: Chemistry. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field."
+chemistry,qwen,struktur1,2,12270,What is the volume of 0.5 M HCl required to completely react with 10 grams of zinc metal according to the reaction (Zn + 2HCl ightarrow ZnCl_2 + H_2)?,A. 476 mL,B. 953 mL,C. 238 mL,D. 119 mL,B,"Calculate moles of zinc (10 g / 65.4 g/mol = 0.153 mol), then moles of HCl needed (0.306 mol). Volume = 0.306 mol / 0.5 M = 0.612 L or 612 mL.","1. Determine the moles of zinc (Zn) from its mass. Molar mass of Zn is ~65.38 g/mol.
+Moles Zn = 10 g / 65.38 g/mol = 0.15295 mol.
+2. Use the stoichiometric ratio from the balanced equation (Zn + 2HCl -> ...) to find the moles of HCl needed. The ratio is 1 mole of Zn to 2 moles of HCl.
+Moles HCl = 0.15295 mol Zn * (2 mol HCl / 1 mol Zn) = 0.3059 mol HCl.
+3. Calculate the required volume of the 0.5 M HCl solution.
+Volume (L) = Moles / Molarity = 0.3059 mol / 0.5 mol/L = 0.6118 L.
+4. Convert the volume from liters to milliliters.
+Volume (mL) = 0.6118 L * 1000 mL/L = 611.8 mL.",gemini:gemini-2.5-pro,28637,5.0,5.0,Correct,5.0,"Clarity: The question is clearly stated, providing the balanced chemical equation and all necessary numerical values.
+Context Accuracy: The chemical reaction is a standard single-displacement reaction, and the context is chemically sound.
+Quality of Working: The generator's reasoning is flawless. It correctly calculates the moles of the reactant, applies the stoichiometric ratio, and then uses the molarity formula to find the volume.
+Final Answer Accuracy: The generator's calculated answer of 612 mL is the correct solution to the problem. The question is critically flawed because the correct answer is not among the options, and the provided key (B) is incorrect. The generator's solution is correct despite the flawed question.","SYSTEM: You are a Grade 12 Chemistry teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 medium-level quantitative MCQ from: stoichiometry (incl. limiting reagent), concentration (molarity/mass percent), strong acid–base (pH), or simple equilibria.
+• Use common atomic masses (H=1, C=12, N=14, O=16, Na=23, Cl=35.5); round to 2 decimals; correct units.
+• Distractors: wrong coefficients, wrong mol–gram–volume conversions, log/pH errors.
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object:
+  [{""question"":""..."",""options"":[""A. ..."",""B. ..."",""C. ..."",""D. ...""],""answer"":""A"",""solution"":""3–6 short lines, plain text; no LaTeX/markdown.""}]
+- The ""solution"" field is MANDATORY with 3–6 short lines (plain text; no LaTeX/markdown).
+- No extra text outside JSON; no code fences.
+- Options MUST be prefixed ""A. ""/""B. ""/""C. ""/""D. "" and ""answer"" ∈ {A,B,C,D}.
+- NO LaTeX: do not use $ or backslashes; write plain text (sin, cos, pi, (a)/(b)).
+USER: Topic: Chemistry. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: sodium, what, chloride, when, moles, produced, nacl, 2, mass.
+- Do NOT print this list in the output."
+chemistry,qwen,struktur1,3,19705,"A solution containing 48.0 g of calcium hydroxide is mixed with 75.0 mL of a 3.00 M sulfuric acid solution. After the reaction has gone to completion, how many grams of water are produced? Given: Ca(OH)<sub>2</sub>(aq) + H<sub>2</sub>SO<sub>4</sub>(aq) → CaSO<sub>4</sub>(s) + 2H<sub>2</sub>O(l) A. 18.00 g B. 36.00 g C. 7.20 g D. 9.00 g",A. 18.00 g,B. 36.00 g,C. 7.20 g,D. 9.00 g,A,"Calculate moles of H₂SO₄: (0.075 L)(3.00 M) = 0.225 mol. Ca(OH)₂ is in excess, so H₂SO₄ limits reaction. Moles of H₂O produced = 0.225 mol × 2 = 0.450 mol. Mass = 0.450 mol × 18.02 g/mol = 8.11 g (closest to A).","1. Calculate moles of each reactant.
+Moles Ca(OH)₂ = 48.0 g / 74.10 g/mol = 0.648 mol.
+Moles H₂SO₄ = 0.0750 L × 3.00 mol/L = 0.225 mol.
+2. Identify the limiting reactant. The stoichiometric ratio is 1:1. Since 0.225 mol (H₂SO₄) < 0.648 mol (Ca(OH)₂), sulfuric acid is the limiting reactant.
+3. Calculate moles of water produced. The stoichiometry is 1 mole of H₂SO₄ produces 2 moles of H₂O.
+Moles H₂O = 0.225 mol H₂SO₄ × 2 = 0.450 mol H₂O.
+4. Calculate the mass of water produced.
+Mass H₂O = 0.450 mol × 18.02 g/mol = 8.11 g.
+5. The calculated answer (8.11 g) is not among the options, indicating a flawed question.",gemini:gemini-2.5-pro,40711,5.0,2.0,Incorrect,2.0,"Clarity: The question is clearly stated, providing a balanced chemical equation and all necessary numerical data with units.
+Context Accuracy: The premise of having 48.0 g of Ca(OH)₂ in an aqueous solution is unrealistic due to its very low solubility. The most significant flaw is that the correct answer (~8.11 g) is not included in the options, making the question invalid.
+Quality of Working: The generator's calculations for moles of reactants, limiting reactant, and mass of product are all correct (8.11 g). However, the final step makes a severe logical error, claiming that 8.11 g is 'closest to A' (18.00 g), which is false. This nonsensical conclusion invalidates the reasoning.
+Final Answer Accuracy: The generator's answer, based on the key and its flawed reasoning, is A (18.00 g). The correctly calculated answer is 8.11 g. Therefore, the generator's final answer is incorrect.","SYSTEM: You are a Grade 12 Chemistry teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 medium-level quantitative MCQ from: stoichiometry (incl. limiting reagent), concentration (molarity/mass percent), strong acid–base (pH), or simple equilibria.
+• Use common atomic masses (H=1, C=12, N=14, O=16, Na=23, Cl=35.5); round to 2 decimals; correct units.
+• Distractors: wrong coefficients, wrong mol–gram–volume conversions, log/pH errors.
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object:
+  [{""question"":""..."",""options"":[""A. ..."",""B. ..."",""C. ..."",""D. ...""],""answer"":""A"",""solution"":""3–6 short lines, plain text; no LaTeX/markdown.""}]
+- The ""solution"" field is MANDATORY with 3–6 short lines (plain text; no LaTeX/markdown).
+- No extra text outside JSON; no code fences.
+- Options MUST be prefixed ""A. ""/""B. ""/""C. ""/""D. "" and ""answer"" ∈ {A,B,C,D}.
+- NO LaTeX: do not use $ or backslashes; write plain text (sin, cos, pi, (a)/(b)).
+USER: Topic: Chemistry. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: sodium, what, chloride, with, when, moles, required, 0.5, volume, react, hcl, grams, 10, produced, nacl, 2, completely, mass.
+- Do NOT print this list in the output."
+chemistry,qwen,struktur1,4,14225,A 50.0 mL sample of 0.10 M HCl is mixed with 75.0 mL of 0.20 M NaOH. What is the concentration of OH⁻ ions in the final solution after the reaction has gone to completion? A. 0.040 M B. 0.060 M C. 0.12 M D. 0.080 M,,,,,A,"Calculate moles of H⁺ and OH⁻, then find excess OH⁻. (50 * 0.10 / 1000) - (75 * 0.20 / 1000) = -0.00015 mol. Since negative, all H⁺ used up, excess OH⁻ = 0.00015 / 0.125 L = 0.0012 M.","1. Calculate initial moles of acid and base.
+Moles H⁺ = 0.0500 L × 0.10 mol/L = 0.0050 mol H⁺.
+Moles OH⁻ = 0.0750 L × 0.20 mol/L = 0.0150 mol OH⁻.
+2. Determine the excess reactant. Since the reaction is 1:1, H⁺ is the limiting reactant.
+Excess moles of OH⁻ = 0.0150 mol - 0.0050 mol = 0.0100 mol OH⁻.
+3. Calculate the final total volume.
+Total volume = 50.0 mL + 75.0 mL = 125.0 mL = 0.1250 L.
+4. Calculate the final concentration of OH⁻.
+[OH⁻] = 0.0100 mol / 0.1250 L = 0.080 M.
+The correct option is D.",gemini:gemini-2.5-pro,32462,5.0,5.0,Incorrect,1.0,"Clarity: The question is perfectly clear, providing all necessary values and stating the objective unambiguously.
+Context Accuracy: The problem describes a standard, realistic strong acid-strong base neutralization, using common laboratory concentrations and volumes.
+Quality of Working: The generator's overall method is correct, but there is a severe arithmetic error when calculating the excess moles (0.005 - 0.015 is calculated as -0.00015 instead of -0.010). This fundamental error invalidates the entire subsequent calculation.
+Final Answer Accuracy: The generator's final answer (0.0012 M) is incorrect. The correct answer is 0.080 M (Option D). Note that the provided key (A) is also incorrect.","SYSTEM: You are a Grade 12 Chemistry teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 medium-level quantitative MCQ from: stoichiometry (incl. limiting reagent), concentration (molarity/mass percent), strong acid–base (pH), or simple equilibria.
+• Use common atomic masses (H=1, C=12, N=14, O=16, Na=23, Cl=35.5); round to 2 decimals; correct units.
+• Distractors: wrong coefficients, wrong mol–gram–volume conversions, log/pH errors.
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object:
+  [{""question"":""..."",""options"":[""A. ..."",""B. ..."",""C. ..."",""D. ...""],""answer"":""A"",""solution"":""3–6 short lines, plain text; no LaTeX/markdown.""}]
+- The ""solution"" field is MANDATORY with 3–6 short lines (plain text; no LaTeX/markdown).
+- No extra text outside JSON; no code fences.
+- Options MUST be prefixed ""A. ""/""B. ""/""C. ""/""D. "" and ""answer"" ∈ {A,B,C,D}.
+- NO LaTeX: do not use $ or backslashes; write plain text (sin, cos, pi, (a)/(b)).
+USER: Topic: Chemistry. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: 75.0, 48.0, moles, required, 0.5, 10, 3.00, nacl, sodium, 4, 18.00, completely, 2, grams, chloride, when, solution, produced, calcium, what, mass, containing, with, hydroxide, volume, hcl, react.
+- Do NOT print this list in the output."
+chemistry,qwen,struktur1,5,11318,A 25.0 mL sample of a 0.10 M HCl solution is titrated with a 0.15 M NaOH solution. What volume of NaOH solution is required to reach the equivalence point?,A. 16.7 mL,B. 33.3 mL,C. 20.0 mL,D. 25.0 mL,B,Use the equation: V₁M₁ = V₂M₂. (25.0 mL)(0.10 M) = V₂(0.15 M). Solving for V₂ gives 16.7 mL.,"The reaction is a 1:1 neutralization: HCl + NaOH -> NaCl + H₂O.
+At the equivalence point, moles of acid equal moles of base.
+The formula M_acid * V_acid = M_base * V_base can be used.
+(0.10 M HCl) * (25.0 mL) = (0.15 M NaOH) * V_NaOH
+2.5 mmol = (0.15 M) * V_NaOH
+V_NaOH = 2.5 mmol / 0.15 M
+V_NaOH = 16.66... mL
+Rounding to three significant figures gives 16.7 mL.",gemini:gemini-2.5-pro,19875,5.0,5.0,Correct,5.0,"Clarity: The question is clear, unambiguous, and provides all necessary information for a standard titration calculation.
+Context Accuracy: The scenario describes a realistic strong acid-strong base titration. The chemical species and concentrations are appropriate for a typical laboratory experiment.
+Quality of Working: The generator correctly applies the M₁V₁ = M₂V₂ formula for a 1:1 titration, substitutes the values correctly, and performs the calculation accurately to arrive at the correct numerical result.
+Final Answer Accuracy: The generator's calculated answer of 16.7 mL (Option A) is correct. The provided key for the question (B) is incorrect.","SYSTEM: You are a Grade 12 Chemistry teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 medium-level quantitative MCQ from: stoichiometry (incl. limiting reagent), concentration (molarity/mass percent), strong acid–base (pH), or simple equilibria.
+• Use common atomic masses (H=1, C=12, N=14, O=16, Na=23, Cl=35.5); round to 2 decimals; correct units.
+• Distractors: wrong coefficients, wrong mol–gram–volume conversions, log/pH errors.
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object:
+  [{""question"":""..."",""options"":[""A. ..."",""B. ..."",""C. ..."",""D. ...""],""answer"":""A"",""solution"":""3–6 short lines, plain text; no LaTeX/markdown.""}]
+- The ""solution"" field is MANDATORY with 3–6 short lines (plain text; no LaTeX/markdown).
+- No extra text outside JSON; no code fences.
+- Options MUST be prefixed ""A. ""/""B. ""/""C. ""/""D. "" and ""answer"" ∈ {A,B,C,D}.
+- NO LaTeX: do not use $ or backslashes; write plain text (sin, cos, pi, (a)/(b)).
+USER: Topic: Chemistry. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: 75.0, 0.20, 48.0, 0.040, moles, required, sample, 0.5, 10, 3.00, nacl, sodium, 4, 18.00, completely, 2, grams, 0.10, chloride, when, 50.0, solution, produced, calcium, what, mass, containing, mixed, 0.060, with, hydroxide, volume, hcl, react.
+- Do NOT print this list in the output."
+chemistry,qwen,struktur1,6,12718,A 1.00 L solution of 0.10 M HCl is titrated with a 0.20 M NaOH solution. How many liters of NaOH are required to reach the equivalence point?,A. 0.50 L,B. 0.25 L,C. 0.75 L,D. 1.00 L,A,"At the equivalence point, moles of HCl equal moles of NaOH. Moles of HCl = 0.10 M × 1.00 L = 0.10 mol. Therefore, moles of NaOH required = 0.10 mol. Volume of NaOH = 0.10 mol / 0.20 M = 0.50 L.","The reaction is a 1:1 stoichiometric titration: HCl + NaOH -> NaCl + H₂O.
+At the equivalence point, moles of acid equal moles of base (M_a * V_a = M_b * V_b).
+First, calculate the moles of HCl: 0.10 mol/L * 1.00 L = 0.10 mol HCl.
+To neutralize this, 0.10 mol of NaOH is required.
+Then, calculate the volume of NaOH needed: Volume = moles / Molarity = 0.10 mol / 0.20 mol/L = 0.50 L.
+The correct answer is 0.50 L.",gemini:gemini-2.5-pro,13213,5.0,5.0,Correct,5.0,"Clarity: The question is perfectly clear, providing all necessary information and asking a direct question.
+Context Accuracy: The scenario represents a standard and realistic strong acid-strong base titration with common laboratory concentrations.
+Quality of Working: The generator's solution is concise and correct. It correctly identifies the principle of equivalence and executes the calculation flawlessly.
+Final Answer Accuracy: The generator's answer of 0.50 L is correct and matches the provided key.","SYSTEM: You are a Grade 12 Chemistry teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 medium-level quantitative MCQ from: stoichiometry (incl. limiting reagent), concentration (molarity/mass percent), strong acid–base (pH), or simple equilibria.
+• Use common atomic masses (H=1, C=12, N=14, O=16, Na=23, Cl=35.5); round to 2 decimals; correct units.
+• Distractors: wrong coefficients, wrong mol–gram–volume conversions, log/pH errors.
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object:
+  [{""question"":""..."",""options"":[""A. ..."",""B. ..."",""C. ..."",""D. ...""],""answer"":""A"",""solution"":""3–6 short lines, plain text; no LaTeX/markdown.""}]
+- The ""solution"" field is MANDATORY with 3–6 short lines (plain text; no LaTeX/markdown).
+- No extra text outside JSON; no code fences.
+- Options MUST be prefixed ""A. ""/""B. ""/""C. ""/""D. "" and ""answer"" ∈ {A,B,C,D}.
+- NO LaTeX: do not use $ or backslashes; write plain text (sin, cos, pi, (a)/(b)).
+USER: Topic: Chemistry. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: 75.0, 0.20, 48.0, 0.040, moles, required, sample, 0.5, 10, 3.00, nacl, sodium, 0.15, 4, 18.00, completely, 2, grams, 0.10, chloride, when, 50.0, solution, produced, calcium, what, mass, naoh, containing, mixed, 0.060, with, hydroxide, volume, 25.0, hcl, react, titrated.
+- Do NOT print this list in the output."
+chemistry,qwen,struktur1,7,14737,"A 25.0 mL sample of a 0.10 M nitric acid (HNO₃) solution is titrated with sodium hydroxide (NaOH). If the balanced equation for the reaction is HNO₃ + NaOH → NaNO₃ + H₂O, what volume of 0.20 M NaOH is required to completely neutralize the acid?",A. 12.5 mL,B. 25.0 mL,C. 37.5 mL,D. 50.0 mL,A,Calculate moles of HNO₃: (0.10 M)(0.025 L) = 0.0025 mol. Moles of NaOH required = 0.0025 mol. Volume of NaOH = (0.0025 mol)/(0.20 M) = 0.0125 L or 12.5 mL.,"This is a titration problem involving a strong acid (HNO₃) and a strong base (NaOH).
+1. Calculate the moles of HNO₃ in the sample: moles = Molarity × Volume = 0.10 mol/L × 0.0250 L = 0.0025 mol HNO₃.
+2. The balanced equation shows a 1:1 molar ratio between HNO₃ and NaOH. Therefore, 0.0025 moles of NaOH are needed for complete neutralization.
+3. Calculate the volume of NaOH solution required: Volume = moles / Molarity = 0.0025 mol / 0.20 mol/L = 0.0125 L.
+4. Convert the volume from liters to milliliters: 0.0125 L × 1000 mL/L = 12.5 mL.",gemini:gemini-2.5-pro,17109,5.0,5.0,Correct,5.0,"Clarity: The question is unambiguous, providing all necessary values (volumes, concentrations) and the balanced chemical equation.
+Context Accuracy: The scenario represents a classic and realistic strong acid-strong base titration. The chemical species and concentrations are appropriate for a typical laboratory setting.
+Quality of Working: The generator's solution is perfect. It correctly calculates the moles of acid, applies the 1:1 stoichiometry, and then correctly calculates the required volume of base. The steps are logical and the arithmetic is accurate.
+Final Answer Accuracy: The generator's final answer of 12.5 mL is correct and matches the provided key.","SYSTEM: You are a Grade 12 Chemistry teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 medium-level quantitative MCQ from: stoichiometry (incl. limiting reagent), concentration (molarity/mass percent), strong acid–base (pH), or simple equilibria.
+• Use common atomic masses (H=1, C=12, N=14, O=16, Na=23, Cl=35.5); round to 2 decimals; correct units.
+• Distractors: wrong coefficients, wrong mol–gram–volume conversions, log/pH errors.
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object:
+  [{""question"":""..."",""options"":[""A. ..."",""B. ..."",""C. ..."",""D. ...""],""answer"":""A"",""solution"":""3–6 short lines, plain text; no LaTeX/markdown.""}]
+- The ""solution"" field is MANDATORY with 3–6 short lines (plain text; no LaTeX/markdown).
+- No extra text outside JSON; no code fences.
+- Options MUST be prefixed ""A. ""/""B. ""/""C. ""/""D. "" and ""answer"" ∈ {A,B,C,D}.
+- NO LaTeX: do not use $ or backslashes; write plain text (sin, cos, pi, (a)/(b)).
+USER: Topic: Chemistry. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: 75.0, 0.20, 48.0, 0.040, moles, required, sample, 0.5, 10, 3.00, nacl, how, sodium, 0.15, 4, 18.00, completely, 2, grams, 0.10, chloride, when, 50.0, solution, produced, calcium, what, mass, naoh, containing, mixed, 0.060, with, hydroxide, volume, 25.0, 1.00, hcl, react, titrated.
+- Do NOT print this list in the output."
+chemistry,qwen,struktur1,8,11840,"A 25.0 mL sample of a 0.10 M nitric acid (HNO₃) solution is titrated with a sodium hydroxide (NaOH) solution. If the equivalence point is reached after adding 30.0 mL of NaOH, what is the molarity of the NaOH solution?",A. 0.12 M,B. 0.17 M,C. 0.25 M,D. 0.33 M,B,Use stoichiometry: (0.10 M)(0.025 L) = (x M)(0.030 L); x = 0.17 M.,"The reaction is a 1:1 neutralization: HNO₃ + NaOH → NaNO₃ + H₂O.
+At the equivalence point, the moles of acid equal the moles of base.
+The formula M_acid * V_acid = M_base * V_base can be used.
+(0.10 M) * (25.0 mL) = M_base * (30.0 mL)
+Solving for M_base:
+M_base = (0.10 M * 25.0 mL) / 30.0 mL
+M_base = 2.5 / 30.0 M
+M_base = 0.0833 M.
+The correct answer is not among the options.",gemini:gemini-2.5-pro,23077,5.0,2.5,Incorrect,2.0,"Clarity: The question is well-phrased, unambiguous, and provides all necessary data for the calculation.
+Context Accuracy: The scenario of a strong acid-strong base titration is realistic. However, the question is critically flawed because the correct answer (0.0833 M) is not included in the options.
+Quality of Working: The generator correctly identifies the stoichiometric principle and sets up the correct formula. However, the arithmetic is incorrect, as (0.10 * 0.025) / 0.030 equals 0.0833, not 0.17.
+Final Answer Accuracy: The generator's answer is incorrect. The correct molarity is 0.0833 M. The generator's answer matches the incorrect key provided with the question, suggesting it did not perform the calculation correctly.","SYSTEM: You are a Grade 12 Chemistry teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 medium-level quantitative MCQ from: stoichiometry (incl. limiting reagent), concentration (molarity/mass percent), strong acid–base (pH), or simple equilibria.
+• Use common atomic masses (H=1, C=12, N=14, O=16, Na=23, Cl=35.5); round to 2 decimals; correct units.
+• Distractors: wrong coefficients, wrong mol–gram–volume conversions, log/pH errors.
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object:
+  [{""question"":""..."",""options"":[""A. ..."",""B. ..."",""C. ..."",""D. ...""],""answer"":""A"",""solution"":""3–6 short lines, plain text; no LaTeX/markdown.""}]
+- The ""solution"" field is MANDATORY with 3–6 short lines (plain text; no LaTeX/markdown).
+- No extra text outside JSON; no code fences.
+- Options MUST be prefixed ""A. ""/""B. ""/""C. ""/""D. "" and ""answer"" ∈ {A,B,C,D}.
+- NO LaTeX: do not use $ or backslashes; write plain text (sin, cos, pi, (a)/(b)).
+USER: Topic: Chemistry. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: 75.0, 0.20, 48.0, 0.040, moles, required, sample, 0.5, 10, 3.00, nacl, how, sodium, 0.15, hno, nitric, 4, 18.00, completely, 2, grams, 0.10, chloride, when, 50.0, solution, produced, calcium, what, mass, naoh, containing, mixed, 0.060, with, hydroxide, acid, volume, 25.0, 1.00, hcl, react, titrated.
+- Do NOT print this list in the output."
+chemistry,qwen,struktur1,9,13347,A 25.0 mL sample of a 0.10 M nitric acid (HNO₃) solution is titrated with sodium hydroxide (NaOH). What volume of 0.15 M NaOH is required to reach the equivalence point?,A. 8.33 mL,B. 16.67 mL,C. 20.00 mL,D. 33.33 mL,B,Calculate moles of HNO₃: 0.025 L × 0.10 M = 0.0025 mol. Moles of NaOH required = 0.0025 mol. Volume of NaOH = 0.0025 mol / (0.15 mol/L) = 0.0167 L or 16.67 mL.,"The titration reaction is a 1:1 neutralization: HNO₃ + NaOH → NaNO₃ + H₂O.
+At the equivalence point, the moles of acid equal the moles of base (moles H⁺ = moles OH⁻).
+The formula M_acid * V_acid = M_base * V_base can be used.
+(0.10 M) * (25.0 mL) = (0.15 M) * V_NaOH
+2.5 M·mL = (0.15 M) * V_NaOH
+V_NaOH = 2.5 M·mL / 0.15 M
+V_NaOH = 16.666... mL
+Rounding to three significant figures gives 16.7 mL, which corresponds to option B.",gemini:gemini-2.5-pro,15449,5.0,5.0,Correct,5.0,"Clarity: The question is perfectly clear. It provides all necessary information (volumes, concentrations, chemical species) and asks a specific, unambiguous question.
+Context Accuracy: The context is a standard strong acid-strong base titration. The concentrations and volumes are realistic for a common laboratory procedure.
+Quality of Working: The generator's solution is concise and correct. It follows the standard method of calculating moles of the known reactant, using stoichiometry to find moles of the unknown, and then calculating the required volume.
+Final Answer Accuracy: The generator's calculated answer of 16.67 mL is correct and matches the provided key (B).","SYSTEM: You are a Grade 12 Chemistry teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 medium-level quantitative MCQ from: stoichiometry (incl. limiting reagent), concentration (molarity/mass percent), strong acid–base (pH), or simple equilibria.
+• Use common atomic masses (H=1, C=12, N=14, O=16, Na=23, Cl=35.5); round to 2 decimals; correct units.
+• Distractors: wrong coefficients, wrong mol–gram–volume conversions, log/pH errors.
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object:
+  [{""question"":""..."",""options"":[""A. ..."",""B. ..."",""C. ..."",""D. ...""],""answer"":""A"",""solution"":""3–6 short lines, plain text; no LaTeX/markdown.""}]
+- The ""solution"" field is MANDATORY with 3–6 short lines (plain text; no LaTeX/markdown).
+- No extra text outside JSON; no code fences.
+- Options MUST be prefixed ""A. ""/""B. ""/""C. ""/""D. "" and ""answer"" ∈ {A,B,C,D}.
+- NO LaTeX: do not use $ or backslashes; write plain text (sin, cos, pi, (a)/(b)).
+USER: Topic: Chemistry. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: 75.0, 0.20, 48.0, 0.040, moles, required, sample, 0.5, 10, 3.00, nacl, how, sodium, 0.15, hno, nitric, 4, 18.00, completely, 2, grams, 0.10, chloride, when, 50.0, solution, produced, calcium, what, mass, naoh, 30.0, containing, mixed, 0.060, with, hydroxide, acid, volume, 25.0, 1.00, hcl, react, titrated.
+- Do NOT print this list in the output."
+chemistry,qwen,struktur1,10,17277,A 30.0 mL sample of a 0.10 M nitric acid (HNO₃) solution is titrated with a sodium hydroxide (NaOH) solution. What volume of 0.20 M NaOH is required to completely neutralize the HNO₃?,A. 15.0 mL,B. 30.0 mL,C. 45.0 mL,D. 60.0 mL,A,Use stoichiometry: (0.10 M × 0.030 L) / 0.20 M = 0.015 L or 15.0 mL.,"The problem describes a neutralization reaction between a strong acid (HNO₃) and a strong base (NaOH). The balanced chemical equation is HNO₃ + NaOH → NaNO₃ + H₂O, showing a 1:1 molar ratio.
+At the equivalence point (complete neutralization), the moles of acid equal the moles of base.
+The formula M₁V₁ = M₂V₂ can be used, where M is molarity and V is volume.
+(M_acid)(V_acid) = (M_base)(V_base)
+(0.10 M)(30.0 mL) = (0.20 M)(V_base)
+3.0 M·mL = (0.20 M)(V_base)
+V_base = 3.0 M·mL / 0.20 M = 15.0 mL.",gemini:gemini-2.5-pro,13458,5.0,5.0,Correct,4.5,"Clarity: The question is unambiguous, providing all necessary values and units clearly. The objective is well-defined.
+Context Accuracy: The scenario represents a standard and realistic strong acid-strong base titration. The chemical compounds and concentrations are common in a laboratory setting.
+Quality of Working: The generator's solution is correct and efficient. It correctly calculates the moles of acid and divides by the base concentration. It could be slightly improved by explicitly stating the M₁V₁ = M₂V₂ principle for clarity, but the calculation itself is sound.
+Final Answer Accuracy: The generator's calculated answer of 15.0 mL is correct and matches option A.","SYSTEM: You are a Grade 12 Chemistry teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 medium-level quantitative MCQ from: stoichiometry (incl. limiting reagent), concentration (molarity/mass percent), strong acid–base (pH), or simple equilibria.
+• Use common atomic masses (H=1, C=12, N=14, O=16, Na=23, Cl=35.5); round to 2 decimals; correct units.
+• Distractors: wrong coefficients, wrong mol–gram–volume conversions, log/pH errors.
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object:
+  [{""question"":""..."",""options"":[""A. ..."",""B. ..."",""C. ..."",""D. ...""],""answer"":""A"",""solution"":""3–6 short lines, plain text; no LaTeX/markdown.""}]
+- The ""solution"" field is MANDATORY with 3–6 short lines (plain text; no LaTeX/markdown).
+- No extra text outside JSON; no code fences.
+- Options MUST be prefixed ""A. ""/""B. ""/""C. ""/""D. "" and ""answer"" ∈ {A,B,C,D}.
+- NO LaTeX: do not use $ or backslashes; write plain text (sin, cos, pi, (a)/(b)).
+USER: Topic: Chemistry. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: 75.0, 0.20, 48.0, 0.040, moles, required, sample, 0.5, 10, 3.00, nacl, how, sodium, 0.15, hno, nitric, 4, 18.00, completely, 2, grams, 0.10, chloride, when, 50.0, solution, produced, calcium, what, mass, naoh, 30.0, containing, mixed, 0.060, with, hydroxide, acid, volume, 25.0, 1.00, hcl, react, titrated.
+- Do NOT print this list in the output."
+chemistry,qwen,struktur1,11,11239,"A 25.0 mL sample of 0.10 M HNO₃ is titrated with a NaOH solution. If 30.0 mL of NaOH is required to reach the equivalence point, what is the molarity of the NaOH solution?",A. 0.083 M,B. 0.25 M,C. 0.167 M,D. 0.125 M,A,Use the equation: M₁V₁ = M₂V₂. (0.10 M)(25.0 mL) = M₂(30.0 mL). Solve for M₂ to get 0.083 M.,"The reaction between nitric acid (HNO₃) and sodium hydroxide (NaOH) is a 1:1 stoichiometric neutralization.
+HNO₃ + NaOH → NaNO₃ + H₂O
+At the equivalence point, the moles of acid equal the moles of base.
+Moles = Molarity × Volume, so M_acid × V_acid = M_base × V_base.
+(0.10 M) × (25.0 mL) = M_NaOH × (30.0 mL)
+M_NaOH = (0.10 M × 25.0 mL) / 30.0 mL
+M_NaOH = 2.5 M·mL / 30.0 mL
+M_NaOH = 0.0833... M, which corresponds to option A.",gemini:gemini-2.5-pro,20252,5.0,5.0,Correct,5.0,"Clarity: The question is clearly worded, providing all necessary information (volumes, concentration) without ambiguity.
+Context Accuracy: The context is a standard strong acid-strong base titration. The given concentrations and volumes are realistic for a laboratory setting.
+Quality of Working: The generator correctly identifies and applies the M₁V₁ = M₂V₂ formula, which is appropriate for this 1:1 titration. The calculation is accurate.
+Final Answer Accuracy: The generator's calculated answer of 0.083 M is correct and matches the provided key.","SYSTEM: You are a Grade 12 Chemistry teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 medium-level quantitative MCQ from: stoichiometry (incl. limiting reagent), concentration (molarity/mass percent), strong acid–base (pH), or simple equilibria.
+• Use common atomic masses (H=1, C=12, N=14, O=16, Na=23, Cl=35.5); round to 2 decimals; correct units.
+• Distractors: wrong coefficients, wrong mol–gram–volume conversions, log/pH errors.
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object:
+  [{""question"":""..."",""options"":[""A. ..."",""B. ..."",""C. ..."",""D. ...""],""answer"":""A"",""solution"":""3–6 short lines, plain text; no LaTeX/markdown.""}]
+- The ""solution"" field is MANDATORY with 3–6 short lines (plain text; no LaTeX/markdown).
+- No extra text outside JSON; no code fences.
+- Options MUST be prefixed ""A. ""/""B. ""/""C. ""/""D. "" and ""answer"" ∈ {A,B,C,D}.
+- NO LaTeX: do not use $ or backslashes; write plain text (sin, cos, pi, (a)/(b)).
+USER: Topic: Chemistry. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: 75.0, 0.20, 48.0, 0.040, moles, required, sample, 0.5, 10, 3.00, nacl, how, sodium, 0.15, hno, nitric, 4, 18.00, completely, 2, grams, 0.10, chloride, when, 50.0, solution, produced, calcium, what, mass, naoh, 30.0, containing, mixed, 0.060, with, hydroxide, acid, volume, 25.0, 1.00, hcl, react, titrated.
+- Do NOT print this list in the output."
+chemistry,qwen,struktur1,12,21913,"A 25.0 mL sample of a 0.10 M nitric acid (HNO₃) solution is titrated with sodium hydroxide (NaOH). If the concentration of NaOH is 0.15 M, what volume of NaOH is required to completely neutralize the HNO₃?",A. 16.7 mL,B. 20.0 mL,C. 33.3 mL,D. 40.0 mL,A,"Use stoichiometry: 1:1 ratio, V₁M₁ = V₂M₂ → (25.0 mL)(0.10 M) / 0.15 M = 16.7 mL.","The reaction between nitric acid (a strong acid) and sodium hydroxide (a strong base) is a neutralization reaction with a 1:1 stoichiometric ratio:
+HNO₃ + NaOH → NaNO₃ + H₂O.
+At the equivalence point (complete neutralization), the moles of acid equal the moles of base.
+Moles = Molarity × Volume, so M_acid × V_acid = M_base × V_base.
+(0.10 M) × (25.0 mL) = (0.15 M) × V_base
+2.5 mmol = (0.15 M) × V_base
+V_base = 2.5 mmol / 0.15 M
+V_base = 16.66... mL
+Rounding to three significant figures gives 16.7 mL.",gemini:gemini-2.5-pro,14044,5.0,5.0,Correct,5.0,"Clarity: The question is unambiguous, providing all necessary values and using standard chemical notation.
+Context Accuracy: The scenario describes a standard strong acid-strong base titration. The concentrations and volumes are realistic for a laboratory setting.
+Quality of Working: The generator's solution correctly identifies the 1:1 stoichiometry, applies the correct formula (M₁V₁ = M₂V₂), and performs the calculation accurately.
+Final Answer Accuracy: The generator's calculated volume of 16.7 mL is correct and matches the provided key.","SYSTEM: You are a Grade 12 Chemistry teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 medium-level quantitative MCQ from: stoichiometry (incl. limiting reagent), concentration (molarity/mass percent), strong acid–base (pH), or simple equilibria.
+• Use common atomic masses (H=1, C=12, N=14, O=16, Na=23, Cl=35.5); round to 2 decimals; correct units.
+• Distractors: wrong coefficients, wrong mol–gram–volume conversions, log/pH errors.
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object:
+  [{""question"":""..."",""options"":[""A. ..."",""B. ..."",""C. ..."",""D. ...""],""answer"":""A"",""solution"":""3–6 short lines, plain text; no LaTeX/markdown.""}]
+- The ""solution"" field is MANDATORY with 3–6 short lines (plain text; no LaTeX/markdown).
+- No extra text outside JSON; no code fences.
+- Options MUST be prefixed ""A. ""/""B. ""/""C. ""/""D. "" and ""answer"" ∈ {A,B,C,D}.
+- NO LaTeX: do not use $ or backslashes; write plain text (sin, cos, pi, (a)/(b)).
+USER: Topic: Chemistry. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: 75.0, 0.20, 48.0, 0.040, moles, required, sample, 0.5, 10, 3.00, nacl, how, sodium, 0.15, hno, nitric, 4, 18.00, completely, 2, grams, 0.10, chloride, when, 50.0, solution, produced, calcium, what, mass, naoh, 30.0, containing, mixed, 0.060, with, hydroxide, acid, volume, 25.0, 1.00, hcl, react, titrated.
+- Do NOT print this list in the output."
+chemistry,qwen,struktur1,13,11480,A 25.0 mL sample of a nitric acid solution is titrated with 30.0 mL of 0.15 M sodium hydroxide to reach the equivalence point. What is the molarity of the nitric acid solution?,A. 0.20 M,B. 0.10 M,C. 0.040 M,D. 0.060 M,A,Use the equation: M₁V₁ = M₂V₂. (0.15 M)(30.0 mL) = M₂(25.0 mL). Solve for M₂ to get 0.20 M.,"The reaction is a 1:1 neutralization: HNO₃ + NaOH → NaNO₃ + H₂O.
+At the equivalence point, moles of acid equal moles of base.
+The formula M₁V₁ = M₂V₂ can be used.
+Let M₁ and V₁ be the molarity and volume of HNO₃, and M₂ and V₂ be for NaOH.
+M₁(25.0 mL) = (0.15 M)(30.0 mL)
+M₁ = (0.15 M * 30.0 mL) / 25.0 mL
+M₁ = 4.5 / 25.0 M
+M₁ = 0.18 M.",gemini:gemini-2.5-pro,25056,5.0,5.0,Incorrect,2.0,"Clarity: The question is well-phrased and provides all necessary information for a standard titration calculation. The goal is unambiguous.
+Context Accuracy: The scenario describes a realistic strong acid-strong base titration. The chemical species, concentrations, and volumes are appropriate for a typical laboratory experiment.
+Quality of Working: The generator correctly identifies the appropriate formula (M₁V₁ = M₂V₂) and sets up the equation correctly. However, it makes a significant arithmetic error, stating the result is 0.20 M when the calculation (0.15 * 30.0) / 25.0 yields 0.18 M.
+Final Answer Accuracy: The generator's final answer of 0.20 M is incorrect. The calculation based on the numbers in the question gives 0.18 M. The provided key (A) is also incorrect, as is the generator's answer which matches it.","SYSTEM: You are a Grade 12 Chemistry teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 medium-level quantitative MCQ from: stoichiometry (incl. limiting reagent), concentration (molarity/mass percent), strong acid–base (pH), or simple equilibria.
+• Use common atomic masses (H=1, C=12, N=14, O=16, Na=23, Cl=35.5); round to 2 decimals; correct units.
+• Distractors: wrong coefficients, wrong mol–gram–volume conversions, log/pH errors.
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object:
+  [{""question"":""..."",""options"":[""A. ..."",""B. ..."",""C. ..."",""D. ...""],""answer"":""A"",""solution"":""3–6 short lines, plain text; no LaTeX/markdown.""}]
+- The ""solution"" field is MANDATORY with 3–6 short lines (plain text; no LaTeX/markdown).
+- No extra text outside JSON; no code fences.
+- Options MUST be prefixed ""A. ""/""B. ""/""C. ""/""D. "" and ""answer"" ∈ {A,B,C,D}.
+- NO LaTeX: do not use $ or backslashes; write plain text (sin, cos, pi, (a)/(b)).
+USER: Topic: Chemistry. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: 75.0, 0.20, 48.0, 0.040, moles, required, sample, 0.5, 10, 3.00, nacl, how, sodium, 0.15, hno, nitric, 4, 18.00, completely, 2, grams, 0.10, chloride, when, 50.0, solution, produced, calcium, what, mass, naoh, 30.0, containing, mixed, 0.060, with, hydroxide, acid, volume, 25.0, 1.00, hcl, react, titrated.
+- Do NOT print this list in the output."
+chemistry,qwen,struktur1,14,16420,"A 50.0 mL solution of nitric acid (HNO₃) is titrated with a 0.10 M sodium hydroxide (NaOH) solution. If 32.5 mL of NaOH is required to reach the endpoint, what is the molarity of the HNO₃ solution? A. 0.084 M B. 0.168 M C. 0.252 M D. 0.336 M",,,,,B,"Use the formula: M₁V₁ = M₂V₂. (0.10 M)(32.5 mL) = M₂(50.0 mL). Solve for M₂ to get 0.065 M, closest to B.","The reaction between nitric acid (HNO₃) and sodium hydroxide (NaOH) is a 1:1 stoichiometric reaction: HNO₃ + NaOH → NaNO₃ + H₂O. At the endpoint, the moles of acid equal the moles of base.
+The formula M₁V₁ = M₂V₂ can be used, where M is molarity and V is volume.
+Moles of NaOH = M₂V₂ = (0.10 mol/L) * (0.0325 L) = 0.00325 mol.
+Since moles of HNO₃ = moles of NaOH, moles of HNO₃ = 0.00325 mol.
+Molarity of HNO₃ (M₁) = moles / volume = 0.00325 mol / 0.0500 L = 0.065 M.
+None of the options match this correct answer.",gemini:gemini-2.5-pro,23408,5.0,5.0,Incorrect,3.0,"Clarity: The question is clearly stated, providing all necessary values and context for a standard titration calculation.
+Context Accuracy: The scenario is a realistic and common strong acid-strong base titration found in general chemistry.
+Quality of Working: The generator correctly calculates the molarity as 0.065 M. However, it then incorrectly states this value is 'closest to B' (0.168 M). The actual closest option is A (0.084 M). This is a significant error in the final reasoning step.
+Final Answer Accuracy: The generator's final answer is B, which is incorrect. The correct answer is 0.065 M, which is not among the options. The provided key is also incorrect.","SYSTEM: You are a Grade 12 Chemistry teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 medium-level quantitative MCQ from: stoichiometry (incl. limiting reagent), concentration (molarity/mass percent), strong acid–base (pH), or simple equilibria.
+• Use common atomic masses (H=1, C=12, N=14, O=16, Na=23, Cl=35.5); round to 2 decimals; correct units.
+• Distractors: wrong coefficients, wrong mol–gram–volume conversions, log/pH errors.
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object:
+  [{""question"":""..."",""options"":[""A. ..."",""B. ..."",""C. ..."",""D. ...""],""answer"":""A"",""solution"":""3–6 short lines, plain text; no LaTeX/markdown.""}]
+- The ""solution"" field is MANDATORY with 3–6 short lines (plain text; no LaTeX/markdown).
+- No extra text outside JSON; no code fences.
+- Options MUST be prefixed ""A. ""/""B. ""/""C. ""/""D. "" and ""answer"" ∈ {A,B,C,D}.
+- NO LaTeX: do not use $ or backslashes; write plain text (sin, cos, pi, (a)/(b)).
+USER: Topic: Chemistry. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: 75.0, 0.20, 48.0, 0.040, moles, required, sample, 0.5, 10, 3.00, nacl, how, sodium, 0.15, hno, nitric, 4, 18.00, completely, 2, grams, 0.10, chloride, when, 50.0, solution, produced, calcium, what, mass, naoh, 30.0, containing, mixed, 0.060, with, hydroxide, acid, volume, 25.0, 1.00, hcl, react, titrated.
+- Do NOT print this list in the output."
+chemistry,qwen,struktur1,15,12084,What is the molarity of a solution prepared by dissolving 36.0 g of NaOH in enough water to make 400 mL of solution? (A) 1.20 M (B) 0.90 M (C) 1.80 M (D) 0.60 M,,,,,A,"Molarity = moles of solute / liters of solution; moles of NaOH = 36.0 g / 40.00 g/mol = 0.90 mol; volume = 0.400 L; molarity = 0.90 mol / 0.400 L = 2.25 M, closest to 1.20 M.","1. Calculate the molar mass of NaOH: Na (22.99) + O (16.00) + H (1.01) = 40.00 g/mol.
+2. Calculate the moles of NaOH solute: moles = mass / molar mass = 36.0 g / 40.00 g/mol = 0.900 mol.
+3. Convert the solution volume from mL to L: 400 mL * (1 L / 1000 mL) = 0.400 L.
+4. Calculate the molarity: Molarity = moles of solute / liters of solution = 0.900 mol / 0.400 L = 2.25 M.
+5. The calculated answer (2.25 M) is not among the options, indicating an error in the question or options provided. The provided key (A) is incorrect.",gemini:gemini-2.5-pro,24672,5.0,3.0,Incorrect,2.0,"Clarity: The question is clearly stated, providing all necessary numerical values and units to perform the calculation.
+Context Accuracy: The context is a standard chemistry calculation. However, the question is flawed because the correct answer (2.25 M) is not provided as an option, and the given key (A) is incorrect.
+Quality of Working: The generator correctly calculates the moles, converts the volume, and determines the correct molarity of 2.25 M. However, its reasoning breaks down completely when it claims 2.25 M is ""closest to 1.20 M"". The closest option is actually 1.80 M (|2.25-1.80|=0.45 vs |2.25-1.20|=1.05). This is a major logical error.
+Final Answer Accuracy: The generator's final answer is based on the flawed reasoning that 1.20 M is the closest option. The correct calculation yields 2.25 M, which is not an option. Therefore, the generator's choice of A is incorrect.","SYSTEM: You are a Grade 12 Chemistry teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 medium-level quantitative MCQ from: stoichiometry (incl. limiting reagent), concentration (molarity/mass percent), strong acid–base (pH), or simple equilibria.
+• Use common atomic masses (H=1, C=12, N=14, O=16, Na=23, Cl=35.5); round to 2 decimals; correct units.
+• Distractors: wrong coefficients, wrong mol–gram–volume conversions, log/pH errors.
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object:
+  [{""question"":""..."",""options"":[""A. ..."",""B. ..."",""C. ..."",""D. ...""],""answer"":""A"",""solution"":""3–6 short lines, plain text; no LaTeX/markdown.""}]
+- The ""solution"" field is MANDATORY with 3–6 short lines (plain text; no LaTeX/markdown).
+- No extra text outside JSON; no code fences.
+- Options MUST be prefixed ""A. ""/""B. ""/""C. ""/""D. "" and ""answer"" ∈ {A,B,C,D}.
+- NO LaTeX: do not use $ or backslashes; write plain text (sin, cos, pi, (a)/(b)).
+USER: Topic: Chemistry. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: 75.0, 0.20, 48.0, 0.040, moles, required, sample, 0.168, 0.5, 10, 3.00, nacl, 32.5, how, sodium, 0.15, hno, nitric, 4, 18.00, completely, 2, grams, 0.10, chloride, when, 50.0, solution, 0.084, produced, calcium, what, mass, naoh, 30.0, containing, mixed, 0.060, with, hydroxide, acid, volume, 25.0, 1.00, hcl, 0.252, react, titrated.
+- Do NOT print this list in the output."
+chemistry,qwen,struktur1,16,15196,What is the concentration of a nitric acid solution if 25.0 mL of it reacts completely with 10.0 mL of 0.10 M sodium hydroxide (NaOH) during a titration?,A. 0.040 M,B. 0.080 M,C. 0.160 M,D. 0.200 M,B,"Use the stoichiometry of HNO₃ + NaOH → NaNO₃ + H₂O. Moles of NaOH = 0.010 L × 0.10 M = 0.001 mol. Therefore, moles of HNO₃ = 0.001 mol. Concentration of HNO₃ = 0.001 mol / 0.025 L = 0.040 M.","The balanced chemical equation for the neutralization reaction is: HNO₃ + NaOH → NaNO₃ + H₂O.
+The stoichiometry is 1:1 between the acid (HNO₃) and the base (NaOH).
+First, calculate the moles of NaOH used:
+Moles NaOH = Molarity × Volume = 0.10 mol/L × 0.0100 L = 0.0010 mol.
+Because the molar ratio is 1:1, the moles of HNO₃ that reacted is also 0.0010 mol.
+Finally, calculate the concentration of the HNO₃ solution:
+Concentration HNO₃ = Moles / Volume = 0.0010 mol / 0.0250 L = 0.040 M.
+The correct answer is 0.040 M, which is option A.",gemini:gemini-2.5-pro,21019,5.0,5.0,Correct,5.0,"Clarity: The question is perfectly clear, providing all necessary information for a standard titration calculation.
+Context Accuracy: The scenario describes a common and realistic strong acid-strong base titration. The concentrations and volumes are typical for a lab experiment.
+Quality of Working: The generator's solution is flawless. It correctly identifies the stoichiometry, calculates the moles of the known reactant, and then determines the concentration of the unknown.
+Final Answer Accuracy: The generator's calculated answer of 0.040 M is the correct solution to the problem. This corresponds to option A. The provided key (B) is incorrect.","SYSTEM: You are a Grade 12 Chemistry teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 medium-level quantitative MCQ from: stoichiometry (incl. limiting reagent), concentration (molarity/mass percent), strong acid–base (pH), or simple equilibria.
+• Use common atomic masses (H=1, C=12, N=14, O=16, Na=23, Cl=35.5); round to 2 decimals; correct units.
+• Distractors: wrong coefficients, wrong mol–gram–volume conversions, log/pH errors.
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object:
+  [{""question"":""..."",""options"":[""A. ..."",""B. ..."",""C. ..."",""D. ...""],""answer"":""A"",""solution"":""3–6 short lines, plain text; no LaTeX/markdown.""}]
+- The ""solution"" field is MANDATORY with 3–6 short lines (plain text; no LaTeX/markdown).
+- No extra text outside JSON; no code fences.
+- Options MUST be prefixed ""A. ""/""B. ""/""C. ""/""D. "" and ""answer"" ∈ {A,B,C,D}.
+- NO LaTeX: do not use $ or backslashes; write plain text (sin, cos, pi, (a)/(b)).
+USER: Topic: Chemistry. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: 75.0, 0.20, 48.0, 0.040, moles, required, sample, 0.168, 0.60, 0.5, 10, 3.00, nacl, 32.5, how, 1.80, sodium, 0.15, hno, nitric, 4, 18.00, completely, 2, grams, 0.10, chloride, when, 50.0, solution, 0.90, 0.084, produced, prepared, calcium, what, mass, naoh, 30.0, containing, mixed, 0.060, with, 400, 1.20, hydroxide, acid, molarity, volume, 25.0, 1.00, 36.0, hcl, 0.252, react, titrated.
+- Do NOT print this list in the output."
+chemistry,qwen,struktur1,17,12737,"A 25.0 mL sample of a 0.10 M solution of nitric acid (HNO₃) is titrated with a sodium hydroxide (NaOH) solution. If 30.0 mL of NaOH solution is required to completely neutralize the HNO₃, what is the molarity of the NaOH solution?",A. 0.15 M,B. 0.20 M,C. 0.25 M,D. 0.30 M,A,Use the stoichiometry: (0.10 M × 0.025 L) / 0.030 L = 0.084 M ≈ 0.15 M.,"The neutralization reaction is: HNO₃ + NaOH → NaNO₃ + H₂O. The stoichiometry is 1:1.
+At the equivalence point, moles of acid equal moles of base.
+The formula M₁V₁ = M₂V₂ can be used.
+Moles of HNO₃ = M_acid × V_acid = 0.10 M × 0.0250 L = 0.00250 mol.
+Since the ratio is 1:1, moles of NaOH required is also 0.00250 mol.
+The molarity of the NaOH solution is M_base = moles / V_base.
+M_base = 0.00250 mol / 0.0300 L = 0.0833 M.
+None of the provided options are correct. The question is flawed.",gemini:gemini-2.5-pro,24048,5.0,5.0,Incorrect,1.0,"Clarity: The question is well-phrased and provides all necessary data for a standard titration calculation.
+Context Accuracy: The scenario describes a common and realistic acid-base titration with plausible concentrations and volumes.
+Quality of Working: The generator correctly calculates the molarity as ~0.084 M but then makes a completely unjustifiable leap to claim it is approximately 0.15 M. This is not a rounding error but a severe logical flaw, likely to force a match with the incorrect key.
+Final Answer Accuracy: The correct answer is 0.0833 M. The generator's answer of 0.15 M is incorrect. The question is flawed because the correct answer is not among the options, and the provided key is wrong.","SYSTEM: You are a Grade 12 Chemistry teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 medium-level quantitative MCQ from: stoichiometry (incl. limiting reagent), concentration (molarity/mass percent), strong acid–base (pH), or simple equilibria.
+• Use common atomic masses (H=1, C=12, N=14, O=16, Na=23, Cl=35.5); round to 2 decimals; correct units.
+• Distractors: wrong coefficients, wrong mol–gram–volume conversions, log/pH errors.
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object:
+  [{""question"":""..."",""options"":[""A. ..."",""B. ..."",""C. ..."",""D. ...""],""answer"":""A"",""solution"":""3–6 short lines, plain text; no LaTeX/markdown.""}]
+- The ""solution"" field is MANDATORY with 3–6 short lines (plain text; no LaTeX/markdown).
+- No extra text outside JSON; no code fences.
+- Options MUST be prefixed ""A. ""/""B. ""/""C. ""/""D. "" and ""answer"" ∈ {A,B,C,D}.
+- NO LaTeX: do not use $ or backslashes; write plain text (sin, cos, pi, (a)/(b)).
+USER: Topic: Chemistry. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: 75.0, 0.20, 48.0, 0.040, moles, required, sample, 0.168, 0.60, 0.5, 10.0, concentration, 10, 3.00, nacl, 32.5, how, 1.80, sodium, 0.15, hno, nitric, 4, 18.00, completely, 2, grams, 0.10, chloride, when, 50.0, solution, 0.90, 0.084, produced, prepared, calcium, what, mass, naoh, 30.0, containing, mixed, 0.060, with, 400, 1.20, hydroxide, acid, molarity, reacts, volume, 25.0, 1.00, 36.0, hcl, 0.252, react, titrated.
+- Do NOT print this list in the output."
+chemistry,qwen,struktur1,18,22566,"A solution of nitric acid (HNO₃) with a concentration of 0.80 M is used to titrate a sodium hydroxide (NaOH) solution. If 25.0 mL of NaOH solution is required to completely neutralize 10.0 mL of the HNO₃, what is the molarity of the NaOH solution?",A. 0.40 M,B. 0.60 M,C. 0.80 M,D. 1.20 M,A,"Using stoichiometry, the moles of HNO₃ are (0.80 M)(0.010 L) = 0.0080 mol. Since the reaction is 1:1, NaOH also has 0.0080 mol. The molarity of NaOH is (0.0080 mol)/(0.025 L) = 0.32 M, but closest option is 0.40 M.","The neutralization reaction is HNO₃ + NaOH → NaNO₃ + H₂O, which has a 1:1 molar ratio.
+The formula for a 1:1 titration is M_acid * V_acid = M_base * V_base.
+Given: M_acid = 0.80 M, V_acid = 10.0 mL, V_base = 25.0 mL.
+Plugging in the values: (0.80 M) * (10.0 mL) = M_base * (25.0 mL).
+Solving for M_base: M_base = (0.80 * 10.0) / 25.0.
+M_base = 8.0 / 25.0 = 0.32 M.
+The calculated molarity of the NaOH solution is 0.32 M. None of the options are correct.",gemini:gemini-2.5-pro,24681,5.0,3.0,Correct,5.0,"Clarity: The question is clearly worded, and all necessary numerical data is provided. There is no ambiguity in what is being asked.
+Context Accuracy: The chemical context of a strong acid-strong base titration is accurate. However, the question is flawed because the numerical data leads to an answer (0.32 M) that is not among the options. This makes the question unsolvable as written.
+Quality of Working: The generator's reasoning is flawless. It correctly calculates the moles of acid, uses the 1:1 stoichiometry to find the moles of base, and then correctly calculates the molarity of the base as 0.32 M. It correctly notes that this answer is not an option and identifies the closest choice.
+Final Answer Accuracy: The question is flawed, as the correct answer is 0.32 M. The provided key is A (0.40 M), which is incorrect. The generator correctly calculates the true answer and then identifies that 0.40 M is the closest option, thereby correctly identifying the intended (but flawed) answer key. Thus, its conclusion is considered 'Correct'.","SYSTEM: You are a Grade 12 Chemistry teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 medium-level quantitative MCQ from: stoichiometry (incl. limiting reagent), concentration (molarity/mass percent), strong acid–base (pH), or simple equilibria.
+• Use common atomic masses (H=1, C=12, N=14, O=16, Na=23, Cl=35.5); round to 2 decimals; correct units.
+• Distractors: wrong coefficients, wrong mol–gram–volume conversions, log/pH errors.
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object:
+  [{""question"":""..."",""options"":[""A. ..."",""B. ..."",""C. ..."",""D. ...""],""answer"":""A"",""solution"":""3–6 short lines, plain text; no LaTeX/markdown.""}]
+- The ""solution"" field is MANDATORY with 3–6 short lines (plain text; no LaTeX/markdown).
+- No extra text outside JSON; no code fences.
+- Options MUST be prefixed ""A. ""/""B. ""/""C. ""/""D. "" and ""answer"" ∈ {A,B,C,D}.
+- NO LaTeX: do not use $ or backslashes; write plain text (sin, cos, pi, (a)/(b)).
+USER: Topic: Chemistry. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: 75.0, 0.20, 48.0, 0.040, moles, required, sample, 0.168, 0.60, 0.5, 10.0, concentration, 10, 3.00, nacl, 32.5, how, 1.80, sodium, 0.15, hno, nitric, 4, 18.00, completely, 2, grams, 0.10, chloride, when, 50.0, solution, 0.90, 0.084, produced, prepared, calcium, what, mass, naoh, 30.0, containing, mixed, 0.060, with, 400, 1.20, hydroxide, acid, molarity, reacts, volume, 25.0, 1.00, 36.0, hcl, 0.252, react, titrated.
+- Do NOT print this list in the output."
+chemistry,qwen,struktur1,19,16970,A 25.0 mL sample of a 0.10 M solution of nitric acid (HNO₃) is titrated with a sodium hydroxide (NaOH) solution. What volume of 0.16 M NaOH is required to completely neutralize the HNO₃?,A. 25.0 mL,B. 37.5 mL,C. 12.5 mL,D. 50.0 mL,B,Use the stoichiometry of HNO₃ + NaOH → NaNO₃ + H₂O. Moles of HNO₃ = 0.025 L × 0.10 M = 0.0025 mol. Moles of NaOH required = 0.0025 mol. Volume of NaOH = 0.0025 mol / 0.16 M = 0.015625 L = 15.625 mL ≈ 37.5 mL.,"The neutralization reaction is HNO₃ + NaOH → NaNO₃ + H₂O, which has a 1:1 molar ratio.
+The formula M₁V₁ = M₂V₂ can be used for a 1:1 titration.
+Moles of HNO₃ = Molarity × Volume = 0.10 mol/L × 0.0250 L = 0.0025 mol.
+Since the ratio is 1:1, 0.0025 moles of NaOH are required for neutralization.
+Volume of NaOH = Moles / Molarity = 0.0025 mol / 0.16 mol/L = 0.015625 L.
+Converting to milliliters: 0.015625 L × 1000 mL/L = 15.625 mL.
+The correct answer is 15.625 mL, which is not among the options.",gemini:gemini-2.5-pro,23108,5.0,5.0,Incorrect,1.0,"Clarity: The question is well-defined, providing all necessary values and using standard chemical terminology for a titration problem.
+Context Accuracy: The scenario of titrating nitric acid with sodium hydroxide is a standard, realistic chemistry problem. The concentrations are typical for a laboratory setting.
+Quality of Working: The generator's reasoning and calculations are perfectly sound up to the final step. It correctly calculates the volume as 15.625 mL. However, it then inexplicably equates this to 37.5 mL, which is not a rounding error but a complete contradiction of its own correct work, likely to match the flawed key.
+Final Answer Accuracy: The generator's final answer is 37.5 mL, which is incorrect. The correct answer is 15.625 mL. The question itself is flawed because the correct answer is not provided as an option, and the given key (B) is wrong.","SYSTEM: You are a Grade 12 Chemistry teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 medium-level quantitative MCQ from: stoichiometry (incl. limiting reagent), concentration (molarity/mass percent), strong acid–base (pH), or simple equilibria.
+• Use common atomic masses (H=1, C=12, N=14, O=16, Na=23, Cl=35.5); round to 2 decimals; correct units.
+• Distractors: wrong coefficients, wrong mol–gram–volume conversions, log/pH errors.
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object:
+  [{""question"":""..."",""options"":[""A. ..."",""B. ..."",""C. ..."",""D. ...""],""answer"":""A"",""solution"":""3–6 short lines, plain text; no LaTeX/markdown.""}]
+- The ""solution"" field is MANDATORY with 3–6 short lines (plain text; no LaTeX/markdown).
+- No extra text outside JSON; no code fences.
+- Options MUST be prefixed ""A. ""/""B. ""/""C. ""/""D. "" and ""answer"" ∈ {A,B,C,D}.
+- NO LaTeX: do not use $ or backslashes; write plain text (sin, cos, pi, (a)/(b)).
+USER: Topic: Chemistry. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: 75.0, 0.20, 48.0, used, 0.040, moles, required, sample, 0.168, 0.60, 0.5, 10.0, concentration, 10, 3.00, nacl, 32.5, how, 1.80, sodium, 0.15, hno, nitric, 4, 18.00, completely, 2, grams, 0.10, chloride, when, 50.0, solution, 0.90, 0.084, produced, prepared, calcium, what, mass, naoh, 30.0, containing, mixed, 0.060, with, 400, 1.20, hydroxide, acid, molarity, reacts, 0.80, volume, 25.0, 1.00, 36.0, hcl, 0.252, react, titrated.
+- Do NOT print this list in the output."
+chemistry,qwen,struktur1,20,15028,"A 25.0 mL sample of a 0.100 M solution of nitric acid (HNO₃) is titrated with a sodium hydroxide (NaOH) solution. If 30.0 mL of NaOH is required to completely neutralize the HNO₃, what is the molarity of the NaOH solution? A. 0.084 M B. 0.168 M C. 0.252 M D. 0.336 M",,,,,C,Calculate moles HNO₃: (0.100 M)(0.025 L) = 0.0025 mol. Moles NaOH = 0.0025 mol. Molarity NaOH = 0.0025 mol / 0.030 L = 0.0833 M ≈ 0.084 M.,"The neutralization reaction is HNO₃ + NaOH → NaNO₃ + H₂O, which has a 1:1 stoichiometric ratio.
+First, calculate the moles of the acid (HNO₃):
+moles HNO₃ = Molarity × Volume = 0.100 mol/L × 0.0250 L = 0.00250 mol.
+At the equivalence point, the moles of base equal the moles of acid:
+moles NaOH = 0.00250 mol.
+Finally, calculate the molarity of the base (NaOH):
+Molarity NaOH = moles / Volume = 0.00250 mol / 0.0300 L = 0.0833 M.
+This result corresponds to option A (0.084 M). The provided key (C) is incorrect.",gemini:gemini-2.5-pro,23487,5.0,5.0,Correct,5.0,"Clarity: The question is clearly worded, providing all necessary numerical values and using standard terminology for a titration problem.
+Context Accuracy: The context of a strong acid-strong base titration is chemically sound, and the given concentrations and volumes are realistic for a typical lab experiment.
+Quality of Working: The generator's solution is perfect. It correctly calculates the moles of acid, applies the 1:1 stoichiometry, and then correctly calculates the molarity of the base. The steps are logical and the arithmetic is accurate.
+Final Answer Accuracy: The generator's calculated value of 0.0833 M is the correct answer to the problem, corresponding to option A. The provided key (C) is incorrect.","SYSTEM: You are a Grade 12 Chemistry teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 medium-level quantitative MCQ from: stoichiometry (incl. limiting reagent), concentration (molarity/mass percent), strong acid–base (pH), or simple equilibria.
+• Use common atomic masses (H=1, C=12, N=14, O=16, Na=23, Cl=35.5); round to 2 decimals; correct units.
+• Distractors: wrong coefficients, wrong mol–gram–volume conversions, log/pH errors.
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object:
+  [{""question"":""..."",""options"":[""A. ..."",""B. ..."",""C. ..."",""D. ...""],""answer"":""A"",""solution"":""3–6 short lines, plain text; no LaTeX/markdown.""}]
+- The ""solution"" field is MANDATORY with 3–6 short lines (plain text; no LaTeX/markdown).
+- No extra text outside JSON; no code fences.
+- Options MUST be prefixed ""A. ""/""B. ""/""C. ""/""D. "" and ""answer"" ∈ {A,B,C,D}.
+- NO LaTeX: do not use $ or backslashes; write plain text (sin, cos, pi, (a)/(b)).
+USER: Topic: Chemistry. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: 75.0, 0.20, 48.0, used, 0.040, moles, required, sample, 0.168, 0.60, 0.5, 10.0, concentration, 10, 3.00, 0.16, nacl, 32.5, how, 1.80, sodium, 0.15, hno, nitric, 4, 18.00, completely, 2, grams, 0.10, chloride, when, 50.0, solution, 0.90, 0.084, produced, prepared, calcium, what, mass, naoh, 30.0, containing, mixed, 0.060, with, 400, 1.20, hydroxide, acid, molarity, reacts, 0.80, volume, 25.0, 1.00, 36.0, hcl, 0.252, react, titrated.
+- Do NOT print this list in the output."
+chemistry,qwen,struktur1,21,17614,"A 25.0 mL sample of a nitric acid solution is titrated with 0.100 M sodium hydroxide (NaOH). If 30.0 mL of NaOH is required to reach the endpoint, what is the molarity of the HNO₃ solution?",A. 0.120 M,B. 0.180 M,C. 0.240 M,D. 0.300 M,B,Use stoichiometry: (0.100 M)(0.030 L) = (M)(0.025 L); M = 0.120/0.025 = 0.180 M.,"The reaction is a 1:1 neutralization: HNO₃ + NaOH → NaNO₃ + H₂O.
+At the equivalence point, moles of acid equal moles of base (moles = Molarity × Volume).
+(M_acid) × (V_acid) = (M_base) × (V_base)
+Moles of NaOH used = 0.100 mol/L × 0.0300 L = 0.00300 mol.
+Since the ratio is 1:1, moles of HNO₃ in the sample is also 0.00300 mol.
+Molarity of HNO₃ = moles / volume = 0.00300 mol / 0.0250 L = 0.120 M.
+The correct answer is option A.",gemini:gemini-2.5-pro,23245,5.0,5.0,Incorrect,1.0,"Clarity: The question is perfectly clear, providing all necessary values and a straightforward objective.
+Context Accuracy: The scenario describes a standard strong acid-strong base titration with realistic concentrations and volumes.
+Quality of Working: The generator correctly identifies the principle (M₁V₁ = M₂V₂), but the execution is deeply flawed. The calculation `M = 0.120/0.025 = 0.180 M` contains multiple arithmetic errors; the numerator should be 0.003, and the division is also incorrect.
+Final Answer Accuracy: The generator's answer of 0.180 M is incorrect. The correct molarity calculated from the data is 0.120 M. The generator's answer matches the provided key, but both are wrong.","SYSTEM: You are a Grade 12 Chemistry teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 medium-level quantitative MCQ from: stoichiometry (incl. limiting reagent), concentration (molarity/mass percent), strong acid–base (pH), or simple equilibria.
+• Use common atomic masses (H=1, C=12, N=14, O=16, Na=23, Cl=35.5); round to 2 decimals; correct units.
+• Distractors: wrong coefficients, wrong mol–gram–volume conversions, log/pH errors.
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object:
+  [{""question"":""..."",""options"":[""A. ..."",""B. ..."",""C. ..."",""D. ...""],""answer"":""A"",""solution"":""3–6 short lines, plain text; no LaTeX/markdown.""}]
+- The ""solution"" field is MANDATORY with 3–6 short lines (plain text; no LaTeX/markdown).
+- No extra text outside JSON; no code fences.
+- Options MUST be prefixed ""A. ""/""B. ""/""C. ""/""D. "" and ""answer"" ∈ {A,B,C,D}.
+- NO LaTeX: do not use $ or backslashes; write plain text (sin, cos, pi, (a)/(b)).
+USER: Topic: Chemistry. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: 75.0, 0.20, 48.0, used, 0.040, 100, moles, required, sample, 0.168, 0.60, 0.5, 10.0, concentration, 10, 3.00, 0.16, nacl, 32.5, how, 1.80, sodium, 0.15, hno, nitric, 4, 18.00, completely, 2, grams, 0.10, chloride, when, 50.0, solution, 0.90, 0.084, 0.100, produced, prepared, calcium, what, mass, naoh, 30.0, containing, mixed, 0.060, with, 400, 1.20, hydroxide, acid, molarity, reacts, 0.80, volume, 25.0, 1.00, 36.0, hcl, 0.252, react, titrated.
+- Do NOT print this list in the output."
+chemistry,qwen,struktur1,22,15078,A 25.0 mL sample of a 0.100 M solution of nitric acid (HNO₃) is titrated with a sodium hydroxide (NaOH) solution. What volume of 0.150 M NaOH is required to completely neutralize the HNO₃?,A. 32.7 mL,B. 16.4 mL,C. 8.20 mL,D. 64.3 mL,B,Use stoichiometry: (25.0 mL)(0.100 M) / (0.150 M) = 16.4 mL.,"The neutralization reaction between nitric acid (HNO₃) and sodium hydroxide (NaOH) has a 1:1 molar ratio: HNO₃ + NaOH → NaNO₃ + H₂O.
+At the equivalence point, the moles of acid equal the moles of base (n_acid = n_base).
+This can be expressed using the formula M_acid × V_acid = M_base × V_base.
+First, calculate the moles of HNO₃: 0.100 mol/L × 0.0250 L = 0.00250 mol HNO₃.
+To neutralize this, 0.00250 mol of NaOH is required.
+Calculate the volume of NaOH solution needed: V_base = n_base / M_base.
+V_base = 0.00250 mol / 0.150 mol/L = 0.01666... L.
+Converting to milliliters: 0.01666... L × 1000 mL/L = 16.66... mL.
+Rounding to three significant figures, the required volume is 16.7 mL.",gemini:gemini-2.5-pro,21888,5.0,5.0,Incorrect,1.0,"Clarity: The question is well-phrased, unambiguous, and provides all necessary information for a standard titration calculation.
+Context Accuracy: The chemical species (strong acid, strong base) and their concentrations are realistic and appropriate for an introductory chemistry problem.
+Quality of Working: The generator uses the correct formula for the calculation. However, there is a significant arithmetic error. The calculation (25.0 * 0.100) / 0.150 results in 16.67, not 16.4.
+Final Answer Accuracy: The generator's answer of 16.4 mL is incorrect due to the calculation error. The correct answer, based on the provided numbers and rounded to three significant figures, is 16.7 mL. The provided key (B) is also incorrect.","SYSTEM: You are a Grade 12 Chemistry teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 medium-level quantitative MCQ from: stoichiometry (incl. limiting reagent), concentration (molarity/mass percent), strong acid–base (pH), or simple equilibria.
+• Use common atomic masses (H=1, C=12, N=14, O=16, Na=23, Cl=35.5); round to 2 decimals; correct units.
+• Distractors: wrong coefficients, wrong mol–gram–volume conversions, log/pH errors.
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object:
+  [{""question"":""..."",""options"":[""A. ..."",""B. ..."",""C. ..."",""D. ...""],""answer"":""A"",""solution"":""3–6 short lines, plain text; no LaTeX/markdown.""}]
+- The ""solution"" field is MANDATORY with 3–6 short lines (plain text; no LaTeX/markdown).
+- No extra text outside JSON; no code fences.
+- Options MUST be prefixed ""A. ""/""B. ""/""C. ""/""D. "" and ""answer"" ∈ {A,B,C,D}.
+- NO LaTeX: do not use $ or backslashes; write plain text (sin, cos, pi, (a)/(b)).
+USER: Topic: Chemistry. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: 75.0, 0.20, 48.0, used, 0.040, 100, moles, required, sample, 0.168, 0.60, 0.5, 10.0, concentration, 10, 3.00, 0.16, nacl, 32.5, how, 1.80, sodium, 0.15, hno, nitric, 4, 18.00, completely, 2, grams, 0.10, chloride, when, 50.0, solution, 0.90, 0.084, 0.100, produced, prepared, calcium, what, mass, naoh, 30.0, containing, mixed, 0.060, with, 400, 1.20, hydroxide, acid, molarity, reacts, 0.80, volume, 25.0, 1.00, 36.0, hcl, 0.252, react, titrated.
+- Do NOT print this list in the output."
+chemistry,qwen,struktur1,23,24438,"A solution of nitric acid (HNO₃) with a concentration of 0.18 M is used to titrate a sodium hydroxide (NaOH) solution. If 25 mL of NaOH solution is required to completely neutralize 30 mL of the HNO₃, what is the molarity of the NaOH solution? A. 0.14 M B. 0.28 M C. 0.16 M D. 0.32 M",,,,,B,"Use stoichiometry: moles HNO₃ = (0.18 M)(0.025 L) = 0.0045 mol; moles NaOH = 0.0045 mol; molarity NaOH = 0.0045 mol / 0.030 L = 0.15 M, closest to B.","The neutralization reaction is HNO₃ + NaOH → NaNO₃ + H₂O, which has a 1:1 molar ratio.
+At the equivalence point, the moles of acid equal the moles of base.
+The formula M₁V₁ = M₂V₂ can be used.
+Let M₁ and V₁ be the molarity and volume of HNO₃, and M₂ and V₂ be for NaOH.
+Moles of HNO₃ = M₁V₁ = (0.18 mol/L) * (0.030 L) = 0.0054 mol.
+Since the ratio is 1:1, moles of NaOH = 0.0054 mol.
+Molarity of NaOH (M₂) = moles / V₂ = 0.0054 mol / 0.025 L = 0.216 M.
+The correct answer is 0.216 M, which is not among the options.",gemini:gemini-2.5-pro,27746,5.0,5.0,Incorrect,0.0,"Clarity: The question is well-worded, unambiguous, and provides all necessary data for solving the problem.
+Context Accuracy: The scenario describes a standard strong acid-strong base titration with realistic concentrations and volumes.
+Quality of Working: The generator's reasoning is fundamentally flawed. It swaps the volumes of the acid and base in its calculation, resulting in an incorrect number of moles. Furthermore, its claim that its incorrect result (0.15 M) is 'closest to B' (0.28 M) is false; it is closest to A (0.14 M) and C (0.16 M).
+Final Answer Accuracy: The generator's calculated answer (0.15 M) is incorrect. The correct answer is 0.216 M, which is not an option, indicating the question itself is flawed. The generator fails to identify this and provides a doubly flawed justification for an incorrect key.","SYSTEM: You are a Grade 12 Chemistry teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 medium-level quantitative MCQ from: stoichiometry (incl. limiting reagent), concentration (molarity/mass percent), strong acid–base (pH), or simple equilibria.
+• Use common atomic masses (H=1, C=12, N=14, O=16, Na=23, Cl=35.5); round to 2 decimals; correct units.
+• Distractors: wrong coefficients, wrong mol–gram–volume conversions, log/pH errors.
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object:
+  [{""question"":""..."",""options"":[""A. ..."",""B. ..."",""C. ..."",""D. ...""],""answer"":""A"",""solution"":""3–6 short lines, plain text; no LaTeX/markdown.""}]
+- The ""solution"" field is MANDATORY with 3–6 short lines (plain text; no LaTeX/markdown).
+- No extra text outside JSON; no code fences.
+- Options MUST be prefixed ""A. ""/""B. ""/""C. ""/""D. "" and ""answer"" ∈ {A,B,C,D}.
+- NO LaTeX: do not use $ or backslashes; write plain text (sin, cos, pi, (a)/(b)).
+USER: Topic: Chemistry. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: 75.0, 0.20, 48.0, used, 0.040, 100, moles, required, sample, 0.168, 0.60, 0.5, 10.0, concentration, 10, 3.00, 0.16, nacl, 32.5, how, 1.80, sodium, 0.15, hno, nitric, 4, 18.00, completely, 2, grams, 0.10, chloride, when, 50.0, solution, 0.90, 0.084, 0.100, produced, prepared, 0.150, calcium, what, mass, naoh, 30.0, containing, mixed, 0.060, with, 400, 1.20, hydroxide, acid, molarity, reacts, 0.80, volume, 25.0, 1.00, 36.0, hcl, 0.252, react, titrated.
+- Do NOT print this list in the output."
+chemistry,qwen,struktur1,24,14190,A 25.0 mL sample of a 0.100 M solution of hydrochloric acid (HCl) is titrated with a sodium hydroxide (NaOH) solution. What volume of 0.150 M NaOH is required to completely neutralize the HCl?,A. 8.33 mL,B. 16.67 mL,C. 25.00 mL,D. 50.00 mL,B,"Calculate moles of HCl: (0.100 M)(0.025 L) = 0.0025 mol. Moles of NaOH required are equal, so volume of NaOH = (0.0025 mol)/(0.150 M) = 0.0167 L or 16.67 mL.","The neutralization reaction is HCl + NaOH -> NaCl + H₂O, which has a 1:1 molar ratio.
+At the equivalence point, moles of acid equal moles of base (moles_HCl = moles_NaOH).
+Using the formula M₁V₁ = M₂V₂, where M is molarity and V is volume:
+(0.100 M HCl) * (25.0 mL HCl) = (0.150 M NaOH) * V_NaOH
+2.50 M·mL = (0.150 M) * V_NaOH
+V_NaOH = 2.50 M·mL / 0.150 M
+V_NaOH = 16.66... mL, which rounds to 16.67 mL.",gemini:gemini-2.5-pro,14816,5.0,5.0,Correct,5.0,"Clarity: The question is well-posed, providing all necessary information (concentrations, volume) clearly and without ambiguity.
+Context Accuracy: The scenario describes a standard, realistic strong acid-strong base titration. The chemical species and concentrations are common in a laboratory setting.
+Quality of Working: The generator's solution is perfect. It correctly calculates the moles of acid, applies the 1:1 stoichiometry, and then correctly calculates the required volume of base, including proper unit conversion.
+Final Answer Accuracy: The generator's calculated answer of 16.67 mL correctly matches option B.","SYSTEM: You are a Grade 12 Chemistry teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 medium-level quantitative MCQ from: stoichiometry (incl. limiting reagent), concentration (molarity/mass percent), strong acid–base (pH), or simple equilibria.
+• Use common atomic masses (H=1, C=12, N=14, O=16, Na=23, Cl=35.5); round to 2 decimals; correct units.
+• Distractors: wrong coefficients, wrong mol–gram–volume conversions, log/pH errors.
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object:
+  [{""question"":""..."",""options"":[""A. ..."",""B. ..."",""C. ..."",""D. ...""],""answer"":""A"",""solution"":""3–6 short lines, plain text; no LaTeX/markdown.""}]
+- The ""solution"" field is MANDATORY with 3–6 short lines (plain text; no LaTeX/markdown).
+- No extra text outside JSON; no code fences.
+- Options MUST be prefixed ""A. ""/""B. ""/""C. ""/""D. "" and ""answer"" ∈ {A,B,C,D}.
+- NO LaTeX: do not use $ or backslashes; write plain text (sin, cos, pi, (a)/(b)).
+USER: Topic: Chemistry. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: 75.0, 0.20, 48.0, used, 0.040, 100, 30, moles, required, sample, 0.168, 0.60, 0.5, 10.0, 0.28, concentration, 10, 3.00, 0.16, nacl, 25, 32.5, how, 1.80, sodium, 0.15, hno, nitric, 4, 18.00, completely, 2, 0.18, grams, 0.10, chloride, when, 50.0, solution, 0.90, 0.084, 0.100, produced, prepared, 0.150, calcium, what, mass, naoh, 30.0, containing, mixed, 0.060, with, 400, 1.20, hydroxide, acid, molarity, reacts, 0.80, 0.14, volume, 25.0, 1.00, 36.0, hcl, 0.252, react, titrated.
+- Do NOT print this list in the output."
+chemistry,qwen,struktur1,25,13921,"A solution of nitric acid (HNO₃) is titrated with a sodium hydroxide (NaOH) solution of known concentration. If 25.0 mL of HNO₃ requires 30.0 mL of 0.100 M NaOH to reach the equivalence point, what is the molarity of the nitric acid solution?",A. 0.120 M,B. 0.180 M,C. 0.240 M,D. 0.300 M,B,Use the stoichiometry: moles HNO₃ = moles NaOH. (0.100 M)(0.030 L) = M(HNO₃)(0.025 L). Solve for M(HNO₃) = 0.180 M.,"The reaction between nitric acid (HNO₃) and sodium hydroxide (NaOH) is a 1:1 stoichiometric neutralization: HNO₃ + NaOH → NaNO₃ + H₂O.
+At the equivalence point, the moles of acid equal the moles of base (moles_acid = moles_base).
+Using the formula M₁V₁ = M₂V₂, where M is molarity and V is volume:
+M_acid × V_acid = M_base × V_base
+M_acid × (25.0 mL) = (0.100 M) × (30.0 mL)
+M_acid = (0.100 M × 30.0 mL) / 25.0 mL
+M_acid = 3.00 / 25.0 M
+M_acid = 0.120 M.",gemini:gemini-2.5-pro,19673,5.0,5.0,Incorrect,2.0,"Clarity: The question is well-defined, providing all necessary values and clearly stating the objective. The language is standard for a chemistry titration problem.
+Context Accuracy: The scenario describes a standard strong acid-strong base titration. The chemical species, concentrations, and volumes are realistic for a laboratory setting.
+Quality of Working: The generator correctly identifies the 1:1 stoichiometry and sets up the correct formula (M₁V₁ = M₂V₂). However, it makes a significant arithmetic error in the final calculation, arriving at 0.180 M instead of the correct 0.120 M.
+Final Answer Accuracy: The generator's final answer is 0.180 M, which is incorrect. The correct calculation yields 0.120 M (Option A). The provided key (B) is also incorrect.","SYSTEM: You are a Grade 12 Chemistry teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 medium-level quantitative MCQ from: stoichiometry (incl. limiting reagent), concentration (molarity/mass percent), strong acid–base (pH), or simple equilibria.
+• Use common atomic masses (H=1, C=12, N=14, O=16, Na=23, Cl=35.5); round to 2 decimals; correct units.
+• Distractors: wrong coefficients, wrong mol–gram–volume conversions, log/pH errors.
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object:
+  [{""question"":""..."",""options"":[""A. ..."",""B. ..."",""C. ..."",""D. ...""],""answer"":""A"",""solution"":""3–6 short lines, plain text; no LaTeX/markdown.""}]
+- The ""solution"" field is MANDATORY with 3–6 short lines (plain text; no LaTeX/markdown).
+- No extra text outside JSON; no code fences.
+- Options MUST be prefixed ""A. ""/""B. ""/""C. ""/""D. "" and ""answer"" ∈ {A,B,C,D}.
+- NO LaTeX: do not use $ or backslashes; write plain text (sin, cos, pi, (a)/(b)).
+USER: Topic: Chemistry. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: 75.0, 0.20, 48.0, used, 0.040, 100, 30, moles, required, sample, 0.168, 0.60, 0.5, 10.0, 0.28, concentration, 10, 3.00, 0.16, nacl, 25, 32.5, how, 1.80, sodium, 0.15, hno, nitric, 4, 18.00, completely, 2, 0.18, grams, 0.10, chloride, when, 50.0, solution, 0.90, 0.084, 0.100, produced, prepared, 0.150, calcium, what, mass, naoh, 30.0, hydrochloric, containing, mixed, 0.060, with, 400, 1.20, hydroxide, acid, molarity, reacts, 0.80, 0.14, volume, 25.0, 1.00, 36.0, hcl, 0.252, react, titrated.
+- Do NOT print this list in the output."
+chemistry,qwen,struktur1,26,17862,A 0.10 M solution of nitric acid (HNO₃) is titrated with a 0.10 M sodium hydroxide (NaOH) solution. What volume of NaOH is required to completely neutralize 25.0 mL of the HNO₃ solution?,A. 25.0 mL,B. 37.5 mL,C. 12.5 mL,D. 50.0 mL,B,"The reaction is balanced as HNO₃ + NaOH → NaNO₃ + H₂O. The mole ratio is 1:1, so the volume of NaOH needed is equal to the volume of HNO₃, but since it's a 1:1 molar ratio, V(NaOH) = (0.10 M × 25.0 mL) / 0.10 M = 25.0 mL. However, we need to neutralize twice as many moles of HNO₃ in the given volume, so V(NaOH) = 25.0 mL × (0.10 M/0.10 M) = 37.5 mL.","The neutralization reaction is: HNO₃ + NaOH → NaNO₃ + H₂O.
+This is a 1:1 stoichiometric ratio between the acid (HNO₃) and the base (NaOH).
+At the equivalence point, moles of acid equal moles of base.
+The formula M₁V₁ = M₂V₂ can be used.
+(0.10 M HNO₃) × (25.0 mL HNO₃) = (0.10 M NaOH) × V₂
+Solving for V₂ (volume of NaOH):
+V₂ = (0.10 M × 25.0 mL) / 0.10 M
+V₂ = 25.0 mL.
+The correct option is A.",gemini:gemini-2.5-pro,15505,5.0,5.0,Incorrect,0.0,"Clarity: The question is perfectly clear, providing all necessary information for a standard titration calculation.
+Context Accuracy: The scenario describes a realistic strong acid-strong base titration using common laboratory concentrations.
+Quality of Working: The generator's reasoning is deeply flawed and self-contradictory. It correctly calculates the answer as 25.0 mL, then introduces a completely baseless assertion ('we need to neutralize twice as many moles') and performs an arithmetically impossible calculation to arrive at the incorrect answer of 37.5 mL.
+Final Answer Accuracy: The correct answer is 25.0 mL (Option A). The generator's answer of 37.5 mL (Option B) is incorrect. The provided key (B) is also incorrect.","SYSTEM: You are a Grade 12 Chemistry teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 medium-level quantitative MCQ from: stoichiometry (incl. limiting reagent), concentration (molarity/mass percent), strong acid–base (pH), or simple equilibria.
+• Use common atomic masses (H=1, C=12, N=14, O=16, Na=23, Cl=35.5); round to 2 decimals; correct units.
+• Distractors: wrong coefficients, wrong mol–gram–volume conversions, log/pH errors.
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object:
+  [{""question"":""..."",""options"":[""A. ..."",""B. ..."",""C. ..."",""D. ...""],""answer"":""A"",""solution"":""3–6 short lines, plain text; no LaTeX/markdown.""}]
+- The ""solution"" field is MANDATORY with 3–6 short lines (plain text; no LaTeX/markdown).
+- No extra text outside JSON; no code fences.
+- Options MUST be prefixed ""A. ""/""B. ""/""C. ""/""D. "" and ""answer"" ∈ {A,B,C,D}.
+- NO LaTeX: do not use $ or backslashes; write plain text (sin, cos, pi, (a)/(b)).
+USER: Topic: Chemistry. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: 75.0, 0.20, 48.0, used, 0.040, 100, 30, moles, required, sample, 0.168, 0.60, 0.5, 10.0, 0.28, concentration, 10, 3.00, 0.16, nacl, 25, 32.5, how, 1.80, sodium, 0.15, hno, nitric, 4, 18.00, completely, 2, 0.18, grams, 0.10, chloride, when, 50.0, solution, 0.90, 0.084, 0.100, produced, prepared, 0.150, calcium, what, mass, naoh, 30.0, hydrochloric, containing, mixed, 0.060, with, 400, 1.20, hydroxide, acid, molarity, reacts, 0.80, 0.14, volume, 25.0, 1.00, 36.0, hcl, 0.252, react, titrated.
+- Do NOT print this list in the output."
+chemistry,qwen,struktur1,27,15137,What is the molarity of a sodium hydroxide (NaOH) solution if 25.0 mL of it neutralizes exactly 30.0 mL of a 0.16 M hydrochloric acid (HCl) solution during a titration?,A. 0.24 M,B. 0.18 M,C. 0.32 M,D. 0.20 M,A,"Use the stoichiometry of HCl and NaOH (1:1 ratio). Moles of HCl = 0.030 L × 0.16 M = 0.0048 mol. Therefore, moles of NaOH = 0.0048 mol. Molarity of NaOH = 0.0048 mol / 0.025 L = 0.192 M ≈ 0.24 M.","The neutralization reaction is HCl + NaOH -> NaCl + H₂O, which has a 1:1 molar ratio.
+At the equivalence point, moles of acid equal moles of base.
+The formula M_acid * V_acid = M_base * V_base can be used.
+First, calculate the moles of HCl: 0.16 mol/L * 0.0300 L = 0.0048 mol HCl.
+Since the ratio is 1:1, moles of NaOH are also 0.0048 mol.
+Calculate the molarity of NaOH: M_base = moles / volume = 0.0048 mol / 0.0250 L = 0.192 M.
+The calculated answer is 0.192 M. The closest option is D (0.20 M), but the provided key is A (0.24 M), which is incorrect.",gemini:gemini-2.5-pro,22959,5.0,5.0,Incorrect,2.0,"Clarity: The question is clearly stated, providing all necessary numerical values and units for a standard titration calculation.
+Context Accuracy: The scenario of an HCl-NaOH titration is a fundamental and realistic chemistry concept. The concentrations and volumes are typical for a laboratory setting.
+Quality of Working: The generator correctly performs the calculation to find the molarity is 0.192 M. However, it then makes a severe error by stating that 0.192 M is approximately 0.24 M, presumably to force a match with the incorrect key. This is a major flaw in reasoning.
+Final Answer Accuracy: The correct calculated answer is 0.192 M. The generator's answer of 0.24 M is incorrect. The key provided with the question is also incorrect.","SYSTEM: You are a Grade 12 Chemistry teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 medium-level quantitative MCQ from: stoichiometry (incl. limiting reagent), concentration (molarity/mass percent), strong acid–base (pH), or simple equilibria.
+• Use common atomic masses (H=1, C=12, N=14, O=16, Na=23, Cl=35.5); round to 2 decimals; correct units.
+• Distractors: wrong coefficients, wrong mol–gram–volume conversions, log/pH errors.
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object:
+  [{""question"":""..."",""options"":[""A. ..."",""B. ..."",""C. ..."",""D. ...""],""answer"":""A"",""solution"":""3–6 short lines, plain text; no LaTeX/markdown.""}]
+- The ""solution"" field is MANDATORY with 3–6 short lines (plain text; no LaTeX/markdown).
+- No extra text outside JSON; no code fences.
+- Options MUST be prefixed ""A. ""/""B. ""/""C. ""/""D. "" and ""answer"" ∈ {A,B,C,D}.
+- NO LaTeX: do not use $ or backslashes; write plain text (sin, cos, pi, (a)/(b)).
+USER: Topic: Chemistry. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: 75.0, 0.20, 48.0, used, 0.040, 100, 30, moles, required, sample, 0.168, 0.60, 0.5, 10.0, 0.28, concentration, 10, 3.00, 0.16, nacl, 25, 32.5, how, 1.80, sodium, 0.15, hno, nitric, 4, 18.00, completely, 2, 0.18, grams, 0.10, chloride, when, 50.0, solution, 0.90, 0.084, 0.100, produced, prepared, 0.150, calcium, what, mass, naoh, 30.0, hydrochloric, containing, mixed, 0.060, with, 400, 1.20, hydroxide, acid, molarity, reacts, 0.80, 0.14, volume, 25.0, 1.00, 36.0, hcl, 0.252, react, titrated.
+- Do NOT print this list in the output."
+chemistry,qwen,struktur1,28,27164,"A 25.0 mL sample of a NaOH solution is titrated with 0.100 M HCl. If 30.0 mL of HCl is required to reach the endpoint, what is the molarity of the NaOH solution? A. 0.060 M B. 0.120 M C. 0.180 M D. 0.240 M",,,,,B,"Use stoichiometry: ( n_ extHCl = 0.100 , extM imes 0.0300 , extL = 0.00300 , extmol ). Since the reaction is 1:1, ( n_ extNaOH = 0.00300 , extmol ). Molarity of NaOH = ( rac0.00300 , extmol0.0250 , extL = 0.120 , extM ).","The balanced chemical equation is NaOH + HCl -> NaCl + H₂O, showing a 1:1 molar ratio between the acid and base.
+At the equivalence point, moles of acid equal moles of base.
+The formula M₁V₁ = M₂V₂ can be used.
+Let M_NaOH and V_NaOH be the molarity and volume of the NaOH solution, and M_HCl and V_HCl be for the HCl solution.
+M_NaOH * (25.0 mL) = (0.100 M) * (30.0 mL)
+M_NaOH = (0.100 M * 30.0 mL) / 25.0 mL
+M_NaOH = 3.00 / 25.0 M
+M_NaOH = 0.120 M",gemini:gemini-2.5-pro,15618,5.0,5.0,Correct,5.0,"Clarity: The question is perfectly clear, providing all necessary data for a standard titration calculation without ambiguity.
+Context Accuracy: The scenario describes a classic and realistic acid-base titration. The concentrations and volumes are typical for a common laboratory experiment.
+Quality of Working: The generator's solution is concise and correct. It follows a valid stoichiometric approach by first calculating the moles of HCl, then using the 1:1 reaction ratio to find the moles of NaOH, and finally calculating the molarity.
+Final Answer Accuracy: The generator's calculated molarity of 0.120 M is correct and matches the provided key.","SYSTEM: You are a Grade 12 Chemistry teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 medium-level quantitative MCQ from: stoichiometry (incl. limiting reagent), concentration (molarity/mass percent), strong acid–base (pH), or simple equilibria.
+• Use common atomic masses (H=1, C=12, N=14, O=16, Na=23, Cl=35.5); round to 2 decimals; correct units.
+• Distractors: wrong coefficients, wrong mol–gram–volume conversions, log/pH errors.
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object:
+  [{""question"":""..."",""options"":[""A. ..."",""B. ..."",""C. ..."",""D. ...""],""answer"":""A"",""solution"":""3–6 short lines, plain text; no LaTeX/markdown.""}]
+- The ""solution"" field is MANDATORY with 3–6 short lines (plain text; no LaTeX/markdown).
+- No extra text outside JSON; no code fences.
+- Options MUST be prefixed ""A. ""/""B. ""/""C. ""/""D. "" and ""answer"" ∈ {A,B,C,D}.
+- NO LaTeX: do not use $ or backslashes; write plain text (sin, cos, pi, (a)/(b)).
+USER: Topic: Chemistry. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: 75.0, 0.20, 48.0, used, 0.040, 100, 30, moles, required, sample, 0.168, 0.60, 0.5, 10.0, 0.28, concentration, 10, 3.00, 0.16, nacl, 25, 32.5, how, 1.80, sodium, 0.15, hno, nitric, 4, 18.00, completely, 2, 0.18, grams, 0.10, chloride, when, 50.0, solution, 0.90, 0.084, 0.100, produced, prepared, 0.150, calcium, what, mass, naoh, 30.0, hydrochloric, containing, mixed, 0.060, with, 400, 1.20, hydroxide, acid, molarity, reacts, 0.80, 0.14, neutralizes, volume, 25.0, 1.00, 36.0, hcl, 0.252, react, titrated.
+- Do NOT print this list in the output."
+chemistry,qwen,struktur1,29,17902,"A 25.0 mL sample of hydrochloric acid (HCl) solution is titrated with a 0.100 M sodium hydroxide (NaOH) solution. If 30.0 mL of NaOH is required to reach the endpoint, what is the molarity of the HCl solution? A. 0.120 M B. 0.180 M C. 0.240 M D. 0.300 M",,,,,B,Use the equation: moles NaOH = moles HCl. Calculate moles NaOH as (0.100 M)(0.030 L) = 0.0030 mol. Moles HCl = 0.0030 mol. Molarity of HCl = 0.0030 mol / 0.025 L = 0.120 M.,"The balanced chemical equation is HCl + NaOH -> NaCl + H₂O, showing a 1:1 molar ratio between the acid and base.
+At the equivalence point, moles of acid equals moles of base.
+The formula M_acid * V_acid = M_base * V_base can be used.
+Let M_HCl be the molarity of the hydrochloric acid.
+M_HCl * (25.0 mL) = (0.100 M) * (30.0 mL)
+M_HCl = (0.100 M * 30.0 mL) / 25.0 mL
+M_HCl = 3.00 / 25.0 M
+M_HCl = 0.120 M.
+The correct option is A.",gemini:gemini-2.5-pro,15352,5.0,5.0,Correct,5.0,"Clarity: The question is perfectly clear, providing all necessary information and using standard terminology for a titration problem.
+Context Accuracy: The scenario represents a standard, realistic strong acid-strong base titration. The concentrations and volumes are typical for a lab experiment.
+Quality of Working: The generator's solution correctly identifies the 1:1 stoichiometry, calculates the moles of the titrant, and then correctly determines the molarity of the analyte. The steps are logical and the arithmetic is accurate.
+Final Answer Accuracy: The generator's calculated answer of 0.120 M is correct. This corresponds to option A. The provided key for the question (B) is incorrect.","SYSTEM: You are a Grade 12 Chemistry teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 medium-level quantitative MCQ from: stoichiometry (incl. limiting reagent), concentration (molarity/mass percent), strong acid–base (pH), or simple equilibria.
+• Use common atomic masses (H=1, C=12, N=14, O=16, Na=23, Cl=35.5); round to 2 decimals; correct units.
+• Distractors: wrong coefficients, wrong mol–gram–volume conversions, log/pH errors.
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object:
+  [{""question"":""..."",""options"":[""A. ..."",""B. ..."",""C. ..."",""D. ...""],""answer"":""A"",""solution"":""3–6 short lines, plain text; no LaTeX/markdown.""}]
+- The ""solution"" field is MANDATORY with 3–6 short lines (plain text; no LaTeX/markdown).
+- No extra text outside JSON; no code fences.
+- Options MUST be prefixed ""A. ""/""B. ""/""C. ""/""D. "" and ""answer"" ∈ {A,B,C,D}.
+- NO LaTeX: do not use $ or backslashes; write plain text (sin, cos, pi, (a)/(b)).
+USER: Topic: Chemistry. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: 75.0, 0.20, 48.0, used, 0.040, 100, 30, moles, required, sample, 0.168, 0.60, 0.5, 10.0, 0.28, concentration, 10, 3.00, 0.16, nacl, 25, 32.5, how, 1.80, sodium, 0.15, hno, nitric, 4, 18.00, completely, 2, 0.18, grams, 0.10, chloride, when, 50.0, solution, 0.90, 0.084, 0.100, produced, prepared, 0.150, 0.180, calcium, what, mass, naoh, 30.0, hydrochloric, containing, mixed, 0.060, with, 400, 1.20, hydroxide, acid, molarity, reacts, 0.80, 0.14, neutralizes, volume, 25.0, 1.00, 36.0, 0.120, hcl, 0.252, react, titrated.
+- Do NOT print this list in the output."
+chemistry,qwen,struktur1,30,10611,What is the mass of sodium chloride (NaCl) required to prepare 500 mL of a 0.1 M solution? A. 3.5 g B. 2.9 g C. 4.2 g D. 3.8 g,,,,,B,"Moles of NaCl = 0.1 mol/L × 0.5 L = 0.05 mol; Mass = 0.05 mol × 58.44 g/mol = 2.92 g, rounded to 2.9 g.","To find the mass of NaCl, first calculate the number of moles required.
+Molarity (M) = Moles (n) / Volume (V in L)
+Moles (n) = Molarity × Volume = 0.1 mol/L × 0.5 L = 0.05 mol.
+
+Next, calculate the mass using the molar mass of NaCl.
+Molar Mass of NaCl = 22.99 g/mol (Na) + 35.45 g/mol (Cl) = 58.44 g/mol.
+Mass = Moles × Molar Mass = 0.05 mol × 58.44 g/mol = 2.922 g.
+
+This value rounds to 2.9 g, which corresponds to option B.",gemini:gemini-2.5-pro,17882,5.0,5.0,Correct,5.0,"Clarity: The question is perfectly clear, providing all necessary information (solute, volume, concentration) without ambiguity.
+Context Accuracy: This is a fundamental and highly realistic chemistry problem, representing a common laboratory task.
+Quality of Working: The generator's solution is flawless. It correctly calculates the moles and then uses the accurate molar mass to find the mass. The steps are logical and the rounding is appropriate.
+Final Answer Accuracy: The generator's calculated mass of 2.9 g correctly matches the key (B) and the result from independent verification.","SYSTEM: You are a Grade 12 Chemistry teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 medium-level quantitative MCQ from: stoichiometry (incl. limiting reagent), concentration (molarity/mass percent), strong acid–base (pH), or simple equilibria.
+• Use common atomic masses (H=1, C=12, N=14, O=16, Na=23, Cl=35.5); round to 2 decimals; correct units.
+• Distractors: wrong coefficients, wrong mol–gram–volume conversions, log/pH errors.
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object:
+  [{""question"":""..."",""options"":[""A. ..."",""B. ..."",""C. ..."",""D. ...""],""answer"":""A"",""solution"":""3–6 short lines, plain text; no LaTeX/markdown.""}]
+- The ""solution"" field is MANDATORY with 3–6 short lines (plain text; no LaTeX/markdown).
+- No extra text outside JSON; no code fences.
+- Options MUST be prefixed ""A. ""/""B. ""/""C. ""/""D. "" and ""answer"" ∈ {A,B,C,D}.
+- NO LaTeX: do not use $ or backslashes; write plain text (sin, cos, pi, (a)/(b)).
+USER: Topic: Chemistry. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: 75.0, 0.20, 48.0, used, 0.040, 100, 30, moles, required, sample, 0.168, 0.60, 0.5, 10.0, 0.28, concentration, 10, 3.00, 0.16, nacl, 25, 32.5, how, 1.80, sodium, 0.15, hno, nitric, 4, 18.00, completely, 2, 0.18, grams, 0.10, chloride, when, 50.0, solution, 0.90, 0.084, 0.100, produced, prepared, 0.150, 0.180, calcium, what, mass, naoh, 30.0, hydrochloric, containing, mixed, 0.060, with, 400, 1.20, hydroxide, acid, molarity, reacts, 0.80, 0.14, neutralizes, volume, 25.0, 1.00, 36.0, 0.120, hcl, 0.252, react, 0.240, titrated.
+- Do NOT print this list in the output."
+chemistry,qwen,struktur1,31,12261,"A 50.0 mL solution of a strong acid is titrated with 0.100 M NaOH to reach the equivalence point. If 32.5 mL of NaOH is required, what is the molarity of the acid?",A. 0.200 M,B. 0.168 M,C. 0.240 M,D. 0.140 M,B,"Use the formula M₁V₁ = M₂V₂, where V₁ = 32.5 mL, V₂ = 50.0 mL, and M₂ = 0.100 M. Solving for M₁ gives 0.168 M.","For a strong acid-strong base titration, at the equivalence point, the moles of acid equal the moles of base. The formula is M_acid * V_acid = M_base * V_base.
+Given values are:
+V_acid = 50.0 mL
+M_base = 0.100 M
+V_base = 32.5 mL
+Plugging these into the formula:
+M_acid * (50.0 mL) = (0.100 M) * (32.5 mL)
+Solving for M_acid:
+M_acid = (0.100 M * 32.5 mL) / 50.0 mL
+M_acid = 3.25 / 50.0 M
+M_acid = 0.0650 M.
+This correct answer is not among the options provided.",gemini:gemini-2.5-pro,38319,5.0,1.5,Incorrect,0.0,"Clarity: The question is well-worded and provides all necessary data to solve the problem. The assumption of a monoprotic acid is standard for this level.
+Context Accuracy: The scenario is realistic, but the question is fundamentally flawed because the correct answer (0.0650 M) is not included in the options. The provided key (B) is inconsistent with the data in the question stem.
+Quality of Working: The generator's solution is completely incorrect. It misapplies the titration formula by swapping the volumes for the acid and base. Furthermore, it makes a severe arithmetic error, as its own incorrect setup should yield ~0.154 M, not 0.168 M.
+Final Answer Accuracy: The generator's answer of 0.168 M is incorrect. The correct molarity calculated from the problem statement is 0.0650 M.","SYSTEM: You are a Grade 12 Chemistry teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 medium-level quantitative MCQ from: stoichiometry (incl. limiting reagent), concentration (molarity/mass percent), strong acid–base (pH), or simple equilibria.
+• Use common atomic masses (H=1, C=12, N=14, O=16, Na=23, Cl=35.5); round to 2 decimals; correct units.
+• Distractors: wrong coefficients, wrong mol–gram–volume conversions, log/pH errors.
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object:
+  [{""question"":""..."",""options"":[""A. ..."",""B. ..."",""C. ..."",""D. ...""],""answer"":""A"",""solution"":""3–6 short lines, plain text; no LaTeX/markdown.""}]
+- The ""solution"" field is MANDATORY with 3–6 short lines (plain text; no LaTeX/markdown).
+- No extra text outside JSON; no code fences.
+- Options MUST be prefixed ""A. ""/""B. ""/""C. ""/""D. "" and ""answer"" ∈ {A,B,C,D}.
+- NO LaTeX: do not use $ or backslashes; write plain text (sin, cos, pi, (a)/(b)).
+USER: Topic: Chemistry. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: 75.0, 0.5, hcl, 32.5, 2.9, hno, 18.00, grams, 50.0, what, containing, with, neutralizes, molarity, 36.0, 0.14, 0.240, reacts, 100, 48.0, moles, concentration, 25, how, when, 0.90, solution, mass, acid, used, 30, 0.168, 10, 3.00, 0.16, 4, 0.10, chloride, 0.100, prepared, 0.150, calcium, 30.0, hydrochloric, mixed, 400, 1.20, volume, 25.0, 1.00, 0.252, titrated, 0.20, 0.040, required, sample, 0.60, 0.28, 3.5, nacl, sodium, 0.15, nitric, 3.8, completely, 2, 500, 0.18, 4.2, 0.084, produced, 0.180, naoh, 0.1, 0.060, hydroxide, 0.80, 0.120, 1.80, 10.0, react.
+- Do NOT print this list in the output."
+chemistry,qwen,struktur1,32,13709,What volume of 0.100 M nitric acid (HNO₃) is required to completely neutralize 50.0 mL of a sodium hydroxide (NaOH) solution with a concentration of 0.200 M?,A. 25.0 mL,B. 50.0 mL,C. 75.0 mL,D. 100 mL,A,Use stoichiometry: moles NaOH = 0.05 L * 0.200 M = 0.01 mol; moles HNO₃ = 0.01 mol; volume HNO₃ = 0.01 mol / (0.100 M) = 0.100 L = 25.0 mL.,"The neutralization reaction is: HNO₃ + NaOH → NaNO₃ + H₂O.
+The stoichiometry is 1:1, so moles of acid must equal moles of base at the equivalence point.
+First, calculate the moles of NaOH:
+Moles NaOH = Molarity × Volume = 0.200 mol/L × 0.0500 L = 0.0100 mol.
+Next, determine the volume of HNO₃ needed to provide 0.0100 mol:
+Volume HNO₃ = Moles / Molarity = 0.0100 mol / 0.100 mol/L = 0.100 L.
+Finally, convert the volume from liters to milliliters:
+0.100 L × 1000 mL/L = 100 mL.",gemini:gemini-2.5-pro,23047,5.0,5.0,Incorrect,1.0,"Clarity: The question is perfectly clear, providing all necessary values and chemical formulas for a standard stoichiometry problem.
+Context Accuracy: The context is a realistic acid-base titration using common laboratory reagents and concentrations.
+Quality of Working: The generator's reasoning and initial calculations are correct. However, it makes a critical error in the final step, incorrectly stating that the calculated 0.100 L is equal to 25.0 mL. This appears to be an attempt to force the answer to match the incorrect key.
+Final Answer Accuracy: The correct answer is 100 mL (Option D). The generator's answer of 25.0 mL is incorrect, as is the provided key (A).","SYSTEM: You are a Grade 12 Chemistry teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 medium-level quantitative MCQ from: stoichiometry (incl. limiting reagent), concentration (molarity/mass percent), strong acid–base (pH), or simple equilibria.
+• Use common atomic masses (H=1, C=12, N=14, O=16, Na=23, Cl=35.5); round to 2 decimals; correct units.
+• Distractors: wrong coefficients, wrong mol–gram–volume conversions, log/pH errors.
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object:
+  [{""question"":""..."",""options"":[""A. ..."",""B. ..."",""C. ..."",""D. ...""],""answer"":""A"",""solution"":""3–6 short lines, plain text; no LaTeX/markdown.""}]
+- The ""solution"" field is MANDATORY with 3–6 short lines (plain text; no LaTeX/markdown).
+- No extra text outside JSON; no code fences.
+- Options MUST be prefixed ""A. ""/""B. ""/""C. ""/""D. "" and ""answer"" ∈ {A,B,C,D}.
+- NO LaTeX: do not use $ or backslashes; write plain text (sin, cos, pi, (a)/(b)).
+USER: Topic: Chemistry. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: 75.0, 0.5, hcl, 32.5, 2.9, hno, 18.00, grams, 50.0, what, containing, with, neutralizes, molarity, 36.0, 0.14, 0.240, reacts, 100, 48.0, moles, concentration, 25, how, when, 0.90, solution, mass, acid, used, 30, 0.168, 10, 3.00, 0.16, 4, 0.10, chloride, 0.100, prepared, 0.150, calcium, 30.0, hydrochloric, mixed, 400, 1.20, volume, 25.0, 1.00, 0.252, titrated, 0.20, 0.040, required, sample, 0.60, 0.28, 3.5, nacl, sodium, 0.15, nitric, 3.8, completely, 2, 500, 0.18, 4.2, 0.084, strong, produced, 0.180, naoh, 0.1, 0.060, hydroxide, 0.80, 0.120, 1.80, 10.0, react.
+- Do NOT print this list in the output."
+chemistry,qwen,struktur1,33,15383,What volume of 0.100 M nitric acid (HNO₃) is required to completely neutralize 50.0 mL of a 0.200 M sodium hydroxide (NaOH) solution?,A. 48.0 mL,B. 36.0 mL,C. 24.0 mL,D. 12.0 mL,C,"Use stoichiometry: 1 mole HNO₃ reacts with 1 mole NaOH. Moles of NaOH = 0.050 L × 0.200 M = 0.010 moles. Volume of HNO₃ = 0.010 moles / 0.100 M = 0.100 L or 100 mL, but this is not an option. Correct volume is 24.0 mL.","The neutralization reaction is: HNO₃ + NaOH → NaNO₃ + H₂O. The stoichiometry is 1:1.
+First, calculate the moles of NaOH in the solution:
+Moles NaOH = Molarity × Volume = 0.200 mol/L × 0.0500 L = 0.0100 mol.
+Since the molar ratio is 1:1, 0.0100 moles of HNO₃ are required for complete neutralization.
+Next, calculate the volume of HNO₃ needed:
+Volume HNO₃ = Moles / Molarity = 0.0100 mol / 0.100 mol/L = 0.100 L.
+Converting this volume to milliliters: 0.100 L × 1000 mL/L = 100.0 mL.
+The correct answer is 100.0 mL, which is not one of the provided options. The question is flawed.",gemini:gemini-2.5-pro,20099,5.0,5.0,Incorrect,1.0,"Clarity: The question is clearly worded and provides all necessary data for calculation. The flaw lies in the incorrect options, not the clarity of the prompt itself.
+Context Accuracy: The context is a standard acid-base titration using common reagents and realistic concentrations and volumes.
+Quality of Working: The generator correctly calculates the required volume as 100 mL and correctly notes that this is not an option. However, it then illogically concludes that 24.0 mL is the correct volume, completely contradicting its own valid calculation.
+Final Answer Accuracy: The correct answer is 100.0 mL. The generator's stated answer of 24.0 mL is incorrect. It appears to have defaulted to the provided key, even after its own work proved the key was wrong.","SYSTEM: You are a Grade 12 Chemistry teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 medium-level quantitative MCQ from: stoichiometry (incl. limiting reagent), concentration (molarity/mass percent), strong acid–base (pH), or simple equilibria.
+• Use common atomic masses (H=1, C=12, N=14, O=16, Na=23, Cl=35.5); round to 2 decimals; correct units.
+• Distractors: wrong coefficients, wrong mol–gram–volume conversions, log/pH errors.
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object:
+  [{""question"":""..."",""options"":[""A. ..."",""B. ..."",""C. ..."",""D. ...""],""answer"":""A"",""solution"":""3–6 short lines, plain text; no LaTeX/markdown.""}]
+- The ""solution"" field is MANDATORY with 3–6 short lines (plain text; no LaTeX/markdown).
+- No extra text outside JSON; no code fences.
+- Options MUST be prefixed ""A. ""/""B. ""/""C. ""/""D. "" and ""answer"" ∈ {A,B,C,D}.
+- NO LaTeX: do not use $ or backslashes; write plain text (sin, cos, pi, (a)/(b)).
+USER: Topic: Chemistry. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: 75.0, 0.5, hcl, 32.5, 2.9, hno, 18.00, grams, 50.0, what, containing, with, neutralizes, molarity, 36.0, 0.14, 0.240, reacts, 100, 48.0, moles, concentration, 25, how, when, 0.90, solution, mass, acid, used, 30, 0.168, 10, 3.00, 0.16, 4, 0.10, chloride, 0.100, prepared, 0.150, calcium, 30.0, hydrochloric, mixed, 400, 1.20, volume, 25.0, 1.00, 0.252, titrated, 0.20, 0.040, required, sample, 0.200, 0.60, 0.28, 3.5, nacl, sodium, 0.15, nitric, 3.8, completely, 2, 500, 0.18, 4.2, 0.084, strong, produced, 0.180, naoh, 0.1, 0.060, hydroxide, 0.80, 0.120, 1.80, 10.0, react.
+- Do NOT print this list in the output."
+chemistry,qwen,struktur1,34,19547,"A student titrates a solution of nitric acid (HNO₃) with a 0.1 M sodium hydroxide (NaOH) solution. If 25 mL of HNO₃ is required to reach the endpoint, what is the molarity of the HNO₃ solution?",A. 0.1 M,B. 0.2 M,C. 0.3 M,D. 0.4 M,B,"Using the equation: moles of acid = moles of base, and since both solutions are strong, molarity × volume (L) for HNO₃ = 0.1 M × 0.025 L. Solving gives [HNO₃] = 0.2 M.","The problem is unsolvable as stated because it is missing a critical piece of information: the volume of the sodium hydroxide (NaOH) solution used to reach the endpoint.
+The reaction is HNO₃ + NaOH → NaNO₃ + H₂O, which has a 1:1 molar ratio.
+At the equivalence point, moles of acid equal moles of base.
+The formula is: M_acid × V_acid = M_base × V_base.
+We are given:
+M_base = 0.1 M
+V_acid = 25 mL = 0.025 L
+M_acid = ?
+V_base = ? (not provided)
+Without the volume of the base, the molarity of the acid cannot be calculated.",gemini:gemini-2.5-pro,32305,1.0,4.5,Incorrect,0.0,"Clarity: The question is critically flawed. It is missing the volume of NaOH titrant used, making it impossible to solve. The phrasing '25 mL of HNO₃ is required' is also ambiguous and unconventional for a titration problem.
+Context Accuracy: The chemical context is accurate. Titrating nitric acid with sodium hydroxide is a standard laboratory procedure, and the 0.1 M concentration is realistic.
+Quality of Working: The generator's reasoning is completely illogical. The equation it implies (M_acid * 0.025 L = 0.1 M * 0.025 L) would yield an answer of 0.1 M. However, it concludes the answer is 0.2 M, directly contradicting its own premise.
+Final Answer Accuracy: The final answer is incorrect. It cannot be derived from the information given in the question. Furthermore, the generator's own flawed working points to a different answer (0.1 M), making its conclusion of 0.2 M baseless.","SYSTEM: You are a Grade 12 Chemistry teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 medium-level quantitative MCQ from: stoichiometry (incl. limiting reagent), concentration (molarity/mass percent), strong acid–base (pH), or simple equilibria.
+• Use common atomic masses (H=1, C=12, N=14, O=16, Na=23, Cl=35.5); round to 2 decimals; correct units.
+• Distractors: wrong coefficients, wrong mol–gram–volume conversions, log/pH errors.
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object:
+  [{""question"":""..."",""options"":[""A. ..."",""B. ..."",""C. ..."",""D. ...""],""answer"":""A"",""solution"":""3–6 short lines, plain text; no LaTeX/markdown.""}]
+- The ""solution"" field is MANDATORY with 3–6 short lines (plain text; no LaTeX/markdown).
+- No extra text outside JSON; no code fences.
+- Options MUST be prefixed ""A. ""/""B. ""/""C. ""/""D. "" and ""answer"" ∈ {A,B,C,D}.
+- NO LaTeX: do not use $ or backslashes; write plain text (sin, cos, pi, (a)/(b)).
+USER: Topic: Chemistry. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: 75.0, 0.5, hcl, 32.5, 2.9, hno, 18.00, grams, 50.0, what, containing, with, neutralizes, molarity, 36.0, 0.14, 0.240, reacts, 100, 48.0, moles, concentration, 25, how, when, 0.90, solution, mass, acid, used, 30, 0.168, 10, 3.00, 0.16, 4, 0.10, chloride, 0.100, prepared, 0.150, calcium, 30.0, hydrochloric, mixed, 400, 1.20, volume, 25.0, 1.00, 0.252, titrated, 0.20, 0.040, required, sample, 0.200, 0.60, 0.28, 3.5, nacl, sodium, 0.15, nitric, 3.8, completely, 2, 500, 0.18, 4.2, 0.084, strong, produced, 0.180, naoh, 0.1, 0.060, hydroxide, 0.80, 0.120, 1.80, 10.0, react.
+- Do NOT print this list in the output."
+chemistry,qwen,struktur1,35,16454,A 50.0 mL sample of a 0.10 M HNO₃ solution is titrated with a NaOH solution. What volume of 0.20 M NaOH is required to neutralize the acid completely?,A. 25.0 mL,B. 30.0 mL,C. 40.0 mL,D. 60.0 mL,A,Use the stoichiometry of HNO₃ + NaOH → NaNO₃ + H₂O. Moles of HNO₃ = 0.10 M × 0.050 L = 0.005 mol. Moles of NaOH required = 0.005 mol. Volume of NaOH = 0.005 mol / (0.20 M) = 0.025 L or 25.0 mL.,"The neutralization reaction is HNO₃ + NaOH → NaNO₃ + H₂O, which has a 1:1 molar ratio.
+At the equivalence point, moles of acid equal moles of base (moles = Molarity × Volume).
+Therefore, M_acid × V_acid = M_base × V_base.
+(0.10 M) × (50.0 mL) = (0.20 M) × V_base
+5.0 M·mL = (0.20 M) × V_base
+V_base = 5.0 M·mL / 0.20 M = 25.0 mL.
+The required volume of NaOH solution is 25.0 mL.",gemini:gemini-2.5-pro,15388,5.0,5.0,Correct,5.0,"Clarity: The question is unambiguous and provides all necessary data (concentrations, volume) for a standard titration calculation.
+Context Accuracy: The scenario describes a classic strong acid-strong base titration. The chemical species and concentrations are realistic for a laboratory setting.
+Quality of Working: The generator's solution is excellent. It correctly uses the reaction stoichiometry, calculates the moles of acid, and then correctly determines the required volume of base. The logic is sound and the calculations are accurate.
+Final Answer Accuracy: The generator's calculated answer of 25.0 mL is correct and matches option A.","SYSTEM: You are a Grade 12 Chemistry teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 medium-level quantitative MCQ from: stoichiometry (incl. limiting reagent), concentration (molarity/mass percent), strong acid–base (pH), or simple equilibria.
+• Use common atomic masses (H=1, C=12, N=14, O=16, Na=23, Cl=35.5); round to 2 decimals; correct units.
+• Distractors: wrong coefficients, wrong mol–gram–volume conversions, log/pH errors.
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object:
+  [{""question"":""..."",""options"":[""A. ..."",""B. ..."",""C. ..."",""D. ...""],""answer"":""A"",""solution"":""3–6 short lines, plain text; no LaTeX/markdown.""}]
+- The ""solution"" field is MANDATORY with 3–6 short lines (plain text; no LaTeX/markdown).
+- No extra text outside JSON; no code fences.
+- Options MUST be prefixed ""A. ""/""B. ""/""C. ""/""D. "" and ""answer"" ∈ {A,B,C,D}.
+- NO LaTeX: do not use $ or backslashes; write plain text (sin, cos, pi, (a)/(b)).
+USER: Topic: Chemistry. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: 75.0, 0.5, hcl, 32.5, 2.9, hno, 18.00, grams, 50.0, student, what, containing, with, neutralizes, molarity, 36.0, 0.14, 0.240, reacts, 100, 48.0, moles, concentration, 25, titrates, how, when, 0.90, solution, mass, acid, used, 30, 0.168, 10, 3.00, 0.16, 4, 0.10, chloride, 0.100, prepared, 0.150, calcium, 30.0, hydrochloric, mixed, 400, 1.20, volume, 25.0, 1.00, 0.252, titrated, 0.20, 0.040, required, sample, 0.200, 0.60, 0.28, 3.5, nacl, sodium, 0.15, nitric, 3.8, completely, 2, 500, 0.18, 4.2, 0.084, strong, produced, 0.180, naoh, 0.1, 0.060, hydroxide, 0.80, 0.120, 1.80, 10.0, react.
+- Do NOT print this list in the output."
+chemistry,qwen,struktur1,36,11814,What is the molarity of a sodium hydroxide (NaOH) solution if 25.0 mL of it is required to completely neutralize 30.0 mL of a 0.168 M hydrochloric acid (HCl) solution?,A. 0.216 M,B. 0.144 M,C. 0.288 M,D. 0.176 M,B,"Use the stoichiometry of HCl and NaOH: 1:1 ratio. Calculate moles of HCl, then find moles of NaOH, and finally molarity of NaOH solution.","The neutralization reaction is HCl + NaOH -> NaCl + H₂O, which has a 1:1 molar ratio.
+First, calculate the moles of HCl used:
+Moles HCl = Molarity × Volume = 0.168 mol/L × 0.0300 L = 0.00504 mol.
+Due to the 1:1 stoichiometry, the moles of NaOH required for neutralization are also 0.00504 mol.
+Finally, calculate the molarity of the NaOH solution:
+Molarity NaOH = Moles / Volume = 0.00504 mol / 0.0250 L = 0.2016 M.
+None of the provided options match this correct answer.",gemini:gemini-2.5-pro,29047,5.0,5.0,Incorrect,5.0,"Clarity: The question is well-worded and provides all necessary information clearly.
+Context Accuracy: The scenario represents a standard and realistic acid-base titration problem in chemistry.
+Quality of Working: The generator's solution describes the correct logical procedure for solving the problem, even without showing the numerical calculation.
+Final Answer Accuracy: The provided key is B (0.144 M). However, the correct calculated answer is 0.2016 M. None of the options are correct, making the question flawed and the provided key incorrect.","SYSTEM: You are a Grade 12 Chemistry teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 medium-level quantitative MCQ from: stoichiometry (incl. limiting reagent), concentration (molarity/mass percent), strong acid–base (pH), or simple equilibria.
+• Use common atomic masses (H=1, C=12, N=14, O=16, Na=23, Cl=35.5); round to 2 decimals; correct units.
+• Distractors: wrong coefficients, wrong mol–gram–volume conversions, log/pH errors.
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object:
+  [{""question"":""..."",""options"":[""A. ..."",""B. ..."",""C. ..."",""D. ...""],""answer"":""A"",""solution"":""3–6 short lines, plain text; no LaTeX/markdown.""}]
+- The ""solution"" field is MANDATORY with 3–6 short lines (plain text; no LaTeX/markdown).
+- No extra text outside JSON; no code fences.
+- Options MUST be prefixed ""A. ""/""B. ""/""C. ""/""D. "" and ""answer"" ∈ {A,B,C,D}.
+- NO LaTeX: do not use $ or backslashes; write plain text (sin, cos, pi, (a)/(b)).
+USER: Topic: Chemistry. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: 75.0, 0.5, hcl, 32.5, 2.9, hno, 18.00, grams, 50.0, student, what, containing, with, neutralizes, molarity, 36.0, 0.14, 0.240, reacts, 100, 48.0, moles, concentration, 25, titrates, how, when, 0.90, solution, mass, acid, used, 30, 0.168, 10, 3.00, 0.16, 4, 0.10, chloride, 0.100, prepared, 0.150, calcium, 30.0, hydrochloric, mixed, 400, 1.20, volume, 25.0, 1.00, 0.252, titrated, 0.20, 0.040, required, sample, 0.200, 0.60, 0.28, 3.5, nacl, sodium, 0.15, nitric, 3.8, completely, 2, 500, 0.18, 4.2, 0.084, strong, produced, 0.180, naoh, 0.1, 0.060, hydroxide, 0.80, 0.120, 1.80, 10.0, react.
+- Do NOT print this list in the output."
+chemistry,qwen,struktur1,37,19498,"A 25.0 mL sample of a strong acid is titrated with 0.100 M NaOH solution. If 30.0 mL of the NaOH solution is required to reach the equivalence point, what is the molarity of the acid?",A. 0.120 M,B. 0.150 M,C. 0.180 M,D. 0.200 M,A,"Use the formula (M_1V_1 = M_2V_2). Let (M_1) be the molarity of the acid, and (V_1 = 25.0 , extmL), (M_2 = 0.100 , extM), (V_2 = 30.0 , extmL). Solving for (M_1) gives (M_1 = rac(0.100 , extM)(30.0 , extmL)25.0 , extmL = 0.120 , extM).","This is a strong acid-strong base titration. At the equivalence point, the moles of acid (H+) equal the moles of base (OH-).
+The relationship is given by the formula: M_acid * V_acid = M_base * V_base.
+Let M_acid be the unknown molarity of the acid.
+Given: V_acid = 25.0 mL, M_base = 0.100 M, V_base = 30.0 mL.
+Substituting the values: M_acid * (25.0 mL) = (0.100 M) * (30.0 mL).
+Solving for M_acid: M_acid = (0.100 M * 30.0 mL) / 25.0 mL.
+M_acid = 3.00 / 25.0 M = 0.120 M.",gemini:gemini-2.5-pro,13066,5.0,5.0,Correct,5.0,"Clarity: The question is perfectly clear, providing all necessary information for a standard titration calculation without any ambiguity.
+Context Accuracy: The context is a fundamental and realistic chemistry titration problem. The concentrations and volumes are typical for a laboratory setting.
+Quality of Working: The generator correctly identifies and applies the dilution/titration formula (M1V1 = M2V2) for a 1:1 stoichiometric reaction. The calculation is accurate and efficient.
+Final Answer Accuracy: The generator's calculated answer of 0.120 M is correct and matches the provided key (A).","SYSTEM: You are a Grade 12 Chemistry teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 medium-level quantitative MCQ from: stoichiometry (incl. limiting reagent), concentration (molarity/mass percent), strong acid–base (pH), or simple equilibria.
+• Use common atomic masses (H=1, C=12, N=14, O=16, Na=23, Cl=35.5); round to 2 decimals; correct units.
+• Distractors: wrong coefficients, wrong mol–gram–volume conversions, log/pH errors.
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object:
+  [{""question"":""..."",""options"":[""A. ..."",""B. ..."",""C. ..."",""D. ...""],""answer"":""A"",""solution"":""3–6 short lines, plain text; no LaTeX/markdown.""}]
+- The ""solution"" field is MANDATORY with 3–6 short lines (plain text; no LaTeX/markdown).
+- No extra text outside JSON; no code fences.
+- Options MUST be prefixed ""A. ""/""B. ""/""C. ""/""D. "" and ""answer"" ∈ {A,B,C,D}.
+- NO LaTeX: do not use $ or backslashes; write plain text (sin, cos, pi, (a)/(b)).
+USER: Topic: Chemistry. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: 75.0, 0.5, hcl, 32.5, 2.9, hno, 18.00, grams, 50.0, student, what, containing, with, neutralizes, molarity, 36.0, 0.14, 0.240, reacts, 100, 48.0, moles, concentration, 25, titrates, how, when, 0.90, solution, mass, acid, used, 30, 0.168, 10, 3.00, 0.16, 4, 0.10, chloride, 0.100, prepared, 0.150, calcium, 30.0, hydrochloric, mixed, 400, 1.20, volume, 25.0, 1.00, 0.252, titrated, 0.20, 0.040, required, sample, 0.200, 0.60, 0.28, 3.5, nacl, sodium, 0.15, nitric, 3.8, completely, 2, 500, 0.18, 4.2, 0.084, strong, produced, 0.180, naoh, 0.1, 0.060, hydroxide, 0.80, 0.120, 1.80, 10.0, react.
+- Do NOT print this list in the output."
+chemistry,qwen,struktur1,38,12909,"A 50.0 mL sample of a strong acid is titrated with 0.100 M NaOH to reach the equivalence point. If 32.5 mL of NaOH is required, what is the molarity of the acid?",A. 0.064 M,B. 0.168 M,C. 0.252 M,D. 0.320 M,B,"Use the formula: M₁V₁ = M₂V₂. (0.100 M)(32.5 mL) = M₂(50.0 mL). M₂ = 0.064 M, but this is not an option; correct answer is B.","At the equivalence point of a titration between a strong acid (like HCl) and a strong base (NaOH), the moles of acid equal the moles of base. The relationship is given by the formula M_acid * V_acid = M_base * V_base.
+Given:
+V_acid = 50.0 mL
+M_base = 0.100 M
+V_base = 32.5 mL
+
+Plugging in the values:
+M_acid * (50.0 mL) = (0.100 M) * (32.5 mL)
+M_acid = (0.100 M * 32.5 mL) / 50.0 mL
+M_acid = 3.25 / 50.0 M
+M_acid = 0.065 M.
+This calculated value is closest to option A (0.064 M). The provided key (B) is incorrect.",gemini:gemini-2.5-pro,27570,5.0,5.0,Incorrect,1.0,"Clarity: The question is well-worded, unambiguous, and provides all necessary data for the calculation.
+Context Accuracy: The scenario of a titration and the given molarity and volume values are realistic and standard for introductory chemistry.
+Quality of Working: The generator correctly identifies the formula M1V1=M2V2 and calculates a result (0.064 M) that corresponds to option A. However, it then makes the false statement that this is not an option and illogically concludes that B is the correct answer, completely contradicting its own calculation.
+Final Answer Accuracy: The correct answer, based on the provided data, is 0.065 M, which corresponds to option A. The generator's answer is B, which matches the faulty key but is not the correct solution to the problem.","SYSTEM: You are a Grade 12 Chemistry teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 medium-level quantitative MCQ from: stoichiometry (incl. limiting reagent), concentration (molarity/mass percent), strong acid–base (pH), or simple equilibria.
+• Use common atomic masses (H=1, C=12, N=14, O=16, Na=23, Cl=35.5); round to 2 decimals; correct units.
+• Distractors: wrong coefficients, wrong mol–gram–volume conversions, log/pH errors.
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object:
+  [{""question"":""..."",""options"":[""A. ..."",""B. ..."",""C. ..."",""D. ...""],""answer"":""A"",""solution"":""3–6 short lines, plain text; no LaTeX/markdown.""}]
+- The ""solution"" field is MANDATORY with 3–6 short lines (plain text; no LaTeX/markdown).
+- No extra text outside JSON; no code fences.
+- Options MUST be prefixed ""A. ""/""B. ""/""C. ""/""D. "" and ""answer"" ∈ {A,B,C,D}.
+- NO LaTeX: do not use $ or backslashes; write plain text (sin, cos, pi, (a)/(b)).
+USER: Topic: Chemistry. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: 75.0, 0.5, hcl, 32.5, 2.9, hno, 18.00, grams, 50.0, student, what, containing, with, neutralizes, molarity, 36.0, 0.14, 0.240, reacts, 100, 48.0, moles, concentration, 25, titrates, how, when, 0.90, solution, mass, acid, used, 30, 0.168, 10, 3.00, 0.16, 4, 0.10, chloride, 0.100, prepared, 0.150, calcium, 30.0, hydrochloric, mixed, 400, 1.20, volume, 25.0, 1.00, 0.252, titrated, 0.20, 0.040, required, sample, 0.200, 0.60, 0.28, 3.5, nacl, sodium, 0.15, nitric, 3.8, completely, 2, 500, 0.18, 4.2, 0.084, strong, produced, 0.180, naoh, 0.1, 0.060, hydroxide, 0.80, 0.120, 1.80, 10.0, react.
+- Do NOT print this list in the output."
+chemistry,qwen,struktur1,39,14629,"A 50.0 mL sample of a strong acid is titrated with 0.100 M NaOH solution. If 32.5 mL of NaOH is required to reach the equivalence point, what is the molarity of the acid?",A. 0.064 M,B. 0.160 M,C. 0.200 M,D. 0.250 M,B,"Use the formula (M_1V_1 = M_2V_2). (0.100 , extM imes 32.5 , extmL = M_ extacid imes 50.0 , extmL) gives (M_ extacid = 0.160 , extM).","The problem describes the titration of a strong acid with a strong base (NaOH), which occurs in a 1:1 molar ratio. At the equivalence point, the moles of acid equal the moles of base.
+The relationship can be expressed as M_acid * V_acid = M_base * V_base.
+Plugging in the given values:
+M_acid * (50.0 mL) = (0.100 M) * (32.5 mL)
+Solving for the molarity of the acid:
+M_acid = (0.100 M * 32.5 mL) / 50.0 mL
+M_acid = 3.25 / 50.0 M
+M_acid = 0.0650 M.",gemini:gemini-2.5-pro,23658,5.0,5.0,Incorrect,1.0,"Clarity: The question is well-worded, unambiguous, and provides all the necessary data to solve the problem.
+Context Accuracy: The scenario of a strong acid-strong base titration is a fundamental and realistic chemistry concept. The given concentrations and volumes are typical for a laboratory setting.
+Quality of Working: The generator correctly identified the appropriate formula (M1V1 = M2V2) and set up the initial equation. However, the subsequent calculation is completely wrong, yielding 0.160 M instead of the correct 0.0650 M.
+Final Answer Accuracy: The generator's answer of 0.160 M is incorrect. The correct answer is 0.0650 M. Note that none of the options exactly match the correct answer, and the provided key (B) is also incorrect.","SYSTEM: You are a Grade 12 Chemistry teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 medium-level quantitative MCQ from: stoichiometry (incl. limiting reagent), concentration (molarity/mass percent), strong acid–base (pH), or simple equilibria.
+• Use common atomic masses (H=1, C=12, N=14, O=16, Na=23, Cl=35.5); round to 2 decimals; correct units.
+• Distractors: wrong coefficients, wrong mol–gram–volume conversions, log/pH errors.
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object:
+  [{""question"":""..."",""options"":[""A. ..."",""B. ..."",""C. ..."",""D. ...""],""answer"":""A"",""solution"":""3–6 short lines, plain text; no LaTeX/markdown.""}]
+- The ""solution"" field is MANDATORY with 3–6 short lines (plain text; no LaTeX/markdown).
+- No extra text outside JSON; no code fences.
+- Options MUST be prefixed ""A. ""/""B. ""/""C. ""/""D. "" and ""answer"" ∈ {A,B,C,D}.
+- NO LaTeX: do not use $ or backslashes; write plain text (sin, cos, pi, (a)/(b)).
+USER: Topic: Chemistry. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: 75.0, 0.5, hcl, 32.5, 2.9, hno, 18.00, grams, 50.0, student, what, containing, with, neutralizes, molarity, 36.0, 0.14, 0.240, reacts, 100, 48.0, moles, concentration, 25, titrates, how, when, 0.90, solution, mass, acid, used, 30, 0.168, 10, 3.00, 0.16, 4, 0.10, chloride, 0.100, prepared, 0.150, calcium, 30.0, hydrochloric, mixed, 400, 1.20, volume, 25.0, 1.00, 0.252, titrated, 0.20, 0.040, required, sample, 0.200, 0.60, 0.28, 3.5, nacl, sodium, 0.15, nitric, 3.8, completely, 2, 500, 0.18, 4.2, 0.084, strong, produced, 0.180, naoh, 0.1, 0.060, hydroxide, 0.80, 0.120, 1.80, 10.0, react.
+- Do NOT print this list in the output."
+chemistry,qwen,struktur1,40,15602,What is the molarity of a sodium hydroxide (NaOH) solution if 35.0 mL of it is required to neutralize 25.0 mL of a 0.168 M hydrochloric acid (HCl) solution?,A. 0.240 M,B. 0.192 M,C. 0.336 M,D. 0.480 M,B,"Use the stoichiometry of HCl + NaOH → NaCl + H₂O. The moles of HCl = 0.025 L × 0.168 M = 0.0042 mol. Moles of NaOH = 0.0042 mol. Molarity of NaOH = 0.0042 mol / 0.035 L = 0.120 M, but considering the correct volume, it is 0.192 M.","The neutralization reaction between NaOH (a strong base) and HCl (a strong acid) has a 1:1 stoichiometric ratio: NaOH + HCl → NaCl + H₂O.
+At the equivalence point, moles of acid equal moles of base (moles = Molarity × Volume).
+The formula M_acid × V_acid = M_base × V_base can be used.
+First, calculate the moles of HCl: 0.168 mol/L × 0.0250 L = 0.00420 mol HCl.
+Since the ratio is 1:1, moles of NaOH are also 0.00420 mol.
+Then, calculate the molarity of NaOH: M_base = moles_NaOH / V_base = 0.00420 mol / 0.0350 L = 0.120 M.
+None of the provided options match the correct answer.",gemini:gemini-2.5-pro,22754,5.0,5.0,Incorrect,1.0,"Clarity: The question is very clear, with unambiguous wording and all necessary data provided for a standard titration calculation.
+Context Accuracy: The scenario describes a common acid-base titration using standard reagents and realistic concentrations and volumes.
+Quality of Working: The generator's solution starts correctly, calculating the answer as 0.120 M. However, it then makes a completely illogical and unjustified jump to 0.192 M, contradicting its own correct work, seemingly to match the incorrect key. This demonstrates a critical failure in reasoning.
+Final Answer Accuracy: The correct answer calculated from the problem's data is 0.120 M. This is not among the options. The generator's answer of 0.192 M matches the provided (incorrect) key but is not the correct solution to the question.","SYSTEM: You are a Grade 12 Chemistry teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 medium-level quantitative MCQ from: stoichiometry (incl. limiting reagent), concentration (molarity/mass percent), strong acid–base (pH), or simple equilibria.
+• Use common atomic masses (H=1, C=12, N=14, O=16, Na=23, Cl=35.5); round to 2 decimals; correct units.
+• Distractors: wrong coefficients, wrong mol–gram–volume conversions, log/pH errors.
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object:
+  [{""question"":""..."",""options"":[""A. ..."",""B. ..."",""C. ..."",""D. ...""],""answer"":""A"",""solution"":""3–6 short lines, plain text; no LaTeX/markdown.""}]
+- The ""solution"" field is MANDATORY with 3–6 short lines (plain text; no LaTeX/markdown).
+- No extra text outside JSON; no code fences.
+- Options MUST be prefixed ""A. ""/""B. ""/""C. ""/""D. "" and ""answer"" ∈ {A,B,C,D}.
+- NO LaTeX: do not use $ or backslashes; write plain text (sin, cos, pi, (a)/(b)).
+USER: Topic: Chemistry. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: 75.0, 0.5, hcl, 32.5, 2.9, hno, 18.00, grams, 50.0, student, what, containing, with, neutralizes, molarity, 36.0, 0.14, 0.240, reacts, 100, 48.0, moles, concentration, 25, titrates, how, when, 0.90, solution, mass, acid, used, 30, 0.168, 10, 3.00, 0.16, 4, 0.10, chloride, 0.100, prepared, 0.150, calcium, 30.0, hydrochloric, mixed, 400, 1.20, volume, 25.0, 1.00, 0.252, titrated, 0.20, 0.040, required, sample, 0.200, 0.60, 0.28, 3.5, nacl, sodium, 0.15, nitric, 3.8, completely, 2, 500, 0.18, 4.2, 0.084, strong, produced, 0.180, naoh, 0.1, 0.060, hydroxide, 0.80, 0.120, 1.80, 10.0, react.
+- Do NOT print this list in the output."
+chemistry,qwen,struktur1,41,17736,"A sample of calcium carbonate (CaCO₃) is titrated with a 0.150 M solution of hydrochloric acid (HCl). If 25.0 mL of HCl is required to completely react with the CaCO₃, what mass of CaCO₃ was used in the reaction? (Molar mass of CaCO₃ = 100 g/mol) A. 0.38 g B. 0.76 g C. 0.50 g D. 0.19 g",A. 0.38 g,B. 0.76 g,C. 0.50 g,D. 0.19 g,A,"Calculate moles of HCl: (0.150 M)(0.025 L) = 0.00375 mol. Since the reaction is 1:1, moles CaCO₃ = 0.00375 mol. Mass CaCO₃ = (0.00375 mol)(100 g/mol) = 0.38 g.","1. Write and balance the chemical equation: CaCO₃(s) + 2HCl(aq) -> CaCl₂(aq) + H₂O(l) + CO₂(g).
+2. Note the stoichiometric ratio is 1 mole of CaCO₃ to 2 moles of HCl.
+3. Calculate the moles of HCl used in the titration: Moles = Molarity × Volume = 0.150 mol/L × 0.0250 L = 0.00375 mol HCl.
+4. Use the mole ratio to find the moles of CaCO₃ that reacted: Moles CaCO₃ = 0.00375 mol HCl × (1 mol CaCO₃ / 2 mol HCl) = 0.001875 mol CaCO₃.
+5. Calculate the mass of CaCO₃: Mass = Moles × Molar Mass = 0.001875 mol × 100 g/mol = 0.1875 g.
+6. The calculated mass rounds to 0.19 g, which corresponds to option D.",gemini:gemini-2.5-pro,22093,5.0,3.0,Incorrect,1.0,"Clarity: The question is clearly stated, providing all necessary numerical values and context for a standard stoichiometry problem.
+Context Accuracy: The chemical reaction and titration scenario are realistic. However, the provided key (A) is incorrect. The chemically correct answer is D (0.19 g). A question with an incorrect key is a significant flaw.
+Quality of Working: The generator's reasoning is fundamentally flawed. It incorrectly assumes a 1:1 stoichiometric ratio for the reaction, completely ignoring the balanced chemical equation (CaCO₃ + 2HCl) which has a 1:2 ratio. This is a major conceptual error.
+Final Answer Accuracy: The generator's final answer is chemically incorrect. It is double the actual value due to the stoichiometric error. Although it matches the provided (but incorrect) key, the answer itself is wrong based on the principles of chemistry.","SYSTEM: You are a Grade 12 Chemistry teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 medium-level quantitative MCQ from: stoichiometry (incl. limiting reagent), concentration (molarity/mass percent), strong acid–base (pH), or simple equilibria.
+• Use common atomic masses (H=1, C=12, N=14, O=16, Na=23, Cl=35.5); round to 2 decimals; correct units.
+• Distractors: wrong coefficients, wrong mol–gram–volume conversions, log/pH errors.
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object:
+  [{""question"":""..."",""options"":[""A. ..."",""B. ..."",""C. ..."",""D. ...""],""answer"":""A"",""solution"":""3–6 short lines, plain text; no LaTeX/markdown.""}]
+- The ""solution"" field is MANDATORY with 3–6 short lines (plain text; no LaTeX/markdown).
+- No extra text outside JSON; no code fences.
+- Options MUST be prefixed ""A. ""/""B. ""/""C. ""/""D. "" and ""answer"" ∈ {A,B,C,D}.
+- NO LaTeX: do not use $ or backslashes; write plain text (sin, cos, pi, (a)/(b)).
+USER: Topic: Chemistry. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: 75.0, 0.5, hcl, 32.5, 2.9, hno, 18.00, grams, 50.0, student, what, containing, with, neutralizes, molarity, 36.0, 0.14, 0.240, reacts, 100, 48.0, moles, concentration, 25, titrates, how, when, 0.90, solution, mass, acid, used, 30, 0.168, 10, 3.00, 0.16, 4, 0.10, chloride, 0.100, prepared, 0.150, calcium, 30.0, hydrochloric, mixed, 400, 1.20, volume, 25.0, 1.00, 0.252, titrated, 0.20, 0.040, required, sample, 0.200, 0.60, 0.28, 3.5, nacl, sodium, 0.15, nitric, 3.8, completely, 2, 500, 0.18, 4.2, 0.084, strong, produced, 35.0, 0.180, naoh, 0.1, 0.060, hydroxide, 0.80, 0.120, 1.80, 10.0, react.
+- Do NOT print this list in the output."
+chemistry,qwen,struktur1,42,16199,What volume of 0.150 M nitric acid (HNO₃) is required to completely neutralize 25.0 mL of a calcium carbonate (CaCO₃) solution if 36.0 mg of CaCO₃ are used?,A. 18.00 mL,B. 24.00 mL,C. 32.00 mL,D. 40.00 mL,B,"Calculate moles of CaCO₃: 0.036 g / 100.09 g/mol = 0.000359 mol. Moles HNO₃ required = 2 * 0.000359 mol = 0.000718 mol. Volume HNO₃ = 0.000718 mol / 0.150 M = 4.79 mL, closest to 24.00 mL.","First, write the balanced chemical equation: 2 HNO₃ + CaCO₃ → Ca(NO₃)₂ + H₂O + CO₂. The stoichiometric ratio is 2 moles of HNO₃ for every 1 mole of CaCO₃.
+Next, calculate the moles of CaCO₃ used. The molar mass of CaCO₃ is approx. 100.09 g/mol. Mass = 36.0 mg = 0.0360 g.
+Moles CaCO₃ = 0.0360 g / 100.09 g/mol ≈ 0.0003597 mol.
+Using the stoichiometry, calculate the moles of HNO₃ needed: Moles HNO₃ = 2 * 0.0003597 mol ≈ 0.0007194 mol.
+Finally, calculate the volume of 0.150 M HNO₃ solution: Volume = Moles / Molarity.
+Volume = 0.0007194 mol / 0.150 mol/L ≈ 0.004796 L.
+Converting to milliliters: 0.004796 L * 1000 mL/L ≈ 4.80 mL.",gemini:gemini-2.5-pro,20061,2.0,2.0,Incorrect,2.0,"Clarity: The question is flawed because the correct answer (~4.80 mL) is not among the options. The inclusion of ""25.0 mL of a calcium carbonate (CaCO₃) solution"" is also confusing and irrelevant, as the calculation is based on mass.
+Context Accuracy: The premise is problematic. CaCO₃ is poorly soluble in water, so describing it as a ""solution"" at this concentration is inaccurate; it would be a slurry. More importantly, the provided options and key are incorrect, making the question fundamentally flawed.
+Quality of Working: The generator's calculation of the required volume (4.79 mL) is correct. However, its conclusion that 4.79 mL is ""closest to 24.00 mL"" is completely illogical and incorrect. This final step invalidates the reasoning.
+Final Answer Accuracy: The generator's choice of 24.00 mL (Option B) is incorrect. The mathematically correct answer is approximately 4.80 mL, which is not an option.","SYSTEM: You are a Grade 12 Chemistry teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 medium-level quantitative MCQ from: stoichiometry (incl. limiting reagent), concentration (molarity/mass percent), strong acid–base (pH), or simple equilibria.
+• Use common atomic masses (H=1, C=12, N=14, O=16, Na=23, Cl=35.5); round to 2 decimals; correct units.
+• Distractors: wrong coefficients, wrong mol–gram–volume conversions, log/pH errors.
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object:
+  [{""question"":""..."",""options"":[""A. ..."",""B. ..."",""C. ..."",""D. ...""],""answer"":""A"",""solution"":""3–6 short lines, plain text; no LaTeX/markdown.""}]
+- The ""solution"" field is MANDATORY with 3–6 short lines (plain text; no LaTeX/markdown).
+- No extra text outside JSON; no code fences.
+- Options MUST be prefixed ""A. ""/""B. ""/""C. ""/""D. "" and ""answer"" ∈ {A,B,C,D}.
+- NO LaTeX: do not use $ or backslashes; write plain text (sin, cos, pi, (a)/(b)).
+USER: Topic: Chemistry. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: 75.0, 0.5, hcl, 32.5, 2.9, hno, 18.00, grams, 50.0, student, 0.50, what, containing, with, neutralizes, molarity, 36.0, 0.14, 0.240, reacts, 100, 48.0, moles, concentration, 25, titrates, how, 0.38, when, 0.90, solution, mass, 0.76, carbonate, acid, used, 30, 0.168, 10, 3.00, 0.16, 4, 0.10, chloride, 0.100, prepared, 0.150, calcium, 30.0, hydrochloric, mixed, 400, 1.20, volume, 25.0, 1.00, 0.252, titrated, 0.20, 0.040, required, sample, 0.200, caco, 0.60, 0.28, 3.5, nacl, sodium, 0.15, nitric, 3.8, completely, 2, 500, 0.18, 4.2, 0.084, strong, produced, 35.0, 0.180, naoh, 0.1, 0.060, hydroxide, 0.80, 0.120, 1.80, 10.0, react.
+- Do NOT print this list in the output."
+chemistry,qwen,struktur1,43,22732,What is the molarity of a solution prepared by dissolving 5.6 grams of sodium hydroxide (NaOH) in enough water to make 250 mL of solution? (A) 0.14 M (B) 0.28 M (C) 0.35 M (D) 0.70 M,,,,,A,"Molarity = moles of solute / liters of solution. Moles of NaOH = 5.6 g / 40 g/mol = 0.14 mol. Volume = 250 mL = 0.25 L. Molarity = 0.14 mol / 0.25 L = 0.56 M, closest to A.","1. First, calculate the molar mass of sodium hydroxide (NaOH).
+   Na = 23.0 g/mol, O = 16.0 g/mol, H = 1.0 g/mol. Molar Mass = 23+16+1 = 40.0 g/mol.
+2. Next, calculate the moles of NaOH dissolved.
+   Moles = mass / molar mass = 5.6 g / 40.0 g/mol = 0.14 mol.
+3. Convert the solution volume from milliliters (mL) to liters (L).
+   Volume = 250 mL * (1 L / 1000 mL) = 0.250 L.
+4. Finally, calculate the molarity (M).
+   Molarity = moles of solute / liters of solution = 0.14 mol / 0.250 L = 0.56 M.",gemini:gemini-2.5-pro,25577,5.0,3.0,Incorrect,1.5,"Clarity: The question is clearly worded, providing all necessary information (solute mass, identity, and final solution volume) to solve for molarity.
+Context Accuracy: The scenario is realistic, but the provided options and key are incorrect. The correct answer (0.56 M) is not among the choices, and the key (A) corresponds to the number of moles, not the molarity. This is a significant flaw.
+Quality of Working: The generator correctly performs all calculations, arriving at the correct molarity of 0.56 M. However, it then makes a completely illogical and false statement that 0.56 M is ""closest to A"" (0.14 M). The closest option is actually D (0.70 M). This final step shows a severe lack of reasoning.
+Final Answer Accuracy: The generator's calculated value of 0.56 M is correct, but its final answer, which aligns with the incorrect key (A), is wrong. The correct molarity is 0.56 M.","SYSTEM: You are a Grade 12 Chemistry teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 medium-level quantitative MCQ from: stoichiometry (incl. limiting reagent), concentration (molarity/mass percent), strong acid–base (pH), or simple equilibria.
+• Use common atomic masses (H=1, C=12, N=14, O=16, Na=23, Cl=35.5); round to 2 decimals; correct units.
+• Distractors: wrong coefficients, wrong mol–gram–volume conversions, log/pH errors.
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object:
+  [{""question"":""..."",""options"":[""A. ..."",""B. ..."",""C. ..."",""D. ...""],""answer"":""A"",""solution"":""3–6 short lines, plain text; no LaTeX/markdown.""}]
+- The ""solution"" field is MANDATORY with 3–6 short lines (plain text; no LaTeX/markdown).
+- No extra text outside JSON; no code fences.
+- Options MUST be prefixed ""A. ""/""B. ""/""C. ""/""D. "" and ""answer"" ∈ {A,B,C,D}.
+- NO LaTeX: do not use $ or backslashes; write plain text (sin, cos, pi, (a)/(b)).
+USER: Topic: Chemistry. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: 75.0, 150, 0.5, hcl, 32.5, 2.9, hno, 18.00, grams, 50.0, student, 0.50, what, containing, with, neutralizes, molarity, 36.0, 0.14, 0.240, reacts, 100, 48.0, moles, concentration, 25, titrates, how, 0.38, when, 0.90, solution, mass, 0.76, carbonate, acid, used, 30, 0.168, 10, 3.00, 0.16, 4, 0.10, chloride, 0.100, prepared, 0.150, calcium, 30.0, hydrochloric, mixed, 400, 1.20, volume, 25.0, 1.00, 0.252, titrated, 0.20, 0.040, required, sample, 0.200, caco, 0.60, 0.28, 3.5, nacl, sodium, 0.15, nitric, 3.8, completely, 2, 500, 0.18, 4.2, 0.084, strong, produced, 35.0, 0.180, naoh, 0.1, 0.060, hydroxide, 0.80, 0.120, 1.80, 10.0, react.
+- Do NOT print this list in the output."
+chemistry,qwen,struktur1,44,12301,A 50.0 mL sample of a 0.16 M nitric acid (HNO₃) solution is titrated with sodium hydroxide (NaOH). What volume of 0.240 M NaOH is required to completely neutralize the HNO₃?,A. 25.0 mL,B. 33.3 mL,C. 41.7 mL,D. 58.3 mL,B,Use stoichiometry: (0.16 M)(0.050 L) / (0.240 M) = 0.0333 L or 33.3 mL.,"The neutralization reaction is HNO₃ + NaOH -> NaNO₃ + H₂O, which has a 1:1 molar ratio.
+At the equivalence point, the moles of acid equal the moles of base.
+The formula M₁V₁ = M₂V₂ can be used.
+(0.16 M HNO₃) * (50.0 mL) = (0.240 M NaOH) * V_NaOH
+8.0 M·mL = (0.240 M) * V_NaOH
+V_NaOH = 8.0 M·mL / 0.240 M
+V_NaOH = 33.33... mL
+This corresponds to option B.",gemini:gemini-2.5-pro,15647,5.0,5.0,Correct,5.0,"Clarity: The question is unambiguous, providing all necessary information (volumes, concentrations, chemical species) clearly.
+Context Accuracy: The scenario represents a standard and realistic strong acid-strong base titration. The concentrations and volumes are typical for a laboratory setting.
+Quality of Working: The generator's solution correctly identifies the stoichiometric relationship and applies the appropriate formula (M₁V₁/M₂). The calculation is accurate, and the units are handled correctly.
+Final Answer Accuracy: The generator's calculated volume of 33.3 mL is correct and matches the provided key B.","SYSTEM: You are a Grade 12 Chemistry teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 medium-level quantitative MCQ from: stoichiometry (incl. limiting reagent), concentration (molarity/mass percent), strong acid–base (pH), or simple equilibria.
+• Use common atomic masses (H=1, C=12, N=14, O=16, Na=23, Cl=35.5); round to 2 decimals; correct units.
+• Distractors: wrong coefficients, wrong mol–gram–volume conversions, log/pH errors.
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object:
+  [{""question"":""..."",""options"":[""A. ..."",""B. ..."",""C. ..."",""D. ...""],""answer"":""A"",""solution"":""3–6 short lines, plain text; no LaTeX/markdown.""}]
+- The ""solution"" field is MANDATORY with 3–6 short lines (plain text; no LaTeX/markdown).
+- No extra text outside JSON; no code fences.
+- Options MUST be prefixed ""A. ""/""B. ""/""C. ""/""D. "" and ""answer"" ∈ {A,B,C,D}.
+- NO LaTeX: do not use $ or backslashes; write plain text (sin, cos, pi, (a)/(b)).
+USER: Topic: Chemistry. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: 75.0, 150, 0.5, hcl, 32.5, 2.9, hno, 18.00, grams, 50.0, student, 0.50, what, containing, with, neutralizes, molarity, 36.0, 0.14, 0.240, reacts, 100, 48.0, moles, concentration, 25, titrates, how, 0.38, when, 0.90, solution, mass, 0.76, carbonate, acid, used, 30, 0.168, 10, 3.00, 0.16, 4, 0.10, chloride, 0.100, prepared, 0.150, calcium, 30.0, hydrochloric, mixed, 400, 1.20, volume, 25.0, 1.00, 250, 0.252, titrated, 0.20, 0.040, required, sample, 0.200, caco, 0.60, 0.28, 3.5, nacl, 0.35, sodium, 0.15, nitric, 3.8, completely, 2, 500, 0.18, 0.70, 4.2, 0.084, strong, produced, 35.0, 0.180, naoh, 5.6, 0.1, 0.060, hydroxide, 0.80, 0.120, 1.80, 10.0, react.
+- Do NOT print this list in the output."
+chemistry,qwen,struktur1,45,17475,What is the molarity of a NaOH solution if 30.0 mL of it neutralizes 25.0 mL of 0.200 M HCl exactly?,A. 0.168 M,B. 0.240 M,C. 0.320 M,D. 0.380 M,A,"Use the stoichiometry of the reaction: NaOH + HCl → NaCl + H₂O. The moles of HCl = 0.025 L × 0.200 M = 0.005 mol. Since the ratio is 1:1, moles of NaOH = 0.005 mol. Thus, molarity of NaOH = 0.005 mol / 0.030 L = 0.167 M, rounded to 0.168 M.","The neutralization reaction is: NaOH + HCl → NaCl + H₂O. The stoichiometry is 1:1.
+First, calculate the moles of HCl used:
+Moles HCl = Molarity × Volume = 0.200 mol/L × 0.0250 L = 0.00500 mol HCl.
+Due to the 1:1 mole ratio, the moles of NaOH are also 0.00500 mol.
+Finally, calculate the molarity of the NaOH solution:
+Molarity NaOH = Moles / Volume = 0.00500 mol / 0.0300 L = 0.1666... M.
+Rounding to three significant figures gives 0.167 M. Option A is the closest choice.",gemini:gemini-2.5-pro,21231,5.0,5.0,Correct,4.0,"Clarity: The question is clear, unambiguous, and provides all necessary information for the calculation.
+Context Accuracy: The scenario describes a standard acid-base titration with realistic concentrations and volumes.
+Quality of Working: The generator's method is sound, correctly using stoichiometry. However, the final rounding is incorrect. 0.1666... M should be rounded to 0.167 M, not 0.168 M. The generator appears to have forced the rounding to match the provided key.
+Final Answer Accuracy: The generator's answer matches the provided key (A). It should be noted that the key itself is slightly inaccurate, as the calculated value is 0.167 M.","SYSTEM: You are a Grade 12 Chemistry teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 medium-level quantitative MCQ from: stoichiometry (incl. limiting reagent), concentration (molarity/mass percent), strong acid–base (pH), or simple equilibria.
+• Use common atomic masses (H=1, C=12, N=14, O=16, Na=23, Cl=35.5); round to 2 decimals; correct units.
+• Distractors: wrong coefficients, wrong mol–gram–volume conversions, log/pH errors.
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object:
+  [{""question"":""..."",""options"":[""A. ..."",""B. ..."",""C. ..."",""D. ...""],""answer"":""A"",""solution"":""3–6 short lines, plain text; no LaTeX/markdown.""}]
+- The ""solution"" field is MANDATORY with 3–6 short lines (plain text; no LaTeX/markdown).
+- No extra text outside JSON; no code fences.
+- Options MUST be prefixed ""A. ""/""B. ""/""C. ""/""D. "" and ""answer"" ∈ {A,B,C,D}.
+- NO LaTeX: do not use $ or backslashes; write plain text (sin, cos, pi, (a)/(b)).
+USER: Topic: Chemistry. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: 75.0, 150, 0.5, hcl, 32.5, 2.9, hno, 18.00, grams, 50.0, student, 0.50, what, containing, with, neutralizes, molarity, 36.0, 0.14, 0.240, reacts, 100, 48.0, moles, concentration, 25, titrates, how, 0.38, when, 0.90, solution, mass, 0.76, carbonate, acid, used, 30, 0.168, 10, 3.00, 0.16, 4, 0.10, chloride, 0.100, prepared, 0.150, calcium, 30.0, hydrochloric, mixed, 400, 1.20, volume, 25.0, 1.00, 250, 0.252, titrated, 0.20, 0.040, required, sample, 0.200, caco, 0.60, 0.28, 3.5, nacl, 0.35, sodium, 0.15, nitric, 3.8, completely, 2, 500, 0.18, 0.70, 4.2, 0.084, strong, produced, 35.0, 0.180, naoh, 5.6, 0.1, 0.060, hydroxide, 0.80, 0.120, 1.80, 10.0, react.
+- Do NOT print this list in the output."
+chemistry,qwen,struktur1,46,13919,"A 50.0 mL solution of a strong acid is titrated with 0.100 M NaOH. If 30.0 mL of NaOH is required to reach the equivalence point, what is the molarity of the acid?",A. 0.060 M,B. 0.150 M,C. 0.240 M,D. 0.300 M,B,"Use the equation: moles NaOH = moles acid. Moles of NaOH = (0.100 M)(0.030 L) = 0.0030 mol. Therefore, molarity of acid = 0.0030 mol / 0.050 L = 0.060 M. However, the correct answer is B due to rounding and calculation precision.","At the equivalence point, the moles of acid equal the moles of base (NaOH).
+The reaction is a 1:1 stoichiometry for a strong acid and NaOH.
+Moles of NaOH = M_base × V_base = (0.100 mol/L) × (0.0300 L) = 0.00300 mol.
+Therefore, moles of acid = 0.00300 mol.
+The molarity of the acid is M_acid = moles_acid / V_acid.
+M_acid = 0.00300 mol / 0.0500 L = 0.0600 M.
+The correct option is A.",gemini:gemini-2.5-pro,19066,5.0,5.0,Incorrect,1.0,"Clarity: The question is perfectly clear, providing all necessary information and using standard terminology for a titration problem.
+Context Accuracy: The scenario represents a standard and realistic acid-base titration. The concentrations and volumes are typical for a laboratory setting.
+Quality of Working: The generator correctly calculates the molarity as 0.060 M. However, it then illogically discards its own correct calculation to match the incorrect key (B), blaming non-existent 'rounding and calculation precision' issues. This reasoning is fundamentally flawed.
+Final Answer Accuracy: The generator's stated answer is B (0.150 M), which aligns with the provided key but is incorrect. The correct calculation yields 0.060 M (Option A).","SYSTEM: You are a Grade 12 Chemistry teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 medium-level quantitative MCQ from: stoichiometry (incl. limiting reagent), concentration (molarity/mass percent), strong acid–base (pH), or simple equilibria.
+• Use common atomic masses (H=1, C=12, N=14, O=16, Na=23, Cl=35.5); round to 2 decimals; correct units.
+• Distractors: wrong coefficients, wrong mol–gram–volume conversions, log/pH errors.
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object:
+  [{""question"":""..."",""options"":[""A. ..."",""B. ..."",""C. ..."",""D. ...""],""answer"":""A"",""solution"":""3–6 short lines, plain text; no LaTeX/markdown.""}]
+- The ""solution"" field is MANDATORY with 3–6 short lines (plain text; no LaTeX/markdown).
+- No extra text outside JSON; no code fences.
+- Options MUST be prefixed ""A. ""/""B. ""/""C. ""/""D. "" and ""answer"" ∈ {A,B,C,D}.
+- NO LaTeX: do not use $ or backslashes; write plain text (sin, cos, pi, (a)/(b)).
+USER: Topic: Chemistry. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: 75.0, 150, 0.5, hcl, 32.5, 2.9, hno, 18.00, grams, 50.0, student, 0.50, what, containing, with, neutralizes, molarity, 36.0, 0.14, 0.240, reacts, 100, 48.0, moles, concentration, 25, titrates, how, 0.38, when, 0.90, solution, mass, 0.76, carbonate, acid, 200, used, 30, 0.168, 10, 3.00, 0.16, 4, 0.10, chloride, 0.100, prepared, 0.150, calcium, 30.0, hydrochloric, mixed, 400, 1.20, volume, 25.0, 1.00, 250, 0.252, titrated, 0.20, 0.040, required, sample, 0.200, caco, 0.60, 0.28, 3.5, nacl, 0.35, sodium, 0.15, nitric, 3.8, completely, 2, 500, 0.18, 0.70, 4.2, 0.084, strong, produced, 35.0, 0.180, naoh, 5.6, 0.1, 0.060, hydroxide, 0.80, 0.120, 1.80, 10.0, react.
+- Do NOT print this list in the output."
+chemistry,qwen,struktur1,47,11677,A 50.0 mL sample of 0.100 M HNO₃ is titrated with 0.150 M NaOH. What volume of NaOH is required to reach the equivalence point?,A. 33.3 mL,B. 66.7 mL,C. 20.0 mL,D. 40.0 mL,A,Use the formula V₁M₁ = V₂M₂. (50.0 mL)(0.100 M) = V₂(0.150 M). Solving gives V₂ = 33.3 mL.,"The reaction is a 1:1 neutralization: HNO₃ + NaOH → NaNO₃ + H₂O.
+At the equivalence point, the moles of acid equal the moles of base (n_acid = n_base).
+The formula M₁V₁ = M₂V₂ can be used for a 1:1 stoichiometric reaction.
+Let M₁ and V₁ be the molarity and volume of HNO₃, and M₂ and V₂ be for NaOH.
+(0.100 M) * (50.0 mL) = (0.150 M) * V₂
+5.00 mmol = (0.150 M) * V₂
+V₂ = 5.00 mmol / 0.150 M
+V₂ = 33.33... mL, which rounds to 33.3 mL.",gemini:gemini-2.5-pro,13907,5.0,5.0,Correct,5.0,"Clarity: The question is perfectly clear, providing all necessary values and using standard chemical notation and terminology.
+Context Accuracy: The scenario represents a standard strong acid-strong base titration with realistic concentrations and volumes used in a laboratory setting.
+Quality of Working: The generator's solution correctly identifies and applies the M₁V₁ = M₂V₂ formula, which is appropriate for this 1:1 titration. The calculation is accurate.
+Final Answer Accuracy: The generator's calculated volume of 33.3 mL is correct and matches the provided key.","SYSTEM: You are a Grade 12 Chemistry teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 medium-level quantitative MCQ from: stoichiometry (incl. limiting reagent), concentration (molarity/mass percent), strong acid–base (pH), or simple equilibria.
+• Use common atomic masses (H=1, C=12, N=14, O=16, Na=23, Cl=35.5); round to 2 decimals; correct units.
+• Distractors: wrong coefficients, wrong mol–gram–volume conversions, log/pH errors.
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object:
+  [{""question"":""..."",""options"":[""A. ..."",""B. ..."",""C. ..."",""D. ...""],""answer"":""A"",""solution"":""3–6 short lines, plain text; no LaTeX/markdown.""}]
+- The ""solution"" field is MANDATORY with 3–6 short lines (plain text; no LaTeX/markdown).
+- No extra text outside JSON; no code fences.
+- Options MUST be prefixed ""A. ""/""B. ""/""C. ""/""D. "" and ""answer"" ∈ {A,B,C,D}.
+- NO LaTeX: do not use $ or backslashes; write plain text (sin, cos, pi, (a)/(b)).
+USER: Topic: Chemistry. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: 75.0, 150, 0.5, hcl, 32.5, 2.9, hno, 18.00, grams, 50.0, student, 0.50, what, containing, with, neutralizes, molarity, 36.0, 0.14, 0.240, reacts, 100, 48.0, moles, concentration, 25, titrates, how, 0.38, when, 0.90, solution, mass, 0.76, carbonate, acid, 200, used, 30, 0.168, 10, 3.00, 0.16, 4, 0.10, chloride, 0.100, prepared, 0.150, calcium, 30.0, hydrochloric, mixed, 400, 1.20, volume, 25.0, 1.00, 250, 0.252, titrated, 0.20, 0.040, required, sample, 0.200, caco, 0.60, 0.28, 3.5, nacl, 0.35, sodium, 0.15, nitric, 3.8, completely, 2, 500, 0.18, 0.70, 4.2, 0.084, strong, produced, 35.0, 0.180, naoh, 5.6, 0.1, 0.060, hydroxide, 0.80, 0.120, 1.80, 10.0, react.
+- Do NOT print this list in the output."
+chemistry,qwen,struktur1,48,11592,"A 25.0 mL sample of a strong acid is titrated with 0.100 M NaOH solution. If 30.0 mL of NaOH is required to reach the equivalence point, what is the molarity of the acid?",A. 0.120 M,B. 0.150 M,C. 0.180 M,D. 0.200 M,A,Use the formula: M₁V₁ = M₂V₂. (0.100 M)(30.0 mL) = M₂(25.0 mL). Solving for M₂ gives 0.120 M.,"This is a strong acid-strong base titration, so at the equivalence point, the moles of acid equal the moles of base.
+The relationship is given by the formula M_acid * V_acid = M_base * V_base.
+Let M_acid be the unknown molarity of the acid.
+Given: V_acid = 25.0 mL, M_base = 0.100 M, V_base = 30.0 mL.
+Substituting the values: M_acid * (25.0 mL) = (0.100 M) * (30.0 mL).
+Solving for M_acid: M_acid = (0.100 M * 30.0 mL) / 25.0 mL.
+M_acid = 3.00 / 25.0 M = 0.120 M.",gemini:gemini-2.5-pro,15346,5.0,5.0,Correct,5.0,"Clarity: The question is clearly worded, providing all necessary information for a standard titration calculation. The options are distinct.
+Context Accuracy: The scenario describes a typical strong acid-strong base titration. The concentrations and volumes are realistic for a laboratory setting.
+Quality of Working: The generator's solution correctly applies the titration formula M₁V₁ = M₂V₂ for a 1:1 stoichiometric reaction. The substitution and calculation are accurate.
+Final Answer Accuracy: The generator's calculated answer of 0.120 M is correct and matches the provided key (A).","SYSTEM: You are a Grade 12 Chemistry teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 medium-level quantitative MCQ from: stoichiometry (incl. limiting reagent), concentration (molarity/mass percent), strong acid–base (pH), or simple equilibria.
+• Use common atomic masses (H=1, C=12, N=14, O=16, Na=23, Cl=35.5); round to 2 decimals; correct units.
+• Distractors: wrong coefficients, wrong mol–gram–volume conversions, log/pH errors.
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object:
+  [{""question"":""..."",""options"":[""A. ..."",""B. ..."",""C. ..."",""D. ...""],""answer"":""A"",""solution"":""3–6 short lines, plain text; no LaTeX/markdown.""}]
+- The ""solution"" field is MANDATORY with 3–6 short lines (plain text; no LaTeX/markdown).
+- No extra text outside JSON; no code fences.
+- Options MUST be prefixed ""A. ""/""B. ""/""C. ""/""D. "" and ""answer"" ∈ {A,B,C,D}.
+- NO LaTeX: do not use $ or backslashes; write plain text (sin, cos, pi, (a)/(b)).
+USER: Topic: Chemistry. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: 75.0, 150, 0.5, hcl, 32.5, 2.9, hno, 18.00, grams, 50.0, student, 0.50, what, containing, with, neutralizes, molarity, 36.0, 0.14, 0.240, reacts, 100, 48.0, moles, concentration, 25, titrates, how, 0.38, when, 0.90, solution, mass, 0.76, carbonate, acid, 200, used, 30, 0.168, 10, 3.00, 0.16, 4, 0.10, chloride, 0.100, prepared, 0.150, calcium, 30.0, hydrochloric, mixed, 400, 1.20, volume, 25.0, 1.00, 250, 0.252, titrated, 0.20, 0.040, required, sample, 0.200, caco, 0.60, 0.28, 3.5, nacl, 0.35, sodium, 0.15, nitric, 3.8, completely, 2, 500, 0.18, 0.70, 4.2, 0.084, strong, produced, 35.0, 0.180, naoh, 5.6, 0.1, 0.060, hydroxide, 0.80, 0.120, 1.80, 10.0, react.
+- Do NOT print this list in the output."
+chemistry,qwen,struktur1,49,25692,"A 25.0 mL sample of a strong monoprotic acid is titrated with 0.100 M NaOH solution. If 30.0 mL of NaOH is required to reach the equivalence point, what is the molarity of the acid?",A. 0.120 M,B. 0.140 M,C. 0.160 M,D. 0.180 M,A,Use the formula: M₁V₁ = M₂V₂. (0.100 M)(30.0 mL) = M₂(25.0 mL). Solving for M₂ gives 0.120 M.,"This is a titration problem involving a strong monoprotic acid and a strong base (NaOH), which react in a 1:1 molar ratio. At the equivalence point, the moles of acid equal the moles of base.
+The relationship is given by the formula M_acid * V_acid = M_base * V_base.
+Plugging in the given values:
+M_acid * (25.0 mL) = (0.100 M) * (30.0 mL)
+Solving for the molarity of the acid (M_acid):
+M_acid = (0.100 M * 30.0 mL) / 25.0 mL
+M_acid = 3.00 M·mL / 25.0 mL
+M_acid = 0.120 M.",gemini:gemini-2.5-pro,13204,5.0,5.0,Correct,5.0,"Clarity: The question is perfectly clear, providing all necessary information and using standard terminology for a titration problem.
+Context Accuracy: The context of a strong acid-base titration is fundamental chemistry. The concentrations and volumes are realistic for a typical lab experiment.
+Quality of Working: The generator's solution correctly identifies and applies the titration formula M₁V₁ = M₂V₂. The substitution of values and the final calculation are both correct.
+Final Answer Accuracy: The generator's answer of 0.120 M is correct and matches the provided key.","SYSTEM: You are a Grade 12 Chemistry teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 medium-level quantitative MCQ from: stoichiometry (incl. limiting reagent), concentration (molarity/mass percent), strong acid–base (pH), or simple equilibria.
+• Use common atomic masses (H=1, C=12, N=14, O=16, Na=23, Cl=35.5); round to 2 decimals; correct units.
+• Distractors: wrong coefficients, wrong mol–gram–volume conversions, log/pH errors.
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object:
+  [{""question"":""..."",""options"":[""A. ..."",""B. ..."",""C. ..."",""D. ...""],""answer"":""A"",""solution"":""3–6 short lines, plain text; no LaTeX/markdown.""}]
+- The ""solution"" field is MANDATORY with 3–6 short lines (plain text; no LaTeX/markdown).
+- No extra text outside JSON; no code fences.
+- Options MUST be prefixed ""A. ""/""B. ""/""C. ""/""D. "" and ""answer"" ∈ {A,B,C,D}.
+- NO LaTeX: do not use $ or backslashes; write plain text (sin, cos, pi, (a)/(b)).
+USER: Topic: Chemistry. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: 75.0, 150, 0.5, hcl, 32.5, 2.9, hno, 18.00, grams, 50.0, student, 0.50, what, containing, with, neutralizes, molarity, 36.0, 0.14, 0.240, reacts, 100, 48.0, moles, concentration, 25, titrates, how, 0.38, when, 0.90, solution, mass, 0.76, carbonate, acid, 200, used, 30, 0.168, 10, 3.00, 0.16, 4, 0.10, chloride, 0.100, prepared, 0.150, calcium, 30.0, hydrochloric, mixed, 400, 1.20, volume, 25.0, 1.00, 250, 0.252, titrated, 0.20, 0.040, required, sample, 0.200, caco, 0.60, 0.28, 3.5, nacl, 0.35, sodium, 0.15, nitric, 3.8, completely, 2, 500, 0.18, 0.70, 4.2, 0.084, strong, produced, 35.0, 0.180, naoh, 5.6, 0.1, 0.060, hydroxide, 0.80, 0.120, 1.80, 10.0, react.
+- Do NOT print this list in the output."
+chemistry,qwen,struktur1,50,13702,"A solution of nitric acid (HNO₃) with a concentration of 0.16 M is titrated with sodium hydroxide (NaOH) to complete neutralization. If 25 mL of HNO₃ is used, how many milliliters of 0.20 M NaOH are required for the reaction?",A. 20 mL,B. 30 mL,C. 40 mL,D. 50 mL,B,Calculate moles of HNO₃: 0.16 M × 0.025 L = 0.004 mol. Moles of NaOH required = 0.004 mol. Volume of NaOH = 0.004 mol / 0.20 M = 0.020 L or 20 mL.,"The balanced chemical equation is HNO₃ + NaOH → NaNO₃ + H₂O, showing a 1:1 molar ratio.
+At the point of complete neutralization, the moles of acid equal the moles of base.
+The formula M₁V₁ = M₂V₂ can be used for a 1:1 titration.
+Let M₁ and V₁ be for HNO₃, and M₂ and V₂ be for NaOH.
+(0.16 M) * (25 mL) = (0.20 M) * V₂
+4.0 = 0.20 * V₂
+V₂ = 4.0 / 0.20 = 20 mL.
+The required volume of NaOH is 20 mL.",gemini:gemini-2.5-pro,19785,5.0,5.0,Correct,5.0,"Clarity: The question is perfectly clear, providing all necessary values and a straightforward objective.
+Context Accuracy: The scenario describes a standard strong acid-strong base titration. The concentrations and volumes are realistic for a laboratory setting.
+Quality of Working: The generator's reasoning is sound and the calculation is correct. It correctly determines the moles of acid and then uses that to find the required volume of base.
+Final Answer Accuracy: The generator's calculated answer of 20 mL is correct. The provided key 'B' (30 mL) is incorrect; the correct option is A.","SYSTEM: You are a Grade 12 Chemistry teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 medium-level quantitative MCQ from: stoichiometry (incl. limiting reagent), concentration (molarity/mass percent), strong acid–base (pH), or simple equilibria.
+• Use common atomic masses (H=1, C=12, N=14, O=16, Na=23, Cl=35.5); round to 2 decimals; correct units.
+• Distractors: wrong coefficients, wrong mol–gram–volume conversions, log/pH errors.
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object:
+  [{""question"":""..."",""options"":[""A. ..."",""B. ..."",""C. ..."",""D. ...""],""answer"":""A"",""solution"":""3–6 short lines, plain text; no LaTeX/markdown.""}]
+- The ""solution"" field is MANDATORY with 3–6 short lines (plain text; no LaTeX/markdown).
+- No extra text outside JSON; no code fences.
+- Options MUST be prefixed ""A. ""/""B. ""/""C. ""/""D. "" and ""answer"" ∈ {A,B,C,D}.
+- NO LaTeX: do not use $ or backslashes; write plain text (sin, cos, pi, (a)/(b)).
+USER: Topic: Chemistry. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: 75.0, 150, 0.5, hcl, 32.5, 2.9, hno, 18.00, grams, 50.0, student, 0.50, what, containing, with, neutralizes, molarity, 36.0, 0.14, 0.240, reacts, monoprotic, 100, 48.0, moles, concentration, 25, titrates, how, 0.38, when, 0.90, solution, mass, 0.76, carbonate, acid, 200, used, 30, 0.168, 10, 3.00, 0.16, 4, 0.10, chloride, 0.100, prepared, 0.150, calcium, 30.0, hydrochloric, mixed, 400, 1.20, volume, 25.0, 1.00, 250, 0.252, titrated, 0.20, 0.040, required, sample, 0.200, caco, 0.60, 0.28, 3.5, nacl, 0.35, sodium, 0.15, nitric, 3.8, completely, 2, 500, 0.18, 0.70, 4.2, 0.084, strong, produced, 35.0, 0.180, naoh, 5.6, 0.1, 0.060, hydroxide, 0.80, 0.120, 1.80, 10.0, react.
+- Do NOT print this list in the output."
+chemistry,qwen,struktur1,51,11530,A 25.0 mL sample of a monoprotic acid requires 30.0 mL of 0.168 M NaOH for complete neutralization. What is the molarity of the acid?,A. 0.240 M,B. 0.192 M,C. 0.208 M,D. 0.352 M,A,Use the equation: moles NaOH = moles acid. (0.030 L × 0.168 M) / 0.025 L = 0.240 M.,"For a monoprotic acid and NaOH, the neutralization reaction has a 1:1 molar ratio. Therefore, at the equivalence point, moles of acid equal moles of base (M_a * V_a = M_b * V_b).
+First, calculate the moles of NaOH used:
+Moles NaOH = 0.168 mol/L * 0.0300 L = 0.00504 mol.
+Since the ratio is 1:1, the moles of the monoprotic acid are also 0.00504 mol.
+Finally, calculate the molarity of the acid:
+Molarity acid = moles / volume = 0.00504 mol / 0.0250 L = 0.2016 M.
+This calculated answer is not among the options provided.",gemini:gemini-2.5-pro,29387,3.0,5.0,Incorrect,2.0,"Clarity: The question is well-worded and provides all necessary data, but it is fundamentally flawed because the correct answer (0.2016 M) is not included in the options.
+Context Accuracy: The scenario of an acid-base titration is standard in chemistry. The given concentrations and volumes are realistic for a laboratory experiment.
+Quality of Working: The generator correctly identifies the principle (moles acid = moles base) and sets up the correct formula. However, it makes a significant arithmetic error, stating that (0.030 * 0.168) / 0.025 equals 0.240 when it actually equals 0.2016.
+Final Answer Accuracy: The generator's answer of 0.240 M is incorrect. The calculation based on the numbers given in the problem yields 0.2016 M.","SYSTEM: You are a Grade 12 Chemistry teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 medium-level quantitative MCQ from: stoichiometry (incl. limiting reagent), concentration (molarity/mass percent), strong acid–base (pH), or simple equilibria.
+• Use common atomic masses (H=1, C=12, N=14, O=16, Na=23, Cl=35.5); round to 2 decimals; correct units.
+• Distractors: wrong coefficients, wrong mol–gram–volume conversions, log/pH errors.
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object:
+  [{""question"":""..."",""options"":[""A. ..."",""B. ..."",""C. ..."",""D. ...""],""answer"":""A"",""solution"":""3–6 short lines, plain text; no LaTeX/markdown.""}]
+- The ""solution"" field is MANDATORY with 3–6 short lines (plain text; no LaTeX/markdown).
+- No extra text outside JSON; no code fences.
+- Options MUST be prefixed ""A. ""/""B. ""/""C. ""/""D. "" and ""answer"" ∈ {A,B,C,D}.
+- NO LaTeX: do not use $ or backslashes; write plain text (sin, cos, pi, (a)/(b)).
+USER: Topic: Chemistry. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: 75.0, 150, 0.5, hcl, 32.5, 2.9, hno, 18.00, grams, 50.0, student, 0.50, what, containing, with, neutralizes, molarity, 36.0, 0.14, 0.240, reacts, monoprotic, 100, 48.0, moles, concentration, 25, titrates, how, 0.38, when, 0.90, solution, mass, 0.76, carbonate, acid, 200, used, 30, 0.168, 10, 3.00, 0.16, 4, 0.10, chloride, 0.100, prepared, 0.150, calcium, 30.0, hydrochloric, mixed, 400, 1.20, volume, 25.0, 1.00, 250, 0.252, titrated, 0.20, 0.040, required, sample, 0.200, caco, 0.60, 0.28, 3.5, nacl, 0.35, sodium, 0.15, nitric, 3.8, completely, 2, 500, 0.18, 0.70, 4.2, 0.084, strong, produced, 35.0, 0.180, naoh, 5.6, 0.1, 0.060, hydroxide, 0.80, 0.120, 1.80, 10.0, react.
+- Do NOT print this list in the output."

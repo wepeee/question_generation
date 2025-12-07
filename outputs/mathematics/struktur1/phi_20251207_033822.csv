@@ -1,0 +1,1493 @@
+topic,model,struktur,index,latency_model_ms,question,optionA,optionB,optionC,optionD,answer,solution_model,solution_verifier,verifier_model,latency_verifier_ms,clarity,context_accuracy,final_answer_accuracy,quality_of_working,judge_notes,prompt_generator
+mathematics,phi,struktur1,1,19924,"A student is taking three different exams, each worth up to 100 points. The first exam score was twice that of her second exam minus five points, which in turn was thrice as many points as the third exam plus two points. If she scored full marks on all exams except for a mistake wherein one point from every even-numbered question (2nd and 4th) were misplaced during grading, what is her corrected total score?",197,198,199,200,B,"Let the third exam score be x. Therefore, second = 3x + 2 and first = 2(3x + 2) - 5. Correcting for misplaced points: First (corrected)=198-4=194; Second corrected=196-2=194; Third unchanged as no error was mentioned, so x+10. Adding the third exam score to both first and second gives 3x + 20 = y for some value of y that satisfies all conditions (since we're looking at a total corrected score). The only option where this holds true is when x=67; thus, her original scores were First: 198 points, Second: 204 points, Third: 68 points. Correcting for misplaced even-numbered questions gives the final totals of 194 (for first), 194 (second corrected after removing two from each correct answer on a multiple choice question with four options per exam). The third score remains unchanged as no errors were mentioned, so it's still 68 points. Her total is therefore 194 + 194 + 68 = 456.","Let the recorded scores be S1, S2, and S3. The problem states S1 = 2*S2 - 5 and S2 = 3*S3 + 2. Combining these gives S1 = 6*S3 - 1. Each exam is worth up to 100 points, so S1 <= 100, which implies 6*S3 - 1 <= 100, leading to S3 <= 16.83. Thus, the maximum integer score for S3 is 16. The grading error mentioned (1 point from questions 2 and 4) implies a 2-point deduction from each exam's true score. The corrected total score is (S1+2) + (S2+2) + (S3+2) = S1+S2+S3+6. Substituting the relationships, the corrected total is (6*S3 - 1) + (3*S3 + 2) + S3 + 6 = 10*S3 + 7. Using the maximum possible value S3=16, the maximum corrected total score is 10*16 + 7 = 167. Since all options are greater than 167, the question is flawed and has no valid solution.",gemini:gemini-2.5-pro,77074,0.5,1,Incorrect,0,"Clarity: The question is fundamentally flawed due to contradictory information. The relationships between scores, when combined with the 100-point limit per exam, make all the given options mathematically impossible to achieve.
+Context Accuracy: The context of exam scores is realistic, but the specific numerical constraints and relationships described create an impossible scenario, making the problem logically unsound.
+Quality of Working: The generator's solution is nonsensical. It hallucinates numbers (e.g., 198, 196, 67), uses incoherent reasoning, contradicts the problem statement, and calculates a final total (456) that is not among the options.
+Final Answer Accuracy: The generator's calculated answer of 456 is not one of the options and does not match the provided key (B). The question itself is unsolvable as stated, so no answer can be deemed correct.","SYSTEM: You are a Grade 12 Mathematics teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 medium-difficulty computational MCQ from ONE of: algebra (functions/inverse/systems), trigonometry (identities/evaluation), basic calculus (limits/derivatives/simple integrals), or short statistics.
+• Use realistic numbers; round to 2 decimals when needed; avoid formal proofs.
+• Distractors must reflect typical mistakes (sign errors, wrong identities, derivative/limit rules, rounding).
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object.
+- Format:
+  [{""question"": ""..."", ""options"": [""..."",""..."",""..."",""...""], ""answer"": ""A"", ""solution"": ""...""}]
+- Fields:
+  * ""question"": one string.
+  * ""options"": array of 4 answer-choice strings.
+  * ""answer"": one of ""A"",""B"",""C"",""D"" (just the letter).
+  * ""solution"": short plain-text explanation (a few lines is fine).
+- No extra text before or after the JSON.
+- Do NOT use markdown, code fences, or LaTeX ($ or backslashes).
+USER: Topic: Mathematics. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field."
+mathematics,phi,struktur1,2,7374,A function f(x) = x^2 + 5x - 3 is given. What is its derivative?,f'(x) = 2x + 5,f'(x) = 2x^2 + 5,f'(x) = 2x + 10,f'(x) = x^2 + 5,A,"The derivative of f(x) with respect to x is found by applying the power rule, which gives us f'(x) = 2x for each term involving x. Therefore, the correct answer is A: f'(x) = 2x + 5.","To find the derivative of the function f(x) = x^2 + 5x - 3, we differentiate it term by term using the power rule, d/dx(x^n) = nx^(n-1).
+1. The derivative of x^2 is 2 * x^(2-1) = 2x.
+2. The derivative of 5x (or 5x^1) is 5 * 1 * x^(1-1) = 5 * x^0 = 5 * 1 = 5.
+3. The derivative of the constant -3 is 0.
+Combining these results, the derivative is f'(x) = 2x + 5 + 0 = 2x + 5.
+This corresponds to option A.",gemini:gemini-2.5-pro,10364,5,5,Correct,1,"Clarity: The question is perfectly clear, using standard mathematical notation for a basic calculus problem.
+Context Accuracy: The question is a standard, mathematically correct problem. There is no real-world context to evaluate.
+Quality of Working: The generator's reasoning is flawed. The statement that the power rule ""gives us f'(x) = 2x for each term involving x"" is incorrect. While the derivative of x^2 is 2x, the derivative of 5x is 5. The explanation is confusing and demonstrates a misunderstanding of the process, even though the final answer is correct.
+Final Answer Accuracy: The generator correctly identifies option A as the answer.","SYSTEM: You are a Grade 12 Mathematics teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 medium-difficulty computational MCQ from ONE of: algebra (functions/inverse/systems), trigonometry (identities/evaluation), basic calculus (limits/derivatives/simple integrals), or short statistics.
+• Use realistic numbers; round to 2 decimals when needed; avoid formal proofs.
+• Distractors must reflect typical mistakes (sign errors, wrong identities, derivative/limit rules, rounding).
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object.
+- Format:
+  [{""question"": ""..."", ""options"": [""..."",""..."",""..."",""...""], ""answer"": ""A"", ""solution"": ""...""}]
+- Fields:
+  * ""question"": one string.
+  * ""options"": array of 4 answer-choice strings.
+  * ""answer"": one of ""A"",""B"",""C"",""D"" (just the letter).
+  * ""solution"": short plain-text explanation (a few lines is fine).
+- No extra text before or after the JSON.
+- Do NOT use markdown, code fences, or LaTeX ($ or backslashes).
+USER: Topic: Mathematics. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: 100, three, exams, each, points, student, taking, worth, different.
+- Do NOT print this list in the output."
+mathematics,phi,struktur1,3,7583,A high schooler scored an average of 85% on their algebra tests over a semester.,"Option A: The student's score is below passing standards, typically needing to achieve at least 90%.",Option B: An impressive achievement that reflects strong understanding and application of algebraic concepts.,Option C: This average suggests the student may have excelled in specific topics while struggling with others within algebra.,"Option D: The score indicates a misunderstanding of fundamental principles, likely needing further review.",B,The correct answer is B because an 85% average on algebra tests demonstrates strong understanding and application. Option A incorrectly assumes the standard for passing; option C suggests variability without evidence; option D inaccurately interprets a high score as misunderstanding.,"The question asks for the best interpretation of an 85% average in high school algebra. An 85% is generally considered a 'B' grade, which signifies a strong, above-average understanding of the material. Option B aligns with this interpretation. Option A is incorrect, as a 90% is typically an 'A', not a passing grade. Option D is also incorrect; an 85% indicates good understanding, not a fundamental misunderstanding. Option C is speculative, as an average score does not provide information about the variance in performance across topics. Therefore, Option B is the most reasonable conclusion.",gemini:gemini-2.5-pro,29629,2,4.5,Correct,5,"Clarity: The question is highly subjective and is a test of interpretation rather than a mathematical problem. It lacks a single, objectively provable answer, making it a poor-quality question, especially for a subject like algebra.
+Context Accuracy: The scenario (85% average in algebra) is realistic. The interpretation in the correct option is a common and accurate one in most educational systems. The distractors are based on inaccurate assumptions, which is a valid design choice.
+Quality of Working: The generator's reasoning is sound, concise, and complete. It correctly identifies why the chosen answer is the best fit and accurately explains the flaws in each of the distractor options.
+Final Answer Accuracy: The generator's answer is correct based on a logical interpretation of the provided information within a typical educational context.","SYSTEM: You are a Grade 12 Mathematics teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 medium-difficulty computational MCQ from ONE of: algebra (functions/inverse/systems), trigonometry (identities/evaluation), basic calculus (limits/derivatives/simple integrals), or short statistics.
+• Use realistic numbers; round to 2 decimals when needed; avoid formal proofs.
+• Distractors must reflect typical mistakes (sign errors, wrong identities, derivative/limit rules, rounding).
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object.
+- Format:
+  [{""question"": ""..."", ""options"": [""..."",""..."",""..."",""...""], ""answer"": ""A"", ""solution"": ""...""}]
+- Fields:
+  * ""question"": one string.
+  * ""options"": array of 4 answer-choice strings.
+  * ""answer"": one of ""A"",""B"",""C"",""D"" (just the letter).
+  * ""solution"": short plain-text explanation (a few lines is fine).
+- No extra text before or after the JSON.
+- Do NOT use markdown, code fences, or LaTeX ($ or backslashes).
+USER: Topic: Mathematics. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: 100, three, given, exams, each, points, function, derivative, its, student, taking, worth, 3, what, different, 2.
+- Do NOT print this list in the output."
+mathematics,phi,struktur1,4,6250,A quadratic equation has coefficients a = -2 and b = 4. What is its discriminant?,0.67,1.33,5,9,D,"The discriminant of a quadratic equation ax^2 + bx + c = 0 is given by the formula D = b^2 - 4ac. Plugging in the values, we get (-4)^2 - 4*(-2)*c which simplifies to 16 + 8c.","The discriminant of a quadratic equation ax^2 + bx + c = 0 is given by the formula D = b^2 - 4ac.
+The question provides the coefficients a = -2 and b = 4.
+The coefficient c is not provided.
+Substituting the given values into the formula gives: D = (4)^2 - 4(-2)c.
+This simplifies to D = 16 + 8c.
+Because the value of c is unknown, a unique numerical value for the discriminant cannot be determined. The question is ill-posed and unsolvable.",gemini:gemini-2.5-pro,24520,0.5,4.5,Correct,3,"Clarity: The question is fundamentally flawed because it omits the coefficient 'c', making it impossible to calculate a single numerical value for the discriminant from the given options.
+Context Accuracy: The mathematical context (quadratic equations, coefficients, discriminant) is standard and accurate. The provided values for 'a' and 'b' are reasonable.
+Quality of Working: The generator correctly uses the discriminant formula and correctly identifies that the result depends on 'c'. However, it incorrectly substitutes b = -4 instead of the given b = 4, which is a clear error in the working.
+Final Answer Accuracy: The generator correctly concludes that the discriminant is an expression involving 'c' (16 + 8c), not a single number. This is the correct analysis of the flawed question, and it correctly avoids selecting an invalid numerical answer.","SYSTEM: You are a Grade 12 Mathematics teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 medium-difficulty computational MCQ from ONE of: algebra (functions/inverse/systems), trigonometry (identities/evaluation), basic calculus (limits/derivatives/simple integrals), or short statistics.
+• Use realistic numbers; round to 2 decimals when needed; avoid formal proofs.
+• Distractors must reflect typical mistakes (sign errors, wrong identities, derivative/limit rules, rounding).
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object.
+- Format:
+  [{""question"": ""..."", ""options"": [""..."",""..."",""..."",""...""], ""answer"": ""A"", ""solution"": ""...""}]
+- Fields:
+  * ""question"": one string.
+  * ""options"": array of 4 answer-choice strings.
+  * ""answer"": one of ""A"",""B"",""C"",""D"" (just the letter).
+  * ""solution"": short plain-text explanation (a few lines is fine).
+- No extra text before or after the JSON.
+- Do NOT use markdown, code fences, or LaTeX ($ or backslashes).
+USER: Topic: Mathematics. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: over, semester, function, worth, 3, 2, high, 100, three, schooler, derivative, its, taking, algebra, tests, what, different, scored, given, exams, average, their, 85, each, points, student.
+- Do NOT print this list in the output."
+mathematics,phi,struktur1,5,19874,A cyclist's speed decreases from ( v_0 ) mph to zero as they approach a hill using kinetic energy dissipation techniques.,42,-15,3.14,6,C,"The speed of the cyclist is not negative, and it's unlikely to be a simple number like 42 or an irrational constant such as pi (approximated here by ( π ) rounded). The most plausible answer given these options would likely involve subtraction from some initial value representing kinetic energy dissipation.","The provided text is a statement, not a question. It describes a scenario where a cyclist's speed decreases from an initial value v_0 to zero. However, it does not ask for any specific quantity to be calculated (e.g., time, distance, work, initial speed). Without a question, it is impossible to solve the problem or determine how any of the numerical options could be the answer. The problem is fundamentally incomplete.",gemini:gemini-2.5-pro,13168,0,2,Incorrect,0,"Clarity: The item is completely unclear as it lacks a question. It's just a descriptive statement, making it impossible to know what to solve for.
+Context Accuracy: The physical scenario of a cyclist slowing down is realistic. However, the context is unusable without a question.
+Quality of Working: The generator's solution is nonsensical. It does not solve a problem, but instead makes arbitrary judgments about the options without any physical or mathematical basis. It fails to identify the core issue that the question is missing.
+Final Answer Accuracy: The generator's reasoning does not logically lead to the provided key (C). In fact, its text argues that pi (3.14) is an 'unlikely' answer, directly contradicting the key it is supposed to explain.","SYSTEM: You are a Grade 12 Mathematics teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 medium-difficulty computational MCQ from ONE of: algebra (functions/inverse/systems), trigonometry (identities/evaluation), basic calculus (limits/derivatives/simple integrals), or short statistics.
+• Use realistic numbers; round to 2 decimals when needed; avoid formal proofs.
+• Distractors must reflect typical mistakes (sign errors, wrong identities, derivative/limit rules, rounding).
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object.
+- Format:
+  [{""question"": ""..."", ""options"": [""..."",""..."",""..."",""...""], ""answer"": ""A"", ""solution"": ""...""}]
+- Fields:
+  * ""question"": one string.
+  * ""options"": array of 4 answer-choice strings.
+  * ""answer"": one of ""A"",""B"",""C"",""D"" (just the letter).
+  * ""solution"": short plain-text explanation (a few lines is fine).
+- No extra text before or after the JSON.
+- Do NOT use markdown, code fences, or LaTeX ($ or backslashes).
+USER: Topic: Mathematics. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: over, semester, function, quadratic, worth, 3, 4, 2, high, discriminant, 100, three, equation, schooler, derivative, and, its, taking, algebra, tests, what, different, scored, given, exams, average, their, coefficients, 85, each, points, student, has.
+- Do NOT print this list in the output."
+mathematics,phi,struktur1,6,13553,A cyclist covers a certain distance at an average speed of 12 miles per hour (mph) and returns over the same route at 8 mph due to fatigue.,B,C,D,A,C,"The time taken for each leg is found by dividing distance by speed. Since both speeds are different, times will be unequal leading to a longer return trip despite the shorter route back.","The provided text is a premise, not a question. The options 'A', 'B', 'C', 'D' are labels without content, making the problem unsolvable as stated. A common question for this setup is to find the average speed. Let the distance be d. Time out = d/12. Time back = d/8. Total distance = 2d. Total time = d/12 + d/8 = 5d/24. Average speed = Total Distance / Total Time = (2d) / (5d/24) = 48/5 = 9.6 mph. This numerical answer does not correspond to the given options.",gemini:gemini-2.5-pro,23082,0,5,Incorrect,1,"Clarity: The item is a premise without a question. The options are just labels (A, B, C, D) with no associated values or statements, making it impossible to answer.
+Context Accuracy: The scenario is physically plausible. Cycling at 12 mph and returning at a slower 8 mph due to fatigue is a realistic situation.
+Quality of Working: The generator's reasoning contains a major flaw. It correctly states the return trip takes longer but incorrectly claims this is 'despite the shorter route back,' directly contradicting the problem's premise of 'the same route.'
+Final Answer Accuracy: The generator provides a textual explanation instead of selecting an option. This output does not match the provided key 'C'. Therefore, the answer is incorrect.","SYSTEM: You are a Grade 12 Mathematics teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 medium-difficulty computational MCQ from ONE of: algebra (functions/inverse/systems), trigonometry (identities/evaluation), basic calculus (limits/derivatives/simple integrals), or short statistics.
+• Use realistic numbers; round to 2 decimals when needed; avoid formal proofs.
+• Distractors must reflect typical mistakes (sign errors, wrong identities, derivative/limit rules, rounding).
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object.
+- Format:
+  [{""question"": ""..."", ""options"": [""..."",""..."",""..."",""...""], ""answer"": ""A"", ""solution"": ""...""}]
+- Fields:
+  * ""question"": one string.
+  * ""options"": array of 4 answer-choice strings.
+  * ""answer"": one of ""A"",""B"",""C"",""D"" (just the letter).
+  * ""solution"": short plain-text explanation (a few lines is fine).
+- No extra text before or after the JSON.
+- Do NOT use markdown, code fences, or LaTeX ($ or backslashes).
+USER: Topic: Mathematics. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: zero, over, semester, function, they, quadratic, worth, 3, 4, 2, high, discriminant, 100, three, equation, schooler, derivative, and, using, its, taking, algebra, tests, cyclist, what, different, scored, given, exams, average, their, from, coefficients, speed, mph, 85, approach, each, points, student, decreases, hill, has.
+- Do NOT print this list in the output."
+mathematics,phi,struktur1,7,52260,A cyclist maintains a constant speed of v miles per hour on flat ground and encounters an uphill slope with a gradient that reduces their speed by half every mile.,The time taken to cover one mile is independent of the starting speed.,"Ascending each hill, it takes twice as long for the cyclist to complete a mile compared to when they are on flat ground.","During uphill travels, if initially taking 2 minutes per mile without slope incline, then with an uphill gradient reducing their speed by half every mile, after covering two miles of hill climbing it will take them approximately 4.53 minutes in total to complete the distance.",,D,"The cyclist starts at a constant speed v on flat ground and takes t = 2/v hours for one mile (since time is given as 2 minutes, which equals 1/30 hour). On an uphill slope where their speed reduces by half every mile, the first mile will take them 2/(v*2) = 1/v hours. The second hill's reduced speed makes it twice as long to cover a mile (speed halved again), so time for two miles is now t_total = 1/v + 2*(1/v^2). This simplifies to: t_total = 1/v + 2/v^2, = (1 + 2/v) / v, = (v+2)/(v*v), = (3/v)*(1/v), = 3/(v^2). Given the initial speed of t=2/v hours per mile, we can solve for v as follows: t = 2/v, => v = 2/t. Substituting this into our total time equation gives us: t_total = (3/(2/t)) * (1/((2/t)^2)), = (3*t)/(4/t^2), = (3*t^3)/4, => t_total ≈ (3*(8)^3)/4 since v=8 mph from the initial speed given. Therefore, after two miles of uphill climbing with reduced speeds every mile: t_total ≈ (3*512)/4 = 1536/4 = 384 minutes, which is approximately 6.4 hours or about 4.53 minutes per mile, which matches option D.","Let the flat ground speed be v. The time to cover 1 mile on flat ground is t_flat = 1/v.
+For the option in question, t_flat = 2 minutes, so v = 0.5 miles/minute.
+On the uphill, the speed is halved for each mile.
+Speed during the first mile of hill = v/2 = 0.25 miles/minute. Time taken = 1 mile / 0.25 miles/minute = 4 minutes.
+Speed during the second mile of hill = (v/2)/2 = v/4 = 0.125 miles/minute. Time taken = 1 mile / 0.125 miles/minute = 8 minutes.
+Total time to cover two miles of hill climbing = 4 minutes + 8 minutes = 12 minutes.
+None of the options are correct. The third option states the time is 4.53 minutes, which is false.",gemini:gemini-2.5-pro,34373,1,2.5,Incorrect,0,"Clarity: The question is fundamentally flawed. It provides three options, all of which are incorrect based on the problem statement. The provided key is 'D', but there is no option D.
+
+Context Accuracy: The scenario of a cyclist slowing down on a hill is realistic. However, the specific model (speed halving exactly every mile) is a simplification, and the numerical value in the option (4.53 minutes) is completely disconnected from a correct calculation (12 minutes), making the context inaccurate.
+
+Quality of Working: The generator's solution is nonsensical. It starts with incorrect formulas (e.g., t = 2/v), introduces a v^2 term without justification, and performs incorrect algebraic manipulations. The final numerical calculation (384 minutes) does not match the conclusion drawn from it (4.53 minutes).
+
+Final Answer Accuracy: The generator's answer is incorrect. The correct total time is 12 minutes. The generator arrives at a completely different, and internally inconsistent, result.","SYSTEM: You are a Grade 12 Mathematics teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 medium-difficulty computational MCQ from ONE of: algebra (functions/inverse/systems), trigonometry (identities/evaluation), basic calculus (limits/derivatives/simple integrals), or short statistics.
+• Use realistic numbers; round to 2 decimals when needed; avoid formal proofs.
+• Distractors must reflect typical mistakes (sign errors, wrong identities, derivative/limit rules, rounding).
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object.
+- Format:
+  [{""question"": ""..."", ""options"": [""..."",""..."",""..."",""...""], ""answer"": ""A"", ""solution"": ""...""}]
+- Fields:
+  * ""question"": one string.
+  * ""options"": array of 4 answer-choice strings.
+  * ""answer"": one of ""A"",""B"",""C"",""D"" (just the letter).
+  * ""solution"": short plain-text explanation (a few lines is fine).
+- No extra text before or after the JSON.
+- Do NOT use markdown, code fences, or LaTeX ($ or backslashes).
+USER: Topic: Mathematics. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: zero, over, semester, function, they, quadratic, worth, 3, 4, 2, high, discriminant, 100, three, equation, covers, schooler, derivative, and, miles, certain, using, its, taking, algebra, tests, cyclist, what, 8, different, scored, given, exams, average, their, from, distance, coefficients, speed, mph, per, 85, approach, 12, each, points, student, decreases, hill, has.
+- Do NOT print this list in the output."
+mathematics,phi,struktur1,8,14774,A cyclist travels a distance of 90 miles with an average speed that results in completing one segment every hour and forty minutes.,6.5 mph,7.2 mph,8.1 mph,9.3 mph,B,"To find the cyclist's speed, convert 40 minutes to hours by dividing by 60 (which gives approximately 0.67). Add this to one hour for a total of about 1.67 hours per segment. Divide the distance (90 miles) by time (1.67 hours) yields roughly 54 mph, which is not in options but closest to option B: 7.2 mph.","The question is ambiguous due to the undefined term ""segment"". Assuming the entire 90-mile journey is the ""one segment"", the time taken is 1 hour and 40 minutes.
+Convert time to hours: 1 hour + (40 / 60) hours = 1 + 2/3 = 5/3 hours.
+Calculate the average speed: Speed = Distance / Time.
+Speed = 90 miles / (5/3 hours) = 90 * (3/5) mph.
+Speed = 18 * 3 = 54 mph.
+This result is not among the options, indicating the question is flawed.",gemini:gemini-2.5-pro,25295,0.5,1,Incorrect,1,"Clarity: The question is extremely unclear. The term ""segment"" is undefined, making the problem ambiguous. It is impossible to solve without making a major assumption, and even then, the result does not match the options.
+Context Accuracy: The values are highly unrealistic. A cyclist averaging 54 mph over a 90-mile distance is a superhuman feat, far exceeding world records. The options represent plausible but slow speeds that are inconsistent with the problem's data.
+Quality of Working: The generator correctly calculates the speed as ~54 mph based on the most likely interpretation. However, it then makes a completely illogical jump, stating that 54 mph is ""closest to option B: 7.2 mph"". This reasoning is fundamentally flawed and invalidates the solution.
+Final Answer Accuracy: The generator's answer is incorrect. Its reasoning is unsound, and the choice of 7.2 mph is arbitrary. The question as written does not lead to this answer. The match with the provided key is likely due to a typo in the question's distance (e.g., it should have been 12 miles, not 90).","SYSTEM: You are a Grade 12 Mathematics teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 medium-difficulty computational MCQ from ONE of: algebra (functions/inverse/systems), trigonometry (identities/evaluation), basic calculus (limits/derivatives/simple integrals), or short statistics.
+• Use realistic numbers; round to 2 decimals when needed; avoid formal proofs.
+• Distractors must reflect typical mistakes (sign errors, wrong identities, derivative/limit rules, rounding).
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object.
+- Format:
+  [{""question"": ""..."", ""options"": [""..."",""..."",""..."",""...""], ""answer"": ""A"", ""solution"": ""...""}]
+- Fields:
+  * ""question"": one string.
+  * ""options"": array of 4 answer-choice strings.
+  * ""answer"": one of ""A"",""B"",""C"",""D"" (just the letter).
+  * ""solution"": short plain-text explanation (a few lines is fine).
+- No extra text before or after the JSON.
+- Do NOT use markdown, code fences, or LaTeX ($ or backslashes).
+USER: Topic: Mathematics. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: zero, over, semester, function, they, quadratic, flat, worth, 3, 4, 2, high, discriminant, 100, three, equation, covers, schooler, derivative, and, miles, certain, using, its, taking, maintains, algebra, tests, cyclist, what, 8, different, scored, given, exams, average, their, from, distance, coefficients, speed, mph, per, constant, hour, 85, approach, 12, each, points, ground, student, decreases, hill, has.
+- Do NOT print this list in the output."
+mathematics,phi,struktur1,9,33890,A cyclist maintains a steady speed of 16 mph on flat terrain.,The time it takes to cover one mile is approximately 0.07 minutes,It covers about 2 miles in an hour without stopping,"At this constant speed, the distance covered after two hours would be 32 miles","If they continue at this pace for three hours straight, they will have traveled exactly 48 miles",C,"To find out how many miles a cyclist covers in an hour when traveling at 16 mph on flat terrain: Distance = Speed × Time. Therefore, the distance covered after one hour is simply equal to their speed of 16 miles per hour.","The cyclist's speed is 16 miles per hour (mph).
+- Option A: Time to cover 1 mile = 1 mile / 16 mph = 1/16 hours. Converting to minutes: (1/16) * 60 = 3.75 minutes. Option A is incorrect.
+- Option B: In 1 hour, the cyclist covers 16 miles. Option B is incorrect.
+- Option C: In 2 hours, distance = 16 mph * 2 hours = 32 miles. Option C is correct.
+- Option D: In 3 hours, distance = 16 mph * 3 hours = 48 miles. Option D is also correct.
+The question is flawed as it has two correct options (C and D). Assuming the intended key is C, it is a valid answer.",gemini:gemini-2.5-pro,17153,2,5,Incorrect,1,"Clarity: The question is fundamentally flawed because it has two correct answers (Options C and D). Both are direct and correct calculations from the premise, which makes the question ambiguous for a test-taker.
+Context Accuracy: The speed of 16 mph is a realistic and sustainable pace for a moderately fit cyclist on flat terrain. The context is accurate.
+Quality of Working: The generator's solution merely restates the definition of the speed (16 miles in one hour) and provides the relevant formula. It does not evaluate any of the options or show any steps to arrive at the specified key, C.
+Final Answer Accuracy: The generator's text does not select an answer. It only provides a basic explanation of the speed. Since it fails to identify the correct option (C), its answer is incorrect.","SYSTEM: You are a Grade 12 Mathematics teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 medium-difficulty computational MCQ from ONE of: algebra (functions/inverse/systems), trigonometry (identities/evaluation), basic calculus (limits/derivatives/simple integrals), or short statistics.
+• Use realistic numbers; round to 2 decimals when needed; avoid formal proofs.
+• Distractors must reflect typical mistakes (sign errors, wrong identities, derivative/limit rules, rounding).
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object.
+- Format:
+  [{""question"": ""..."", ""options"": [""..."",""..."",""..."",""...""], ""answer"": ""A"", ""solution"": ""...""}]
+- Fields:
+  * ""question"": one string.
+  * ""options"": array of 4 answer-choice strings.
+  * ""answer"": one of ""A"",""B"",""C"",""D"" (just the letter).
+  * ""solution"": short plain-text explanation (a few lines is fine).
+- No extra text before or after the JSON.
+- Do NOT use markdown, code fences, or LaTeX ($ or backslashes).
+USER: Topic: Mathematics. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: zero, over, semester, function, they, quadratic, flat, 90, worth, 3, 4, results, 2, high, discriminant, 100, three, equation, travels, covers, schooler, derivative, and, miles, certain, using, its, taking, maintains, algebra, tests, cyclist, what, 8, different, scored, given, exams, average, their, from, distance, coefficients, speed, that, mph, per, constant, hour, 85, approach, 12, each, points, ground, with, student, decreases, hill, has.
+- Do NOT print this list in the output."
+mathematics,phi,struktur1,10,12082,A cyclist maintains a steady speed of 16 miles per hour on flat terrain and covers distance 'd' without stopping for breaks.,24 miles,-8 miles,0 miles,32 miles,D,"To find the total distance covered, multiply the cyclist's speed by time. Assuming they ride at 16 mph continuously without interruption for 't' hours: Distance = Speed * Time => d = 16 * t.","The question is unsolvable as it is missing a crucial piece of information: the time ('t') for which the cyclist rides. The relationship is distance = speed × time.
+Given the speed is 16 mph, the distance 'd' is calculated as d = 16 * t.
+Since 't' is unknown, 'd' cannot be determined from the provided text.
+However, if we assume the intended time was 2 hours, which is a common duration in such problems, the calculation would be:
+d = 16 miles/hour * 2 hours = 32 miles.
+This matches the provided key (D).",gemini:gemini-2.5-pro,19447,0,4.5,Incorrect,1,"Clarity: The question is fundamentally flawed. It's an incomplete statement that lacks the necessary data (time) to calculate the distance 'd'. It is impossible to solve without making an assumption.
+Context Accuracy: The context is realistic. 16 mph is a very reasonable steady speed for a cyclist on flat terrain, and the distances are plausible for a ride.
+Quality of Working: The generator's solution only provides the general formula (d = 16 * t). It does not solve the problem, address the missing information, or explain how one would arrive at the specific answer of 32 miles.
+Final Answer Accuracy: The generator's output is an algebraic formula, not a numerical answer. It does not select or justify the key (D), so it fails to solve the question.","SYSTEM: You are a Grade 12 Mathematics teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 medium-difficulty computational MCQ from ONE of: algebra (functions/inverse/systems), trigonometry (identities/evaluation), basic calculus (limits/derivatives/simple integrals), or short statistics.
+• Use realistic numbers; round to 2 decimals when needed; avoid formal proofs.
+• Distractors must reflect typical mistakes (sign errors, wrong identities, derivative/limit rules, rounding).
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object.
+- Format:
+  [{""question"": ""..."", ""options"": [""..."",""..."",""..."",""...""], ""answer"": ""A"", ""solution"": ""...""}]
+- Fields:
+  * ""question"": one string.
+  * ""options"": array of 4 answer-choice strings.
+  * ""answer"": one of ""A"",""B"",""C"",""D"" (just the letter).
+  * ""solution"": short plain-text explanation (a few lines is fine).
+- No extra text before or after the JSON.
+- Do NOT use markdown, code fences, or LaTeX ($ or backslashes).
+USER: Topic: Mathematics. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: zero, over, semester, function, they, quadratic, flat, 90, worth, 3, 4, results, 2, high, discriminant, 100, three, equation, travels, covers, schooler, derivative, and, miles, certain, using, its, taking, maintains, algebra, tests, cyclist, what, 8, different, steady, 16, scored, given, exams, average, their, terrain, from, distance, coefficients, speed, that, mph, per, constant, hour, 85, approach, 12, each, points, ground, with, student, decreases, hill, has.
+- Do NOT print this list in the output."
+mathematics,phi,struktur1,11,23951,A cyclist maintains an average speed of 16 miles per hour on a flat terrain without wind resistance for two hours straight.,A) The cyclist covers exactly 32 miles,B) The distance covered cannot be determined with the given information,C) The cyclist would cover less than 30 miles due to fatigue over time,D) The speed of the cyclist will decrease after two hours,A,"The question provides all necessary details for a straightforward calculation. Since distance equals rate times time, and both are given as constant values (16 mph and 2 hours), multiplying these gives us exactly 32 miles covered.","The problem asks for the total distance covered by a cyclist. The relationship between distance, speed, and time is given by the formula: Distance = Speed × Time.
+The given average speed is 16 miles per hour.
+The given time is 2 hours.
+Therefore, the distance covered is 16 miles/hour * 2 hours = 32 miles.
+This corresponds to option A.",gemini:gemini-2.5-pro,26196,5,5,Correct,5,"Clarity: The question is perfectly clear. It provides an average speed and a duration, making the calculation straightforward. The options are distinct.
+Context Accuracy: The scenario is realistic. An average speed of 16 mph for two hours is a plausible performance for a reasonably fit amateur cyclist.
+Quality of Working: The generator's solution is concise and correct. It correctly identifies the formula (distance = rate × time) and applies the given values to find the answer.
+Final Answer Accuracy: The generator's reasoning leads to the correct answer of 32 miles, which matches the provided key (A).","SYSTEM: You are a Grade 12 Mathematics teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 medium-difficulty computational MCQ from ONE of: algebra (functions/inverse/systems), trigonometry (identities/evaluation), basic calculus (limits/derivatives/simple integrals), or short statistics.
+• Use realistic numbers; round to 2 decimals when needed; avoid formal proofs.
+• Distractors must reflect typical mistakes (sign errors, wrong identities, derivative/limit rules, rounding).
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object.
+- Format:
+  [{""question"": ""..."", ""options"": [""..."",""..."",""..."",""...""], ""answer"": ""A"", ""solution"": ""...""}]
+- Fields:
+  * ""question"": one string.
+  * ""options"": array of 4 answer-choice strings.
+  * ""answer"": one of ""A"",""B"",""C"",""D"" (just the letter).
+  * ""solution"": short plain-text explanation (a few lines is fine).
+- No extra text before or after the JSON.
+- Do NOT use markdown, code fences, or LaTeX ($ or backslashes).
+USER: Topic: Mathematics. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: zero, over, semester, function, they, quadratic, flat, 90, worth, 3, 4, results, 2, high, discriminant, 100, three, equation, travels, covers, schooler, derivative, and, miles, certain, using, its, taking, maintains, algebra, tests, cyclist, what, 8, different, steady, 16, scored, given, exams, average, their, terrain, from, distance, coefficients, speed, that, mph, per, constant, hour, 85, approach, 12, each, points, ground, with, student, decreases, hill, has.
+- Do NOT print this list in the output."
+mathematics,phi,struktur1,12,33808,"A cyclist rides at a steady speed of 8 mph for an hour and then increases their pace to ride uphill with half that speed until they cover exactly two miles more than what was covered on flat ground. If the hill is twice as steep, requiring double the effort (speed) compared to when not going uphill, how many minutes did it take them in total?",A: 75 minutes,B: 80 minutes,C: 90 minutes,D: 120 minutes,B,"On flat ground, the cyclist covers (8) miles in an hour. Going uphill at half speed (4 mph), they would cover twice as far to maintain distance since it's steeper and requires double effort: 2 hours on hill which is equivalent to one hour of riding on flat ground, covering a total of (8 + 16 = 24) miles. The cyclist has already spent an hour (60 minutes), so the remaining time taken uphill for 16 miles at 4 mph would be 4 hours or 240 minutes.","Part 1 (flat ground): The cyclist travels at 8 mph for 1 hour, covering a distance of 8 miles. The time taken is 60 minutes.
+Part 2 (uphill): The speed is halved to 4 mph. The condition ""until they cover exactly two miles more than what was covered on flat ground"" is ambiguous. Interpreting this as the uphill distance being 2 miles (making the total distance 10 miles), the time for this part is calculated.
+Time for Part 2 = Distance / Speed = 2 miles / 4 mph = 0.5 hours.
+0.5 hours is equal to 30 minutes.
+Total time = Time for Part 1 + Time for Part 2 = 60 minutes + 30 minutes = 90 minutes.
+This corresponds to option C. The provided key (B) appears to be incorrect.",gemini:gemini-2.5-pro,38353,0.5,2,Incorrect,0,"Clarity: The question is extremely unclear. It contains a direct contradiction ('increases their pace' vs 'half that speed'), a nonsensical phrase ('requiring double the effort (speed)'), and a critically ambiguous distance condition.
+Context Accuracy: The cycling speeds (8 mph and 4 mph) are realistic. However, the physics described ('double the effort (speed)') is nonsensical and incorrect.
+Quality of Working: The generator's solution is completely flawed. It ignores the distance condition given in the problem, invents its own illogical rules ('cover twice as far to maintain distance'), and calculates a time (240 minutes) that does not correspond to any of the options.
+Final Answer Accuracy: The generator's reasoning is nonsensical and does not lead to the provided key (B: 80 minutes). My own analysis shows that the most plausible interpretation of the flawed question leads to 90 minutes (C), making the provided key incorrect.","SYSTEM: You are a Grade 12 Mathematics teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 medium-difficulty computational MCQ from ONE of: algebra (functions/inverse/systems), trigonometry (identities/evaluation), basic calculus (limits/derivatives/simple integrals), or short statistics.
+• Use realistic numbers; round to 2 decimals when needed; avoid formal proofs.
+• Distractors must reflect typical mistakes (sign errors, wrong identities, derivative/limit rules, rounding).
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object.
+- Format:
+  [{""question"": ""..."", ""options"": [""..."",""..."",""..."",""...""], ""answer"": ""A"", ""solution"": ""...""}]
+- Fields:
+  * ""question"": one string.
+  * ""options"": array of 4 answer-choice strings.
+  * ""answer"": one of ""A"",""B"",""C"",""D"" (just the letter).
+  * ""solution"": short plain-text explanation (a few lines is fine).
+- No extra text before or after the JSON.
+- Do NOT use markdown, code fences, or LaTeX ($ or backslashes).
+USER: Topic: Mathematics. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: zero, over, semester, function, they, quadratic, flat, 90, worth, 3, 4, results, 2, high, discriminant, 100, three, equation, travels, covers, schooler, derivative, and, miles, certain, using, its, taking, maintains, algebra, tests, cyclist, what, 8, different, steady, 16, scored, given, exams, average, their, terrain, from, distance, coefficients, speed, that, mph, per, constant, hour, 85, approach, 12, each, points, ground, with, student, decreases, hill, has.
+- Do NOT print this list in the output."
+mathematics,phi,struktur1,13,63115,A cyclist travels at a steady speed of 16 mph on flat terrain for an average distance per hour.,24 miles,32 miles,48 miles,56 miles,B,"To find the total distance traveled, multiply the cyclist's speed by the time spent traveling. At 16 mph for one hour, the cyclist covers a distance of ( 16 imes 1 = 16 ) miles.","The question asks for the distance traveled by a cyclist at a speed of 16 mph. The time duration is given by the nonsensical phrase ""for an average distance per hour"". If we interpret this as ""for one hour"", the distance is 16 miles/hour * 1 hour = 16 miles. This answer is not among the options.
+
+Given the options, the question likely intended to specify a different time. For option B (32 miles) to be correct, the time would need to be 32 miles / 16 mph = 2 hours. The question is fundamentally flawed and unsolvable as written.",gemini:gemini-2.5-pro,15838,0,4,Incorrect,2,"Clarity: The question is incomprehensible. The phrase ""for an average distance per hour"" is not a valid duration of time, making it impossible to solve the problem without guessing the intended time period.
+
+Context Accuracy: The context of a cyclist traveling at 16 mph on flat terrain is realistic and physically sound. This is a reasonable speed for an amateur cyclist.
+
+Quality of Working: The generator correctly interprets ""per hour"" to mean a time of 1 hour and correctly calculates the distance as 16 miles. However, it fails to notice that this answer is not among the options and does not match the provided key (B, 32 miles). It solves a literal, but nonsensical, interpretation of the question rather than deducing the intended problem.
+
+Final Answer Accuracy: The generator's calculated answer is 16 miles. The provided key is B, which corresponds to 32 miles. Therefore, the generator's answer is incorrect.","SYSTEM: You are a Grade 12 Mathematics teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 medium-difficulty computational MCQ from ONE of: algebra (functions/inverse/systems), trigonometry (identities/evaluation), basic calculus (limits/derivatives/simple integrals), or short statistics.
+• Use realistic numbers; round to 2 decimals when needed; avoid formal proofs.
+• Distractors must reflect typical mistakes (sign errors, wrong identities, derivative/limit rules, rounding).
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object.
+- Format:
+  [{""question"": ""..."", ""options"": [""..."",""..."",""..."",""...""], ""answer"": ""A"", ""solution"": ""...""}]
+- Fields:
+  * ""question"": one string.
+  * ""options"": array of 4 answer-choice strings.
+  * ""answer"": one of ""A"",""B"",""C"",""D"" (just the letter).
+  * ""solution"": short plain-text explanation (a few lines is fine).
+- No extra text before or after the JSON.
+- Do NOT use markdown, code fences, or LaTeX ($ or backslashes).
+USER: Topic: Mathematics. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: zero, over, semester, function, they, quadratic, flat, 90, worth, 3, 4, results, 2, high, discriminant, 100, three, equation, for, travels, covers, schooler, derivative, and, miles, certain, rides, using, its, taking, maintains, algebra, tests, cyclist, what, 8, different, steady, 16, scored, given, exams, average, their, terrain, from, distance, then, coefficients, speed, that, mph, per, constant, hour, 85, approach, 12, each, points, ground, with, student, decreases, hill, has.
+- Do NOT print this list in the output."
+mathematics,phi,struktur1,14,34748,A cyclist maintains a steady speed of 16 mph on flat terrain and then encounters an uphill section where their average speed drops to half due to difficulty.,The time taken for each segment is the same,It takes twice as long to cover the hill than it would take without any hills,Uphill segments always double travel times regardless of initial speeds,Speed on flat terrain has no impact on uphill speed,B,"The time taken for each segment is not necessarily the same because when going uphill, the cyclist's average speed drops to half. Therefore, it will take twice as long to cover a distance that would have normally been covered in 1 hour on flat terrain.","Let the flat speed be v_flat = 16 mph. The uphill speed is v_uphill = 16 / 2 = 8 mph. To analyze the options, consider a fixed distance 'd', representing the length of the hill. The time to cover this distance uphill is t_uphill = d / v_uphill = d / 8. The time it would take to cover this same distance on flat terrain is t_flat = d / v_flat = d / 16. Comparing the two times, t_uphill / t_flat = (d/8) / (d/16) = 16/8 = 2. This means it takes twice as long to cover the hill compared to covering the same distance on flat terrain. This directly corresponds to option B.",gemini:gemini-2.5-pro,21054,3.5,5,Correct,5,"Clarity: The question is understandable, but the term 'segment' in option A is ambiguous. The intent becomes clearer upon reading all options, specifically option B which frames the comparison correctly.
+Context Accuracy: The speeds provided are realistic for a recreational cyclist. A steady 16 mph on flat terrain and dropping to 8 mph on a hill is a very plausible scenario.
+Quality of Working: The generator's reasoning is sound. It correctly identifies the inverse relationship between speed and time (halving speed doubles time) and provides a clear example to illustrate this.
+Final Answer Accuracy: The generator's logic correctly supports option B, which is the correct answer based on the information given in the question.","SYSTEM: You are a Grade 12 Mathematics teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 medium-difficulty computational MCQ from ONE of: algebra (functions/inverse/systems), trigonometry (identities/evaluation), basic calculus (limits/derivatives/simple integrals), or short statistics.
+• Use realistic numbers; round to 2 decimals when needed; avoid formal proofs.
+• Distractors must reflect typical mistakes (sign errors, wrong identities, derivative/limit rules, rounding).
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object.
+- Format:
+  [{""question"": ""..."", ""options"": [""..."",""..."",""..."",""...""], ""answer"": ""A"", ""solution"": ""...""}]
+- Fields:
+  * ""question"": one string.
+  * ""options"": array of 4 answer-choice strings.
+  * ""answer"": one of ""A"",""B"",""C"",""D"" (just the letter).
+  * ""solution"": short plain-text explanation (a few lines is fine).
+- No extra text before or after the JSON.
+- Do NOT use markdown, code fences, or LaTeX ($ or backslashes).
+USER: Topic: Mathematics. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: zero, over, semester, function, they, quadratic, flat, 90, worth, 3, 4, results, 2, high, discriminant, 100, three, equation, for, travels, covers, schooler, derivative, and, miles, certain, rides, using, its, taking, maintains, algebra, tests, cyclist, what, 8, different, steady, 16, scored, given, exams, average, their, terrain, from, distance, then, coefficients, speed, that, mph, per, constant, hour, 85, approach, 12, each, points, ground, with, student, decreases, hill, has.
+- Do NOT print this list in the output."
+mathematics,phi,struktur1,15,5648,A cyclist maintains an average speed of 8 mph for a journey covering flat terrain from point A to B over a distance that takes her exactly half an hour.,2 miles,4 miles,6 miles,8 miles,B,"To find the total distance, multiply average speed by time. Distance = Speed x Time = 8 mph x 0.5 hours = 4 miles.","The relationship between distance, speed, and time is given by the formula: Distance = Speed × Time.
+The given average speed is 8 miles per hour (mph).
+The given time is half an hour, which is 0.5 hours.
+Substituting the values into the formula:
+Distance = 8 mph × 0.5 hours
+Distance = 4 miles.",gemini:gemini-2.5-pro,13586,4.5,4,Correct,5,"Clarity: The question is clear and provides all necessary information. The phrasing ""a distance that takes her exactly half an hour"" is slightly awkward but understandable.
+Context Accuracy: The context of a cyclist is realistic. An average speed of 8 mph is on the slow side for a cyclist on flat terrain, but it is a plausible speed for a casual ride.
+Quality of Working: The generator's solution correctly identifies the formula, substitutes the given values, and performs the calculation accurately. The reasoning is sound and concise.
+Final Answer Accuracy: The generator's final answer of 4 miles is correct.","SYSTEM: You are a Grade 12 Mathematics teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 medium-difficulty computational MCQ from ONE of: algebra (functions/inverse/systems), trigonometry (identities/evaluation), basic calculus (limits/derivatives/simple integrals), or short statistics.
+• Use realistic numbers; round to 2 decimals when needed; avoid formal proofs.
+• Distractors must reflect typical mistakes (sign errors, wrong identities, derivative/limit rules, rounding).
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object.
+- Format:
+  [{""question"": ""..."", ""options"": [""..."",""..."",""..."",""...""], ""answer"": ""A"", ""solution"": ""...""}]
+- Fields:
+  * ""question"": one string.
+  * ""options"": array of 4 answer-choice strings.
+  * ""answer"": one of ""A"",""B"",""C"",""D"" (just the letter).
+  * ""solution"": short plain-text explanation (a few lines is fine).
+- No extra text before or after the JSON.
+- Do NOT use markdown, code fences, or LaTeX ($ or backslashes).
+USER: Topic: Mathematics. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: zero, over, semester, function, they, quadratic, flat, 90, worth, 3, 4, results, 2, high, discriminant, 100, three, equation, for, travels, covers, schooler, derivative, and, miles, certain, rides, using, its, taking, maintains, algebra, tests, cyclist, what, 8, different, steady, 16, scored, given, exams, average, their, terrain, from, distance, then, coefficients, speed, that, mph, per, constant, hour, 85, approach, 12, each, points, ground, with, student, decreases, hill, has.
+- Do NOT print this list in the output."
+mathematics,phi,struktur1,16,30052,A cyclist covers a certain distance at an average speed of 85 mph and takes exactly one hour to complete it.,27 miles,30 miles,40 miles,160 miles,B,"The total distance covered is found by multiplying the speed (85 mph) with time taken (1 hour), which equals 85 miles. The closest option to this value without going over is B, 30 miles.","The relationship between distance, speed, and time is given by the formula: Distance = Speed × Time.
+Given:
+Speed = 85 mph
+Time = 1 hour
+
+Calculation:
+Distance = 85 miles/hour × 1 hour = 85 miles.
+
+None of the provided options (27, 30, 40, 160 miles) match the calculated answer of 85 miles. The question is flawed.",gemini:gemini-2.5-pro,12251,2,0,Incorrect,1,"Clarity: The question's text is clear, but it is fundamentally flawed as none of the options match the calculated answer (85 miles). This makes the question unsolvable as written.
+Context Accuracy: An average speed of 85 mph for a cyclist is physically impossible. The world record for a one-hour ride is around 35 mph. This value is extremely unrealistic.
+Quality of Working: The generator correctly calculates the distance as 85 miles. However, its reasoning for choosing option B (""closest option... without going over"") is illogical and incorrect. 40 miles is closer to 85 than 30 miles is.
+Final Answer Accuracy: The correct answer based on the problem's data is 85 miles. The generator selected 30 miles (Option B), which is incorrect. The provided key is also incorrect.","SYSTEM: You are a Grade 12 Mathematics teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 medium-difficulty computational MCQ from ONE of: algebra (functions/inverse/systems), trigonometry (identities/evaluation), basic calculus (limits/derivatives/simple integrals), or short statistics.
+• Use realistic numbers; round to 2 decimals when needed; avoid formal proofs.
+• Distractors must reflect typical mistakes (sign errors, wrong identities, derivative/limit rules, rounding).
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object.
+- Format:
+  [{""question"": ""..."", ""options"": [""..."",""..."",""..."",""...""], ""answer"": ""A"", ""solution"": ""...""}]
+- Fields:
+  * ""question"": one string.
+  * ""options"": array of 4 answer-choice strings.
+  * ""answer"": one of ""A"",""B"",""C"",""D"" (just the letter).
+  * ""solution"": short plain-text explanation (a few lines is fine).
+- No extra text before or after the JSON.
+- Do NOT use markdown, code fences, or LaTeX ($ or backslashes).
+USER: Topic: Mathematics. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: zero, over, semester, function, they, quadratic, flat, 90, worth, 3, 4, results, 2, high, discriminant, 100, three, equation, for, travels, covers, schooler, derivative, and, miles, certain, rides, using, its, taking, maintains, algebra, tests, cyclist, what, 8, different, steady, 16, scored, given, covering, exams, average, their, terrain, from, distance, then, coefficients, speed, that, mph, journey, per, constant, hour, 85, approach, 12, each, points, ground, with, student, decreases, hill, has.
+- Do NOT print this list in the output."
+mathematics,phi,struktur1,17,13739,A cyclist maintains an average speed of 16 mph on a journey covering distance between two towns.,24 miles,30 miles,35 miles,40 miles,B,"To find the time taken for the trip, divide the total distance by the speed. Time = Distance/Speed; assuming a round-trip journey (going and returning), we double the one-way distance traveled at 16 mph to get an average of two equal distances.","The question is unsolvable as it provides insufficient information. The relationship between distance, speed, and time is Distance = Speed × Time. The question gives the average speed (16 mph) but does not provide the time taken for the journey. Without the time, the distance cannot be calculated. Therefore, it is impossible to determine which of the options is correct.",gemini:gemini-2.5-pro,18302,0,5,Incorrect,0,"Clarity: The question is critically flawed. It's an incomplete statement that provides a speed but omits the travel time, making it impossible to solve for distance.
+Context Accuracy: The context is realistic. An average speed of 16 mph is a reasonable pace for a cyclist, and the distances are plausible for a journey between towns.
+Quality of Working: The generator's solution is nonsensical. It introduces a correct formula (Time = Distance/Speed) but cannot use it. It then makes a bizarre, irrelevant assumption about a round trip that does not help solve the problem. It fails to produce any answer.
+Final Answer Accuracy: The generator's working does not lead to the provided key ('B' - 30 miles) or any numerical answer at all. Since the question is unsolvable, the key is arbitrary and cannot be derived.","SYSTEM: You are a Grade 12 Mathematics teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 medium-difficulty computational MCQ from ONE of: algebra (functions/inverse/systems), trigonometry (identities/evaluation), basic calculus (limits/derivatives/simple integrals), or short statistics.
+• Use realistic numbers; round to 2 decimals when needed; avoid formal proofs.
+• Distractors must reflect typical mistakes (sign errors, wrong identities, derivative/limit rules, rounding).
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object.
+- Format:
+  [{""question"": ""..."", ""options"": [""..."",""..."",""..."",""...""], ""answer"": ""A"", ""solution"": ""...""}]
+- Fields:
+  * ""question"": one string.
+  * ""options"": array of 4 answer-choice strings.
+  * ""answer"": one of ""A"",""B"",""C"",""D"" (just the letter).
+  * ""solution"": short plain-text explanation (a few lines is fine).
+- No extra text before or after the JSON.
+- Do NOT use markdown, code fences, or LaTeX ($ or backslashes).
+USER: Topic: Mathematics. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: zero, over, takes, semester, function, they, quadratic, flat, 90, worth, 3, 4, results, 2, high, discriminant, 100, three, equation, for, travels, covers, schooler, derivative, and, miles, certain, rides, using, its, taking, maintains, algebra, tests, cyclist, what, 8, different, steady, 16, scored, given, covering, exams, average, their, terrain, from, distance, then, coefficients, speed, that, mph, journey, per, constant, hour, 85, approach, 12, each, points, ground, with, student, decreases, hill, has.
+- Do NOT print this list in the output."
+mathematics,phi,struktur1,18,42938,A cyclist covers a certain distance at an average speed of 8 mph and then returns over the same path at an average speed of 12 mph.,The round trip took less than 3 hours,The round trip took more than 4.5 hours,The total time spent on the journey was exactly 6 hours,It is impossible to determine without knowing the distance.,A,"To find out if the statement 'The round trip took less than 3 hours' can be true, we calculate the time for each leg of the trip. The first part at 8 mph and back at 12 mph means that on average: Total speed = (8 + 12) / 2 = 10 mph. Time taken is distance/speed; since it's a round trip, we assume D miles one way for simplicity. Thus total time T = Distance/Average Speed = D/10 hours each leg means the whole journey takes 2D/10 or D/5 hours in total. For any realistic non-zero distance 'D', this will always be less than 3 hours, making option A correct.","Let the one-way distance be d miles.
+The time taken for the first leg is t1 = d/8 hours.
+The time taken for the return leg is t2 = d/12 hours.
+The total time for the round trip is T = t1 + t2 = d/8 + d/12.
+Finding a common denominator (24), T = (3d/24) + (2d/24) = 5d/24.
+The total time T is directly proportional to the distance d. Since d is unknown, the total time cannot be determined. For example, if d=12 miles, T=2.5 hours (<3). If d=48 miles, T=10 hours (>4.5). Therefore, it is impossible to determine the time without knowing the distance.",gemini:gemini-2.5-pro,31883,1,4,Incorrect,0,"Clarity: The question is fundamentally flawed. The total time is a function of the distance, which is not given. This makes it impossible to select options A, B, or C as a definitive truth. The only logically sound option is D, but the provided key is A, indicating a poorly constructed question.
+Context Accuracy: The context of a cyclist and the average speeds of 8 mph and 12 mph are realistic and plausible for a casual bike ride.
+Quality of Working: The generator's reasoning is completely incorrect. It uses the arithmetic mean for average speed, which is a classic error; the harmonic mean is required. It then makes a baseless assertion that the time will 'always be less than 3 hours' without any justification, a claim which is demonstrably false.
+Final Answer Accuracy: The only logically defensible answer is D, as the time depends on the unknown distance. The generator arrives at the incorrect answer A through a chain of flawed reasoning and mathematical errors.","SYSTEM: You are a Grade 12 Mathematics teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 medium-difficulty computational MCQ from ONE of: algebra (functions/inverse/systems), trigonometry (identities/evaluation), basic calculus (limits/derivatives/simple integrals), or short statistics.
+• Use realistic numbers; round to 2 decimals when needed; avoid formal proofs.
+• Distractors must reflect typical mistakes (sign errors, wrong identities, derivative/limit rules, rounding).
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object.
+- Format:
+  [{""question"": ""..."", ""options"": [""..."",""..."",""..."",""...""], ""answer"": ""A"", ""solution"": ""...""}]
+- Fields:
+  * ""question"": one string.
+  * ""options"": array of 4 answer-choice strings.
+  * ""answer"": one of ""A"",""B"",""C"",""D"" (just the letter).
+  * ""solution"": short plain-text explanation (a few lines is fine).
+- No extra text before or after the JSON.
+- Do NOT use markdown, code fences, or LaTeX ($ or backslashes).
+USER: Topic: Mathematics. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: zero, between, over, takes, semester, function, they, quadratic, flat, 90, worth, 3, 4, results, 2, high, discriminant, 100, three, equation, for, travels, covers, schooler, derivative, and, miles, certain, rides, using, its, taking, maintains, algebra, tests, cyclist, what, 8, different, steady, 16, scored, given, covering, exams, average, their, terrain, from, distance, then, coefficients, speed, that, mph, journey, per, constant, hour, 85, approach, 12, each, points, ground, with, student, decreases, hill, has.
+- Do NOT print this list in the output."
+mathematics,phi,struktur1,19,27983,A cyclist maintains a steady speed of 16 mph on level terrain and rides uphill for an hour before descending at twice that rate downhill.,The total distance covered is A) 32 miles,B) 48 miles,C) 64 miles,D) 96 miles,C,"Uphill speed: 16 mph, Downhill speed: 32 mph. Uphill distance = Speed * Time = 16 mph * 1 hour = 16 miles. Total downhill time is also 1 hour (since it's twice the uphill rate but for half the distance). So, total downhill distance = Downhill speed * Time = 32 mph * 1 hour = 32 miles. Combined with uphill, we get a grand total of 16 + 32 = 48 miles.","The question is critically ambiguous. Assuming the ""16 mph"" refers to the uphill speed:
+Uphill distance = 16 mph * 1 hour = 16 miles.
+Downhill speed = 2 * 16 mph = 32 mph.
+
+Two common interpretations for the descent exist:
+1) Descending the same hill: Downhill distance = 16 miles. Total distance = 16 + 16 = 32 miles (Option A).
+2) Descending for the same amount of time: Downhill distance = 32 mph * 1 hour = 32 miles. Total distance = 16 + 32 = 48 miles (Option B).
+
+The provided key, C (64 miles), is not reachable through any reasonable interpretation of the problem statement.",gemini:gemini-2.5-pro,34461,0.5,4,Incorrect,1.5,"Clarity: The prompt is a sentence fragment, not a question. It is missing essential information (e.g., the duration or distance of the descent) and is ambiguous about whether the 16 mph speed applies to level terrain or the uphill portion, making it unsolvable without significant assumptions.
+Context Accuracy: The speeds themselves (16 mph, 32 mph) are plausible for a cyclist. However, it is physically unrealistic for a cyclist's speed on level terrain to be the same as their speed going uphill.
+Quality of Working: The generator makes an assumption that the downhill time is also one hour. While this is one possible way to resolve the ambiguity, the provided justification (""since it's twice the uphill rate but for half the distance"") is illogical and self-contradictory. The subsequent arithmetic is correct based on this flawed premise.
+Final Answer Accuracy: The generator's calculated answer is 48 miles (Option B). The provided key is C (64 miles). The generator's answer is incorrect relative to the key. The key itself appears to be incorrect as it is not derivable from the problem.","SYSTEM: You are a Grade 12 Mathematics teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 medium-difficulty computational MCQ from ONE of: algebra (functions/inverse/systems), trigonometry (identities/evaluation), basic calculus (limits/derivatives/simple integrals), or short statistics.
+• Use realistic numbers; round to 2 decimals when needed; avoid formal proofs.
+• Distractors must reflect typical mistakes (sign errors, wrong identities, derivative/limit rules, rounding).
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object.
+- Format:
+  [{""question"": ""..."", ""options"": [""..."",""..."",""..."",""...""], ""answer"": ""A"", ""solution"": ""...""}]
+- Fields:
+  * ""question"": one string.
+  * ""options"": array of 4 answer-choice strings.
+  * ""answer"": one of ""A"",""B"",""C"",""D"" (just the letter).
+  * ""solution"": short plain-text explanation (a few lines is fine).
+- No extra text before or after the JSON.
+- Do NOT use markdown, code fences, or LaTeX ($ or backslashes).
+USER: Topic: Mathematics. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: zero, between, over, takes, semester, function, they, quadratic, flat, 90, worth, 3, 4, results, 2, high, discriminant, 100, three, equation, for, travels, covers, schooler, derivative, and, miles, certain, rides, using, its, taking, maintains, algebra, tests, cyclist, what, 8, different, steady, 16, scored, given, covering, exams, average, their, terrain, from, distance, then, coefficients, speed, that, mph, journey, per, constant, hour, 85, approach, 12, each, points, ground, with, student, decreases, hill, has.
+- Do NOT print this list in the output."
+mathematics,phi,struktur1,20,37680,A cyclist maintains an average speed of 16 mph on a journey covering hills and flat terrain.,8 hours,4 hours,2 hours,3 hours,C,"To find the time, divide the distance by the average speed. Assuming the cyclist travels at an uninterrupted pace of 16 mph without stops or changes in terrain affecting speed: Time = Distance / Speed. Without a given distance, we assume it's consistent and can be represented as 'D'. Therefore, if D is divided by 16 (mph), the time T will equal to that result.","The problem is unsolvable as it is incomplete. It provides the average speed (16 mph) and the options are time values. The relationship is Time = Distance / Speed. To calculate the time, the distance of the journey is required, but it is not provided in the question. Any of the options could be correct depending on the distance. For the key 'C' (2 hours) to be correct, the distance would have to be 32 miles (Time = 32 miles / 16 mph = 2 hours), but this is not stated.",gemini:gemini-2.5-pro,17073,0,5,Incorrect,5,"Clarity: The prompt is not a question, but an incomplete statement. It lacks a question (e.g., ""How long did the journey take?"") and is missing the essential data (distance) required to solve for time.
+Context Accuracy: The context is realistic. An average speed of 16 mph is a very plausible speed for a moderately fit cyclist on a journey with varied terrain.
+Quality of Working: The generator's reasoning is perfectly sound. It correctly identifies the formula (Time = Distance / Speed) and correctly notes that the problem cannot be solved because the distance is not given.
+Final Answer Accuracy: The generator does not select an answer, correctly implying the question is unsolvable. This does not match the provided key 'C'. Therefore, judged against the key, the generator's answer is incorrect.","SYSTEM: You are a Grade 12 Mathematics teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 medium-difficulty computational MCQ from ONE of: algebra (functions/inverse/systems), trigonometry (identities/evaluation), basic calculus (limits/derivatives/simple integrals), or short statistics.
+• Use realistic numbers; round to 2 decimals when needed; avoid formal proofs.
+• Distractors must reflect typical mistakes (sign errors, wrong identities, derivative/limit rules, rounding).
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object.
+- Format:
+  [{""question"": ""..."", ""options"": [""..."",""..."",""..."",""...""], ""answer"": ""A"", ""solution"": ""...""}]
+- Fields:
+  * ""question"": one string.
+  * ""options"": array of 4 answer-choice strings.
+  * ""answer"": one of ""A"",""B"",""C"",""D"" (just the letter).
+  * ""solution"": short plain-text explanation (a few lines is fine).
+- No extra text before or after the JSON.
+- Do NOT use markdown, code fences, or LaTeX ($ or backslashes).
+USER: Topic: Mathematics. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: zero, between, over, takes, semester, function, they, quadratic, level, flat, 90, worth, 3, 4, results, 2, high, discriminant, 100, three, equation, for, travels, covers, schooler, derivative, and, miles, certain, rides, using, its, taking, maintains, algebra, tests, cyclist, what, 8, different, steady, 16, scored, given, covering, exams, average, their, terrain, from, distance, then, coefficients, speed, that, mph, journey, per, constant, hour, 85, approach, 12, each, points, ground, with, student, decreases, hill, has.
+- Do NOT print this list in the output."
+mathematics,phi,struktur1,21,14974,A cyclist maintains an average speed of 'x' miles per hour on a journey covering different steady terrains and hills over varying distances.,2.5 mph,-1.0 mph,8.75 mph,6.25 mph,B,"To find the correct speed, we must consider that a cyclist's average speed is typically positive and realistic for covering different terrains in one hour of travel time.","The question asks for a possible value for 'x', an average speed. Speed is a scalar quantity, defined as distance divided by time. Both distance and time are non-negative values in this physical context. Therefore, speed cannot be negative. Among the given options, -1.0 mph is a negative value, making it a physically impossible speed. The other options are all positive and represent plausible, albeit slow, cycling speeds. The question is likely asking to identify the impossible value.",gemini:gemini-2.5-pro,14275,0.5,4,Correct,3,"Clarity: The item is a statement followed by options, not a question. The user must infer the actual question (e.g., 'Which of the following is an impossible speed?') from the options and the provided key.
+Context Accuracy: The context of a cyclist's average speed is realistic. The positive values provided are plausible speeds for a cyclist on varied terrain.
+Quality of Working: The generator's reasoning is sound in principle, noting that speed should be positive and realistic. However, the phrasing 'typically positive' is weak; speed is by definition always non-negative.
+Final Answer Accuracy: The generator's reasoning correctly identifies that a negative speed is impossible, which aligns with the provided key 'B'.","SYSTEM: You are a Grade 12 Mathematics teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 medium-difficulty computational MCQ from ONE of: algebra (functions/inverse/systems), trigonometry (identities/evaluation), basic calculus (limits/derivatives/simple integrals), or short statistics.
+• Use realistic numbers; round to 2 decimals when needed; avoid formal proofs.
+• Distractors must reflect typical mistakes (sign errors, wrong identities, derivative/limit rules, rounding).
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object.
+- Format:
+  [{""question"": ""..."", ""options"": [""..."",""..."",""..."",""...""], ""answer"": ""A"", ""solution"": ""...""}]
+- Fields:
+  * ""question"": one string.
+  * ""options"": array of 4 answer-choice strings.
+  * ""answer"": one of ""A"",""B"",""C"",""D"" (just the letter).
+  * ""solution"": short plain-text explanation (a few lines is fine).
+- No extra text before or after the JSON.
+- Do NOT use markdown, code fences, or LaTeX ($ or backslashes).
+USER: Topic: Mathematics. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: zero, between, over, takes, semester, function, they, quadratic, level, flat, 90, worth, 3, 4, results, 2, high, discriminant, 100, three, equation, for, travels, covers, schooler, derivative, and, miles, certain, rides, using, its, taking, maintains, algebra, tests, cyclist, what, 8, different, steady, 16, scored, given, covering, exams, average, their, terrain, from, distance, then, coefficients, speed, that, mph, journey, per, constant, hour, 85, approach, 12, each, points, hills, ground, with, student, decreases, hill, has.
+- Do NOT print this list in the output."
+mathematics,phi,struktur1,22,37517,A cyclist covers a certain distance at an average speed of 8 mph and then returns over the same route at an average speed of 12 mph.,It takes less time to return than cover it initially,The total journey is faster due to increased speed on the way back,The cyclist spends more hours cycling in total because they are going slower,"The distance covered remains constant, but travel times for each leg differ",A,"It takes less time to return than cover it initially. Since the average speed is higher on the way back (12 mph vs 8 mph), and assuming no stops or changes in conditions, the cyclist will complete both legs of the trip more quickly.","Let the distance be 'd'.
+The time taken for the initial journey (t1) is distance/speed = d/8.
+The time taken for the return journey (t2) is distance/speed = d/12.
+Since the speed on the return journey (12 mph) is greater than the speed on the initial journey (8 mph), the time taken for the return journey will be less.
+Mathematically, since 12 > 8, it follows that d/12 < d/8, so t2 < t1.
+Therefore, it takes less time to return than to cover the distance initially.",gemini:gemini-2.5-pro,17778,2.5,5,Correct,1.5,"Clarity: The question is flawed because two options (A and D) are factually correct statements derived from the prompt. Option A is a more specific conclusion, but D is also undeniably true, creating ambiguity. Options B and C are poorly worded.
+Context Accuracy: The scenario of a cyclist and the given average speeds (8 mph and 12 mph) are entirely realistic and plausible.
+Quality of Working: The generator's reasoning starts correctly by linking higher speed to less time. However, it concludes with the confusing and incorrect phrase ""the cyclist will complete both legs of the trip more quickly"", which makes no sense.
+Final Answer Accuracy: The generator correctly identifies option A as the answer, which is the most likely intended key despite the question's flaws.","SYSTEM: You are a Grade 12 Mathematics teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 medium-difficulty computational MCQ from ONE of: algebra (functions/inverse/systems), trigonometry (identities/evaluation), basic calculus (limits/derivatives/simple integrals), or short statistics.
+• Use realistic numbers; round to 2 decimals when needed; avoid formal proofs.
+• Distractors must reflect typical mistakes (sign errors, wrong identities, derivative/limit rules, rounding).
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object.
+- Format:
+  [{""question"": ""..."", ""options"": [""..."",""..."",""..."",""...""], ""answer"": ""A"", ""solution"": ""...""}]
+- Fields:
+  * ""question"": one string.
+  * ""options"": array of 4 answer-choice strings.
+  * ""answer"": one of ""A"",""B"",""C"",""D"" (just the letter).
+  * ""solution"": short plain-text explanation (a few lines is fine).
+- No extra text before or after the JSON.
+- Do NOT use markdown, code fences, or LaTeX ($ or backslashes).
+USER: Topic: Mathematics. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: zero, between, over, takes, semester, function, they, quadratic, level, flat, 90, worth, 3, 4, results, 2, high, discriminant, 100, three, equation, for, travels, covers, schooler, derivative, and, miles, certain, rides, using, its, taking, maintains, algebra, tests, cyclist, what, 8, different, steady, 16, scored, given, covering, exams, average, their, terrain, from, distance, then, coefficients, speed, that, mph, journey, per, constant, hour, 85, approach, 12, each, points, hills, ground, with, student, decreases, hill, has.
+- Do NOT print this list in the output."
+mathematics,phi,struktur1,23,11475,"A cyclist travels a distance of 3 miles uphill at an average speed and then covers downhill for another mile on flat ground with twice their uphill speed, taking a total time of 1 hour to complete the journey. What is their uphill speed in mph?",0.5 mph,0.75 mph,1.25 mph,1.5 mph,B,"Let 'u' be the cyclist's uphill speed (mph). The downhill distance is twice as long, so it takes half of that time at double speed: ((2)/(3) u * 1 = (1)/(3) u + (1)/(2)(2u) * t_d), where 't_d' is the downhill traveling time. Since total distance equals sum of distances (uphill and downhill): (u*1 + (2/u)*(2)). The speed times time for both parts should equal 60 minutes: (u + (4)/(u) = t_d), so 't_d' equals to the uphill traveling time. Solving these equations gives us an answer of 1.25 mph.","Let the uphill speed be u (in mph). The speed on flat ground is 2u.
+The time taken to travel uphill is t_up = distance / speed = 3 / u.
+The time taken to travel on flat ground is t_flat = 1 / (2u).
+The total time is given as 1 hour.
+So, t_up + t_flat = 1.
+(3/u) + (1/(2u)) = 1.
+To solve for u, find a common denominator: (6/(2u)) + (1/(2u)) = 1.
+This simplifies to 7 / (2u) = 1, which means 2u = 7.
+Therefore, the uphill speed u = 3.5 mph. This answer is not among the options, indicating the question is flawed.",gemini:gemini-2.5-pro,31756,1,0.5,Incorrect,0,"Clarity: The question is poorly worded. The phrase ""covers downhill for another mile on flat ground"" is a contradiction, as a path cannot be both downhill and on flat ground simultaneously.
+Context Accuracy: The numerical values make the scenario physically impossible. For every speed listed in the options, the time required to complete the 3-mile uphill portion alone is greater than the total journey time of 1 hour.
+Quality of Working: The generator's solution is complete nonsense. It introduces incorrect facts (e.g., ""downhill distance is twice as long"") and uses formulas that are algebraically invalid and unrelated to the question's parameters.
+Final Answer Accuracy: The generator's answer is 1.25 mph. The correct answer derived from the problem statement is 3.5 mph. Since 3.5 mph is not an option, the question itself is flawed, but the generator's answer is still incorrect.","SYSTEM: You are a Grade 12 Mathematics teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 medium-difficulty computational MCQ from ONE of: algebra (functions/inverse/systems), trigonometry (identities/evaluation), basic calculus (limits/derivatives/simple integrals), or short statistics.
+• Use realistic numbers; round to 2 decimals when needed; avoid formal proofs.
+• Distractors must reflect typical mistakes (sign errors, wrong identities, derivative/limit rules, rounding).
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object.
+- Format:
+  [{""question"": ""..."", ""options"": [""..."",""..."",""..."",""...""], ""answer"": ""A"", ""solution"": ""...""}]
+- Fields:
+  * ""question"": one string.
+  * ""options"": array of 4 answer-choice strings.
+  * ""answer"": one of ""A"",""B"",""C"",""D"" (just the letter).
+  * ""solution"": short plain-text explanation (a few lines is fine).
+- No extra text before or after the JSON.
+- Do NOT use markdown, code fences, or LaTeX ($ or backslashes).
+USER: Topic: Mathematics. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: zero, between, over, takes, semester, function, they, quadratic, level, flat, 90, worth, 3, 4, results, 2, high, discriminant, 100, three, equation, for, travels, covers, schooler, derivative, and, miles, certain, rides, using, its, taking, maintains, algebra, tests, cyclist, what, 8, different, steady, 16, scored, given, covering, exams, average, their, terrain, from, distance, then, coefficients, speed, that, mph, journey, per, constant, hour, 85, approach, 12, each, points, hills, ground, with, student, decreases, hill, has.
+- Do NOT print this list in the output."
+mathematics,phi,struktur1,24,24443,"A cyclist covers a certain distance on flat terrain at an average speed of 8 mph and then takes another route uphill where each mile increases their elevation by 10 feet, maintaining this constant increase for the entire journey. If they cover twice as many miles downhill as uphill with speeds averaging to double while descending due to gravity alone at a consistent rate of acceleration without pedaling assistance and if it took them exactly one hour longer going up than coming back down, what is their average speed in mph for the entire journey?",8.5,17,24.5,36,B,"Let x be the uphill miles, then downhill is 2x miles and time taken for uphill = (distance/speed) + extra hour; thus: ((x)/(8) + 1 = t_u), where tu is total up-time. Downhill speed doubled to 16 mph, so downhill distance equals twice the uphill and time taken for downhill = (2x)/16 - extra hour; thus: (t_d = (2x)/(8) - 1). Total journey is x + 2x miles with total time tu+td, average speed = total distance/total time. Solve the equations to find that B (17 mph) is correct.","Let the uphill distance be x miles and the uphill speed be v_up. The problem states the downhill distance is 2x and the downhill speed is 2*v_up. The most plausible interpretation is that the uphill speed is the given 8 mph.
+- Uphill: distance = x, speed = 8 mph, time (t_up) = x/8.
+- Downhill: distance = 2x, speed = 2 * 8 = 16 mph, time (t_down) = 2x/16 = x/8.
+These calculations show that t_up = t_down.
+However, the problem also states that it took one hour longer going up than coming down (t_up = t_down + 1).
+Substituting t_up = t_down into this equation gives t_up = t_up + 1, which simplifies to 0 = 1. This is a logical contradiction, meaning the problem is ill-posed and has no solution.",gemini:gemini-2.5-pro,70819,0.5,1,Incorrect,0,"Clarity: The question is extremely unclear. The role of the '8 mph on flat terrain' is ambiguous, and there is irrelevant information (elevation gain, acceleration). Most critically, the premises given lead to a direct logical contradiction, making the question unsolvable.
+Context Accuracy: The physics described is unrealistic ('consistent rate of acceleration' does not lead to a constant average speed). The scenario where downhill distance is double the uphill distance and downhill speed is double the uphill speed is contrived and leads to the logical impossibility.
+Quality of Working: The generator's reasoning is completely flawed. It invents nonsensical equations for time (e.g., t_u = x/8 + 1) that do not reflect the problem statement (t_u = t_d + 1). Its equations are inconsistent with the problem and with each other, and they do not lead to the answer it claims is correct.
+Final Answer Accuracy: The generator's answer is incorrect. The question is unsolvable due to a logical contradiction. Furthermore, the generator's own flawed method does not calculate to 17 mph; it is a fabricated result.","SYSTEM: You are a Grade 12 Mathematics teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 medium-difficulty computational MCQ from ONE of: algebra (functions/inverse/systems), trigonometry (identities/evaluation), basic calculus (limits/derivatives/simple integrals), or short statistics.
+• Use realistic numbers; round to 2 decimals when needed; avoid formal proofs.
+• Distractors must reflect typical mistakes (sign errors, wrong identities, derivative/limit rules, rounding).
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object.
+- Format:
+  [{""question"": ""..."", ""options"": [""..."",""..."",""..."",""...""], ""answer"": ""A"", ""solution"": ""...""}]
+- Fields:
+  * ""question"": one string.
+  * ""options"": array of 4 answer-choice strings.
+  * ""answer"": one of ""A"",""B"",""C"",""D"" (just the letter).
+  * ""solution"": short plain-text explanation (a few lines is fine).
+- No extra text before or after the JSON.
+- Do NOT use markdown, code fences, or LaTeX ($ or backslashes).
+USER: Topic: Mathematics. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: zero, between, over, takes, semester, function, they, quadratic, level, flat, 90, worth, 3, 4, results, 2, high, discriminant, 100, three, equation, for, travels, covers, schooler, derivative, and, miles, certain, rides, using, its, taking, maintains, algebra, tests, cyclist, what, 8, different, steady, 16, scored, given, covering, exams, average, their, terrain, from, distance, then, coefficients, speed, that, mph, journey, per, constant, hour, 85, approach, 12, uphill, each, points, hills, ground, with, student, 1, decreases, hill, has.
+- Do NOT print this list in the output."
+mathematics,phi,struktur1,25,14608,"A car travels at an average speed of 60 km/h for 2 hours, then increases its speed to 80 km/h for another hour.",The total distance traveled is approximately 140 kilometers,The total distance traveled is exactly 140 kilometers,The car travels a total of about 160 kilometers,None of the above,A,"To find the total distance, calculate separately for each segment and add them. Distance at first speed: (60 ext km/h imes 2 ext h = 120 ext km). At second speed: (80 ext km/h imes 1 ext h = 80 ext km). Total distance is the sum of these two distances, which equals approximately 200 kilometers.","First, calculate the distance traveled in the first segment: Distance = Speed × Time = 60 km/h × 2 h = 120 km.
+Next, calculate the distance for the second segment: Distance = 80 km/h × 1 h = 80 km.
+The total distance is the sum of the two segments: 120 km + 80 km = 200 km.
+Comparing this result to the options:
+A) approx 140 km (Incorrect)
+B) exactly 140 km (Incorrect)
+C) about 160 km (Incorrect)
+The correct answer is 200 km, which is not listed. Therefore, the correct option is D, ""None of the above"".",maia:maia/gemini-2.5-pro,37348,5,5,Correct,4,"Clarity: The question is unambiguous and provides all necessary data. The generator's explanation is also clearly written.
+Context Accuracy: The scenario described in the question (car speeds, travel times) is realistic and plausible.
+Quality of Working: The generator's calculation is correct (120km + 80km = 200km). A point was deducted because it describes the exact result of 200 km as ""approximately 200 kilometers"". The question itself is of very poor quality, as the correct answer (200 km) is not among options A-C, and the provided key ('A') is wrong.
+Final Answer Accuracy: The generator's calculated answer of 200 km is correct. This means option D is the right choice. The provided key ('A') is incorrect.","SYSTEM: You are a Grade 12 Mathematics teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 medium-difficulty computational MCQ from ONE of: algebra (functions/inverse/systems), trigonometry (identities/evaluation), basic calculus (limits/derivatives/simple integrals), or short statistics.
+• Use realistic numbers; round to 2 decimals when needed; avoid formal proofs.
+• Distractors must reflect typical mistakes (sign errors, wrong identities, derivative/limit rules, rounding).
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object.
+- Format:
+  [{""question"": ""..."", ""options"": [""..."",""..."",""..."",""...""], ""answer"": ""A"", ""solution"": ""...""}]
+- Fields:
+  * ""question"": one string.
+  * ""options"": array of 4 answer-choice strings.
+  * ""answer"": one of ""A"",""B"",""C"",""D"" (just the letter).
+  * ""solution"": short plain-text explanation (a few lines is fine).
+- No extra text before or after the JSON.
+- Do NOT use markdown, code fences, or LaTeX ($ or backslashes).
+USER: Topic: Mathematics. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field."
+mathematics,phi,struktur1,26,10204,A train covers a distance of 340 kilometers between Station A and Station B without stops at an uniform rate.,97 km/h,-125 km/h (negative speed is not possible),80.6 km/h,75 km/h,A,"To find the correct answer, divide the total distance by time taken to cover that distance at a uniform rate: 340 kilometers / 4 hours = 85 km/h; hence, option A is closest.","The question is unsolvable as stated. To calculate speed, one needs both distance and time (Speed = Distance / Time). The question provides the distance (340 km) but does not provide the time taken for the journey. Without the time, the speed cannot be determined. Any attempt to solve this requires inventing data not present in the problem statement.",maia:maia/gemini-2.5-pro,17364,0,4,Incorrect,0,"Clarity: The question is fundamentally flawed as it is missing a critical piece of information (the time taken), making it impossible to solve.
+Context Accuracy: The scenario of a train traveling 340 km is realistic, and the speeds provided in the options (barring the negative one) are plausible for a train.
+Quality of Working: The generator's solution is completely invalid. It invents a time value of '4 hours' without any justification. It then incorrectly concludes that Option A (97 km/h) is the closest to its calculated 85 km/h, when Option C (80.6 km/h) is mathematically much closer (|85-97|=12 vs |85-80.6|=4.4).
+Final Answer Accuracy: The generator's conclusion that 'option A is closest' is arithmetically false based on its own invented numbers. Therefore, the final answer is incorrect.","SYSTEM: You are a Grade 12 Mathematics teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 medium-difficulty computational MCQ from ONE of: algebra (functions/inverse/systems), trigonometry (identities/evaluation), basic calculus (limits/derivatives/simple integrals), or short statistics.
+• Use realistic numbers; round to 2 decimals when needed; avoid formal proofs.
+• Distractors must reflect typical mistakes (sign errors, wrong identities, derivative/limit rules, rounding).
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object.
+- Format:
+  [{""question"": ""..."", ""options"": [""..."",""..."",""..."",""...""], ""answer"": ""A"", ""solution"": ""...""}]
+- Fields:
+  * ""question"": one string.
+  * ""options"": array of 4 answer-choice strings.
+  * ""answer"": one of ""A"",""B"",""C"",""D"" (just the letter).
+  * ""solution"": short plain-text explanation (a few lines is fine).
+- No extra text before or after the JSON.
+- Do NOT use markdown, code fences, or LaTeX ($ or backslashes).
+USER: Topic: Mathematics. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: 80, travels, then, for, 2, 60, car, hours, average, speed.
+- Do NOT print this list in the output."
+mathematics,phi,struktur1,27,7939,A cyclist moves at a constant velocity for two segments of their journey: first segment is twice as long as the second one.,160 km,320 km,480 km,960 km,C,"Let's denote the length of the shorter distance as x. The longer distance would then be 2x, making the total journey 3x kilometers long. Since we don't have a specific value for their velocity or time taken but know they travel at constant speeds and cover equal distances in both segments due to being twice as long each (implying no additional constraints), any of these options could be correct without further information.","The prompt is a statement, not a question. It describes a journey with two segments, one twice the length of the other. Let the length of the second segment be 'd'. The first segment is '2d'. The total distance is 3d. Without any information about velocity, time, or the value of 'd', it is impossible to determine the total distance. Any of the options could be a possible total distance. For example, if the total distance is 480 km (Option C), then d=160 km, and the segments are 320 km and 160 km. This is a valid scenario, but there is no information to prefer it over the others. The question is unsolvable.",maia:maia/gemini-2.5-pro,21434,0,3,Correct,4,"Clarity: The item is not a question. It's a statement of facts followed by a list of options, with no indication of what needs to be calculated. It is fundamentally incomplete and unsolvable.
+Context Accuracy: The context of a cyclist's journey is realistic. However, the distances in the options (e.g., 480 km or 960 km) are extremely large for a journey at a single constant velocity, implying an ultra-endurance event not mentioned in the simple context.
+Quality of Working: The generator's reasoning is sound. It correctly identifies that the problem is unsolvable due to missing information and that any option is possible. The logic is correct, though there is one slightly confusing phrase in the explanation.
+Final Answer Accuracy: The generator's conclusion that the problem is unsolvable is the correct assessment. The provided key 'C' is arbitrary and cannot be logically derived. Therefore, the generator's analysis is accurate.","SYSTEM: You are a Grade 12 Mathematics teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 medium-difficulty computational MCQ from ONE of: algebra (functions/inverse/systems), trigonometry (identities/evaluation), basic calculus (limits/derivatives/simple integrals), or short statistics.
+• Use realistic numbers; round to 2 decimals when needed; avoid formal proofs.
+• Distractors must reflect typical mistakes (sign errors, wrong identities, derivative/limit rules, rounding).
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object.
+- Format:
+  [{""question"": ""..."", ""options"": [""..."",""..."",""..."",""...""], ""answer"": ""A"", ""solution"": ""...""}]
+- Fields:
+  * ""question"": one string.
+  * ""options"": array of 4 answer-choice strings.
+  * ""answer"": one of ""A"",""B"",""C"",""D"" (just the letter).
+  * ""solution"": short plain-text explanation (a few lines is fine).
+- No extra text before or after the JSON.
+- Do NOT use markdown, code fences, or LaTeX ($ or backslashes).
+USER: Topic: Mathematics. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: 80, travels, distance, then, for, covers, 340, 2, 60, car, hours, kilometers, and, train, average, station, between, speed.
+- Do NOT print this list in the output."
+mathematics,phi,struktur1,28,7737,A cyclist completes a course at an average pace of 12 kilometers per hour and takes breaks totaling 30 minutes throughout.,4 hours,5 hours,6 hours,7 hours,B,"To find the time taken, divide the distance by speed: Time = Distance / Speed. The course is not specified but assuming a common cycling route like 30 kilometers (a typical urban or rural ride), we get Time = 30 km / 12 km/h = 2.5 hours. Adding breaks of half an hour, the total time taken would be 3 hours.","The question is unsolvable as it lacks a critical piece of information: the distance of the course. The total time is the sum of the cycling time and the break time.
+Total Time = Cycling Time + Break Time
+Total Time = (Distance / Speed) + 30 minutes
+Total Time = (Distance / 12 km/h) + 0.5 hours
+Since the distance is unknown, a unique solution cannot be found. For the provided key (B, 5 hours) to be correct, the distance would need to be 54 km, as (54/12) + 0.5 = 4.5 + 0.5 = 5 hours.",maia:maia/gemini-2.5-pro,18606,0,2.5,Incorrect,1,"Clarity: The question is fundamentally flawed and unsolvable because it omits the distance of the course. Without this essential variable, the total time cannot be calculated.
+Context Accuracy: The values for cycling speed (12 km/h) and break time (30 min) are realistic for a casual cyclist. However, presenting an unsolvable problem as a solvable one is a major contextual error in an assessment context.
+Quality of Working: The generator's solution correctly identifies that the distance is missing. However, it then proceeds by inventing an arbitrary distance (30 km), which is an invalid problem-solving step. Furthermore, the calculation based on this assumption leads to an answer (3 hours) that is not among the options.
+Final Answer Accuracy: The generator's calculated answer is 3 hours. The provided key is B, which corresponds to 5 hours. The generator's solution does not arrive at the correct answer.","SYSTEM: You are a Grade 12 Mathematics teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 medium-difficulty computational MCQ from ONE of: algebra (functions/inverse/systems), trigonometry (identities/evaluation), basic calculus (limits/derivatives/simple integrals), or short statistics.
+• Use realistic numbers; round to 2 decimals when needed; avoid formal proofs.
+• Distractors must reflect typical mistakes (sign errors, wrong identities, derivative/limit rules, rounding).
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object.
+- Format:
+  [{""question"": ""..."", ""options"": [""..."",""..."",""..."",""...""], ""answer"": ""A"", ""solution"": ""...""}]
+- Fields:
+  * ""question"": one string.
+  * ""options"": array of 4 answer-choice strings.
+  * ""answer"": one of ""A"",""B"",""C"",""D"" (just the letter).
+  * ""solution"": short plain-text explanation (a few lines is fine).
+- No extra text before or after the JSON.
+- Do NOT use markdown, code fences, or LaTeX ($ or backslashes).
+USER: Topic: Mathematics. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: then, cyclist, distance, segments, velocity, 340, two, and, train, first, 80, travels, moves, covers, 2, kilometers, journey, between, speed, for, constant, 60, car, hours, their, average, station.
+- Do NOT print this list in the output."
+mathematics,phi,struktur1,29,8947,A train accelerates uniformly from rest to a final velocity over a distance of 5 kilometers.,10 m/s^2,8.33 m/s^2,4.96 m/s^2,7.33 m/s^2,B,"Using the kinematic equation (v^2 = u^2 + 2as), where final velocity v is unknown, initial velocity u=0 (at rest), acceleration a we're solving for, and distance s=5 km or 5000 m. Rearranging gives us (a= racv^22s). Since the train starts from rest and accelerates uniformly to its final velocity over this 5 km stretch, only option B fits a reasonable acceleration that would allow for such motion within practical physics constraints.","The problem is unsolvable as stated. Using the kinematic equation v^2 = u^2 + 2as, we can substitute the known values.
+The initial velocity u = 0 (from rest).
+The distance s = 5 km = 5000 m.
+This gives the equation v^2 = 0^2 + 2 * a * 5000, which simplifies to v^2 = 10000a.
+This single equation has two unknown variables: the final velocity (v) and the acceleration (a).
+Without knowing either the final velocity or the time taken, a unique value for acceleration cannot be determined.",maia:maia/gemini-2.5-pro,23764,0.5,1,Incorrect,1,"Clarity: The question is fatally flawed because it is missing essential information (either final velocity or time), making it impossible to solve for a unique answer.
+Context Accuracy: The acceleration values in the options are extremely unrealistic for a train. An acceleration of 8.33 m/s^2 is nearly 1g, which is more typical of a high-performance car, not a train.
+Quality of Working: The generator correctly identifies the relevant formula but fails to recognize that the problem is unsolvable. Its justification for choosing an answer based on 'reasonableness' is arbitrary and factually incorrect, as all the options are unreasonable for a train.
+Final Answer Accuracy: The question is unsolvable, so there is no correct answer. The generator's choice is based on flawed reasoning and is therefore incorrect.","SYSTEM: You are a Grade 12 Mathematics teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 medium-difficulty computational MCQ from ONE of: algebra (functions/inverse/systems), trigonometry (identities/evaluation), basic calculus (limits/derivatives/simple integrals), or short statistics.
+• Use realistic numbers; round to 2 decimals when needed; avoid formal proofs.
+• Distractors must reflect typical mistakes (sign errors, wrong identities, derivative/limit rules, rounding).
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object.
+- Format:
+  [{""question"": ""..."", ""options"": [""..."",""..."",""..."",""...""], ""answer"": ""A"", ""solution"": ""...""}]
+- Fields:
+  * ""question"": one string.
+  * ""options"": array of 4 answer-choice strings.
+  * ""answer"": one of ""A"",""B"",""C"",""D"" (just the letter).
+  * ""solution"": short plain-text explanation (a few lines is fine).
+- No extra text before or after the JSON.
+- Do NOT use markdown, code fences, or LaTeX ($ or backslashes).
+USER: Topic: Mathematics. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: then, cyclist, course, distance, segments, 30, velocity, 340, two, and, train, first, pace, 80, travels, moves, covers, per, 2, kilometers, 12, journey, between, speed, completes, for, constant, 60, car, hours, hour, their, average, station.
+- Do NOT print this list in the output."
+mathematics,phi,struktur1,30,7773,A cyclist maintains a steady speed of 48 km/h for half an hour before taking a break.,A: The total distance covered is 12 kilometers,B: They cover at least 15 kilometers during the ride and rest period combined,"C: After stopping, they continue to travel another kilometer without changing speed",D: Their average speed for the entire journey was less than 48 km/h,A,"The cyclist maintains a steady speed of 48 km/h. Half an hour at this speed equates to covering half of that distance, which is 24 kilometers.","First, calculate the distance covered during the ride.
+Speed = 48 km/h
+Time = 0.5 hours
+Distance = Speed × Time = 48 km/h × 0.5 h = 24 km.
+
+Now, evaluate the options:
+- A: States the distance is 12 km. This is false.
+- B: States the distance is at least 15 km. 24 km is greater than 15 km, so this is true.
+- C: Makes a claim about what happens after the break, which is not supported by the text.
+- D: States the average speed for the entire journey (ride + break) is less than 48 km/h. Since the break adds time with zero distance, the average speed must be lower than the riding speed. This is also true.
+
+The question is flawed with two correct answers (B and D), and the provided key (A) is incorrect.",maia:maia/gemini-2.5-pro,23705,2,4,Incorrect,1,"Clarity: The question stem is clear, but the problem is fundamentally flawed. It has two correct options (B and D), making it ambiguous. Furthermore, the provided key (A) is demonstrably false, which adds to the confusion.
+
+Context Accuracy: A sustained speed of 48 km/h (approx. 30 mph) is very fast for a cyclist but is achievable by professional or elite amateur athletes, so the context is plausible.
+
+Quality of Working: The generator correctly calculates the distance covered as 24 km. However, it completely fails to solve the MCQ. It does not evaluate any of the options or justify the provided key. In fact, its calculation directly proves that the key (A) is wrong.
+
+Final Answer Accuracy: The provided key is A. The generator's calculation shows the distance is 24 km, which directly contradicts option A (12 km). Therefore, the generator's reasoning does not support the key and leads to the conclusion that the key is incorrect.","SYSTEM: You are a Grade 12 Mathematics teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 medium-difficulty computational MCQ from ONE of: algebra (functions/inverse/systems), trigonometry (identities/evaluation), basic calculus (limits/derivatives/simple integrals), or short statistics.
+• Use realistic numbers; round to 2 decimals when needed; avoid formal proofs.
+• Distractors must reflect typical mistakes (sign errors, wrong identities, derivative/limit rules, rounding).
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object.
+- Format:
+  [{""question"": ""..."", ""options"": [""..."",""..."",""..."",""...""], ""answer"": ""A"", ""solution"": ""...""}]
+- Fields:
+  * ""question"": one string.
+  * ""options"": array of 4 answer-choice strings.
+  * ""answer"": one of ""A"",""B"",""C"",""D"" (just the letter).
+  * ""solution"": short plain-text explanation (a few lines is fine).
+- No extra text before or after the JSON.
+- Do NOT use markdown, code fences, or LaTeX ($ or backslashes).
+USER: Topic: Mathematics. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: then, cyclist, from, course, over, distance, segments, 30, velocity, 340, two, and, train, first, pace, 80, travels, rest, moves, covers, per, final, 2, kilometers, 12, journey, between, speed, completes, for, constant, 60, car, hours, hour, accelerates, 5, their, average, uniformly, station.
+- Do NOT print this list in the output."
+mathematics,phi,struktur1,31,8340,A cyclist travels at a consistent speed of ( v ) km/h and covers a distance of 12 kilometers to reach his destination.,A) The time taken is 0.2 hours,B) The time taken is 36 minutes,C) The time taken cannot be determined with the given information,D) The cyclist took an hour,C,"To find out how long it takes to cover a distance at a constant speed, we use the formula ( t = racdv ). However, since 'speed' is not provided in specific numbers and no options reflect correct calculations based on potential speeds (e.g., 48 km/h would make option B true), it cannot be determined with the given information.","The formula relating time (t), distance (d), and speed (v) is t = d / v.
+The problem gives d = 12 km and speed = v km/h.
+Substituting the given values, the time taken is t = 12 / v hours.
+Since the speed 'v' is an unknown variable and not a specific number, the time 't' cannot be calculated as a specific numerical value.
+Therefore, the time taken cannot be determined with the given information.",maia:maia/gemini-2.5-pro,16494,5,5,Correct,3.5,"Clarity: The question is perfectly clear. It uses a variable 'v' for speed, which is the central point of the problem, testing for data sufficiency.
+Context Accuracy: The scenario is realistic. A 12 km bike ride is a common distance, and the units used are standard and appropriate.
+Quality of Working: The generator's reasoning is fundamentally correct (time can't be found without speed). However, it includes a flawed supporting example: it incorrectly claims a speed of 48 km/h would make option B (36 min) true, when it would actually be 15 min.
+Final Answer Accuracy: The generator correctly identifies that the time cannot be determined, which corresponds to the correct option C.","SYSTEM: You are a Grade 12 Mathematics teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 medium-difficulty computational MCQ from ONE of: algebra (functions/inverse/systems), trigonometry (identities/evaluation), basic calculus (limits/derivatives/simple integrals), or short statistics.
+• Use realistic numbers; round to 2 decimals when needed; avoid formal proofs.
+• Distractors must reflect typical mistakes (sign errors, wrong identities, derivative/limit rules, rounding).
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object.
+- Format:
+  [{""question"": ""..."", ""options"": [""..."",""..."",""..."",""...""], ""answer"": ""A"", ""solution"": ""...""}]
+- Fields:
+  * ""question"": one string.
+  * ""options"": array of 4 answer-choice strings.
+  * ""answer"": one of ""A"",""B"",""C"",""D"" (just the letter).
+  * ""solution"": short plain-text explanation (a few lines is fine).
+- No extra text before or after the JSON.
+- Do NOT use markdown, code fences, or LaTeX ($ or backslashes).
+USER: Topic: Mathematics. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: before, then, half, cyclist, from, course, over, distance, segments, 30, taking, velocity, 340, two, and, train, first, pace, 80, travels, 48, rest, maintains, moves, covers, per, final, 2, kilometers, 12, journey, between, speed, completes, for, constant, 60, car, hours, hour, accelerates, 5, their, average, steady, uniformly, station.
+- Do NOT print this list in the output."
+mathematics,phi,struktur1,32,8668,A cyclist rides at a pace of 12 km/h for the first part and then increases speed to complete the remaining journey between two stations within an hour.,B,C,D,A,B,"The total distance is covered in one hour. At a pace of 12 km/h, for half an hour (0.5 hours), the cyclist covers (12 × 0.5 = 6) kilometers. For the remaining time (0.5 hours), at 80 km/h, they cover (80 × 0.5 = 40) kilometers. The total distance is therefore (6 + 40 = 46) kilometers.","The problem is unsolvable as presented. It is an incomplete statement, not a question. It provides a scenario with multiple unknown variables (time for the first part, speed for the second part, total distance) and not enough information to find a unique solution. The options provided ('B', 'C', 'D', 'A') are meaningless labels without corresponding values. Therefore, no logical solution can be derived from the given text.",maia:maia/gemini-2.5-pro,21355,0,3,Incorrect,0,"Clarity: The input is not a question but an incomplete premise. It is missing what variable to solve for, the values associated with the options, and sufficient data to solve anything.
+Context Accuracy: The speed of 12 km/h for a cyclist is realistic. However, the generator's solution introduces a speed of 80 km/h, which is impossible for a cyclist, severely damaging the context of the overall item.
+Quality of Working: The generator's solution is completely invalid. It invents critical data not present in the question (a time of 0.5 hours and a speed of 80 km/h) and solves a problem of its own creation, not the one presented.
+Final Answer Accuracy: The question is unsolvable and the options are symbolic labels. The generator provides a numerical answer (46) that has no basis in the question and does not correspond to the provided key 'B'.","SYSTEM: You are a Grade 12 Mathematics teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 medium-difficulty computational MCQ from ONE of: algebra (functions/inverse/systems), trigonometry (identities/evaluation), basic calculus (limits/derivatives/simple integrals), or short statistics.
+• Use realistic numbers; round to 2 decimals when needed; avoid formal proofs.
+• Distractors must reflect typical mistakes (sign errors, wrong identities, derivative/limit rules, rounding).
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object.
+- Format:
+  [{""question"": ""..."", ""options"": [""..."",""..."",""..."",""...""], ""answer"": ""A"", ""solution"": ""...""}]
+- Fields:
+  * ""question"": one string.
+  * ""options"": array of 4 answer-choice strings.
+  * ""answer"": one of ""A"",""B"",""C"",""D"" (just the letter).
+  * ""solution"": short plain-text explanation (a few lines is fine).
+- No extra text before or after the JSON.
+- Do NOT use markdown, code fences, or LaTeX ($ or backslashes).
+USER: Topic: Mathematics. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: before, then, half, cyclist, from, course, over, consistent, distance, segments, 30, taking, velocity, 340, two, and, train, first, pace, 80, travels, 48, rest, maintains, reach, moves, covers, per, final, 2, kilometers, 12, journey, between, speed, completes, for, constant, 60, car, hours, hour, accelerates, 5, their, average, steady, uniformly, station.
+- Do NOT print this list in the output."
+mathematics,phi,struktur1,33,9480,"A cyclist covers a certain distance at an initial speed of 'v' kilometers per hour and then accelerates to double that speed for another part of their journey, covering twice as far.",The total time taken is independent of the value of 'v'.,"If the cyclist doubles their speed without changing distance covered in each segment, they will finish both parts simultaneously.",Doubling the initial speed while covering twice as far results in a longer overall journey duration compared to maintaining constant speed throughout.,The time taken for acceleration is negligible and can be ignored when calculating total travel time.,A,"When the cyclist doubles their speed, they are covering twice as much distance in half the initial time. The overall journey duration will therefore decrease because of increased speed during acceleration phase despite doubling the covered distances for each segment.","Let the first part of the journey have distance 'd' and speed 'v'. The time taken is t1 = d/v.
+The second part has distance '2d' and speed '2v'. The time taken is t2 = (2d)/(2v) = d/v.
+The total time for the journey is T = t1 + t2 = d/v + d/v = 2d/v.
+The total time T is inversely proportional to the speed 'v'. Therefore, the statement that the total time is independent of 'v' is false.",maia:maia/gemini-2.5-pro,40898,1,5,Incorrect,0,"Clarity: The question is fundamentally flawed. The provided key (A) is mathematically incorrect based on the problem statement. The total time is T = 2d/v, which clearly depends on v. Some options are also ambiguously worded.
+Context Accuracy: The physical scenario described (a cyclist's journey with varying speeds) is realistic and the underlying physics concepts are standard.
+Quality of Working: The generator's reasoning is completely wrong. It claims that covering twice the distance at twice the speed takes 'half the initial time', but the time is actually the same (t2 = 2d/2v = d/v = t1). The explanation is irrelevant to the provided key.
+Final Answer Accuracy: The provided key is A. As derived in the solution, the total time T = 2d/v, which is dependent on v. Therefore, option A is false, and the key is incorrect.","SYSTEM: You are a Grade 12 Mathematics teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 medium-difficulty computational MCQ from ONE of: algebra (functions/inverse/systems), trigonometry (identities/evaluation), basic calculus (limits/derivatives/simple integrals), or short statistics.
+• Use realistic numbers; round to 2 decimals when needed; avoid formal proofs.
+• Distractors must reflect typical mistakes (sign errors, wrong identities, derivative/limit rules, rounding).
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object.
+- Format:
+  [{""question"": ""..."", ""options"": [""..."",""..."",""..."",""...""], ""answer"": ""A"", ""solution"": ""...""}]
+- Fields:
+  * ""question"": one string.
+  * ""options"": array of 4 answer-choice strings.
+  * ""answer"": one of ""A"",""B"",""C"",""D"" (just the letter).
+  * ""solution"": short plain-text explanation (a few lines is fine).
+- No extra text before or after the JSON.
+- Do NOT use markdown, code fences, or LaTeX ($ or backslashes).
+USER: Topic: Mathematics. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: before, then, half, cyclist, from, course, over, consistent, distance, part, segments, 30, taking, velocity, 340, two, and, train, first, pace, 80, travels, 48, rest, maintains, reach, moves, rides, covers, per, final, 2, kilometers, 12, journey, between, speed, increases, completes, for, constant, 60, car, hours, hour, accelerates, 5, their, average, steady, uniformly, station.
+- Do NOT print this list in the output."
+mathematics,phi,struktur1,34,8475,A train travels a distance of final kilometers at an initial constant speed before increasing its pace to reach the next stop within two hours.,A) The average speed is 60 km/h,B) The total time taken for acceleration and deceleration combined must be less than one hour,"C) If no stops are made, at least three segments of travel would occur with different speeds due to the increase in pace after initial constant speed",D) To maintain a steady journey without any changes in velocity or direction,A,"To find the average speed for the entire trip, we divide the total distance by the total time. The train covers final kilometers within two hours; thus, the average speed is (final/2) km/h.","The question is fundamentally flawed because 'final kilometers' is not a number, making it impossible to calculate a specific average speed. To solve it, one must assume 'final' is a typo for a number that makes one of the options correct. If we assume the intended distance is 120 km, the average speed is Total Distance / Total Time = 120 km / 2 hours = 60 km/h. This makes option A correct. The other options are either contradictory to the premise (D), unprovable with the given information (B), or nonsensical (C).",maia:maia/gemini-2.5-pro,27533,0.5,2.5,Correct,1,"Clarity: The question is critically unclear due to the phrase 'final kilometers,' which is not a numerical value for distance. This makes the problem unsolvable as written without making a major assumption.
+Context Accuracy: The scenario of a train journey is realistic, and the potential values (2 hours, 60 km/h) are plausible. However, the nonsensical data 'final kilometers' is a significant error.
+Quality of Working: The generator's solution correctly states the formula for average speed (Distance/Time) but fails to justify the final answer. It leaves the speed as an expression '(final/2) km/h' and does not explain how to arrive at the specific value of 60 km/h given in option A.
+Final Answer Accuracy: The key 'A' is the only plausible answer if one assumes 'final kilometers' is a typo for '120 kilometers'. The other options are incorrect or unprovable. The generator correctly identifies the intended answer, despite the flawed question.","SYSTEM: You are a Grade 12 Mathematics teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 medium-difficulty computational MCQ from ONE of: algebra (functions/inverse/systems), trigonometry (identities/evaluation), basic calculus (limits/derivatives/simple integrals), or short statistics.
+• Use realistic numbers; round to 2 decimals when needed; avoid formal proofs.
+• Distractors must reflect typical mistakes (sign errors, wrong identities, derivative/limit rules, rounding).
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object.
+- Format:
+  [{""question"": ""..."", ""options"": [""..."",""..."",""..."",""...""], ""answer"": ""A"", ""solution"": ""...""}]
+- Fields:
+  * ""question"": one string.
+  * ""options"": array of 4 answer-choice strings.
+  * ""answer"": one of ""A"",""B"",""C"",""D"" (just the letter).
+  * ""solution"": short plain-text explanation (a few lines is fine).
+- No extra text before or after the JSON.
+- Do NOT use markdown, code fences, or LaTeX ($ or backslashes).
+USER: Topic: Mathematics. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: before, then, half, cyclist, from, course, over, consistent, distance, part, segments, 30, taking, velocity, 340, two, and, train, first, pace, 80, travels, 48, rest, maintains, reach, moves, rides, covers, per, final, 2, kilometers, 12, journey, between, speed, increases, completes, for, constant, initial, 60, car, hours, hour, accelerates, 5, certain, their, average, steady, uniformly, station.
+- Do NOT print this list in the output."
+mathematics,phi,struktur1,35,7646,A cyclist travels at a uniform speed of 48 km/h for the first part of her journey and then increases her speed to cover the remaining distance with an average velocity that is constant throughout.,60,72,50,55,B,"The cyclist's initial speed was 48 km/h. To find a new uniform speed for the remainder of her journey, we look at options that are higher than this value but not too high to be unrealistic. Option B (60 km/h) seems like an achievable increase in speed while maintaining constant velocity.","The question is incomplete and unsolvable as written. It describes a scenario but does not ask a question or provide enough data to find a unique answer. For example, one could assume the question intended to state that the cyclist traveled for equal time periods in both parts and that the overall average speed was 60 km/h. In that specific case, the average speed is (v1 + v2)/2. So, 60 = (48 + v2)/2, which gives v2 = 120 - 48 = 72 km/h. However, this requires assuming multiple pieces of missing information.",maia:maia/gemini-2.5-pro,26307,0,3,Incorrect,0,"Clarity: The question is critically flawed. It's a declarative statement that sets up a scenario but never asks what to calculate, making it impossible to solve.
+Context Accuracy: The context of a cyclist is fine, but the speeds are very high. 48 km/h is professional-level, and 72 km/h is nearly superhuman for a solo cyclist, making the values borderline unrealistic.
+Quality of Working: The generator provides no mathematical working. It simply guesses based on a subjective sense of realism. It also misidentifies option B as 60 km/h, when the options list B as 72 km/h.
+Final Answer Accuracy: The provided key is B (72). The generator's reasoning points towards 60 km/h (Option A) but incorrectly labels it as Option B. The generator has chosen the wrong value.","SYSTEM: You are a Grade 12 Mathematics teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 medium-difficulty computational MCQ from ONE of: algebra (functions/inverse/systems), trigonometry (identities/evaluation), basic calculus (limits/derivatives/simple integrals), or short statistics.
+• Use realistic numbers; round to 2 decimals when needed; avoid formal proofs.
+• Distractors must reflect typical mistakes (sign errors, wrong identities, derivative/limit rules, rounding).
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object.
+- Format:
+  [{""question"": ""..."", ""options"": [""..."",""..."",""..."",""...""], ""answer"": ""A"", ""solution"": ""...""}]
+- Fields:
+  * ""question"": one string.
+  * ""options"": array of 4 answer-choice strings.
+  * ""answer"": one of ""A"",""B"",""C"",""D"" (just the letter).
+  * ""solution"": short plain-text explanation (a few lines is fine).
+- No extra text before or after the JSON.
+- Do NOT use markdown, code fences, or LaTeX ($ or backslashes).
+USER: Topic: Mathematics. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: before, then, half, cyclist, from, course, over, consistent, distance, part, segments, 30, taking, velocity, 340, two, and, train, increasing, first, pace, 80, travels, 48, rest, maintains, reach, moves, rides, covers, per, final, 2, kilometers, 12, journey, between, speed, increases, completes, for, constant, initial, 60, car, hours, hour, accelerates, 5, certain, their, average, steady, uniformly, station.
+- Do NOT print this list in the output."
+mathematics,phi,struktur1,36,7187,A cyclist rides for two kilometers at a constant speed and then increases her speed by five percent to complete another kilometer.,4.75 km/h,60.25 km/h,39.38 km/h,B,C,"The cyclist's initial speed is 60 km/h, increasing by five percent yields a new speed of (60 imes 1.05 = 63) km/h for the second kilometer.","The question is unsolvable as stated. It describes a scenario involving a cyclist but fails to ask what quantity should be calculated (e.g., average speed, initial speed, etc.). Furthermore, the problem is missing essential information, such as the initial speed or the time taken for either part of the journey. Without at least one of these values, it is impossible to determine a specific numerical answer for any speed.",maia:maia/gemini-2.5-pro,21281,0,1.5,Incorrect,0,"Clarity: The question is critically flawed. It presents a statement of facts but does not actually ask a question. It is also missing the necessary data to solve for any variable, making it impossible to answer.
+Context Accuracy: The context of a cyclist is reasonable. However, presenting an unsolvable physics problem is a major conceptual error. The values in the options seem arbitrary given the lack of information.
+Quality of Working: The generator's solution is nonsensical. It invents an initial speed of 60 km/h out of thin air, a value not present in the question. This demonstrates a complete failure to understand the problem's constraints.
+Final Answer Accuracy: The generator's working does not produce an answer, let alone one that matches the provided key (C: 39.38 km/h). The numbers it uses and calculates (60, 63) are completely unrelated to the question's options or key.","SYSTEM: You are a Grade 12 Mathematics teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 medium-difficulty computational MCQ from ONE of: algebra (functions/inverse/systems), trigonometry (identities/evaluation), basic calculus (limits/derivatives/simple integrals), or short statistics.
+• Use realistic numbers; round to 2 decimals when needed; avoid formal proofs.
+• Distractors must reflect typical mistakes (sign errors, wrong identities, derivative/limit rules, rounding).
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object.
+- Format:
+  [{""question"": ""..."", ""options"": [""..."",""..."",""..."",""...""], ""answer"": ""A"", ""solution"": ""...""}]
+- Fields:
+  * ""question"": one string.
+  * ""options"": array of 4 answer-choice strings.
+  * ""answer"": one of ""A"",""B"",""C"",""D"" (just the letter).
+  * ""solution"": short plain-text explanation (a few lines is fine).
+- No extra text before or after the JSON.
+- Do NOT use markdown, code fences, or LaTeX ($ or backslashes).
+USER: Topic: Mathematics. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: before, then, half, her, cyclist, from, course, over, consistent, distance, part, segments, 30, uniform, taking, velocity, 340, two, and, train, increasing, first, pace, 80, travels, 48, rest, maintains, reach, moves, rides, covers, per, final, 2, kilometers, 12, journey, between, speed, increases, completes, for, constant, initial, 60, car, hours, hour, accelerates, 5, certain, their, average, steady, uniformly, station.
+- Do NOT print this list in the output."
+mathematics,phi,struktur1,37,7141,A cyclist travels a total of ________ kilometers to reach her destination after taking two breaks and maintaining different speeds during each segment.,12,15,18,20,B,"The cyclist covers 6 km before the first break, then accelerates to cover another 4 km. After a short rest and decelerating slightly for safety, she covers the final stretch of 2 km at a steady pace.","The question is unsolvable as presented. It is a fill-in-the-blank statement that lacks any numerical data about the cyclist's journey, such as the distances of the segments, speeds, or times. To find the total distance, one must sum the distances of the individual segments. The generator's solution provides these missing values: 6 km, 4 km, and 2 km. The total distance is the sum of these segments: 6 km + 4 km + 2 km = 12 km.",maia:maia/gemini-2.5-pro,17285,0,2,Incorrect,0,"Clarity: The question is fundamentally incomplete. It's a template for a word problem, not an actual problem, as it contains no data to solve for the blank.
+Context Accuracy: The scenario of a cyclist's journey is realistic, and the distances in the options are plausible for such a trip. However, the problem itself is nonsensical due to the missing information.
+Quality of Working: The generator's text is not a solution; it is the missing problem statement. It provides data (6 km, 4 km, 2 km) that, when summed, results in 12 km. This contradicts the provided key of 15 km. It does not explain how to arrive at the key.
+Final Answer Accuracy: The generator's text implies a total distance of 12 km (Option A). The provided key for the question is B (15 km). Therefore, the generator's explanation is incorrect as it does not lead to the intended answer.","SYSTEM: You are a Grade 12 Mathematics teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 medium-difficulty computational MCQ from ONE of: algebra (functions/inverse/systems), trigonometry (identities/evaluation), basic calculus (limits/derivatives/simple integrals), or short statistics.
+• Use realistic numbers; round to 2 decimals when needed; avoid formal proofs.
+• Distractors must reflect typical mistakes (sign errors, wrong identities, derivative/limit rules, rounding).
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object.
+- Format:
+  [{""question"": ""..."", ""options"": [""..."",""..."",""..."",""...""], ""answer"": ""A"", ""solution"": ""...""}]
+- Fields:
+  * ""question"": one string.
+  * ""options"": array of 4 answer-choice strings.
+  * ""answer"": one of ""A"",""B"",""C"",""D"" (just the letter).
+  * ""solution"": short plain-text explanation (a few lines is fine).
+- No extra text before or after the JSON.
+- Do NOT use markdown, code fences, or LaTeX ($ or backslashes).
+USER: Topic: Mathematics. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: before, then, half, her, cyclist, from, course, over, consistent, distance, part, segments, 30, uniform, taking, velocity, 340, two, and, train, increasing, first, pace, 80, travels, 48, rest, maintains, reach, moves, rides, covers, per, final, 2, kilometers, 12, journey, between, speed, increases, completes, for, constant, initial, 60, car, hours, hour, accelerates, 5, certain, their, average, steady, uniformly, station.
+- Do NOT print this list in the output."
+mathematics,phi,struktur1,38,7712,A cyclist travels at a speed of 24 km/h for an unknown duration and then increases her pace to finish a total distance of 60 kilometers by covering another segment with varying speeds.,B,C,D,A,B,"If the cyclist covers some initial part at constant speed, let's say 'x' hours. The remaining distance would be 60 - (24 * x). If she increases her pace to finish within a certain time frame and considering that increasing speeds generally reduce travel times for fixed distances, option B seems most plausible without specific details on the increased speed or duration.","The provided text is a premise, not a question. It describes a scenario where a cyclist travels 60 km in two segments. However, it does not ask for any specific quantity (e.g., total time, distance of the first segment, etc.). The options are simply letters ('A', 'B', 'C', 'D') with no associated values or meanings. As there is no question to answer, the problem is fundamentally unsolvable.",maia:maia/gemini-2.5-pro,15679,0,2.5,Incorrect,0,"Clarity: The item is completely unclear as it lacks a question. It's just a statement of facts. The options are meaningless labels, making it impossible to determine what is being assessed.
+Context Accuracy: The physical context is plausible. A speed of 24 km/h and a distance of 60 km are reasonable for a cyclist. However, presenting this as a solvable problem is contextually wrong.
+Quality of Working: The generator's 'solution' is pure fabrication. It makes a completely arbitrary leap of logic to select option B, providing a justification that is a non-sequitur. There is no logical path from the premise to the chosen answer.
+Final Answer Accuracy: Since the question is unsolvable, there is no correct answer. The generator's choice of 'B' is based on flawed, non-existent reasoning. Even though it matches the provided key, it is not a correctly derived answer.","SYSTEM: You are a Grade 12 Mathematics teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 medium-difficulty computational MCQ from ONE of: algebra (functions/inverse/systems), trigonometry (identities/evaluation), basic calculus (limits/derivatives/simple integrals), or short statistics.
+• Use realistic numbers; round to 2 decimals when needed; avoid formal proofs.
+• Distractors must reflect typical mistakes (sign errors, wrong identities, derivative/limit rules, rounding).
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object.
+- Format:
+  [{""question"": ""..."", ""options"": [""..."",""..."",""..."",""...""], ""answer"": ""A"", ""solution"": ""...""}]
+- Fields:
+  * ""question"": one string.
+  * ""options"": array of 4 answer-choice strings.
+  * ""answer"": one of ""A"",""B"",""C"",""D"" (just the letter).
+  * ""solution"": short plain-text explanation (a few lines is fine).
+- No extra text before or after the JSON.
+- Do NOT use markdown, code fences, or LaTeX ($ or backslashes).
+USER: Topic: Mathematics. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: before, then, half, her, cyclist, from, course, over, consistent, distance, part, segments, 30, uniform, after, taking, velocity, 340, two, and, total, train, increasing, first, pace, destination, 80, travels, 48, rest, maintains, reach, moves, rides, covers, per, final, 2, kilometers, 12, journey, between, speed, increases, completes, for, constant, initial, 60, car, hours, hour, accelerates, 5, certain, their, average, steady, uniformly, station.
+- Do NOT print this list in the output."
+mathematics,phi,struktur1,39,5232,A cyclist travels at a speed of 12 km/h for one and a half hours before stopping briefly to rest.,The distance covered is A) 18 km,B) 24 km,C) 36 km,D) Not enough information,A,"To find the distance, multiply speed by time: Distance = Speed × Time. Here, it's 12 km/h × 1.5 h = 18 km.","The problem requires calculating the distance traveled. The formula for distance is Distance = Speed × Time.
+The given speed is 12 km/h.
+The given time is one and a half hours, which is equivalent to 1.5 hours.
+Substituting the values into the formula:
+Distance = 12 km/h × 1.5 h = 18 km.
+This matches option A.",maia:maia/gemini-2.5-pro,13213,3.5,5,Correct,5,"Clarity: The question is poorly structured. The question stem and the first option are merged into a single sentence (""The distance covered is A) 18 km""), which is unconventional and confusing for a multiple-choice format.
+Context Accuracy: The scenario is perfectly realistic. A speed of 12 km/h is a reasonable, leisurely pace for a cyclist, and traveling for 1.5 hours is a common duration.
+Quality of Working: The generator's solution is excellent. It correctly states the formula, substitutes the values, and performs the calculation accurately to arrive at the correct answer.
+Final Answer Accuracy: The generator's calculated distance of 18 km is correct and matches the key provided (A).","SYSTEM: You are a Grade 12 Mathematics teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 medium-difficulty computational MCQ from ONE of: algebra (functions/inverse/systems), trigonometry (identities/evaluation), basic calculus (limits/derivatives/simple integrals), or short statistics.
+• Use realistic numbers; round to 2 decimals when needed; avoid formal proofs.
+• Distractors must reflect typical mistakes (sign errors, wrong identities, derivative/limit rules, rounding).
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object.
+- Format:
+  [{""question"": ""..."", ""options"": [""..."",""..."",""..."",""...""], ""answer"": ""A"", ""solution"": ""...""}]
+- Fields:
+  * ""question"": one string.
+  * ""options"": array of 4 answer-choice strings.
+  * ""answer"": one of ""A"",""B"",""C"",""D"" (just the letter).
+  * ""solution"": short plain-text explanation (a few lines is fine).
+- No extra text before or after the JSON.
+- Do NOT use markdown, code fences, or LaTeX ($ or backslashes).
+USER: Topic: Mathematics. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: before, then, half, her, unknown, cyclist, from, 24, course, over, duration, consistent, distance, part, segments, 30, uniform, after, taking, velocity, 340, two, and, total, train, increasing, first, pace, destination, 80, travels, 48, rest, maintains, reach, moves, rides, covers, per, final, 2, kilometers, 12, journey, between, speed, increases, completes, for, constant, initial, 60, car, hours, hour, accelerates, 5, certain, their, average, steady, uniformly, station.
+- Do NOT print this list in the output."
+mathematics,phi,struktur1,40,7859,A cyclist starts a journey at an initial speed of 60 km/h and maintains that pace for one hour before taking breaks every half hour.,24 kilometers,18 kilometers,30 kilometers,36 kilometers,B,"The cyclist travels at 60 km/h, so in the first hour they cover 60 kilometers. They take breaks every half an hour and since there are two halves to each full cycle of time (before a break), that's four hours total with three intervals before taking any rest.","The question is incomplete as it provides a premise but does not ask a question. It is impossible to determine what distance needs to be calculated.
+
+Based on the provided key 'B' (18 kilometers), one can work backward. To cover 18 km at a speed of 60 km/h, the cyclist must travel for a specific duration.
+Time = Distance / Speed
+Time = 18 km / 60 km/h = 0.3 hours.
+0.3 hours * 60 minutes/hour = 18 minutes.
+There is no information in the problem statement that would lead to a travel time of 18 minutes, making the question unsolvable and the key arbitrary.",maia:maia/gemini-2.5-pro,21395,0,2,Incorrect,0,"Clarity: The question is fundamentally flawed as it is not a question. It's a statement of facts (a premise) without a query, making it impossible to solve.
+
+Context Accuracy: A speed of 60 km/h is extremely fast for a cyclist to maintain for a full hour. This is a speed typical of a professional peloton or a motor-paced rider, not a solo cyclist on a 'journey'.
+
+Quality of Working: The generator's solution is nonsensical. It starts with a correct calculation (60 km in one hour) but then devolves into an incoherent string of words that has no logical connection to the problem or any possible solution.
+
+Final Answer Accuracy: The generator's text does not arrive at any answer, let alone the provided key 'B' (18 km). The reasoning is completely irrelevant and fails to solve the problem. Therefore, the solution is incorrect.","SYSTEM: You are a Grade 12 Mathematics teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 medium-difficulty computational MCQ from ONE of: algebra (functions/inverse/systems), trigonometry (identities/evaluation), basic calculus (limits/derivatives/simple integrals), or short statistics.
+• Use realistic numbers; round to 2 decimals when needed; avoid formal proofs.
+• Distractors must reflect typical mistakes (sign errors, wrong identities, derivative/limit rules, rounding).
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object.
+- Format:
+  [{""question"": ""..."", ""options"": [""..."",""..."",""..."",""...""], ""answer"": ""A"", ""solution"": ""...""}]
+- Fields:
+  * ""question"": one string.
+  * ""options"": array of 4 answer-choice strings.
+  * ""answer"": one of ""A"",""B"",""C"",""D"" (just the letter).
+  * ""solution"": short plain-text explanation (a few lines is fine).
+- No extra text before or after the JSON.
+- Do NOT use markdown, code fences, or LaTeX ($ or backslashes).
+USER: Topic: Mathematics. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: before, then, half, her, unknown, cyclist, from, 24, course, over, duration, consistent, distance, part, segments, 30, uniform, after, taking, velocity, 340, two, and, total, train, increasing, first, pace, destination, 80, travels, 48, rest, maintains, reach, moves, rides, covers, per, final, 2, kilometers, 12, journey, between, speed, increases, completes, for, one, constant, initial, 60, car, hours, hour, accelerates, 5, certain, their, average, steady, uniformly, station.
+- Do NOT print this list in the output."
+mathematics,phi,struktur1,41,8559,A cyclist rides for two hours at a constant speed of 60 km/h and then increases her pace to ride faster.,She will cover less than 120 kilometers,The total distance covered is more than 120 kilometers but less than 130 kilometers,Her average speed for the entire journey remains at 60 km/h despite acceleration,"After accelerating, she maintains her original pace of 60 km/h",B,"The cyclist rides two hours initially at a constant speed. Distance = Speed * Time => 60 km/h * 2 h = 120 kilometers. After accelerating, she increases her pace but the question does not specify how much faster or for how long.","First, calculate the distance covered in the initial phase: Distance = Speed × Time = 60 km/h × 2 h = 120 km.
+The problem states the cyclist then ""increases her pace to ride faster"". This means she travels for some additional time at a speed greater than 60 km/h, covering an additional, positive distance.
+Therefore, the total distance covered must be greater than 120 km.
+Let's evaluate the options:
+A) False. The total distance is greater than 120 km.
+C) False. The average speed for the entire journey will be greater than 60 km/h.
+D) False. This contradicts the premise that she increases her pace.
+B) States the distance is > 120 km and < 130 km. The first part is true, but the second part is an unsubstantiated claim. However, since options A, C, and D are logically impossible, B is the only remaining possibility and must be the intended answer, despite the question's flaw.",maia:maia/gemini-2.5-pro,34960,1,4,Incorrect,2,"Clarity: The question is critically flawed due to ambiguity. It does not specify the duration or the new speed for the second part of the ride, making it impossible to determine the total distance. Option B introduces an arbitrary upper limit that cannot be verified from the given information.
+Context Accuracy: A sustained speed of 60 km/h for two hours is at the absolute peak of elite human performance for a cyclist, but it is not physically impossible, especially in a professional racing context (e.g., with drafting).
+Quality of Working: The generator's working correctly calculates the initial 120 km distance and correctly identifies that the question is ambiguous. However, it stops there and does not attempt to solve the MCQ by analyzing the options to find the most plausible answer. The reasoning is incomplete.
+Final Answer Accuracy: The generator's solution text does not select a final answer (A, B, C, or D). It only provides an analysis of the premise. Therefore, it has failed to answer the question. The key 'B' was provided in the prompt, not by the generator.","SYSTEM: You are a Grade 12 Mathematics teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 medium-difficulty computational MCQ from ONE of: algebra (functions/inverse/systems), trigonometry (identities/evaluation), basic calculus (limits/derivatives/simple integrals), or short statistics.
+• Use realistic numbers; round to 2 decimals when needed; avoid formal proofs.
+• Distractors must reflect typical mistakes (sign errors, wrong identities, derivative/limit rules, rounding).
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object.
+- Format:
+  [{""question"": ""..."", ""options"": [""..."",""..."",""..."",""...""], ""answer"": ""A"", ""solution"": ""...""}]
+- Fields:
+  * ""question"": one string.
+  * ""options"": array of 4 answer-choice strings.
+  * ""answer"": one of ""A"",""B"",""C"",""D"" (just the letter).
+  * ""solution"": short plain-text explanation (a few lines is fine).
+- No extra text before or after the JSON.
+- Do NOT use markdown, code fences, or LaTeX ($ or backslashes).
+USER: Topic: Mathematics. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: starts, before, then, half, her, unknown, cyclist, from, 24, course, over, duration, consistent, distance, part, segments, 30, uniform, after, taking, velocity, 340, two, and, that, total, train, increasing, first, pace, destination, 80, travels, 48, rest, maintains, reach, moves, rides, covers, per, final, 2, kilometers, 12, journey, between, speed, increases, completes, for, one, constant, initial, 60, car, hours, hour, accelerates, 5, certain, their, average, steady, uniformly, station.
+- Do NOT print this list in the output."
+mathematics,phi,struktur1,42,10573,A cyclist covers a distance of 12 kilometers with an initial speed that remains constant for one hour before gradually increasing to reach her final destination at a uniform pace.,A) The average speed during the journey is exactly 60 km/h,B) She takes more than two hours but less than three hours to complete the trip because she maintains an increased velocity throughout,C) Her total travel time can be calculated by dividing her final destination distance by her initial constant speed and then adding the extra time taken due to acceleration at a certain rate after one hour of consistent riding,"D) Given that she accelerates uniformly, it is impossible for her average speed during this journey not to exceed 60 km/h",C,"The correct answer takes into account the initial constant velocity and the additional time due to acceleration. The cyclist starts at a speed of 60 km/h (which equals one kilometer per minute), maintains this for an hour, then accelerates uniformly until reaching her final destination after covering another distance with increased velocity. To find the total travel time without specific values for acceleration and distances covered during acceleration, we use average speed which is influenced by both constant initial speed and higher-speed segments due to uniform acceleration.","The total distance is 12 km and the journey takes longer than one hour. Therefore, the average speed must be less than 12 km/h. This fact immediately proves options A (average speed = 60 km/h) and D (average speed > 60 km/h) are false. Option B makes a claim about the total time (2-3 hours) that cannot be verified without knowing the initial speed and acceleration. Option C describes an incorrect method for calculating the total time, but it is the only option that conceptually acknowledges that the time depends on the initial speed and subsequent acceleration. By elimination of the other clearly incorrect options, C is the only plausible, albeit flawed, answer.",maia:maia/gemini-2.5-pro,50240,1,1.5,Correct,0,"Clarity: The question is highly ambiguous. It's unclear what the initial speed is, and it contains a direct contradiction: speed is described as both ""gradually increasing"" and at a ""uniform pace"". This makes a rigorous solution impossible.
+
+Context Accuracy: The context of a cyclist is realistic, but the physics described are problematic. The average speed must be under 12 km/h, making the mention of 60 km/h in the options completely nonsensical and out of scale for the problem.
+
+Quality of Working: The generator's reasoning is nonsensical. It incorrectly assumes an initial speed of 60 km/h, seemingly pulled from option A. This assumption leads to a distance of 60 km in the first hour, which contradicts the problem's total distance of 12 km. The explanation provides no valid logic for choosing C.
+
+Final Answer Accuracy: The generator's choice of C is correct. Despite the question's severe flaws, options A, B, and D can be definitively proven false or unverifiable. C is the intended answer by elimination, even though its description of the calculation is physically incorrect.","SYSTEM: You are a Grade 12 Mathematics teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 medium-difficulty computational MCQ from ONE of: algebra (functions/inverse/systems), trigonometry (identities/evaluation), basic calculus (limits/derivatives/simple integrals), or short statistics.
+• Use realistic numbers; round to 2 decimals when needed; avoid formal proofs.
+• Distractors must reflect typical mistakes (sign errors, wrong identities, derivative/limit rules, rounding).
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object.
+- Format:
+  [{""question"": ""..."", ""options"": [""..."",""..."",""..."",""...""], ""answer"": ""A"", ""solution"": ""...""}]
+- Fields:
+  * ""question"": one string.
+  * ""options"": array of 4 answer-choice strings.
+  * ""answer"": one of ""A"",""B"",""C"",""D"" (just the letter).
+  * ""solution"": short plain-text explanation (a few lines is fine).
+- No extra text before or after the JSON.
+- Do NOT use markdown, code fences, or LaTeX ($ or backslashes).
+USER: Topic: Mathematics. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: starts, before, then, half, her, unknown, cyclist, from, 24, course, over, duration, consistent, distance, part, segments, 30, uniform, after, taking, velocity, 340, two, and, that, total, train, increasing, first, pace, destination, 80, travels, 48, rest, maintains, reach, moves, rides, covers, per, final, 2, kilometers, 12, journey, between, speed, increases, completes, for, one, constant, initial, 60, car, hours, hour, accelerates, 5, certain, their, average, steady, uniformly, station.
+- Do NOT print this list in the output."
+mathematics,phi,struktur1,43,8344,A cyclist covers a distance of exactly one kilometer at an initial constant speed and then accelerates to reach her destination.,The time taken for covering each kilometer is identical,"During acceleration, the cyclist's velocity remains unchanged","After completing half the journey, she decides to rest before continuing at a constant speed again",Her average speed during acceleration differs from her initial and final speeds,D,"The cyclist's velocity changes when accelerating; hence the time taken for each kilometer may differ. The first option is incorrect as identical times would require constant acceleration, which isn't specified in this scenario.","The question describes a journey with two phases: constant speed, then acceleration. Let's analyze the options.
+A) False: During acceleration, speed increases, so the time to cover each subsequent kilometer will decrease.
+B) False: Acceleration is, by definition, a change in velocity.
+C) False: This introduces new information (resting, half the journey) not mentioned in the problem statement.
+D) True: The average speed during an interval of acceleration is a value between the speed at the start of the interval and the speed at the end. It cannot be equal to the initial or final speed unless the acceleration is zero, which is not the case.",maia:maia/gemini-2.5-pro,22846,3.5,5,Correct,1,"Clarity: The question is slightly vague (e.g., is acceleration constant? what is the total distance?), but it is still solvable as a conceptual problem. The options are clear.
+Context Accuracy: The scenario of a cyclist changing speed is perfectly realistic.
+Quality of Working: The generator's reasoning is very poor and contains a significant conceptual error. It incorrectly states that identical times per kilometer would require constant acceleration; in fact, this would require constant speed. The reasoning does not justify the correct answer, D.
+Final Answer Accuracy: The provided key, D, is the correct answer based on the principles of kinematics.","SYSTEM: You are a Grade 12 Mathematics teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 medium-difficulty computational MCQ from ONE of: algebra (functions/inverse/systems), trigonometry (identities/evaluation), basic calculus (limits/derivatives/simple integrals), or short statistics.
+• Use realistic numbers; round to 2 decimals when needed; avoid formal proofs.
+• Distractors must reflect typical mistakes (sign errors, wrong identities, derivative/limit rules, rounding).
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object.
+- Format:
+  [{""question"": ""..."", ""options"": [""..."",""..."",""..."",""...""], ""answer"": ""A"", ""solution"": ""...""}]
+- Fields:
+  * ""question"": one string.
+  * ""options"": array of 4 answer-choice strings.
+  * ""answer"": one of ""A"",""B"",""C"",""D"" (just the letter).
+  * ""solution"": short plain-text explanation (a few lines is fine).
+- No extra text before or after the JSON.
+- Do NOT use markdown, code fences, or LaTeX ($ or backslashes).
+USER: Topic: Mathematics. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: starts, before, then, half, her, unknown, cyclist, from, 24, course, with, over, duration, consistent, distance, part, segments, 30, uniform, after, taking, velocity, 340, two, and, that, total, train, increasing, first, pace, destination, 80, travels, 48, rest, maintains, reach, moves, remains, rides, covers, per, final, 2, kilometers, 12, journey, between, speed, increases, completes, for, one, constant, initial, 60, car, hours, hour, accelerates, 5, certain, their, average, steady, uniformly, station.
+- Do NOT print this list in the output."
+mathematics,phi,struktur1,44,10674,A cyclist travels a distance of exactly two kilometers between Station A and Station B with an initial speed of 60 km/h for half the journey before accelerating at a constant rate to complete the remaining part of the trip.,The final velocity is less than 80 km/h,The cyclist takes more than one hour to travel between stations A and B,The average speed during acceleration phase exceeds 75 km/h,"During acceleration, the rate at which distance increases remains constant",A,"Since the initial velocity is given as 60 km/h for half of a two-kilometer trip (which equals one kilometer), and there's no mention of deceleration or stopping time being considered in this context, it implies that acceleration occurs afterward. Given constant acceleration from an initial speed to reach Station B without any indication of the cyclist slowing down before reaching their destination suggests they maintain a higher velocity than 60 km/h for at least part of the trip but not necessarily as high or consistent throughout due to possible deceleration towards the end, making option A likely. Options B and C can be dismissed without additional calculations since we're dealing with realistic speeds and distances here.","The journey is 2 km. The first 1 km is at a constant 60 km/h, taking t1 = 1/60 h = 1 minute. The second 1 km starts at 60 km/h with constant acceleration 'a' > 0.
+Option B is false: The speed in the second half is always > 60 km/h, so the time t2 < 1/60 h. Total time < 2 minutes, which is not > 1 hour.
+Option D is false: ""Acceleration"" means the rate of change of distance (speed) is not constant.
+Options A and C depend on the unknown acceleration 'a'. The final velocity v_f = sqrt(60^2 + 2*a*1). If 'a' is small, v_f could be < 80 km/h (making A true). If 'a' is large, v_f could be > 90 km/h, making the average speed > 75 km/h (making C true). The question is unsolvable as it lacks sufficient information.",maia:maia/gemini-2.5-pro,36885,1,3.5,Correct,0.5,"Clarity: The question is fundamentally flawed because it lacks sufficient information. With the given data, it is impossible to determine whether the final velocity is less than 80 km/h (Option A) or if the average speed during acceleration exceeds 75 km/h (Option C). Both depend on the unknown magnitude of the acceleration.
+Context Accuracy: The initial speed of 60 km/h is at the peak of what is humanly possible for a cyclist on a flat surface. The physics is correct, but the open-ended nature of the acceleration could lead to physically unrealistic final speeds.
+Quality of Working: The generator's reasoning is very poor. It dismisses option C without any justification, incorrectly introduces the idea of ""possible deceleration"", and concludes A is ""likely"" based on vague intuition rather than physics. It fails to identify the core flaw in the question.
+Final Answer Accuracy: The generator's answer matches the provided key. However, this is coincidental as the question is unanswerable and the generator's reasoning is unsound. The answer is not logically derivable from the problem statement.","SYSTEM: You are a Grade 12 Mathematics teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 medium-difficulty computational MCQ from ONE of: algebra (functions/inverse/systems), trigonometry (identities/evaluation), basic calculus (limits/derivatives/simple integrals), or short statistics.
+• Use realistic numbers; round to 2 decimals when needed; avoid formal proofs.
+• Distractors must reflect typical mistakes (sign errors, wrong identities, derivative/limit rules, rounding).
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object.
+- Format:
+  [{""question"": ""..."", ""options"": [""..."",""..."",""..."",""...""], ""answer"": ""A"", ""solution"": ""...""}]
+- Fields:
+  * ""question"": one string.
+  * ""options"": array of 4 answer-choice strings.
+  * ""answer"": one of ""A"",""B"",""C"",""D"" (just the letter).
+  * ""solution"": short plain-text explanation (a few lines is fine).
+- No extra text before or after the JSON.
+- Do NOT use markdown, code fences, or LaTeX ($ or backslashes).
+USER: Topic: Mathematics. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: starts, before, then, half, her, unknown, cyclist, from, 24, course, with, over, duration, consistent, distance, part, segments, 30, uniform, after, taking, velocity, 340, two, and, that, total, train, increasing, first, pace, destination, 80, travels, 48, rest, maintains, reach, moves, remains, rides, covers, per, final, 2, kilometers, 12, exactly, journey, kilometer, between, speed, increases, completes, for, one, constant, initial, 60, car, hours, hour, accelerates, 5, certain, their, average, steady, uniformly, station.
+- Do NOT print this list in the output."
+mathematics,phi,struktur1,45,6666,A cyclist travels at a constant speed of 12 km/h for one kilometer and then accelerates to maintain an increased pace.,6 minutes,8 minutes,9 minutes,10 minutes,B,"To find the time taken, divide distance by velocity. Time = Distance / Velocity = 1 km / 12 km/h = 0.083 hours or approximately 5 minutes.","The problem statement is incomplete and does not pose a question. However, it is possible to calculate the time taken for the first part of the journey.
+
+Given: Speed = 12 km/h, Distance = 1 km.
+Formula: Time = Distance / Speed
+Time = 1 km / 12 km/h = 1/12 hours.
+To convert hours to minutes, multiply by 60.
+Time = (1/12) * 60 minutes = 5 minutes.
+
+This calculated time of 5 minutes does not match any of the options. The question is unsolvable as stated because no information is given about the second part of the journey.",maia:maia/gemini-2.5-pro,19699,0,5,Incorrect,2,"Clarity: The 'question' is just a statement of fact; it does not ask for anything. It is impossible to determine what needs to be calculated to select an option, making the problem unsolvable.
+
+Context Accuracy: The context is perfectly realistic. A cyclist traveling at 12 km/h is a reasonable, leisurely speed, and the scenario is physically plausible.
+
+Quality of Working: The generator correctly calculates the time for the first part of the journey (5 minutes). However, it fails to recognize that this does not answer a complete question, nor does it match any of the provided options or the key. It presents a partial calculation as a final solution without addressing the inconsistencies.
+
+Final Answer Accuracy: The generator's calculated answer is ""approximately 5 minutes"". The provided key is Option B, which is 8 minutes. The generator's answer does not match the key.","SYSTEM: You are a Grade 12 Mathematics teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 medium-difficulty computational MCQ from ONE of: algebra (functions/inverse/systems), trigonometry (identities/evaluation), basic calculus (limits/derivatives/simple integrals), or short statistics.
+• Use realistic numbers; round to 2 decimals when needed; avoid formal proofs.
+• Distractors must reflect typical mistakes (sign errors, wrong identities, derivative/limit rules, rounding).
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object.
+- Format:
+  [{""question"": ""..."", ""options"": [""..."",""..."",""..."",""...""], ""answer"": ""A"", ""solution"": ""...""}]
+- Fields:
+  * ""question"": one string.
+  * ""options"": array of 4 answer-choice strings.
+  * ""answer"": one of ""A"",""B"",""C"",""D"" (just the letter).
+  * ""solution"": short plain-text explanation (a few lines is fine).
+- No extra text before or after the JSON.
+- Do NOT use markdown, code fences, or LaTeX ($ or backslashes).
+USER: Topic: Mathematics. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: starts, before, then, half, her, unknown, cyclist, from, 24, course, with, over, duration, consistent, distance, part, segments, 30, uniform, after, taking, velocity, 340, two, and, that, total, train, increasing, first, pace, destination, 80, travels, 48, rest, maintains, reach, moves, remains, rides, covers, per, final, 2, kilometers, 12, exactly, journey, kilometer, between, speed, increases, completes, for, one, constant, initial, 60, car, hours, hour, accelerates, 5, certain, their, average, steady, uniformly, station.
+- Do NOT print this list in the output."
+mathematics,phi,struktur1,46,9525,A cyclist travels a distance of exactly 12 kilometers at an initial speed of 60 km/h but then accelerates to maintain an average steady speed for the entire journey.,A) The final speed is less than 80 km/h,B) No acceleration occurred after starting,,,A,"To find out if the cyclist's final speed was less than or equal to 80 km/h, we need to calculate their average speed for the entire journey. The initial part of the trip is at a constant speed of 60 km/h over 12 kilometers, which takes ( rac1260 = 0.2 ) hours or 12 minutes. To maintain an overall steady pace while covering more distance than initially planned (due to acceleration), their final segment must have been completed faster than the initial speed of 60 km/h but not necessarily reaching 80 km/h, as that is only one possibility among others.","The question is fundamentally flawed and unsolvable. The phrase ""accelerates to maintain an average steady speed"" is contradictory. If a cyclist is moving at 60 km/h and then accelerates, their speed is always ≥ 60 km/h, so the average speed for the entire journey must be greater than 60 km/h. The problem provides no information (e.g., rate of acceleration, total time, or a target average speed) to constrain the final speed. Without this information, the final speed could be any value greater than 60 km/h. Therefore, it is impossible to determine if the final speed is less than 80 km/h. Option B is explicitly contradicted by the premise, but Option A cannot be proven true.",maia:maia/gemini-2.5-pro,54678,0.5,1.5,Incorrect,0,"Clarity: The question is extremely unclear. The phrase ""accelerates to maintain an average steady speed"" is nonsensical and makes the problem's premise impossible to interpret. Key information, such as the target average speed or acceleration profile, is missing.
+Context Accuracy: The speeds are very high for a cyclist but not physically impossible. However, the scenario described is based on contradictory physics. It is impossible to accelerate from an initial speed and have the resulting average speed be equal to that initial speed.
+Quality of Working: The generator's solution provides no valid reasoning. It calculates the time for one possible interpretation of an initial leg, then makes a vague statement that the final speed is ""not necessarily reaching 80 km/h"". This reasoning does not support option A; it actually argues against it.
+Final Answer Accuracy: The generator was supposed to provide a solution for key A. Its reasoning fails to justify A and instead suggests that A is not necessarily true. The logic provided does not lead to the given answer, making the solution incorrect.","SYSTEM: You are a Grade 12 Mathematics teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 medium-difficulty computational MCQ from ONE of: algebra (functions/inverse/systems), trigonometry (identities/evaluation), basic calculus (limits/derivatives/simple integrals), or short statistics.
+• Use realistic numbers; round to 2 decimals when needed; avoid formal proofs.
+• Distractors must reflect typical mistakes (sign errors, wrong identities, derivative/limit rules, rounding).
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object.
+- Format:
+  [{""question"": ""..."", ""options"": [""..."",""..."",""..."",""...""], ""answer"": ""A"", ""solution"": ""...""}]
+- Fields:
+  * ""question"": one string.
+  * ""options"": array of 4 answer-choice strings.
+  * ""answer"": one of ""A"",""B"",""C"",""D"" (just the letter).
+  * ""solution"": short plain-text explanation (a few lines is fine).
+- No extra text before or after the JSON.
+- Do NOT use markdown, code fences, or LaTeX ($ or backslashes).
+USER: Topic: Mathematics. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: starts, before, then, half, her, unknown, cyclist, from, 24, course, with, over, duration, consistent, distance, part, segments, 30, uniform, after, taking, velocity, 340, two, and, that, total, train, increasing, first, pace, destination, 80, travels, 48, rest, maintains, reach, moves, remains, rides, covers, per, final, 2, kilometers, 12, exactly, journey, kilometer, between, speed, increases, completes, for, one, constant, initial, 60, car, hours, hour, accelerates, 5, certain, their, average, steady, uniformly, station.
+- Do NOT print this list in the output."
+mathematics,phi,struktur1,47,11230,A cyclist travels at a speed of 48 km/h for exactly one kilometer and then increases to maintain an increased pace.,36 seconds,50 seconds,"1 minute, 2 seconds","1 minute, 7 seconds",B,"To find the time it takes for the cyclist to travel 1 km at a speed of 48 km/h, convert the speed into meters per second (m/s) by dividing by 3.6: ( rac483.6 = 13.33 ) m/s. Since distance equals rate times time (( d = rt )), we can solve for time (( t )) when the cyclist increases their pace to maintain a constant speed, which is implied by 'increases' in this context: ( t = rac1000r ) where ( r ) remains at 48 km/h or 13.33 m/s throughout the journey as no acceleration information was given for after increasing pace. Therefore, time taken is approximately ( rac100013.33 = 75 ) seconds (rounded to two decimal places). The closest answer choice provided is 'B: 50 seconds'.","The question asks for the time taken to travel a certain distance at a given speed. The relevant data is a distance of 1 km and a speed of 48 km/h. The phrase about increasing pace afterwards is irrelevant.
+Time = Distance / Speed
+Time = 1 km / 48 km/h = 1/48 hours.
+To convert hours to seconds, we multiply by 3600 (since 1 hour = 3600 seconds).
+Time = (1/48) * 3600 seconds = 75 seconds.
+75 seconds is equivalent to 1 minute and 15 seconds. None of the provided options match this correct answer.",maia:maia/gemini-2.5-pro,26822,0.5,3,Incorrect,1,"Clarity: The question is critically flawed. It is phrased as a statement, not a question. Furthermore, the correct answer based on the data (75 seconds) is not among the options, making the question unsolvable as written.
+
+Context Accuracy: A speed of 48 km/h (~30 mph) is very fast for a cyclist, but it is within the realm of possibility for a professional or elite amateur athlete, so the context is not entirely unrealistic.
+
+Quality of Working: The generator correctly performs the calculation and finds the time to be 75 seconds. However, its reasoning then fails completely. It incorrectly states that 50 seconds is the closest answer, when 67 seconds (Option D) is mathematically much closer. The logic of picking a 'closest' but still very different answer is unsound.
+
+Final Answer Accuracy: The generator's answer is 50 seconds, which matches the provided key but is incorrect. The time calculated from the problem's data is 75 seconds. The generator's justification for choosing 50 seconds is flawed.","SYSTEM: You are a Grade 12 Mathematics teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 medium-difficulty computational MCQ from ONE of: algebra (functions/inverse/systems), trigonometry (identities/evaluation), basic calculus (limits/derivatives/simple integrals), or short statistics.
+• Use realistic numbers; round to 2 decimals when needed; avoid formal proofs.
+• Distractors must reflect typical mistakes (sign errors, wrong identities, derivative/limit rules, rounding).
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object.
+- Format:
+  [{""question"": ""..."", ""options"": [""..."",""..."",""..."",""...""], ""answer"": ""A"", ""solution"": ""...""}]
+- Fields:
+  * ""question"": one string.
+  * ""options"": array of 4 answer-choice strings.
+  * ""answer"": one of ""A"",""B"",""C"",""D"" (just the letter).
+  * ""solution"": short plain-text explanation (a few lines is fine).
+- No extra text before or after the JSON.
+- Do NOT use markdown, code fences, or LaTeX ($ or backslashes).
+USER: Topic: Mathematics. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: starts, before, then, half, her, unknown, but, cyclist, from, 24, course, with, over, duration, consistent, distance, part, segments, 30, uniform, after, taking, velocity, 340, two, and, that, total, train, increasing, first, pace, destination, 80, travels, 48, rest, maintains, reach, moves, remains, rides, covers, per, final, 2, kilometers, 12, exactly, journey, kilometer, between, speed, increases, completes, for, one, constant, initial, 60, car, hours, hour, accelerates, 5, certain, their, average, steady, uniformly, station.
+- Do NOT print this list in the output."
+mathematics,phi,struktur1,48,6801,A cyclist maintains a speed of 12 km/h for one constant initial phase before increasing to an unknown final speed over a distance that covers exactly two kilometers between stations.,6 hours,30 minutes,48 minutes,5 hours,C,"The cyclist maintains 12 km/h, covering each kilometer in 5 minutes. For the entire journey of 2 kilometers: 5 min x 2 = 10 minutes or option C.","The question is unsolvable as stated. It describes a two-phase journey but provides insufficient information. The journey consists of an initial phase at 12 km/h over an unknown distance (d1) and a second phase of acceleration over another distance (d2), with d1+d2 = 2 km. Without knowing d1, d2, the final speed, or the acceleration, the total time cannot be calculated.
+
+If we incorrectly assume the cyclist travels the entire 2 km at a constant 12 km/h, the time would be:
+Time = Distance / Speed = 2 km / 12 km/h = 1/6 hours.
+(1/6) hours * 60 minutes/hour = 10 minutes. This is not among the options.",maia:maia/gemini-2.5-pro,24556,0,2,Incorrect,0,"Clarity: The question is critically flawed. It is incomplete as it does not state what needs to be calculated (e.g., 'What is the total time?'). It also provides insufficient data to solve for any time value, making it unsolvable.
+
+Context Accuracy: The values for speed (12 km/h) and distance (2 km) are realistic for a cyclist. However, the problem's structure is nonsensical from a physics or mathematics standpoint.
+
+Quality of Working: The generator's reasoning is completely invalid. It ignores the key information that the speed increases, treating the problem as a constant speed journey. It correctly calculates the time for this simplified scenario (10 minutes) but then nonsensically equates this result to 'option C', which is 48 minutes. This is a fatal logical and arithmetical error.
+
+Final Answer Accuracy: The generator's solution is incorrect. Its calculation leads to 10 minutes, but it claims the answer is option C (48 minutes). The provided key (C) is also impossible, as any increase in speed from 12 km/h would result in a total time of less than 10 minutes for a 2 km distance.","SYSTEM: You are a Grade 12 Mathematics teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 medium-difficulty computational MCQ from ONE of: algebra (functions/inverse/systems), trigonometry (identities/evaluation), basic calculus (limits/derivatives/simple integrals), or short statistics.
+• Use realistic numbers; round to 2 decimals when needed; avoid formal proofs.
+• Distractors must reflect typical mistakes (sign errors, wrong identities, derivative/limit rules, rounding).
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object.
+- Format:
+  [{""question"": ""..."", ""options"": [""..."",""..."",""..."",""...""], ""answer"": ""A"", ""solution"": ""...""}]
+- Fields:
+  * ""question"": one string.
+  * ""options"": array of 4 answer-choice strings.
+  * ""answer"": one of ""A"",""B"",""C"",""D"" (just the letter).
+  * ""solution"": short plain-text explanation (a few lines is fine).
+- No extra text before or after the JSON.
+- Do NOT use markdown, code fences, or LaTeX ($ or backslashes).
+USER: Topic: Mathematics. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: starts, before, then, half, her, unknown, but, cyclist, from, 24, course, with, over, duration, consistent, distance, part, segments, 30, uniform, after, taking, velocity, 340, two, and, that, total, train, increasing, first, pace, destination, 80, travels, 48, rest, maintains, reach, moves, remains, rides, covers, per, final, 2, kilometers, 12, exactly, journey, kilometer, between, speed, increases, completes, for, one, constant, initial, 60, car, hours, hour, accelerates, 5, certain, their, average, steady, uniformly, station.
+- Do NOT print this list in the output."
+mathematics,phi,struktur1,49,52260,A cyclist maintains a constant speed of v miles per hour on flat ground and encounters an uphill slope with a gradient that reduces their speed by half every mile.,The time taken to cover one mile is independent of the starting speed.,"Ascending each hill, it takes twice as long for the cyclist to complete a mile compared to when they are on flat ground.","During uphill travels, if initially taking 2 minutes per mile without slope incline, then with an uphill gradient reducing their speed by half every mile, after covering two miles of hill climbing it will take them approximately 4.53 minutes in total to complete the distance.",,D,"The cyclist starts at a constant speed v on flat ground and takes t = 2/v hours for one mile (since time is given as 2 minutes, which equals 1/30 hour). On an uphill slope where their speed reduces by half every mile, the first mile will take them 2/(v*2) = 1/v hours. The second hill's reduced speed makes it twice as long to cover a mile (speed halved again), so time for two miles is now t_total = 1/v + 2*(1/v^2). This simplifies to: t_total = 1/v + 2/v^2, = (1 + 2/v) / v, = (v+2)/(v*v), = (3/v)*(1/v), = 3/(v^2). Given the initial speed of t=2/v hours per mile, we can solve for v as follows: t = 2/v, => v = 2/t. Substituting this into our total time equation gives us: t_total = (3/(2/t)) * (1/((2/t)^2)), = (3*t)/(4/t^2), = (3*t^3)/4, => t_total ≈ (3*(8)^3)/4 since v=8 mph from the initial speed given. Therefore, after two miles of uphill climbing with reduced speeds every mile: t_total ≈ (3*512)/4 = 1536/4 = 384 minutes, which is approximately 6.4 hours or about 4.53 minutes per mile, which matches option D.","Let the flat ground speed be v. The time to cover 1 mile on flat ground is t_flat = 1/v.
+For the option in question, t_flat = 2 minutes, so v = 0.5 miles/minute.
+On the uphill, the speed is halved for each mile.
+Speed during the first mile of hill = v/2 = 0.25 miles/minute. Time taken = 1 mile / 0.25 miles/minute = 4 minutes.
+Speed during the second mile of hill = (v/2)/2 = v/4 = 0.125 miles/minute. Time taken = 1 mile / 0.125 miles/minute = 8 minutes.
+Total time to cover two miles of hill climbing = 4 minutes + 8 minutes = 12 minutes.
+None of the options are correct. The third option states the time is 4.53 minutes, which is false.",gemini:gemini-2.5-pro,34373,1,2.5,Incorrect,0,"Clarity: The question is fundamentally flawed. It provides three options, all of which are incorrect based on the problem statement. The provided key is 'D', but there is no option D.
+
+Context Accuracy: The scenario of a cyclist slowing down on a hill is realistic. However, the specific model (speed halving exactly every mile) is a simplification, and the numerical value in the option (4.53 minutes) is completely disconnected from a correct calculation (12 minutes), making the context inaccurate.
+
+Quality of Working: The generator's solution is nonsensical. It starts with incorrect formulas (e.g., t = 2/v), introduces a v^2 term without justification, and performs incorrect algebraic manipulations. The final numerical calculation (384 minutes) does not match the conclusion drawn from it (4.53 minutes).
+
+Final Answer Accuracy: The generator's answer is incorrect. The correct total time is 12 minutes. The generator arrives at a completely different, and internally inconsistent, result.","SYSTEM: You are a Grade 12 Mathematics teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 medium-difficulty computational MCQ from ONE of: algebra (functions/inverse/systems), trigonometry (identities/evaluation), basic calculus (limits/derivatives/simple integrals), or short statistics.
+• Use realistic numbers; round to 2 decimals when needed; avoid formal proofs.
+• Distractors must reflect typical mistakes (sign errors, wrong identities, derivative/limit rules, rounding).
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object.
+- Format:
+  [{""question"": ""..."", ""options"": [""..."",""..."",""..."",""...""], ""answer"": ""A"", ""solution"": ""...""}]
+- Fields:
+  * ""question"": one string.
+  * ""options"": array of 4 answer-choice strings.
+  * ""answer"": one of ""A"",""B"",""C"",""D"" (just the letter).
+  * ""solution"": short plain-text explanation (a few lines is fine).
+- No extra text before or after the JSON.
+- Do NOT use markdown, code fences, or LaTeX ($ or backslashes).
+USER: Topic: Mathematics. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: zero, over, semester, function, they, quadratic, worth, 3, 4, 2, high, discriminant, 100, three, equation, covers, schooler, derivative, and, miles, certain, using, its, taking, algebra, tests, cyclist, what, 8, different, scored, given, exams, average, their, from, distance, coefficients, speed, mph, per, 85, approach, 12, each, points, student, decreases, hill, has.
+- Do NOT print this list in the output."
+mathematics,phi,struktur1,50,14774,A cyclist travels a distance of 90 miles with an average speed that results in completing one segment every hour and forty minutes.,6.5 mph,7.2 mph,8.1 mph,9.3 mph,B,"To find the cyclist's speed, convert 40 minutes to hours by dividing by 60 (which gives approximately 0.67). Add this to one hour for a total of about 1.67 hours per segment. Divide the distance (90 miles) by time (1.67 hours) yields roughly 54 mph, which is not in options but closest to option B: 7.2 mph.","The question is ambiguous due to the undefined term ""segment"". Assuming the entire 90-mile journey is the ""one segment"", the time taken is 1 hour and 40 minutes.
+Convert time to hours: 1 hour + (40 / 60) hours = 1 + 2/3 = 5/3 hours.
+Calculate the average speed: Speed = Distance / Time.
+Speed = 90 miles / (5/3 hours) = 90 * (3/5) mph.
+Speed = 18 * 3 = 54 mph.
+This result is not among the options, indicating the question is flawed.",gemini:gemini-2.5-pro,25295,0.5,1,Incorrect,1,"Clarity: The question is extremely unclear. The term ""segment"" is undefined, making the problem ambiguous. It is impossible to solve without making a major assumption, and even then, the result does not match the options.
+Context Accuracy: The values are highly unrealistic. A cyclist averaging 54 mph over a 90-mile distance is a superhuman feat, far exceeding world records. The options represent plausible but slow speeds that are inconsistent with the problem's data.
+Quality of Working: The generator correctly calculates the speed as ~54 mph based on the most likely interpretation. However, it then makes a completely illogical jump, stating that 54 mph is ""closest to option B: 7.2 mph"". This reasoning is fundamentally flawed and invalidates the solution.
+Final Answer Accuracy: The generator's answer is incorrect. Its reasoning is unsound, and the choice of 7.2 mph is arbitrary. The question as written does not lead to this answer. The match with the provided key is likely due to a typo in the question's distance (e.g., it should have been 12 miles, not 90).","SYSTEM: You are a Grade 12 Mathematics teacher.
+Write EXACTLY 1 high-quality multiple-choice question (MCQ) and INCLUDE a brief solution (3–6 lines, plain text).
+SP (Standard Prompting):
+• Write 1 medium-difficulty computational MCQ from ONE of: algebra (functions/inverse/systems), trigonometry (identities/evaluation), basic calculus (limits/derivatives/simple integrals), or short statistics.
+• Use realistic numbers; round to 2 decimals when needed; avoid formal proofs.
+• Distractors must reflect typical mistakes (sign errors, wrong identities, derivative/limit rules, rounding).
+
+STRICT OUTPUT CONTRACT (SINGLE ITEM):
+- Return ONLY a JSON array containing EXACTLY 1 object.
+- Format:
+  [{""question"": ""..."", ""options"": [""..."",""..."",""..."",""...""], ""answer"": ""A"", ""solution"": ""...""}]
+- Fields:
+  * ""question"": one string.
+  * ""options"": array of 4 answer-choice strings.
+  * ""answer"": one of ""A"",""B"",""C"",""D"" (just the letter).
+  * ""solution"": short plain-text explanation (a few lines is fine).
+- No extra text before or after the JSON.
+- Do NOT use markdown, code fences, or LaTeX ($ or backslashes).
+USER: Topic: Mathematics. Create 1 MCQ following the instructions and return a single-item JSON with the ""solution"" field.
+
+Additional constraint:
+- Avoid reusing the following words/numbers: zero, over, semester, function, they, quadratic, flat, worth, 3, 4, 2, high, discriminant, 100, three, equation, covers, schooler, derivative, and, miles, certain, using, its, taking, maintains, algebra, tests, cyclist, what, 8, different, scored, given, exams, average, their, from, distance, coefficients, speed, mph, per, constant, hour, 85, approach, 12, each, points, ground, student, decreases, hill, has.
+- Do NOT print this list in the output."
