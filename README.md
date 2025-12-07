@@ -69,10 +69,6 @@ Minimal paket:
 
     pip install openai requests python-dotenv pandas numpy
 
-Kalau tersedia `requirements.txt`:
-
-    pip install -r requirements.txt
-
 ---
 
 ## 3. Konfigurasi Environment
@@ -88,17 +84,20 @@ Buat file `.env` di root project. Contoh:
     OPENROUTER_MODEL_LLAMA=llama3:8b
     OPENROUTER_MODEL_PHI=phi3:mini
 
-    # === MAIA ROUTER (GEMINI VERIFIER) ===
-    MAIA_API_KEY=ISI_API_KEY_MAIA_KAMU
-    MAIA_BASE_URL=https://api.maiarouter.ai/v1
-    MAIA_VERIFIER_MODEL=maia/gemini-2.5-flash
+    # === GEMINI VERIFIER (GOOGLE) ===
+    GEMINI_API_KEY=ISI_API_KEY_GEMINI_KAMU
+    GEMINI_VERIFIER_MODEL=gemini-2.5-pro
 
-    # Opsional: retry/backoff verifier
-    MAIA_MAX_RETRIES=6
-    MAIA_BACKOFF_BASE=1.8
+    # Opsional: pengaturan retry / delay
+    GEMINI_PRO_DELAY_SEC=30
+    GEMINI_DELAY_BETWEEN_CALLS=1.0
+    GENAI_MAX_RETRIES=6
+    GENAI_BACKOFF_BASE=1.8
+    GENAI_TIMEOUT=90
+
 
 Catatan:
-- Tanpa Ollama dan API key Maia, eksperimen penuh tidak bisa dijalankan.
+- Tanpa Ollama dan API key Gemini, eksperimen penuh tidak bisa dijalankan.
 - `.env` jangan di-commit ke repo publik.
 
 ---
@@ -118,10 +117,9 @@ Catatan:
 
 4. Install dependensi:
 
-       pip install -r requirements.txt
-       # atau paket minimal seperti di atas
+       pip install openai requests python-dotenv pandas numpy
 
-5. Buat `.env` seperti contoh dan isi API key Maia.
+5. Buat `.env` seperti contoh.
 6. Install model Ollama yang diperlukan:
 
        ollama pull qwen2.5:7b
@@ -188,10 +186,6 @@ Setiap baris CSV berisi:
 
 Analisis lanjutan (rata-rata per struktur × model × subject, BERTScore, grafik, dsb.) dikerjakan di notebook / project terpisah dan **tidak** menjadi bagian repo ini.
 
-Yang penting untuk pengetesan asdos:
-- Script di repo ini berhasil menghasilkan CSV mentah tanpa error.
-- Struktur folder `outputs/` konsisten dengan penjelasan di README.
-
 ---
 
 ## 7. Contoh Penggunaan
@@ -221,7 +215,7 @@ Lalu jalankan:
 ## 8. Catatan Penting / Limitasi
 
 - **API Key & Kuota**  
-  Verifier bergantung ke Maia Router (Gemini 2.5). Jika kuota habis / rate limit, script akan berhenti dan menulis partial row ke CSV. Hal ini perlu dijelaskan di laporan jika terjadi saat eksperimen.
+  Verifier memakai gemini-2.5-pro lewat library google-generativeai. Jika kuota habis / rate limit, script akan melempar error "quota / resource exhausted". Kode sudah punya mekanisme retry, tapi kalau kuota 0 tetap gagal.
 
 - **Waktu Eksekusi**  
   Model besar (gemma3:12b, llama3:8b) jauh lebih lambat. Uji dulu dengan `count` kecil (~5–10) sebelum full run.
