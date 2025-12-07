@@ -109,25 +109,19 @@ Catatan:
 
        cd question_generation
 
-3. (Opsional) Buat virtualenv:
-
-       python -m venv .venv
-       .venv\Scripts\activate    (Windows)
-       # source .venv/bin/activate (Linux/Mac)
-
-4. Install dependensi:
+3. Install dependensi:
 
        pip install openai requests python-dotenv pandas numpy
 
-5. Buat `.env` seperti contoh.
-6. Install model Ollama yang diperlukan:
+4. Buat `.env` seperti contoh.
+5. Install model Ollama yang diperlukan:
 
        ollama pull qwen2.5:7b
        ollama pull gemma3:12b
        ollama pull llama3:8b
        ollama pull phi3:mini
 
-7. Pastikan server Ollama jalan (biasanya otomatis):
+6. Pastikan server Ollama jalan (biasanya otomatis):
 
        ollama serve
 
@@ -223,7 +217,7 @@ Lalu jalankan:
 - **Reproducibility**  
   Teks prompt untuk S1, S2, S3 disimpan sebagai blok di kode. Jika prompt diubah, pastikan versi kode di repo sama dengan versi yang dipakai saat eksperimen.
 
-- **Pengetesan Project (sesuai instruksi kelas)**  
+- **Pengetesan Project**  
   1) Code bisa dijalankan tanpa error setelah `.env`, Ollama, dan API key disiapkan.  
   2) README ini menjelaskan deskripsi, instalasi, cara menjalankan, dan contoh penggunaan.  
   3) Struktur folder rapi, komentar di kode menjelaskan fungsi modul dan parameter penting.
